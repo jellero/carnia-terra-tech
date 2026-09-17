@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 05: Termico e clima
 
 **Aggiornato:** 17 settembre 2026  
-**Stato:** `ARCHITETTURA DI BASE DEFINITA / BOM-009, 010 E 011 SVILUPPATE / CARICHI E PRESTAZIONI SOTTOZERO DA VALIDARE`.
+**Stato:** `ARCHITETTURA STRUTTURATA / BOM-009…012 SVILUPPATE / VALIDAZIONE BLOCCATA DA LOTTO, CARICHI E RFQ`.
 
 ## 1. Obiettivo
 
@@ -11,189 +11,229 @@ Priorità:
 
 - protezione gelo e danni critici;
 - supporto fisiologico alle colture;
-- gestione condensa/umidità quando il calore è utile allo scopo;
+- gestione condensa/umidità;
 - riscaldamento vicino coltura/radice a bassa temperatura;
 - modularità e priorità per comparto;
 - accumulo termico per spostare energia nel tempo;
 - funzionamento locale e degradato anche senza server/cloud;
-- misurabilità di energia, temperature, portate e ore pompa.
+- misurabilità di energia, temperature, portate, umidità rimossa e ore macchina.
 
 ## 2. Architettura working
 
-`3× PDC iniziali (+ quarta predisposta) -> primario protetto -> scambiatore a piastre -> accumulo termico -> collettore secondario -> 6 circuiti indipendenti -> terminali near-crop / eventuali boost`.
+`3× PDC iniziali (+ quarta predisposta) -> primario protetto -> HX -> accumulo 30 m³ -> collettore -> 6 circuiti -> near-crop + boost opzionale`.
+
+Per il controllo umidità:
+
+`HAF + sensori -> D1 heat+vent controllato -> opzionale D2 ventilazione meccanica con recupero -> opzionale D3 deumidificazione interna`.
 
 Working concept:
 
 - 3 × Kensol KHP-R290-22-3 iniziali;
-- predisposizione quarta unità;
-- accumulo 30 m³ iniziale, predisposizione 40–50 m³;
+- predisposizione quarta;
+- accumulo 30 m³, predisposizione 40–50 m³;
 - 6 circuiti secondari indipendenti;
-- pompa, miscelazione, T mandata/ritorno e portata per comparto;
-- terminali near-crop a bassa temperatura;
-- piccoli aerotermi idronici solo se giustificati per boost/emergenza/deumidificazione.
+- terminali near-crop come base;
+- aerotermi agricoli solo come boost/emergenza/localizzazione;
+- deumidificazione distinta dal semplice riscaldamento.
 
-La dicitura 3+1 non significa N+1 finché la quarta unità non è realmente installata.
+La dicitura 3+1 non significa N+1 finché la quarta PDC non è installata.
 
 ## 3. PDC Kensol — stato verificato
 
-Modello working: KHP-R290-22-3, R290, 3 fasi.
-
-Dati dal datasheet corrente:
+KHP-R290-22-3:
 
 - A7/W35: 7,80–22,00 kW, assorbimento 1,48–5,90 kW, COP 3,73–5,27;
 - A2/W35: 6,69–18,80 kW, assorbimento 1,45–5,50 kW, COP 3,42–4,61;
-- SCOP W35: 5,13;
-- SCOP W55: 3,84;
-- max input: 9 kW / 15,8 A;
-- portata nominale: 2,9 m³/h;
+- SCOP W35 5,13; W55 3,84;
+- max input 9 kW / 15,8 A;
+- portata nominale 2,9 m³/h;
 - pompa SHIMGE integrata;
 - R290 1,30 kg;
 - campo ambiente dichiarato -25…43 °C;
-- 47 dB(A) pressione sonora a 1 m / 62 dB(A) potenza sonora;
+- 47 dB(A) pressione a 1 m / 62 dB(A) potenza sonora;
 - peso 202 kg.
 
-Potenza massima aggregata:
+Aggregato massimo:
 
-- 3 unità: 66 kW a A7/W35, ma 56,4 kW a A2/W35;
-- 4 unità: 88 kW a A7/W35, ma 75,2 kW a A2/W35.
+- 3 unità: 66 kW A7/W35, 56,4 kW A2/W35;
+- 4 unità: 88 kW A7/W35, 75,2 kW A2/W35.
 
-I dati A-7/W35, A-7/W45 e il derating netto da defrost non sono ancora disponibili nei documenti pubblici esaminati e sono gate obbligatori.
+A-7/W35, A-7/W45, A-10/A-15 e defrost netto restano gate obbligatori.
 
 ## 4. Idraulica PDC
 
-La pompa integrata è confermata, ma la prevalenza residua resta da chiarire.
+Pompa integrata confermata; prevalenza residua da chiarire.
 
 Datasheet corrente 22 kW:
 
-- portata nominale 2,9 m³/h;
+- 2,9 m³/h nominali;
 - perdita interna max 65 kPa;
-- prevalenza pompa alla portata nominale 100 kPa.
+- prevalenza pompa 100 kPa a portata nominale.
 
-Il manuale KHP-R290 codice 6/26 riporta invece perdita interna 45 kPa e prevalenza 6,9 m. Questa discrepanza deve essere chiusa da OEM/fornitore sulla revisione effettivamente offerta.
+Manuale KHP-R290 codice 6/26 riporta invece 45 kPa e 6,9 m. OEM/fornitore deve dichiarare revisione e curva valida della macchina offerta.
 
-Non inserire una pompa primaria esterna solo per prudenza: prima acquisire curva Q/H integrata e perdita reale di HX, filtri, glicole, tubi e valvole.
+Pompa primaria esterna solo dopo calcolo di HX, filtri, glicole, tubi e valvole.
 
 ## 5. Accumulo termico
 
-Energia teorica acqua:
-
 `E[kWh] ≈ 1,163 × V[m³] × ΔT[K]`.
-
-Ordini di grandezza:
 
 - 30 m³: ~349 kWh/10 K; ~698 kWh/20 K; ~1.047 kWh/30 K;
 - 40 m³: ~465 / 930 / 1.395 kWh;
 - 50 m³: ~581 / 1.163 / 1.744 kWh.
 
-Per 30 m³ e ΔT 20 K, 66 kW nominali richiederebbero teoricamente ~10,6 h di carica, ma alle temperature fredde la potenza PDC reale cala e possono esserci carichi simultanei e defrost.
-
-Scenari da RFQ:
+Scenari RFQ:
 
 - T1: 6 × 5 m³ professionali;
 - T2: 3 × 10 m³ custom/industriali;
-- T3: 1 × 30 m³ custom, solo con vantaggio TCO evidente.
+- T3: 1 × 30 m³ custom solo con TCO/affidabilità convincenti.
 
-I normali serbatoi PE per acqua non sono automaticamente equivalenti a puffer professionali.
+## 6. Primario, glicole e HX
 
-## 6. Primario e glicole
+Il glicole va confinato al primario esterno quando possibile. Ogni PDC deve essere isolabile.
 
-Il glicole deve essere confinato al primario esterno quando tecnicamente possibile.
-
-Ogni PDC deve essere isolabile senza fermare le altre.
-
-Portata nominale aggregata dalle PDC:
+Portata nominale aggregata PDC:
 
 - 3 unità: 8,7 m³/h;
 - 4 unità: 11,6 m³/h.
 
-Il dimensionamento reale deve considerare viscosità glicole, HX, filtri, valvole e curve pompe integrate.
-
-## 7. Scambiatore
-
-Confrontare almeno:
+HX da confrontare:
 
 - 1 × ~100 kW;
-- 2 × ~100 kW in parallelo e isolabili;
-- ridondanza parziale con 2 × ~50–60 kW.
+- 2 × ~100 kW isolabili;
+- 2 × ~50–60 kW per ridondanza parziale.
 
-La scelta dipende da temperature, glicole, approach, portate, pressione differenziale, manutenzione e costo del fermo.
+## 7. Distribuzione secondaria
 
-## 8. Installazione PDC
+Accumulo -> collettore -> 6 circuiti indipendenti.
 
-Il manuale della serie KHP-R290 richiede installazione esterna ventilata, base robusta/livellata, drenaggio condensa, assenza ostacoli e lontananza da fonti di ignizione.
+Per comparto:
 
-Clearance minime indicate per la singola unità:
+- isolamento;
+- pompa;
+- eventuale miscelazione;
+- T mandata/ritorno;
+- misura/bilanciamento portata;
+- scarico/sfiato;
+- fallback locale.
 
-- ingresso aria A >500 mm;
-- uscita aria B >1500 mm;
-- lato servizio C >1000 mm;
-- lato D >500 mm.
+Terminali near-crop working 2.700–3.000 m restano da crop card/layout. Preferenza RFQ per tubo specifico greenhouse.
 
-Per 3–4 unità affiancate il layout deve essere confermato dal fornitore per evitare ricircolo aria fredda, interferenze di sbrinamento, accumulo neve/ghiaccio e problemi R290.
+## 8. BOM-012 — boost termico
 
-## 9. Modalità operative
+Working quantity: **0–1 aerotermo per comparto**, con priorità di studio C1/C2/C6.
+
+Candidati Reventon FARMER:
+
+- HCF IP54-EC: ~4.800 m³/h, 430 W, IP54, prezzo retail benchmark €901 IVA 19% incl.;
+- HCF IP66: 5.000 m³/h, 560 W, IP66, benchmark ~€822–943 IVA locale incl.
+
+Dato critico per impianto PDC, HCF IP66:
+
+- 50/40 °C acqua, 20 °C aria: ~13,7 kW;
+- 40/30 °C acqua, 20 °C aria: ~7,0 kW;
+- 50/40 °C acqua, 15 °C aria: ~17,1 kW;
+- 40/30 °C acqua, 15 °C aria: ~10,3 kW.
+
+Quindi il valore commerciale 50,2 kW non viene usato per il nostro dimensionamento a bassa temperatura.
+
+## 9. Deumidificazione
+
+### D1 — heat + vent
+
+Baseline iniziale:
+
+- HAF per uniformità;
+- confronto humidity ratio/dew point interno-esterno;
+- apertura controllata solo quando l'aria esterna è effettivamente più secca in termini assoluti;
+- boost per compensare la perdita sensibile;
+- coordinamento con schermi.
+
+### D2 — ventilazione meccanica con recupero
+
+Upgrade da valutare se il costo energetico della ventilazione invernale è rilevante. Candidato RFQ: AIRGAIA EXT'air o equivalente.
+
+### D3 — condensazione interna dedicata
+
+DryGair benchmark:
+
+- DG-3: 11 l/h @18°C 80% RH, 2,3 kW, ~4.500 m³/h;
+- DG-12: 43 l/h @18°C 80% RH, 9,55 kW, ~20.000 m³/h.
+
+Prezzi: `DA PREVENTIVO`.
+
+Nessuna capacità viene scelta senza bilancio di vapore per comparto.
+
+## 10. Emergenza
+
+Gli aerotermi **non sono una fonte termica alternativa**.
+
+- una PDC guasta: capacità residua + accumulo + priorità comparti;
+- tutte PDC ferme con tank caldo: scarica/localizzazione rapida con boost;
+- blackout: UPS per controllo non equivale a backup di pompe/fan/PDC;
+- blackout lungo/tank scarico: serve fonte di energia alternativa da punto 06/12.
+
+La BOM-012 copre distribuzione e logica d'emergenza; la generazione di backup resta una decisione separata.
+
+## 11. Modalità operative
 
 ### Produzione
 
-Setpoint e priorità coerenti con coltura e fase produttiva.
+Setpoint e priorità per coltura/fase.
 
 ### Economia
 
-Riduzione setpoint, priorità comparti sensibili, carica accumulo nelle finestre energeticamente convenienti.
+Setpoint ridotti, carica accumulo in finestre convenienti, deumidificazione con minimo costo termico/elettrico compatibile con il rischio coltura.
 
 ### Sopravvivenza
 
-Evitare gelo/danno irreversibile a colture e impianti, anche sacrificando temporaneamente la piena produttività.
+Load shedding, priorità comparti, protezione gelo/condensa critica e uso dell'energia residua senza dipendenza cloud.
 
-La cascata deve poter ridurre automaticamente il carico serra quando una PDC è guasta o la capacità disponibile non copre la modalità richiesta.
+## 12. Regole di progetto
 
-## 10. Regole di progetto
+- `22 kW PDC` non significa 22 kW sottozero;
+- `50 kW aerotermo` non significa 50 kW con acqua 40/30;
+- riscaldare non equivale a rimuovere umidità;
+- controllo deumidificazione su humidity ratio/dew point/VPD, non sola UR;
+- near-crop = base heating; aerotermo = boost;
+- D2/D3 solo se TCO/rischio colturale li giustificano;
+- glicole confinato al primario;
+- ogni comparto/PDC deve essere isolabile;
+- controllo vitale locale;
+- misurare energia termica, elettrica e acqua condensata.
 
-- nessuna potenza PDC è sufficiente finché non esiste il calcolo di carico;
-- `22 kW` non viene usato come potenza a -7 °C;
-- nessuna pompa esterna viene scelta prima della curva della pompa integrata;
-- terminali radianti e dorsali hanno funzioni diverse;
-- i tratti emissivi non si coibentano; le dorsali di trasporto sì quando necessario;
-- evitare glicole sull'intero accumulo se può essere confinato al primario;
-- ogni comparto e ogni PDC devono essere isolabili;
-- prevedere ricambi critici e manual override;
-- contabilizzare energia elettrica e termica;
-- misurare stratificazione e kWh termici realmente disponibili;
-- dimensionare espansione e sicurezze con calcolo dedicato;
-- il controllo vitale non dipende da cloud.
+## 13. Package sviluppati
 
-## 11. Package sviluppati
-
-- `THERMAL_LOAD_METHOD.md` — metodo carico termico;
-- `HYDRONIC_DISTRIBUTION.md` — distribuzione secondaria;
-- `RFQ_HYDRONIC_DISTRIBUTION.md` — RFQ distribuzione;
-- `THERMAL_STORAGE_PRIMARY.md` — accumulo/primario/scambiatore;
-- `RFQ_THERMAL_STORAGE_PRIMARY.md` — RFQ BOM-010;
-- `HEAT_PUMP_CASCADE.md` — architettura e dati PDC 3+1;
-- `RFQ_HEAT_PUMPS.md` — RFQ BOM-011;
+- `THERMAL_LOAD_METHOD.md`;
+- `HYDRONIC_DISTRIBUTION.md`;
+- `RFQ_HYDRONIC_DISTRIBUTION.md`;
+- `THERMAL_STORAGE_PRIMARY.md`;
+- `RFQ_THERMAL_STORAGE_PRIMARY.md`;
+- `HEAT_PUMP_CASCADE.md`;
+- `RFQ_HEAT_PUMPS.md`;
+- `BOOST_DEHUMIDIFICATION_EMERGENCY.md`;
+- `RFQ_BOOST_DEHUMIDIFICATION.md`;
+- `POINT_05_CLOSURE_MATRIX.md`;
 - `19_BOM_PRODOTTI_FORNITORI/TERMICO_DISTRIBUZIONE_IDRONICA.md` — BOM-009;
 - `19_BOM_PRODOTTI_FORNITORI/TERMICO_ACCUMULO_PRIMARIO.md` — BOM-010;
 - `19_BOM_PRODOTTI_FORNITORI/TERMICO_PDC_MODULARI.md` — BOM-011;
-- `22_FONTI_NORME_PREVENTIVI/TERMICO_DISTRIBUZIONE_SOURCES.md`;
-- `22_FONTI_NORME_PREVENTIVI/TERMICO_ACCUMULO_PRIMARIO_SOURCES.md`;
-- `22_FONTI_NORME_PREVENTIVI/TERMICO_PDC_SOURCES.md`.
+- `19_BOM_PRODOTTI_FORNITORI/TERMICO_BOOST_DEUMIDIFICAZIONE.md` — BOM-012;
+- fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
-## 12. Gate
+## 14. Gate
 
-Il punto 05 non diventa `VALIDATO` finché non sono disponibili almeno:
+Il punto 05 non è esecutivo finché mancano:
 
-- lotto e dati meteo di progetto;
-- geometria esecutiva della serra;
-- proprietà reali della copertura e degli schermi;
-- ricette climatiche C1–C6;
-- carico termico per comparto e scenari produzione/economia/sopravvivenza;
-- prestazioni PDC a -7/-10/-15 °C e alle temperature acqua reali;
-- capacità netta con defrost;
-- chiarimento revisione/dati Kensol discordanti;
-- protocollo/cascata e garanzia Italia;
-- P&ID e perdite di carico;
-- scelta terminale near-crop;
-- volume/architettura accumulo;
-- dimensionamento scambiatore, glicole, espansione e sicurezza;
-- preventivi confrontabili;
-- strategia elettrica/FV/backup coerente.
+- lotto/meteo;
+- carico termico C1–C6;
+- climate recipes/VPD;
+- PDC sottozero e defrost netto;
+- P&ID/perdite;
+- terminale near-crop finale;
+- volume tank/HX/glicole/espansione;
+- quantità boost;
+- bilancio umidità e scelta D1/D2/D3;
+- backup energetico lungo termine;
+- preventivi comparabili.
+
+Dettaglio: `POINT_05_CLOSURE_MATRIX.md`.
