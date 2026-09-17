@@ -1,7 +1,7 @@
 # Carnia TerraTech — Project Index
 
 **Ruolo:** indice operativo e mappa di copertura del progetto.  
-**Aggiornato:** 17 settembre 2026.
+**Aggiornato:** 18 settembre 2026.
 
 ## 1. Scopo
 
@@ -149,7 +149,7 @@ Gate: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior,
 
 ## 11. Stato punto 10 — Benessere, fattoria e servizi
 
-**BOM-023 PULIZIA GALLINE FREE-RANGE SVILUPPATA / TESTATA PRATO R&D / LAYOUT E PILOT BLOCCANTI.**
+**BOM-023 PULIZIA GALLINE FREE-RANGE + BOM-026 PERGOLATO/VITE/AREA RELAX SVILUPPATE / LAYOUT, SITO, PILOT/RFQ BLOCCANTI.**
 
 Vincolo consolidato: galline libere nel dominio dedicato composto da ricovero, portico, parcheggi/superfici dure e prato.
 
@@ -173,6 +173,42 @@ Documenti:
 - 22_FONTI_NORME_PREVENTIVI/BENESSERE_GALLINE_PULIZIA_SOURCES.md.
 
 Correzione BOM-022: il prato condiviso con le galline è lockout dinamico, non no-go permanente; rasaerba solo con hens-clear/gate chiuso.
+
+
+### BOM-026 — pergolato, vite e area relax
+
+Architettura:
+- pergolato aperto; legno lamellare candidato working, acciaio zincato alternativa;
+- sezioni, controventi, fondazioni e ancoraggi `DA CALCOLO`;
+- neve/vento da sito reale e NTC; nessun carico catalogo assunto come progetto;
+- telo ombreggiante removibile opzionale, non caricato da neve salvo verifica esplicita;
+- vite/rampicanti su griglia indipendente e manutenibile;
+- varietà vite da microclima/uso frutto; barbatelle resistenti solo benchmark di acquisto;
+- zona irrigua dedicata, svuotabile in inverno;
+- superficie permeabile + drenaggio;
+- arredi modulari;
+- illuminazione/prese/rete outdoor con manual override;
+- manutenzione strutturale, agronomica, drenaggi, irrigazione ed elettrico.
+
+Benchmark unitari già tracciati:
+- GL24h retail €39,90–118,50/cad secondo formato osservato;
+- calcestruzzo fondazioni FVG 2026 €237,52/m³ nella voce consultata, escluso plinto completo;
+- vite resistente da tavola €5,95/cad;
+- kit goccia 100 m² €54,90;
+- griglia permeabile €17,71/m²;
+- tavolo outdoor ~8 posti €310;
+- LED IP65 10 W €62,66 IVA incl.;
+- FG16OR16 3×2,5 €3,10/m;
+- cavidotto Ø40 FVG 2026 €1,83/m;
+- Ubiquiti U7 Outdoor €185 + Ethernet surge protector €12.
+
+Regola: nessun CAPEX totale prima di layout, carichi, geotecnica e RFQ; distinta a quantità `DA LAYOUT / DA CALCOLO` con costo pezzo per pezzo.
+
+Documenti:
+- `10_BENESSERE_FATTORIA_E_SERVIZI/PERGOLATO_VITE_AREA_RELAX_ARCHITECTURE.md`;
+- `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_PERGOLATO_VITE_AREA_RELAX.md`;
+- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_PERGOLATO_VITE_AREA_RELAX.md`;
+- `22_FONTI_NORME_PREVENTIVI/BENESSERE_PERGOLATO_VITE_AREA_RELAX_SOURCES.md`.
 
 ## 12. R&D trasversale — laser, vision e manutenzione robotica
 
@@ -245,7 +281,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 16. Stato attuale dei grandi blocchi
 
-Restano nel perimetro fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
+Restano nel perimetro fattoria didattica, spaccio 24/7, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
 ## 17. Sequenza BOM
 
@@ -268,17 +304,17 @@ Restano nel perimetro fattoria didattica, spaccio 24/7, pergolati/vite/verde/rel
 - BOM-022 robot tagliaerba;
 - BOM-023 pulizia galline free-range;
 - BOM-024 celle frigorifere;
-- **BOM-025 raccolta e packaging**.
+- BOM-025 raccolta e packaging;
+- **BOM-026 pergolato, vite e area relax**.
 
 ### Prossimo package
 
-**BOM-026 — pergolato, vite e area relax:** struttura, fondazioni, neve/vento, ombreggiamento, vite/rampicanti, arredi, illuminazione, prese/rete, irrigazione, drenaggio, manutenzione, sicurezza e costo.
+**BOM-027 — fattoria didattica:** percorsi visitatori, separazioni e recinzioni, punti di osservazione, area gruppi, servizi/lavaggio mani, accessibilità, parcheggio/punto raccolta, cartellonistica e didattica digitale, emergenze, manutenzione e costo.
 
 ### Coda successiva
 
-1. pergolato/vite/area relax;
-2. fattoria didattica;
-3. spaccio automatico 24/7;
-4. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. fattoria didattica;
+2. spaccio automatico 24/7;
+3. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
