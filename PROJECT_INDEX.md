@@ -77,53 +77,78 @@ Il punto 03 è sufficientemente coperto per proseguire, ma non è progetto esecu
 
 ## 7. Stato punto 05 — Termico e clima
 
-**Stato: ARCHITETTURA DI BASE DEFINITA / BOM-009 DISTRIBUZIONE SVILUPPATA / CARICHI E GENERAZIONE DA VALIDARE.**
+**Stato: ARCHITETTURA DI BASE DEFINITA / BOM-009 E BOM-010 SVILUPPATE / CARICHI E PDC A FREDDO DA VALIDARE.**
 
-Nuovi documenti:
+Documenti principali:
 
 - `05_TERMICO_E_CLIMA/README.md`;
 - `05_TERMICO_E_CLIMA/THERMAL_LOAD_METHOD.md`;
 - `05_TERMICO_E_CLIMA/HYDRONIC_DISTRIBUTION.md`;
 - `05_TERMICO_E_CLIMA/RFQ_HYDRONIC_DISTRIBUTION.md`;
+- `05_TERMICO_E_CLIMA/THERMAL_STORAGE_PRIMARY.md`;
+- `05_TERMICO_E_CLIMA/RFQ_THERMAL_STORAGE_PRIMARY.md`;
 - `19_BOM_PRODOTTI_FORNITORI/TERMICO_DISTRIBUZIONE_IDRONICA.md`;
-- `22_FONTI_NORME_PREVENTIVI/TERMICO_DISTRIBUZIONE_SOURCES.md`.
+- `19_BOM_PRODOTTI_FORNITORI/TERMICO_ACCUMULO_PRIMARIO.md`;
+- `22_FONTI_NORME_PREVENTIVI/TERMICO_DISTRIBUZIONE_SOURCES.md`;
+- `22_FONTI_NORME_PREVENTIVI/TERMICO_ACCUMULO_PRIMARIO_SOURCES.md`.
 
 ### BOM-009 — distribuzione idronica
 
 Architettura: accumulo -> collettore secondario -> 6 circuiti indipendenti -> terminali near-crop.
 
-Per zona sono previsti come requisiti:
-
-- isolamento manuale;
-- pompa modulante;
-- miscelazione motorizzata dove richiesta;
-- T mandata/ritorno;
-- misura/bilanciamento portata;
-- scarico/sfiato/manutenzione;
-- comando e fallback locale.
+Per zona: isolamento, pompa modulante, eventuale miscelazione, T mandata/ritorno, misura/bilanciamento portata, scarico/sfiato e fallback locale.
 
 Candidati/benchmark registrati:
 
-- Elydan TUBSER Ø25 e Palaplast GEOPAL Ø25/28 come tubi specifici greenhouse, `DA PREVENTIVO`;
+- Elydan TUBSER Ø25 e Palaplast GEOPAL Ø25/28 come tubi greenhouse, `DA PREVENTIVO`;
 - IVAR FF-Therm PE-Xa Ø25×2,3 EVOH: €5,81/m listino, ~€4,23/m benchmark retail UE, idoneità alla posa esposta da confermare;
-- Grundfos ALPHA2 25-60 da €249 IVA incl. e MAGNA1 25-60 €426,63 IVA incl. come classi di pompa da verificare sulla curva reale;
-- ESBE VRG131 DN25 ~€64,15 + ARA661 ~€148,35 IVA incl. come benchmark miscelazione;
-- Caleffi 132602 1", 10–40 l/min ~€102,28 IVA incl. come benchmark bilanciamento/lettura portata.
+- Grundfos ALPHA2 25-60 da €249 IVA incl. e MAGNA1 25-60 €426,63 IVA incl. come classi da verificare sulla curva reale;
+- ESBE VRG131 DN25 ~€64,15 + ARA661 ~€148,35 IVA incl.;
+- Caleffi 132602 1", 10–40 l/min ~€102,28 IVA incl.
 
-Il working storico 2.700–3.000 m di terminali non è una quantità d'ordine. Con il solo PE-Xa benchmark equivale a circa €11.421–17.430 di solo tubo, a seconda del prezzo utilizzato.
+Il working 2.700–3.000 m di terminali non è quantità d'ordine. Con il solo PE-Xa benchmark equivale a circa €11.421–17.430 di solo tubo.
 
-Pompe e diametri saranno dimensionati da potenza, ΔT e perdite di carico; la relazione operativa registrata è `Q[m³/h] ≈ P[kW]/(1,163×ΔT[K])`.
+### BOM-010 — accumulo + primario + scambiatore
+
+Working architecture:
+
+`3×22 kW PDC -> primario corto protetto -> HX -> 30 m³ acqua tecnica -> BOM-009`, con predisposizione quarta PDC e 40–50 m³.
+
+Energia teorica acqua:
+
+- 30 m³: ~349 kWh/10 K; ~698 kWh/20 K; ~1.047 kWh/30 K;
+- 40 m³: ~465 / 930 / 1.395 kWh;
+- 50 m³: ~581 / 1.163 / 1.744 kWh.
+
+Scenari serbatoi da RFQ:
+
+- T1 6×5 m³ professionali;
+- T2 3×10 m³ custom/industriali;
+- T3 1×30 m³ custom, solo se TCO/affidabilità giustificano il single point of failure.
+
+Candidato professionale pubblico: Cordivari PUFFER COMPACT 5000, ~5.042 l, Pmax 3 bar, Tmax 99 °C, prezzo da preventivo.
+
+Benchmark da non confondere con puffer: serbatoi PE acqua ALTA 10/15/20 m³ a €1.840/2.940/4.740 + IVA in promo settembre 2026; non sono automaticamente idonei a pressione, temperatura, isolamento e stratificazione termica.
+
+Scambiatori benchmark Sunerg listino 2025/2: 60 kW saldobrasato €932; 100 kW €1.252; 100 kW inox a piastre €3.013. Quotare 1×100 kW e 2×100 kW isolabili, oltre a eventuale ridondanza parziale.
+
+Glicole propilenico confinato al primario: benchmark 25 kg ~€122–185. Il vaso espansione viene calcolato; Caleffi 556500 500 l (~€1.165,20) è solo un riferimento di classe, non una taglia scelta.
+
+Open point critico: verificare circolatore integrato e prevalenza residua della Kensol KHP-R290-22-3 prima di aggiungere pompe primarie esterne.
 
 ### Dipendenze punto 05
 
 Servono ancora:
 
-- carico termico per C1–C6 e scenari produzione/economia/sopravvivenza;
-- temperature di progetto acqua;
-- perdite di carico e P&ID;
+- carico termico C1–C6 e scenari produzione/economia/sopravvivenza;
+- temperature acqua;
+- prestazioni PDC a freddo e alle temperature di mandata reali;
+- perdite di carico/P&ID;
 - materiale near-crop definitivo;
-- accumulo termico e primario/scambiatore;
-- verifica PDC alle condizioni fredde reali;
+- volume accumulo 30/40/50 m³ e architettura T1/T2/T3;
+- numero/taglia HX;
+- concentrazione glicole;
+- espansione/sicurezze;
 - boost/deumidificazione/emergenza;
 - preventivi professionali.
 
@@ -156,33 +181,33 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono nel perimetro rob
 ### Già strutturate
 
 - Serra BOM-001…008;
-- **BOM-009 distribuzione termica idronica**.
+- BOM-009 distribuzione termica idronica;
+- **BOM-010 accumulo termico + primario/scambiatore**.
 
 ### Prossimo package
 
-**BOM-010 — accumulo termico + primario PDC + scambiatore:** serbatoi 30 m³ con espansione 40–50 m³, stratificazione, scambiatore a piastre, pompe primarie, glicole confinato, valvole, sicurezza, isolamento, sensori, manutenzione e costi.
+**PDC modulari 3+1 e prestazioni a freddo:** curva capacità/COP a temperature esterne reali, W35/W45, portata minima, circolatore integrato, sbrinamento, potenza elettrica, acustica, distanze/installazione, garanzia e ridondanza.
 
 ### Coda successiva
 
-1. BOM-010 accumulo termico + primario/scambiatore;
-2. PDC modulari 3+1 e prestazioni a freddo;
-3. boost/deumidificazione/emergenza;
-4. gocciolatori e linee irrigue;
-5. filtrazione acqua;
-6. pompe principali irrigazione;
-7. pompe dosatrici;
-8. serbatoi fertilizzanti;
-9. accumulo acqua 300 m³;
-10. moduli FV e inverter;
-11. AMR;
-12. sollevatore/mezzo multifunzione;
-13. robot tagliaerba;
-14. sistema pulizia area galline;
-15. celle frigorifere;
-16. attrezzatura raccolta e packaging;
-17. pergolato/vite/area relax;
-18. fattoria didattica;
-19. spaccio automatico 24/7;
-20. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. PDC modulari 3+1 e prestazioni a freddo;
+2. boost/deumidificazione/emergenza;
+3. gocciolatori e linee irrigue;
+4. filtrazione acqua;
+5. pompe principali irrigazione;
+6. pompe dosatrici;
+7. serbatoi fertilizzanti;
+8. accumulo acqua 300 m³;
+9. moduli FV e inverter;
+10. AMR;
+11. sollevatore/mezzo multifunzione;
+12. robot tagliaerba;
+13. sistema pulizia area galline;
+14. celle frigorifere;
+15. attrezzatura raccolta e packaging;
+16. pergolato/vite/area relax;
+17. fattoria didattica;
+18. spaccio automatico 24/7;
+19. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
