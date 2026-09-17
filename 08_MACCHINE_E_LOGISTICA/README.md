@@ -1,181 +1,110 @@
 # Carnia TerraTech — Punto 08: Macchine e logistica
 
 **Aggiornato:** 17 settembre 2026  
-**Stato:** `ARCHITETTURA AMR IN SVILUPPO / BOM-020 SVILUPPATA / DEMO SITO, SAFETY E ASSISTENZA UE BLOCCANTI`.
+**Stato:** `BOM-020 AMR + BOM-021 SOLLEVAMENTO + BOM-022 TAGLIAERBA SVILUPPATE / PILOT, MASTERPLAN E RFQ BLOCCANTI`.
 
 ## 1. Obiettivo
 
-Automatizzare il trasporto ripetitivo dentro e fra serra e Tech Barn senza creare un nuovo collo di bottiglia, mantenendo sicurezza con persone, funzionamento locale e possibilità di usare la stessa piattaforma per scouting, imaging e inventario.
+Automatizzare trasporto, movimentazione e manutenzione ripetitiva senza creare nuovi colli di bottiglia o dipendenze cloud critiche. Ogni macchina deve avere un ruolo distinto, fallback manuale e integrazione coerente con corridoi, persone, acqua, animali e aree visitatori.
 
-Il primo AMR non sostituisce il mezzo multifunzione con forche/piattaforma e non trasporta persone.
+## 2. Architettura macchine
 
-## 2. Missioni iniziali
+- **AMR BOM-020:** trasporto/scouting/inventario/docking in serra e Tech Barn;
+- **L1 BOM-021:** telescopico elettrico compatto per carichi pesanti, piazzale, corridoio tecnico e lavoro in quota con piattaforma OEM;
+- **L2 BOM-021:** stoccatore elettrico stretto per pallet ordinari nel Tech Barn;
+- **BOM-022:** robot tagliaerba per prato/verde non produttivo;
+- nessuna macchina deve essere usata fuori dal proprio envelope di sicurezza solo per ridurre il numero di mezzi.
 
-- trasporto cassette e materiali fra comparti, corridoio tecnico e Tech Barn;
-- traino carrelli standardizzati se economicamente migliore del carico diretto;
-- ritorno automatico vuoti;
-- scouting visivo programmato;
-- raccolta dati e inventario;
-- missioni notturne a bassa velocità;
-- docking/ricarica automatica;
-- futura piattaforma per sensori o piccoli attrezzi, solo dopo analisi rischio dedicata.
+## 3. BOM-020 — AMR serra
 
-## 3. Vincoli fisici working
+Missioni: trasporto, traino, ritorno vuoti, scouting/imaging, inventario e docking.
 
-- larghezza robot preferita <= 0,75 m; envelope completo con carico da verificare;
-- corsie serra working >= 1,20 m;
-- aree di inversione/turning working ~2–2,5 m;
-- superfici, pendenze, soglie e drenaggi da masterplan reale;
-- niente affidamento su pavimento perfettamente asciutto come requisito implicito;
-- docking fuori dalle zone di lavaggio e spruzzo diretto.
+Working site: robot <=0,75 m preferito, corsie >=1,20 m, turning ~2–2,5 m, ambiente umido/condensa reale.
 
-## 4. Candidati
+Candidati:
 
-### Burro Verde — candidato funzionale prioritario da demo/RFQ
+- **Burro Verde** prioritario da pilot: 68,5 cm, payload 227 kg, towing 908 kg, IP65, prezzo UE/Italia da preventivo;
+- **MiR250** benchmark industriale ma non baseline serra finché resta indoor-only/IP21/non-condensing;
+- **AgileX Bunker** per R&D/scouting, non AMR collaborativo baseline;
+- scouting vendor-independent OAK-D + Jetson opzionale.
 
-Progettato esplicitamente per serre e trasporto indoor/outdoor:
+Gate: demo realistica, CE/DoC, IP/condensa, offline/API, dock, canoni/TCO, ricambi Italia e acceptance >=100 missioni.
 
-- larghezza 68,5 cm;
-- payload 227 kg;
-- traino fino a 908 kg su piano duro;
-- LiDAR 360°, 12 camere, RTK, elaborazione onboard;
-- navigazione anche GPS-denied;
-- IP65 dichiarato;
-- batterie LFP 2,56 kWh;
-- autonomia dichiarata fino a 10 miglia, dipendente da carico/velocità;
-- BOSS PRO con funzioni flotta/missioni.
+Documenti: `AMR_ARCHITECTURE.md`, `RFQ_AMR.md`, BOM-020 e fonti dedicate.
 
-**Prezzo:** `PREZZO DA PREVENTIVO`. Benchmark terzo 2026: classe commerciale < US$50k, con canone BOSS annuale; non convertirlo in CAPEX Italia senza offerta europea completa.
+## 4. BOM-021 — sollevatore / mezzo multifunzione
 
-Criticità: ingresso mercato europeo annunciato per 2026; verificare CE/DoC applicabile, distributore/assistenza Italia, ricambi, SLA, docking e condizioni del canone.
+Architettura a due livelli.
 
-### MiR250 — benchmark industriale safety/API, non baseline serra umida
+### L1 telescopico elettrico
 
-- 250 kg payload;
-- 580 × 800 × 300 mm;
-- fino a 2 m/s;
-- passaggi dichiarati fino a 800 mm;
-- autonomia max payload fino a ~13 h;
-- safety laser scanner e funzioni di sicurezza;
-- progettato rispetto a ISO 3691-4 e norme correlate;
-- API REST e MiR Fleet.
+Candidato prioritario **Merlo EW25.5-90**:
 
-**Problema bloccante:** la specifica ufficiale corrente dichiara uso indoor, 5–40 °C, umidità non condensante, **IP21** e pavimento senza acqua/olio/sporco. Quindi non va acquistato per la serra senza validazione ambientale scritta del costruttore.
+- 2.500 kg;
+- ~4,8–5 m;
+- ~1,54 m larghezza, ~1,98 m altezza;
+- 4WD versione 90;
+- piattaforma persone OEM disponibile;
+- benchmark demo/usato: ~€69.000 + IVA con forche, ~€75.000 + IVA con forche+navicella/radiocomando;
+- nuovo 2026 `DA PREVENTIVO`.
 
-Prezzi benchmark:
+Alternative: Manitou MLT 625 e e JCB 525-60E.
 
-- base: €44.284 + IVA in un listino UE;
-- integrazione Italia da €53.141 + IVA;
-- MiR Charge 48 V: €6.075 + IVA benchmark;
-- Shelf Carrier integrato da €63.614 + IVA;
-- Hook integrato da €78.514 + IVA.
+Nessun telescopico entra nelle corsie coltura ~1,20 m: uso su corridoio tecnico ~4 m, Tech Barn se compatibile e piazzale.
 
-### AgileX Bunker Mini / Pro — R&D, non AMR collaborativo baseline
+### L2 stoccatore
 
-Bunker Mini 2.0:
+EP EST122 benchmark: 1.200 kg, 792 mm, ~3 m, raggio ~1,46 m, da ~€2.900. Serve a evitare di usare il telescopico per ogni pallet ordinario.
 
-- ~570–584 mm larghezza secondo revisione/scheda;
-- 25 kg payload;
-- IP67;
-- CAN, SDK/open software;
-- base osservata €9.350 IVA tedesca inclusa;
-- kit ROS2 pronto allo sviluppo ~€20.500 + IVA.
+Safety: piattaforma persone solo OEM e abbinamento autorizzato; niente retrofit DIY.
 
-Bunker Pro: fino a 120 kg, IP67, CAN/ROS/open SDK, ma resta una piattaforma di sviluppo. Senza safety system e conformità completa dell'integrazione non deve circolare autonomamente fra lavoratori come macchina di produzione.
+Documenti: `LIFTING_MULTIFUNCTION_ARCHITECTURE.md`, `RFQ_LIFTING_MULTIFUNCTION.md`, BOM-021 e fonti dedicate.
 
-## 5. Architettura scelta per il pilot
+## 5. BOM-022 — robot tagliaerba
 
-Non esiste ancora un ordine. La sequenza decisionale è:
+La macchina si dimensiona sulla **superficie netta di prato robotizzabile**, non sul lotto né sull'area agricola outdoor.
 
-1. demo Burro Verde su geometria/umidità realistica;
-2. offerta Europa/Italia completa, inclusi conformità, canone, supporto e docking;
-3. MiR250 come benchmark industriale di safety, API e TCO, ma solo se l'ambiente operativo può essere separato/asciutto o se il costruttore approva l'applicazione;
-4. AgileX soltanto per R&D/scouting in area controllata finché non viene progettata e validata una safety architecture completa.
+Classi working:
 
-## 6. Integrazione
+- <=1.500 m²: Kress KR171E, €1.699 IVA incl.;
+- 1.500–5.000 m² regolare: **Kress KR174E**, €2.999 IVA incl., candidato economico working;
+- <=5.000 m² difficile/pendente: Mammotion LUBA 2 AWD 5000X, €2.499 promo / €2.999 listino, oppure Kress 4×4 KR285E €4.499;
+- >5.000 fino a ~12.000 m²/professionale: Husqvarna 560 EPOS €6.994 + RS5 €1.019 = €8.013 IVA incl. hardware base.
 
-Il robot deve ricevere missioni dal livello edge/supervisione locale con API documentata. Il PLC non delega al robot le proprie funzioni di sicurezza di processo.
+Guardrail:
 
-Stati minimi:
+- niente taglio notturno;
+- area didattica/relax occupata = stop/no-go;
+- pollaio/free-range = no-go;
+- buffer da vasche, fossi, strade e drop-off;
+- obstacle detection non sostituisce segregazione;
+- perdita cloud/RTK deve produrre stop/park sicuro.
 
-`available / mission / charging / blocked / safety-stop / fault / manual / low-battery`.
+Documenti: `LAWN_MOWER_ARCHITECTURE.md`, `RFQ_LAWN_MOWER.md`, BOM-022 e fonti dedicate.
 
-Eventi minimi:
+## 6. Principio di integrazione
 
-- richiesta trasporto;
-- mission accepted/started/completed/failed;
-- posizione/zona;
-- batteria;
-- obstacle/blockage;
-- E-stop/safety event;
-- docking/charging;
-- manutenzione richiesta.
+AMR e processi vitali richiedono controllo locale robusto. Il robot tagliaerba è non vitale: API/cloud sono utili ma non giustificano integrazioni complesse se il comportamento offline è sicuro.
 
-Cloud opzionale: perdita Internet non deve impedire il trasporto locale essenziale.
+Le porte, le aree di transito e le finestre operative devono essere progettate nel masterplan, non compensate a posteriori con software.
 
-## 7. Scouting
+## 7. Failure/fallback trasversale
 
-Non assumere che le camere native del robot diano accesso ai dati grezzi necessari al nostro AI stack.
+- AMR guasto -> carrelli/manuale;
+- telescopico guasto -> noleggio/servizio esterno + stoccatore per logistica leggera;
+- stoccatore guasto -> transpallet/manuale;
+- tagliaerba guasto -> rasaerba/decespugliatore di backup;
+- nessuna macchina singola deve fermare raccolta, irrigazione o sicurezza della serra.
 
-Optional payload indipendente:
+## 8. Gate punto 08
 
-- OAK-D Pro PoE / W PoE, enclosure IP65 nella famiglia S2 PoE;
-- camera RGB + stereo/depth + IR/IMU;
-- benchmark ~€671–769 IVA inclusa a seconda della variante/retailer;
-- Jetson Orin Nano Super come edge payload economico: benchmark ~€382,40, regime IVA da verificare;
-- mast, illuminazione, enclosure, cablaggio e storage da progetto.
-
-Questa separazione preserva proprietà dei dati e possibilità di cambiare AMR in futuro.
-
-## 8. Safety
-
-Riferimento AMR/driverless industrial trucks: ISO 3691-4:2023; una nuova edizione è già in sviluppo nel 2026. Per una macchina acquistata/immessa sul mercato dopo il 20 gennaio 2027 verificare anche il Regolamento (UE) 2023/1230.
-
-Prima del servizio:
-
-- risk assessment dell'intero sistema robot + top module/carrello + ambiente;
-- velocità per zona;
-- attraversamenti pedonali;
-- porte automatiche e compartimenti;
-- visibilità negli incroci;
-- comportamento con foglie/cassette/tubi a terra;
-- stop distance al massimo carico;
-- stabilità del carico;
-- E-stop accessibili;
-- recupero manuale sicuro;
-- test perdita Wi-Fi/Internet/RTK;
-- test condensa, acqua, fango e illuminazione reale.
-
-## 9. Failure mode e fallback
-
-Failure modes: navigazione persa, ostacolo persistente, batteria, sensore safety, ruota/motore, rete, docking, top module, software, mappa non aggiornata, acqua/condensa, carico instabile.
-
-Fallback:
-
-- corsie sempre utilizzabili con carrelli manuali;
-- robot trainabile/spostabile in sicurezza secondo OEM;
-- missioni ridotte alle aree sane;
-- batterie/ricambi critici o SLA;
-- nessun raccolto deve diventare irraggiungibile per guasto AMR.
-
-## 10. Package sviluppati
-
-- `AMR_ARCHITECTURE.md`;
-- `RFQ_AMR.md`;
-- `19_BOM_PRODOTTI_FORNITORI/MACCHINE_AMR_SERRA.md` — BOM-020;
-- `22_FONTI_NORME_PREVENTIVI/MACCHINE_AMR_SOURCES.md`.
-
-## 11. Gate BOM-020
-
-1. layout reale e prove ingombro;
-2. massa/volume dei carichi e carrelli;
-3. pavimenti, pendenze, soglie, acqua/condensa;
-4. demo con persone e ostacoli reali;
-5. CE/DoC e standard applicati alla configurazione completa;
-6. assistenza/ricambi Italia;
-7. API e funzionamento offline;
-8. docking e infrastruttura;
-9. canoni software e TCO 5–8 anni;
-10. top module/carrelli;
-11. risk assessment e commissioning;
-12. KPI pilot e decisione go/no-go.
+1. masterplan definitivo e larghezze/passaggi;
+2. carichi reali e flussi logistici;
+3. pavimenti/pendenze/acqua;
+4. pilot AMR;
+5. demo telescopico con carichi/accessori;
+6. superficie prato e pilot mower;
+7. CE/DoC e safety delle configurazioni;
+8. assistenza/ricambi FVG/Italia;
+9. TCO 5–8 anni;
+10. commissioning e formazione.

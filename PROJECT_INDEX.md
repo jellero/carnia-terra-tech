@@ -17,7 +17,7 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 - `05_TERMICO_E_CLIMA/` — carico termico, PDC, accumulo, distribuzione, boost, deumidificazione, emergenza;
 - `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, UPS, generatore, EMS;
 - `07_AUTOMAZIONE_DATI_AI/` — PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&D robotica/laser;
-- `08_MACCHINE_E_LOGISTICA/` — AMR, sollevatore, piattaforme, raccolta, carrelli;
+- `08_MACCHINE_E_LOGISTICA/` — AMR, sollevatore, piattaforme, raccolta, carrelli e robot verde;
 - `09_TECH_BARN_E_POST_RACCOLTA/` — celle, confezionamento, officina, magazzini e centro trasformazione conto terzi;
 - `10_BENESSERE_FATTORIA_E_SERVIZI/` — pergolato, verde, fattoria didattica, robot di servizio, spaccio 24/7;
 - `11_VERMICOMPOST_E_CICLI_MATERIA/`;
@@ -84,7 +84,7 @@ Documenti: `06_ENERGIA_ELETTRICA_FV/README.md`, `PV_ARCHITECTURE.md`, `RFQ_PV_IN
 
 ### BOM-019 — FV e inverter
 
-Working candidate: Trina Vertex S+ TSM-470NEG9R.28.
+Working candidate Trina Vertex S+ TSM-470NEG9R.28:
 
 - 256×470 W = **120,32 kWp**;
 - ~511,5 m² di sola superficie moduli;
@@ -98,21 +98,13 @@ Working candidate: Trina Vertex S+ TSM-470NEG9R.28.
 
 ## 10. Stato punto 08 — Macchine e logistica
 
-**ARCHITETTURA IN SVILUPPO / BOM-020 AMR + BOM-021 SOLLEVAMENTO SVILUPPATE / PILOT E RFQ BLOCCANTI.**
+**ARCHITETTURA IN SVILUPPO / BOM-020 AMR + BOM-021 SOLLEVAMENTO + BOM-022 TAGLIAERBA SVILUPPATE / MASTERPLAN, PILOT E RFQ BLOCCANTI.**
 
-Documenti:
-
-- `08_MACCHINE_E_LOGISTICA/README.md`;
-- `AMR_ARCHITECTURE.md` + `RFQ_AMR.md`;
-- `LIFTING_MULTIFUNCTION_ARCHITECTURE.md` + `RFQ_LIFTING_MULTIFUNCTION.md`;
-- BOM-020 e BOM-021 in `19_BOM_PRODOTTI_FORNITORI/`;
-- fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
+Documenti: `08_MACCHINE_E_LOGISTICA/README.md` più package dedicati AMR, lifting e lawn mower; BOM-020…022 in `19_BOM_PRODOTTI_FORNITORI/`; fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
 ### BOM-020 — AMR serra
 
 Missioni: trasporto, traino, ritorno vuoti, scouting/imaging, inventario e docking.
-
-Working site: robot <=0,75 m preferito, corsie >=1,20 m, turning ~2–2,5 m, ambiente umido/condensa reale.
 
 - Burro Verde prioritario da pilot: 68,5 cm, payload 227 kg, towing 908 kg, IP65, prezzo UE/Italia da preventivo;
 - MiR250 benchmark industriale ma non baseline serra finché resta indoor-only/IP21/non-condensing;
@@ -125,28 +117,35 @@ Gate: demo realistica, CE/DoC, IP/condensa, offline/API, dock, canoni/TCO, ricam
 
 Architettura a due livelli:
 
-**L1 telescopico elettrico** — candidato prioritario **Merlo EW25.5-90**:
+- L1 telescopico elettrico: **Merlo EW25.5-90** candidato prioritario; 2.500 kg, ~4,8–5 m, ~1,54 m larghezza; benchmark demo ~€69k + IVA con forche / ~€75k + IVA con navicella e radiocomando; nuovo `DA PREVENTIVO`;
+- alternative Manitou MLT 625 e e JCB 525-60E;
+- L2 stoccatore: EP EST122 benchmark 1.200 kg, 792 mm, ~3 m, da ~€2.900.
 
-- 2.500 kg;
-- ~4,8–5 m;
-- ~1,54 m larghezza e ~1,98 m altezza;
-- 4WD versione 90;
-- piattaforma persone OEM disponibile nella gamma;
-- benchmark demo/usato: ~€69.000 + IVA con forche e ~€75.000 + IVA con forche+navicella/radiocomando; nuovo 2026 `DA PREVENTIVO`.
+Nessun telescopico entra nelle corsie coltura ~1,20 m. Piattaforma persone solo OEM e abbinamento autorizzato.
 
-Alternative:
+### BOM-022 — robot tagliaerba
 
-- Manitou MLT 625 e: 2,5 t / 5,9 m / 1,81 m / 34,8 kWh;
-- JCB 525-60E: 2,5 t / 6 m / 1,84 m / 24 kWh.
+La taglia dipende dalla **superficie netta di prato robotizzabile**, da derivare dal masterplan.
 
-Nessuno dei tre telescopici entra nelle corsie coltura da ~1,20 m; uso previsto su corridoio tecnico ~4 m, Tech Barn se compatibile e piazzale.
+Scenari:
 
-**L2 stoccatore elettrico compatto** per Tech Barn e pallet ordinari:
+- <=1.500 m²: Kress KR171E, €1.699 IVA incl.;
+- 1.500–5.000 m² regolare: **Kress KR174E**, €2.999 IVA incl., candidato working;
+- <=5.000 m² difficile/pendente: Mammotion LUBA 2 AWD 5000X €2.499 promo / €2.999 listino, oppure Kress 4×4 KR285E €4.499;
+- >5.000 fino a ~12.000 m²/professionale: Husqvarna 560 EPOS €6.994 + RS5 €1.019 = **€8.013 IVA incl.** hardware base.
 
-- EP EST122 benchmark: 1.200 kg, 792 mm, ~3 m, raggio ~1,46 m, prezzo da ~€2.900;
-- alternative 1,2 t/3 m ~€1.899–1.900 + IVA; classe professionale Li-ion più costosa.
+Guardrail:
 
-Safety: piattaforma persone solo OEM e abbinamento autorizzato dal costruttore; niente retrofit DIY. Formazione e verifiche secondo regime vigente, incluso modulo per persone/carichi sospesi se utilizzato.
+- no mowing at night;
+- area didattica/relax occupata = stop/no-go;
+- pollaio/free-range = no-go;
+- buffer da vasche, fossi, viabilità e drop-off;
+- obstacle detection non sostituisce segregazione;
+- perdita cloud/RTK -> safe stop/park.
+
+Ricambi benchmark: Kress KA0002 6 lame €22,90; Husqvarna Endurance HSS 6 pz €31; Mammotion lame €55.
+
+Gate: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior, assistenza/ricambi, TCO 5–8 anni e commissioning zone/no-go.
 
 ## 11. R&D trasversale — laser, vision e manutenzione robotica
 
@@ -162,7 +161,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 14. Stato attuale dei grandi blocchi
 
-Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
+Restano nel perimetro automazione galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
 ## 15. Sequenza BOM
 
@@ -181,21 +180,21 @@ Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica,
 - BOM-018 accumulo acqua 300 m³;
 - BOM-019 FV e inverter;
 - BOM-020 AMR serra;
-- **BOM-021 sollevatore / mezzo multifunzione**.
+- BOM-021 sollevatore / mezzo multifunzione;
+- **BOM-022 robot tagliaerba**.
 
 ### Prossimo package
 
-**BOM-022 — robot tagliaerba:** area utile, pendenze, bordo acqua/serra, RTK/GNSS vs beacon, docking, sicurezza persone/animali, lama, autonomia, gestione zone, integrazione locale, ricambi e costo.
+**BOM-023 — sistema pulizia area galline:** layout pollaio/posatoi, raccolta deiezioni, raschiamento/nastro/robot, lettiera, lavaggio, ventilazione, odori, biosicurezza, sensori, safety animale, manutenzione e costo.
 
 ### Coda successiva
 
-1. robot tagliaerba;
-2. sistema pulizia area galline;
-3. celle frigorifere;
-4. attrezzatura raccolta e packaging;
-5. pergolato/vite/area relax;
-6. fattoria didattica;
-7. spaccio automatico 24/7;
-8. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. sistema pulizia area galline;
+2. celle frigorifere;
+3. attrezzatura raccolta e packaging;
+4. pergolato/vite/area relax;
+5. fattoria didattica;
+6. spaccio automatico 24/7;
+7. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
