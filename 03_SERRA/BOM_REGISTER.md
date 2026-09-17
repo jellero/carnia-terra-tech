@@ -10,7 +10,7 @@
 | GH-STR-001 | Struttura portante 4.200 m² | 1 sistema | `PACKAGE COSTI DEFINITO / DA RFQ` | peso acciaio obbligatorio dal fornitore |
 | GH-STR-002 | Colonne/pali principali | DA SHOP DRAWING | `DA PREVENTIVARE` | kg/pz/sezione obbligatori |
 | GH-STR-003 | Archi/travi/reticolari | DA SHOP DRAWING | `DA PREVENTIVARE` | kg/pz/sezione obbligatori |
-| GH-STR-004 | Gronde strutturali | DA SHOP DRAWING | `DA PREVENTIVARE` | separare funzione strutturale/raccolta acqua |
+| GH-STR-004 | Gronde strutturali | DA SHOP DRAWING | `BOM-007 / DA RFQ` | separare funzione strutturale/raccolta acqua |
 | GH-STR-005 | Controventi/tiranti | DA SHOP DRAWING | `DA PREVENTIVARE` | carichi e quantità espliciti |
 | GH-STR-006 | Piastre/staffe/giunti | DA DISTINTA | `DA PREVENTIVARE` | non assorbire in forfait |
 | GH-STR-007 | Bulloneria/cavallotti/morsetti | DA DISTINTA | `DA PREVENTIVARE` | classi/trattamenti + scorta |
@@ -33,11 +33,31 @@
 | GH-COV-007 | Posa/tensionamento copertura | 1 lotto | `DA PREVENTIVARE` | separare ore/piattaforme/garanzia |
 | GH-COV-008 | Sostituzione/fine vita | TCO futuro | `REQUISITO` | rimozione, fermo, riciclo/smaltimento |
 | GH-END-001 | Testate | 6 comparti / layout | `DA PREVENTIVARE` | separare film/pannelli da struttura |
-| GH-DR-001 | Porte persone | DA LAYOUT | `DA PREVENTIVARE` | sicurezza + biosicurezza |
-| GH-DR-002 | Porte logistiche/AMR | DA LAYOUT | `DA PREVENTIVARE` | quota dopo scelta mezzi |
-| GH-GUT-001 | Gronde | DA GEOMETRIA | `DA PREVENTIVARE` | integrate con recupero pioggia |
-| GH-GUT-002 | Pluviali/collettori primari | DA GEOMETRIA | `DA PREVENTIVARE` | collegamento punto 04 |
-| GH-CMP-001 | Divisori comparti | 5 separazioni + dettagli | `DA PREVENTIVARE` | materiale da definire |
+| GH-DR-001 | Porte comparti | working fino a 6 | `BOM-007 / DA LAYOUT-RFQ` | professionali greenhouse; prezzo da preventivo |
+| GH-DR-002 | Porte logistiche/AMR | da layout/mezzi | `BOM-007 / BLOCCATO DAI MEZZI` | luce netta dopo scelta AMR/carrelli |
+| GH-DR-003 | Binari/rulli/maniglie/fermi | per porta | `DA RFQ` | righe ricambi separate |
+| GH-DR-004 | Guarnizioni/spazzole | perimetri | `DA RFQ` | tenuta e sostituibilità |
+| GH-DR-005 | Sensori posizione porta | dove utile | `REQUISITO` | integrazione PLC locale |
+| GH-DR-006 | Motorizzazione porte | predisposizione | `CONDIZIONALE` | non baseline prima di AMR/flussi |
+| GH-DR-007 | Airlock/vestibolo C6 | 0–1 working | `CONDIZIONALE IPM` | vivaio/jolly ad alto rischio |
+| GH-CMP-001 | Divisori comparti | 5 separazioni working | `BOM-007 / DA LAYOUT` | scenari P1/P2/P3 |
+| GH-CMP-002 | Telo/pannelli divisori | m² reali | `CANDIDATI / DA RFQ` | PC 10 mm FVG €25,50/m² materiale benchmark |
+| GH-CMP-003 | Telai/profili divisori | m da shop drawing | `DA RFQ` | massa e fissaggi separati |
+| GH-CMP-004 | Fascia bassa antiurto/lavabile | m² da layout | `CANDIDATO P2` | soluzione ibrida preferenza iniziale |
+| GH-CMP-005 | Sigillature/guarnizioni | da perimetri | `DA RFQ` | bordi e giunti sostituibili |
+| GH-CMP-006 | Passaparete/penetrazioni | da impianti | `DA DISTINTA` | tubi, cavi, canaline senza bypass aperti |
+| GH-GUT-001 | Gronde strutturali | m/kg da shop drawing | `BOM-007 / DA RFQ` | benchmark gronda standard zincata preverniciata FVG €5,87/kg |
+| GH-GUT-002 | Giunti/dilatazioni/terminali | da geometria | `DA RFQ` | specifici costruttore serra |
+| GH-GUT-003 | Bocchette/scarichi gronda | da calcolo | `DA CALCOLO` | portata istantanea |
+| GH-GUT-004 | Pluviali | m/diametri da calcolo | `DA CALCOLO` | PVC Ø110 €7,05/m solo benchmark retail |
+| GH-GUT-005 | Raccordi/curve/tee | da layout | `DA DISTINTA` | non assorbire in €/m |
+| GH-GUT-006 | Collari/supporti | da passo | `DA DISTINTA` | FVG collare zincato €5,46/cad benchmark |
+| GH-GUT-007 | Ispezioni/protezioni detriti | da linee | `REQUISITO` | pulizia senza smontaggio |
+| GH-GUT-008 | First-flush/diverter | se giustificato | `CONDIZIONALE` | qualità acqua da punto 04 |
+| GH-GUT-009 | Collettore verso 300 m³ | m/diametri | `COLLEGAMENTO PUNTO 04` | da P&ID/calcolo idraulico |
+| GH-GUT-010 | Troppo-pieno/bypass | 1 sistema | `REQUISITO CRITICO` | passivo/failure-safe con tank pieno |
+| GH-GUT-011 | Misura acqua recuperata | 1 o più punti | `CANDIDATO` | bilancio acqua/analytics |
+| GH-GUT-012 | Commissioning pioggia/overflow | 1 lotto | `OBBLIGATORIO` | test perdite/ostruzioni/troppo-pieno |
 | GH-VENT-001 | Aperture laterali | 6–12 gruppi working | `CANDIDATI REALI / DA CALCOLO` | vedi BOM-003 |
 | GH-VENT-002 | Aperture zenitali | DA GEOMETRIA | `CANDIDATO / DA VALUTARE` | legate a rete e ventilazione |
 | GH-VENT-003 | Motori laterali professionali | 6–12 working | `CANDIDATO` | Ridder RW45-L €675,49 + IVA benchmark |
@@ -99,9 +119,11 @@
 - **BOM-004 copertura** — `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
 - **package struttura/fondazioni** — `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
 - **BOM-005 fogging** — `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`;
-- **BOM-006 supporti coltura + drenaggio** — `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`.
+- **BOM-006 supporti coltura + drenaggio** — `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`;
+- **BOM-007 porte + compartimenti + gronde/pluviali** — `19_BOM_PRODOTTI_FORNITORI/SERRA_PORTE_COMPARTIMENTI_GRONDE.md`.
 
-RFQ BOM-006: `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`.
+RFQ BOM-006: `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`.  
+RFQ BOM-007: `03_SERRA/RFQ_DOORS_PARTITIONS_GUTTERS.md`.
 
 ## 3. Regola costo completo
 
@@ -113,8 +135,8 @@ Separare costo reale, IVA, costo eleggibile, contributo potenziale, finanziament
 
 ## 4. Prossima sequenza economica serra
 
-1. **porte + compartimentazioni interne + gronde/pluviali**;
-2. **attrezzatura e consumabili di montaggio**;
-3. chiusura del punto 03 con matrice di dipendenze e costi aperti.
+1. **attrezzatura e consumabili di montaggio**;
+2. **chiusura del punto 03 con matrice di dipendenze e costi aperti**;
+3. passaggio ai sottosistemi del punto 05/04 secondo dipendenze.
 
-BOM-006 torna in lavorazione appena crop card C1/C2 e layout reale sbloccano steli, file, lunghezze, gutter e pendenze.
+BOM-006 torna in lavorazione con crop card/layout. BOM-007 torna in lavorazione con lotto, layout, mezzi e calcolo pluviometrico/idraulico.
