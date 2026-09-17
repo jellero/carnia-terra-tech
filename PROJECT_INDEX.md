@@ -16,7 +16,7 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 - `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, outdoor;
 - `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura, drenaggi, porte, recupero pioggia e cantiere;
 - `04_ACQUA_E_FERTIRRIGAZIONE/` — fonte, accumulo, filtri, pompe, dosaggio, drenaggio;
-- `05_TERMICO_E_CLIMA/` — PDC, accumulo, distribuzione, deumidificazione, emergenza;
+- `05_TERMICO_E_CLIMA/` — carico termico, PDC, accumulo, distribuzione, deumidificazione, emergenza;
 - `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, UPS, generatore, EMS;
 - `07_AUTOMAZIONE_DATI_AI/` — PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&D robotica/laser;
 - `08_MACCHINE_E_LOGISTICA/` — AMR, sollevatore, piattaforme, raccolta, carrelli;
@@ -61,52 +61,73 @@ Il punto diventa `VALIDATO` coltura per coltura con sito, sistema, cultivar, res
 
 Package/BOM sviluppati:
 
-- **BOM-001 — HAF**: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`;
-- **BOM-002 — schermi climatici**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
-- **BOM-003 — aperture/attuatori/reti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
-- **BOM-004 — copertura/film/fissaggi**: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
-- **package struttura/fondazioni**: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
-- **BOM-005 — fogging**: `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`;
-- **BOM-006 — supporti coltura + drenaggio**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`;
-- **BOM-007 — porte, compartimentazioni, gronde e pluviali**: `19_BOM_PRODOTTI_FORNITORI/SERRA_PORTE_COMPARTIMENTI_GRONDE.md`;
-- **BOM-008 — attrezzatura e consumabili montaggio**: `19_BOM_PRODOTTI_FORNITORI/SERRA_ATTREZZATURA_CANTIERE.md`.
+- BOM-001 HAF;
+- BOM-002 schermi climatici;
+- BOM-003 aperture/attuatori/reti;
+- BOM-004 copertura/film/fissaggi;
+- package struttura/fondazioni;
+- BOM-005 fogging;
+- BOM-006 supporti coltura + drenaggio;
+- BOM-007 porte, compartimentazioni, gronde e pluviali;
+- BOM-008 attrezzatura e consumabili montaggio.
 
-RFQ aggiuntivi:
+Matrice di chiusura: `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 
-- `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`;
-- `03_SERRA/RFQ_DOORS_PARTITIONS_GUTTERS.md`;
-- `03_SERRA/RFQ_SITE_TOOLS_EQUIPMENT.md`.
+Il punto 03 è sufficientemente coperto per proseguire, ma non è progetto esecutivo. Restano dipendenze da lotto, geotecnica, crop card, layout, analisi acqua, calcoli e preventivi.
 
-Matrice di chiusura e dipendenze:
+## 7. Stato punto 05 — Termico e clima
 
-- `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
+**Stato: ARCHITETTURA DI BASE DEFINITA / BOM-009 DISTRIBUZIONE SVILUPPATA / CARICHI E GENERAZIONE DA VALIDARE.**
 
-### BOM-008 — stato corrente
+Nuovi documenti:
 
-Sono separati acquisto/noleggio, PLE, trabattello, utensili, serraggio, trapano magnetico, taglio, saldatura condizionale, quadro cantiere, generatore condizionale, sollevamento materiali, DPI, strumenti misura, consumabili, formazione/abilitazioni e ore uomo.
+- `05_TERMICO_E_CLIMA/README.md`;
+- `05_TERMICO_E_CLIMA/THERMAL_LOAD_METHOD.md`;
+- `05_TERMICO_E_CLIMA/HYDRONIC_DISTRIBUTION.md`;
+- `05_TERMICO_E_CLIMA/RFQ_HYDRONIC_DISTRIBUTION.md`;
+- `19_BOM_PRODOTTI_FORNITORI/TERMICO_DISTRIBUZIONE_IDRONICA.md`;
+- `22_FONTI_NORME_PREVENTIVI/TERMICO_DISTRIBUZIONE_SOURCES.md`.
 
-Benchmark correnti registrati includono PLE verticali 10–12 m ~€55–80/giorno più trasporto, trabattello professionale ~€3.131–3.360 IVA incl., kit Bosch GDX 18V-200 €379 + IVA prezzo consigliato, Makita DTW700 classe 700 Nm da ~€240, trapano magnetico Makita HB350 da ~€736 nei comparatori, DPI anticaduta base ~€125–158 IVA incl.
+### BOM-009 — distribuzione idronica
 
-Il vecchio budget storico `€18–30k attrezzatura cantiere` non viene trattato come fatto: sarà sostituito dal totale bottom-up `acquisti + noleggi × giorni + logistica + consumabili + DPI + formazione + energia + ore uomo + servizi`.
+Architettura: accumulo -> collettore secondario -> 6 circuiti indipendenti -> terminali near-crop.
 
-### Chiusura progettuale punto 03
+Per zona sono previsti come requisiti:
 
-Il punto 03 è sufficientemente coperto per proseguire con gli altri blocchi senza lasciare categorie principali non censite, ma **non è ancora progetto esecutivo**.
+- isolamento manuale;
+- pompa modulante;
+- miscelazione motorizzata dove richiesta;
+- T mandata/ritorno;
+- misura/bilanciamento portata;
+- scarico/sfiato/manutenzione;
+- comando e fallback locale.
 
-Restano dipendenti da dati reali:
+Candidati/benchmark registrati:
 
-- lotto, neve/vento e geotecnica;
-- crop card C1/C2;
-- layout esecutivo;
-- analisi acqua;
-- calcoli ventilazione/fogging/pioggia;
-- mezzi logistici reali;
-- cronoprogramma di montaggio;
-- shop drawing e preventivi comparabili.
+- Elydan TUBSER Ø25 e Palaplast GEOPAL Ø25/28 come tubi specifici greenhouse, `DA PREVENTIVO`;
+- IVAR FF-Therm PE-Xa Ø25×2,3 EVOH: €5,81/m listino, ~€4,23/m benchmark retail UE, idoneità alla posa esposta da confermare;
+- Grundfos ALPHA2 25-60 da €249 IVA incl. e MAGNA1 25-60 €426,63 IVA incl. come classi di pompa da verificare sulla curva reale;
+- ESBE VRG131 DN25 ~€64,15 + ARA661 ~€148,35 IVA incl. come benchmark miscelazione;
+- Caleffi 132602 1", 10–40 l/min ~€102,28 IVA incl. come benchmark bilanciamento/lettura portata.
 
-Il gate dettagliato è in `POINT_03_CLOSURE_MATRIX.md`.
+Il working storico 2.700–3.000 m di terminali non è una quantità d'ordine. Con il solo PE-Xa benchmark equivale a circa €11.421–17.430 di solo tubo, a seconda del prezzo utilizzato.
 
-## 7. R&D trasversale — laser, vision e manutenzione robotica
+Pompe e diametri saranno dimensionati da potenza, ΔT e perdite di carico; la relazione operativa registrata è `Q[m³/h] ≈ P[kW]/(1,163×ΔT[K])`.
+
+### Dipendenze punto 05
+
+Servono ancora:
+
+- carico termico per C1–C6 e scenari produzione/economia/sopravvivenza;
+- temperature di progetto acqua;
+- perdite di carico e P&ID;
+- materiale near-crop definitivo;
+- accumulo termico e primario/scambiatore;
+- verifica PDC alle condizioni fredde reali;
+- boost/deumidificazione/emergenza;
+- preventivi professionali.
+
+## 8. R&D trasversale — laser, vision e manutenzione robotica
 
 Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`.
 
@@ -114,7 +135,7 @@ Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
 Linee correnti: potatura robotica con visione e microforbice/cutter come baseline R&D; laser solo confinato; controllo insetti laser solo con classificazione `TARGET / UTILE-PROTETTO / INCERTO` e nessuna attivazione su incerto.
 
-## 8. Modulo futuro — centro trasformazione conto terzi
+## 9. Modulo futuro — centro trasformazione conto terzi
 
 Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`.
 
@@ -122,52 +143,46 @@ Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAP
 
 Perimetro: mele, pere, piccoli frutti, succhi, puree, confetture/composte; lavoro proprio e conto terzi; tariffa, compensazione in prodotto, acquisto materia prima o modello ibrido. Il masterplan deve predisporre spazio e utilities senza obbligare l'acquisto iniziale.
 
-## 9. Metodo BOM obbligatorio
+## 10. Metodo BOM obbligatorio
 
 Per ogni oggetto o sottosistema si analizzano funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
 
-## 10. Stato attuale dei grandi blocchi
+## 11. Stato attuale dei grandi blocchi
 
 I file in `docs/` restano sorgenti durante la migrazione. Sono nel perimetro robot tagliaerba, automazione area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
-## 11. Sequenza BOM
+## 12. Sequenza BOM
 
-### Serra già strutturata
+### Già strutturate
 
-- BOM-001 HAF;
-- BOM-002 schermi;
-- BOM-003 aperture/reti;
-- BOM-004 copertura;
-- struttura/fondazioni;
-- BOM-005 fogging;
-- BOM-006 supporti coltura + drenaggio;
-- BOM-007 porte + compartimenti + gronde/pluviali;
-- BOM-008 attrezzatura/consumabili cantiere.
+- Serra BOM-001…008;
+- **BOM-009 distribuzione termica idronica**.
 
-### Prossimo grande blocco
+### Prossimo package
 
-**05_TERMICO_E_CLIMA — distribuzione termica:** tubazioni, collettori, pompe, miscelazione, valvole, misure portata/temperatura, linee near-crop, isolamento, supporti, ricambi e commissioning.
+**BOM-010 — accumulo termico + primario PDC + scambiatore:** serbatoi 30 m³ con espansione 40–50 m³, stratificazione, scambiatore a piastre, pompe primarie, glicole confinato, valvole, sicurezza, isolamento, sensori, manutenzione e costi.
 
 ### Coda successiva
 
-1. distribuzione termica;
-2. gocciolatori e linee irrigue;
-3. filtrazione acqua;
-4. pompe principali irrigazione;
-5. pompe dosatrici;
-6. serbatoi fertilizzanti;
-7. accumulo termico 30–50 m³;
-8. accumulo acqua 300 m³;
-9. moduli FV e inverter;
-10. AMR;
-11. sollevatore/mezzo multifunzione;
-12. robot tagliaerba;
-13. sistema pulizia area galline;
-14. celle frigorifere;
-15. attrezzatura raccolta e packaging;
-16. pergolato/vite/area relax;
-17. fattoria didattica;
-18. spaccio automatico 24/7;
-19. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. BOM-010 accumulo termico + primario/scambiatore;
+2. PDC modulari 3+1 e prestazioni a freddo;
+3. boost/deumidificazione/emergenza;
+4. gocciolatori e linee irrigue;
+5. filtrazione acqua;
+6. pompe principali irrigazione;
+7. pompe dosatrici;
+8. serbatoi fertilizzanti;
+9. accumulo acqua 300 m³;
+10. moduli FV e inverter;
+11. AMR;
+12. sollevatore/mezzo multifunzione;
+13. robot tagliaerba;
+14. sistema pulizia area galline;
+15. celle frigorifere;
+16. attrezzatura raccolta e packaging;
+17. pergolato/vite/area relax;
+18. fattoria didattica;
+19. spaccio automatico 24/7;
+20. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
