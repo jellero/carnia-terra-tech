@@ -14,7 +14,7 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 - `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e decision gates;
 - `01_MASTERPLAN_E_TERRENO/` — lotto, vincoli, accessi, drenaggi, espansioni;
 - `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, outdoor;
-- `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging;
+- `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura e drenaggi;
 - `04_ACQUA_E_FERTIRRIGAZIONE/` — fonte, accumulo, filtri, pompe, dosaggio, drenaggio;
 - `05_TERMICO_E_CLIMA/` — PDC, accumulo, distribuzione, deumidificazione, emergenza;
 - `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, UPS, generatore, EMS;
@@ -57,25 +57,9 @@ Il punto diventa `VALIDATO` coltura per coltura con sito, sistema, cultivar, res
 
 ## 6. Stato punto 03 — Serra
 
-**Stato: RAFFINATO COME ARCHITETTURA / BOM PRINCIPALI IN SVILUPPO / DIMENSIONAMENTO BLOCCATO DAL LOTTO.**
+**Stato: RAFFINATO COME ARCHITETTURA / BOM PRINCIPALI IN SVILUPPO / DIMENSIONAMENTO BLOCCATO DAL LOTTO E DALLE CROP CARD.**
 
-Documenti principali:
-
-- `03_SERRA/README.md`;
-- `03_SERRA/STRUCTURE_FOUNDATIONS.md`;
-- `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md`;
-- `03_SERRA/ENVELOPE_COVERING.md`;
-- `03_SERRA/RFQ_COVERING.md`;
-- `03_SERRA/OPENINGS_COMPARTMENTS.md`;
-- `03_SERRA/RFQ_OPENINGS_NETS.md`;
-- `03_SERRA/SCREENS_SHADING.md`;
-- `03_SERRA/RFQ_SCREENS.md`;
-- `03_SERRA/FOGGING_HUMIDITY.md`;
-- `03_SERRA/RFQ_FOGGING.md`;
-- `03_SERRA/CROP_SUPPORTS_LOGISTICS.md`;
-- `03_SERRA/MAINTENANCE_SAFETY.md`;
-- `03_SERRA/BOM_REGISTER.md`;
-- `03_SERRA/OFFICIAL_SOURCES.md`.
+Documenti principali includono struttura/fondazioni, copertura, aperture/reti, schermi, fogging, supporti coltura/logistica, manutenzione/sicurezza e relativi RFQ.
 
 Package/BOM sviluppati:
 
@@ -84,96 +68,61 @@ Package/BOM sviluppati:
 - **BOM-003 — aperture/attuatori/reti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
 - **BOM-004 — copertura/film/fissaggi**: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
 - **package struttura/fondazioni**: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
-- **BOM-005 — fogging**: `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`.
+- **BOM-005 — fogging**: `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`;
+- **BOM-006 — supporti coltura + drenaggio**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`.
 
-### Struttura/fondazioni — stato corrente
+RFQ BOM-006: `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`.
 
-Sono definite le righe economiche obbligatorie: peso acciaio per famiglia, zincatura, bulloneria, lavorazioni, trasporto, scarico, montaggio, mezzi, engineering, scavi, cls, ferro, casseri, ancoraggi, prove, rinterri e drenaggi.
+### BOM-006 — stato corrente
 
-Benchmark registrati: Tuttoserre 8×40 m / €6.832 IVA incl. non scalabile; Prezzario FVG 2026 per carpenteria e calcestruzzo come controllo di congruità.
+Sono separati e prezzati dove possibile:
 
-### Fogging — stato corrente
+- filo/cavo high-wire e ancoraggi;
+- hook/roller;
+- spago PP o biodegradabile;
+- clip PP o biodegradabili;
+- gutter/canaline;
+- staffe, giunti, terminali e scarichi;
+- collettore drenaggio;
+- lavaggio/ispezione;
+- sensori volume/EC/pH/T come interfaccia col punto 04.
 
-BOM-005 copre C1/C2/C6 e confronta tre architetture:
+Benchmark correnti registrati:
 
-- F1 centrale singola;
-- F2 centrale N+1;
-- F3 tre pompe indipendenti.
+- ReelHook 30 m: €7,01 + IVA/cad prima degli sconti quantità;
+- ECOTWINE 400 N ~3.350 m: €54,70–62,70 + IVA/bobina;
+- Bato clip 22 mm: €77,50 + IVA/10.000;
+- clip biodegradabile 22 mm: €30,95 + IVA/1.000;
+- gutter professionale metallico: `PREZZO DA PREVENTIVO`;
+- canaline plastiche/NFT: benchmark pubblici solo per confronto, non baseline C1/C2.
 
-Sono stati trovati prezzi reali per pompe HP, ugelli, tubi, raccordi, elettrovalvole e filtrazione. Il costo totale resta correttamente aperto perché servono analisi acqua, carico climatico, numero ugelli, metri di linea e trattamento acqua.
+Le quantità restano correttamente aperte finché non sono definiti steli/m², file/lunghezze, sistema lowering, slab e pendenze.
 
-Osmosi inversa/softening non sono acquisti automatici: diventano requisito solo se l'analisi acqua e il costruttore li giustificano.
-
-Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo, analisi acqua e preventivi confrontabili.
+Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, layout esecutivo, crop card, analisi acqua e preventivi confrontabili.
 
 ## 7. R&D trasversale — laser, vision e manutenzione robotica
 
-Documento:
-
-- `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`.
+Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`.
 
 Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
-Linee correnti:
-
-- femminelle pomodoro: priorità a visione + manipolatore + microforbice/cutter; laser solo candidato futuro in testina confinata;
-- insetti volanti: R&D prioritario su barriera laser confinata alle aperture o trappola chiusa;
-- nessun sistema open-beam libero nel volume di lavoro come baseline;
-- classificazione `TARGET DANNO / UTILE-PROTETTO / INCERTO`; se incerto, nessuna attivazione;
-- protezione non limitata alle api: il piano IPM può includere bombi, sirfidi, parassitoidi e altri organismi utili.
+Linee correnti: potatura robotica con visione e microforbice/cutter come baseline R&D; laser solo confinato; controllo insetti laser solo con classificazione `TARGET / UTILE-PROTETTO / INCERTO` e nessuna attivazione su incerto.
 
 ## 8. Modulo futuro — centro trasformazione conto terzi
 
-Documento:
-
-- `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`.
+Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`.
 
 Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
 
-Perimetro iniziale candidato:
-
-- mele, pere, piccoli frutti e altra frutta compatibile;
-- succhi, puree/semilavorati, confetture/composte;
-- lavorazione sia del prodotto Carnia TerraTech sia di prodotto conferito da privati/aziende.
-
-Modelli commerciali da confrontare:
-
-- M1 tariffa conto lavorazione;
-- M2 compensazione parziale in prodotto lavorato;
-- M3 acquisto materia prima;
-- M4 sistema ibrido/crediti prodotto per piccoli conferitori.
-
-La remunerazione in natura va validata fiscalmente/contrattualmente: il progetto non la considera operazione gratuita. Il centro richiede tracciabilità, HACCP/autocontrollo, gestione lotti, layout sporco/pulito, acqua/reflui/CIP, packaging e business case dedicato.
-
-Il masterplan deve predisporre fin dall'inizio spazio, accessi, acqua/scarichi, potenza, rete dati e possibilità di ampliamento senza obbligare a comprare subito la linea.
+Perimetro: mele, pere, piccoli frutti, succhi, puree, confetture/composte; lavoro proprio e conto terzi; tariffa, compensazione in prodotto, acquisto materia prima o modello ibrido. Il masterplan deve predisporre spazio e utilities senza obbligare l'acquisto iniziale.
 
 ## 9. Metodo BOM obbligatorio
 
-Per ogni oggetto o sottosistema si analizzano:
-
-1. funzione;
-2. requisiti;
-3. quantità;
-4. alternative reali;
-5. prezzo trovato/preventivo/stima;
-6. IVA/trasporto/accessori;
-7. installazione/minuteria;
-8. consumi;
-9. manutenzione ordinaria;
-10. manutenzione straordinaria;
-11. ricambi;
-12. vita utile;
-13. sicurezza/certificazioni;
-14. failure mode;
-15. fallback/ridondanza;
-16. contributi;
-17. dipendenze;
-18. espansione;
-19. stato secondo `DECISION_GATES.md`.
+Per ogni oggetto o sottosistema si analizzano funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
 
 ## 10. Stato attuale dei grandi blocchi
 
-I file in `docs/` restano sorgenti durante la migrazione. Sono già nel perimetro robot tagliaerba, automazione pulizia area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale durante il lancio, R&D robotica/laser e centro trasformazione conto terzi.
+I file in `docs/` restano sorgenti durante la migrazione. Sono nel perimetro robot tagliaerba, automazione area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
 ## 11. Sequenza BOM
 
@@ -184,17 +133,18 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono già nel perimetr
 - BOM-003 aperture/reti;
 - BOM-004 copertura;
 - struttura/fondazioni: package economico + RFQ;
-- BOM-005 fogging + RFQ.
+- BOM-005 fogging + RFQ;
+- BOM-006 supporti coltura + drenaggio + RFQ.
 
 ### In lavorazione successiva
 
-**Supporti coltura + canaline drenaggio:** fili, ganci, bobine/clip, ancoraggi, sostegni, canaline fuori suolo, staffe, pendenze, raccolta drenaggio, manutenzione e costi.
+**Porte + compartimentazioni interne + gronde/pluviali:** accessi persone, logistica/AMR, divisori tra comparti, sigillature, gronde, pluviali, troppo-pieni, manutenzione e collegamento ai 300 m³ di accumulo acqua.
 
 ### Coda immediata
 
-1. supporti coltura/canaline drenaggio;
-2. porte/compartimenti/gronde;
-3. attrezzatura e consumabili montaggio;
+1. porte/compartimenti/gronde/pluviali;
+2. attrezzatura e consumabili montaggio;
+3. chiusura punto 03 / matrice costi aperti;
 4. tubi, collettori e pompe circuito termico;
 5. gocciolatori e linee irrigue;
 6. filtrazione acqua;
