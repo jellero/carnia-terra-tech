@@ -60,12 +60,7 @@ Matrice: `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 Documenti principali:
 
 - `04_ACQUA_E_FERTIRRIGAZIONE/README.md`;
-- `IRRIGATION_DISTRIBUTION.md` + RFQ;
-- `FILTRATION_ARCHITECTURE.md` + RFQ;
-- `PUMP_STATION_ARCHITECTURE.md` + RFQ;
-- `FERTIGATION_DOSING.md` + RFQ;
-- `TANKS_CONTAINMENT_ARCHITECTURE.md` + RFQ;
-- `WATER_STORAGE_ARCHITECTURE.md` + `RFQ_WATER_STORAGE.md`;
+- distribuzione, filtrazione, stazione pompe, fertirrigazione, tank chimici e accumulo acqua con relativi RFQ;
 - BOM-013…018 in `19_BOM_PRODOTTI_FORNITORI/`;
 - fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
@@ -91,48 +86,19 @@ Scenario RFQ A/B/acido 500/500/200 L, non ordine. Soli serbatoi PE benchmark **�
 
 ### BOM-018 — accumulo acqua 300 m³
 
-Baseline: **2×150 m³ working**, indipendenti/isolabili, predisposti a espansione 400–500 m³.
-
-Dati chiave:
+Baseline **2×150 m³ working**, indipendenti/isolabili, predisposti a espansione 400–500 m³.
 
 - 300 m³ con 30–35 m³/giorno = **8,6–10 giorni teorici**;
 - 14 giorni = 420–490 m³;
-- con 4.200 m², 1 mm di pioggia = 4,2 m³ teorici;
-- 300 m³ richiedono 71,4 mm teorici o ~84 mm a resa 85%;
-- overflow da RainMap/intensità di progetto, non dal volume tank.
+- 4.200 m²: 1 mm pioggia = 4,2 m³ teorici;
+- overflow da RainMap/intensità di progetto;
+- usare sempre volume utile dichiarato, non nome commerciale.
 
-Scenari: 2×150 rigidi con liner baseline; 3×100; 1×300; 2×150 bladder; GRP/modulare.
-
-Benchmark:
-
-- Labaronne Citaf bladder 150 m³: **€4.270 + IVA/cad**;
-- RL Distrib bladder 150 m³: **€3.799 + IVA/cad**;
-- steel 200 m³: **€6.630 + IVA**, trasporto/installazione esclusi;
-- ABEKO ~200 m³ utili: **€7.807 + IVA**, cover +€725;
-- Tanks Direct 150.000 L: **£4.650 ex VAT**, benchmark UK.
-
-Regola: usare **volume utile dichiarato**. Un prodotto ABEKO chiamato “150 m³” pubblica 112 m³ utili e non vale come 150 m³ nel dimensionamento.
-
-Ogni tank: cover anti-alga, ingresso/calming, overflow passivo, aspirazione sopra fondo, drain, campionamento, radar, low-low indipendente, high-high, isolamento e accesso. Cross-connect normalmente isolabile.
-
-UNI EN 16941-1:2024 è riferimento corrente per acqua piovana non potabile. Fondazione da geotecnica + manuale OEM.
+Benchmark: bladder 150 m³ €3.799–4.270 + IVA/cad; steel 200 m³ €6.630 + IVA; ABEKO ~200 m³ utili €7.807 + IVA + cover.
 
 ### Gate punto 04
 
-Restano necessari:
-
-- layout e portate C1–C6;
-- fonte reale/analisi acqua/alcalinità;
-- bilancio idrico mensile/autonomia;
-- lotto, geotecnica, RainMap;
-- decisione 300 m³ nominali vs utili;
-- RFQ tank/fondazioni/trasporto;
-- duty point pompe e filtrazione finale;
-- ricette/SDS/compatibilità;
-- trattamento/disinfezione se necessario;
-- drenaggio e decisione su riuso;
-- backup elettrico;
-- commissioning.
+Restano layout/portate, fonte/analisi acqua, bilancio idrico, lotto/geotecnica/RainMap, RFQ tank, duty point pompe, ricette/SDS, trattamento/disinfezione, drenaggio/riuso, backup elettrico e commissioning.
 
 ## 8. Stato punto 05 — Termico e clima
 
@@ -140,23 +106,78 @@ Restano necessari:
 
 Matrice: `05_TERMICO_E_CLIMA/POINT_05_CLOSURE_MATRIX.md`.
 
-## 9. R&D trasversale — laser, vision e manutenzione robotica
+## 9. Stato punto 06 — Energia elettrica e FV
+
+**ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / CONNESSIONE, UPS, GENERATORE ED EMS DA SVILUPPARE.**
+
+Documenti:
+
+- `06_ENERGIA_ELETTRICA_FV/README.md`;
+- `06_ENERGIA_ELETTRICA_FV/PV_ARCHITECTURE.md`;
+- `06_ENERGIA_ELETTRICA_FV/RFQ_PV_INVERTERS.md`;
+- `19_BOM_PRODOTTI_FORNITORI/ENERGIA_FV_MODULI_INVERTER.md` — BOM-019;
+- `22_FONTI_NORME_PREVENTIVI/ENERGIA_FV_SOURCES.md`.
+
+### BOM-019 — FV e inverter
+
+Working candidate moduli: **Trina Vertex S+ TSM-470NEG9R.28**.
+
+- 256 × 470 W = **120,32 kWp**;
+- ~511,5 m² di sola superficie modulo;
+- ~5,38 t di soli moduli;
+- prezzi pubblici UE osservati ~€68,90 netto business fino a ~€99/modulo retail;
+- soli moduli ~**€17,6–25,3k** benchmark, trasporto/IVA Italia esclusi o da verificare.
+
+Scenari inverter:
+
+- I1 2×50 kW AC: DC/AC ~1,20;
+- Sungrow SG50CX-P2 ~€1.899/cad;
+- Huawei SUN2000-50KTL-M3 ~€2.379–2.399/cad;
+- SMA Sunny Tripower X 50 ~€2.695/cad;
+- I2 2×60 kW SMA Sunny Tripower X 60 ~€2.865/cad, DC/AC iniziale ~1,00 e famiglia dichiarata fino al 150%.
+
+Regole:
+
+- niente FV opaco sopra colture principali come baseline;
+- stringhe dimensionate con Voc a Tmin reale;
+- CEI 0-21:2026 per BT / CEI 0-16:2026 per MT;
+- livello BT/MT da preventivo DSO/TICA, non deciso a tavolino;
+- VVF 2025 se impianto su attività soggetta a prevenzione incendi;
+- monitoraggio locale e interfaccia EMS documentata;
+- predisposizione 150–180 kWp.
+
+Il vecchio input `moduli+struttura ~€200/kWp` resta `DA VERIFICARE`: i moduli da soli nei benchmark correnti sono ~€147–211/kWp.
+
+### Gate punto 06
+
+- masterplan/superfici/ombre;
+- neve/vento e struttura;
+- Tmin/Tmax;
+- profilo carichi e PVGIS;
+- preventivo DSO e BT/MT;
+- scelta 2×50 vs 2×60;
+- string design;
+- BOS/protezioni/antincendio;
+- RFQ installato;
+- strategia UPS/generatore/EMS da package successivi.
+
+## 10. R&D trasversale — laser, vision e manutenzione robotica
 
 Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
-## 10. Modulo futuro — centro trasformazione conto terzi
+## 11. Modulo futuro — centro trasformazione conto terzi
 
 Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`. Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
 
-## 11. Metodo BOM obbligatorio
+## 12. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
 
-## 12. Stato attuale dei grandi blocchi
+## 13. Stato attuale dei grandi blocchi
 
 Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
-## 13. Sequenza BOM
+## 14. Sequenza BOM
 
 ### Già strutturate
 
@@ -170,24 +191,24 @@ Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica,
 - BOM-015 pompe principali irrigazione 1+1;
 - BOM-016 fertirrigazione A/B/acido;
 - BOM-017 serbatoi fertilizzanti e contenimento;
-- **BOM-018 accumulo acqua 300 m³**.
+- BOM-018 accumulo acqua 300 m³;
+- **BOM-019 FV e inverter**.
 
 ### Prossimo package
 
-**BOM-019 — FV e inverter:** 120 kWp iniziali, moduli, strutture, inverter, quadri DC/AC, SPD, sezionamenti, monitoraggio, connessione, layout senza ombreggiare la serra, predisposizione 150–180 kWp, costi e manutenzione.
+**BOM-020 — AMR serra:** piattaforma mobile autonoma per trasporto/scouting/imaging/inventario/docking, portata, dimensioni, sicurezza, navigazione, batteria, ricarica, API/ROS/PLC, manutenzione, ricambi e costo.
 
 ### Coda successiva
 
-1. moduli FV e inverter;
-2. AMR;
-3. sollevatore/mezzo multifunzione;
-4. robot tagliaerba;
-5. sistema pulizia area galline;
-6. celle frigorifere;
-7. attrezzatura raccolta e packaging;
-8. pergolato/vite/area relax;
-9. fattoria didattica;
-10. spaccio automatico 24/7;
-11. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. AMR;
+2. sollevatore/mezzo multifunzione;
+3. robot tagliaerba;
+4. sistema pulizia area galline;
+5. celle frigorifere;
+6. attrezzatura raccolta e packaging;
+7. pergolato/vite/area relax;
+8. fattoria didattica;
+9. spaccio automatico 24/7;
+10. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
