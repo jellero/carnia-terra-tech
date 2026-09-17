@@ -18,9 +18,16 @@
 | GH-GUT-001 | Gronde | DA GEOMETRIA | `DA PREVENTIVARE` | integrate con recupero pioggia |
 | GH-GUT-002 | Pluviali/collettori primari | DA GEOMETRIA | `DA PREVENTIVARE` | collegamento punto 04 |
 | GH-CMP-001 | Divisori comparti | 5 separazioni + dettagli | `DA PREVENTIVARE` | materiale da definire |
-| GH-VENT-001 | Aperture laterali | 6 zone | `REQUISITO` | **BOM-003** prossima |
-| GH-VENT-002 | Aperture zenitali | DA VALUTARE | `CANDIDATO` | dipende da ventilazione/prezzo |
-| GH-NET-001 | Rete anti-insetto | DA DIMENSIONARE | `REQUISITO` | selezione su parassita + airflow |
+| GH-VENT-001 | Aperture laterali | 6–12 gruppi working | `CANDIDATI REALI / DA CALCOLO` | vedi BOM-003 |
+| GH-VENT-002 | Aperture zenitali | DA GEOMETRIA | `CANDIDATO / DA VALUTARE` | legate a rete e bilancio ventilazione |
+| GH-VENT-003 | Motori laterali professionali | 6–12 working | `CANDIDATO` | Ridder RW45-L €675,49 + IVA benchmark |
+| GH-VENT-004 | Trasmissioni laterali | da layout | `DA PREVENTIVARE` | tubi, giunti, catene/rack, supporti |
+| GH-VENT-005 | Quadro/cablaggio aperture | per gruppo | `DA PREVENTIVARE` | protezioni, sezionatori, I/O |
+| GH-NET-001 | Rete anti-insetto 50 Air Plus | scenario N1 | `CANDIDATO` | 47% air passage / ~30% vent reduction |
+| GH-NET-002 | Rete anti-insetto 60 Air Plus | scenario N2 | `CANDIDATO` | 40% air passage / ~31% vent reduction |
+| GH-NET-003 | Rete anti-insetto 80 Air Plus | scenario N3 | `CANDIDATO` | 26% air passage / ~42% vent reduction; tripidi |
+| GH-NET-004 | Profili/sigillature rete | da layout | `DA PREVENTIVARE` | bordi senza bypass |
+| GH-NET-005 | Scorta rete/clip/profili | lotto | `REQUISITO` | quantità da definire |
 | GH-SCR-001 | Schermi C1/C2/C6 | ~2.100 m² nominali + geometria reale | `CANDIDATI REALI / DA PREVENTIVARE` | vedi BOM-002 |
 | GH-SCR-002 | Predisposizione schermi C3-C5 | 3 comparti | `REQUISITO` | integrare nella struttura |
 | GH-SCR-003 | Energy screen FR | 1 livello alternativo S1 | `CANDIDATO` | RES 10+ FR / LUXOUS 1147 FR, prezzo su richiesta |
@@ -47,34 +54,37 @@
 
 File: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`.
 
-Stato: candidati e benchmark prezzi trovati; quantità finale da validare con geometria/velocità aria.
-
 ### BOM-002 — schermi
 
 File: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`.
 
-Stato: candidati reali identificati e sistema scomposto fino a meccanica, elettrico, posa e ricambi. Prezzo completo non inventato perché tessuti professionali e sistemi completi sono quotati su richiesta e dipendono dalla geometria.
+Alternative: S1 energy-first, S2 shade/diffusion-first, S3 doppio schermo.
 
-Alternative da RFQ:
+### BOM-003 — aperture e reti anti-insetto
 
-- S1 energy-first;
-- S2 shade/diffusion-first;
-- S3 doppio schermo.
+File: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`.
+
+RFQ: `03_SERRA/RFQ_OPENINGS_NETS.md`.
+
+Stato: attuatori professionali e reti reali identificati; quantità e mesh definitive dipendono da geometria, coppia richiesta, IPM e calcolo di ventilazione.
+
+Scenari rete:
+
+- N1 50 Air Plus — airflow priority;
+- N2 60 Air Plus — compromise;
+- N3 80 Air Plus — thrips critical.
 
 ## 3. Benchmark struttura esistente
 
-Nel lavoro precedente è stato registrato un benchmark pubblico:
+Benchmark storico registrato:
 
 - serra professionale 8 × 40 m = 320 m²;
-- **€6.832 IVA inclusa**;
-- circa **€21,35/m²**;
+- €6.832 IVA inclusa;
+- ~€21,35/m²;
 - struttura metallica;
-- coperture escluse;
-- montaggio escluso.
+- coperture e montaggio esclusi.
 
 **Classificazione:** `BENCHMARK STORICO / URL DA RECUPERARE / NON SCALARE LINEARMENTE`.
-
-Non usare `€21,35 × 4.200` come costo di progetto: una multicampata professionale con carichi locali, gronde, comparti, aperture e accessori ha architettura diversa.
 
 ## 4. Costo completo
 
@@ -82,23 +92,13 @@ Per ogni macrovoce calcolare:
 
 `materiale + accessori + minuteria + trasporto + scarico + posa + mezzi + progettazione + commissioning + ricambi iniziali`.
 
-Poi separare:
-
-- costo reale;
-- IVA;
-- costo eventualmente eleggibile;
-- contributo potenziale;
-- quota finanziata;
-- quota cassa/equity.
+Poi separare costo reale, IVA, costo eleggibile, contributo potenziale, quota finanziata e quota cassa/equity.
 
 ## 5. Prossima sequenza economica serra
 
-1. **BOM-003 aperture/motorizzazioni/reti**;
-2. BOM-004 copertura + profili + fissaggi;
-3. RFQ struttura/fondazioni;
-4. BOM-005 fogging;
-5. supporti coltura/canaline;
-6. porte/compartimenti/gronde;
-7. attrezzatura e consumabili di montaggio.
-
-La numerazione generale delle BOM può essere riallineata nel registro centrale senza perdere riferimenti.
+1. **BOM-004 copertura + profili + fissaggi**;
+2. RFQ struttura/fondazioni;
+3. BOM-005 fogging;
+4. supporti coltura/canaline;
+5. porte/compartimenti/gronde;
+6. attrezzatura e consumabili di montaggio.
