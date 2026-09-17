@@ -14,7 +14,7 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 - `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e decision gates;
 - `01_MASTERPLAN_E_TERRENO/` — lotto, vincoli, accessi, drenaggi, espansioni;
 - `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, outdoor;
-- `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura, drenaggi, porte e recupero pioggia;
+- `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura, drenaggi, porte, recupero pioggia e cantiere;
 - `04_ACQUA_E_FERTIRRIGAZIONE/` — fonte, accumulo, filtri, pompe, dosaggio, drenaggio;
 - `05_TERMICO_E_CLIMA/` — PDC, accumulo, distribuzione, deumidificazione, emergenza;
 - `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, UPS, generatore, EMS;
@@ -57,7 +57,7 @@ Il punto diventa `VALIDATO` coltura per coltura con sito, sistema, cultivar, res
 
 ## 6. Stato punto 03 — Serra
 
-**Stato: RAFFINATO COME ARCHITETTURA / BOM PRINCIPALI IN SVILUPPO / DIMENSIONAMENTO BLOCCATO DAL LOTTO E DALLE CROP CARD.**
+**Stato: RAFFINATO COME ARCHITETTURA / BOM-001…008 STRUTTURATE / VALIDAZIONE BLOCCATA DA DATI REALI.**
 
 Package/BOM sviluppati:
 
@@ -68,46 +68,43 @@ Package/BOM sviluppati:
 - **package struttura/fondazioni**: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
 - **BOM-005 — fogging**: `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`;
 - **BOM-006 — supporti coltura + drenaggio**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`;
-- **BOM-007 — porte, compartimentazioni, gronde e pluviali**: `19_BOM_PRODOTTI_FORNITORI/SERRA_PORTE_COMPARTIMENTI_GRONDE.md`.
+- **BOM-007 — porte, compartimentazioni, gronde e pluviali**: `19_BOM_PRODOTTI_FORNITORI/SERRA_PORTE_COMPARTIMENTI_GRONDE.md`;
+- **BOM-008 — attrezzatura e consumabili montaggio**: `19_BOM_PRODOTTI_FORNITORI/SERRA_ATTREZZATURA_CANTIERE.md`.
 
-RFQ collegati:
+RFQ aggiuntivi:
 
 - `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`;
-- `03_SERRA/RFQ_DOORS_PARTITIONS_GUTTERS.md`.
+- `03_SERRA/RFQ_DOORS_PARTITIONS_GUTTERS.md`;
+- `03_SERRA/RFQ_SITE_TOOLS_EQUIPMENT.md`.
 
-### BOM-006 — stato corrente
+Matrice di chiusura e dipendenze:
 
-Sono separati high-wire, hook/roller, spago, clip, gutter fuori suolo, supporti, collettori e sensori drenaggio. Le quantità restano aperte finché non sono definiti steli/m², file/lunghezze, sistema lowering, slab e pendenze.
+- `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 
-### BOM-007 — stato corrente
+### BOM-008 — stato corrente
 
-Sono ora separati:
+Sono separati acquisto/noleggio, PLE, trabattello, utensili, serraggio, trapano magnetico, taglio, saldatura condizionale, quadro cantiere, generatore condizionale, sollevamento materiali, DPI, strumenti misura, consumabili, formazione/abilitazioni e ore uomo.
 
-- porte comparti e accessi logistici/AMR;
-- rulli/binari/guarnizioni/sensori e predisposizione automazione;
-- eventuale airlock C6;
-- 5 separazioni working tra i 6 comparti;
-- scenari divisorio P1 leggero, P2 ibrido e P3 rigido;
-- passaparete e sigillature tecniche;
-- gronde strutturali;
-- bocchette, pluviali, raccordi, supporti e ispezioni;
-- first-flush condizionale;
-- collettore verso accumulo;
-- troppo-pieno passivo/failure-safe;
-- commissioning idraulico e meccanico.
+Benchmark correnti registrati includono PLE verticali 10–12 m ~€55–80/giorno più trasporto, trabattello professionale ~€3.131–3.360 IVA incl., kit Bosch GDX 18V-200 €379 + IVA prezzo consigliato, Makita DTW700 classe 700 Nm da ~€240, trapano magnetico Makita HB350 da ~€736 nei comparatori, DPI anticaduta base ~€125–158 IVA incl.
 
-Benchmark registrati:
+Il vecchio budget storico `€18–30k attrezzatura cantiere` non viene trattato come fatto: sarà sostituito dal totale bottom-up `acquisti + noleggi × giorni + logistica + consumabili + DPI + formazione + energia + ore uomo + servizi`.
 
-- policarbonato trasparente 10 mm, Prezzario FVG 2026: €25,50/m² materiale;
-- canali standard in acciaio zincato preverniciato: €5,87/kg;
-- supporto gronda zincato: €19,45/cad;
-- collare pluviale zincato: €5,46/cad;
-- PVC SN4 Ø110 retail: €7,05/m, solo benchmark e non diametro di progetto;
-- porte greenhouse professionali: `PREZZO DA PREVENTIVO`.
+### Chiusura progettuale punto 03
 
-Il volume da 300 m³ non viene usato per dimensionare gronde/pluviali. Le portate saranno calcolate con dati pluviometrici ARPA FVG del sito reale; il troppo-pieno deve funzionare anche con serbatoio pieno e senza PLC.
+Il punto 03 è sufficientemente coperto per proseguire con gli altri blocchi senza lasciare categorie principali non censite, ma **non è ancora progetto esecutivo**.
 
-Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, layout esecutivo, crop card, analisi acqua, calcolo idraulico pioggia e preventivi confrontabili.
+Restano dipendenti da dati reali:
+
+- lotto, neve/vento e geotecnica;
+- crop card C1/C2;
+- layout esecutivo;
+- analisi acqua;
+- calcoli ventilazione/fogging/pioggia;
+- mezzi logistici reali;
+- cronoprogramma di montaggio;
+- shop drawing e preventivi comparabili.
+
+Il gate dettagliato è in `POINT_03_CLOSURE_MATRIX.md`.
 
 ## 7. R&D trasversale — laser, vision e manutenzione robotica
 
@@ -135,43 +132,42 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono nel perimetro rob
 
 ## 11. Sequenza BOM
 
-### Candidati/package già sviluppati
+### Serra già strutturata
 
 - BOM-001 HAF;
 - BOM-002 schermi;
 - BOM-003 aperture/reti;
 - BOM-004 copertura;
-- struttura/fondazioni: package economico + RFQ;
-- BOM-005 fogging + RFQ;
-- BOM-006 supporti coltura + drenaggio + RFQ;
-- BOM-007 porte + compartimenti + gronde/pluviali + RFQ.
+- struttura/fondazioni;
+- BOM-005 fogging;
+- BOM-006 supporti coltura + drenaggio;
+- BOM-007 porte + compartimenti + gronde/pluviali;
+- BOM-008 attrezzatura/consumabili cantiere.
 
-### In lavorazione successiva
+### Prossimo grande blocco
 
-**Attrezzatura e consumabili di montaggio:** ponteggi/piattaforme, sollevamento, utensili, elettroutensili, DPI, coppie di serraggio, fissaggi, sigillanti, materiali di consumo, ricambi cantiere, ore macchina e costi.
+**05_TERMICO_E_CLIMA — distribuzione termica:** tubazioni, collettori, pompe, miscelazione, valvole, misure portata/temperatura, linee near-crop, isolamento, supporti, ricambi e commissioning.
 
-### Coda immediata
+### Coda successiva
 
-1. attrezzatura e consumabili montaggio;
-2. chiusura punto 03 / matrice costi aperti;
-3. tubi, collettori e pompe circuito termico;
-4. gocciolatori e linee irrigue;
-5. filtrazione acqua;
-6. pompe principali irrigazione;
-7. pompe dosatrici;
-8. serbatoi fertilizzanti;
-9. accumulo termico 30–50 m³;
-10. accumulo acqua 300 m³;
-11. moduli FV e inverter;
-12. AMR;
-13. sollevatore/mezzo multifunzione;
-14. robot tagliaerba;
-15. sistema pulizia area galline;
-16. celle frigorifere;
-17. attrezzatura raccolta e packaging;
-18. pergolato/vite/area relax;
-19. fattoria didattica;
-20. spaccio automatico 24/7;
-21. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. distribuzione termica;
+2. gocciolatori e linee irrigue;
+3. filtrazione acqua;
+4. pompe principali irrigazione;
+5. pompe dosatrici;
+6. serbatoi fertilizzanti;
+7. accumulo termico 30–50 m³;
+8. accumulo acqua 300 m³;
+9. moduli FV e inverter;
+10. AMR;
+11. sollevatore/mezzo multifunzione;
+12. robot tagliaerba;
+13. sistema pulizia area galline;
+14. celle frigorifere;
+15. attrezzatura raccolta e packaging;
+16. pergolato/vite/area relax;
+17. fattoria didattica;
+18. spaccio automatico 24/7;
+19. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
