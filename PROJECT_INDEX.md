@@ -47,7 +47,23 @@ Documenti:
 
 Il punto 00 non viene considerato “immutabile”: potrà essere aggiornato se emergono nuovi requisiti, ma è sufficientemente definito per governare i blocchi successivi.
 
-## 4. Metodo BOM obbligatorio
+## 4. Stato punto 01 — Terreno e masterplan
+
+**Stato: RAFFINATO / IN ATTESA DI LOTTO REALE.**
+
+Documenti:
+
+- `01_MASTERPLAN_E_TERRENO/README.md` — processo e stati di avanzamento del terreno;
+- `01_MASTERPLAN_E_TERRENO/SITE_REQUIREMENTS.md` — requisiti del lotto e hard blocker;
+- `01_MASTERPLAN_E_TERRENO/DUE_DILIGENCE_GATE.md` — urbanistica, PPR, PAI/PGRA, Natura 2000, geologia, acqua, energia, accessi e verifiche amministrative;
+- `01_MASTERPLAN_E_TERRENO/MASTERPLAN_REQUIREMENTS.md` — superfici, flussi, logistica, verde, crescita e moduli futuri;
+- `01_MASTERPLAN_E_TERRENO/SITE_EVALUATION_TEMPLATE.md` — scheda standard da compilare per ogni candidato;
+- `01_MASTERPLAN_E_TERRENO/LAND_COST_MODEL.md` — prezzo terreno + trasferimento + due diligence + opere abilitanti;
+- `01_MASTERPLAN_E_TERRENO/OFFICIAL_SOURCES.md` — fonti ufficiali da ricontrollare sul lotto reale.
+
+Il metodo del punto 01 è chiuso. Il punto diventa `VALIDATO` solo con un lotto reale che supera due diligence, masterplan test e costo totale del sito.
+
+## 5. Metodo BOM obbligatorio
 
 Per ogni oggetto o sottosistema si analizzano, in ordine:
 
@@ -71,7 +87,7 @@ Per ogni oggetto o sottosistema si analizzano, in ordine:
 18. predisposizione per espansione;
 19. stato documentale secondo `DECISION_GATES.md`.
 
-## 5. Stato attuale dei grandi blocchi
+## 6. Stato attuale dei grandi blocchi
 
 ### Base tecnica già esistente
 
@@ -88,7 +104,7 @@ Sono parte esplicita del progetto:
 - pergolati, vite, ombra, verde, aree relax e qualità estetica come infrastruttura di benessere;
 - piano economico che consideri la sostenibilità personale durante il lancio.
 
-## 6. Sequenza BOM
+## 7. Sequenza BOM
 
 Si procede un sottosistema alla volta, chiudendo il più possibile prima di passare al successivo.
 
