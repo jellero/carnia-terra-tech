@@ -71,6 +71,7 @@ Documenti principali:
 - `03_SERRA/SCREENS_SHADING.md`;
 - `03_SERRA/RFQ_SCREENS.md`;
 - `03_SERRA/FOGGING_HUMIDITY.md`;
+- `03_SERRA/RFQ_FOGGING.md`;
 - `03_SERRA/CROP_SUPPORTS_LOGISTICS.md`;
 - `03_SERRA/MAINTENANCE_SAFETY.md`;
 - `03_SERRA/BOM_REGISTER.md`;
@@ -82,22 +83,28 @@ Package/BOM sviluppati:
 - **BOM-002 — schermi climatici**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
 - **BOM-003 — aperture/attuatori/reti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
 - **BOM-004 — copertura/film/fissaggi**: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
-- **package struttura/fondazioni**: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`.
+- **package struttura/fondazioni**: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
+- **BOM-005 — fogging**: `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`.
 
 ### Struttura/fondazioni — stato corrente
 
-Sono ora definite le righe economiche obbligatorie: peso acciaio per famiglia, zincatura, bulloneria, lavorazioni, trasporto, scarico, montaggio, mezzi, engineering, scavi, cls, ferro, casseri, ancoraggi, prove, rinterri e drenaggi.
+Sono definite le righe economiche obbligatorie: peso acciaio per famiglia, zincatura, bulloneria, lavorazioni, trasporto, scarico, montaggio, mezzi, engineering, scavi, cls, ferro, casseri, ancoraggi, prove, rinterri e drenaggi.
 
-Benchmark di controllo registrati:
+Benchmark registrati: Tuttoserre 8×40 m / €6.832 IVA incl. non scalabile; Prezzario FVG 2026 per carpenteria e calcestruzzo come controllo di congruità.
 
-- Tuttoserre 8×40 m / 320 m²: €6.832 IVA inclusa, teli/montaggio esclusi, prezzo indicativo; **non scalare linearmente**;
-- FVG 2026 carpenteria profili cavi: S235 €7,56/kg; S275 €7,65/kg; S355 €7,84/kg; zincatura a caldo +€1,50/kg;
-- FVG 2026 C25/30 materiale: ~€111,84–113,17/m³;
-- FVG 2026 fondazioni/platee C25/30 in opera: ~€287–290/m³, ferro escluso.
+### Fogging — stato corrente
 
-Il totale resta correttamente `DA CALCOLO / DA PREVENTIVO` perché mancano lotto, geotecnica, carichi e shop drawing.
+BOM-005 copre C1/C2/C6 e confronta tre architetture:
 
-Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo e preventivi confrontabili.
+- F1 centrale singola;
+- F2 centrale N+1;
+- F3 tre pompe indipendenti.
+
+Sono stati trovati prezzi reali per pompe HP, ugelli, tubi, raccordi, elettrovalvole e filtrazione. Il costo totale resta correttamente aperto perché servono analisi acqua, carico climatico, numero ugelli, metri di linea e trattamento acqua.
+
+Osmosi inversa/softening non sono acquisti automatici: diventano requisito solo se l'analisi acqua e il costruttore li giustificano.
+
+Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo, analisi acqua e preventivi confrontabili.
 
 ## 7. Metodo BOM obbligatorio
 
@@ -135,32 +142,35 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono già nel perimetr
 - BOM-002 schermi;
 - BOM-003 aperture/reti;
 - BOM-004 copertura;
-- struttura/fondazioni: package economico + RFQ pronti, quantità bloccate dal sito.
+- struttura/fondazioni: package economico + RFQ;
+- BOM-005 fogging + RFQ.
 
 ### In lavorazione successiva
 
-**BOM-005 — fogging C1/C2/C6: trattamento acqua + pompa HP + filtrazione + tubazioni + ugelli + valvole + controllo + drenaggi/manutenzione.**
+**Supporti coltura + canaline drenaggio:** fili, ganci, bobine/clip, ancoraggi, sostegni, canaline fuori suolo, staffe, pendenze, raccolta drenaggio, manutenzione e costi.
 
 ### Coda immediata
 
-1. fogging;
-2. tubi, collettori e pompe circuito termico;
-3. gocciolatori e linee irrigue;
-4. filtrazione acqua;
-5. pompe principali irrigazione;
-6. pompe dosatrici;
-7. serbatoi fertilizzanti;
-8. accumulo termico 30–50 m³;
-9. accumulo acqua 300 m³;
-10. moduli FV e inverter;
-11. AMR;
-12. sollevatore/mezzo multifunzione;
-13. robot tagliaerba;
-14. sistema pulizia area galline;
-15. celle frigorifere;
-16. attrezzatura raccolta e packaging;
-17. pergolato/vite/area relax;
-18. fattoria didattica;
-19. spaccio automatico 24/7.
+1. supporti coltura/canaline drenaggio;
+2. porte/compartimenti/gronde;
+3. attrezzatura e consumabili montaggio;
+4. tubi, collettori e pompe circuito termico;
+5. gocciolatori e linee irrigue;
+6. filtrazione acqua;
+7. pompe principali irrigazione;
+8. pompe dosatrici;
+9. serbatoi fertilizzanti;
+10. accumulo termico 30–50 m³;
+11. accumulo acqua 300 m³;
+12. moduli FV e inverter;
+13. AMR;
+14. sollevatore/mezzo multifunzione;
+15. robot tagliaerba;
+16. sistema pulizia area galline;
+17. celle frigorifere;
+18. attrezzatura raccolta e packaging;
+19. pergolato/vite/area relax;
+20. fattoria didattica;
+21. spaccio automatico 24/7.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
