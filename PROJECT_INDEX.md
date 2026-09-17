@@ -41,11 +41,11 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 
 Documenti:
 
-- `00_VISIONE_E_PRINCIPI/PROJECT_CHARTER.md` — missione, principi non negoziabili, definizione di progettato e regola anti-zona-scoperta;
-- `00_VISIONE_E_PRINCIPI/KPI_GUARDRAILS.md` — indicatori di qualità della vita, finanza, resilienza, manutenzione, ergonomia, risorse e crescita;
-- `00_VISIONE_E_PRINCIPI/DECISION_GATES.md` — stati standard da IDEA a OPERATIVO e condizioni per avanzare.
+- `00_VISIONE_E_PRINCIPI/PROJECT_CHARTER.md`;
+- `00_VISIONE_E_PRINCIPI/KPI_GUARDRAILS.md`;
+- `00_VISIONE_E_PRINCIPI/DECISION_GATES.md`.
 
-Il punto 00 non viene considerato “immutabile”: potrà essere aggiornato se emergono nuovi requisiti, ma è sufficientemente definito per governare i blocchi successivi.
+Il punto 00 può essere aggiornato se emergono nuovi requisiti, ma è sufficientemente definito per governare i blocchi successivi.
 
 ## 4. Stato punto 01 — Terreno e masterplan
 
@@ -53,17 +53,44 @@ Il punto 00 non viene considerato “immutabile”: potrà essere aggiornato se 
 
 Documenti:
 
-- `01_MASTERPLAN_E_TERRENO/README.md` — processo e stati di avanzamento del terreno;
-- `01_MASTERPLAN_E_TERRENO/SITE_REQUIREMENTS.md` — requisiti del lotto e hard blocker;
-- `01_MASTERPLAN_E_TERRENO/DUE_DILIGENCE_GATE.md` — urbanistica, PPR, PAI/PGRA, Natura 2000, geologia, acqua, energia, accessi e verifiche amministrative;
-- `01_MASTERPLAN_E_TERRENO/MASTERPLAN_REQUIREMENTS.md` — superfici, flussi, logistica, verde, crescita e moduli futuri;
-- `01_MASTERPLAN_E_TERRENO/SITE_EVALUATION_TEMPLATE.md` — scheda standard da compilare per ogni candidato;
-- `01_MASTERPLAN_E_TERRENO/LAND_COST_MODEL.md` — prezzo terreno + trasferimento + due diligence + opere abilitanti;
-- `01_MASTERPLAN_E_TERRENO/OFFICIAL_SOURCES.md` — fonti ufficiali da ricontrollare sul lotto reale.
+- `01_MASTERPLAN_E_TERRENO/README.md`;
+- `01_MASTERPLAN_E_TERRENO/SITE_REQUIREMENTS.md`;
+- `01_MASTERPLAN_E_TERRENO/DUE_DILIGENCE_GATE.md`;
+- `01_MASTERPLAN_E_TERRENO/MASTERPLAN_REQUIREMENTS.md`;
+- `01_MASTERPLAN_E_TERRENO/SITE_EVALUATION_TEMPLATE.md`;
+- `01_MASTERPLAN_E_TERRENO/LAND_COST_MODEL.md`;
+- `01_MASTERPLAN_E_TERRENO/OFFICIAL_SOURCES.md`.
 
 Il metodo del punto 01 è chiuso. Il punto diventa `VALIDATO` solo con un lotto reale che supera due diligence, masterplan test e costo totale del sito.
 
-## 5. Metodo BOM obbligatorio
+## 5. Stato punto 02 — Agronomia
+
+**Stato: RAFFINATO / PORTAFOGLIO E METODO DEFINITI / DATI COLTURALI DA VALIDARE.**
+
+Documenti:
+
+- `02_AGRONOMIA/README.md` — regole agronomiche e gate di validazione;
+- `02_AGRONOMIA/CROP_PORTFOLIO.md` — portafoglio, allocazione dei comparti e diversificazione;
+- `02_AGRONOMIA/CROP_CARD_TEMPLATE.md` — scheda obbligatoria coltura per coltura;
+- `02_AGRONOMIA/GREENHOUSE_CROPS.md` — pomodoro, peperone, lattuga/leaf, baby leaf e basilico/vivaio;
+- `02_AGRONOMIA/CALENDAR_AND_CAPACITY.md` — calendario settimanale, occupazione comparti, picchi lavoro e prodotto;
+- `02_AGRONOMIA/YIELD_LABOR_ECONOMICS.md` — resa vendibile, ore uomo, costi e marginalità;
+- `02_AGRONOMIA/IPM_BIOSECURITY.md` — prevenzione, scouting, IPM e separazione dei comparti;
+- `02_AGRONOMIA/OUTDOOR_PERENNIALS.md` — outdoor, vite, siepi, verde e luppolo;
+- `02_AGRONOMIA/OFFICIAL_SOURCES.md` — ERSA, ARPA/OSMER, Commissione UE e CREA.
+
+Portafoglio di lavoro mantenuto:
+
+- C1 pomodoro premium;
+- C2 peperone;
+- C3 lattuga;
+- C4 lattuga/leaf flessibile;
+- C5 baby leaf/rucola/spinacio;
+- C6 basilico + vivaio + prove.
+
+Non sono state inventate rese, cultivar, densità o calendari definitivi. Il punto 02 diventa `VALIDATO` coltura per coltura solo quando sono disponibili sito, sistema di coltivazione, cultivar, resa vendibile con fonte/prova, ore uomo, mercato, prezzo e marginalità.
+
+## 6. Metodo BOM obbligatorio
 
 Per ogni oggetto o sottosistema si analizzano, in ordine:
 
@@ -87,26 +114,11 @@ Per ogni oggetto o sottosistema si analizzano, in ordine:
 18. predisposizione per espansione;
 19. stato documentale secondo `DECISION_GATES.md`.
 
-## 6. Stato attuale dei grandi blocchi
+## 7. Stato attuale dei grandi blocchi
 
-### Base tecnica già esistente
+I file in `docs/` restano sorgenti durante la migrazione. Sono già parte esplicita del progetto robot tagliaerba, automazione pulizia area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax e sostenibilità personale durante il lancio.
 
-I file in `docs/` coprono già serra, termico, acqua, automazione, finanza, prodotti e open points. Sono documenti sorgente durante la migrazione.
-
-### Nuovi requisiti incorporati
-
-Sono parte esplicita del progetto:
-
-- robot autonomo per manutenzione/taglio prato;
-- soluzione automatizzata per pulizia delle deiezioni nell'area galline;
-- area fattoria didattica;
-- futuro spaccio aziendale self-service automatizzato 24/7;
-- pergolati, vite, ombra, verde, aree relax e qualità estetica come infrastruttura di benessere;
-- piano economico che consideri la sostenibilità personale durante il lancio.
-
-## 7. Sequenza BOM
-
-Si procede un sottosistema alla volta, chiudendo il più possibile prima di passare al successivo.
+## 8. Sequenza BOM
 
 ### In lavorazione
 
