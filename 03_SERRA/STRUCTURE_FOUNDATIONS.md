@@ -1,117 +1,160 @@
 # Carnia TerraTech — Structure & Foundations
 
-**Stato:** `REQUISITI DEFINITI / CALCOLO DA FARE SUL LOTTO REALE`.
+**Aggiornato:** 17 settembre 2026  
+**Stato:** `REQUISITI DEFINITI / PACKAGE COSTI SVILUPPATO / CALCOLO BLOCCATO DAL LOTTO`.
 
-## 1. Norma di riferimento
+## 1. Norma e responsabilità
 
-Per una serra produttiva professionale il riferimento europeo da verificare in sede esecutiva è **EN 13031-1:2019**, con corrigendum **AC:2022**, per resistenza meccanica, stabilità, esercizio, durabilità e fondazioni.
-
-Il progettista strutturale deve inoltre verificare l'applicazione delle **NTC 2018 — D.M. 17 gennaio 2018**, relativa Circolare applicativa e ogni prescrizione nazionale/regionale/comunale vigente al momento del progetto.
+Per la serra produttiva professionale il riferimento europeo da verificare in esecutivo è **EN 13031-1:2019 + AC:2022**. Il progettista deve inoltre verificare NTC 2018, relativa Circolare e ogni prescrizione vigente al momento del progetto.
 
 Il repository non sostituisce il progetto strutturale firmato.
 
-## 2. Azioni da considerare
+## 2. Regola economica
+
+La struttura non viene stimata con un semplice €/m². Devono essere noti almeno:
+
+- kg acciaio per famiglia;
+- sezioni/spessori/materiale;
+- lavorazioni;
+- zincatura/protezione;
+- bulloneria/giunti/staffe;
+- quantità e tipo fondazioni;
+- trasporto/scarico;
+- montaggio/mezzi;
+- calcoli/shop drawing/as-built;
+- ricambi.
+
+Package economico dettagliato: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`.
+
+## 3. Azioni da considerare
 
 Il calcolo deve esplicitare almeno:
 
 - peso proprio struttura;
-- copertura e relativi sistemi di fissaggio;
+- copertura/fissaggi;
 - neve del sito;
 - vento del sito;
 - sisma quando applicabile;
 - schermi e meccanismi;
 - aperture e attuatori;
 - HAF e componenti sospesi;
-- tubazioni/cavi/canaline fissati alla struttura;
-- linee coltura e carichi sospesi di pomodoro/peperone;
-- canaline drenaggio e supporti;
-- carichi di manutenzione;
+- fogging;
+- tubazioni/cavi/canaline;
+- linee coltura e carichi sospesi pomodoro/peperone;
+- canaline drenaggio/supporti;
+- carichi manutenzione;
 - combinazioni di carico;
-- condizioni durante montaggio e sostituzione coperture.
+- condizioni durante montaggio e sostituzione copertura.
 
-Nessun componente sospeso viene considerato "peso trascurabile" senza verifica.
+Nessun componente sospeso è considerato trascurabile senza verifica.
 
-## 3. Dati di sito obbligatori
+## 4. Dati di sito obbligatori
 
 Prima del calcolo definitivo:
 
-- coordinate e quota;
+- coordinate/quota;
 - topografia;
 - esposizione;
-- categoria/parametri del terreno;
+- stratigrafia e parametri geotecnici;
 - relazione geologica/geotecnica quando richiesta;
-- dati vento;
-- dati neve;
-- eventuali effetti topografici;
-- falda e drenaggio;
+- vento/neve;
+- effetti topografici;
+- falda/drenaggio;
 - aggressività/corrosività del terreno quando rilevante.
 
-## 4. Fondazioni e ancoraggi
+## 5. Fondazioni: nessuna soluzione assunta a priori
 
-Non assumere a priori pali infissi, plinti o viti di fondazione.
+Confrontare almeno:
 
-Confrontare in funzione del sito:
+- F1 pali/manicotti infissi;
+- F2 plinti/pedestalli puntuali in c.a.;
+- F3 viti/eliche di fondazione strutturali con dati e prove in sito;
+- F4 sistema misto quando tecnicamente giustificato.
 
-- pali/ancore infisse;
-- plinti puntuali;
-- cordoli;
-- viti/eliche di fondazione certificate;
-- combinazioni specifiche del costruttore.
+Per ogni soluzione verificare:
 
-Per ogni soluzione calcolare:
-
-- resistenza a trazione/estrazione;
+- trazione/estrazione;
 - compressione;
 - azioni orizzontali;
 - cedimenti;
-- gelo e drenaggio;
+- gelo/drenaggio;
 - durabilità;
-- facilità di sostituzione/riparazione;
-- interferenza con tubazioni e sottoservizi.
+- tolleranze;
+- riparabilità;
+- interferenze con sottoservizi.
 
-## 5. Materiali e durabilità
+I prezzi retail di piccole viti da recinzione/pergolato non vengono usati per dimensionare né quotare una fondazione strutturale della serra.
 
-Per l'acciaio richiedere almeno:
+## 6. Materiali e durabilità
 
-- qualità/materiale dichiarato;
-- processo di zincatura/protezione;
-- spessori reali dei profili;
-- certificazioni e tracciabilità;
+Richiedere:
+
+- qualità acciaio dichiarata;
+- sezioni e spessori reali;
+- processo/spessore zincatura o protezione;
+- certificazioni/tracciabilità;
 - bulloneria compatibile;
-- gestione delle zone tagliate/forate in cantiere;
-- dettagli contro ristagni d'acqua;
-- separazione da materiali incompatibili quando necessario.
+- gestione di tagli/fori in cantiere;
+- dettagli contro ristagni;
+- protezione delle aree esposte a condensa, fertilizzanti e lavaggi.
 
-Le parti più esposte a umidità, fertilizzanti, condensa e lavaggi devono essere trattate come ambiente aggressivo rispetto a un normale capannone asciutto.
+## 7. Benchmark costi di controllo
 
-## 6. Bulloneria e minuteria
+### Carpenteria FVG 2026
 
-La BOM deve distinguere:
+Prezzario regionale, carpenteria in profilati cavi:
+
+- S235 €7,56/kg;
+- S275 €7,65/kg;
+- S355 €7,84/kg;
+- zincatura a caldo +€1,50/kg.
+
+Questi sono benchmark di lavori pubblici generici, non prezzi della serra agricola.
+
+Fonte: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=20.6.IH2.01
+
+### Calcestruzzo FVG 2026
+
+Fornitura C25/30: ~€111,84–113,17/m³ secondo consistenza; fondazioni/platee in opera C25/30 ~€287–290/m³ con ferro escluso.
+
+Fonti:
+
+- https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=Y8.1.165.02
+- https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=16.5.EQ4.02
+
+### Benchmark agricolo
+
+Tuttoserre professionale 8×40 m / 320 m²: €6.832 IVA inclusa, struttura Ø60 mm, passo pali 2,5 m, gronda 3,2 m, teli e montaggio esclusi; prezzo dichiarato indicativo da ricalcolare.
+
+Fonte: https://www.tuttoserre.it/serre/18-serra-professionale.html
+
+Non scalare linearmente a 4.200 m².
+
+## 8. Bulloneria e minuteria
+
+La distinta deve separare:
 
 - bulloni;
 - dadi;
 - rondelle;
-- staffe;
-- cavallotti;
-- morsetti;
-- giunti;
-- controventi;
-- tiranti;
-- piastre;
-- ancoraggi;
-- viteria autoforante;
-- elementi di fissaggio copertura;
+- staffe/piastre;
+- cavallotti/morsetti;
+- giunti/manicotti;
+- controventi/tiranti;
+- tirafondi/ancoraggi;
+- viteria secondaria;
 - ricambi.
 
-Per ogni famiglia servono quantità, materiale/trattamento, classe dove applicabile e almeno una percentuale/quantità di scorta motivata.
+Per ogni famiglia: quantità, materiale/trattamento, classe quando applicabile e scorta motivata.
 
-## 7. Interfacce da congelare prima dell'ordine
+## 9. Interfacce da congelare prima dell'ordine
 
 La struttura non passa a `ORDINABILE` finché non sono definite le interfacce con:
 
 - schermi;
-- aperture;
+- aperture/reti;
 - HAF;
+- fogging;
 - colture sospese;
 - tubazioni termiche;
 - irrigazione;
@@ -120,19 +163,52 @@ La struttura non passa a `ORDINABILE` finché non sono definite le interfacce co
 - AMR;
 - porte;
 - gronde;
-- future espansioni.
+- espansioni future.
 
-## 8. Ispezione e vita utile
+## 10. Dati obbligatori dal fornitore
 
-Il fornitore/progettista deve fornire criteri di ispezione per:
+Richiedere nel preventivo:
+
+- peso totale acciaio;
+- peso per famiglia strutturale;
+- numero e sezione di colonne/archi/travi;
+- quantità controventi/tiranti;
+- quantità bulloneria/giunti principali;
+- quantità e tipologia fondazioni;
+- m³ cls/kg armatura se soluzione in c.a.;
+- carichi di progetto;
+- vita/durabilità dichiarata;
+- manuale montaggio;
+- piano ispezioni/manutenzione;
+- lista ricambi.
+
+RFQ: `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md`.
+
+## 11. Ispezione e vita utile
+
+Prevedere controlli documentati per:
 
 - corrosione;
 - serraggio bulloni;
 - deformazioni;
 - fondazioni/ancoraggi;
 - controventi;
-- danni dopo neve/vento eccezionale;
+- danni post neve/vento;
+- urti mezzi;
 - punti di contatto con copertura;
 - meccanismi mobili.
 
-Tutti questi controlli confluiranno nell'asset register del punto 13.
+I controlli confluiranno nell'asset register del punto 13.
+
+## 12. Gate
+
+Diventa `VALIDATO` solo dopo:
+
+- lotto e geotecnica;
+- carichi locali;
+- calcolo firmato;
+- shop drawing;
+- distinta pesi/quantità;
+- fondazione verificata;
+- almeno 2–3 offerte confrontabili;
+- costo completo inserito nel CAPEX.

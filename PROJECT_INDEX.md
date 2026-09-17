@@ -39,144 +39,128 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 
 **Stato: RAFFINATO / BASE DI GOVERNO DEL PROGETTO.**
 
-Documenti:
-
-- `00_VISIONE_E_PRINCIPI/PROJECT_CHARTER.md`;
-- `00_VISIONE_E_PRINCIPI/KPI_GUARDRAILS.md`;
-- `00_VISIONE_E_PRINCIPI/DECISION_GATES.md`.
-
-Il punto 00 può essere aggiornato se emergono nuovi requisiti, ma è sufficientemente definito per governare i blocchi successivi.
+Documenti: `PROJECT_CHARTER.md`, `KPI_GUARDRAILS.md`, `DECISION_GATES.md` in `00_VISIONE_E_PRINCIPI/`.
 
 ## 4. Stato punto 01 — Terreno e masterplan
 
 **Stato: RAFFINATO / IN ATTESA DI LOTTO REALE.**
 
-Documenti:
-
-- `01_MASTERPLAN_E_TERRENO/README.md`;
-- `01_MASTERPLAN_E_TERRENO/SITE_REQUIREMENTS.md`;
-- `01_MASTERPLAN_E_TERRENO/DUE_DILIGENCE_GATE.md`;
-- `01_MASTERPLAN_E_TERRENO/MASTERPLAN_REQUIREMENTS.md`;
-- `01_MASTERPLAN_E_TERRENO/SITE_EVALUATION_TEMPLATE.md`;
-- `01_MASTERPLAN_E_TERRENO/LAND_COST_MODEL.md`;
-- `01_MASTERPLAN_E_TERRENO/OFFICIAL_SOURCES.md`.
-
-Il metodo del punto 01 è chiuso. Il punto diventa `VALIDATO` solo con un lotto reale che supera due diligence, masterplan test e costo totale del sito.
+Il metodo è chiuso; diventa `VALIDATO` solo con lotto reale che supera due diligence, masterplan test e costo totale del sito.
 
 ## 5. Stato punto 02 — Agronomia
 
 **Stato: RAFFINATO / PORTAFOGLIO E METODO DEFINITI / DATI COLTURALI DA VALIDARE.**
 
-Documenti:
+Portafoglio working: C1 pomodoro premium; C2 peperone; C3 lattuga; C4 lattuga/leaf flessibile; C5 baby leaf/rucola/spinacio; C6 basilico + vivaio + prove.
 
-- `02_AGRONOMIA/README.md`;
-- `02_AGRONOMIA/CROP_PORTFOLIO.md`;
-- `02_AGRONOMIA/CROP_CARD_TEMPLATE.md`;
-- `02_AGRONOMIA/GREENHOUSE_CROPS.md`;
-- `02_AGRONOMIA/CALENDAR_AND_CAPACITY.md`;
-- `02_AGRONOMIA/YIELD_LABOR_ECONOMICS.md`;
-- `02_AGRONOMIA/IPM_BIOSECURITY.md`;
-- `02_AGRONOMIA/OUTDOOR_PERENNIALS.md`;
-- `02_AGRONOMIA/OFFICIAL_SOURCES.md`.
-
-Portafoglio di lavoro mantenuto: C1 pomodoro premium; C2 peperone; C3 lattuga; C4 lattuga/leaf flessibile; C5 baby leaf/rucola/spinacio; C6 basilico + vivaio + prove.
-
-Non sono state inventate rese, cultivar, densità o calendari definitivi. Il punto 02 diventa `VALIDATO` coltura per coltura solo quando sono disponibili sito, sistema di coltivazione, cultivar, resa vendibile con fonte/prova, ore uomo, mercato, prezzo e marginalità.
+Il punto diventa `VALIDATO` coltura per coltura con sito, sistema, cultivar, resa vendibile, ore uomo, mercato, prezzo e marginalità.
 
 ## 6. Stato punto 03 — Serra
 
-**Stato: RAFFINATO COME ARCHITETTURA / DA DIMENSIONARE SUL LOTTO REALE / BOM IN CORSO.**
+**Stato: RAFFINATO COME ARCHITETTURA / BOM PRINCIPALI IN SVILUPPO / DIMENSIONAMENTO BLOCCATO DAL LOTTO.**
 
 Documenti principali:
 
 - `03_SERRA/README.md`;
 - `03_SERRA/STRUCTURE_FOUNDATIONS.md`;
+- `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md`;
 - `03_SERRA/ENVELOPE_COVERING.md`;
+- `03_SERRA/RFQ_COVERING.md`;
 - `03_SERRA/OPENINGS_COMPARTMENTS.md`;
+- `03_SERRA/RFQ_OPENINGS_NETS.md`;
 - `03_SERRA/SCREENS_SHADING.md`;
 - `03_SERRA/RFQ_SCREENS.md`;
-- `03_SERRA/RFQ_OPENINGS_NETS.md`;
-- `03_SERRA/RFQ_COVERING.md`;
 - `03_SERRA/FOGGING_HUMIDITY.md`;
 - `03_SERRA/CROP_SUPPORTS_LOGISTICS.md`;
 - `03_SERRA/MAINTENANCE_SAFETY.md`;
-- `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md`;
 - `03_SERRA/BOM_REGISTER.md`;
 - `03_SERRA/OFFICIAL_SOURCES.md`.
 
-BOM serra sviluppate:
+Package/BOM sviluppati:
 
-- **BOM-001 — Ventilazione HAF**: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`;
-- **BOM-002 — Schermi termici/ombreggianti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
-- **BOM-003 — Aperture, attuatori e reti anti-insetto**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
-- **BOM-004 — Copertura, film e fissaggi**: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`.
+- **BOM-001 — HAF**: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`;
+- **BOM-002 — schermi climatici**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
+- **BOM-003 — aperture/attuatori/reti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
+- **BOM-004 — copertura/film/fissaggi**: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
+- **package struttura/fondazioni**: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`.
 
-BOM-004 registra candidati reali 200 µm, benchmark materiale intorno a €1,24–1,27/m² + IVA, fissaggi, protezioni, riparazione, posa e sostituzione. Il benchmark non viene moltiplicato come costo serra: la superficie sviluppata della copertura deve essere ricavata dalla geometria reale.
+### Struttura/fondazioni — stato corrente
+
+Sono ora definite le righe economiche obbligatorie: peso acciaio per famiglia, zincatura, bulloneria, lavorazioni, trasporto, scarico, montaggio, mezzi, engineering, scavi, cls, ferro, casseri, ancoraggi, prove, rinterri e drenaggi.
+
+Benchmark di controllo registrati:
+
+- Tuttoserre 8×40 m / 320 m²: €6.832 IVA inclusa, teli/montaggio esclusi, prezzo indicativo; **non scalare linearmente**;
+- FVG 2026 carpenteria profili cavi: S235 €7,56/kg; S275 €7,65/kg; S355 €7,84/kg; zincatura a caldo +€1,50/kg;
+- FVG 2026 C25/30 materiale: ~€111,84–113,17/m³;
+- FVG 2026 fondazioni/platee C25/30 in opera: ~€287–290/m³, ferro escluso.
+
+Il totale resta correttamente `DA CALCOLO / DA PREVENTIVO` perché mancano lotto, geotecnica, carichi e shop drawing.
 
 Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo e preventivi confrontabili.
 
 ## 7. Metodo BOM obbligatorio
 
-Per ogni oggetto o sottosistema si analizzano, in ordine:
+Per ogni oggetto o sottosistema si analizzano:
 
 1. funzione;
-2. requisiti tecnici e operativi;
+2. requisiti;
 3. quantità;
-4. alternative reali acquistabili;
-5. prezzo trovato / prezzo da preventivo / stima;
-6. IVA, trasporto e accessori esclusi/inclusi;
-7. installazione e minuteria;
-8. alimentazioni e consumi;
+4. alternative reali;
+5. prezzo trovato/preventivo/stima;
+6. IVA/trasporto/accessori;
+7. installazione/minuteria;
+8. consumi;
 9. manutenzione ordinaria;
 10. manutenzione straordinaria;
-11. ricambi critici;
-12. vita utile e sostituibilità;
-13. sicurezza e certificazioni;
+11. ricambi;
+12. vita utile;
+13. sicurezza/certificazioni;
 14. failure mode;
-15. fallback manuale o ridondanza;
-16. compatibilità con contributi;
-17. dipendenze da altri sistemi;
-18. predisposizione per espansione;
-19. stato documentale secondo `DECISION_GATES.md`.
+15. fallback/ridondanza;
+16. contributi;
+17. dipendenze;
+18. espansione;
+19. stato secondo `DECISION_GATES.md`.
 
 ## 8. Stato attuale dei grandi blocchi
 
-I file in `docs/` restano sorgenti durante la migrazione. Sono già parte esplicita del progetto robot tagliaerba, automazione pulizia area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax e sostenibilità personale durante il lancio.
+I file in `docs/` restano sorgenti durante la migrazione. Sono già nel perimetro robot tagliaerba, automazione pulizia area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax e sostenibilità personale durante il lancio.
 
 ## 9. Sequenza BOM
 
-### Candidati già sviluppati
+### Candidati/package già sviluppati
 
-- BOM-001 — HAF;
-- BOM-002 — schermi climatici;
-- BOM-003 — aperture/attuatori/reti anti-insetto;
-- BOM-004 — copertura/film/fissaggi.
+- BOM-001 HAF;
+- BOM-002 schermi;
+- BOM-003 aperture/reti;
+- BOM-004 copertura;
+- struttura/fondazioni: package economico + RFQ pronti, quantità bloccate dal sito.
 
 ### In lavorazione successiva
 
-**RFQ struttura/fondazioni + confronto strutture reali**, poi **BOM-005 fogging**.
+**BOM-005 — fogging C1/C2/C6: trattamento acqua + pompa HP + filtrazione + tubazioni + ugelli + valvole + controllo + drenaggi/manutenzione.**
 
 ### Coda immediata
 
-1. struttura/fondazioni;
-2. fogging;
-3. tubi, collettori e pompe circuito termico;
-4. gocciolatori e linee irrigue;
-5. filtrazione acqua;
-6. pompe principali irrigazione;
-7. pompe dosatrici;
-8. serbatoi fertilizzanti;
-9. accumulo termico 30–50 m³;
-10. accumulo acqua 300 m³;
-11. moduli FV e inverter;
-12. AMR;
-13. sollevatore/mezzo multifunzione;
-14. robot tagliaerba;
-15. sistema pulizia area galline;
-16. celle frigorifere;
-17. attrezzatura raccolta e packaging;
-18. pergolato/vite/area relax;
-19. fattoria didattica;
-20. spaccio automatico 24/7.
+1. fogging;
+2. tubi, collettori e pompe circuito termico;
+3. gocciolatori e linee irrigue;
+4. filtrazione acqua;
+5. pompe principali irrigazione;
+6. pompe dosatrici;
+7. serbatoi fertilizzanti;
+8. accumulo termico 30–50 m³;
+9. accumulo acqua 300 m³;
+10. moduli FV e inverter;
+11. AMR;
+12. sollevatore/mezzo multifunzione;
+13. robot tagliaerba;
+14. sistema pulizia area galline;
+15. celle frigorifere;
+16. attrezzatura raccolta e packaging;
+17. pergolato/vite/area relax;
+18. fattoria didattica;
+19. spaccio automatico 24/7.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.

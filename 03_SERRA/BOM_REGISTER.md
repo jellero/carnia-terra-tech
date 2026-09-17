@@ -7,16 +7,31 @@
 
 | Codice | Voce | Quantità working | Stato | Prezzo / nota |
 |---|---|---:|---|---|
-| GH-STR-001 | Struttura portante 4.200 m² | 1 sistema | `DA PREVENTIVARE` | nessun prezzo definitivo |
-| GH-FND-001 | Fondazioni/ancoraggi | DA CALCOLARE | `BLOCCATO DAL LOTTO` | dipende da geotecnica e struttura |
+| GH-STR-001 | Struttura portante 4.200 m² | 1 sistema | `PACKAGE COSTI DEFINITO / DA RFQ` | peso acciaio obbligatorio dal fornitore |
+| GH-STR-002 | Colonne/pali principali | DA SHOP DRAWING | `DA PREVENTIVARE` | kg/pz/sezione obbligatori |
+| GH-STR-003 | Archi/travi/reticolari | DA SHOP DRAWING | `DA PREVENTIVARE` | kg/pz/sezione obbligatori |
+| GH-STR-004 | Gronde strutturali | DA SHOP DRAWING | `DA PREVENTIVARE` | separare funzione strutturale/raccolta acqua |
+| GH-STR-005 | Controventi/tiranti | DA SHOP DRAWING | `DA PREVENTIVARE` | carichi e quantità espliciti |
+| GH-STR-006 | Piastre/staffe/giunti | DA DISTINTA | `DA PREVENTIVARE` | non assorbire in forfait |
+| GH-STR-007 | Bulloneria/cavallotti/morsetti | DA DISTINTA | `DA PREVENTIVARE` | classi/trattamenti + scorta |
+| GH-STR-008 | Zincatura/protezione | kg interessati | `DA PREVENTIVARE` | benchmark FVG 2026 +€1,50/kg hot-dip generico |
+| GH-STR-009 | Engineering/shop drawing/as-built | 1 lotto | `DA PREVENTIVARE` | calcoli e documenti separati |
+| GH-STR-010 | Trasporto/scarico/montaggio/mezzi | 1 lotto | `DA PREVENTIVARE` | distinguere le quattro voci |
+| GH-FND-001 | Fondazioni/ancoraggi | DA CALCOLARE | `BLOCCATO DAL LOTTO` | confrontare F1/F2/F3/F4 |
+| GH-FND-002 | Scavi fondazioni | m³ da calcolo | `BLOCCATO DAL LOTTO` | terreno e geometria reali |
+| GH-FND-003 | Calcestruzzo | m³ da calcolo | `BLOCCATO DAL LOTTO` | FVG 2026 C25/30 materiale ~€111,84–113,17/m³ benchmark |
+| GH-FND-004 | Armatura B450C | kg da calcolo | `BLOCCATO DAL PROGETTO` | prezzo da prezzario/fornitore corrente |
+| GH-FND-005 | Tirafondi/piastre/grout | da calcolo | `BLOCCATO DAL SISTEMA` | distinta dedicata |
+| GH-FND-006 | Prove geotecniche/estrazione | da progetto | `REQUISITO` | necessarie per soluzione reale |
+| GH-FND-007 | Rinterro/smaltimento/drenaggio | da sito | `DA PREVENTIVARE` | non dimenticare opere accessorie |
 | GH-COV-001 | Film/copertura principale 200 µm | m² sviluppati | `CANDIDATI REALI / DA GEOMETRIA` | Polyane €1,27/m² + IVA; Deltagri da €1,24/m² + IVA; Lucchini da preventivo |
 | GH-COV-002 | Profili + wiggle wire/fissaggi | m da shop drawing | `CANDIDATO / DA PREVENTIVARE` | retail benchmark ~€2,17–2,46/m; validare sistema professionale |
 | GH-COV-003 | Kit riparazione UV | stock da piano ricambi | `CANDIDATO` | tape 8 cm × 15 m benchmark €18,05 IVA incl. |
-| GH-COV-004 | Protezioni anti-abrasione compatibili | m da geometria | `DA VALIDARE COL FILM` | no schiume/nastri generici senza approvazione produttore |
+| GH-COV-004 | Protezioni anti-abrasione compatibili | m da geometria | `DA VALIDARE COL FILM` | no materiali generici senza approvazione produttore |
 | GH-COV-005 | Guarnizioni/sigillanti/profili terminali | da distinta | `DA PREVENTIVARE` | compatibilità chimica obbligatoria |
-| GH-COV-006 | Sfrido/scorta film | da piano taglio | `DA CALCOLARE` | non usare % arbitraria prima della geometria |
-| GH-COV-007 | Posa/tensionamento copertura | 1 lotto | `DA PREVENTIVARE` | separare ore, piattaforme e garanzia posa |
-| GH-COV-008 | Sostituzione/fine vita | TCO futuro | `REQUISITO` | ore, fermo comparto, rimozione e riciclo/smaltimento |
+| GH-COV-006 | Sfrido/scorta film | da piano taglio | `DA CALCOLARE` | non usare % arbitraria |
+| GH-COV-007 | Posa/tensionamento copertura | 1 lotto | `DA PREVENTIVARE` | separare ore/piattaforme/garanzia |
+| GH-COV-008 | Sostituzione/fine vita | TCO futuro | `REQUISITO` | rimozione, fermo, riciclo/smaltimento |
 | GH-END-001 | Testate | 6 comparti / layout | `DA PREVENTIVARE` | separare film/pannelli da struttura |
 | GH-DR-001 | Porte persone | DA LAYOUT | `DA PREVENTIVARE` | sicurezza + biosicurezza |
 | GH-DR-002 | Porte logistiche/AMR | DA LAYOUT | `DA PREVENTIVARE` | quota dopo scelta mezzi |
@@ -24,7 +39,7 @@
 | GH-GUT-002 | Pluviali/collettori primari | DA GEOMETRIA | `DA PREVENTIVARE` | collegamento punto 04 |
 | GH-CMP-001 | Divisori comparti | 5 separazioni + dettagli | `DA PREVENTIVARE` | materiale da definire |
 | GH-VENT-001 | Aperture laterali | 6–12 gruppi working | `CANDIDATI REALI / DA CALCOLO` | vedi BOM-003 |
-| GH-VENT-002 | Aperture zenitali | DA GEOMETRIA | `CANDIDATO / DA VALUTARE` | legate a rete e bilancio ventilazione |
+| GH-VENT-002 | Aperture zenitali | DA GEOMETRIA | `CANDIDATO / DA VALUTARE` | legate a rete e ventilazione |
 | GH-VENT-003 | Motori laterali professionali | 6–12 working | `CANDIDATO` | Ridder RW45-L €675,49 + IVA benchmark |
 | GH-VENT-004 | Trasmissioni laterali | da layout | `DA PREVENTIVARE` | tubi, giunti, catene/rack, supporti |
 | GH-VENT-005 | Quadro/cablaggio aperture | per gruppo | `DA PREVENTIVARE` | protezioni, sezionatori, I/O |
@@ -33,84 +48,70 @@
 | GH-NET-003 | Rete anti-insetto 80 Air Plus | scenario N3 | `CANDIDATO` | 26% air passage / ~42% vent reduction; tripidi |
 | GH-NET-004 | Profili/sigillature rete | da layout | `DA PREVENTIVARE` | bordi senza bypass |
 | GH-NET-005 | Scorta rete/clip/profili | lotto | `REQUISITO` | quantità da definire |
-| GH-SCR-001 | Schermi C1/C2/C6 | ~2.100 m² nominali + geometria reale | `CANDIDATI REALI / DA PREVENTIVARE` | vedi BOM-002 |
+| GH-SCR-001 | Schermi C1/C2/C6 | ~2.100 m² nominali + geometria | `CANDIDATI REALI / DA PREVENTIVARE` | vedi BOM-002 |
 | GH-SCR-002 | Predisposizione schermi C3-C5 | 3 comparti | `REQUISITO` | integrare nella struttura |
-| GH-SCR-003 | Energy screen FR | 1 livello alternativo S1 | `CANDIDATO` | RES 10+ FR / LUXOUS 1147 FR, prezzo su richiesta |
-| GH-SCR-004 | Shade/diffusion screen FR | 1 livello alternativo S2 | `CANDIDATO` | RLD 45 FR O / HARMONY 5220 O FR, prezzo su richiesta |
-| GH-SCR-005 | Doppio schermo | alternativa S3 | `DA PREVENTIVARE` | doppia meccanica/carichi da quotare |
-| GH-SCR-006 | Motoriduttori schermo | working 1/comparto/livello | `CANDIDATO` | famiglia Ridder RW45; benchmark variante retail £598 |
-| GH-SCR-007 | Finecorsa/feedback | 1 set/motore | `CANDIDATO` | benchmark limit set RW45 £70; compatibilità da verificare |
-| GH-SCR-008 | Meccanica screen | da shop drawing | `DA PREVENTIVARE` | fili, profili, alberi, cremagliere/push-pull, supporti |
-| GH-SCR-009 | Quadro/cablaggio screen | per motore/zona | `DA PREVENTIVARE` | protezioni, sezionatori, cavi, I/O |
-| GH-SCR-010 | Posa/commissioning/ricambi | 1 lotto | `DA PREVENTIVARE` | separare posa, taratura e stock ricambi |
-| GH-HAF-001 | Ventilatori HAF | 24 working + scorta | `CANDIDATO` | vedi BOM-001 esistente |
-| GH-FOG-001 | Fogging C1/C2/C6 | 3 zone | `REQUISITO` | dopo analisi acqua/clima |
+| GH-SCR-003 | Energy screen FR | scenario S1 | `CANDIDATO` | RES 10+ FR / LUXOUS 1147 FR |
+| GH-SCR-004 | Shade/diffusion screen FR | scenario S2 | `CANDIDATO` | RLD 45 FR O / HARMONY 5220 O FR |
+| GH-SCR-005 | Doppio schermo | scenario S3 | `DA PREVENTIVARE` | doppia meccanica/carichi |
+| GH-SCR-006 | Motoriduttori schermo | ~1/comparto/livello | `CANDIDATO` | famiglia Ridder RW45 |
+| GH-SCR-007 | Finecorsa/feedback | 1 set/motore | `CANDIDATO` | compatibilità da verificare |
+| GH-SCR-008 | Meccanica screen | da shop drawing | `DA PREVENTIVARE` | fili, profili, alberi, push-pull |
+| GH-SCR-009 | Quadro/cablaggio screen | per motore/zona | `DA PREVENTIVARE` | protezioni, cavi, I/O |
+| GH-SCR-010 | Posa/commissioning/ricambi | 1 lotto | `DA PREVENTIVARE` | separare taratura e stock |
+| GH-HAF-001 | Ventilatori HAF | 24 working + scorta | `CANDIDATO` | vedi BOM-001 |
+| GH-FOG-001 | Fogging C1/C2/C6 | 3 zone | `REQUISITO` | **BOM-005 successiva** |
 | GH-CROP-001 | Fili/supporti pomodoro/peperone | DA LAYOUT | `REQUISITO` | carico al progettista |
 | GH-CROP-002 | Canaline drenaggio fuori suolo | DA LAYOUT | `REQUISITO` | collegamento punto 04 |
-| GH-ELEC-001 | Passerelle/canaline elettriche | DA LAYOUT | `REQUISITO` | collegamento punto 06/07 |
-| GH-SAFE-001 | Accessi/manutenzione/anticaduta | DA PROGETTO | `REQUISITO` | da normativa/procedure |
+| GH-ELEC-001 | Passerelle/canaline elettriche | DA LAYOUT | `REQUISITO` | collegamento punti 06/07 |
+| GH-SAFE-001 | Accessi/manutenzione/anticaduta | DA PROGETTO | `REQUISITO` | procedure/normativa |
 | GH-SP-001 | Bulloneria/minuteria scorta | DA DISTINTA | `REQUISITO` | non assorbire in forfait |
-| GH-LAB-001 | Montaggio struttura | ~960 h-persona benchmark storico | `DA PREVENTIVARE` | 4 persone × 8 h × 30 gg working benchmark |
-| GH-TOOLS-001 | Attrezzatura cantiere | 1 lotto | `DA BOM` | vecchio working budget €18–30k da ricostruire |
+| GH-LAB-001 | Montaggio struttura | ~960 h-persona benchmark storico | `DA PREVENTIVARE` | da sostituire con piano reale |
+| GH-TOOLS-001 | Attrezzatura cantiere | 1 lotto | `DA BOM` | budget storico €18–30k da ricostruire |
 
-## 2. BOM sviluppate
+## 2. Package/BOM sviluppati
 
-### BOM-001 — HAF
+- **BOM-001 HAF** — `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`;
+- **BOM-002 schermi** — `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
+- **BOM-003 aperture/reti** — `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
+- **BOM-004 copertura** — `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
+- **package struttura/fondazioni** — `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`.
 
-File: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`.
+RFQ struttura: `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md`.
 
-### BOM-002 — schermi
+## 3. Benchmark struttura
 
-File: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`.
+### Agricolo
 
-Alternative: S1 energy-first, S2 shade/diffusion-first, S3 doppio schermo.
+Tuttoserre 8×40 m / 320 m²:
 
-### BOM-003 — aperture e reti anti-insetto
-
-File: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`.
-
-RFQ: `03_SERRA/RFQ_OPENINGS_NETS.md`.
-
-Stato: attuatori professionali e reti reali identificati; quantità e mesh definitive dipendono da geometria, coppia richiesta, IPM e calcolo di ventilazione.
-
-### BOM-004 — copertura, film e fissaggi
-
-File: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`.
-
-RFQ: `03_SERRA/RFQ_COVERING.md`.
-
-Stato: film professionali reali, benchmark di prezzo, fissaggi, nastri, riparazione, posa e sostituzione identificati. Il totale resta da preventivo perché la superficie sviluppata non coincide con i 4.200 m² di pavimento.
-
-Benchmark film materiale:
-
-- Polyane PRO 200 µm: €1,27/m² + IVA (>150 m²);
-- Deltagri 5S 200 µm: da €1,24/m² + IVA;
-- Lucchini PATILUX: prezzo da preventivo.
-
-## 3. Benchmark struttura esistente
-
-Benchmark storico registrato:
-
-- serra professionale 8 × 40 m = 320 m²;
 - €6.832 IVA inclusa;
-- ~€21,35/m²;
-- struttura metallica;
-- coperture e montaggio esclusi.
+- tubo Ø60 mm;
+- passo pali 2,5 m;
+- gronda 3,2 m;
+- teli/montaggio esclusi;
+- prezzo indicativo da ricalcolare.
 
-**Classificazione:** `BENCHMARK STORICO / URL DA RECUPERARE / NON SCALARE LINEARMENTE`.
+Fonte: https://www.tuttoserre.it/serre/18-serra-professionale.html
+
+**NON SCALARE LINEARMENTE**.
+
+### Lavori pubblici FVG 2026
+
+Carpenteria profili cavi: S235 €7,56/kg, S275 €7,65/kg, S355 €7,84/kg; zincatura a caldo +€1,50/kg. Sono benchmark generici, non preventivo serra.
 
 ## 4. Costo completo
 
-Per ogni macrovoce calcolare:
+Per ogni macrovoce:
 
 `materiale + accessori + minuteria + trasporto + scarico + posa + mezzi + progettazione + commissioning + ricambi iniziali`.
 
-Poi separare costo reale, IVA, costo eleggibile, contributo potenziale, quota finanziata e quota cassa/equity.
+Separare costo reale, IVA, costo eleggibile, contributo potenziale, finanziamento e cassa/equity.
 
 ## 5. Prossima sequenza economica serra
 
-1. **RFQ struttura/fondazioni e confronto strutture reali**;
-2. **BOM-005 fogging**;
-3. supporti coltura/canaline;
-4. porte/compartimenti/gronde;
-5. attrezzatura e consumabili di montaggio.
+1. **BOM-005 fogging**;
+2. supporti coltura/canaline;
+3. porte/compartimenti/gronde;
+4. attrezzatura e consumabili montaggio.
+
+Struttura/fondazioni torna in lavorazione non appena lotto/geotecnica e offerte reali sbloccano le quantità.
