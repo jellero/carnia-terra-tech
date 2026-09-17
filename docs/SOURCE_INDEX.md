@@ -14,6 +14,49 @@ Questo file raccoglie i principali riferimenti usati durante la progettazione. A
 - Idrotop 1.000 L con serpentina: https://www.idrotop.com/riscaldamento/puffer-bollitori/per-uso-riscaldamento/puffer-1000-lt-serbatoio-con-1-serpentino-accumulo-per-acqua-riscaldamento-/
 - Idrotop 2.000 L senza serpentina: https://www.idrotop.com/riscaldamento/puffer-bollitori/per-uso-riscaldamento/puffer-2000-lt-serbatoio-accumulo-per-acqua-riscaldamento-senza-serpentino/
 
+## Schermi climatici serra
+
+### Energy screen
+
+- Ridder RES 10+ FR (5 mm): https://ridder.com/res-10-fr-5mm
+  - 49% energy saving dichiarato;
+  - 11% ombreggiamento diretto;
+  - flame retardant;
+  - `PREZZO DA PREVENTIVO`.
+- Svensson LUXOUS 1147 FR: https://www.ludvigsvensson.com/en-us/climate-technologies/product/luxous-1147-2675
+  - 47% energy saving dichiarato;
+  - 11% ombreggiamento diretto metodo Svensson / 15% NEN 2675;
+  - flame retardant;
+  - `PREZZO DA PREVENTIVO`.
+
+### Shade / diffusion
+
+- Ridder RLD 45 FR O: https://ridder.com/rld-45-fr-o
+  - 46% ombreggiamento diretto;
+  - 50% diffuso;
+  - 18% energy saving;
+  - struttura aperta;
+  - `PREZZO DA PREVENTIVO`.
+- Svensson HARMONY 5220 O FR: https://www.ludvigsvensson.com/en-us/climate-screens/product/harmony-5220-o-fr
+  - 52% ombreggiamento diretto metodo Svensson / 59% NEN 2675;
+  - 20% energy saving;
+  - flame retardant;
+  - `PREZZO DA PREVENTIVO`.
+- Huisman Screen Systems webshop — tessuti e componenti, prezzi su richiesta: https://webshop.huismanscreensystems.com/en/producten-schermdoek/
+
+### Motorizzazione schermi
+
+- Ridder RW45 product family/catalog: https://ridder.com/
+- Salt Electrical — Ridder RW45 230 V single-drum, 0,09 kW, 120 Nm, SKU 531110: https://saltelectricalshop.co.uk/product/ridder-rw45-230v-ac-single-drum-drive/
+  - prezzo osservato: **£598**;
+  - disponibilità indicata: 2 pezzi;
+  - IVA/regime fiscale non confermato dalla pagina indicizzata;
+  - configurazione solo benchmark, non selezione definitiva.
+- Salt Electrical — RW45 Drive Limit Set 4 A, SKU 501105: https://saltelectricalshop.co.uk/product/ridder-rw45-drive-limit-set-4-amp/
+  - prezzo osservato: **£70**;
+  - disponibilità indicata: 10 pezzi;
+  - compatibilità da verificare.
+
 ## Sensoristica
 
 - Sensore suolo RS485 Tyenaza / Amazon: https://www.amazon.it/conducibilit%C3%A0-temperatura-dellumidit%C3%A0-giardinaggio-agricoltura/dp/B09HTHRHDN
