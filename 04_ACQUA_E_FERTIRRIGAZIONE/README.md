@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 04: Acqua e fertirrigazione
 
 **Aggiornato:** 17 settembre 2026  
-**Stato:** `ARCHITETTURA DI BASE APERTA / BOM-013 DISTRIBUZIONE IRRIGUA SVILUPPATA / FILTRAZIONE, POMPE E DOSAGGIO DA SVILUPPARE`.
+**Stato:** `ARCHITETTURA IN SVILUPPO / BOM-013 DISTRIBUZIONE E BOM-014 FILTRAZIONE SVILUPPATE / POMPE E DOSAGGIO DA SVILUPPARE`.
 
 ## 1. Obiettivo
 
@@ -10,145 +10,162 @@ Il sistema deve distribuire acqua e soluzione nutritiva in modo misurabile, unif
 Principi:
 
 - 6 comparti indipendenti;
-- working architecture 4 settori per comparto = 24 settori, da confermare con layout e crop card;
+- working 4 settori per comparto = 24 settori, da confermare con layout e crop card;
 - ogni settore isolabile e comandabile localmente;
-- nessuna portata viene fissata senza numero reale di emettitori/linee;
+- nessuna portata fissata senza numero reale di emettitori/linee;
 - niente riuso automatico del drenaggio prima di validazione tecnica, sanitaria e normativa;
-- logica vitale in PLC locale, non dipendente dal cloud;
-- misure di pressione, portata e volume per diagnosticare intasamenti, perdite e mancata erogazione.
+- logica vitale in PLC locale;
+- misure di pressione, portata e volume per diagnosticare intasamenti, perdite e mancata erogazione;
+- filtrazione scelta sulla qualità reale dell'acqua e non soltanto sulla mesh.
 
 ## 2. Architettura working
 
-`serbatoi/fonte -> filtrazione -> pompe principali 1+1 -> fertirrigazione -> collettore principale -> 6 collettori comparto -> 4 settori/comparto -> linee PE/dripline -> gocciolatori/capillari/punti goccia`
+`fonte/accumulo -> eventuale separatore sabbia -> filtrazione primaria -> filtrazione fine/sicurezza -> pompe principali 1+1 -> fertirrigazione -> collettore principale -> 6 collettori comparto -> working 24 settori -> linee PE/dripline -> emettitori`
 
-Il package BOM-013 copre dalla distribuzione post-fertirrigazione fino alla pianta. Filtrazione, pompe principali, dosaggio e serbatoi fertilizzanti sono package successivi.
+BOM-013 copre la distribuzione post-fertirrigazione fino alla pianta. BOM-014 copre pretrattamento e filtrazione meccanica. Pompe, dosaggio e serbatoi fertilizzanti sono package successivi.
 
-## 3. Strategie per coltura
+## 3. Distribuzione irrigua — BOM-013
 
-### C1 pomodoro / C2 peperone fuori suolo
+### C1/C2/C6
 
-Candidato preferenziale da RFQ:
+Candidato preferenziale:
 
 - gocciolatore on-line autocompensante;
 - variante anti-drenaggio LCNL/HCNL per irrigazione pulsata;
 - microtubo 3/5 mm;
-- punto goccia/picchetto nel substrato;
-- linea PE cieca dimensionata per portata e perdite.
+- punto goccia/picchetto;
+- linea PE cieca dimensionata.
 
-Candidato reale: Netafim PCJ / PCJ PRO. Portata 2 l/h è solo un riferimento iniziale, non una selezione definitiva.
+Candidato reale: Netafim PCJ / PCJ PRO. 2 l/h è riferimento iniziale, non selezione definitiva.
 
 ### C3–C5 leafy
 
-Non si forza lo stesso sistema del pomodoro. Confrontare:
+Confrontare dripline autocompensante permanente, ala leggera/monostagionale e altre configurazioni coerenti con letto, ciclo e futura meccanizzazione.
 
-- dripline autocompensante permanente;
-- ala leggera/monostagionale se compatibile con il ciclo;
-- linee riutilizzabili su letti/bench;
-- eventuale subirrigazione o altra architettura solo se giustificata.
+### Settori
 
-La scelta dipende da letto, densità, ciclo, meccanizzazione e igiene.
+Working: **24 settori**, 4 per comparto. Per ciascuno: isolamento manuale, elettrovalvola NC, eventuale regolazione pressione, misura/presa pressione, flush e integrazione PLC.
 
-### C6 basilico / vivaio / prove
-
-Richiede massima flessibilità. Predisporre collettori e attacchi che permettano sia gocciolatori singoli sia linee/dripline senza rifare il comparto.
-
-## 4. Settori
-
-Working architecture: **24 settori**, 4 per comparto.
-
-Per ogni settore:
-
-- valvola manuale di isolamento;
-- elettrovalvola normalmente chiusa;
-- regolazione pressione dove necessaria;
-- punto misura pressione;
-- flush di fine linea accessibile;
-- feedback comando/stato dove economicamente sensato;
-- capacità di funzionamento/manual override in emergenza.
-
-La portata di settore si calcola da:
+Formula base:
 
 `Qsettore = numero emettitori × portata emettitore + eventuali linee aggiuntive`
 
-Poi si dimensionano DN, elettrovalvola, regolatore e collettore con margine tecnico, non viceversa.
+## 4. Filtrazione — BOM-014
 
-## 5. Misure minime
+Requisito emettitori working: **120 mesh / circa 130 µm**.
 
-Preferenza progettuale:
+La filtrazione finale dipende da:
 
-- portata totale centrale;
-- portata per comparto;
-- pressione a monte distribuzione;
-- pressione per comparto e/o settore critico;
-- volume irrigato per settore derivato da contatore/tempo solo se l'accuratezza è validata;
+- fonte acqua;
+- SST/turbidità;
+- sabbia;
+- limo/argilla;
+- organico/alghe;
+- Fe/Mn;
+- pH/EC/durezza/alcalinità;
+- portata e pressione di processo;
+- portata/pressione disponibile per controlavaggio.
+
+### Scenari
+
+- acqua buona: filtro manuale/automatico 120 mesh + sicurezza dove utile;
+- pozzo con sabbia: idrociclone + filtro principale + sicurezza;
+- acqua superficiale/organico: dischi automatici o media filtration + filtro secondario;
+- sali/durezza/ferro disciolto: trattamento separato; la filtrazione meccanica non li rimuove.
+
+### Candidati/prezzi correnti
+
+- Netafim-Arkal 2" Leader manuale: **€182 + IVA**;
+- Netafim-Arkal 2" Dual manuale: **€241 + IVA**, fino a 25 m³/h;
+- Spin-Klin 2" singolo automatico: **€2.574 + IVA**, 20 m³/h nominali / 15 con acqua media qualità;
+- Spin-Klin doppio DN80: **€4.321 + IVA**, 40 nominali / 30 media qualità;
+- ScreenGuard automatico 2": **da €2.988 + IVA**, 25 m³/h max;
+- idrociclone Arkal 2": **€363 + IVA**, range 15–25 m³/h.
+
+Questi sono costi hardware, non impianto installato.
+
+## 5. Ridondanza filtrazione
+
+Confrontare:
+
+- R0: singolo filtro + bypass;
+- R1: due rami manuali isolabili;
+- R2: automatico + filtro manuale di sicurezza/modalità degradata.
+
+Preferenza progettuale verso R1/R2 se il TCO è ragionevole: la filtrazione non deve diventare single point of failure.
+
+## 6. Controlavaggio
+
+Il controlavaggio è un carico idraulico vero. Devono essere noti:
+
+- portata;
+- pressione minima;
+- durata;
+- volume/ciclo;
+- frequenza;
+- scarico;
+- capacità residua per irrigazione.
+
+Non assumere che la futura pompa principale possa sostenerlo senza calcolo.
+
+## 7. Misure minime
+
+- portata totale;
+- pressione monte/valle filtrazione;
+- Δp filtro;
+- portata per comparto preferenziale;
+- pressione comparti/settori critici;
+- stato controlavaggio;
 - allarme `valvola comandata + portata assente`;
 - allarme `valvola chiusa + portata presente`;
-- trend pressione/portata per riconoscere filtro sporco, perdita o occlusione.
+- trend Δp/portata per manutenzione predittiva.
 
-## 6. Flush e igiene
+## 8. Flush e igiene
 
-Ogni linea deve poter essere:
+Ogni linea deve poter essere lavata, drenata, campionata, isolata e identificata. Gli scarichi di flush/controlavaggio devono essere accessibili e non generare allagamenti o erosioni.
 
-- lavata senza smontaggi distruttivi;
-- drenata quando necessario;
-- campionata;
-- isolata in caso di contaminazione/guasto;
-- identificata con comparto/settore.
+## 9. Failure modes principali
 
-Prevedere valvole di fine linea o collettori di flush accessibili. Evitare terminali nascosti sotto coltura senza accesso.
-
-## 7. Pressione e filtrazione
-
-Il PCJ candidato richiede filtrazione raccomandata 120 mesh / 130 micron e lavora, a seconda della variante, in un range tipico circa 0,7–4 bar. Questi dati guidano il package filtrazione successivo ma non sostituiscono l'analisi acqua.
-
-Se sabbia, limo, ferro o materiale organico lo richiedono, il pretrattamento dovrà essere aggiunto a monte.
-
-## 8. Materiali e tubazioni
-
-Distinguere:
-
-- PE di dorsale/collettore: più robusto, pressione nominale coerente con pompa e transitori;
-- PE cieco su file con gocciolatori inseriti: spessore compatibile con il barb del gocciolatore;
-- microtubo: solo collegamento finale, non dorsale;
-- dripline: selezione separata per leafy.
-
-Il PN4 agricolo è solo benchmark economico per linee a bassa pressione; non usarlo automaticamente come dorsale sempre in pressione.
-
-## 9. Failure modes
-
-- gocciolatore ostruito;
+- emettitore ostruito;
 - capillare piegato/staccato;
-- picchetto uscito dal substrato;
-- linea PE forata/crepata;
-- elettrovalvola bloccata aperta o chiusa;
+- PE danneggiato;
+- elettrovalvola bloccata;
 - regolatore fuori taratura;
-- flush dimenticato aperto;
-- pressione insufficiente;
-- colpo d'ariete;
-- errore ricetta/settore;
-- sensore portata/pressione guasto;
-- perdita bus/PLC.
+- filtro intasato o rotto;
+- bypass aperto accidentalmente;
+- controlavaggio fallito;
+- idrociclone fuori range;
+- biofilm/precipitati non risolti dalla sola filtrazione;
+- sensore portata/pressione/Δp guasto;
+- perdita PLC/bus.
 
-Fallback: isolamento manuale del settore, irrigazione manuale temporanea dove praticabile, ricambi standardizzati a scaffale.
+Fallback: isolamento manuale di ramo/settore, modalità degradata filtrata, irrigazione temporanea manuale dove possibile e ricambi standardizzati.
 
 ## 10. Package sviluppati
 
-- `IRRIGATION_DISTRIBUTION.md` — architettura e criteri;
-- `RFQ_IRRIGATION_DISTRIBUTION.md` — richiesta offerte;
+- `IRRIGATION_DISTRIBUTION.md`;
+- `RFQ_IRRIGATION_DISTRIBUTION.md`;
+- `FILTRATION_ARCHITECTURE.md`;
+- `RFQ_FILTRATION.md`;
 - `19_BOM_PRODOTTI_FORNITORI/ACQUA_IRRIGAZIONE_DISTRIBUZIONE.md` — BOM-013;
-- `22_FONTI_NORME_PREVENTIVI/ACQUA_IRRIGAZIONE_SOURCES.md` — fonti/prezzi.
+- `19_BOM_PRODOTTI_FORNITORI/ACQUA_FILTRAZIONE.md` — BOM-014;
+- `22_FONTI_NORME_PREVENTIVI/ACQUA_IRRIGAZIONE_SOURCES.md`;
+- `22_FONTI_NORME_PREVENTIVI/ACQUA_FILTRAZIONE_SOURCES.md`.
 
-## 11. Gate
+## 11. Gate punto 04
 
-BOM-013 diventa ordinabile solo con:
+Restano necessari:
 
-- layout file/letti/bench C1–C6;
-- numero piante/steli e punti acqua;
-- portata target per punto;
-- durata/frequenza impulsi;
-- drenaggio target;
-- analisi acqua e filtrazione;
-- pressione disponibile a valle fertirrigazione;
-- perdite di carico;
-- scelta 24 settori confermata o modificata;
-- preventivi comparabili e prova di uniformità.
+- layout C1–C6;
+- numero emettitori/portate;
+- analisi acqua e fonte reale;
+- pressione/portata disponibili;
+- filtrazione/idrociclone/media filtration finali;
+- requisiti controlavaggio;
+- pompe principali 1+1;
+- pompe dosatrici e miscelazione A/B/acido;
+- serbatoi fertilizzanti;
+- disinfezione/trattamento se necessario;
+- drenaggio/riuso;
+- accumulo acqua 300 m³;
+- RFQ comparabili e commissioning.
