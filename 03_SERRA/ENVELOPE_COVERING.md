@@ -1,34 +1,47 @@
 # Carnia TerraTech — Envelope & Covering
 
-**Stato:** `REQUISITI DEFINITI / MATERIALE DA SELEZIONARE E PREVENTIVARE`.
+**Aggiornato:** 17 settembre 2026  
+**Stato:** `REQUISITI DEFINITI / BOM-004 SVILUPPATA / QUANTITÀ DA GEOMETRIA`.
 
 ## 1. Obiettivo
 
 La copertura deve massimizzare luce utile e durata mantenendo controllo di condensa, tenuta, sostituibilità e costo totale di possesso.
 
-## 2. Copertura principale
+## 2. Direzione tecnica
 
-Working direction: film professionale per serra, da confrontare con soluzioni alternative solo se tecnicamente/economicamente motivate.
+Working direction: film professionale multistrato per serra, nominalmente 200 µm, da selezionare su dati ottici/termici, colture e sito reale.
 
-Per ogni film richiedere dati dichiarati su:
+Riferimento europeo corrente verificato: **EN 13206:2025 — Plastics — Thermoplastic covering films for use in agriculture and horticulture**.
 
-- materiale e struttura multistrato;
-- spessore;
-- trasmissione luminosa totale;
-- diffusione luce;
+Per ogni film richiedere:
+
+- materiale/struttura multistrato;
+- spessore/tolleranza;
+- trasmissione luminosa;
+- diffusione;
 - comportamento IR/termico;
-- anti-goccia/anti-fog;
+- anti-drip/anti-fog;
 - stabilizzazione UV;
 - resistenza meccanica;
-- durata/garanzia nelle condizioni previste;
-- compatibilità con zolfo/prodotti utilizzati se rilevante;
+- durata convenzionale e garanzia;
+- compatibilità chimica con prodotti utilizzati;
 - larghezze disponibili;
 - metodo di fissaggio;
-- riciclabilità/smaltimento a fine vita.
+- istruzioni posa/manutenzione/fine vita.
 
-Per i film termoplastici agricoli verificare la norma europea applicabile vigente, inclusa **EN 13206:2025**.
+## 3. Candidati attuali
 
-## 3. Fissaggio
+La BOM-004 in `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md` registra:
+
+- Polyane PRO 200 µm — benchmark pubblico €1,27/m² + IVA per quantità >150 m²;
+- Deltagri Diffusant 5S 200 µm — benchmark da €1,24/m² + IVA;
+- Idromeccanica Lucchini PATILUX 200 µm — candidato italiano, prezzo da preventivo.
+
+Questi prezzi riguardano il **film**, non il sistema completo installato.
+
+La superficie di pavimento di 4.200 m² non viene usata come superficie d'ordine: serve lo sviluppo reale di tetto, lati, testate, sovrapposizioni e sfridi.
+
+## 4. Fissaggio
 
 La BOM deve includere separatamente:
 
@@ -36,16 +49,23 @@ La BOM deve includere separatamente:
 - molle/wiggle wire o sistema equivalente;
 - guarnizioni;
 - profili terminali;
-- nastri anti-abrasione;
 - protezioni sui punti di contatto;
 - viteria;
 - sigillanti compatibili;
 - pezze/kit riparazione;
 - materiale di scorta.
 
+Benchmark retail corrente per channel in alluminio + wiggle wire: circa €2,17–2,46/m in kit retail; il sistema professionale definitivo resta `DA PREVENTIVO`.
+
 Il sistema deve consentire sostituzione programmata del telo senza demolire impianti adiacenti.
 
-## 4. Testate e parti rigide
+## 5. Compatibilità dei materiali di contatto
+
+Non usare schiume, nastri, PVC, guarnizioni o sigillanti generici senza conferma di compatibilità del produttore del film.
+
+Alcuni fornitori di film PE avvertono che materiali incompatibili a contatto e temperature elevate possono accelerare la degradazione. Per questo il materiale anti-abrasione diventa parte della specifica del **sistema film + fissaggi**, non una minuteria indipendente.
+
+## 6. Testate e parti rigide
 
 Valutare separatamente film, policarbonato o altra soluzione per:
 
@@ -57,20 +77,20 @@ Valutare separatamente film, policarbonato o altra soluzione per:
 
 La scelta deve considerare luce, isolamento, urti, pulizia, costo e sostituzione.
 
-## 5. Condensa
+## 7. Condensa
 
 Il progetto deve evitare che la condensa cada sulla coltura o sulle parti elettriche.
 
 Prevedere:
 
+- lato anti-drip installato correttamente;
 - pendenze e tensionamento corretti;
-- film con proprietà adeguate;
 - raccolta/gocciolatoi dove necessari;
 - dettagli in gronda;
 - ventilazione e HAF coerenti;
-- sensori/quadri posizionati fuori da punti di gocciolamento.
+- sensori/quadri fuori dai punti di gocciolamento.
 
-## 6. Tenuta e infiltrazioni
+## 8. Tenuta e infiltrazioni
 
 Durante commissioning verificare almeno:
 
@@ -78,33 +98,39 @@ Durante commissioning verificare almeno:
 - testate;
 - porte;
 - gronde;
-- attraversamenti di cavi/tubi;
+- attraversamenti cavi/tubi;
 - giunti;
-- punti di ancoraggio.
+- punti di ancoraggio;
+- corretto tensionamento.
 
-## 7. Manutenzione
+## 9. Manutenzione
 
-Registrare per il rivestimento:
+Registrare:
 
 - ispezione visiva periodica;
-- pulizia quando giustificata;
+- controllo tensione;
+- pulizia ammessa dal produttore;
 - riparazione piccoli strappi;
-- criteri di sostituzione;
-- stock minimo di materiale compatibile;
+- criteri sostituzione;
+- stock minimo materiale compatibile;
 - procedura sicura di sostituzione;
 - destino del film rimosso.
 
-## 8. Costi da separare
+Benchmark riparazione corrente: nastro UV rinforzato 8 cm × 15 m circa €18,05 IVA inclusa; quantità stock da definire nel piano ricambi.
 
-Non accettare una singola voce "copertura" senza distinguere almeno:
+## 10. Costi da separare
 
-- film/pannelli;
+Non accettare una singola voce `copertura` senza distinguere:
+
+- film tetto/lati/testate;
 - fissaggi;
 - profili;
-- guarnizioni;
+- guarnizioni/protezioni compatibili;
 - trasporto;
 - posa;
 - piattaforme/mezzi;
 - sfrido;
 - ricambi iniziali;
-- smaltimento futuro.
+- smaltimento/sostituzione futura.
+
+RFQ dedicato: `03_SERRA/RFQ_COVERING.md`.

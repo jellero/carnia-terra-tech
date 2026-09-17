@@ -9,10 +9,15 @@
 |---|---|---:|---|---|
 | GH-STR-001 | Struttura portante 4.200 m² | 1 sistema | `DA PREVENTIVARE` | nessun prezzo definitivo |
 | GH-FND-001 | Fondazioni/ancoraggi | DA CALCOLARE | `BLOCCATO DAL LOTTO` | dipende da geotecnica e struttura |
-| GH-COV-001 | Film/copertura principale | DA CALCOLARE | `DA SPECIFICARE` | richiedere prezzo €/m² + posa |
-| GH-COV-002 | Profili/fissaggi copertura | DA CALCOLARE | `DA SPECIFICARE` | voce separata |
-| GH-COV-003 | Kit riparazione/scorta copertura | DA DEFINIRE | `REQUISITO` | stock iniziale |
-| GH-END-001 | Testate | 6 comparti / layout | `DA PREVENTIVARE` | separare da struttura |
+| GH-COV-001 | Film/copertura principale 200 µm | m² sviluppati | `CANDIDATI REALI / DA GEOMETRIA` | Polyane €1,27/m² + IVA; Deltagri da €1,24/m² + IVA; Lucchini da preventivo |
+| GH-COV-002 | Profili + wiggle wire/fissaggi | m da shop drawing | `CANDIDATO / DA PREVENTIVARE` | retail benchmark ~€2,17–2,46/m; validare sistema professionale |
+| GH-COV-003 | Kit riparazione UV | stock da piano ricambi | `CANDIDATO` | tape 8 cm × 15 m benchmark €18,05 IVA incl. |
+| GH-COV-004 | Protezioni anti-abrasione compatibili | m da geometria | `DA VALIDARE COL FILM` | no schiume/nastri generici senza approvazione produttore |
+| GH-COV-005 | Guarnizioni/sigillanti/profili terminali | da distinta | `DA PREVENTIVARE` | compatibilità chimica obbligatoria |
+| GH-COV-006 | Sfrido/scorta film | da piano taglio | `DA CALCOLARE` | non usare % arbitraria prima della geometria |
+| GH-COV-007 | Posa/tensionamento copertura | 1 lotto | `DA PREVENTIVARE` | separare ore, piattaforme e garanzia posa |
+| GH-COV-008 | Sostituzione/fine vita | TCO futuro | `REQUISITO` | ore, fermo comparto, rimozione e riciclo/smaltimento |
+| GH-END-001 | Testate | 6 comparti / layout | `DA PREVENTIVARE` | separare film/pannelli da struttura |
 | GH-DR-001 | Porte persone | DA LAYOUT | `DA PREVENTIVARE` | sicurezza + biosicurezza |
 | GH-DR-002 | Porte logistiche/AMR | DA LAYOUT | `DA PREVENTIVARE` | quota dopo scelta mezzi |
 | GH-GUT-001 | Gronde | DA GEOMETRIA | `DA PREVENTIVARE` | integrate con recupero pioggia |
@@ -68,11 +73,19 @@ RFQ: `03_SERRA/RFQ_OPENINGS_NETS.md`.
 
 Stato: attuatori professionali e reti reali identificati; quantità e mesh definitive dipendono da geometria, coppia richiesta, IPM e calcolo di ventilazione.
 
-Scenari rete:
+### BOM-004 — copertura, film e fissaggi
 
-- N1 50 Air Plus — airflow priority;
-- N2 60 Air Plus — compromise;
-- N3 80 Air Plus — thrips critical.
+File: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`.
+
+RFQ: `03_SERRA/RFQ_COVERING.md`.
+
+Stato: film professionali reali, benchmark di prezzo, fissaggi, nastri, riparazione, posa e sostituzione identificati. Il totale resta da preventivo perché la superficie sviluppata non coincide con i 4.200 m² di pavimento.
+
+Benchmark film materiale:
+
+- Polyane PRO 200 µm: €1,27/m² + IVA (>150 m²);
+- Deltagri 5S 200 µm: da €1,24/m² + IVA;
+- Lucchini PATILUX: prezzo da preventivo.
 
 ## 3. Benchmark struttura esistente
 
@@ -96,9 +109,8 @@ Poi separare costo reale, IVA, costo eleggibile, contributo potenziale, quota fi
 
 ## 5. Prossima sequenza economica serra
 
-1. **BOM-004 copertura + profili + fissaggi**;
-2. RFQ struttura/fondazioni;
-3. BOM-005 fogging;
-4. supporti coltura/canaline;
-5. porte/compartimenti/gronde;
-6. attrezzatura e consumabili di montaggio.
+1. **RFQ struttura/fondazioni e confronto strutture reali**;
+2. **BOM-005 fogging**;
+3. supporti coltura/canaline;
+4. porte/compartimenti/gronde;
+5. attrezzatura e consumabili di montaggio.

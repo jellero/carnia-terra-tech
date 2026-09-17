@@ -11,8 +11,6 @@ Titolo: `Greenhouses — Design and construction — Part 1: Commercial producti
 
 Campo: resistenza meccanica, stabilità, esercizio, durabilità e fondazioni delle serre per produzione professionale.
 
-Stato CEN verificato il 17/09/2026: EN 13031-1:2019 confermata; corrigendum AC:2022 pubblicato.
-
 Riferimenti pubblici:
 
 - https://genorma.com/en/project/list?committee=CEN%2FTC+284
@@ -24,11 +22,9 @@ La versione nazionale/UNI applicabile e gli eventuali allegati nazionali vanno v
 
 Da verificare formalmente in sede progettuale:
 
-- **D.M. 17 gennaio 2018 — Aggiornamento delle Norme tecniche per le costruzioni (NTC 2018)**;
-- **Circolare 21 gennaio 2019 n. 7 C.S.LL.PP.**;
+- D.M. 17 gennaio 2018 — NTC 2018;
+- Circolare 21 gennaio 2019 n. 7 C.S.LL.PP.;
 - eventuali aggiornamenti, prescrizioni regionali e procedure locali vigenti.
-
-La relazione strutturale deve dichiarare quali norme vengono applicate alla specifica serra e perché.
 
 ## 3. Film di copertura
 
@@ -36,64 +32,113 @@ La relazione strutturale deve dichiarare quali norme vengono applicate alla spec
 
 Titolo: `Plastics — Thermoplastic covering films for use in agriculture and horticulture`.
 
-Stato CEN verificato il 17/09/2026: pubblicata.
+Stato verificato il 17/09/2026: edizione corrente pubblicata nel 2025, sostituisce EN 13206:2017+A1:2020 e copre requisiti dimensionali, meccanici, ottici, termici, durabilità e indicazioni di installazione/uso/fine vita per film agricoli e orticoli.
 
-Riferimento pubblico:
+Fonti pubbliche:
 
-- https://genorma.com/en/project/list?ics=65.040.30
+- https://knowledge.bsigroup.com/products/plastics-thermoplastic-covering-films-for-use-in-agriculture-and-horticulture-1
+- https://shop.standards.ie/en-ie/standards/en-13206-2025-344534_saig_cen_cen_3651952/
 
-Per ogni film richiedere scheda tecnica del produttore e dichiarazioni applicabili.
+## 4. Produttori/candidati film
 
-## 4. Schermi climatici
+### Idromeccanica Lucchini PATILUX
 
-Fonte tecnica di mercato:
+- 200 µm;
+- trasmissione 90%;
+- luce diffusa 10%;
+- effetto termico 80%;
+- anti-goccia AG opzionale;
+- larghezze fino a 14 m;
+- prezzo da preventivo.
 
-- Ludvig Svensson climate screens: https://www.ludvigsvensson.com/
+Fonte: https://www.lucchiniidromeccanica.it/serre-professionali/defendo-system/patilux/
 
-Le informazioni del produttore mostrano che la selezione deve considerare trasmissione luminosa, diffusione, gestione termica e umidità; il prodotto finale va scelto su coltura e clima reali.
+### Polyane PRO 200 µm — benchmark mercato
 
-## 5. Reti anti-insetto
+- termico;
+- diffusione 20%;
+- trasmissione >91%;
+- garanzia UV 5 anni;
+- prezzo pubblico osservato €1,27/m² + IVA per quantità >150 m².
+
+Fonte: https://www.serre-en-direct.fr/bache-pour-serre-/183-bache-grandes-dimensions-polyane-200-microns.html
+
+### Deltagri Diffusant 5S 200 µm — benchmark mercato
+
+- 200 µm;
+- diffusante;
+- anti-UV;
+- termicità dichiarata >83%;
+- prezzo pubblico da €1,24/m² + IVA.
+
+Fonte: https://www.hellopro.fr/5s-film-de-serre-professionnel-diffusant-200-microns-2009088-7119323-produit.html
+
+## 5. Fissaggi e materiali ausiliari — benchmark
+
+### Channel + wiggle wire
+
+Benchmark retail VEVOR EU:
+
+- 40 profili × 2 m + spring wire: €173,90;
+- ordine di grandezza ~€2,17/m di linea di fissaggio.
+
+Fonte: https://eur.vevor.com/wire-lock-channel-c_10193/vevor-greenhouse-wiggle-wire-aluminum-alloy-spring-lock-u-channel-6-56ft-40pcs-p_010917282544
+
+Non è ancora validato come sistema professionale per Carnia TerraTech.
+
+### Nastro protezione struttura
+
+Benchmark dm-folien, greenhouse foam adhesive tape 40 mm × 10 m:
+
+- €12,96 IVA inclusa fino a 2 rotoli;
+- €7,66 IVA inclusa da 30 rotoli.
+
+Fonte: https://www.dm-folien.com/en/products/tapes
+
+Uso subordinato a compatibilità dichiarata col film scelto.
+
+### Nastro riparazione film
+
+Jardin Couvert, tape rinforzato UV 8 cm × 15 m:
+
+- €18,05 IVA inclusa al prezzo osservato.
+
+Fonte: https://www.jardincouvert.com/reparation-baches/1282-ruban-adhesif-pour-reparer-film-de-serre.html
+
+## 6. Schermi climatici
+
+Fonti tecniche di mercato:
+
+- Ludvig Svensson: https://www.ludvigsvensson.com/
+- Ridder: https://ridder.com/
+
+La selezione deve considerare trasmissione luminosa, diffusione, gestione termica, umidità, struttura e coltura.
+
+## 7. Reti anti-insetto
+
+Fonte tecnica principale aggiornata nel progetto:
+
+- Arrigoni — protezione dagli insetti / Air Plus: https://arrigoni.it/agrotextile/applicazioni/protezione-dagli-insetti/
 
 La rete va scelta in funzione del parassita target e della perdita di ventilazione, non solo del numero di mesh.
 
-Fonte tecnica di supporto da non trattare come norma:
-
-- https://it.eyouagro.com/blogo/guida-alle-dimensioni-delle-maglie-delle-reti-anti-insetti/
-
-Prima dell'acquisto servono dati del produttore su apertura reale, area aperta, resistenza UV e perdita di carico/ventilazione.
-
-## 6. Benchmark commerciali
-
-### Benchmark storico Carnia TerraTech
-
-Nel repository è registrata una serra professionale 8 × 40 m / 320 m² a €6.832 IVA inclusa, struttura con copertura e montaggio esclusi. L'URL stabile non è ancora recuperato.
-
-Stato: `BENCHMARK STORICO`, non preventivo.
-
-### Benchmark retail secondario
-
-Esempi italiani di piccole serre professionali modulari in acciaio zincato/policarbonato:
-
-- https://mondogazebo.it/serre-da-giardino-professionali/627-mod-artic-serra-con-rivestimento-in-policarbonato.html
-- https://mondogazebo.it/serre-da-giardino-professionali/613-mod-arco-serra-con-rivestimento-in-policarbonato.html
-
-Questi prodotti non sono equivalenti a una multicampata da 4.200 m² e non vengono usati per scalare il CAPEX.
-
-## 7. Fonti da acquisire con i preventivi
+## 8. Fonti da acquisire con i preventivi
 
 Per ogni fornitore archiviare:
 
 - offerta PDF;
-- disegno;
+- disegno/shop drawing;
 - specifica carichi;
 - sezioni profili;
 - materiali;
-- copertura;
+- film/coperture;
+- fissaggi;
 - motori;
 - garanzie;
 - manuale montaggio;
 - manuale manutenzione;
 - certificazioni/dichiarazioni applicabili;
+- compatibilità chimica;
 - lista ricambi;
 - condizioni commerciali.
 

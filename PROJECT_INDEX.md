@@ -69,24 +69,17 @@ Il metodo del punto 01 è chiuso. Il punto diventa `VALIDATO` solo con un lotto 
 
 Documenti:
 
-- `02_AGRONOMIA/README.md` — regole agronomiche e gate di validazione;
-- `02_AGRONOMIA/CROP_PORTFOLIO.md` — portafoglio, allocazione dei comparti e diversificazione;
-- `02_AGRONOMIA/CROP_CARD_TEMPLATE.md` — scheda obbligatoria coltura per coltura;
-- `02_AGRONOMIA/GREENHOUSE_CROPS.md` — pomodoro, peperone, lattuga/leaf, baby leaf e basilico/vivaio;
-- `02_AGRONOMIA/CALENDAR_AND_CAPACITY.md` — calendario settimanale, occupazione comparti, picchi lavoro e prodotto;
-- `02_AGRONOMIA/YIELD_LABOR_ECONOMICS.md` — resa vendibile, ore uomo, costi e marginalità;
-- `02_AGRONOMIA/IPM_BIOSECURITY.md` — prevenzione, scouting, IPM e separazione dei comparti;
-- `02_AGRONOMIA/OUTDOOR_PERENNIALS.md` — outdoor, vite, siepi, verde e luppolo;
-- `02_AGRONOMIA/OFFICIAL_SOURCES.md` — ERSA, ARPA/OSMER, Commissione UE e CREA.
+- `02_AGRONOMIA/README.md`;
+- `02_AGRONOMIA/CROP_PORTFOLIO.md`;
+- `02_AGRONOMIA/CROP_CARD_TEMPLATE.md`;
+- `02_AGRONOMIA/GREENHOUSE_CROPS.md`;
+- `02_AGRONOMIA/CALENDAR_AND_CAPACITY.md`;
+- `02_AGRONOMIA/YIELD_LABOR_ECONOMICS.md`;
+- `02_AGRONOMIA/IPM_BIOSECURITY.md`;
+- `02_AGRONOMIA/OUTDOOR_PERENNIALS.md`;
+- `02_AGRONOMIA/OFFICIAL_SOURCES.md`.
 
-Portafoglio di lavoro mantenuto:
-
-- C1 pomodoro premium;
-- C2 peperone;
-- C3 lattuga;
-- C4 lattuga/leaf flessibile;
-- C5 baby leaf/rucola/spinacio;
-- C6 basilico + vivaio + prove.
+Portafoglio di lavoro mantenuto: C1 pomodoro premium; C2 peperone; C3 lattuga; C4 lattuga/leaf flessibile; C5 baby leaf/rucola/spinacio; C6 basilico + vivaio + prove.
 
 Non sono state inventate rese, cultivar, densità o calendari definitivi. Il punto 02 diventa `VALIDATO` coltura per coltura solo quando sono disponibili sito, sistema di coltivazione, cultivar, resa vendibile con fonte/prova, ore uomo, mercato, prezzo e marginalità.
 
@@ -103,6 +96,7 @@ Documenti principali:
 - `03_SERRA/SCREENS_SHADING.md`;
 - `03_SERRA/RFQ_SCREENS.md`;
 - `03_SERRA/RFQ_OPENINGS_NETS.md`;
+- `03_SERRA/RFQ_COVERING.md`;
 - `03_SERRA/FOGGING_HUMIDITY.md`;
 - `03_SERRA/CROP_SUPPORTS_LOGISTICS.md`;
 - `03_SERRA/MAINTENANCE_SAFETY.md`;
@@ -114,9 +108,10 @@ BOM serra sviluppate:
 
 - **BOM-001 — Ventilazione HAF**: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`;
 - **BOM-002 — Schermi termici/ombreggianti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
-- **BOM-003 — Aperture, attuatori e reti anti-insetto**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`.
+- **BOM-003 — Aperture, attuatori e reti anti-insetto**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
+- **BOM-004 — Copertura, film e fissaggi**: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`.
 
-BOM-003 registra come working range 6–12 gruppi laterali motorizzati, da calcolare sul layout. Sono stati identificati attuatori professionali e scenari di rete N1/N2/N3. Le reti fini per tripidi non vengono adottate automaticamente perché la riduzione di ventilazione deve essere compensata nel progetto.
+BOM-004 registra candidati reali 200 µm, benchmark materiale intorno a €1,24–1,27/m² + IVA, fissaggi, protezioni, riparazione, posa e sostituzione. Il benchmark non viene moltiplicato come costo serra: la superficie sviluppata della copertura deve essere ricavata dalla geometria reale.
 
 Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo e preventivi confrontabili.
 
@@ -154,15 +149,16 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono già parte esplic
 
 - BOM-001 — HAF;
 - BOM-002 — schermi climatici;
-- BOM-003 — aperture/attuatori/reti anti-insetto.
+- BOM-003 — aperture/attuatori/reti anti-insetto;
+- BOM-004 — copertura/film/fissaggi.
 
 ### In lavorazione successiva
 
-**BOM-004 — copertura serra + profili + fissaggi + minuteria + riparazione/sostituzione.**
+**RFQ struttura/fondazioni + confronto strutture reali**, poi **BOM-005 fogging**.
 
 ### Coda immediata
 
-1. RFQ struttura/fondazioni;
+1. struttura/fondazioni;
 2. fogging;
 3. tubi, collettori e pompe circuito termico;
 4. gocciolatori e linee irrigue;
