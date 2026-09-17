@@ -178,19 +178,49 @@ Correzione BOM-022: il prato condiviso con le galline è lockout dinamico, non n
 
 Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
-## 13. Modulo futuro — centro trasformazione conto terzi
+## 13. Stato punto 09 — Tech Barn e post-raccolta
+
+**BOM-024 CELLE FRIGORIFERE SVILUPPATA / DUE TEMPERATURE / CARICO PRODOTTO E RFQ BLOCCANTI.**
+
+Baseline:
+- CR-A COLD-LEAF ~1–3 °C, lattuga/baby leaf/spinacio;
+- CR-B COOL-SENSITIVE ~10–12 °C, pomodoro/peperone/basilico con crop-card e short dwell;
+- ~25 m²/cella working, totale freddo ~50 m² più zona servizio;
+- forced-air precooling predisposto per CR-A;
+- due sistemi frigoriferi indipendenti;
+- confronto 1×100% vs circuiti modulari sulla cella critica;
+- refrigerante naturale o GWP <150;
+- monitoraggio locale + logger indipendente;
+- pavimento strutturale verificato per BOM-021.
+
+Benchmark:
+- shell 4,74×4,74×2,54 m senza gruppo: €6.775,99 + IVA;
+- R290 KDC800N: €5.399,99 net, max 50 m³ dichiarati, solo benchmark;
+- R290 KDC600N: €4.899,99 net, max 35,1 m³ @32 °C / 21 m³ @43 °C;
+- Testo 160 TH: €180 + IVA/cella.
+
+Regola: dimensionamento da kg prodotto / temperatura ingresso / pull-down time, non da m³ stanza.
+
+Documenti:
+- 09_TECH_BARN_E_POST_RACCOLTA/README.md;
+- 09_TECH_BARN_E_POST_RACCOLTA/COLD_ROOMS_ARCHITECTURE.md;
+- 09_TECH_BARN_E_POST_RACCOLTA/RFQ_COLD_ROOMS.md;
+- 19_BOM_PRODOTTI_FORNITORI/TECH_BARN_CELLE_FRIGORIFERE.md;
+- 22_FONTI_NORME_PREVENTIVI/TECH_BARN_CELLE_FRIGORIFERE_SOURCES.md.
+
+## 14. Modulo futuro — centro trasformazione conto terzi
 
 Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`. Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
 
-## 14. Metodo BOM obbligatorio
+## 15. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
 
-## 15. Stato attuale dei grandi blocchi
+## 16. Stato attuale dei grandi blocchi
 
 Restano nel perimetro fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
-## 16. Sequenza BOM
+## 17. Sequenza BOM
 
 ### Già strutturate
 
@@ -209,19 +239,19 @@ Restano nel perimetro fattoria didattica, spaccio 24/7, pergolati/vite/verde/rel
 - BOM-020 AMR serra;
 - BOM-021 sollevatore / mezzo multifunzione;
 - BOM-022 robot tagliaerba;
-- **BOM-023 pulizia galline free-range**.
+- BOM-023 pulizia galline free-range;
+- **BOM-024 celle frigorifere**.
 
 ### Prossimo package
 
-**BOM-024 — celle frigorifere:** due celle a temperatura differenziata, pannelli, porte, gruppi frigoriferi, evaporatori, sbrinamento, drenaggi, monitoraggio, allarmi, backup, ricambi, installazione, consumi e costo.
+**BOM-025 — raccolta e packaging:** cassette, bins, carrelli, tavoli, bilance, lavaggio/asciugatura ove applicabile, selezione, confezionamento, etichettatura, ergonomia, ricambi, consumabili e costo.
 
 ### Coda successiva
 
-1. celle frigorifere;
-2. attrezzatura raccolta e packaging;
-3. pergolato/vite/area relax;
-4. fattoria didattica;
-5. spaccio automatico 24/7;
-6. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. attrezzatura raccolta e packaging;
+2. pergolato/vite/area relax;
+3. fattoria didattica;
+4. spaccio automatico 24/7;
+5. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
