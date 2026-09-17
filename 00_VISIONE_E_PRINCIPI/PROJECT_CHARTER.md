@@ -1,75 +1,168 @@
 # Carnia TerraTech — Project Charter
 
-**Aggiornato:** 17 settembre 2026.
+**Aggiornato:** 17 settembre 2026  
+**Stato:** principi consolidati; soglie numeriche non ancora deliberate sono tracciate in `KPI_GUARDRAILS.md`.
 
-## Missione
+## 1. Missione
 
-Valorizzare tecnologicamente la coltivazione per costruire un'attività agricola redditizia, resiliente e piacevole da vivere, capace di sostenere una vita serena e sicura e di crescere nel tempo senza trasformarsi in una macchina ingestibile.
+Valorizzare tecnologicamente la coltivazione per costruire un'azienda agricola capace di produrre reddito, sicurezza e qualità della vita nel lungo periodo.
 
-## Principi non negoziabili
+La tecnologia non è il fine: serve a togliere lavoro inutile, sporco, pesante, ripetitivo o stressante; rendere i sistemi misurabili e affidabili; aumentare autonomia e resilienza; permettere alle persone di lavorare con piacere in un ambiente bello, naturale e ordinato.
 
-### Qualità della vita
+Carnia TerraTech deve nascere già predisposta a crescere senza perdere tranquillità, sicurezza o controllo operativo.
+
+## 2. Obiettivi primari
+
+Il progetto deve perseguire contemporaneamente:
+
+1. sostenibilità economica dell'azienda;
+2. sostenibilità personale dei soci durante costruzione, lancio e regime;
+3. riduzione del lavoro manuale evitabile;
+4. sicurezza di persone, animali, colture e beni;
+5. resilienza a guasti, blackout, assenza Internet e indisponibilità temporanea di una persona;
+6. manutenzione semplice e pianificabile;
+7. crescita modulare senza rifacimenti inutili;
+8. uso efficiente di acqua, energia, materiali e spazio;
+9. integrazione fra produzione, natura, paesaggio e benessere;
+10. capacità di misurare costi, rese, consumi, ore uomo e prestazioni reali.
+
+Nessuno di questi obiettivi deve essere considerato automaticamente secondario rispetto alla sola resa agricola.
+
+## 3. Principi non negoziabili
+
+### 3.1 Qualità della vita
 
 - il lavoro non deve essere organizzato come emergenza continua;
-- le attività ripetitive, sporche, pesanti o standardizzabili devono essere automatizzate quando il rapporto costo/beneficio è sensato;
-- gli spazi devono essere belli, ordinati, ombreggiati dove serve e piacevoli da usare;
-- percorsi, logistica e movimentazione devono ridurre camminate inutili e sforzi fisici;
-- vanno previsti luoghi di pausa, ristoro e benessere, non aggiunti a posteriori.
+- il target operativo già discusso resta circa **20 ore/settimana medie per socio a regime**, da verificare con dati reali nel blocco organizzazione del lavoro;
+- i picchi stagionali devono essere previsti e gestiti con personale, automazione o pianificazione, non scaricati implicitamente sui soci;
+- attività ripetitive, sporche, pesanti o standardizzabili devono essere candidate all'automazione;
+- percorsi e logistica devono ridurre camminate inutili, sollevamenti e movimentazioni manuali;
+- devono esistere spazi adeguati per pausa, ristoro, servizi, ombra, comfort e recupero;
+- ferie, malattia o assenza temporanea di uno dei soci non devono mettere automaticamente a rischio l'azienda.
 
-### Sicurezza
+### 3.2 Sicurezza tecnica
 
-- nessun sistema vitale deve dipendere esclusivamente da Internet/cloud;
-- pompe, irrigazione, clima, allarmi e accessi devono avere fallback coerenti;
-- macchine, piattaforme, sollevamento persone e robot devono usare soluzioni certificate e compatibili con l'uso previsto;
-- ogni asset deve avere manutenzione, ricambi e failure mode documentati.
+- nessun servizio vitale deve dipendere esclusivamente da cloud o Internet;
+- irrigazione, acqua, clima minimo, allarmi critici e funzioni essenziali devono avere fallback locale coerente;
+- ogni sistema critico deve documentare failure mode, rilevazione guasto, conseguenza, fallback, ricambio e tempo di ripristino;
+- macchine, piattaforme e sistemi di sollevamento persone devono essere usati nelle configurazioni previste e certificate;
+- ogni asset deve poter essere isolato e manutenuto in sicurezza;
+- la sicurezza non può dipendere da procedure che richiedono presenza continua dell'operatore.
 
-### Economia
+### 3.3 Sicurezza economica
 
-- distinguere sempre costo reale, costo eleggibile e contributo potenziale;
-- non considerare disponibile un incentivo finché non è verificato su fonte ufficiale e compatibile con soggetto, data e spesa;
-- il piano deve includere capitale circolante, IVA ponte, ritardi SAL e fabbisogno personale di vita nella fase di lancio;
-- nessun vecchio budget è un vincolo: il CAPEX viene ricostruito bottom-up.
+- distinguere sempre costo reale, costo ammissibile e contributo potenziale;
+- un contributo non entra nelle fonti certe finché non è verificato e compatibile con soggetto, investimento e tempistiche;
+- il piano deve includere capitale circolante, IVA ponte, ritardi SAL/rimborsi e imprevisti;
+- il progetto deve includere anche il fabbisogno personale durante il periodo di lancio;
+- nessuna scelta di investimento deve dipendere dal verificarsi di un unico scenario favorevole;
+- CAPEX, OPEX e cashflow vengono costruiti bottom-up da quantità e prezzi reali.
 
-### Natura ed estetica
+### 3.4 Manutenibilità
 
-- verde produttivo, siepi, vite, pergolati, alberature e biodiversità fanno parte del masterplan;
-- l'estetica non deve ostacolare produzione, sicurezza o manutenzione;
-- l'azienda deve mantenere un'identità coerente con natura, tranquillità e tecnologia discreta.
+- ogni asset deve avere piano di manutenzione, parti soggette a usura e ricambi critici identificati;
+- preferire componenti standard, documentati e sostituibili quando non esiste un vantaggio forte nel proprietario;
+- evitare sistemi che richiedono il fornitore originale per ogni intervento ordinario;
+- cablaggi, valvole, pompe, sensori e quadri devono essere accessibili e identificati;
+- deve esistere documentazione sufficiente perché un tecnico competente possa intervenire anche senza chi ha progettato il sistema.
 
-### Crescita
+### 3.5 Natura, estetica e benessere
 
-- predisporre impianti, spazi, canalizzazioni, quadri e reti per espansione;
-- evitare soluzioni che obblighino a demolire o rifare infrastrutture sane al primo ampliamento;
-- ogni nuova attività deve essere modulare e non mettere a rischio il core agricolo.
+- verde produttivo, siepi, vite, pergolati, alberature, ombra e biodiversità sono infrastrutture di progetto;
+- edifici, piazzali, impianti e percorsi devono essere ordinati e coerenti con l'identità agricola e naturale del luogo;
+- l'estetica non deve compromettere accesso manutentivo, sicurezza, luce alle colture o logistica;
+- rumore, abbagliamento, polvere, fango, odori e disordine devono essere considerati già in progettazione;
+- le zone aperte al pubblico devono essere separate dai rischi produttivi senza trasformare l'azienda in un luogo ostile o eccessivamente recintato.
 
-## Perimetro funzionale
+### 3.6 Automazione utile
 
-Il progetto comprende, in fasi diverse:
+- automatizzare dove si riducono ore, errori, esposizione a lavoro sgradevole o rischio;
+- non automatizzare una funzione solo perché tecnicamente possibile;
+- l'automazione deve sempre avere diagnostica, stato osservato e possibilità di intervento manuale sicuro;
+- l'AI può ottimizzare, analizzare e assistere, ma non deve essere l'unico strato responsabile delle funzioni vitali;
+- il costo dell'automazione va confrontato con ore eliminate, qualità ottenuta, rischio ridotto e TCO.
 
-- produzione in serra e outdoor;
-- automazione, sensoristica, AI e robotica;
-- energia, acqua, termico e post-raccolta;
-- vermicompost;
-- manutenzione del verde automatizzata;
-- gestione automatizzata dell'area galline per ridurre il lavoro sporco;
+### 3.7 Crescita modulare
+
+- serra, acqua, termico, elettrico, rete dati, viabilità e spazi devono considerare ampliamenti futuri;
+- predisporre dove economicamente razionale tubazioni, passaggi, canalizzazioni, quadri, fibra e spazi tecnici;
+- evitare opere che obblighino a demolire infrastrutture sane per la prima espansione prevedibile;
+- ogni nuova attività deve poter essere introdotta senza mettere in crisi il core agricolo.
+
+## 4. Perimetro funzionale
+
+Il progetto comprende, in fasi differenti:
+
+- coltivazione in serra e outdoor;
+- acqua, fertirrigazione, clima, energia e accumuli;
+- automazione, dati, sensoristica, computer vision, AI e robotica;
+- logistica interna, AMR, sollevatore e mezzi di servizio;
+- Tech Barn, post-raccolta, celle e confezionamento;
+- vermicompost e recupero di materia;
+- manutenzione automatizzata del prato e del verde;
+- gestione dell'area galline con forte riduzione del lavoro manuale sporco;
 - fattoria didattica;
-- spaccio aziendale self-service automatizzato 24/7;
-- aree di relax, pergolati, vite e verde integrato;
-- sostenibilità finanziaria personale e aziendale durante il lancio.
+- futuro spaccio aziendale automatizzato self-service 24/7;
+- pergolati, vite, alberature, aree relax e spazi sociali;
+- manutenzione, ricambi, sicurezza e business continuity;
+- struttura societaria, contributi, capitale circolante e sostenibilità personale del lancio.
 
-## Definizione di "progettato"
+## 5. Definizione di "progettato"
 
-Un elemento è progettato solo quando sono noti o esplicitamente marcati come mancanti: funzione, prestazioni, quantità, prodotto/specifica, prezzo, installazione, alimentazione, manutenzione, ricambi, sicurezza, guasto/fallback, durata, dipendenze, contributi e possibilità di espansione.
+Un elemento non è considerato progettato perché compare in una planimetria o in una lista.
 
-## Regola decisionale
+Deve avere almeno:
 
-Quando due soluzioni hanno prestazioni sufficienti, preferire quella che riduce nel ciclo di vita:
+- funzione;
+- requisiti;
+- quantità;
+- interfacce/dipendenze;
+- prodotto o specifica tecnica;
+- prezzo e fonte;
+- accessori e minuteria;
+- installazione;
+- alimentazione/consumi;
+- manutenzione ordinaria e straordinaria;
+- ricambi;
+- vita utile;
+- sicurezza e certificazioni;
+- failure mode e fallback;
+- impatto sul lavoro umano;
+- possibilità di espansione;
+- trattamento economico: costo reale / ammissibile / contributo;
+- stato documentale.
 
-- ore manuali;
-- probabilità di fermo;
-- dipendenza da un singolo fornitore;
-- difficoltà di manutenzione;
-- stress operativo;
-- costo totale di possesso.
+## 6. Gerarchia delle decisioni
 
-Il prezzo d'acquisto da solo non determina la scelta.
+Una soluzione deve essere valutata nell'ordine seguente:
+
+1. sicurezza e conformità;
+2. capacità di svolgere realmente la funzione;
+3. resilienza e possibilità di recupero dal guasto;
+4. impatto su qualità della vita e ore di lavoro;
+5. manutenibilità e disponibilità ricambi;
+6. costo totale nel ciclo di vita;
+7. efficienza energetica e materiale;
+8. compatibilità con crescita futura;
+9. qualità estetica e integrazione nel luogo;
+10. prezzo iniziale.
+
+Il prezzo di acquisto più basso non costituisce da solo un criterio di scelta.
+
+## 7. Regola anti-zona-scoperta
+
+Ogni nuovo blocco deve essere controllato contro almeno cinque prospettive:
+
+- **costruzione:** come viene realizzato;
+- **operazione:** come viene usato ogni giorno;
+- **manutenzione:** come rimane efficiente negli anni;
+- **guasto:** cosa accade quando non funziona;
+- **fine vita/crescita:** come viene sostituito, ampliato o dismesso.
+
+Se una delle cinque è assente, il blocco resta aperto.
+
+## 8. Documenti collegati
+
+- `KPI_GUARDRAILS.md` — indicatori con cui verifichiamo che il progetto stia rispettando la missione;
+- `DECISION_GATES.md` — condizioni necessarie per passare da idea a acquisto/lavoro;
+- `../PROJECT_INDEX.md` — mappa complessiva e sequenza operativa.

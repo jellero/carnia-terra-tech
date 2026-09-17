@@ -11,7 +11,7 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 
 La riorganizzazione procede senza cancellare i documenti storici finché il contenuto non è stato migrato e verificato.
 
-- `00_VISIONE_E_PRINCIPI/` — missione, requisiti non negoziabili, criteri decisionali;
+- `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e decision gates;
 - `01_MASTERPLAN_E_TERRENO/` — lotto, vincoli, accessi, drenaggi, espansioni;
 - `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, outdoor;
 - `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging;
@@ -35,7 +35,19 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 - `21_RISCHI_DECISIONI_OPEN_POINTS/`;
 - `22_FONTI_NORME_PREVENTIVI/`.
 
-## 3. Metodo BOM obbligatorio
+## 3. Stato punto 00 — Visione e principi
+
+**Stato: RAFFINATO / BASE DI GOVERNO DEL PROGETTO.**
+
+Documenti:
+
+- `00_VISIONE_E_PRINCIPI/PROJECT_CHARTER.md` — missione, principi non negoziabili, definizione di progettato e regola anti-zona-scoperta;
+- `00_VISIONE_E_PRINCIPI/KPI_GUARDRAILS.md` — indicatori di qualità della vita, finanza, resilienza, manutenzione, ergonomia, risorse e crescita;
+- `00_VISIONE_E_PRINCIPI/DECISION_GATES.md` — stati standard da IDEA a OPERATIVO e condizioni per avanzare.
+
+Il punto 00 non viene considerato “immutabile”: potrà essere aggiornato se emergono nuovi requisiti, ma è sufficientemente definito per governare i blocchi successivi.
+
+## 4. Metodo BOM obbligatorio
 
 Per ogni oggetto o sottosistema si analizzano, in ordine:
 
@@ -57,9 +69,9 @@ Per ogni oggetto o sottosistema si analizzano, in ordine:
 16. compatibilità con contributi;
 17. dipendenze da altri sistemi;
 18. predisposizione per espansione;
-19. stato: `CANDIDATO`, `DA PREVENTIVARE`, `VALIDATO`, `ORDINABILE`.
+19. stato documentale secondo `DECISION_GATES.md`.
 
-## 4. Stato attuale dei grandi blocchi
+## 5. Stato attuale dei grandi blocchi
 
 ### Base tecnica già esistente
 
@@ -67,7 +79,7 @@ I file in `docs/` coprono già serra, termico, acqua, automazione, finanza, prod
 
 ### Nuovi requisiti incorporati
 
-Sono ora parte esplicita del progetto:
+Sono parte esplicita del progetto:
 
 - robot autonomo per manutenzione/taglio prato;
 - soluzione automatizzata per pulizia delle deiezioni nell'area galline;
@@ -76,7 +88,7 @@ Sono ora parte esplicita del progetto:
 - pergolati, vite, ombra, verde, aree relax e qualità estetica come infrastruttura di benessere;
 - piano economico che consideri la sostenibilità personale durante il lancio.
 
-## 5. Sequenza BOM
+## 6. Sequenza BOM
 
 Si procede un sottosistema alla volta, chiudendo il più possibile prima di passare al successivo.
 
