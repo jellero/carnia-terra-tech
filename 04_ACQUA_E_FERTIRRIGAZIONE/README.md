@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 04: Acqua e fertirrigazione
 
 **Aggiornato:** 17 settembre 2026  
-**Stato:** `ARCHITETTURA IN SVILUPPO / BOM-013…017 SVILUPPATE / TRATTAMENTO, DRENAGGIO E ACCUMULO DA SVILUPPARE`.
+**Stato:** `ARCHITETTURA STRUTTURATA / BOM-013…018 SVILUPPATE / TRATTAMENTO-DISINFEZIONE E DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA E CROP CARD`.
 
 ## 1. Obiettivo
 
@@ -12,24 +12,25 @@ Principi:
 - 6 comparti indipendenti;
 - working 4 settori per comparto = 24 settori, da confermare;
 - logica vitale in PLC locale;
-- pressione, portata, pH, EC, volumi e stati misurabili;
+- pressione, portata, pH, EC, livelli, volumi e stati misurabili;
 - filtrazione scelta sulla qualità reale dell'acqua;
 - pompe principali 1+1 reali;
 - fertirrigazione A/B/acido modulare e non black-box;
 - stock chimici separati, misurati e contenuti secondariamente;
-- niente riuso automatico drenaggio prima di validazione tecnica/sanitaria/normativa.
+- accumulo acqua manutenibile con ridondanza;
+- niente riuso automatico drenaggio prima di validazione tecnica, sanitaria e normativa.
 
 ## 2. Architettura working
 
 Con accumulo atmosferico:
 
-`tank acqua 300 m³ -> presa/griglia grossolana -> pompe principali 1+1 -> idrociclone/filtrazione fine pressurizzata -> misura portata -> dosaggio A/B/acido -> miscelazione -> pH/EC/T -> collettore principale -> 6 comparti -> working 24 settori -> emettitori`
+`captazione/fonte -> 2×150 m³ working -> presa/griglia grossolana -> pompe principali 1+1 -> idrociclone/filtrazione fine pressurizzata -> misura portata -> dosaggio A/B/acido -> miscelazione -> pH/EC/T -> collettore principale -> 6 comparti -> working 24 settori -> emettitori`
 
 Stock chimici:
 
 `tank A/B/acido dedicati -> livello continuo + low-low -> pompe dosatrici BOM-016`.
 
-La sequenza precisa viene congelata con fonte reale, analisi acqua, ricette e SDS.
+La sequenza viene congelata con fonte reale, analisi acqua, ricette, SDS e layout.
 
 ## 3. BOM-013 — distribuzione irrigua
 
@@ -43,7 +44,7 @@ Benchmark 1.000 punti completi: **~€470–515 + IVA** prima di dorsali/valvole
 
 Requisito working **120 mesh / ~130 µm**.
 
-Candidati/prezzi:
+Candidati:
 
 - Arkal Leader 2" €182 + IVA;
 - Arkal Dual 2" €241 + IVA;
@@ -60,7 +61,7 @@ Baseline **2×100%**, una duty e una standby, un VFD per pompa.
 
 Candidato di classe Grundfos CR 10-6: 10 m³/h nominali, 48,3 m nominali, 2,2 kW 3~, **€1.946,78 IVA incl./cad** retail osservato.
 
-VFD Danfoss FC-51 2,2 kW: **€895,30 + IVA/cad** benchmark. Taglia finale bloccata da Q/H/NPSH, filtri, controlavaggio e rete.
+VFD Danfoss FC-51 2,2 kW: **€895,30 + IVA/cad** benchmark. Taglia finale da Q/H/NPSH, filtri, controlavaggio e rete.
 
 ## 6. BOM-016 — fertirrigazione A/B/acido
 
@@ -68,9 +69,9 @@ Tre canali indipendenti più predisposizione quarto.
 
 Regola: **i concentrati A/B/acido non devono incontrarsi prima di essere sufficientemente diluiti nell'acqua di processo**.
 
-Interlock minimi: no flow=no dose, low level=stop, sensor fault=stop automatico, EC high=stop A/B, limite pH=stop acido, spill=stop, dose max ciclo/ora.
+Interlock minimi: no-flow=no-dose, low-level=stop, sensor fault=stop automatico, EC high=stop A/B, limite pH=stop acido, spill=stop, dose massima ciclo/ora.
 
-Candidato prioritario Etatron eOne MF. Benchmark sole pompe:
+Etatron eOne MF candidato prioritario. Benchmark sole pompe:
 
 - 2×20/7 + 6/7 = **€1.744 + IVA**;
 - 2×30/5 + 6/7 = **€1.894 + IVA**.
@@ -79,126 +80,128 @@ Hanna HI98143-22 pH+EC 4–20 mA: **€615 + IVA**, sonde escluse. Verifica indi
 
 ## 7. BOM-017 — serbatoi fertilizzanti e contenimento
 
-Tre stock iniziali separati: A, B, acido. Scenario dimensionale per RFQ, non selezione:
-
-- A 500 L;
-- B 500 L;
-- acido 200 L.
-
-Il volume vero deriva da:
-
-`V_operativo = consumo massimo giornaliero × giorni autonomia`
-
-con margine per freeboard, fondo non pescabile, agitazione e riempimento.
-
-### Serbatoi benchmark
-
-- Pack Services PFF-CH0500 PE chimici 500 L: **€188,73 + IVA**;
-- Pack Services PFF-CH0200 PE chimici 200 L: **€131,94 + IVA**;
-- ELBI CHL-500 500 L: **€219 IVA incl.**;
-- stazione PE 200 L con vasca di contenimento: **€202,77 + IVA**.
-
-Scenario 500/500/200 con PFF-CH: **€509,40 + IVA di soli serbatoi**.
-
-### Contenimento
-
-Baseline prudente:
-
-- contenimento singolo almeno pari al volume nominale del relativo serbatoio;
-- acido in bacino dedicato;
-- A+B in bacino comune solo se compatibilità dimostrata.
+Scenario RFQ, non ordine: A 500 L, B 500 L, acido 200 L. Volume vero da consumo massimo × autonomia, con freeboard/fondo non pescabile.
 
 Benchmark:
 
-- DENIOS PE 600 L: **€560 + IVA**;
-- vasca PE 500 L Gaesco: **€641,72 IVA incl.**.
+- PE chimici 500 L: **€188,73 + IVA**;
+- PE chimici 200 L: **€131,94 + IVA**;
+- scenario 500/500/200: **€509,40 + IVA di soli serbatoi**;
+- DENIOS PE 600 L contenimento: **€560 + IVA**;
+- WIKA ILT-C01 radar: **€390,09 + IVA**.
 
-Le norme italiane che usano criteri 30%/1/3 + serbatoio maggiore riguardano specifici casi di rifiuti pericolosi e sono solo benchmark: l'obbligo applicabile ai fertilizzanti va verificato su sostanza/SDS/sito.
+Acido in contenimento dedicato; A+B insieme solo con compatibilità documentata. Agitazione A/B solo se necessaria.
 
-### Livello
+## 8. BOM-018 — accumulo acqua 300 m³
 
-Ogni tank: continuo + low-low indipendente + high/high-high.
+Baseline: **2×150 m³ working**, indipendenti e isolabili, con predisposizione a 400–500 m³.
 
-Benchmark:
+Prima dell'ordine definire se il requisito è 300 m³ **nominali** o **utili**.
 
-- Novus TL400 laser 4–20 mA: da **€130** pubblicati, IVA da confermare;
-- WIKA ILT-C01 radar: **€390,09 + IVA**;
-- Elesa HFLT-E/HFL-E limite: da **€39,18 / €60,41 + IVA**.
+### Autonomia
 
-### Agitazione
+Con working peak 30–35 m³/giorno:
 
-A/B: agitatore o ricircolo solo se richiesto da solubilità/stabilità. Acido: nessun agitatore di default.
+- 300 m³ = **8,6–10 giorni teorici**;
+- 14 giorni richiederebbero 420–490 m³;
+- 15 giorni 450–525 m³.
 
-Benchmark professionale 0,37 kW AISI316 fino a 500 L: **€1.835 + IVA**, usato solo come riferimento alto.
+Quindi 300 m³ è un primo stadio, non una garanzia di autonomia prolungata.
 
-### Sicurezza/operatività
+### Captazione pioggia
 
-- riempimenti dedicati e identificati;
-- high-level stop;
-- spill sensor;
-- bacini con drenaggio controllato normalmente chiuso;
-- sfiati dimensionati;
-- per acido, sfiato convogliato/scrubber solo se SDS lo richiede;
-- pavimento resistente alla chimica reale;
-- niente travaso ordinario con secchi/imbuti;
-- SDS, etichettatura, spill kit e DPI;
-- lavaocchi/doccia da valutazione rischio con punto 12.
+Con 4.200 m² nominali:
 
-## 8. Misure/KPI
+- 1 mm pioggia = 4,2 m³ teorici;
+- 300 m³ = 71,4 mm teorici;
+- ~84 mm con resa complessiva 85%.
 
-- m³ acqua;
+Overflow dimensionato dalla pioggia di progetto RainMap e dalla superficie captata, non dal volume tank.
+
+### Scenari
+
+- S1 2×150 m³ rigidi con liner — baseline;
+- S2 3×100 m³ — maggiore modularità;
+- S3 1×300 m³ — CAPEX semplice ma single point of failure;
+- S4 2×150 m³ bladder — CAPEX basso/footprint alto;
+- S5 GRP/modulare — da RFQ.
+
+### Benchmark
+
+- Labaronne Citaf bladder 150 m³: **€4.270 + IVA/cad**, quindi €8.540 + IVA per due, solo hardware;
+- RL Distrib bladder 150 m³: **€3.799 + IVA/cad** benchmark;
+- steel 200 m³: **€6.630 + IVA**, trasporto/installazione esclusi;
+- ABEKO ~200 m³ utili: **€7.807 + IVA**, cover telo +€725;
+- Tanks Direct UK 150.000 L: **£4.650 ex VAT**, benchmark estero.
+
+Nota critica: un prodotto ABEKO denominato “150 m³” pubblica **112 m³ utili**. Per l'ordine vale sempre il volume utile dichiarato.
+
+### Requisiti tank
+
+Ogni unità: ingresso isolabile, calming inlet, overflow passivo, copertura anti-alga, aspirazione sopra fondo, scarico fondo, campionamento, sfiato, radar livello, low-low indipendente, high-high, accesso/ispezione e valvole isolate.
+
+Cross-connect normalmente isolabile; contaminazione/perdita di un tank non deve propagarsi automaticamente all'altro.
+
+Fondazioni da geotecnica + manuale OEM. Un cilindro Ø9,14 m con 150 m³ esercita circa **22,4 kPa** di solo carico medio acqua sul footprint, prima di struttura e carichi locali.
+
+UNI EN 16941-1:2024 è riferimento corrente per sistemi di uso acqua piovana non potabile, oltre agli obblighi locali/nazionali.
+
+## 9. Misure/KPI
+
+- m³ disponibili e autonomia residua;
+- m³ captati da pioggia / da fonte;
+- m³ irrigati;
+- perdite/overflow;
+- sedimenti e qualità acqua;
 - L A/B/acido;
-- livello e autonomia residua stock;
 - pH/EC/T;
 - pressione e portata;
 - kWh pompe;
-- drift/calibrazioni sonde;
-- numero sversamenti/allarmi;
-- consumo nutrienti/m³ e futuro costo nutrienti/kg vendibile.
+- drift/calibrazioni;
+- allarmi e ore manutenzione.
 
-## 9. Failure modes principali
+## 10. Failure modes principali
 
-- pompa irrigazione/dosatrice guasta;
-- VFD guasto;
+- liner/tank perde;
+- overflow ostruito/insufficiente;
+- fondazione fuori piano;
+- contaminazione tank;
+- crescita algale/sedimenti;
+- low-low/radar guasto;
+- cross-connect aperto impropriamente;
+- pompa o VFD guasto;
 - filtro intasato;
 - dosaggio senza flusso;
-- sensore pH/EC/livello guasto;
-- stock esaurito;
-- serbatoio/passaparete perde;
-- bacino insufficiente/pieno;
-- travaso nel tank sbagliato;
-- contaminazione A/B/acido;
-- sfiato ostruito;
-- agitatore guasto;
+- stock chimico finito/perdita;
 - PLC/I/O/bus guasto.
 
-Fallback: failover P1/P2, stop dosaggio, isolamento chimico, misura manuale pH/EC, recupero sversamento dal bacino e procedura degradata solo se sicura/agronomicamente ammessa.
+Fallback: isolamento tank/ramo, esercizio su unità superstite, failover P1/P2, stop dosaggio, fonte esterna autorizzata e modalità irrigazione prioritaria/degradata.
 
-## 10. Package sviluppati
+## 11. Package sviluppati
 
 - `IRRIGATION_DISTRIBUTION.md` + RFQ;
 - `FILTRATION_ARCHITECTURE.md` + RFQ;
 - `PUMP_STATION_ARCHITECTURE.md` + RFQ;
 - `FERTIGATION_DOSING.md` + RFQ;
-- `TANKS_CONTAINMENT_ARCHITECTURE.md` + `RFQ_FERTILIZER_TANKS_CONTAINMENT.md`;
-- BOM-013…017 in `19_BOM_PRODOTTI_FORNITORI/`;
+- `TANKS_CONTAINMENT_ARCHITECTURE.md` + RFQ;
+- `WATER_STORAGE_ARCHITECTURE.md` + `RFQ_WATER_STORAGE.md`;
+- BOM-013…018 in `19_BOM_PRODOTTI_FORNITORI/`;
 - fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
-## 11. Gate punto 04
+## 12. Gate punto 04
 
 Restano necessari:
 
 - layout/portate C1–C6;
-- fonte/analisi acqua + alcalinità;
+- fonte reale e analisi acqua/alcalinità;
+- bilancio idrico mensile e autonomia target;
+- lotto/geotecnica/RainMap;
+- decisione 300 m³ nominali vs utili;
+- RFQ tank/fondazioni/trasporto;
 - Q/H/NPSH pompe;
 - filtrazione/controlavaggio finali;
-- ricette e concentrazioni stock;
-- acido reale/SDS/compatibilità;
-- volumi A/B/acido e autonomia;
-- agitazione/ricircolo;
-- layout locale chimici e contenimento applicabile;
+- ricette/concentrazioni/SDS;
 - trattamento/disinfezione se necessario;
-- drenaggio/riuso;
-- **BOM-018 accumulo acqua 300 m³**;
+- drenaggio e decisione su eventuale riuso;
 - backup elettrico;
-- RFQ e commissioning.
+- commissioning completo.
