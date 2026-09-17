@@ -14,7 +14,7 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 - `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e decision gates;
 - `01_MASTERPLAN_E_TERRENO/` — lotto, vincoli, accessi, drenaggi, espansioni;
 - `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, outdoor;
-- `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura e drenaggi;
+- `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura, drenaggi, porte e recupero pioggia;
 - `04_ACQUA_E_FERTIRRIGAZIONE/` — fonte, accumulo, filtri, pompe, dosaggio, drenaggio;
 - `05_TERMICO_E_CLIMA/` — PDC, accumulo, distribuzione, deumidificazione, emergenza;
 - `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, UPS, generatore, EMS;
@@ -59,8 +59,6 @@ Il punto diventa `VALIDATO` coltura per coltura con sito, sistema, cultivar, res
 
 **Stato: RAFFINATO COME ARCHITETTURA / BOM PRINCIPALI IN SVILUPPO / DIMENSIONAMENTO BLOCCATO DAL LOTTO E DALLE CROP CARD.**
 
-Documenti principali includono struttura/fondazioni, copertura, aperture/reti, schermi, fogging, supporti coltura/logistica, manutenzione/sicurezza e relativi RFQ.
-
 Package/BOM sviluppati:
 
 - **BOM-001 — HAF**: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`;
@@ -69,36 +67,47 @@ Package/BOM sviluppati:
 - **BOM-004 — copertura/film/fissaggi**: `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
 - **package struttura/fondazioni**: `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
 - **BOM-005 — fogging**: `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`;
-- **BOM-006 — supporti coltura + drenaggio**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`.
+- **BOM-006 — supporti coltura + drenaggio**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`;
+- **BOM-007 — porte, compartimentazioni, gronde e pluviali**: `19_BOM_PRODOTTI_FORNITORI/SERRA_PORTE_COMPARTIMENTI_GRONDE.md`.
 
-RFQ BOM-006: `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`.
+RFQ collegati:
+
+- `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`;
+- `03_SERRA/RFQ_DOORS_PARTITIONS_GUTTERS.md`.
 
 ### BOM-006 — stato corrente
 
-Sono separati e prezzati dove possibile:
+Sono separati high-wire, hook/roller, spago, clip, gutter fuori suolo, supporti, collettori e sensori drenaggio. Le quantità restano aperte finché non sono definiti steli/m², file/lunghezze, sistema lowering, slab e pendenze.
 
-- filo/cavo high-wire e ancoraggi;
-- hook/roller;
-- spago PP o biodegradabile;
-- clip PP o biodegradabili;
-- gutter/canaline;
-- staffe, giunti, terminali e scarichi;
-- collettore drenaggio;
-- lavaggio/ispezione;
-- sensori volume/EC/pH/T come interfaccia col punto 04.
+### BOM-007 — stato corrente
 
-Benchmark correnti registrati:
+Sono ora separati:
 
-- ReelHook 30 m: €7,01 + IVA/cad prima degli sconti quantità;
-- ECOTWINE 400 N ~3.350 m: €54,70–62,70 + IVA/bobina;
-- Bato clip 22 mm: €77,50 + IVA/10.000;
-- clip biodegradabile 22 mm: €30,95 + IVA/1.000;
-- gutter professionale metallico: `PREZZO DA PREVENTIVO`;
-- canaline plastiche/NFT: benchmark pubblici solo per confronto, non baseline C1/C2.
+- porte comparti e accessi logistici/AMR;
+- rulli/binari/guarnizioni/sensori e predisposizione automazione;
+- eventuale airlock C6;
+- 5 separazioni working tra i 6 comparti;
+- scenari divisorio P1 leggero, P2 ibrido e P3 rigido;
+- passaparete e sigillature tecniche;
+- gronde strutturali;
+- bocchette, pluviali, raccordi, supporti e ispezioni;
+- first-flush condizionale;
+- collettore verso accumulo;
+- troppo-pieno passivo/failure-safe;
+- commissioning idraulico e meccanico.
 
-Le quantità restano correttamente aperte finché non sono definiti steli/m², file/lunghezze, sistema lowering, slab e pendenze.
+Benchmark registrati:
 
-Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, layout esecutivo, crop card, analisi acqua e preventivi confrontabili.
+- policarbonato trasparente 10 mm, Prezzario FVG 2026: €25,50/m² materiale;
+- canali standard in acciaio zincato preverniciato: €5,87/kg;
+- supporto gronda zincato: €19,45/cad;
+- collare pluviale zincato: €5,46/cad;
+- PVC SN4 Ø110 retail: €7,05/m, solo benchmark e non diametro di progetto;
+- porte greenhouse professionali: `PREZZO DA PREVENTIVO`.
+
+Il volume da 300 m³ non viene usato per dimensionare gronde/pluviali. Le portate saranno calcolate con dati pluviometrici ARPA FVG del sito reale; il troppo-pieno deve funzionare anche con serbatoio pieno e senza PLC.
+
+Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, layout esecutivo, crop card, analisi acqua, calcolo idraulico pioggia e preventivi confrontabili.
 
 ## 7. R&D trasversale — laser, vision e manutenzione robotica
 
@@ -134,35 +143,35 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono nel perimetro rob
 - BOM-004 copertura;
 - struttura/fondazioni: package economico + RFQ;
 - BOM-005 fogging + RFQ;
-- BOM-006 supporti coltura + drenaggio + RFQ.
+- BOM-006 supporti coltura + drenaggio + RFQ;
+- BOM-007 porte + compartimenti + gronde/pluviali + RFQ.
 
 ### In lavorazione successiva
 
-**Porte + compartimentazioni interne + gronde/pluviali:** accessi persone, logistica/AMR, divisori tra comparti, sigillature, gronde, pluviali, troppo-pieni, manutenzione e collegamento ai 300 m³ di accumulo acqua.
+**Attrezzatura e consumabili di montaggio:** ponteggi/piattaforme, sollevamento, utensili, elettroutensili, DPI, coppie di serraggio, fissaggi, sigillanti, materiali di consumo, ricambi cantiere, ore macchina e costi.
 
 ### Coda immediata
 
-1. porte/compartimenti/gronde/pluviali;
-2. attrezzatura e consumabili montaggio;
-3. chiusura punto 03 / matrice costi aperti;
-4. tubi, collettori e pompe circuito termico;
-5. gocciolatori e linee irrigue;
-6. filtrazione acqua;
-7. pompe principali irrigazione;
-8. pompe dosatrici;
-9. serbatoi fertilizzanti;
-10. accumulo termico 30–50 m³;
-11. accumulo acqua 300 m³;
-12. moduli FV e inverter;
-13. AMR;
-14. sollevatore/mezzo multifunzione;
-15. robot tagliaerba;
-16. sistema pulizia area galline;
-17. celle frigorifere;
-18. attrezzatura raccolta e packaging;
-19. pergolato/vite/area relax;
-20. fattoria didattica;
-21. spaccio automatico 24/7;
-22. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. attrezzatura e consumabili montaggio;
+2. chiusura punto 03 / matrice costi aperti;
+3. tubi, collettori e pompe circuito termico;
+4. gocciolatori e linee irrigue;
+5. filtrazione acqua;
+6. pompe principali irrigazione;
+7. pompe dosatrici;
+8. serbatoi fertilizzanti;
+9. accumulo termico 30–50 m³;
+10. accumulo acqua 300 m³;
+11. moduli FV e inverter;
+12. AMR;
+13. sollevatore/mezzo multifunzione;
+14. robot tagliaerba;
+15. sistema pulizia area galline;
+16. celle frigorifere;
+17. attrezzatura raccolta e packaging;
+18. pergolato/vite/area relax;
+19. fattoria didattica;
+20. spaccio automatico 24/7;
+21. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
