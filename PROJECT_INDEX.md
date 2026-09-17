@@ -35,27 +35,27 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 
 ## 3. Stato punto 00 — Visione e principi
 
-**Stato: RAFFINATO / BASE DI GOVERNO DEL PROGETTO.**
+**RAFFINATO / BASE DI GOVERNO DEL PROGETTO.**
 
 ## 4. Stato punto 01 — Terreno e masterplan
 
-**Stato: RAFFINATO / IN ATTESA DI LOTTO REALE.**
+**RAFFINATO / IN ATTESA DI LOTTO REALE.**
 
 ## 5. Stato punto 02 — Agronomia
 
-**Stato: RAFFINATO / PORTAFOGLIO E METODO DEFINITI / DATI COLTURALI DA VALIDARE.**
+**RAFFINATO / PORTAFOGLIO E METODO DEFINITI / DATI COLTURALI DA VALIDARE.**
 
 Working portfolio: C1 pomodoro premium; C2 peperone; C3 lattuga; C4 lattuga/leaf flessibile; C5 baby leaf/rucola/spinacio; C6 basilico + vivaio + prove.
 
 ## 6. Stato punto 03 — Serra
 
-**Stato: RAFFINATO COME ARCHITETTURA / BOM-001…008 STRUTTURATE / VALIDAZIONE BLOCCATA DA DATI REALI.**
+**RAFFINATO COME ARCHITETTURA / BOM-001…008 STRUTTURATE / VALIDAZIONE BLOCCATA DA DATI REALI.**
 
 Matrice: `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 
 ## 7. Stato punto 04 — Acqua e fertirrigazione
 
-**Stato: ARCHITETTURA IN SVILUPPO / BOM-013…017 SVILUPPATE / TRATTAMENTO, DRENAGGIO E ACCUMULO DA SVILUPPARE.**
+**ARCHITETTURA STRUTTURATA / BOM-013…018 SVILUPPATE / TRATTAMENTO-DISINFEZIONE E DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA E CROP CARD.**
 
 Documenti principali:
 
@@ -64,113 +64,89 @@ Documenti principali:
 - `FILTRATION_ARCHITECTURE.md` + RFQ;
 - `PUMP_STATION_ARCHITECTURE.md` + RFQ;
 - `FERTIGATION_DOSING.md` + RFQ;
-- `TANKS_CONTAINMENT_ARCHITECTURE.md` + `RFQ_FERTILIZER_TANKS_CONTAINMENT.md`;
-- BOM-013…017 in `19_BOM_PRODOTTI_FORNITORI/`;
+- `TANKS_CONTAINMENT_ARCHITECTURE.md` + RFQ;
+- `WATER_STORAGE_ARCHITECTURE.md` + `RFQ_WATER_STORAGE.md`;
+- BOM-013…018 in `19_BOM_PRODOTTI_FORNITORI/`;
 - fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
 ### BOM-013 — distribuzione irrigua
 
-Working 24 settori. C1/C2/C6: Netafim PCJ/LCNL/HCNL candidato; C3–C5: dripline/ala da definire.
-
-Benchmark 1.000 punti: **~€470–515 + IVA** prima di dorsali/valvole/posa.
+Working 24 settori. C1/C2/C6: Netafim PCJ/LCNL/HCNL candidato; C3–C5: dripline/ala da definire. Benchmark 1.000 punti **~€470–515 + IVA** prima di dorsali/valvole/posa.
 
 ### BOM-014 — filtrazione
 
-Requisito 120 mesh / ~130 µm. Candidati: Arkal Leader/Dual, Spin-Klin, ScreenGuard, idrociclone condizionale.
-
-Prezzi hardware: €182, €241, €2.574, €4.321, ScreenGuard da €2.988, idrociclone €363 + IVA secondo configurazione.
+Requisito 120 mesh / ~130 µm. Candidati Arkal Leader/Dual, Spin-Klin, ScreenGuard, idrociclone condizionale. Hardware pubblico da €182 + IVA fino a €4.321 + IVA per i candidati censiti.
 
 ### BOM-015 — pompe principali irrigazione 1+1
 
-Baseline 2×100% con VFD dedicato e failover locale.
-
-Candidato di classe Grundfos CR 10-6: 10 m³/h, 48,3 m, 2,2 kW, **€1.946,78 IVA incl./cad** retail osservato. Danfoss FC-51 2,2 kW **€895,30 + IVA/cad** benchmark.
-
-Taglia finale da Q/H/NPSH e controlavaggio.
+Baseline 2×100% con VFD dedicato e failover locale. Grundfos CR 10-6 benchmark: 10 m³/h, 48,3 m, 2,2 kW, **€1.946,78 IVA incl./cad**; Danfoss FC-51 2,2 kW **€895,30 + IVA/cad**. Taglia finale da Q/H/NPSH.
 
 ### BOM-016 — fertirrigazione A/B/acido
 
-Tre canali indipendenti + predisposizione quarto. No-flow=no-dose, pH/EC/T dopo miscelazione, limiti hard, calibrazione pompe/sonde, contenimento e livelli.
+Tre canali indipendenti + quarto predisposto. Etatron eOne MF candidato. Benchmark sole pompe **€1.744–1.894 + IVA** negli scenari working. Hanna HI98143-22 pH+EC 4–20 mA **€615 + IVA**, sonde escluse.
 
-Etatron eOne MF candidato prioritario. Benchmark sole pompe:
+### BOM-017 — serbatoi fertilizzanti/contenimento
 
-- 2×20/7 + 1×6/7 = **€1.744 + IVA**;
-- 2×30/5 + 1×6/7 = **€1.894 + IVA**.
+Scenario RFQ A/B/acido 500/500/200 L, non ordine. Soli serbatoi PE benchmark **€509,40 + IVA**. Contenimento acido separato; livelli continui + low-low + high-high; agitazione solo se necessaria.
 
-Hanna HI98143-22 pH+EC 4–20 mA: **€615 + IVA**, sonde escluse. Hanna HI9814 portatile: **€315 + IVA**.
+### BOM-018 — accumulo acqua 300 m³
 
-### BOM-017 — serbatoi fertilizzanti e contenimento
+Baseline: **2×150 m³ working**, indipendenti/isolabili, predisposti a espansione 400–500 m³.
 
-Scenario RFQ, non selezione d'ordine:
+Dati chiave:
 
-- A 500 L;
-- B 500 L;
-- acido 200 L.
+- 300 m³ con 30–35 m³/giorno = **8,6–10 giorni teorici**;
+- 14 giorni = 420–490 m³;
+- con 4.200 m², 1 mm di pioggia = 4,2 m³ teorici;
+- 300 m³ richiedono 71,4 mm teorici o ~84 mm a resa 85%;
+- overflow da RainMap/intensità di progetto, non dal volume tank.
 
-Il volume finale deriva da consumo massimo × autonomia con freeboard e fondo non pescabile.
+Scenari: 2×150 rigidi con liner baseline; 3×100; 1×300; 2×150 bladder; GRP/modulare.
 
-Serbatoi benchmark:
+Benchmark:
 
-- Pack Services PE chimici 500 L: **€188,73 + IVA**;
-- Pack Services PE chimici 200 L: **€131,94 + IVA**;
-- ELBI CHL-500: **€219 IVA incl.**;
-- stazione dosaggio PE 200 L con vasca: **€202,77 + IVA**.
+- Labaronne Citaf bladder 150 m³: **€4.270 + IVA/cad**;
+- RL Distrib bladder 150 m³: **€3.799 + IVA/cad**;
+- steel 200 m³: **€6.630 + IVA**, trasporto/installazione esclusi;
+- ABEKO ~200 m³ utili: **€7.807 + IVA**, cover +€725;
+- Tanks Direct 150.000 L: **£4.650 ex VAT**, benchmark UK.
 
-Scenario 500/500/200 con PFF-CH: **€509,40 + IVA di soli serbatoi**.
+Regola: usare **volume utile dichiarato**. Un prodotto ABEKO chiamato “150 m³” pubblica 112 m³ utili e non vale come 150 m³ nel dimensionamento.
 
-Contenimento:
+Ogni tank: cover anti-alga, ingresso/calming, overflow passivo, aspirazione sopra fondo, drain, campionamento, radar, low-low indipendente, high-high, isolamento e accesso. Cross-connect normalmente isolabile.
 
-- acido separato come baseline;
-- A+B insieme solo con compatibilità documentata;
-- target ingegneristico iniziale per singolo bacino >= volume nominale del serbatoio;
-- DENIOS PE 600 L **€560 + IVA**;
-- vasca PE 500 L Gaesco **€641,72 IVA incl.**.
-
-Livelli:
-
-- continuo + low-low indipendente + high/high-high per tank;
-- Novus TL400 da €130 pubblicati, IVA da confermare;
-- WIKA ILT-C01 radar €390,09 + IVA;
-- Elesa HFLT-E/HFL-E da €39,18/€60,41 + IVA.
-
-Agitazione A/B solo se necessaria. Benchmark professionale 0,37 kW AISI316 fino a 500 L: **€1.835 + IVA**; acido senza agitatore di default.
-
-Sicurezza: riempimenti dedicati, spill detection, drenaggio bacini normalmente chiuso, sfiati verificati da SDS, pavimento resistente, no travaso ordinario con secchi, SDS/etichette/PPE/spill kit, lavaocchi-doccia da valutazione rischio.
+UNI EN 16941-1:2024 è riferimento corrente per acqua piovana non potabile. Fondazione da geotecnica + manuale OEM.
 
 ### Gate punto 04
 
 Restano necessari:
 
-- layout/portate C1–C6;
-- fonte/analisi acqua + alcalinità;
-- Q/H/NPSH pompe;
-- filtrazione/controlavaggio finali;
-- ricette e concentrazioni stock;
-- acido reale/SDS/compatibilità;
-- volumi A/B/acido e contenimento applicabile;
+- layout e portate C1–C6;
+- fonte reale/analisi acqua/alcalinità;
+- bilancio idrico mensile/autonomia;
+- lotto, geotecnica, RainMap;
+- decisione 300 m³ nominali vs utili;
+- RFQ tank/fondazioni/trasporto;
+- duty point pompe e filtrazione finale;
+- ricette/SDS/compatibilità;
 - trattamento/disinfezione se necessario;
-- drenaggio/riuso;
-- **BOM-018 accumulo acqua 300 m³**;
+- drenaggio e decisione su riuso;
 - backup elettrico;
 - commissioning.
 
 ## 8. Stato punto 05 — Termico e clima
 
-**Stato: ARCHITETTURA STRUTTURATA / BOM-009…012 SVILUPPATE / VALIDAZIONE BLOCCATA DA LOTTO, CARICHI E RFQ.**
+**ARCHITETTURA STRUTTURATA / BOM-009…012 SVILUPPATE / VALIDAZIONE BLOCCATA DA LOTTO, CARICHI E RFQ.**
 
 Matrice: `05_TERMICO_E_CLIMA/POINT_05_CLOSURE_MATRIX.md`.
 
 ## 9. R&D trasversale — laser, vision e manutenzione robotica
 
-Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`.
-
-Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
+Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
 ## 10. Modulo futuro — centro trasformazione conto terzi
 
-Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`.
-
-Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
+Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`. Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
 
 ## 11. Metodo BOM obbligatorio
 
@@ -193,25 +169,25 @@ Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica,
 - BOM-014 filtrazione acqua;
 - BOM-015 pompe principali irrigazione 1+1;
 - BOM-016 fertirrigazione A/B/acido;
-- **BOM-017 serbatoi fertilizzanti e contenimento**.
+- BOM-017 serbatoi fertilizzanti e contenimento;
+- **BOM-018 accumulo acqua 300 m³**.
 
 ### Prossimo package
 
-**BOM-018 — accumulo acqua 300 m³:** confronto 2×150 m³ vs alternative modulari, materiale, fondazioni, ingresso pioggia/fonte, livelli, troppo-pieno, svuotamento, sedimentazione, ispezione, qualità acqua, pompe/interfaccia BOM-015, ricambi e CAPEX.
+**BOM-019 — FV e inverter:** 120 kWp iniziali, moduli, strutture, inverter, quadri DC/AC, SPD, sezionamenti, monitoraggio, connessione, layout senza ombreggiare la serra, predisposizione 150–180 kWp, costi e manutenzione.
 
 ### Coda successiva
 
-1. accumulo acqua 300 m³;
-2. moduli FV e inverter;
-3. AMR;
-4. sollevatore/mezzo multifunzione;
-5. robot tagliaerba;
-6. sistema pulizia area galline;
-7. celle frigorifere;
-8. attrezzatura raccolta e packaging;
-9. pergolato/vite/area relax;
-10. fattoria didattica;
-11. spaccio automatico 24/7;
-12. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. moduli FV e inverter;
+2. AMR;
+3. sollevatore/mezzo multifunzione;
+4. robot tagliaerba;
+5. sistema pulizia area galline;
+6. celle frigorifere;
+7. attrezzatura raccolta e packaging;
+8. pergolato/vite/area relax;
+9. fattoria didattica;
+10. spaccio automatico 24/7;
+11. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
