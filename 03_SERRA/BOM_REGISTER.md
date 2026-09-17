@@ -59,7 +59,19 @@
 | GH-SCR-009 | Quadro/cablaggio screen | per motore/zona | `DA PREVENTIVARE` | protezioni, cavi, I/O |
 | GH-SCR-010 | Posa/commissioning/ricambi | 1 lotto | `DA PREVENTIVARE` | separare taratura e stock |
 | GH-HAF-001 | Ventilatori HAF | 24 working + scorta | `CANDIDATO` | vedi BOM-001 |
-| GH-FOG-001 | Fogging C1/C2/C6 | 3 zone | `REQUISITO` | **BOM-005 successiva** |
+| GH-FOG-001 | Fogging C1/C2/C6 | 3 zone | `BOM-005 SVILUPPATA / DA CALCOLO` | vedi SERRA_FOGGING.md |
+| GH-FOG-002 | Pompa/e HP | scenario F1/F2/F3 | `CANDIDATI REALI` | LUBING 5,5 L/min €2.830,43; 20 L/min €3.747,49; FERMO 8/21 L/min benchmark |
+| GH-FOG-003 | Filtrazione fine | da portata | `CANDIDATI REALI / DA DIMENSIONARE` | cartuccia 1 µm 20" €13,45; set 5+1+0,005 µm €259,23 benchmark |
+| GH-FOG-004 | RO/softening | se analisi acqua lo richiede | `CONDIZIONALE` | prezzo da preventivo dopo analisi |
+| GH-FOG-005 | Tubazione HP | m da layout | `CANDIDATI REALI / DA GEOMETRIA` | inox 12 mm ~€3,59/m solo tubo; PA12 3/8 ~€4,59/m benchmark |
+| GH-FOG-006 | Raccordi/supporti | da distinta | `PREZZI TROVATI / DA GEOMETRIA` | diritti/gomiti/tee/staffe separati |
+| GH-FOG-007 | Elettrovalvole HP zone | 3 + scorta da definire | `CANDIDATO` | Tecnocooling 3/8 24VAC €217,07/cad |
+| GH-FOG-008 | Ugelli HP | da calcolo | `CANDIDATI REALI` | LUBING inox 0,2 €8,98; Tecnocooling inox anti-drip 0,2 €15,70 |
+| GH-FOG-009 | Valvole isolamento/drenaggio/relief | da P&ID | `REQUISITO / DA PREVENTIVARE` | non assorbire in pompa |
+| GH-FOG-010 | Pressione/portata/dry-run | da architettura | `REQUISITO` | sensori e protezioni separate |
+| GH-FOG-011 | Quadro/cablaggio/PLC | 1 package | `DA PREVENTIVARE` | integrazione nel controllo locale |
+| GH-FOG-012 | Ricambi/consumabili | 1 lotto | `REQUISITO` | ugelli, filtri, tenute, coil, kit pompa |
+| GH-FOG-013 | Posa/commissioning | 1 lotto | `DA PREVENTIVARE` | uniformità, anti-wetting, failure test |
 | GH-CROP-001 | Fili/supporti pomodoro/peperone | DA LAYOUT | `REQUISITO` | carico al progettista |
 | GH-CROP-002 | Canaline drenaggio fuori suolo | DA LAYOUT | `REQUISITO` | collegamento punto 04 |
 | GH-ELEC-001 | Passerelle/canaline elettriche | DA LAYOUT | `REQUISITO` | collegamento punti 06/07 |
@@ -74,32 +86,22 @@
 - **BOM-002 schermi** — `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
 - **BOM-003 aperture/reti** — `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
 - **BOM-004 copertura** — `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
-- **package struttura/fondazioni** — `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`.
+- **package struttura/fondazioni** — `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
+- **BOM-005 fogging** — `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`.
 
-RFQ struttura: `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md`.
+RFQ fogging: `03_SERRA/RFQ_FOGGING.md`.
 
 ## 3. Benchmark struttura
 
 ### Agricolo
 
-Tuttoserre 8×40 m / 320 m²:
-
-- €6.832 IVA inclusa;
-- tubo Ø60 mm;
-- passo pali 2,5 m;
-- gronda 3,2 m;
-- teli/montaggio esclusi;
-- prezzo indicativo da ricalcolare.
-
-Fonte: https://www.tuttoserre.it/serre/18-serra-professionale.html
-
-**NON SCALARE LINEARMENTE**.
+Tuttoserre 8×40 m / 320 m²: €6.832 IVA inclusa, teli/montaggio esclusi, prezzo indicativo. **NON SCALARE LINEARMENTE**.
 
 ### Lavori pubblici FVG 2026
 
-Carpenteria profili cavi: S235 €7,56/kg, S275 €7,65/kg, S355 €7,84/kg; zincatura a caldo +€1,50/kg. Sono benchmark generici, non preventivo serra.
+Carpenteria profili cavi: S235 €7,56/kg, S275 €7,65/kg, S355 €7,84/kg; zincatura a caldo +€1,50/kg. Benchmark generici, non preventivo serra.
 
-## 4. Costo completo
+## 4. Regola costo completo
 
 Per ogni macrovoce:
 
@@ -109,9 +111,8 @@ Separare costo reale, IVA, costo eleggibile, contributo potenziale, finanziament
 
 ## 5. Prossima sequenza economica serra
 
-1. **BOM-005 fogging**;
-2. supporti coltura/canaline;
-3. porte/compartimenti/gronde;
-4. attrezzatura e consumabili montaggio.
+1. **supporti coltura + canaline drenaggio**;
+2. porte/compartimenti/gronde;
+3. attrezzatura e consumabili montaggio.
 
-Struttura/fondazioni torna in lavorazione non appena lotto/geotecnica e offerte reali sbloccano le quantità.
+Il fogging torna in lavorazione appena analisi acqua e calcolo climatico sbloccano portata, numero ugelli e trattamento.
