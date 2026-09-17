@@ -72,8 +72,6 @@ Fonte:
 
 - https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=16.5.EQ4.02
 
-Questi dati servono a verificare le opere civili dopo il calcolo reale delle quantità.
-
 ## 4. Benchmark agricolo struttura — Tuttoserre
 
 Serra professionale 8 × 40 m / 320 m²:
@@ -82,18 +80,13 @@ Serra professionale 8 × 40 m / 320 m²:
 - tubo portante Ø60 mm;
 - passo pali 2,50 m;
 - altezza gronda 3,20 m;
-- tirante/candele da 1";
-- gronda laterale;
-- avvolgitori superiori/inferiori;
 - teli esclusi;
 - montaggio escluso;
-- pagina dichiara prezzo indicativo da ricalcolare in offerta.
+- prezzo indicativo da ricalcolare.
 
-Fonte corrente:
+Fonte: https://www.tuttoserre.it/serre/18-serra-professionale.html
 
-- https://www.tuttoserre.it/serre/18-serra-professionale.html
-
-Uso: benchmark agricolo reale, **non scalare linearmente** a Carnia TerraTech.
+Uso: benchmark agricolo reale, **non scalare linearmente**.
 
 ## 5. Film di copertura
 
@@ -108,50 +101,14 @@ Fonti:
 
 ## 6. Produttori/candidati film
 
-### Idromeccanica Lucchini PATILUX
-
-- 200 µm;
-- trasmissione 90%;
-- luce diffusa 10%;
-- effetto termico 80%;
-- anti-goccia opzionale;
-- prezzo da preventivo.
-
-Fonte: https://www.lucchiniidromeccanica.it/serre-professionali/defendo-system/patilux/
-
-### Polyane PRO 200 µm
-
-- termico;
-- diffusione 20%;
-- trasmissione >91%;
-- garanzia UV 5 anni;
-- benchmark pubblico €1,27/m² + IVA >150 m².
-
-Fonte: https://www.serre-en-direct.fr/bache-pour-serre-/183-bache-grandes-dimensions-polyane-200-microns.html
-
-### Deltagri Diffusant 5S 200 µm
-
-- 200 µm;
-- diffusante;
-- anti-UV;
-- termicità dichiarata >83%;
-- benchmark da €1,24/m² + IVA.
-
-Fonte: https://www.hellopro.fr/5s-film-de-serre-professionnel-diffusant-200-microns-2009088-7119323-produit.html
+- Idromeccanica Lucchini PATILUX: https://www.lucchiniidromeccanica.it/serre-professionali/defendo-system/patilux/
+- Polyane PRO 200 µm: https://www.serre-en-direct.fr/bache-pour-serre-/183-bache-grandes-dimensions-polyane-200-microns.html
+- Deltagri Diffusant 5S 200 µm: https://www.hellopro.fr/5s-film-de-serre-professionnel-diffusant-200-microns-2009088-7119323-produit.html
 
 ## 7. Fissaggi/materiali ausiliari — benchmark
 
-### Channel + wiggle wire
-
-VEVOR EU: benchmark retail ~€2,17/m di linea di fissaggio in un kit osservato.
-
-Fonte: https://eur.vevor.com/wire-lock-channel-c_10193/vevor-greenhouse-wiggle-wire-aluminum-alloy-spring-lock-u-channel-6-56ft-40pcs-p_010917282544
-
-### Nastro riparazione film
-
-Jardin Couvert, tape rinforzato UV 8 cm × 15 m: benchmark €18,05 IVA inclusa.
-
-Fonte: https://www.jardincouvert.com/reparation-baches/1282-ruban-adhesif-pour-reparer-film-de-serre.html
+- Channel + wiggle wire: https://eur.vevor.com/wire-lock-channel-c_10193/vevor-greenhouse-wiggle-wire-aluminum-alloy-spring-lock-u-channel-6-56ft-40pcs-p_010917282544
+- Tape UV riparazione: https://www.jardincouvert.com/reparation-baches/1282-ruban-adhesif-pour-reparer-film-de-serre.html
 
 ## 8. Schermi climatici
 
@@ -160,23 +117,62 @@ Fonte: https://www.jardincouvert.com/reparation-baches/1282-ruban-adhesif-pour-r
 
 ## 9. Reti anti-insetto
 
-- Arrigoni — Air Plus: https://arrigoni.it/agrotextile/applicazioni/protezione-dagli-insetti/
+- Arrigoni Air Plus: https://arrigoni.it/agrotextile/applicazioni/protezione-dagli-insetti/
 
-La rete va scelta per parassita target e perdita di ventilazione, non solo per mesh.
+## 10. Fogging alta pressione
 
-## 10. Documenti da acquisire con i preventivi
+### Sistemi greenhouse-specific
+
+- LUBING GreenTec: https://horticulture.lubingusa.com/horticulture/fogging-system/
+- Natural Misting — nurseries/greenhouses: https://naturalmisting.com/en/departments/nurseries-and-greenhouses/
+- FOG System: https://www.fog-system.com/
+- MicroCool greenhouse/water quality: https://microcool.com/greenhouse/how-to-ensure-optimal-water-quality-for-high-pressure-fog-systems-in-horticulture/
+
+### Pompe — benchmark retail
+
+- LUBING 70 bar 5,5 L/min: https://en.fermo.pl/pump-for-fogging-system-lubing-70-bar-55lmin.html — €2.830,43 osservati;
+- LUBING 70 bar 20 L/min: https://en.fermo.pl/pump-for-fogging-system-lubing-70-bar-20lmin.html — €3.747,49 osservati;
+- FERMO 50–100 bar 8 L/min: https://en.fermo.pl/pump-for-fogging-system-fermo-50-100-bar-8-lmin.html — €2.138,83 osservati;
+- FERMO 50–100 bar 21 L/min: https://en.fermo.pl/pump-for-fogging-system-fermo-50-100-bar-21-lmin.html — €3.335,28 osservati.
+
+Questi sono benchmark di mercato: la selezione finale deve provenire da calcolo e RFQ greenhouse-specific.
+
+### Ugelli
+
+- LUBING inox 0,2 mm: https://en.fermo.pl/nozzle-for-sprinkler-system-lubing-stainless-steel-02-mm.html — €8,98/cad osservati, ~5 L/h @ 70 bar dichiarati;
+- Tecnocooling inox 0,20 mm anti-drip + filtro: https://tecnocooling-en.es/en/nozzle-1024-stainless-steel-020-mm/ — €15,70/cad osservati;
+- Tecnocooling 0,15 mm anti-drip + filtro: https://tecnocooling-en.es/en/nozzle-1024-015-mm/ — €10,77/cad osservati.
+
+### Tubazioni/raccordi
+
+- FERMO pressure cooling systems: https://en.fermo.pl/livestock-buildings-equipment/presure-cooling-systems.html — tubo inox 12 mm 6 m €21,55, staffe/raccordi e componenti con prezzi pubblici;
+- Tecnocooling PA12PHL 3/8 × 25 m: https://tecnocooling-en.es/en/pa12phl-38-nylon-pipe-25-m-white/ — €114,81 osservati, pressione dichiarata 70–150 bar;
+- Tecnocooling elettrovalvola HP 3/8 24 VAC: https://tecnocooling-en.es/valvula-solenoide-ap-38-24-v-ca-nc-100-pro/ — €217,07 osservati.
+
+### Filtrazione
+
+- Tecnocooling water treatment: https://tecnocooling-en.es/en/water-treatment/
+- set 5 + 1 + 0,005 micron: https://tecnocooling-en.es/en/filter-set-with-pressure-gauge-3934-510005-microns/ — €259,23 osservati;
+- cartuccia 1 micron 20": https://tecnocooling-en.es/en/1-micron-filter-cartridge-20/ — €13,45 osservati.
+
+### Manuale operativo/manutenzione
+
+- https://tecnocooling-en.es/instructions/en/Operating%20instructions%20for%20the%20fogging%20system.pdf
+
+Nel manuale esaminato: controllo filtri, manutenzione ugelli, cambio olio pompa ogni 800–1000 h e procedura di drenaggio/spurgo per fermo invernale. Applicare sempre il manuale del modello effettivamente acquistato.
+
+## 11. Documenti da acquisire con i preventivi
 
 Per ogni fornitore archiviare:
 
 - offerta PDF;
 - disegno/shop drawing;
-- specifica carichi;
-- distinta pesi;
-- sezioni/spessori/materiali;
-- dettagli fondazioni;
-- zincatura/protezioni;
-- copertura/fissaggi;
-- motori;
+- specifica carichi/capacità;
+- distinta materiali;
+- P&ID quando applicabile;
+- schema elettrico/I/O;
+- dettagli fondazioni/strutture quando applicabile;
+- schede acqua e limiti qualità;
 - garanzie;
 - manuale montaggio;
 - manuale manutenzione/ispezione;
