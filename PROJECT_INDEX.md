@@ -57,48 +57,18 @@ Matrice: `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 
 **ARCHITETTURA STRUTTURATA / BOM-013…018 SVILUPPATE / TRATTAMENTO-DISINFEZIONE E DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA E CROP CARD.**
 
-Documenti principali:
+Documenti principali: `04_ACQUA_E_FERTIRRIGAZIONE/README.md`, package distribuzione/filtrazione/pompe/fertirrigazione/tank chimici/accumulo e relativi RFQ; BOM-013…018 e fonti dedicate.
 
-- `04_ACQUA_E_FERTIRRIGAZIONE/README.md`;
-- distribuzione, filtrazione, stazione pompe, fertirrigazione, tank chimici e accumulo acqua con relativi RFQ;
-- BOM-013…018 in `19_BOM_PRODOTTI_FORNITORI/`;
-- fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
+Dati guida:
 
-### BOM-013 — distribuzione irrigua
+- BOM-013: 24 settori working; 1.000 punti goccia ~€470–515 + IVA prima di dorsali/valvole/posa;
+- BOM-014: filtrazione working 120 mesh/~130 µm;
+- BOM-015: pompe 1+1, Grundfos CR10-6 benchmark €1.946,78 IVA incl./cad;
+- BOM-016: A/B/acido; sole pompe scenario ~€1.744–1.894 + IVA;
+- BOM-017: scenario tank A/B/acido 500/500/200 L; soli contenitori ~€509,40 + IVA;
+- BOM-018: 2×150 m³ working, espansione 400–500 m³; 300 m³ = 8,6–10 giorni teorici a 30–35 m³/giorno.
 
-Working 24 settori. C1/C2/C6: Netafim PCJ/LCNL/HCNL candidato; C3–C5: dripline/ala da definire. Benchmark 1.000 punti **~€470–515 + IVA** prima di dorsali/valvole/posa.
-
-### BOM-014 — filtrazione
-
-Requisito 120 mesh / ~130 µm. Candidati Arkal Leader/Dual, Spin-Klin, ScreenGuard, idrociclone condizionale. Hardware pubblico da €182 + IVA fino a €4.321 + IVA per i candidati censiti.
-
-### BOM-015 — pompe principali irrigazione 1+1
-
-Baseline 2×100% con VFD dedicato e failover locale. Grundfos CR 10-6 benchmark: 10 m³/h, 48,3 m, 2,2 kW, **€1.946,78 IVA incl./cad**; Danfoss FC-51 2,2 kW **€895,30 + IVA/cad**. Taglia finale da Q/H/NPSH.
-
-### BOM-016 — fertirrigazione A/B/acido
-
-Tre canali indipendenti + quarto predisposto. Etatron eOne MF candidato. Benchmark sole pompe **€1.744–1.894 + IVA** negli scenari working. Hanna HI98143-22 pH+EC 4–20 mA **€615 + IVA**, sonde escluse.
-
-### BOM-017 — serbatoi fertilizzanti/contenimento
-
-Scenario RFQ A/B/acido 500/500/200 L, non ordine. Soli serbatoi PE benchmark **€509,40 + IVA**. Contenimento acido separato; livelli continui + low-low + high-high; agitazione solo se necessaria.
-
-### BOM-018 — accumulo acqua 300 m³
-
-Baseline **2×150 m³ working**, indipendenti/isolabili, predisposti a espansione 400–500 m³.
-
-- 300 m³ con 30–35 m³/giorno = **8,6–10 giorni teorici**;
-- 14 giorni = 420–490 m³;
-- 4.200 m²: 1 mm pioggia = 4,2 m³ teorici;
-- overflow da RainMap/intensità di progetto;
-- usare sempre volume utile dichiarato, non nome commerciale.
-
-Benchmark: bladder 150 m³ €3.799–4.270 + IVA/cad; steel 200 m³ €6.630 + IVA; ABEKO ~200 m³ utili €7.807 + IVA + cover.
-
-### Gate punto 04
-
-Restano layout/portate, fonte/analisi acqua, bilancio idrico, lotto/geotecnica/RainMap, RFQ tank, duty point pompe, ricette/SDS, trattamento/disinfezione, drenaggio/riuso, backup elettrico e commissioning.
+Gate: lotto, analisi acqua, crop card, bilancio idrico, geotecnica/RainMap, RFQ, trattamento/disinfezione, drenaggio/riuso e commissioning.
 
 ## 8. Stato punto 05 — Termico e clima
 
@@ -110,74 +80,91 @@ Matrice: `05_TERMICO_E_CLIMA/POINT_05_CLOSURE_MATRIX.md`.
 
 **ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / CONNESSIONE, UPS, GENERATORE ED EMS DA SVILUPPARE.**
 
-Documenti:
-
-- `06_ENERGIA_ELETTRICA_FV/README.md`;
-- `06_ENERGIA_ELETTRICA_FV/PV_ARCHITECTURE.md`;
-- `06_ENERGIA_ELETTRICA_FV/RFQ_PV_INVERTERS.md`;
-- `19_BOM_PRODOTTI_FORNITORI/ENERGIA_FV_MODULI_INVERTER.md` — BOM-019;
-- `22_FONTI_NORME_PREVENTIVI/ENERGIA_FV_SOURCES.md`.
+Documenti: `06_ENERGIA_ELETTRICA_FV/README.md`, `PV_ARCHITECTURE.md`, `RFQ_PV_INVERTERS.md`, BOM-019 e fonti.
 
 ### BOM-019 — FV e inverter
 
-Working candidate moduli: **Trina Vertex S+ TSM-470NEG9R.28**.
+Working candidate: Trina Vertex S+ TSM-470NEG9R.28.
 
-- 256 × 470 W = **120,32 kWp**;
-- ~511,5 m² di sola superficie modulo;
-- ~5,38 t di soli moduli;
-- prezzi pubblici UE osservati ~€68,90 netto business fino a ~€99/modulo retail;
-- soli moduli ~**€17,6–25,3k** benchmark, trasporto/IVA Italia esclusi o da verificare.
-
-Scenari inverter:
-
-- I1 2×50 kW AC: DC/AC ~1,20;
-- Sungrow SG50CX-P2 ~€1.899/cad;
-- Huawei SUN2000-50KTL-M3 ~€2.379–2.399/cad;
-- SMA Sunny Tripower X 50 ~€2.695/cad;
-- I2 2×60 kW SMA Sunny Tripower X 60 ~€2.865/cad, DC/AC iniziale ~1,00 e famiglia dichiarata fino al 150%.
-
-Regole:
-
-- niente FV opaco sopra colture principali come baseline;
-- stringhe dimensionate con Voc a Tmin reale;
-- CEI 0-21:2026 per BT / CEI 0-16:2026 per MT;
-- livello BT/MT da preventivo DSO/TICA, non deciso a tavolino;
-- VVF 2025 se impianto su attività soggetta a prevenzione incendi;
-- monitoraggio locale e interfaccia EMS documentata;
+- 256×470 W = **120,32 kWp**;
+- ~511,5 m² di sola superficie moduli;
+- ~5,38 t;
+- soli moduli ~€17,6–25,3k benchmark UE;
+- inverter 2×50 kW o 2×60 kW da confrontare;
+- niente FV opaco sopra colture principali;
+- CEI 0-21:2026 / CEI 0-16:2026;
+- BT/MT e protezioni da preventivo DSO/TICA;
 - predisposizione 150–180 kWp.
 
-Il vecchio input `moduli+struttura ~€200/kWp` resta `DA VERIFICARE`: i moduli da soli nei benchmark correnti sono ~€147–211/kWp.
+## 10. Stato punto 08 — Macchine e logistica
 
-### Gate punto 06
+**ARCHITETTURA AMR IN SVILUPPO / BOM-020 SVILUPPATA / PILOT, CONFORMITÀ E ASSISTENZA UE BLOCCANTI.**
 
-- masterplan/superfici/ombre;
-- neve/vento e struttura;
-- Tmin/Tmax;
-- profilo carichi e PVGIS;
-- preventivo DSO e BT/MT;
-- scelta 2×50 vs 2×60;
-- string design;
-- BOS/protezioni/antincendio;
-- RFQ installato;
-- strategia UPS/generatore/EMS da package successivi.
+Documenti:
 
-## 10. R&D trasversale — laser, vision e manutenzione robotica
+- `08_MACCHINE_E_LOGISTICA/README.md`;
+- `08_MACCHINE_E_LOGISTICA/AMR_ARCHITECTURE.md`;
+- `08_MACCHINE_E_LOGISTICA/RFQ_AMR.md`;
+- `19_BOM_PRODOTTI_FORNITORI/MACCHINE_AMR_SERRA.md` — BOM-020;
+- `22_FONTI_NORME_PREVENTIVI/MACCHINE_AMR_SOURCES.md`.
+
+### BOM-020 — AMR serra
+
+Missioni: trasporto, traino, ritorno vuoti, scouting/imaging, inventario e docking.
+
+Working site:
+
+- robot preferito <=0,75 m;
+- corsie >=1,20 m working;
+- turning/intersezioni ~2–2,5 m;
+- ambiente umido/condensa da trattare come requisito reale.
+
+**Burro Verde** — candidato funzionale prioritario da pilot/RFQ:
+
+- width 68,5 cm;
+- payload 227 kg;
+- towing 908 kg su piano duro;
+- IP65;
+- LiDAR 360°, 12 camere, RTK + GPS-denied;
+- LFP 2,56 kWh;
+- prezzo Italia/UE `DA PREVENTIVO`; benchmark commerciale terzo 2026 <US$50k + canone BOSS annuale;
+- ingresso europeo annunciato nel 2026: CE/configurazione europea, assistenza Italia e ricambi da verificare.
+
+**MiR250** — benchmark industriale safety/API:
+
+- payload 250 kg;
+- 580×800 mm;
+- REST API/MiR Fleet;
+- prezzi base €44.284 + IVA UE / integrazione Italia da €53.141 + IVA;
+- MiR Charge benchmark €6.075 + IVA;
+- Hook integrato Italia da €78.514 + IVA;
+- **non baseline serra** finché non risolta la specifica ufficiale indoor-only/IP21/non-condensing/no-water.
+
+**AgileX Bunker Mini/Pro** — R&D/scouting, non baseline collaborativa: IP67 e stack aperto, ma safety/conformità della macchina integrata restano da sviluppare. Bunker Mini ~€9.350 IVA DE incl.; ROS2 kit ~€20.500 + IVA.
+
+Scouting vendor-independent opzionale: OAK-D Pro PoE ~€671–769 IVA incl. + Jetson Orin Nano Super ~€382 benchmark.
+
+Safety: ISO 3691-4:2023 come riferimento corrente; verificare revisione 2026 e Regolamento (UE) 2023/1230 per macchine immesse dopo l'entrata in applicazione.
+
+Gate: demo con geometria/carichi/persone reali, CE/DoC, IP/condensa, API offline, dock, canoni/TCO 5–8 anni, ricambi Italia, risk assessment e acceptance >=100 missioni.
+
+## 11. R&D trasversale — laser, vision e manutenzione robotica
 
 Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
-## 11. Modulo futuro — centro trasformazione conto terzi
+## 12. Modulo futuro — centro trasformazione conto terzi
 
 Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`. Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
 
-## 12. Metodo BOM obbligatorio
+## 13. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
 
-## 13. Stato attuale dei grandi blocchi
+## 14. Stato attuale dei grandi blocchi
 
 Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
-## 14. Sequenza BOM
+## 15. Sequenza BOM
 
 ### Già strutturate
 
@@ -192,23 +179,23 @@ Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica,
 - BOM-016 fertirrigazione A/B/acido;
 - BOM-017 serbatoi fertilizzanti e contenimento;
 - BOM-018 accumulo acqua 300 m³;
-- **BOM-019 FV e inverter**.
+- BOM-019 FV e inverter;
+- **BOM-020 AMR serra**.
 
 ### Prossimo package
 
-**BOM-020 — AMR serra:** piattaforma mobile autonoma per trasporto/scouting/imaging/inventario/docking, portata, dimensioni, sicurezza, navigazione, batteria, ricarica, API/ROS/PLC, manutenzione, ricambi e costo.
+**BOM-021 — sollevatore/mezzo multifunzione:** forche, portata, altezza, ingombri, pneumatici, sterzo, eventuale piattaforma di lavoro certificata/OEM, alimentazione, ricarica, accessori, sicurezza, manutenzione, ricambi e costi.
 
 ### Coda successiva
 
-1. AMR;
-2. sollevatore/mezzo multifunzione;
-3. robot tagliaerba;
-4. sistema pulizia area galline;
-5. celle frigorifere;
-6. attrezzatura raccolta e packaging;
-7. pergolato/vite/area relax;
-8. fattoria didattica;
-9. spaccio automatico 24/7;
-10. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. sollevatore/mezzo multifunzione;
+2. robot tagliaerba;
+3. sistema pulizia area galline;
+4. celle frigorifere;
+5. attrezzatura raccolta e packaging;
+6. pergolato/vite/area relax;
+7. fattoria didattica;
+8. spaccio automatico 24/7;
+9. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
