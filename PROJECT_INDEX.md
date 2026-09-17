@@ -18,7 +18,7 @@ La riorganizzazione procede senza cancellare i documenti storici finché il cont
 - `04_ACQUA_E_FERTIRRIGAZIONE/` — fonte, accumulo, filtri, pompe, dosaggio, drenaggio;
 - `05_TERMICO_E_CLIMA/` — PDC, accumulo, distribuzione, deumidificazione, emergenza;
 - `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, UPS, generatore, EMS;
-- `07_AUTOMAZIONE_DATI_AI/` — PLC, I/O, sensori, rete, edge, vision, cybersecurity;
+- `07_AUTOMAZIONE_DATI_AI/` — PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&D robotica/laser;
 - `08_MACCHINE_E_LOGISTICA/` — AMR, sollevatore, piattaforme, raccolta, carrelli;
 - `09_TECH_BARN_E_POST_RACCOLTA/` — celle, confezionamento, officina, magazzini;
 - `10_BENESSERE_FATTORIA_E_SERVIZI/` — pergolato, verde, fattoria didattica, robot di servizio, spaccio 24/7;
@@ -106,7 +106,25 @@ Osmosi inversa/softening non sono acquisti automatici: diventano requisito solo 
 
 Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo, analisi acqua e preventivi confrontabili.
 
-## 7. Metodo BOM obbligatorio
+## 7. R&D trasversale — laser, vision e manutenzione robotica
+
+Nuovo documento:
+
+- `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`.
+
+Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
+
+Linee correnti:
+
+- femminelle pomodoro: priorità a visione + manipolatore + microforbice/cutter; laser solo candidato futuro in testina confinata;
+- insetti volanti: R&D prioritario su barriera laser confinata alle aperture o trappola chiusa, coerente con ricerca greenhouse attiva;
+- nessun sistema open-beam libero nel volume di lavoro della serra come baseline;
+- classificazione biologica a tre stati `TARGET DANNO / UTILE-PROTETTO / INCERTO`; se incerto, nessuna attivazione;
+- non proteggere soltanto le api: il piano IPM può includere bombi, sirfidi, parassitoidi e altri organismi utili.
+
+Il laser non sostituisce automaticamente reti, scouting o lotta biologica: può diventare uno strumento aggiuntivo di IPM dopo pilot, sicurezza e TCO.
+
+## 8. Metodo BOM obbligatorio
 
 Per ogni oggetto o sottosistema si analizzano:
 
@@ -130,11 +148,11 @@ Per ogni oggetto o sottosistema si analizzano:
 18. espansione;
 19. stato secondo `DECISION_GATES.md`.
 
-## 8. Stato attuale dei grandi blocchi
+## 9. Stato attuale dei grandi blocchi
 
-I file in `docs/` restano sorgenti durante la migrazione. Sono già nel perimetro robot tagliaerba, automazione pulizia area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax e sostenibilità personale durante il lancio.
+I file in `docs/` restano sorgenti durante la migrazione. Sono già nel perimetro robot tagliaerba, automazione pulizia area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale durante il lancio e R&D robotica/laser per manutenzione colture e IPM.
 
-## 9. Sequenza BOM
+## 10. Sequenza BOM
 
 ### Candidati/package già sviluppati
 
