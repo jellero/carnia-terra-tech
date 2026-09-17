@@ -10,29 +10,15 @@ Questo file raccoglie i principali riferimenti usati durante la progettazione. P
 
 - Tuttoserre — Serra Professionale 8×40 m / 320 m²: https://www.tuttoserre.it/serre/18-serra-professionale.html
   - prezzo esposto €6.832 IVA inclusa;
-  - tubo portante Ø60 mm;
-  - passo pali 2,50 m;
-  - altezza gronda 3,20 m;
-  - teli esclusi;
-  - montaggio escluso;
-  - prezzo dichiarato indicativo da ricalcolare;
+  - teli e montaggio esclusi;
   - classificazione: `BENCHMARK / NON SCALARE LINEARMENTE`.
 
 ### Prezzario Regione FVG 2026
 
 - indice generale: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/
-- carpenteria metallica in profilati cavi 20.6.IH2.01: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=20.6.IH2.01
-  - S235 €7,56/kg;
-  - S275 €7,65/kg;
-  - S355 €7,84/kg;
-  - zincatura a caldo +€1,50/kg;
-  - classificazione: `BENCHMARK LAVORI PUBBLICI / NON PREVENTIVO SERRA`.
-- calcestruzzo strutturale Y8.1.165.02: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=Y8.1.165.02
-  - C25/30 XC1/XC2 S4 €111,84/m³;
-  - C25/30 XC1/XC2 S5 €113,17/m³.
-- fondazioni/platee in opera 16.5.EQ4.02: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=16.5.EQ4.02
-  - C25/30 ~€287,44–290,08/m³;
-  - ferro armatura escluso.
+- carpenteria 20.6.IH2.01: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=20.6.IH2.01
+- calcestruzzo Y8.1.165.02: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=Y8.1.165.02
+- fondazioni/platee 16.5.EQ4.02: https://www.regione.fvg.it/rafvg/cms/RAFVG/infrastrutture-lavori-pubblici/lavori-pubblici/prezzario-2026/?cod=16.5.EQ4.02
 
 ## Copertura serra
 
@@ -44,38 +30,59 @@ Questo file raccoglie i principali riferimenti usati durante la progettazione. P
 
 ## Schermi climatici serra
 
-### Energy screen
-
-- Ridder RES 10+ FR: https://ridder.com/res-10-fr-5mm — 49% energy saving dichiarato, 11% ombreggiamento diretto, `PREZZO DA PREVENTIVO`.
-- Svensson LUXOUS 1147 FR: https://www.ludvigsvensson.com/en-us/climate-technologies/product/luxous-1147-2675 — 47% energy saving dichiarato, 11% shade diretto metodo Svensson, `PREZZO DA PREVENTIVO`.
-
-### Shade / diffusion
-
-- Ridder RLD 45 FR O: https://ridder.com/rld-45-fr-o — 46% shade diretto, 50% diffuso, 18% energy saving, struttura aperta.
-- Svensson HARMONY 5220 O FR: https://www.ludvigsvensson.com/en-us/climate-screens/product/harmony-5220-o-fr — 52% shade diretto metodo Svensson, 20% energy saving.
-- Huisman: https://webshop.huismanscreensystems.com/en/producten-schermdoek/ — prezzo su richiesta.
-
-### Motorizzazione schermi
-
-- Ridder RW45 benchmark: https://saltelectricalshop.co.uk/product/ridder-rw45-230v-ac-single-drum-drive/ — £598 osservati.
-- RW45 limit set benchmark: https://saltelectricalshop.co.uk/product/ridder-rw45-drive-limit-set-4-amp/ — £70 osservati.
+- Ridder RES 10+ FR: https://ridder.com/res-10-fr-5mm
+- Svensson LUXOUS 1147 FR: https://www.ludvigsvensson.com/en-us/climate-technologies/product/luxous-1147-2675
+- Ridder RLD 45 FR O: https://ridder.com/rld-45-fr-o
+- Svensson HARMONY 5220 O FR: https://www.ludvigsvensson.com/en-us/climate-screens/product/harmony-5220-o-fr
+- Huisman: https://webshop.huismanscreensystems.com/en/producten-schermdoek/
+- Ridder RW45 benchmark: https://saltelectricalshop.co.uk/product/ridder-rw45-230v-ac-single-drum-drive/
 
 ## Aperture e motorizzazioni serra
 
 - Ridder Drive Systems: https://ridder.com/drive-systems
-- Sleegers — Ridder RW45-L 531113: https://webshop.sleso.nl/products/rw45l-motorreductoren — €675,49 + IVA osservati.
+- Sleegers — Ridder RW45-L: https://webshop.sleso.nl/products/rw45l-motorreductoren — €675,49 + IVA osservati.
 - Sleegers — motore ricambio RW45-1L: https://webshop.sleso.nl/products/ridder-losse-motor-65-9-09-230-1-4p-tbv-rw45-1l — €192,28 + IVA osservati.
 - Sistemas Hortícolas Almería: https://www.sistemashorticolasalmeria.com/ventilaciones-y-motorreductores/
-- Northern Polytunnels WSM-4035: https://northernpolytunnels.co.uk/product/motorised-vent-winder-24vdc-40nm/ — £159 + VAT osservati.
+- Northern Polytunnels WSM-4035: https://northernpolytunnels.co.uk/product/motorised-vent-winder-24vdc-40nm/
 
 ## Reti anti-insetto
 
 - Arrigoni Air Plus: https://arrigoni.it/agrotextile/applicazioni/protezione-dagli-insetti/
-  - 50 Air Plus: air passage 47%, ventilation reduction ~30%;
-  - 60 Air Plus: air passage 40%, reduction ~31%;
-  - 80 Air Plus: air passage 26%, reduction ~42%, target tripidi;
-  - 90 Air Plus: air passage 22%, reduction ~45%.
-- Sala Laurus BIORETE 50 Mesh: https://salalaurus.it/products/biorete-50-mesh — prezzo mostrato €1,49, unità economica da confermare.
+- Sala Laurus BIORETE 50 Mesh: https://salalaurus.it/products/biorete-50-mesh
+
+## Fogging serra — BOM-005
+
+### Fornitori/sistemi greenhouse-specific
+
+- LUBING GreenTec: https://horticulture.lubingusa.com/horticulture/fogging-system/
+- Natural Misting: https://naturalmisting.com/en/departments/nurseries-and-greenhouses/
+- FOG System: https://www.fog-system.com/
+- MicroCool water quality: https://microcool.com/greenhouse/how-to-ensure-optimal-water-quality-for-high-pressure-fog-systems-in-horticulture/
+
+### Pompe benchmark
+
+- LUBING 70 bar 5,5 L/min: https://en.fermo.pl/pump-for-fogging-system-lubing-70-bar-55lmin.html — €2.830,43 osservati.
+- LUBING 70 bar 20 L/min: https://en.fermo.pl/pump-for-fogging-system-lubing-70-bar-20lmin.html — €3.747,49 osservati.
+- FERMO 50–100 bar 8 L/min: https://en.fermo.pl/pump-for-fogging-system-fermo-50-100-bar-8-lmin.html — €2.138,83 osservati.
+- FERMO 50–100 bar 21 L/min: https://en.fermo.pl/pump-for-fogging-system-fermo-50-100-bar-21-lmin.html — €3.335,28 osservati.
+
+### Ugelli
+
+- LUBING inox 0,2 mm: https://en.fermo.pl/nozzle-for-sprinkler-system-lubing-stainless-steel-02-mm.html — €8,98/cad osservati.
+- Tecnocooling inox 0,20 mm anti-drip + filtro: https://tecnocooling-en.es/en/nozzle-1024-stainless-steel-020-mm/ — €15,70/cad osservati.
+- Tecnocooling 0,15 mm anti-drip + filtro: https://tecnocooling-en.es/en/nozzle-1024-015-mm/ — €10,77/cad osservati.
+
+### Tubazioni, valvole, filtrazione
+
+- FERMO pressure cooling systems: https://en.fermo.pl/livestock-buildings-equipment/presure-cooling-systems.html — tubo inox 12 mm 6 m €21,55 e raccordi con prezzi pubblici.
+- Tecnocooling PA12PHL 3/8 ×25 m: https://tecnocooling-en.es/en/pa12phl-38-nylon-pipe-25-m-white/ — €114,81 osservati.
+- Tecnocooling valvola HP 3/8 24 VAC: https://tecnocooling-en.es/valvula-solenoide-ap-38-24-v-ca-nc-100-pro/ — €217,07 osservati.
+- Tecnocooling water treatment: https://tecnocooling-en.es/en/water-treatment/
+- filtro 5+1+0,005 µm: https://tecnocooling-en.es/en/filter-set-with-pressure-gauge-3934-510005-microns/ — €259,23 osservati.
+- cartuccia 1 µm 20": https://tecnocooling-en.es/en/1-micron-filter-cartridge-20/ — €13,45 osservati.
+- manuale manutenzione fogging: https://tecnocooling-en.es/instructions/en/Operating%20instructions%20for%20the%20fogging%20system.pdf
+
+Classificazione: prezzi reali di mercato da ricontrollare; il sistema definitivo resta `DA RFQ` dopo analisi acqua e calcolo climatico.
 
 ## Pompe di calore
 
