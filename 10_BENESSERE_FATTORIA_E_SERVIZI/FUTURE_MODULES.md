@@ -1,7 +1,7 @@
 # Carnia TerraTech — Benessere, fattoria e servizi futuri
 
-**Aggiornato:** 17 settembre 2026.  
-**Stato:** requisiti di progetto inseriti; BOM specifiche ancora da sviluppare.
+**Aggiornato:** 18 settembre 2026.  
+**Stato:** BOM-023 pulizia galline e BOM-026 pergolato/vite/relax sviluppate; fattoria didattica e spaccio 24/7 da sviluppare.
 
 ## 1. Obiettivo del blocco
 
@@ -113,22 +113,46 @@ Lo spaccio deve poter vendere prodotti freschi aziendali e, se compatibile con l
 
 ## 6. Pergolato, vite, verde e aree di sosta
 
-Il progetto dovrà definire pezzo per pezzo:
+**BOM-026 SVILUPPATA / STRUTTURA E COSTI UNITARI IMPOSTATI / DIMENSIONI, NEVE-VENTO, GEOTECNICA E RFQ BLOCCANTI.**
 
-- struttura pergolato;
-- fondazioni;
-- copertura/ombreggiamento;
-- vite e altre rampicanti;
-- irrigazione;
-- arredi;
-- illuminazione;
-- prese e rete;
-- manutenzione/potatura;
-- drenaggio;
-- sicurezza vento/neve;
-- integrazione paesaggistica.
+Architettura:
 
-La vite può avere funzione estetica, ombreggiante e produttiva; varietà e conduzione verranno scelte solo dopo aver definito microclima, esposizione, manutenzione e uso del frutto.
+- pergolato aperto con legno lamellare come candidato working e acciaio zincato come alternativa;
+- sezioni, numero di elementi e fondazioni solo da calcolo strutturale sul lotto reale;
+- azioni neve/vento da NTC e dati del sito, senza usare carichi generici di catalogo;
+- plinti in c.a. come riferimento convenzionale; ground screw solo dopo geotecnica e verifica capacità;
+- griglia vite indipendente e ispezionabile;
+- ombra primaria da vegetazione + telo removibile opzionale;
+- telo rimosso/parcheggiato in inverno se non esplicitamente verificato per la neve/vento del sito;
+- vite da tavola resistente come classe di benchmark, varietà da microclima e uso del frutto;
+- zona irrigua dedicata con filtro, intercettazione, lavaggio e invernaggio;
+- pavimentazione permeabile e drenaggio lontano da piedi struttura e colletto piante;
+- arredi modulari outdoor;
+- illuminazione, prese e rete dati progettate per esterno;
+- AP outdoor PoE candidato con protezione sovratensione;
+- manutenzione stagionale strutturale, agronomica, drenaggi, irrigazione ed elettrico.
+
+Benchmark pubblici già inseriti nella distinta:
+
+- GL24h retail class: €39,90–118,50/cad secondo sezione/lunghezza osservata, solo per controllo costo;
+- calcestruzzo FVG 2026 per fondazioni dirette: €237,52/m³ nella voce consultata, non costo plinto completo;
+- barbatelle resistenti da tavola: €5,95/cad benchmark vivaio;
+- kit goccia 100 m²: €54,90 benchmark componenti;
+- griglia permeabile: €17,71/m² hardware benchmark;
+- tavolo outdoor ~8 posti: €310 benchmark;
+- LED outdoor IP65 10 W: €62,66 IVA incl. benchmark;
+- FG16OR16 3×2,5: €3,10/m benchmark retail;
+- cavidotto 40 mm FVG 2026: €1,83/m reference;
+- Ubiquiti U7 Outdoor: €185 + surge protector €12.
+
+Nessun totale CAPEX viene inventato prima di layout e calcolo. La BOM usa quantità `DA LAYOUT` / `DA CALCOLO` e costo unitario per ogni riga.
+
+Documenti:
+
+- `PERGOLATO_VITE_AREA_RELAX_ARCHITECTURE.md`;
+- `RFQ_PERGOLATO_VITE_AREA_RELAX.md`;
+- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_PERGOLATO_VITE_AREA_RELAX.md`;
+- `22_FONTI_NORME_PREVENTIVI/BENESSERE_PERGOLATO_VITE_AREA_RELAX_SOURCES.md`.
 
 ## 7. Regola economica
 
