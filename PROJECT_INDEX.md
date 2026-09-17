@@ -90,7 +90,33 @@ Portafoglio di lavoro mantenuto:
 
 Non sono state inventate rese, cultivar, densità o calendari definitivi. Il punto 02 diventa `VALIDATO` coltura per coltura solo quando sono disponibili sito, sistema di coltivazione, cultivar, resa vendibile con fonte/prova, ore uomo, mercato, prezzo e marginalità.
 
-## 6. Metodo BOM obbligatorio
+## 6. Stato punto 03 — Serra
+
+**Stato: RAFFINATO COME ARCHITETTURA / DA DIMENSIONARE SUL LOTTO REALE / BOM IN CORSO.**
+
+Documenti:
+
+- `03_SERRA/README.md` — scope, geometria, principi e gate;
+- `03_SERRA/STRUCTURE_FOUNDATIONS.md` — carichi, struttura, fondazioni, materiali e bulloneria;
+- `03_SERRA/ENVELOPE_COVERING.md` — film/coperture, profili, fissaggi, condensa e sostituzione;
+- `03_SERRA/OPENINGS_COMPARTMENTS.md` — aperture laterali/zenitali, reti, porte e compartimenti;
+- `03_SERRA/SCREENS_SHADING.md` — schermi termici/ombreggianti e meccanica;
+- `03_SERRA/FOGGING_HUMIDITY.md` — fogging, acqua, controllo e manutenzione;
+- `03_SERRA/CROP_SUPPORTS_LOGISTICS.md` — supporti coltura, corridoi, AMR e sottoservizi;
+- `03_SERRA/MAINTENANCE_SAFETY.md` — accessibilità, ispezioni, lavori in quota, ricambi e as-built;
+- `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md` — capitolato per preventivi confrontabili;
+- `03_SERRA/BOM_REGISTER.md` — registro delle singole voci e stato costi;
+- `03_SERRA/OFFICIAL_SOURCES.md` — norme, fonti tecniche e benchmark.
+
+Riferimento strutturale europeo da verificare in esecutivo: EN 13031-1:2019 + AC:2022. Il progetto deve essere verificato rispetto a NTC e prescrizioni italiane vigenti sul lotto reale.
+
+La ventilazione HAF è già sviluppata come BOM-001 in `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`.
+
+Prossime BOM serra: schermi, aperture/motorizzazioni, copertura/fissaggi, RFQ struttura/fondazioni, fogging, supporti coltura, porte/gronde e attrezzatura montaggio.
+
+Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo e preventivi confrontabili.
+
+## 7. Metodo BOM obbligatorio
 
 Per ogni oggetto o sottosistema si analizzano, in ordine:
 
@@ -114,38 +140,44 @@ Per ogni oggetto o sottosistema si analizzano, in ordine:
 18. predisposizione per espansione;
 19. stato documentale secondo `DECISION_GATES.md`.
 
-## 7. Stato attuale dei grandi blocchi
+## 8. Stato attuale dei grandi blocchi
 
 I file in `docs/` restano sorgenti durante la migrazione. Sono già parte esplicita del progetto robot tagliaerba, automazione pulizia area galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax e sostenibilità personale durante il lancio.
 
-## 8. Sequenza BOM
+## 9. Sequenza BOM
 
-### In lavorazione
+### Candidato già sviluppato
 
 **BOM-001 — Ventilazione HAF serra**  
 File: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`
 
+### In lavorazione successiva
+
+**BOM-002 — schermi termici/ombreggianti + motorizzazioni + meccanica.**
+
 ### Coda immediata
 
-1. schermi termici/ombreggianti e motorizzazioni;
-2. aperture e attuatori;
-3. tubi, collettori e pompe circuito termico;
-4. gocciolatori e linee irrigue;
-5. filtrazione acqua;
-6. pompe principali irrigazione;
-7. pompe dosatrici;
-8. serbatoi fertilizzanti;
-9. accumulo termico 30–50 m³;
-10. accumulo acqua 300 m³;
-11. moduli FV e inverter;
-12. AMR;
-13. sollevatore/mezzo multifunzione;
-14. robot tagliaerba;
-15. sistema pulizia area galline;
-16. celle frigorifere;
-17. attrezzatura raccolta e packaging;
-18. pergolato/vite/area relax;
-19. fattoria didattica;
-20. spaccio automatico 24/7.
+1. aperture e attuatori;
+2. copertura, profili e fissaggi;
+3. RFQ struttura/fondazioni;
+4. fogging;
+5. tubi, collettori e pompe circuito termico;
+6. gocciolatori e linee irrigue;
+7. filtrazione acqua;
+8. pompe principali irrigazione;
+9. pompe dosatrici;
+10. serbatoi fertilizzanti;
+11. accumulo termico 30–50 m³;
+12. accumulo acqua 300 m³;
+13. moduli FV e inverter;
+14. AMR;
+15. sollevatore/mezzo multifunzione;
+16. robot tagliaerba;
+17. sistema pulizia area galline;
+18. celle frigorifere;
+19. attrezzatura raccolta e packaging;
+20. pergolato/vite/area relax;
+21. fattoria didattica;
+22. spaccio automatico 24/7.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
