@@ -53,87 +53,82 @@ Working portfolio: C1 pomodoro premium; C2 peperone; C3 lattuga; C4 lattuga/leaf
 
 **Stato: RAFFINATO COME ARCHITETTURA / BOM-001…008 STRUTTURATE / VALIDAZIONE BLOCCATA DA DATI REALI.**
 
-Package sviluppati: BOM-001 HAF; BOM-002 schermi; BOM-003 aperture/reti; BOM-004 copertura; struttura/fondazioni; BOM-005 fogging; BOM-006 supporti+drenaggio; BOM-007 porte/comparti/gronde; BOM-008 attrezzatura cantiere.
+Package: BOM-001 HAF; BOM-002 schermi; BOM-003 aperture/reti; BOM-004 copertura; struttura/fondazioni; BOM-005 fogging; BOM-006 supporti+drenaggio; BOM-007 porte/comparti/gronde; BOM-008 attrezzatura cantiere.
 
 Matrice: `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 
 ## 7. Stato punto 04 — Acqua e fertirrigazione
 
-**Stato: ARCHITETTURA IN SVILUPPO / BOM-013 DISTRIBUZIONE E BOM-014 FILTRAZIONE SVILUPPATE / POMPE E DOSAGGIO DA SVILUPPARE.**
+**Stato: ARCHITETTURA IN SVILUPPO / BOM-013…015 SVILUPPATE / DOSAGGIO, SERBATOI E ACCUMULO DA SVILUPPARE.**
 
 Documenti principali:
 
 - `04_ACQUA_E_FERTIRRIGAZIONE/README.md`;
 - `IRRIGATION_DISTRIBUTION.md` + RFQ;
 - `FILTRATION_ARCHITECTURE.md` + RFQ;
-- `19_BOM_PRODOTTI_FORNITORI/ACQUA_IRRIGAZIONE_DISTRIBUZIONE.md` — BOM-013;
-- `19_BOM_PRODOTTI_FORNITORI/ACQUA_FILTRAZIONE.md` — BOM-014;
+- `PUMP_STATION_ARCHITECTURE.md` + `RFQ_MAIN_IRRIGATION_PUMPS.md`;
+- BOM-013/014/015 in `19_BOM_PRODOTTI_FORNITORI/`;
 - fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
 ### BOM-013 — distribuzione irrigua
 
-Working architecture: 6 comparti × 4 settori = **24 settori**, da confermare con crop card/layout.
+Working 6 comparti × 4 settori = 24 settori, da validare.
 
-C1/C2/C6: candidato Netafim PCJ, con preferenza da RFQ per LCNL/HCNL anti-drenaggio. Il 2 l/h è riferimento, non portata congelata.
+C1/C2/C6: Netafim PCJ/LCNL/HCNL candidato; 2 l/h non congelato. C3–C5: dripline/ala da selezionare per letto e meccanizzazione.
 
-Benchmark correnti:
-
-- PCJ standard 2 l/h: €261 + IVA / 1.000 pz;
-- microtubo PE 5 mm: €38 + IVA / 200 m;
-- punto goccia: €95 + IVA / 1.000;
-- asta guidata: €140 + IVA / 1.000;
-- benchmark 1.000 punti: ~€470–515 + IVA prima di dorsali/valvole/posa;
-- Bermad 1" 24 VAC: ~€23,15–28,53 IVA incl.;
-- PE PN4 Ø25 ~€40/100 m e Ø32 ~€55/100 m IVA incl., solo benchmark bassa pressione.
-
-Per C3–C5 non si forza un punto per pianta: confrontare dripline PC/pluristagionale e soluzione leggera compatibile con letti e meccanizzazione.
+Benchmark: PCJ 1.000 pz €261 + IVA; microtubo €38/200 m + IVA; punti goccia €95/1.000 + IVA; 1.000 punti completi ~€470–515 + IVA prima di dorsali/valvole/posa.
 
 ### BOM-014 — filtrazione
 
-Requisito working: **120 mesh / circa 130 µm**.
+Requisito working 120 mesh / ~130 µm.
 
-Architettura da scegliere con analisi acqua:
+Candidati:
 
-- acqua buona: filtro manuale/automatico + sicurezza;
-- pozzo sabbioso: idrociclone + filtro principale + sicurezza;
-- acqua superficiale/organico: dischi automatici o media filtration + secondario;
-- sali/durezza/Fe-Mn disciolti: trattamento separato, non risolto dalla filtrazione meccanica.
+- Arkal Leader €182 + IVA;
+- Dual €241 + IVA;
+- Spin-Klin singolo €2.574 + IVA;
+- Spin-Klin doppio €4.321 + IVA;
+- ScreenGuard da €2.988 + IVA;
+- idrociclone 2" €363 + IVA.
 
-Candidati/prezzi pubblici:
+Con tank atmosferico la filtrazione fine automatica va normalmente sul lato pressurizzato delle pompe, perché il controlavaggio richiede pressione. Griglia/strainer grossolano resta lato aspirazione se necessario.
 
-- Arkal Leader 2" manuale: €182 + IVA;
-- Arkal Dual 2" manuale: €241 + IVA, fino a 25 m³/h;
-- Spin-Klin 2" singolo automatico: €2.574 + IVA, 20 m³/h nominali / 15 media qualità;
-- Spin-Klin doppio DN80: €4.321 + IVA, 40 nominali / 30 media qualità;
-- ScreenGuard automatico 2": da €2.988 + IVA, 25 m³/h max;
-- idrociclone Arkal 2": €363 + IVA, 15–25 m³/h.
+### BOM-015 — pompe principali irrigazione 1+1
 
-Scenari hardware benchmark:
+Baseline: **2×100% duty**, una pompa in servizio e una standby, un VFD per pompa, failover locale automatico.
 
-- due Dual manuali: ~€482 + IVA;
-- Spin-Klin singolo + Dual sicurezza: ~€2.815 + IVA;
-- Spin-Klin doppio + Dual: ~€4.562 + IVA;
-- ScreenGuard automatico + Dual: da ~€3.229 + IVA;
-- idrociclone, se necessario: +€363 + IVA solo corpo.
+Candidato di classe Grundfos CR 10-6:
 
-Controlavaggio e ridondanza sono requisiti di progetto: portata, pressione, volume/ciclo e capacità degradata devono essere noti prima della selezione.
+- Q nominale 10 m³/h;
+- H nominale 48,3 m, Hmax 61,2 m;
+- 2,2 kW 3~;
+- prezzo retail IT €1.946,78 IVA incl./cad;
+- due pompe ~€3.893,56 IVA incl., solo pompe.
+
+VFD benchmark Danfoss FC-51 2,2 kW: €895,30 + IVA/cad su RS Italia.
+
+Sensori: WIKA A-10 da €133,95 + IVA; Danfoss MBS3000 0–10 bar ~€195,44 + IVA.
+
+Alternativa OEM: Grundfos Hydro Multi-E 2 CRE 10-3 U2 €12.185 listino 2026; 10-5 U2 €13.323, condizioni/IVA da confermare.
+
+Duty point e taglia restano bloccati da Q simultanea, controlavaggio, perdite, pressione richiesta e NPSH.
 
 ### Gate punto 04
 
 Restano necessari:
 
 - layout/portate C1–C6;
-- analisi acqua e fonte reale;
-- pressione e portata disponibili;
-- filtrazione/idrociclone/media filtration finali;
-- requisiti controlavaggio;
-- **BOM-015 pompe principali irrigazione 1+1**;
-- pompe dosatrici e miscelazione A/B/acido;
+- fonte/analisi acqua;
+- quote tank/tech barn e NPSH;
+- filtrazione finale/controlavaggio;
+- duty point pompe e RFQ;
+- **pompe dosatrici e miscelazione A/B/acido**;
 - serbatoi fertilizzanti;
 - trattamento/disinfezione se necessario;
 - drenaggio/riuso;
 - accumulo acqua 300 m³;
-- RFQ e commissioning.
+- backup elettrico;
+- commissioning.
 
 ## 8. Stato punto 05 — Termico e clima
 
@@ -149,7 +144,7 @@ Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`.
 
 Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
-Potatura robotica con vision + microforbice/cutter come baseline R&D; laser solo confinato; controllo insetti laser con classificazione `TARGET / UTILE-PROTETTO / INCERTO`, nessun tiro su incerto.
+Potatura robotica vision + microforbice/cutter baseline R&D; laser confinato; controllo insetti con `TARGET / UTILE-PROTETTO / INCERTO`, nessun tiro su incerto.
 
 ## 10. Modulo futuro — centro trasformazione conto terzi
 
@@ -175,28 +170,28 @@ I file in `docs/` restano sorgenti durante la migrazione. Restano nel perimetro 
 - BOM-011 PDC 3+1;
 - BOM-012 boost/deumidificazione/emergenza;
 - BOM-013 distribuzione irrigua;
-- **BOM-014 filtrazione acqua**.
+- BOM-014 filtrazione acqua;
+- **BOM-015 pompe principali irrigazione 1+1**.
 
 ### Prossimo package
 
-**BOM-015 — pompe principali irrigazione 1+1:** Q/H di progetto, VFD, ridondanza, aspirazione/NPSH, collettori, non ritorno, pressostati, protezione marcia a secco, misura energia/portata, ricambi e failover.
+**BOM-016 — pompe dosatrici / fertirrigazione A-B-acido:** pompe, portata/min-max turndown, materiali chimici, valvole iniezione, calibrazione, miscelazione, EC/pH, interlock, spill containment, ricambi e costi.
 
 ### Coda successiva
 
-1. pompe principali irrigazione;
-2. pompe dosatrici;
-3. serbatoi fertilizzanti;
-4. accumulo acqua 300 m³;
-5. moduli FV e inverter;
-6. AMR;
-7. sollevatore/mezzo multifunzione;
-8. robot tagliaerba;
-9. sistema pulizia area galline;
-10. celle frigorifere;
-11. attrezzatura raccolta e packaging;
-12. pergolato/vite/area relax;
-13. fattoria didattica;
-14. spaccio automatico 24/7;
-15. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. pompe dosatrici/fertirrigazione;
+2. serbatoi fertilizzanti;
+3. accumulo acqua 300 m³;
+4. moduli FV e inverter;
+5. AMR;
+6. sollevatore/mezzo multifunzione;
+7. robot tagliaerba;
+8. sistema pulizia area galline;
+9. celle frigorifere;
+10. attrezzatura raccolta e packaging;
+11. pergolato/vite/area relax;
+12. fattoria didattica;
+13. spaccio automatico 24/7;
+14. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
