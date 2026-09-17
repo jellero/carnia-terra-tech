@@ -1,15 +1,28 @@
 # Carnia TerraTech — Openings, Doors & Compartments
 
 **Aggiornato:** 17 settembre 2026  
-**Stato:** `REQUISITI DEFINITI / CANDIDATI ATTUATORI E RETI IDENTIFICATI / GEOMETRIA DA DIMENSIONARE`.
+**Stato:** `REQUISITI DEFINITI / BOM-003 E BOM-007 SVILUPPATE / GEOMETRIA DA DIMENSIONARE`.
 
-BOM collegata: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`.
+BOM collegate:
+
+- `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
+- `19_BOM_PRODOTTI_FORNITORI/SERRA_PORTE_COMPARTIMENTI_GRONDE.md`.
+
+RFQ porte/compartimenti/gronde:
+
+- `03_SERRA/RFQ_DOORS_PARTITIONS_GUTTERS.md`.
+
+Note di validazione aggiuntive:
+
+- `03_SERRA/BOM007_VALIDATION_NOTES.md`.
 
 ## 1. Funzione
 
 Le aperture devono gestire ventilazione naturale, sicurezza vento/pioggia e separazione dei sei comparti senza creare un singolo failure domain.
 
 La rete anti-insetto è parte del sistema di ventilazione: non può essere aggiunta dopo il dimensionamento perché modifica la portata d'aria disponibile.
+
+Porte e compartimentazioni sono parte della strategia IPM e della logistica, non semplici chiusure architettoniche.
 
 ## 2. Aperture laterali
 
@@ -130,7 +143,27 @@ Separare almeno:
 - accessi mezzi/manutenzione dove previsti;
 - uscite di emergenza quando richieste.
 
-Working requirement già esistente: accessi utili circa 2,5–3 m dove devono transitare AMR, carrelli o attrezzature. La quota finale dipende dai mezzi reali.
+Working concept:
+
+- fino a 6 varchi controllati dal corridoio tecnico ai comparti, da confermare col layout;
+- accessi esterni logistici separati;
+- C6 predisposto per eventuale vestibolo/airlock se il piano IPM lo giustifica.
+
+Per i varchi interni la preferenza iniziale è una porta scorrevole professionale quando compatibile con sicurezza e tenuta, perché non invade la corsia e facilita AMR/carrelli.
+
+Regole:
+
+- soglia il più possibile a raso;
+- binari/rulli accessibili e pulibili;
+- guarnizioni/spazzole sostituibili;
+- apertura manuale sempre disponibile;
+- contatto stato porta dove utile;
+- motorizzazione futura solo se giustificata dai flussi e dall'AMR;
+- una porta motorizzata non deve diventare single point of failure per l'accesso o l'evacuazione.
+
+Benchmark aggiuntivo registrato: ACD `Patio door alu`, porta scorrevole laterale greenhouse, €349 osservati. È solo benchmark accessorio, non porta professionale di progetto.
+
+Working requirement storico: accessi utili circa 2,5–3 m dove devono transitare AMR, carrelli o attrezzature. La quota finale dipende dai mezzi reali.
 
 ## 8. Compartimentazione
 
@@ -139,15 +172,25 @@ I sei comparti devono limitare propagazione di:
 - problemi climatici;
 - parassiti/patogeni;
 - guasti impiantistici;
-- errori di ricetta.
+- errori di ricetta;
+- schizzi e materiale vegetale durante pulizia/manutenzione.
 
-Da progettare:
+Working quantity: **5 separazioni principali** tra 6 comparti, da correggere col layout reale.
 
-- pareti/divisori;
-- porte tra comparti;
-- passaggi tecnici sigillabili;
-- eventuali vestiboli o zone filtro nei punti ad alto rischio;
-- percorsi di materiale e personale.
+Tre scenari da quotare:
+
+- **P1 leggero:** film/telo tecnico completo;
+- **P2 ibrido — preferenza iniziale:** fascia bassa rigida/lavabile + parte superiore leggera;
+- **P3 rigido:** pannello policarbonato o equivalente a tutta altezza.
+
+P2 parte favorito come concetto perché concentra robustezza e lavabilità nella zona di urto senza caricare inutilmente tutta la struttura, ma resta da confrontare economicamente e fitosanitariamente.
+
+Tutte le penetrazioni di tubi/cavi/canaline devono usare passaparete, guarnizioni o piastre rimovibili; evitare fori aperti che annullino la separazione.
+
+Benchmark materiali:
+
+- policarbonato trasparente 10 mm FVG 2026: €25,50/m² materiale;
+- PE 200 µm flame-retardant FVG SUN 4 FR: €4,40–4,60/m² IVA inclusa come benchmark P1; conformità/applicazione italiana da verificare.
 
 ## 9. Automazione
 
@@ -172,7 +215,7 @@ Prevedere:
 
 La posizione sicura con vento/pioggia deve essere definita dal costruttore e dal progetto strutturale, non assunta genericamente.
 
-## 10. Meteo per sicurezza
+## 10. Meteo e pioggia
 
 Il PLC deve disporre di segnali locali affidabili almeno per:
 
@@ -183,6 +226,10 @@ Il PLC deve disporre di segnali locali affidabili almeno per:
 - eventualmente direzione vento.
 
 La perdita del server o di Internet non deve impedire la protezione locale della serra.
+
+Per gronde, pluviali e troppo-pieno, il dimensionamento del sito reale userà **RainMap FVG** / LSPP regionali con coordinate, durata e tempo di ritorno appropriati. Il serbatoio da 300 m³ serve al bilancio idrico ma non sostituisce il dimensionamento della portata istantanea.
+
+Il troppo-pieno deve funzionare in modo passivo/failure-safe anche con serbatoio pieno e PLC offline.
 
 ## 11. BOM minima per ogni gruppo apertura
 
@@ -208,15 +255,21 @@ La perdita del server o di Internet non deve impedire la protezione locale della
 - commissioning;
 - ricambi critici.
 
+Per porte, compartimentazioni, gronde e pluviali usare la distinta completa di BOM-007.
+
 ## 12. Gate
 
-Il sottosistema diventa `DA PREVENTIVARE` in modo definitivo quando sono noti:
+Aperture/reti diventano `DA PREVENTIVARE` definitivamente quando sono noti geometria, lati apribili, mesh, coppie, strategia meteo e interfacce PLC.
 
-- geometria della serra;
-- lunghezza e altezza di ogni apertura;
-- lati apribili;
-- eventuali zenitali;
-- mesh per comparto;
-- forza/coppia richiesta;
-- strategia meteo;
-- interfacce PLC/elettriche.
+Porte/compartimenti/gronde diventano `VALIDATI` solo con:
+
+- layout e flussi persone/AMR definiti;
+- dimensioni nette dei varchi;
+- piano IPM e necessità eventuale airlock;
+- shop drawing dei divisori;
+- dettagli delle penetrazioni;
+- gronde integrate col costruttore della serra;
+- RainMap/calcolo idraulico del sito;
+- percorso di troppo-pieno verificato;
+- RFQ confrontabili;
+- commissioning e lista ricambi.
