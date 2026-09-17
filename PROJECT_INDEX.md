@@ -138,7 +138,7 @@ Guardrail:
 
 - no mowing at night;
 - area didattica/relax occupata = stop/no-go;
-- pollaio/free-range = no-go;
+- prato condiviso con galline = lockout dinamico; rasaerba solo con hens-clear/gate chiuso;
 - buffer da vasche, fossi, viabilità e drop-off;
 - obstacle detection non sostituisce segregazione;
 - perdita cloud/RTK -> safe stop/park.
@@ -147,23 +147,50 @@ Ricambi benchmark: Kress KA0002 6 lame €22,90; Husqvarna Endurance HSS 6 pz �
 
 Gate: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior, assistenza/ricambi, TCO 5–8 anni e commissioning zone/no-go.
 
-## 11. R&D trasversale — laser, vision e manutenzione robotica
+## 11. Stato punto 10 — Benessere, fattoria e servizi
+
+**BOM-023 PULIZIA GALLINE FREE-RANGE SVILUPPATA / TESTATA PRATO R&D / LAYOUT E PILOT BLOCCANTI.**
+
+Vincolo consolidato: galline libere nel dominio dedicato composto da ricovero, portico, parcheggi/superfici dure e prato.
+
+BOM-023:
+- manure belt/scraper sotto posatoi;
+- rover sanitario dedicato su tutto il dominio galline;
+- hard-floor spot pickup su portico/parcheggi;
+- grass spot-pickup vision R&D, senza aspirazione continua;
+- dirty dock per svuotamento, ricarica e wash;
+- gate automatici per separazione temporale galline/veicoli;
+- nessun ingresso del rover sanitario in aree food.
+
+Candidati/benchmark: Burro Verde base agricola all-area; AgileX Bunker Pro 2.0 ~€22,1k ex VAT R&D; Gausium Beetle 2.0 ~€20k + IVA hard-floor; Big Dutchman SIMBA manure-belt; ChickenGuard/Omlet porte automatiche piccole.
+
+La letteratura dimostra fattibilità su superfici avicole progettate, ma non esiste ancora un COTS provato per gallina + prato + parcheggio: pilot mixed-surface obbligatorio.
+
+Documenti:
+- 10_BENESSERE_FATTORIA_E_SERVIZI/CHICKEN_FREE_RANGE_CLEANING_ARCHITECTURE.md;
+- 10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_CHICKEN_FREE_RANGE_CLEANING.md;
+- 19_BOM_PRODOTTI_FORNITORI/BENESSERE_GALLINE_PULIZIA_AUTONOMA.md;
+- 22_FONTI_NORME_PREVENTIVI/BENESSERE_GALLINE_PULIZIA_SOURCES.md.
+
+Correzione BOM-022: il prato condiviso con le galline è lockout dinamico, non no-go permanente; rasaerba solo con hens-clear/gate chiuso.
+
+## 12. R&D trasversale — laser, vision e manutenzione robotica
 
 Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
 
-## 12. Modulo futuro — centro trasformazione conto terzi
+## 13. Modulo futuro — centro trasformazione conto terzi
 
 Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`. Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
 
-## 13. Metodo BOM obbligatorio
+## 14. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
 
-## 14. Stato attuale dei grandi blocchi
+## 15. Stato attuale dei grandi blocchi
 
-Restano nel perimetro automazione galline, fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
+Restano nel perimetro fattoria didattica, spaccio 24/7, pergolati/vite/verde/relax, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
-## 15. Sequenza BOM
+## 16. Sequenza BOM
 
 ### Già strutturate
 
@@ -181,20 +208,20 @@ Restano nel perimetro automazione galline, fattoria didattica, spaccio 24/7, per
 - BOM-019 FV e inverter;
 - BOM-020 AMR serra;
 - BOM-021 sollevatore / mezzo multifunzione;
-- **BOM-022 robot tagliaerba**.
+- BOM-022 robot tagliaerba;
+- **BOM-023 pulizia galline free-range**.
 
 ### Prossimo package
 
-**BOM-023 — sistema pulizia area galline:** layout pollaio/posatoi, raccolta deiezioni, raschiamento/nastro/robot, lettiera, lavaggio, ventilazione, odori, biosicurezza, sensori, safety animale, manutenzione e costo.
+**BOM-024 — celle frigorifere:** due celle a temperatura differenziata, pannelli, porte, gruppi frigoriferi, evaporatori, sbrinamento, drenaggi, monitoraggio, allarmi, backup, ricambi, installazione, consumi e costo.
 
 ### Coda successiva
 
-1. sistema pulizia area galline;
-2. celle frigorifere;
-3. attrezzatura raccolta e packaging;
-4. pergolato/vite/area relax;
-5. fattoria didattica;
-6. spaccio automatico 24/7;
-7. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. celle frigorifere;
+2. attrezzatura raccolta e packaging;
+3. pergolato/vite/area relax;
+4. fattoria didattica;
+5. spaccio automatico 24/7;
+6. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.

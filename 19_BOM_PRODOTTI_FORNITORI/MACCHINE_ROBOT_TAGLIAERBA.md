@@ -123,7 +123,7 @@ Confrontare a 5 e 8 anni.
 
 - **taglio solo diurno** come baseline;
 - robot fermo quando area didattica/relax è occupata;
-- pollaio/free-range = no-go;
+- prato condiviso con galline = lockout dinamico; taglio solo con hens-clear/gate chiuso;
 - buffer fisico/virtuale da vasche, fossi, strade e drop-off;
 - obstacle AI non sostituisce segregazione;
 - mappa rivista dopo lavori o modifiche layout;
@@ -145,7 +145,11 @@ Il Regolamento (UE) 2023/1230 sulle macchine diventa applicabile obbligatoriamen
 - separare sempre costo reale da costo eventualmente ammissibile;
 - software/SIM/manutenzione potrebbero avere trattamento diverso dall'hardware: `DA VERIFICARE`.
 
-## 7. Decisione working
+## 7. Integrazione galline free-range
+
+Il prato può essere normalmente accessibile alle galline. Il rasaerba non opera insieme agli animali: usa una finestra di taglio con galline temporaneamente nel ricovero/settore sicuro e consenso da porta/gate o procedura equivalente. Questo evita di sacrificare il concetto free-range e impedisce che obstacle detection venga usata come unica protezione.
+
+## 8. Decisione working
 
 Non congelare il modello prima del masterplan.
 

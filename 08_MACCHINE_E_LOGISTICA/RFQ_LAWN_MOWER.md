@@ -61,13 +61,14 @@ Richiedere:
 - tempo/distanza di arresto;
 - manual stop;
 - PIN/antifurto;
-- comportamento fail-safe con perdita posizione o comunicazione.
+- comportamento fail-safe con perdita posizione o comunicazione;
+- possibilità di consenso esterno/interlock o almeno scheduling affidabile con porta/gate galline.
 
 Configurazione Carnia:
 
 - niente taglio notturno;
 - esclusione area didattica quando aperta;
-- esclusione area galline con animali liberi;
+- area prato condivisa con galline gestita come lockout dinamico: robot abilitato solo con conferma hens-clear/gate chiuso;
 - buffer da acqua, strade e drop-off;
 - niente affidamento esclusivo sull'AI per evitare persone/animali.
 
@@ -115,7 +116,7 @@ Prima dell'accettazione definitiva:
 4. prova perdita Internet/4G/Wi-Fi;
 5. prova ostacoli rappresentativi;
 6. prova lift/tilt/manual stop;
-7. verifica che non entri in pollaio, colture, area didattica o bordi acqua;
+7. verifica lockout galline: nessun ingresso nel prato condiviso con animali presenti; successiva riabilitazione controllata quando hens-clear è confermato;
 8. prova dopo modifica temporanea no-go;
 9. verifica log/eventi;
 10. formazione operatori e recovery.

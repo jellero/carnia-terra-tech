@@ -98,7 +98,7 @@ Preferire perimetri virtuali RTK/GNSS/vision rispetto al cavo fisico, ma il pilo
 No-go permanenti:
 
 - vasche, fossi e drop-off;
-- area galline quando accessibile agli animali;
+- il prato condiviso con le galline non è un no-go permanente: è una zona a lockout dinamico quando gli animali sono presenti;
 - colture e aiuole;
 - aree tecniche sensibili;
 - carreggiate non segregate;
@@ -106,6 +106,8 @@ No-go permanenti:
 
 No-go/lockout dinamici:
 
+- prato/verde condiviso con galline durante libero accesso degli animali;
+- riabilitazione del prato al rasaerba solo dopo conferma hens-clear da gate/porta/stato operatore;
 - area didattica durante presenza pubblico;
 - area relax occupata;
 - piazzali durante carico/scarico;
@@ -117,7 +119,7 @@ Regole Carnia:
 
 1. **nessun taglio notturno** come default;
 2. niente funzionamento in area con bambini/pubblico;
-3. area galline esclusa durante libero accesso degli animali;
+3. prato condiviso con galline: rasaerba abilitato soltanto quando un interlock conferma gli animali confinati/segregati; una finestra utile è prima dell'apertura mattutina del ricovero, comunque in luce diurna;
 4. animali domestici e fauna non devono essere affidati soltanto all'object detection;
 5. mappa e zone vietate verificate dopo ogni modifica del masterplan;
 6. lame originali/compatibili certificate, viti sostituite secondo OEM;
@@ -207,7 +209,7 @@ Fallback:
 1. mappa prato netto e zone escluse;
 2. pendenze e fondo reali;
 3. copertura GNSS/RTK/4G/Wi-Fi;
-4. orari pubblico/animali;
+4. orari pubblico/animali e interlock con porta/gate automatici del ricovero;
 5. scelta M1/M2/M3/M4;
 6. demo su sito o mock-up rappresentativo;
 7. comportamento offline;
