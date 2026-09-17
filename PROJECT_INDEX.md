@@ -180,7 +180,7 @@ Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO
 
 ## 13. Stato punto 09 — Tech Barn e post-raccolta
 
-**BOM-024 CELLE FRIGORIFERE SVILUPPATA / DUE TEMPERATURE / CARICO PRODOTTO E RFQ BLOCCANTI.**
+**BOM-024 CELLE FRIGORIFERE + BOM-025 RACCOLTA/PACKAGING SVILUPPATE / CARICHI, SKU E RFQ BLOCCANTI.**
 
 Baseline:
 - CR-A COLD-LEAF ~1–3 °C, lattuga/baby leaf/spinacio;
@@ -201,12 +201,39 @@ Benchmark:
 
 Regola: dimensionamento da kg prodotto / temperatura ingresso / pull-down time, non da m³ stanza.
 
+### BOM-025 — raccolta e packaging
+
+Baseline:
+- cassette 600×400 food-contact, quantità da `peak kg in loop / kg per crate × 1,3–1,5`;
+- 6–12 low dollies + 2–4 raised come working range;
+- 3 tavoli inox 1800×700 working;
+- 2×30 kg + 1×300 kg scales;
+- Zebra ZD421 TT Ethernet;
+- tray sealer manuale opzionale;
+- wash/spin leafy non baseline finché non viene scelta una linea ready-to-eat;
+- label/traceability locale.
+
+Benchmark core:
+- dolly 600×400 300 kg €45,50 + IVA;
+- raised trolley €223,25 + IVA;
+- inox table €217,99–228,99 net;
+- 30 kg scale €413,99 + IVA;
+- 300 kg scale €710,49 + IVA;
+- ZD421 TT Ethernet €499,88 + IVA;
+- manual tray sealers ~€1.408–2.260 + IVA;
+- powered spinner 35 L / 70 kg/h €572,99 net.
+
+Guardrail: washing is a process-risk decision; EFSA 2025 notes cross-contamination risk from poorly managed process water.
+
 Documenti:
 - 09_TECH_BARN_E_POST_RACCOLTA/README.md;
 - 09_TECH_BARN_E_POST_RACCOLTA/COLD_ROOMS_ARCHITECTURE.md;
 - 09_TECH_BARN_E_POST_RACCOLTA/RFQ_COLD_ROOMS.md;
+- 09_TECH_BARN_E_POST_RACCOLTA/HARVEST_PACKAGING_ARCHITECTURE.md;
+- 09_TECH_BARN_E_POST_RACCOLTA/RFQ_HARVEST_PACKAGING.md;
 - 19_BOM_PRODOTTI_FORNITORI/TECH_BARN_CELLE_FRIGORIFERE.md;
-- 22_FONTI_NORME_PREVENTIVI/TECH_BARN_CELLE_FRIGORIFERE_SOURCES.md.
+- 19_BOM_PRODOTTI_FORNITORI/TECH_BARN_RACCOLTA_PACKAGING.md;
+- fonti dedicate in 22_FONTI_NORME_PREVENTIVI/.
 
 ## 14. Modulo futuro — centro trasformazione conto terzi
 
@@ -240,18 +267,18 @@ Restano nel perimetro fattoria didattica, spaccio 24/7, pergolati/vite/verde/rel
 - BOM-021 sollevatore / mezzo multifunzione;
 - BOM-022 robot tagliaerba;
 - BOM-023 pulizia galline free-range;
-- **BOM-024 celle frigorifere**.
+- BOM-024 celle frigorifere;
+- **BOM-025 raccolta e packaging**.
 
 ### Prossimo package
 
-**BOM-025 — raccolta e packaging:** cassette, bins, carrelli, tavoli, bilance, lavaggio/asciugatura ove applicabile, selezione, confezionamento, etichettatura, ergonomia, ricambi, consumabili e costo.
+**BOM-026 — pergolato, vite e area relax:** struttura, fondazioni, neve/vento, ombreggiamento, vite/rampicanti, arredi, illuminazione, prese/rete, irrigazione, drenaggio, manutenzione, sicurezza e costo.
 
 ### Coda successiva
 
-1. attrezzatura raccolta e packaging;
-2. pergolato/vite/area relax;
-3. fattoria didattica;
-4. spaccio automatico 24/7;
-5. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. pergolato/vite/area relax;
+2. fattoria didattica;
+3. spaccio automatico 24/7;
+4. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.

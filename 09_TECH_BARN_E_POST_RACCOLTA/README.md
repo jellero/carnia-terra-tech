@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 09: Tech Barn e post-raccolta
 
 **Aggiornato:** 17 settembre 2026  
-**Stato:** ARCHITETTURA CELLE FRIGORIFERE STRUTTURATA / BOM-024 SVILUPPATA / CARICHI REALI E RFQ BLOCCANTI.
+**Stato:** ARCHITETTURA CELLE + PACKAGING STRUTTURATA / BOM-024…025 SVILUPPATE / CARICHI REALI, SKU E RFQ BLOCCANTI.
 
 ## 1. Ruolo del blocco
 
@@ -137,7 +137,27 @@ Procedure:
 - piano B con cella/container refrigerato a noleggio;
 - registrazione dell'escursione di temperatura e decisione HACCP.
 
-## 11. Package
+## 11. Raccolta e packaging — BOM-025
+
+Architettura:
+
+- standard logistico 600×400;
+- cassette food-contact dimensionate da peak product in loop, non da numero fisso;
+- 3 tavoli inox working;
+- 2× bilancia 30 kg + 1× bilico 300 kg working;
+- Zebra ZD421 TT Ethernet class;
+- termosigillatrice manuale solo se richiesta dagli SKU retail;
+- washed/ready-to-eat leafy come modulo futuro, non baseline;
+- traceability harvest -> cold room -> pack -> shipment;
+- label media testate anche con condensa CR-A.
+
+Documenti:
+- `HARVEST_PACKAGING_ARCHITECTURE.md`;
+- `RFQ_HARVEST_PACKAGING.md`;
+- `19_BOM_PRODOTTI_FORNITORI/TECH_BARN_RACCOLTA_PACKAGING.md` — BOM-025;
+- `22_FONTI_NORME_PREVENTIVI/TECH_BARN_RACCOLTA_PACKAGING_SOURCES.md`.
+
+## 12. Package
 
 - COLD_ROOMS_ARCHITECTURE.md;
 - RFQ_COLD_ROOMS.md;
