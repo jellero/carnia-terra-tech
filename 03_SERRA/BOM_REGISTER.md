@@ -63,7 +63,7 @@
 | GH-FOG-002 | Pompa/e HP | scenario F1/F2/F3 | `CANDIDATI REALI` | LUBING 5,5 L/min €2.830,43; 20 L/min €3.747,49; FERMO 8/21 L/min benchmark |
 | GH-FOG-003 | Filtrazione fine | da portata | `CANDIDATI REALI / DA DIMENSIONARE` | cartuccia 1 µm 20" €13,45; set 5+1+0,005 µm €259,23 benchmark |
 | GH-FOG-004 | RO/softening | se analisi acqua lo richiede | `CONDIZIONALE` | prezzo da preventivo dopo analisi |
-| GH-FOG-005 | Tubazione HP | m da layout | `CANDIDATI REALI / DA GEOMETRIA` | inox 12 mm ~€3,59/m solo tubo; PA12 3/8 ~€4,59/m benchmark |
+| GH-FOG-005 | Tubazione HP | m da layout | `CANDIDATI REALI / DA GEOMETRIA` | inox 12 mm ~€3,59/m; PA12 3/8 ~€4,59/m benchmark |
 | GH-FOG-006 | Raccordi/supporti | da distinta | `PREZZI TROVATI / DA GEOMETRIA` | diritti/gomiti/tee/staffe separati |
 | GH-FOG-007 | Elettrovalvole HP zone | 3 + scorta da definire | `CANDIDATO` | Tecnocooling 3/8 24VAC €217,07/cad |
 | GH-FOG-008 | Ugelli HP | da calcolo | `CANDIDATI REALI` | LUBING inox 0,2 €8,98; Tecnocooling inox anti-drip 0,2 €15,70 |
@@ -72,8 +72,19 @@
 | GH-FOG-011 | Quadro/cablaggio/PLC | 1 package | `DA PREVENTIVARE` | integrazione nel controllo locale |
 | GH-FOG-012 | Ricambi/consumabili | 1 lotto | `REQUISITO` | ugelli, filtri, tenute, coil, kit pompa |
 | GH-FOG-013 | Posa/commissioning | 1 lotto | `DA PREVENTIVARE` | uniformità, anti-wetting, failure test |
-| GH-CROP-001 | Fili/supporti pomodoro/peperone | DA LAYOUT | `REQUISITO` | carico al progettista |
-| GH-CROP-002 | Canaline drenaggio fuori suolo | DA LAYOUT | `REQUISITO` | collegamento punto 04 |
+| GH-CROP-001 | Filo/cavo high-wire C1/C2 | m da shop drawing | `DA CALCOLO/RFQ` | diametro, carico, zincatura, tenditori e terminali da progetto |
+| GH-CROP-002 | Hook/ReelHook | = steli attivi + scorta | `CANDIDATI REALI` | ReelHook 30 m €7,01 + IVA; hook semplice benchmark €1,45 IVA incl. |
+| GH-CROP-003 | Spago coltura | m = hook × lunghezza | `CANDIDATI REALI` | ECOTWINE 400 N ~3.350 m: €54,70–62,70 + IVA/bobina |
+| GH-CROP-004 | Clip pianta PP | da steli/ciclo | `PREZZO TROVATO` | Bato 22 mm €77,50 + IVA/10.000 pz |
+| GH-CROP-005 | Clip biodegradabili | alternativa | `CANDIDATO` | 22 mm €30,95 + IVA/1.000 pz; disponibilità da verificare |
+| GH-CROP-006 | Ancoraggi/tenditori/morsetti | da shop drawing | `DA RFQ` | carico strutturale esplicito |
+| GH-DRAIN-001 | Canalina/gutter C1/C2 | m di fila reali | `CANDIDATI / DA RFQ` | metallica continua preferenza iniziale; plastica da confronto |
+| GH-DRAIN-002 | Staffe/supporti gutter | da passo | `DA RFQ` | carico slab saturo + manutenzione |
+| GH-DRAIN-003 | Giunti/terminali/scarichi | da architettura | `DA RFQ` | righe separate |
+| GH-DRAIN-004 | Collettore drenaggi | m/diametri da P&ID | `COLLEGAMENTO PUNTO 04` | per comparto / misura da definire |
+| GH-DRAIN-005 | Punti lavaggio/ispezione | da linee | `REQUISITO` | evitare ristagni/biofilm |
+| GH-DRAIN-006 | Sensori drenaggio | da architettura | `COLLEGAMENTO PUNTO 04` | volume/EC/pH/T |
+| GH-DRAIN-007 | Posa/test pendenza/perdite | 1 lotto | `DA PREVENTIVARE` | commissioning obbligatorio |
 | GH-ELEC-001 | Passerelle/canaline elettriche | DA LAYOUT | `REQUISITO` | collegamento punti 06/07 |
 | GH-SAFE-001 | Accessi/manutenzione/anticaduta | DA PROGETTO | `REQUISITO` | procedure/normativa |
 | GH-SP-001 | Bulloneria/minuteria scorta | DA DISTINTA | `REQUISITO` | non assorbire in forfait |
@@ -87,21 +98,12 @@
 - **BOM-003 aperture/reti** — `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`;
 - **BOM-004 copertura** — `19_BOM_PRODOTTI_FORNITORI/SERRA_COPERTURA_FILM_FISSAGGI.md`;
 - **package struttura/fondazioni** — `19_BOM_PRODOTTI_FORNITORI/SERRA_STRUTTURA_FONDAZIONI.md`;
-- **BOM-005 fogging** — `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`.
+- **BOM-005 fogging** — `19_BOM_PRODOTTI_FORNITORI/SERRA_FOGGING.md`;
+- **BOM-006 supporti coltura + drenaggio** — `19_BOM_PRODOTTI_FORNITORI/SERRA_SUPPORTI_COLTURA_DRENAGGIO.md`.
 
-RFQ fogging: `03_SERRA/RFQ_FOGGING.md`.
+RFQ BOM-006: `03_SERRA/RFQ_CROP_SUPPORT_DRAINAGE.md`.
 
-## 3. Benchmark struttura
-
-### Agricolo
-
-Tuttoserre 8×40 m / 320 m²: €6.832 IVA inclusa, teli/montaggio esclusi, prezzo indicativo. **NON SCALARE LINEARMENTE**.
-
-### Lavori pubblici FVG 2026
-
-Carpenteria profili cavi: S235 €7,56/kg, S275 €7,65/kg, S355 €7,84/kg; zincatura a caldo +€1,50/kg. Benchmark generici, non preventivo serra.
-
-## 4. Regola costo completo
+## 3. Regola costo completo
 
 Per ogni macrovoce:
 
@@ -109,10 +111,10 @@ Per ogni macrovoce:
 
 Separare costo reale, IVA, costo eleggibile, contributo potenziale, finanziamento e cassa/equity.
 
-## 5. Prossima sequenza economica serra
+## 4. Prossima sequenza economica serra
 
-1. **supporti coltura + canaline drenaggio**;
-2. porte/compartimenti/gronde;
-3. attrezzatura e consumabili montaggio.
+1. **porte + compartimentazioni interne + gronde/pluviali**;
+2. **attrezzatura e consumabili di montaggio**;
+3. chiusura del punto 03 con matrice di dipendenze e costi aperti.
 
-Il fogging torna in lavorazione appena analisi acqua e calcolo climatico sbloccano portata, numero ugelli e trattamento.
+BOM-006 torna in lavorazione appena crop card C1/C2 e layout reale sbloccano steli, file, lunghezze, gutter e pendenze.
