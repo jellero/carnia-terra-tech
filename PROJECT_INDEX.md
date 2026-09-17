@@ -94,29 +94,29 @@ Non sono state inventate rese, cultivar, densità o calendari definitivi. Il pun
 
 **Stato: RAFFINATO COME ARCHITETTURA / DA DIMENSIONARE SUL LOTTO REALE / BOM IN CORSO.**
 
-Documenti:
+Documenti principali:
 
-- `03_SERRA/README.md` — scope, geometria, principi e gate;
-- `03_SERRA/STRUCTURE_FOUNDATIONS.md` — carichi, struttura, fondazioni, materiali e bulloneria;
-- `03_SERRA/ENVELOPE_COVERING.md` — film/coperture, profili, fissaggi, condensa e sostituzione;
-- `03_SERRA/OPENINGS_COMPARTMENTS.md` — aperture laterali/zenitali, reti, porte e compartimenti;
-- `03_SERRA/SCREENS_SHADING.md` — schermi termici/ombreggianti e meccanica;
-- `03_SERRA/RFQ_SCREENS.md` — richiesta di offerta S1/S2/S3 con distinta separata;
-- `03_SERRA/FOGGING_HUMIDITY.md` — fogging, acqua, controllo e manutenzione;
-- `03_SERRA/CROP_SUPPORTS_LOGISTICS.md` — supporti coltura, corridoi, AMR e sottoservizi;
-- `03_SERRA/MAINTENANCE_SAFETY.md` — accessibilità, ispezioni, lavori in quota, ricambi e as-built;
-- `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md` — capitolato per preventivi confrontabili;
-- `03_SERRA/BOM_REGISTER.md` — registro delle singole voci e stato costi;
-- `03_SERRA/OFFICIAL_SOURCES.md` — norme, fonti tecniche e benchmark.
-
-Riferimento strutturale europeo da verificare in esecutivo: EN 13031-1:2019 + AC:2022. Il progetto deve essere verificato rispetto a NTC e prescrizioni italiane vigenti sul lotto reale.
+- `03_SERRA/README.md`;
+- `03_SERRA/STRUCTURE_FOUNDATIONS.md`;
+- `03_SERRA/ENVELOPE_COVERING.md`;
+- `03_SERRA/OPENINGS_COMPARTMENTS.md`;
+- `03_SERRA/SCREENS_SHADING.md`;
+- `03_SERRA/RFQ_SCREENS.md`;
+- `03_SERRA/RFQ_OPENINGS_NETS.md`;
+- `03_SERRA/FOGGING_HUMIDITY.md`;
+- `03_SERRA/CROP_SUPPORTS_LOGISTICS.md`;
+- `03_SERRA/MAINTENANCE_SAFETY.md`;
+- `03_SERRA/RFQ_GREENHOUSE_STRUCTURE.md`;
+- `03_SERRA/BOM_REGISTER.md`;
+- `03_SERRA/OFFICIAL_SOURCES.md`.
 
 BOM serra sviluppate:
 
 - **BOM-001 — Ventilazione HAF**: `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md`;
-- **BOM-002 — Schermi termici/ombreggianti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`.
+- **BOM-002 — Schermi termici/ombreggianti**: `19_BOM_PRODOTTI_FORNITORI/SERRA_SCHERMI_TERMICI_OMBREGGIANTI.md`;
+- **BOM-003 — Aperture, attuatori e reti anti-insetto**: `19_BOM_PRODOTTI_FORNITORI/SERRA_APERTURE_RETI_ANTIINSETTO.md`.
 
-BOM-002 confronta candidati reali energy screen e shade/diffusion screen, motorizzazione Ridder come famiglia candidata, meccanica/elettrico/posa/ricambi e tre scenari RFQ: S1 energy-first, S2 shade-first, S3 doppio schermo. Il costo totale resta correttamente `DA PREVENTIVO` finché non sono disponibili geometria e offerte installate.
+BOM-003 registra come working range 6–12 gruppi laterali motorizzati, da calcolare sul layout. Sono stati identificati attuatori professionali e scenari di rete N1/N2/N3. Le reti fini per tripidi non vengono adottate automaticamente perché la riduzione di ventilazione deve essere compensata nel progetto.
 
 Il punto 03 diventa `VALIDATO` solo dopo lotto, carichi reali, geotecnica, calcolo strutturale, layout esecutivo e preventivi confrontabili.
 
@@ -152,35 +152,35 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono già parte esplic
 
 ### Candidati già sviluppati
 
-- **BOM-001 — Ventilazione HAF serra**;
-- **BOM-002 — Schermi termici/ombreggianti + motorizzazioni + meccanica**.
+- BOM-001 — HAF;
+- BOM-002 — schermi climatici;
+- BOM-003 — aperture/attuatori/reti anti-insetto.
 
 ### In lavorazione successiva
 
-**BOM-003 — aperture laterali/zenitali + attuatori + trasmissioni + reti anti-insetto.**
+**BOM-004 — copertura serra + profili + fissaggi + minuteria + riparazione/sostituzione.**
 
 ### Coda immediata
 
-1. copertura, profili e fissaggi;
-2. RFQ struttura/fondazioni;
-3. fogging;
-4. tubi, collettori e pompe circuito termico;
-5. gocciolatori e linee irrigue;
-6. filtrazione acqua;
-7. pompe principali irrigazione;
-8. pompe dosatrici;
-9. serbatoi fertilizzanti;
-10. accumulo termico 30–50 m³;
-11. accumulo acqua 300 m³;
-12. moduli FV e inverter;
-13. AMR;
-14. sollevatore/mezzo multifunzione;
-15. robot tagliaerba;
-16. sistema pulizia area galline;
-17. celle frigorifere;
-18. attrezzatura raccolta e packaging;
-19. pergolato/vite/area relax;
-20. fattoria didattica;
-21. spaccio automatico 24/7.
+1. RFQ struttura/fondazioni;
+2. fogging;
+3. tubi, collettori e pompe circuito termico;
+4. gocciolatori e linee irrigue;
+5. filtrazione acqua;
+6. pompe principali irrigazione;
+7. pompe dosatrici;
+8. serbatoi fertilizzanti;
+9. accumulo termico 30–50 m³;
+10. accumulo acqua 300 m³;
+11. moduli FV e inverter;
+12. AMR;
+13. sollevatore/mezzo multifunzione;
+14. robot tagliaerba;
+15. sistema pulizia area galline;
+16. celle frigorifere;
+17. attrezzatura raccolta e packaging;
+18. pergolato/vite/area relax;
+19. fattoria didattica;
+20. spaccio automatico 24/7.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
