@@ -1,34 +1,48 @@
 # Carnia TerraTech
 
-Repository tecnico di progetto per lo sviluppo di una azienda agricola ad alta automazione in Friuli-Venezia Giulia, con area di interesse prioritaria nel corridoio Venzone/Gemona.
+Repository tecnico e gestionale per progettare una azienda agricola ad alta automazione in Friuli-Venezia Giulia, con area di interesse prioritaria nel corridoio Venzone/Gemona.
 
-**Stato documento:** 17 settembre 2026.
+**Stato:** pre-fattibilità avanzata / progettazione bottom-up.  
+**Aggiornato:** 17 settembre 2026.
 
-## Obiettivo
+## Visione
 
-Realizzare una piattaforma agricola modulare, resiliente e fortemente automatizzata, con circa **4.200 m² di serra produttiva**, colture ad alto valore, gestione idrica e climatica avanzata, robotica, fotovoltaico, accumulo termico, reparto vermicompost e successiva possibile area vendita/sociale.
+Carnia TerraTech non è soltanto una serra: deve essere un sistema agricolo capace di produrre reddito e sicurezza economica senza trasformare il lavoro in un peso continuo. Tecnologia, automazione, ergonomia, natura, ordine, estetica, manutenzione e qualità della vita sono requisiti di progetto.
 
-## Principi di progetto
+Obiettivi permanenti:
 
-- terreno da ricercare con prezzo obiettivo massimo **€50.000**;
-- verifica urbanistica, idraulica, paesaggistica, geologica, accessi, acqua, rete elettrica e irraggiamento prima di acquisto e lavori;
-- serra modulare in **6 comparti da circa 700 m²**;
-- automazione locale fail-safe: la sopravvivenza delle colture non deve dipendere da Internet o cloud;
-- forte uso di PLC, Modbus/RS485/Ethernet, sensoristica, computer vision e AMR;
-- energia basata su fotovoltaico + pompe di calore modulari + grande accumulo termico;
-- progettazione interna dove possibile, con verifica/firma di professionisti abilitati quando richiesta dalla normativa;
-- acquisti da contributo impostati su materiale **nuovo** salvo diversa ammissibilità espressa del bando applicabile;
-- distinzione continua tra costi reali di progetto e costi eventualmente ammissibili a contributo.
+- vivere e lavorare in un ambiente sereno, sicuro, ordinato e piacevole;
+- automatizzare il lavoro ripetitivo, sporco, pesante o facilmente standardizzabile;
+- mantenere controllo locale e modalità manuali di emergenza per i sistemi vitali;
+- sfruttare in modo corretto contributi, strumenti regionali e opportunità locali senza costruire il progetto su incentivi non verificati;
+- coprire nel piano finanziario sia il lancio aziendale sia il fabbisogno di vita nella fase iniziale;
+- progettare ogni impianto per manutenzione, ricambi, guasti e crescita futura;
+- sviluppare nel tempo fattoria didattica, aree di benessere, servizi e vendita automatizzata 24/7, senza compromettere il core agricolo.
 
-## Struttura repository
+## Numeri guida attuali
 
-- `docs/PROJECT_MASTER.md` — stato tecnico-economico completo del progetto.
-- `docs/TECHNICAL_ARCHITECTURE.md` — serra, clima, acqua, energia, automazione e logistica.
-- `docs/PRODUCTS_AND_MARKET.md` — prodotti reali individuati, prezzi e link di riferimento.
-- `docs/CORPORATE_FINANCE_ROADMAP.md` — società, ruoli, finanza e sequenza amministrativa.
-- `docs/DECISIONS_OPEN_POINTS.md` — decisioni consolidate, ipotesi e verifiche ancora necessarie.
-- `docs/NEW_CHAT_HANDOFF.md` — riepilogo autosufficiente per riprendere il progetto in una nuova chat.
+- terreno: target acquisto ≤ **€50.000**;
+- serra produttiva: circa **4.200 m²**;
+- comparti: **6 × ~700 m²**;
+- FV: **120 kWp iniziali**, predisposizione 150–180 kWp;
+- accumulo termico: **30 m³ iniziali**, predisposizione 40–50 m³;
+- accumulo acqua: working target **300 m³**;
+- automazione locale fail-safe con PLC, rete dati, computer vision e AMR.
 
-## Nota importante
+## Come leggere il repository
 
-Numeri di resa agricola, carichi termici, CAPEX complessivo, ricavi, contributi e dimensionamenti non ancora supportati da preventivi/calcoli definitivi sono marcati nei documenti come **preliminari**. Prima di trasformarli in ordini, pratiche o business plan devono essere verificati con dati di sito, preventivi, calcoli e bandi ufficiali vigenti.
+**Inizia da [`PROJECT_INDEX.md`](PROJECT_INDEX.md).** È l'indice di controllo del progetto e indica cosa è consolidato, cosa è in analisi e quale BOM viene chiusa pezzo per pezzo.
+
+Documenti fondativi nuovi:
+
+- `00_VISIONE_E_PRINCIPI/PROJECT_CHARTER.md` — missione, requisiti non negoziabili e metodo;
+- `10_BENESSERE_FATTORIA_E_SERVIZI/FUTURE_MODULES.md` — benessere, fattoria didattica, robot di servizio e spaccio 24/7;
+- `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md` — prima BOM tecnica analizzata nel nuovo metodo.
+
+I file in `docs/` contengono il lavoro tecnico precedente e restano validi come base durante la riorganizzazione. Verranno migrati progressivamente senza perdere informazioni.
+
+## Regola di progettazione
+
+Ogni componente fisico deve arrivare almeno a: funzione, requisiti, marca/modello o specifica, quantità, prezzo, fonte, IVA, installazione, consumi, manutenzione, ricambi, sicurezza, failure mode, fallback, durata, dipendenze, contributi e stato della decisione.
+
+Un elemento non è considerato progettato finché questi punti essenziali non sono coperti o marcati esplicitamente come `DA VERIFICARE`.
