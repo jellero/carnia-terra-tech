@@ -98,55 +98,55 @@ Working candidate: Trina Vertex S+ TSM-470NEG9R.28.
 
 ## 10. Stato punto 08 — Macchine e logistica
 
-**ARCHITETTURA AMR IN SVILUPPO / BOM-020 SVILUPPATA / PILOT, CONFORMITÀ E ASSISTENZA UE BLOCCANTI.**
+**ARCHITETTURA IN SVILUPPO / BOM-020 AMR + BOM-021 SOLLEVAMENTO SVILUPPATE / PILOT E RFQ BLOCCANTI.**
 
 Documenti:
 
 - `08_MACCHINE_E_LOGISTICA/README.md`;
-- `08_MACCHINE_E_LOGISTICA/AMR_ARCHITECTURE.md`;
-- `08_MACCHINE_E_LOGISTICA/RFQ_AMR.md`;
-- `19_BOM_PRODOTTI_FORNITORI/MACCHINE_AMR_SERRA.md` — BOM-020;
-- `22_FONTI_NORME_PREVENTIVI/MACCHINE_AMR_SOURCES.md`.
+- `AMR_ARCHITECTURE.md` + `RFQ_AMR.md`;
+- `LIFTING_MULTIFUNCTION_ARCHITECTURE.md` + `RFQ_LIFTING_MULTIFUNCTION.md`;
+- BOM-020 e BOM-021 in `19_BOM_PRODOTTI_FORNITORI/`;
+- fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
 ### BOM-020 — AMR serra
 
 Missioni: trasporto, traino, ritorno vuoti, scouting/imaging, inventario e docking.
 
-Working site:
+Working site: robot <=0,75 m preferito, corsie >=1,20 m, turning ~2–2,5 m, ambiente umido/condensa reale.
 
-- robot preferito <=0,75 m;
-- corsie >=1,20 m working;
-- turning/intersezioni ~2–2,5 m;
-- ambiente umido/condensa da trattare come requisito reale.
+- Burro Verde prioritario da pilot: 68,5 cm, payload 227 kg, towing 908 kg, IP65, prezzo UE/Italia da preventivo;
+- MiR250 benchmark industriale ma non baseline serra finché resta indoor-only/IP21/non-condensing;
+- AgileX Bunker per R&D/scouting, non AMR collaborativo baseline;
+- scouting vendor-independent OAK-D + Jetson opzionale.
 
-**Burro Verde** — candidato funzionale prioritario da pilot/RFQ:
+Gate: demo realistica, CE/DoC, IP/condensa, offline/API, dock, canoni/TCO, ricambi Italia e acceptance >=100 missioni.
 
-- width 68,5 cm;
-- payload 227 kg;
-- towing 908 kg su piano duro;
-- IP65;
-- LiDAR 360°, 12 camere, RTK + GPS-denied;
-- LFP 2,56 kWh;
-- prezzo Italia/UE `DA PREVENTIVO`; benchmark commerciale terzo 2026 <US$50k + canone BOSS annuale;
-- ingresso europeo annunciato nel 2026: CE/configurazione europea, assistenza Italia e ricambi da verificare.
+### BOM-021 — sollevatore / mezzo multifunzione
 
-**MiR250** — benchmark industriale safety/API:
+Architettura a due livelli:
 
-- payload 250 kg;
-- 580×800 mm;
-- REST API/MiR Fleet;
-- prezzi base €44.284 + IVA UE / integrazione Italia da €53.141 + IVA;
-- MiR Charge benchmark €6.075 + IVA;
-- Hook integrato Italia da €78.514 + IVA;
-- **non baseline serra** finché non risolta la specifica ufficiale indoor-only/IP21/non-condensing/no-water.
+**L1 telescopico elettrico** — candidato prioritario **Merlo EW25.5-90**:
 
-**AgileX Bunker Mini/Pro** — R&D/scouting, non baseline collaborativa: IP67 e stack aperto, ma safety/conformità della macchina integrata restano da sviluppare. Bunker Mini ~€9.350 IVA DE incl.; ROS2 kit ~€20.500 + IVA.
+- 2.500 kg;
+- ~4,8–5 m;
+- ~1,54 m larghezza e ~1,98 m altezza;
+- 4WD versione 90;
+- piattaforma persone OEM disponibile nella gamma;
+- benchmark demo/usato: ~€69.000 + IVA con forche e ~€75.000 + IVA con forche+navicella/radiocomando; nuovo 2026 `DA PREVENTIVO`.
 
-Scouting vendor-independent opzionale: OAK-D Pro PoE ~€671–769 IVA incl. + Jetson Orin Nano Super ~€382 benchmark.
+Alternative:
 
-Safety: ISO 3691-4:2023 come riferimento corrente; verificare revisione 2026 e Regolamento (UE) 2023/1230 per macchine immesse dopo l'entrata in applicazione.
+- Manitou MLT 625 e: 2,5 t / 5,9 m / 1,81 m / 34,8 kWh;
+- JCB 525-60E: 2,5 t / 6 m / 1,84 m / 24 kWh.
 
-Gate: demo con geometria/carichi/persone reali, CE/DoC, IP/condensa, API offline, dock, canoni/TCO 5–8 anni, ricambi Italia, risk assessment e acceptance >=100 missioni.
+Nessuno dei tre telescopici entra nelle corsie coltura da ~1,20 m; uso previsto su corridoio tecnico ~4 m, Tech Barn se compatibile e piazzale.
+
+**L2 stoccatore elettrico compatto** per Tech Barn e pallet ordinari:
+
+- EP EST122 benchmark: 1.200 kg, 792 mm, ~3 m, raggio ~1,46 m, prezzo da ~€2.900;
+- alternative 1,2 t/3 m ~€1.899–1.900 + IVA; classe professionale Li-ion più costosa.
+
+Safety: piattaforma persone solo OEM e abbinamento autorizzato dal costruttore; niente retrofit DIY. Formazione e verifiche secondo regime vigente, incluso modulo per persone/carichi sospesi se utilizzato.
 
 ## 11. R&D trasversale — laser, vision e manutenzione robotica
 
@@ -180,22 +180,22 @@ Restano nel perimetro robot tagliaerba, automazione galline, fattoria didattica,
 - BOM-017 serbatoi fertilizzanti e contenimento;
 - BOM-018 accumulo acqua 300 m³;
 - BOM-019 FV e inverter;
-- **BOM-020 AMR serra**.
+- BOM-020 AMR serra;
+- **BOM-021 sollevatore / mezzo multifunzione**.
 
 ### Prossimo package
 
-**BOM-021 — sollevatore/mezzo multifunzione:** forche, portata, altezza, ingombri, pneumatici, sterzo, eventuale piattaforma di lavoro certificata/OEM, alimentazione, ricarica, accessori, sicurezza, manutenzione, ricambi e costi.
+**BOM-022 — robot tagliaerba:** area utile, pendenze, bordo acqua/serra, RTK/GNSS vs beacon, docking, sicurezza persone/animali, lama, autonomia, gestione zone, integrazione locale, ricambi e costo.
 
 ### Coda successiva
 
-1. sollevatore/mezzo multifunzione;
-2. robot tagliaerba;
-3. sistema pulizia area galline;
-4. celle frigorifere;
-5. attrezzatura raccolta e packaging;
-6. pergolato/vite/area relax;
-7. fattoria didattica;
-8. spaccio automatico 24/7;
-9. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. robot tagliaerba;
+2. sistema pulizia area galline;
+3. celle frigorifere;
+4. attrezzatura raccolta e packaging;
+5. pergolato/vite/area relax;
+6. fattoria didattica;
+7. spaccio automatico 24/7;
+8. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
