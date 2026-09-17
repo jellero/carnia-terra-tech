@@ -77,7 +77,7 @@ Il punto 03 è sufficientemente coperto per proseguire, ma non è progetto esecu
 
 ## 7. Stato punto 05 — Termico e clima
 
-**Stato: ARCHITETTURA DI BASE DEFINITA / BOM-009 E BOM-010 SVILUPPATE / CARICHI E PDC A FREDDO DA VALIDARE.**
+**Stato: ARCHITETTURA DI BASE DEFINITA / BOM-009, BOM-010 E BOM-011 SVILUPPATE / CARICO E PRESTAZIONI SOTTOZERO DA VALIDARE.**
 
 Documenti principali:
 
@@ -87,32 +87,26 @@ Documenti principali:
 - `05_TERMICO_E_CLIMA/RFQ_HYDRONIC_DISTRIBUTION.md`;
 - `05_TERMICO_E_CLIMA/THERMAL_STORAGE_PRIMARY.md`;
 - `05_TERMICO_E_CLIMA/RFQ_THERMAL_STORAGE_PRIMARY.md`;
+- `05_TERMICO_E_CLIMA/HEAT_PUMP_CASCADE.md`;
+- `05_TERMICO_E_CLIMA/RFQ_HEAT_PUMPS.md`;
 - `19_BOM_PRODOTTI_FORNITORI/TERMICO_DISTRIBUZIONE_IDRONICA.md`;
 - `19_BOM_PRODOTTI_FORNITORI/TERMICO_ACCUMULO_PRIMARIO.md`;
+- `19_BOM_PRODOTTI_FORNITORI/TERMICO_PDC_MODULARI.md`;
 - `22_FONTI_NORME_PREVENTIVI/TERMICO_DISTRIBUZIONE_SOURCES.md`;
-- `22_FONTI_NORME_PREVENTIVI/TERMICO_ACCUMULO_PRIMARIO_SOURCES.md`.
+- `22_FONTI_NORME_PREVENTIVI/TERMICO_ACCUMULO_PRIMARIO_SOURCES.md`;
+- `22_FONTI_NORME_PREVENTIVI/TERMICO_PDC_SOURCES.md`.
 
 ### BOM-009 — distribuzione idronica
 
 Architettura: accumulo -> collettore secondario -> 6 circuiti indipendenti -> terminali near-crop.
 
-Per zona: isolamento, pompa modulante, eventuale miscelazione, T mandata/ritorno, misura/bilanciamento portata, scarico/sfiato e fallback locale.
-
-Candidati/benchmark registrati:
-
-- Elydan TUBSER Ø25 e Palaplast GEOPAL Ø25/28 come tubi greenhouse, `DA PREVENTIVO`;
-- IVAR FF-Therm PE-Xa Ø25×2,3 EVOH: €5,81/m listino, ~€4,23/m benchmark retail UE, idoneità alla posa esposta da confermare;
-- Grundfos ALPHA2 25-60 da €249 IVA incl. e MAGNA1 25-60 €426,63 IVA incl. come classi da verificare sulla curva reale;
-- ESBE VRG131 DN25 ~€64,15 + ARA661 ~€148,35 IVA incl.;
-- Caleffi 132602 1", 10–40 l/min ~€102,28 IVA incl.
-
-Il working 2.700–3.000 m di terminali non è quantità d'ordine. Con il solo PE-Xa benchmark equivale a circa €11.421–17.430 di solo tubo.
+Il working 2.700–3.000 m di terminali non è quantità d'ordine. Tubi greenhouse-specific restano preferenza da RFQ; PE-Xa è benchmark economico, non scelta definitiva.
 
 ### BOM-010 — accumulo + primario + scambiatore
 
 Working architecture:
 
-`3×22 kW PDC -> primario corto protetto -> HX -> 30 m³ acqua tecnica -> BOM-009`, con predisposizione quarta PDC e 40–50 m³.
+`PDC -> primario corto protetto -> HX -> 30 m³ acqua tecnica -> BOM-009`, con predisposizione 40–50 m³.
 
 Energia teorica acqua:
 
@@ -120,21 +114,43 @@ Energia teorica acqua:
 - 40 m³: ~465 / 930 / 1.395 kWh;
 - 50 m³: ~581 / 1.163 / 1.744 kWh.
 
-Scenari serbatoi da RFQ:
+Scenari serbatoi da RFQ: 6×5 m³, 3×10 m³, oppure 1×30 m³ custom solo se TCO e affidabilità lo giustificano.
 
-- T1 6×5 m³ professionali;
-- T2 3×10 m³ custom/industriali;
-- T3 1×30 m³ custom, solo se TCO/affidabilità giustificano il single point of failure.
+La pompa integrata nelle Kensol è confermata; pompe primarie esterne restano condizionali alla curva Q/H e alle perdite reali.
 
-Candidato professionale pubblico: Cordivari PUFFER COMPACT 5000, ~5.042 l, Pmax 3 bar, Tmax 99 °C, prezzo da preventivo.
+### BOM-011 — PDC modulari 3+1
 
-Benchmark da non confondere con puffer: serbatoi PE acqua ALTA 10/15/20 m³ a €1.840/2.940/4.740 + IVA in promo settembre 2026; non sono automaticamente idonei a pressione, temperatura, isolamento e stratificazione termica.
+Candidato: Kensol KHP-R290-22-3.
 
-Scambiatori benchmark Sunerg listino 2025/2: 60 kW saldobrasato €932; 100 kW €1.252; 100 kW inox a piastre €3.013. Quotare 1×100 kW e 2×100 kW isolabili, oltre a eventuale ridondanza parziale.
+Dati correnti verificati:
 
-Glicole propilenico confinato al primario: benchmark 25 kg ~€122–185. Il vaso espansione viene calcolato; Caleffi 556500 500 l (~€1.165,20) è solo un riferimento di classe, non una taglia scelta.
+- A7/W35: 7,8–22,0 kW, COP 3,73–5,27;
+- A2/W35: 6,69–18,8 kW, COP 3,42–4,61;
+- SCOP W35 5,13; W55 3,84;
+- max input 9 kW / 15,8 A;
+- portata nominale 2,9 m³/h;
+- pompa SHIMGE integrata;
+- R290 1,30 kg;
+- 202 kg;
+- 47 dB(A) pressione sonora / 62 dB(A) potenza sonora.
 
-Open point critico: verificare circolatore integrato e prevalenza residua della Kensol KHP-R290-22-3 prima di aggiungere pompe primarie esterne.
+Capacità massima aggregata:
+
+- 3 unità: 66 kW A7/W35, 56,4 kW A2/W35;
+- 4 unità: 88 kW A7/W35, 75,2 kW A2/W35.
+
+Prezzo hardware osservato: €3.616,74 + IVA/unità; tre unità €10.850,22 + IVA, quattro €14.466,96 + IVA.
+
+Open gate critici:
+
+- A-7/A-10/A-15 e W45;
+- capacità media netta durante defrost;
+- chiarimento discordanza datasheet/manuale su assorbimento e idraulica;
+- curva pompa integrata/prevalenza residua;
+- cascata OEM o protocollo PLC;
+- requisiti R290 per 3–4 macchine affiancate;
+- garanzia 5+2 e assistenza Italia/FVG;
+- carico termico reale e decisione se installare subito la quarta unità.
 
 ### Dipendenze punto 05
 
@@ -142,10 +158,11 @@ Servono ancora:
 
 - carico termico C1–C6 e scenari produzione/economia/sopravvivenza;
 - temperature acqua;
-- prestazioni PDC a freddo e alle temperature di mandata reali;
+- prestazioni PDC sottozero alle temperature di mandata reali;
+- defrost netto;
 - perdite di carico/P&ID;
 - materiale near-crop definitivo;
-- volume accumulo 30/40/50 m³ e architettura T1/T2/T3;
+- volume accumulo 30/40/50 m³ e architettura;
 - numero/taglia HX;
 - concentrazione glicole;
 - espansione/sicurezze;
@@ -182,32 +199,32 @@ I file in `docs/` restano sorgenti durante la migrazione. Sono nel perimetro rob
 
 - Serra BOM-001…008;
 - BOM-009 distribuzione termica idronica;
-- **BOM-010 accumulo termico + primario/scambiatore**.
+- BOM-010 accumulo termico + primario/scambiatore;
+- **BOM-011 PDC modulari 3+1**.
 
 ### Prossimo package
 
-**PDC modulari 3+1 e prestazioni a freddo:** curva capacità/COP a temperature esterne reali, W35/W45, portata minima, circolatore integrato, sbrinamento, potenza elettrica, acustica, distanze/installazione, garanzia e ridondanza.
+**Boost/deumidificazione/emergenza termica:** aerotermi idronici o altra soluzione, funzione anti-condensa, potenza per comparto, rumore, ventilazione, tubi/valvole, controllo, fail-safe e costo.
 
 ### Coda successiva
 
-1. PDC modulari 3+1 e prestazioni a freddo;
-2. boost/deumidificazione/emergenza;
-3. gocciolatori e linee irrigue;
-4. filtrazione acqua;
-5. pompe principali irrigazione;
-6. pompe dosatrici;
-7. serbatoi fertilizzanti;
-8. accumulo acqua 300 m³;
-9. moduli FV e inverter;
-10. AMR;
-11. sollevatore/mezzo multifunzione;
-12. robot tagliaerba;
-13. sistema pulizia area galline;
-14. celle frigorifere;
-15. attrezzatura raccolta e packaging;
-16. pergolato/vite/area relax;
-17. fattoria didattica;
-18. spaccio automatico 24/7;
-19. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. boost/deumidificazione/emergenza;
+2. gocciolatori e linee irrigue;
+3. filtrazione acqua;
+4. pompe principali irrigazione;
+5. pompe dosatrici;
+6. serbatoi fertilizzanti;
+7. accumulo acqua 300 m³;
+8. moduli FV e inverter;
+9. AMR;
+10. sollevatore/mezzo multifunzione;
+11. robot tagliaerba;
+12. sistema pulizia area galline;
+13. celle frigorifere;
+14. attrezzatura raccolta e packaging;
+15. pergolato/vite/area relax;
+16. fattoria didattica;
+17. spaccio automatico 24/7;
+18. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
