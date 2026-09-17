@@ -28,7 +28,7 @@
 | TH-PRI-003 | Non ritorno PDC | per ramo se richiesto | DA P&ID | evitare ricircoli parassiti |
 | TH-PRI-004 | Filtro/defangatore | centrale o per ramo | DA PROGETTARE | perdita di carico/manutenzione |
 | TH-PRI-005 | Sfiato/separatore aria | da P&ID | REQUISITO | punto alto/centrale |
-| TH-PRI-006 | Pompa primaria esterna | 0–2 | CONDIZIONALE | prima verificare circolatore integrato PDC e prevalenza residua |
+| TH-PRI-006 | Pompa primaria esterna | 0–2 | CONDIZIONALE | pompa SHIMGE integrata confermata; serve curva Q/H e prevalenza residua reale |
 | TH-PRI-007 | Classe pompa benchmark | — | BENCHMARK | MAGNA3 32-80 da ~€1.149, ~10 m³/h, 8 m; non selezionata |
 | TH-PRI-008 | Tubazioni primario esterno | m/DN da layout | DA CALCOLO | coibentazione e protezione gelo |
 | TH-PRI-009 | Coibentazione primario | m da layout | REQUISITO | esterno/meteo/UV |
@@ -105,21 +105,31 @@ La potenza nominale del catalogo non basta: dichiarare temperature, portate, gli
 
 Working PDC Kensol KHP-R290-22-3:
 
-- 22 kW nominali;
-- 3 unità = 66 kW;
-- predisposizione quarta = 88 kW;
-- prezzo corrente Senetic DE osservato €3.616,74 + IVA/unità, trasporto separato.
+- 22 kW max A7/W35;
+- 18,8 kW max A2/W35;
+- 3 unità = 66 kW A7/W35 ma 56,4 kW A2/W35;
+- predisposizione quarta = 88 kW A7/W35 ma 75,2 kW A2/W35;
+- prezzo osservato €3.616,74 + IVA/unità.
 
-Prima di scegliere pompe primarie esterne va acquisita la scheda completa relativa a circolatore integrato e prevalenza residua.
+La pompa integrata è ora confermata dal datasheet corrente:
 
-Portata teorica acqua:
+- marca SHIMGE;
+- portata nominale 2,9 m³/h;
+- prevalenza pompa alla portata nominale 100 kPa;
+- perdita interna massima 65 kPa.
 
-- 66 kW, ΔT 5 K: ~11,35 m³/h;
-- 66 kW, ΔT 10 K: ~5,68 m³/h;
-- 88 kW, ΔT 5 K: ~15,13 m³/h;
-- 88 kW, ΔT 10 K: ~7,57 m³/h.
+Il manuale KHP-R290 codice 6/26 riporta invece 45 kPa di perdita interna e 6,9 m di prevalenza. La revisione effettivamente acquistata deve essere chiarita da OEM/fornitore.
 
-MAGNA3 32-80 (~10 m³/h, 8 m, da ~€1.149) è solo benchmark di classe: non copre automaticamente lo scenario 88 kW/ΔT 5 K.
+La differenza 100−65 = 35 kPa non viene assunta come prevalenza residua garantita senza curva Q/H e definizione OEM del metodo di misura.
+
+Portata nominale aggregata:
+
+- 3 unità: 8,7 m³/h;
+- 4 unità: 11,6 m³/h.
+
+Pompe esterne solo se il calcolo completo di HX, glicole, filtri, valvole e tubazioni dimostra che la prevalenza integrata non basta.
+
+MAGNA3 32-80 (~10 m³/h, 8 m, da ~€1.149) resta solo benchmark di classe.
 
 ## 6. Glicole
 
@@ -179,14 +189,16 @@ Prevedere:
 1. carico termico reale;
 2. temperatura minima sito;
 3. mandata/ritorno PDC;
-4. prestazioni Kensol a freddo;
+4. prestazioni Kensol a -7/-10/-15 °C e defrost;
 5. volume accumulo ottimo;
 6. tank architecture T1/T2/T3;
 7. capacità/numero HX;
-8. circolatori integrati PDC;
+8. curva pompa integrata e prevalenza residua confermata;
 9. DN e perdite primario;
 10. volume/concentrazione glicole;
 11. espansione e sicurezza;
 12. isolamento/dispersioni;
 13. layout Tech Barn e accessi sostituzione;
 14. RFQ professionali.
+
+Vedi anche BOM-011 `TERMICO_PDC_MODULARI.md` e `05_TERMICO_E_CLIMA/HEAT_PUMP_CASCADE.md`.
