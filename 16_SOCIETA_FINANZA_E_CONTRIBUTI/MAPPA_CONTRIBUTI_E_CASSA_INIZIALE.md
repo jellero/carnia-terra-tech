@@ -17,7 +17,7 @@ Riferimento verificato: bando SRE01 2025.
 - cumulabile con altre agevolazioni che non abbiano stessa natura/finalità.
 
 Stato temporale:
-- finestra 18/12/2025–02/03/2026 chiusa;
+- finestra 18/12/2025–16/03/2026 chiusa;
 - a settembre 2026 OPR ha aperto il modulo di domanda dell'acconto per le domande concesse.
 
 **Nel cashflow Carnia TerraTech non compare come fonte certa se non esiste concessione.**
