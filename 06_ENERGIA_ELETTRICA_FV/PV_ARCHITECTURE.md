@@ -1,6 +1,6 @@
 # Architettura fotovoltaica — 120 kWp iniziali
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Stato:** `WORKING ARCHITECTURE / LOTTO E CONNESSIONE BLOCCANTI`.
 
 ## 1. Funzione nel sistema Carnia TerraTech
@@ -9,9 +9,9 @@ Il FV deve ridurre il costo elettrico e alimentare carichi flessibili senza dive
 
 `carichi vitali/control plane -> celle e cold-chain -> pompe/fertirrigazione -> processi -> carichi differibili -> BESS 30 kW / EMS -> rete`.
 
-Il BESS è il backup condiviso del sito, non una UPS locale. La potenza nota è **30 kW**; energia utile in kWh, autonomia, picco, transfer time, islanding e SOC reserve restano `DA CHIUDERE`. Il server centrale usa questi stati per load shedding e scheduling dei carichi differibili.
+Il BESS è il backup condiviso del sito, non una UPS locale. BOM-034 consolida **30 kW** come power class working e confronta 60/90/120 kWh utili; capacità finale, SOC reserve, EOL autonomy, grid-forming, transfer e PV-in-island restano `DA RFQ/VALIDAZIONE`. Il server centrale usa questi stati per scheduling, mentre il power controller locale mantiene load shedding e island permissives.
 
-L'EMS sposta carichi quando conviene, ma PLC e protezioni restano autonomi.
+L'EMS sposta carichi quando conviene, ma PLC, BMS, PCS, protezioni e controller di connessione restano autonomi. Il bus P0 deve superare il blackout senza reboot; questa prova è parte dell'acceptance BOM-034.
 
 ## 2. Target e crescita
 
