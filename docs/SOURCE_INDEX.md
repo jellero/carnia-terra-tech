@@ -1,8 +1,16 @@
 # Carnia TerraTech — Source Index
 
-**Aggiornato:** 17 settembre 2026.
+**Aggiornato:** 18 settembre 2026  
+**Stato:** `INDICE STORICO / LE FONTI DI DOMINIO IN 22_ SONO CANONICHE`
 
-Questo file raccoglie i principali riferimenti usati durante la progettazione. Prezzi e disponibilità vanno ricontrollati prima dell'ordine.
+Questo file conserva riferimenti generali e storici.
+
+Per le decisioni correnti usare in via prioritaria:
+- `../22_FONTI_NORME_PREVENTIVI/`;
+- il file fonti della BOM interessata;
+- fonti ufficiali/vendor ricontrollate alla data della decisione.
+
+Prezzi e disponibilità qui riportati non sono automaticamente correnti.
 
 ## Serra — struttura e fondazioni
 
@@ -137,3 +145,24 @@ Ogni voce BOM deve riportare:
 - disponibilità;
 - specifiche critiche;
 - classificazione `PREZZO TROVATO`, `PREZZO DA PREVENTIVO`, `BENCHMARK` oppure `STIMA`.
+
+## Robot ragno / manutenzione in quota
+
+Riferimento canonico:
+- `../22_FONTI_NORME_PREVENTIVI/ROBOT_RAGNO_MANUTENZIONE_SOURCES.md`.
+
+Include letteratura 2024–2026 su:
+- robot per pulizia coperture serre;
+- mobilità su tetti multispan;
+- robot rampicanti come riferimento trasversale.
+
+Queste fonti dimostrano fattibilità R&S, non compatibilità automatica con la serra Carnia TerraTech.
+
+## Regola di manutenzione dell'indice
+
+Nuove fonti tecniche specifiche non devono essere aggiunte solo qui.
+
+Ordine:
+1. file fonti di dominio in `22_`;
+2. BOM/architettura interessata;
+3. questo indice solo come collegamento generale.
