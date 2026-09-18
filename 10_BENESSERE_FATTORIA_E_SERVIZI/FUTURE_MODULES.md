@@ -1,7 +1,7 @@
 # Carnia TerraTech — Benessere, fattoria e servizi futuri
 
 **Aggiornato:** 18 settembre 2026.  
-**Stato:** BOM-023 pulizia galline e BOM-026 pergolato/vite/relax sviluppate; fattoria didattica e spaccio 24/7 da sviluppare.
+**Stato:** BOM-023 pulizia galline, BOM-026 pergolato/vite/relax e BOM-027 fattoria didattica sviluppate; spaccio 24/7 da sviluppare.
 
 ## 1. Obiettivo del blocco
 
@@ -62,26 +62,52 @@ Documento: CHICKEN_FREE_RANGE_CLEANING_ARCHITECTURE.md.
 
 ## 4. Fattoria didattica
 
-### Obiettivo
+**BOM-027 SVILUPPATA / RICONOSCIMENTO ERSA, MASTERPLAN VISITATORI, CAPIENZA E RFQ BLOCCANTI.**
 
-Creare in una fase successiva un'area in cui tecnologia, agricoltura, acqua, energia, compostaggio, biodiversità e animali possano essere mostrati in modo sicuro e comprensibile.
+La fattoria didattica viene progettata come sottosistema visitatori separato dalla produzione, non come libero accesso all'azienda.
 
-### Elementi da prevedere già nel masterplan
+Baseline:
 
-- percorso visitatori separabile dalla logistica produttiva;
-- punti di osservazione sicuri verso serra e impianti;
-- area coperta/pergolato per gruppi;
-- servizi igienici adeguati alla fase di apertura al pubblico;
-- lavaggio mani;
-- recinzioni e separazione aree tecniche;
-- accessibilità;
-- parcheggio/punto raccolta;
-- cartellonistica e didattica digitale;
-- gestione emergenze e primo soccorso;
-- assicurazioni e requisiti regionali da verificare prima dell'avvio;
-- calendario visite compatibile con i picchi di lavoro agricolo.
+- zoning Z0 pubblico/accoglienza, Z1 percorso protetto, Z2 attività controllate, Z3 no-visitor;
+- planimetria ERSA come layer del masterplan: parcheggio, spazi didattici, aree a rischio, servizi, primo soccorso/acqua potabile, percorsi interni/esterni e percorsi accessibili;
+- referente formato e presente;
+- RC visite;
+- primo soccorso vicino a fonte d'acqua potabile;
+- servizio igienico adeguato/accessibile;
+- spazio coperto, con BOM-026 pergolato come primo candidato da verificare;
+- visitor route separata da mezzi, AMR, locali tecnici, chimici, packing/celle e dock;
+- observation point per serra, acqua, energia, automazione e galline;
+- modulo galline compatibile con BOM-023 e lavaggio mani obbligatorio a valle del contatto/area animale;
+- accessibilità dal drop-off a primo soccorso, WC, spazio coperto e parte significativa del percorso;
+- pannelli safety distinti dai pannelli didattici;
+- didattica digitale read-only su guest network separata dall'OT;
+- food tasting/somministrazione NON baseline;
+- registro visite e procedure meteo/emergenza;
+- visita pilota prima dell'apertura.
 
-**Fase:** dopo stabilizzazione del core produttivo, salvo opportunità di contributo che giustifichi una predisposizione anticipata.
+Benchmark pubblici già tracciati:
+
+- percorso drenante pedonale FVG 2026: €37,05–39,76/m² nella voce consultata;
+- fondazione granulare: €44,80/m³ reference;
+- safety signage PVC: ~€34,63–43,46/cad;
+- lavamani autonomo backup: €242,10;
+- first-aid Allegato 1: €75,90 + IVA valigetta / €117,90 + IVA armadietto maggiorato;
+- reintegro: €65,25 + IVA;
+- pannello Dibond 70×100 stampato: €90/cad benchmark;
+- tavolo picnic accessibile: €439,79 benchmark;
+- lavagna 120×90: €85,73 benchmark.
+
+Formazione 2026 osservata:
+- corso base fattoria didattica/sociale 12 h, gratuito per categorie ammesse, indicato come parte 1 di 2;
+- catalogo include specialistico fattoria didattica da 24 h;
+- sequenza e requisito corrente da confermare con ERSA prima di pianificare l'apertura.
+
+Documenti:
+
+- `FATTORIA_DIDATTICA_ARCHITECTURE.md`;
+- `RFQ_FATTORIA_DIDATTICA.md`;
+- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_FATTORIA_DIDATTICA.md`;
+- `22_FONTI_NORME_PREVENTIVI/BENESSERE_FATTORIA_DIDATTICA_SOURCES.md`.
 
 ## 5. Spaccio automatizzato self-service 24/7
 
