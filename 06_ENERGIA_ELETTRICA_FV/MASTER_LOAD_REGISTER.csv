@@ -1,0 +1,32 @@
+asset_id,domain,function,priority,power_kw_min,power_kw_max,data_status,island_policy,closure_action
+EL-PLC,automation,PLC safety/control,P0,,,DESIGN+MEASURE,YES,measure real W and redundancy
+EL-EDGE,automation,edge gateway OT,P0,,,MEASURE,YES,measure idle/max
+EL-NET,automation,network core,P0,,,MEASURE,YES,measure switch/router/PoE
+EL-SRV,automation,server NODE-A/B/QNODE minimum,P0,,,MEASURE+OEM-RFQ,YES,measure idle/95p/max and restart
+EL-BESS-AUX,energy,BMS PCS fire HVAC controls,P0,,,OEM-RFQ,YES,get normal/max/winter auxiliaries
+EL-SAFETY,safety,fire security access essential,P0,,,DESIGN+MEASURE,YES,define circuits and W
+EL-CR-CTRL,cold_chain,cold-room controls/logger,P0,,,MEASURE,YES,measure continuous W
+EL-IRR-CTRL,water,irrigation controls/valves,P0,,,MEASURE,YES,measure continuous and actuation W
+EL-IRR-P1,water,irrigation duty pump,P1,2.2,2.2,KNOWN-REF+OEM-RFQ,WHEN_NEEDED,close kW PF inrush VFD
+EL-IRR-P2,water,irrigation standby pump,P2,2.2,2.2,KNOWN-REF+OEM-RFQ,NORMALLY_NO,interlock one-at-a-time
+EL-FERT,water,fertigation dosing,P1,,,OEM-RFQ,WHEN_CRITICAL,close max W and duty
+EL-UV-W1,water,UV treatment W1,P1,0.1,0.3,KNOWN-REF+OEM-RFQ,WHEN_NEEDED,close exact power
+EL-CR-A,cold_chain,CR-A holding compressor,P1,2.25,2.25,KNOWN-REF+OEM-RFQ,YES,add auxiliaries and startup
+EL-CR-B,cold_chain,CR-B holding compressor,P1/P2,1.48,2.25,KNOWN-REF+OEM-RFQ,CONDITIONAL,add auxiliaries and startup
+EL-GH-ACT,greenhouse,vents/actuators survival,P1,,,OEM-RFQ,YES,close W per group and simultaneity
+EL-HAF,greenhouse,essential HAF subset,P1,,,OEM-RFQ,CONDITIONAL,close unit W and active count
+EL-ANIMAL,welfare,animal welfare essential,P1,,,DESIGN+OEM-RFQ,AS_NEEDED,define circuits and W
+EL-LIGHT,safety,minimum safety lighting,P1,,,DESIGN,LIMITED,close layout circuit W
+EL-PDC-1,thermal,PDC module 1,P2/P1_EMERGENCY,0,9,KNOWN-REF+OEM-RFQ,CONDITIONAL,close input vs conditions
+EL-PDC-2,thermal,PDC module 2,P3,0,9,KNOWN-REF+OEM-RFQ,NO_BASELINE,close input vs conditions
+EL-PDC-3,thermal,PDC module 3,P3,0,9,KNOWN-REF+OEM-RFQ,NO_BASELINE,close input vs conditions
+EL-PDC-4,thermal,PDC module 4 future,P3,0,9,FUTURE,NO,close when activated
+EL-DH-3,climate,dehumidifier DG-3,P2/P3,2.3,2.3,KNOWN-REF+OEM-RFQ,CONDITIONAL,close startup and duty
+EL-DH-12,climate,dehumidifier DG-12,P3,9.55,9.55,KNOWN-REF+OEM-RFQ,NO_BASELINE,close startup and duty
+EL-RETAIL-REF,retail,retail refrigeration,P1/P2,,,OEM-RFQ,TEMP_DRIVEN,close normal/max/start
+EL-RETAIL-PAY,retail,payment controller exit,P1,,,MEASURE,ACTIVE_SESSION,measure W and network
+EL-AMR-CHG,logistics,AMR charging,P3,,,OEM-RFQ,NO,close charger kW and simultaneity
+EL-MOWER-CHG,logistics,mower charging,P3,,,OEM-RFQ,NO,close charger W
+EL-WORKSHOP,tech_barn,workshop circuits,P3,,,DESIGN,NO,close panel circuits and peak
+EL-VISITOR,services,visitor relax services,P3,,,DESIGN,NO,close layout circuits
+EL-BOM029,processing,future transformation line,P3,,,FUTURE,NO_BASELINE,keep separate until activated
