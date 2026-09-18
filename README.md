@@ -49,6 +49,12 @@ La directory [`RND_CORRELATO_EU/`](RND_CORRELATO_EU/) contiene un progetto di ri
 
 Concept attuale: **CTT-AFP — Carnia TerraTech Autonomous Farm Platform**, con focus su orchestrazione, edge/PLC, robotica, computer vision, sensor fusion, scheduler e sistemi autonomi replicabili.
 
+## Piano extra agriturismo — fuori dal core
+
+La directory [`EXTRA_AGRITURISMO_EVOLUTIVO/`](EXTRA_AGRITURISMO_EVOLUTIVO/) contiene un piano autonomo di diversificazione agrituristica finanziato e valutato separatamente.
+
+Parte dalla soluzione minima **ristoro light a spuntini non cucinati**, con predisposizioni per esperienze, cucina e ospitalità future. Non entra nella sequenza BOM del core e non è necessario per l'avvio dell'azienda.
+
 ## Regola di progettazione
 
 Ogni componente fisico deve arrivare almeno a: funzione, requisiti, marca/modello o specifica, quantità, prezzo, fonte, IVA, installazione, consumi, manutenzione, ricambi, sicurezza, failure mode, fallback, durata, dipendenze, contributi e stato della decisione.
