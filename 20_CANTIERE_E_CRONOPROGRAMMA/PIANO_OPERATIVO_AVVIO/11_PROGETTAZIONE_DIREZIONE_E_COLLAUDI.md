@@ -1,6 +1,6 @@
 # 11 — Progettazione, direzione e collaudi
 
-**Envelope:** €55.000  
+**Envelope:** €60.000  
 **Classe:** A — necessario per trasformare le architetture in opere ordinabili e verificabili  
 **Nota:** envelope di pianificazione, non tariffa professionale
 
@@ -26,8 +26,9 @@ Questo settore governa:
 | direzione lavori / assistenza cantiere / coordinamento | €12.000 |
 | collaudi, prove, commissioning e documentazione finale | €8.000 |
 | pratiche tecniche, rilievi specialistici e supporti autorizzativi non già in altri settori | €5.000 |
+| coordinamento campagna sito/drenaggi/interferenze | €5.000 |
 | contingenza tecnica controllata | €10.000 |
-| **Totale** | **€55.000** |
+| **Totale** | **€60.000** |
 
 La distribuzione interna viene aggiornata sui preventivi professionali reali.
 
@@ -75,6 +76,10 @@ Prove integrate:
 - tracciabilità raccolta→ordine→cliente;
 - ripristino backup;
 - interazione cantiere/produzione durante P1.
+
+## Coordinamento sito — €5.000
+
+Copre coordinamento tecnico, non i costi dei laboratori già inclusi nel blocco terreno.
 
 ## Contingenza tecnica — €10.000
 
