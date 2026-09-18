@@ -73,28 +73,28 @@ Il budget non viene difeso tagliando:
 - commissioning;
 - riserva operativa.
 
-## 5. Stack SRD01 di riferimento — €950.000 — CORRETTO SU TESTO UFFICIALE
+## 5. Stack SRD01 di riferimento — €950.000 — VERIFICATO SU BANDO 2026
 
-Il testo coordinato SRD01 verificato il 18/09/2026 prevede:
+Il bando SRD01 2026 verificato il 18/09/2026 prevede:
 - sostegno giovani: **60%** della spesa ammissibile;
-- anticipo: massimo **30% del sostegno concesso**, non 30% della spesa;
+- anticipo: massimo **50% del sostegno concesso**;
 - acconto dopo almeno il 50% della spesa, con anticipo + acconto non oltre l'80% del sostegno.
 
 Su €950.000 integralmente ammissibili:
 - contributo totale 60% = **€570.000**;
-- anticipo massimo SRD01 = **€171.000**;
-- linea di finanziamento di lavoro ipotizzata = **€380.000**, da deliberare e verificarne la compatibilità con lo specifico strumento;
-- liquidità iniziale investimento, se entrambe le fonti sono perfezionate = **€551.000** (~58% del CAPEX), non 70%.
+- anticipo massimo SRD01 = **€285.000** (= 30% del CAPEX);
+- linea di finanziamento di lavoro ipotizzata = **€380.000** (= 40% del CAPEX), da deliberare;
+- liquidità iniziale investimento, se entrambe le fonti sono perfezionate = **€665.000** (= 70% del CAPEX).
 
 Dopo almeno il 50% della spesa sostenuta:
 - sostegno cumulativamente liquidabile fino all'80% = **€456.000**;
-- ulteriore acconto teorico massimo dopo anticipo = **€285.000**;
+- ulteriore acconto teorico massimo dopo anticipo = **€171.000**;
 - liquidità cumulata investimento, includendo la linea €380k = **€836.000**.
 
 Saldo contributo residuo:
 - **€114.000**.
 
-**Nota critica:** il 40% di finanziamento non è trattato come contributo né come disponibilità garantita finché non esistono delibera, condizioni e conferma scritta di compatibilità/cumulo con il bando applicabile.
+Il 40% di finanziamento è una fonte di debito, non un contributo: deve risultare deliberato e compatibile con il quadro di aiuti/cumulo applicabile.
 
 Quindi serve una capacità di ponte di circa **€114.000** prima del saldo, salvo diverso calendario pagamenti.
 
@@ -206,8 +206,8 @@ Rinviare:
 ## 13. Criterio di sicurezza
 
 Prima del primo ordine irreversibile:
-1. finanziamento perfezionato e compatibilità/cumulo verificati;
-2. anticipo SRD01 realmente richiedibile e garanzia;
+1. finanziamento perfezionato e condizioni verificate;
+2. anticipo SRD01 50% del sostegno realmente richiedibile e garanzia;
 3. riserva €120k segregata;
 4. linea IVA;
 5. ponte saldo;
