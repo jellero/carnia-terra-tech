@@ -390,7 +390,7 @@ Alla ricezione di dati reali:
 3. allegare preventivo RC;
 4. sostituire benchmark con RFQ installato;
 5. annotare IVA/trasporto/posa;
-6. non duplicare BOM-026/BOM-023;
+6. non duplicare BOM-026 o l'eventuale infrastruttura animali;
 7. allegare feedback ERSA;
 8. aggiornare progetto didattico;
 9. registrare visita pilota e open points.
