@@ -55,31 +55,34 @@ Risorse iniziali:
 1. insediamento stabile;
 2. realizzazione serra 4.200 m²;
 3. attivazione iniziale 3 comparti;
-4. introduzione di tecnologie per ridurre lavoro ripetitivo;
-5. vendita diretta;
-6. consegne programmate;
-7. spaccio;
-8. efficienza idrica/energetica;
-9. crescita a 6 comparti sulla base di dati reali;
-10. occupazione sostenibile.
+4. mitigazione dei rischi di sito e manutenzione;
+5. introduzione di tecnologie per ridurre lavoro ripetitivo;
+6. vendita diretta;
+7. consegne programmate;
+8. spaccio;
+9. efficienza idrica/energetica;
+10. produzione interna di humus/vermicompost e cicli materia;
+11. crescita a 6 comparti sulla base di dati reali;
+12. occupazione sostenibile.
 
 ## 5. Piano investimenti
 
 Target:
-- €850.000 netti di lavoro.
+- €950.000 netti di lavoro.
 
 Matrice:
 | Settore | Importo di lavoro |
 |---|---:|
-| terreno | €50.000 |
+| terreno + campagna sito | €60.000 |
 | serra | €350.000 |
 | acqua | €55.000 |
 | termico | €65.000 |
 | energia | €130.000 |
 | Tech Barn | €95.000 |
-| automazione | €30.000 |
+| automazione | €25.000 |
 | spaccio | €20.000 |
-| progettazione/collaudi | €55.000 |
+| macchine/logistica + cicli materia | €90.000 |
+| progettazione/collaudi | €60.000 |
 
 Ogni voce deve essere trasferita nel modello ufficiale secondo la categoria ammissibile effettiva.
 
@@ -132,7 +135,7 @@ Canali:
 - ristoranti selezionati.
 
 Target P1 da validare:
-- ~€250k/anno ricavi ricorrenti.
+- ~€280k/anno ricavi ricorrenti.
 
 ## 9. Occupazione e lavoro
 
