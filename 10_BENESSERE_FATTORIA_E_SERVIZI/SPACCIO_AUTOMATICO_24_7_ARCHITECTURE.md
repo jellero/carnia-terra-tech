@@ -1,7 +1,7 @@
 # Architettura spaccio automatico self-service 24/7 — BOM-028
 
 **Aggiornato:** 18 settembre 2026  
-**Stato:** `WORKING ARCHITECTURE / PERCORSO SUAP, SKU, TEMPERATURE, FISCALITÀ E RFQ BLOCCANTI / CANDIDATI HARDWARE DISPONIBILI`.
+**Stato:** `ARCHITETTURA DI LAVORO / PERCORSO SUAP, SKU, TEMPERATURE, FISCALITÀ E RFQ BLOCCANTI / CANDIDATI HARDWARE DISPONIBILI`.
 
 ## 1. Obiettivo
 
@@ -17,7 +17,7 @@ Realizzare un punto vendita automatico self-service 24/7 che consenta di vendere
 - videosorveglianza conforme;
 - accessibilità;
 - facilità di rifornimento e pulizia;
-- separazione netta dal core produttivo;
+- separazione netta dal progetto produttivo principale;
 - ripiego manuale quando il sistema automatico non è disponibile.
 
 Lo spaccio non deve diventare un secondo negozio tradizionale da presidiare.
@@ -97,7 +97,7 @@ Con retro-servizio separato:
 - eventuale display/wayfinding;
 - accesso rifornimento separato o in finestra chiusa al pubblico.
 
-### Outdoor puro
+### Installazione completamente esterna
 
 Non è configurazione base salvo macchina esplicitamente progettata/certificata dal costruttore per installazione esterno nella configurazione proposta.
 
@@ -111,7 +111,7 @@ Le macchine interno non vengono esposte direttamente a:
 - vandalismo non previsto;
 - polvere/acqua di lavaggio.
 
-La FAS Skudo presentata nel 2026 come soluzione riprogettata per esterno è un benchmark di categoria da RFQ, non un acquisto già deciso.
+La FAS Skudo presentata nel 2026 come soluzione riprogettata per esterno è un riferimento di confronto di categoria da RFQ, non un acquisto già deciso.
 
 ## 5. Matrice SKU/temperatura
 
