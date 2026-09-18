@@ -677,6 +677,8 @@ Artefatti closure avviati:
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_PILOT_REGISTER.csv`;
 - `21_RISCHI_DECISIONI_OPEN_POINTS/PILOT_RESULT_CAPTURE_TEMPLATE.csv`;
 - `21_RISCHI_DECISIONI_OPEN_POINTS/PILOT_DECISION_RECORD_TEMPLATE.md`.
+- `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_COMMISSIONING_ACCEPTANCE.md`;
+- `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_COMMISSIONING_ACCEPTANCE.csv`.
 
 ### Prossima fase — validation / closure sprint
 
@@ -690,7 +692,7 @@ Priorità di chiusura:
 4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni — **pre-application package strutturato il 18/09/2026; pratica reale bloccata da lotto/DSO/POD e potenze finali**;
 5. RFQ installati per i package ancora a prezzo `RFQ` — **registro procurement/closure strutturato il 18/09/2026; separati Q1–Q5, priorità e blocker per dominio**;
 6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT — **master pilot register + result/cost template + decision record strutturati il 18/09/2026; esecuzione fisica ancora da sito/vendor/produzione reale**;
-7. commissioning e acceptance end-to-end;
+7. commissioning e acceptance end-to-end — **master SAT, failure/degraded tests, 72 h endurance, punch-list e seasonal acceptance strutturati il 18/09/2026; esecuzione fisica da impianto reale**;
 8. consolidamento CAPEX/OPEX/cashflow, rischi e decision gate.
 
 La numerazione riprende solo se la closure matrix evidenzia un nuovo package fisico/operativo non coperto.
