@@ -26,15 +26,17 @@ Avanza quando l'evidenza passa progressivamente da:
 ## Priorità attuali
 
 1. chiusura finanziaria reale;
-2. lotto reale;
+2. lotto reale + campagna campioni/drenaggio;
 3. crop card P1;
 4. RFQ installati;
 5. carichi P0/P1;
 6. DSO/TICA;
 7. validazione mercato P1;
-8. pilot obbligatori;
-9. SAT integrato;
-10. OPEX reale.
+8. mezzo/logistica + accesso in quota;
+9. humus/cicli materia;
+10. pilot obbligatori;
+11. SAT integrato;
+12. OPEX reale.
 
 ## Collegamenti
 
