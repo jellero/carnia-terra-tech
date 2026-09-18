@@ -1,19 +1,30 @@
 # Carnia TerraTech — Punto 08: Macchine e logistica
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Stato:** `BOM-020 AMR + BOM-021 SOLLEVAMENTO + BOM-022 TAGLIAERBA SVILUPPATE / PILOT, MASTERPLAN E RFQ BLOCCANTI`.
 
 ## 1. Obiettivo
 
-Automatizzare trasporto, movimentazione e manutenzione ripetitiva senza creare nuovi colli di bottiglia o dipendenze cloud critiche. Ogni macchina deve avere un ruolo distinto, fallback manuale e integrazione coerente con corridoi, persone, acqua, animali e aree visitatori.
+Ridurre rischio, fatica e dipendenze operative con mezzi realmente utili. La priorità è movimentare materiali e persone in sicurezza; l'autonomia robotica viene dopo. Ogni macchina deve avere un ruolo distinto, fallback manuale e integrazione coerente con corridoi, persone, acqua, animali e aree visitatori.
 
 ## 2. Architettura macchine
 
 - **AMR BOM-020:** trasporto/scouting/inventario/docking in serra e Tech Barn;
-- **L1 BOM-021:** telescopico elettrico compatto per carichi pesanti, piazzale, corridoio tecnico e lavoro in quota con piattaforma OEM;
+- **L1 BOM-021:** telescopico elettrico compatto CORE per pallet, materiali, humus/compost, piazzale, corridoio tecnico e cantiere;
 - **L2 BOM-021:** stoccatore elettrico stretto per pallet ordinari nel Tech Barn;
+- **H1:** accesso in quota certificato tramite piattaforma OEM o PLE cingolata "ragno"; funzione core, asset da TCO;
 - **BOM-022:** robot tagliaerba per prato/verde non produttivo;
 - nessuna macchina deve essere usata fuori dal proprio envelope di sicurezza solo per ridurre il numero di mezzi.
+
+## 2A. Ordine di priorità
+
+1. telescopico + forche + benna;
+2. accesso sicuro in quota;
+3. stoccatore Tech Barn;
+4. AMR solo dopo pilot e dati lavoro;
+5. tagliaerba solo se l'area lo giustifica.
+
+Robot dedicati a funzioni marginali non precedono manutenzione e movimentazione.
 
 ## 3. BOM-020 — AMR serra
 
@@ -59,6 +70,14 @@ EP EST122 benchmark: 1.200 kg, 792 mm, ~3 m, raggio ~1,46 m, da ~€2.900. Serve
 Safety: piattaforma persone solo OEM e abbinamento autorizzato; niente retrofit DIY.
 
 Documenti: `LIFTING_MULTIFUNCTION_ARCHITECTURE.md`, `RFQ_LIFTING_MULTIFUNCTION.md`, BOM-021 e fonti dedicate.
+
+## 4A. Accesso in quota H1
+
+Documenti:
+- `ACCESSO_IN_QUOTA_RAGNO_ARCHITETTURA.md`;
+- `RFQ_ACCESSO_IN_QUOTA_RAGNO.md`.
+
+Ogni punto alto che richiede manutenzione deve essere raggiungibile in sicurezza.
 
 ## 5. BOM-022 — robot tagliaerba
 
