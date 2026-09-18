@@ -3,6 +3,8 @@
 **Aggiornato:** 18 settembre 2026
 **Stato:** CRONOPROGRAMMA LOGICO / DATE DA LOTTO, STAGIONE E FORNITORI
 
+> Il dettaglio esecutivo per settore, budget, dipendenze e verifiche è in `PIANO_OPERATIVO_AVVIO/README.md`. Il cronoprogramma relativo è in `PIANO_OPERATIVO_AVVIO/CRONOPROGRAMMA_0_15_MESI.md`.
+
 ## 1. Percorso critico
 
 finanziamento chiuso → terreno → progetto/autorizzazioni → struttura serra → utilities minime → primi comparti → trapianto/semina → commerciale attivo → primo raccolto → primo incasso → spaccio → altri comparti → regime.
