@@ -1,0 +1,11 @@
+function_id,function,priority,main_failure,dependency,fallback,rto_target,autonomy_target,alarm,owner,test,status,notes
+CTT-CONT-001,PLC safety control,P0,power or controller loss,P0 electrical bus,local fail-safe + professional ride-through,DA DEFINIRE,DA DEFINIRE,local+remote,,blackout SAT,OPEN,
+CTT-CONT-002,OT core network,P0,switch or gateway loss,P0 electrical bus,local PLC autonomy,DA DEFINIRE,DA DEFINIRE,local+remote,,network-loss test,OPEN,
+CTT-CONT-003,orchestration server,P1/P2,node or service loss,network+storage,replica+edge autonomy+restore,DA DEFINIRE,DA DEFINIRE,remote,,node loss + DR,OPEN,
+CTT-CONT-004,irrigation pump,P1,duty pump failure,water+power,100 percent standby pump,DA DEFINIRE,DA DEFINIRE,local+remote,,pump switchover,OPEN,
+CTT-CONT-005,water availability,P1,source unavailable,storage,stored water + demand management,DA DEFINIRE,DA CALCOLARE,local+remote,,autonomy calculation,OPEN,
+CTT-CONT-006,thermal survival,P1,PDC or hydraulic failure,power+hydronics,modularity+thermal storage+survival mode,DA DEFINIRE,DA CALCOLARE,local+remote,,seasonal SAT,OPEN,
+CTT-CONT-007,cold chain critical,P1,refrigeration failure,power+refrigeration,alarm+service+product action plan,DA DEFINIRE,DA DEFINIRE,independent logger,,loaded fault test,OPEN,
+CTT-CONT-008,P0 electrical continuity,P0,grid loss or transfer failure,BESS/critical bus,BESS no-break or professional P0 ride-through,NO REBOOT,DA CALCOLARE,local+remote,,blackout SAT,OPEN,
+CTT-CONT-009,height access,P1/P2,access platform unavailable,site access,OEM platform or spider PLE or rental,DA DEFINIRE,NA,manual,,reach+recovery test,OPEN,
+CTT-CONT-010,multifunction vehicle,P2,machine unavailable,service/spares,rental/service fallback,DA DEFINIRE,NA,manual,,service plan review,OPEN,
