@@ -46,15 +46,17 @@ Prezzi osservati il 18 settembre 2026, salvo indicazione.
 | SH-VEND-G8 | Necta Gusto 8 / Food | 0–1 | CANDIDATO | ~€5.900 benchmark EU seller, regime IVA da verificare |
 | SH-VEND-G8L | Necta Gusto 8 Lift | 0–1 | CANDIDATO PRIORITARIO FRAGILI | ~€7.200 benchmark EU seller, regime IVA da verificare |
 | SH-VEND-DRUM | Necta Gusto Drum | 0–1 | ALTERNATIVA | ~€10.600–13.199 benchmark EU |
-| SH-VEND-FASPRO | FAS Pro 900 class | 0–1 | ALTERNATIVA | €8.840 net benchmark listing incl. Nayax, options da verificare |
+| SH-VEND-FASPRO | FAS Pro 900 class | 0–1 | ALTERNATIVA | €8.840 net benchmark listing; payment incluso nel listing NON baseline e da escludere/sostituire |
 | SH-VEND-EASY | FAS Easy Food | 0–1 | ALTERNATIVA LOCKER | RFQ |
 | SH-VEND-OUT | FAS Skudo outdoor class | 0–1 | OUTDOOR CANDIDATE | RFQ |
-| SH-PAY-NAYAX | Nayax VPOS Touch | 1 per machine | CANDIDATO | €430 hardware official EU benchmark |
-| SH-PAY-SVC | Nayax operations/payment service | 1 per terminal | OPEX | €15,75/mese official benchmark |
-| SH-PAY-FEE | processing cashless | per transazione | OPEX | 1,45–3,5% official benchmark by ticket band |
-| SH-PAY-POS | SumUp Terminal retail | 0–1 | BENCHMARK NON-VENDING | €139 promo / €169,58 IVA incl. observed |
+| SH-PAY-UX700 | Verifone UX700 via Stripe Terminal | 1 per punto unattended | CANDIDATO STRIPE | RFQ Stripe Sales; hardware unattended ufficiale |
+| SH-PAY-STRIPE | Stripe Terminal processing | per transazione | OPEX | Italia: 1,4% + €0,10 carte SEE; 2,9% + €0,10 non-SEE benchmark corrente |
+| SH-PAY-INTEG | integrazione server Stripe PaymentIntent/webhook/refund | 1 | INTERNAL DEVELOPMENT | software Carnia TerraTech |
+| SH-PAY-REC | reconciliation payment-vend-fiscal | 1 | INTERNAL DEVELOPMENT | server centrale |
 | SH-FISCAL | fiscal interface/service | 1 | OBBLIGATORIO | RFQ |
-| SH-TELEM | telemetry/inventory cloud | 1 | BASELINE | vendor RFQ/canone |
+| SH-VEND-API | API/protocol adapter vending -> server centrale | 1 per modello | BASELINE | RFQ/in-house adapter |
+| SH-SERVER | central orchestration server integration | 1 | BASELINE | INTERNAL / shared platform |
+| SH-FORECAST | demand/supply forecast + refill scheduler | 1 | BASELINE | INTERNAL DEVELOPMENT |
 | SH-TLOG | Testo 160 T temperature logger | 1 per zona critica | CANDIDATO | €124 net / €151,28 incl. IVA |
 | SH-TLOG-FOOD | Testo 162 food-capable class | 0–1+ | HIGHER-GRADE | RFQ |
 | SH-TLOG-SP | spare independent logger | 1 | SPARE | RFQ |
@@ -65,8 +67,8 @@ Prezzi osservati il 18 settembre 2026, salvo indicazione.
 | SH-CAM-JB | camera junction/arm mount | DA LAYOUT | OPTIONAL | €45 class official benchmark |
 | SH-NVR | local NVR/storage | 1 | BASELINE | existing/RFQ |
 | SH-CCTV-SIGN | privacy CCTV sign | ingressi | OBBLIGATORIO IF CCTV | stampa/RFQ |
-| SH-UPS-IT | UPS electronics/network/NVR | 1 | BASELINE | RFQ from load/runtime |
-| SH-BACKUP | generator/EMS refrigeration interface | 1 | INTERFACE | BOM energy/continuity |
+| SH-BESS | interfaccia BESS aziendale 30 kW + load shedding | 1 | INTERFACE | shared energy system; kWh/autonomia DA VERIFICARE |
+| SH-BACKUP-CTRL | power-fail / backup-state integration server | 1 | BASELINE | INTERNAL / electrical interface |
 | SH-ENERGY | submeter vending | 1 | CANDIDATO | RFQ |
 | SH-LIGHT | kiosk/customer lighting | DA LAYOUT | BASELINE | RFQ / existing BOM refs |
 | SH-SIGN | insegna / instructions / contacts | 1 set | BASELINE | RFQ |
@@ -230,49 +232,90 @@ Potenzialmente adatto a:
 - ordini preparati;
 - pack grandi.
 
-## 10. Payment — Nayax
+## 10. Payment — Stripe Terminal
 
-Official EU shop benchmark:
+Stripe è il payment processor scelto per BOM-028.
 
-- VPOS Touch hardware: **€430**;
-- cashless/operations/inventory: **€15,75/mese**;
-- processing indicato:
-  - fino a €1,99: 3,5%;
-  - €2–4,99: 3%;
-  - €5–10: 1,8%;
-  - oltre €10: 1,45%.
+### Ambiente unattended
 
-Le condizioni possono differire per paese/contratto.
+La documentazione Stripe corrente indica **Verifone UX700** come device Terminal dedicato agli ambienti retail non presidiati/vending.
 
-### Impatto ticket
+Caratteristiche pubblicate:
 
-Su ticket piccoli la fee percentuale è materiale.
+- EMV chip;
+- contactless e wallet;
+- Ethernet/Wi-Fi;
+- IP65;
+- IK08;
+- operating range pubblicato -30 °C…70 °C;
+- server-driven integration;
+- disponibilità Italia nella matrice Stripe corrente;
+- offline mode come capability del device.
 
-Il business case deve quindi modellare:
-- ASP;
-- basket;
-- min price;
-- multivend;
-- pack bundle.
+Prezzo UX700:
+- **RFQ / Stripe Sales**.
 
-Non scegliere il payment provider solo dal costo hardware.
+### Fee Stripe Italia — benchmark corrente
 
-## 11. SumUp Terminal — benchmark
+Stripe pubblica per Terminal:
 
-Prezzo osservato Italia:
-- promo **€139**;
-- **€169,58 IVA inclusa** prezzo indicato;
-- Wi-Fi + 4G;
-- stampante integrata;
-- no canone hardware dichiarato nella pagina.
+- carte SEE: **1,4% + €0,10** per pagamento riuscito;
+- carte non SEE: **2,9% + €0,10**.
 
-Non è baseline per vending MDB.
+Le condizioni effettive dipendono dal contratto e vanno aggiornate nel TCO.
 
-Serve come:
-- benchmark costo POS;
-- fallback operatore;
-- pop-up/mercato;
-- eventuale desk manuale futuro.
+### Architettura
+
+Il server Carnia TerraTech gestisce:
+
+- order;
+- inventory reservation;
+- PaymentIntent;
+- webhook;
+- vend authorization;
+- vend_ack;
+- refund;
+- reconciliation.
+
+Non si paga un canone inventory/payment vendor separato se non serve a una funzione tecnica specifica.
+
+Il cloud vending, se presente, resta diagnostico e non diventa system of record.
+
+## 11. Server centrale — software operativo
+
+La piattaforma software è sviluppata internamente.
+
+Il server centrale coordina:
+
+- produzione;
+- raccolta;
+- celle;
+- stock;
+- personale;
+- logistica;
+- AMR;
+- vending;
+- Stripe;
+- manutenzione;
+- energia;
+- refill;
+- demand forecasting;
+- supply forecasting.
+
+Per BOM-028 il software non viene trattato come SaaS esterno.
+
+Costi da contabilizzare, se rilevanti:
+
+- server/compute condiviso;
+- storage;
+- backup;
+- connettività;
+- eventuali servizi cloud scelti;
+- tempo di sviluppo/manutenzione;
+- monitoraggio.
+
+Architettura di riferimento:
+`07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTRATION_SERVER.md`.
 
 ## 12. Temperature logger
 
@@ -307,7 +350,7 @@ Costi aggiuntivi:
 - NVR;
 - HDD;
 - switch PoE;
-- UPS;
+- alimentazione su BESS aziendale;
 - cablaggio;
 - cartelli;
 - progettazione privacy;
@@ -329,33 +372,54 @@ Richiedere a vendor:
 
 Costo finale `SH-FISCAL = RFQ`.
 
-## 15. Elettrico e backup
+## 15. Elettrico e continuità BESS
 
 ### Vending
 
 Dimensionare da:
-- nominale;
+
+- potenza nominale;
 - spunto;
 - temperatura ambiente;
-- duty cycle.
+- duty cycle;
+- energia giornaliera.
 
-### UPS
+### Continuità
 
-UPS dedicata solo a:
-- IT;
-- NVR;
-- networking;
-- telemetry;
-- payment.
+**Nessuna UPS locale nella baseline.**
 
-Dimensionamento:
-`VA/W = measured electronics load × runtime target × engineering margin`.
+Lo spaccio usa il BESS aziendale con **30 kW di potenza** disponibile come architettura di backup condivisa.
 
-### Refrigerazione
+Da chiudere nel package energia:
 
-Backup:
-- generator/EMS interface;
-- non UPS desktop.
+- kWh utili;
+- autonomia;
+- potenza continua/picco;
+- islanding;
+- transfer time;
+- SOC reserve;
+- load shedding.
+
+Il server centrale deve ricevere almeno:
+
+- grid_available;
+- bess_online;
+- SOC;
+- backup_mode;
+- low_SOC;
+- available_power.
+
+Priorità working:
+
+- P0 server/rete/controller/payment;
+- P1 vending refrigerato/logger;
+- P2 CCTV/illuminazione;
+- P3 carichi differibili.
+
+Se il freddo non può essere mantenuto:
+- stop-vend;
+- allarme;
+- procedura HACCP.
 
 ## 16. Packaging vending
 
@@ -405,10 +469,10 @@ I target sono acceptance criteria di progetto, non dati di vendor.
 
 Obbligatorio calcolare:
 
-- payment fees;
-- SaaS;
-- SIM;
-- telemetry;
+- Stripe fees;
+- compute/storage/connettività server;
+- eventuali servizi cloud non-core;
+- protocol/API support vendor;
 - fiscal service;
 - cloud logger;
 - maintenance;
@@ -423,7 +487,7 @@ Obbligatorio calcolare:
 
 Formula:
 
-`TCO_5y = CAPEX + 5×fixed_opex + variable_payment_fees + energy + maintenance + waste`.
+`TCO_5y = CAPEX + 5×fixed_opex + Stripe_transaction_fees + energy + maintenance + waste + software_operations`.
 
 ## 19. Gate di acquisto
 
@@ -436,11 +500,11 @@ Nessun ordine vending prima di:
 5. temperature;
 6. pack dimensions;
 7. pilot sample;
-8. payment TCO;
-9. fiscal architecture;
+8. Stripe Terminal TCO;
+9. fiscal architecture + collegamento Stripe/RT ove applicabile;
 10. RFQ Italia;
 11. support/SLA;
-12. electrical;
+12. electrical + BESS 30 kW / autonomia;
 13. network/security;
 14. CCTV/privacy;
 15. 5-year TCO.
