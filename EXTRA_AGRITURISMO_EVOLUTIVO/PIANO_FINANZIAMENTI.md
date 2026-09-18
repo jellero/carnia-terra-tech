@@ -49,7 +49,7 @@ https://europa.regione.fvg.it/it/programmi-36605/piano-strategico-della-politica
 **E4:** ALTO per componenti ammesse
 
 ### Stato
-`CLOSED / MONITORARE NUOVA CALL O SCORRIMENTI`
+`CHIUSO / MONITORARE NUOVA CALL O SCORRIMENTI`
 
 Non è stata trovata, al 18/09/2026, una nuova bando SRD03 successiva già aperta.
 
@@ -101,7 +101,7 @@ Ultimo bando:
 **E2 esperienze:** ALTO  
 **E4 ospitalità:** ALTO
 
-Stato: `CLOSED / MONITORARE NUOVE APERTURE, SCORRIMENTI O VARIANTI SSL`.
+Stato: `CHIUSO / MONITORARE NUOVE APERTURE, SCORRIMENTI O VARIANTI SSL`.
 
 ## 5. Programma Valore Agricoltura 2026
 
@@ -119,9 +119,9 @@ Call 2026:
 **E1:** NO, non è la misura giusta per il chiosco/spuntini  
 **E4:** ALTO in una fase futura, quando l'agriturismo è già attivo
 
-Stato: `OPEN 2026 MA NON ASSUNTO COME UTILIZZABILE PER L'AVVIO`.
+Stato: `APERTO 2026 MA NON ASSUNTO COME UTILIZZABILE PER L'AVVIO`.
 
-## 6. GAL Open Leader — Intervento 3 extra-agricolo
+## 6. GAL Open Leader — Intervento 3 extra agricolo
 
 Pagina:
 https://www.openleader.it/ssl-leader/creazione-sviluppo-di-attivita-extra-agricole/
@@ -162,7 +162,7 @@ Stato: `NO FIT BASELINE / VERIFICARE SOLO PER EVENTUALE STRUTTURA TURISTICA DIST
 | Finanza regionale multifunzionalità | ALTO | ALTO | ALTO | possibile | verificare condizioni |
 | Open Leader Intervento 2 | medio-basso | ALTO | medio | ALTO | chiuso |
 | Valore Agricoltura | no | no | no | ALTO | aperto 2026, richiede agriturismo già attivo |
-| Open Leader Intervento 3 | non configurazione base | non configurazione base | non configurazione base | non configurazione base | aperto, extra-agricolo |
+| Open Leader Intervento 3 | non configurazione base | non configurazione base | non configurazione base | non configurazione base | aperto, extra agricolo |
 | Fondo Turismo | non configurazione base | non configurazione base | non configurazione base | solo casi distinti | aperto 2026 |
 
 ## 9. Regola di candidatura
