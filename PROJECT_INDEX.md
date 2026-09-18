@@ -36,6 +36,7 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 **Fuori dalla numerazione e dal core agricolo:**
 
 - `RND_CORRELATO_EU/` — progetto R&S tecnologico correlato; usa Carnia TerraTech come living lab/demonstrator ma mantiene budget, TRL, deliverable, rischi e finanziamenti separati dal core. Non entra nella sequenza BOM 001… e non è requisito per l'operatività agricola.
+- `EXTRA_AGRITURISMO_EVOLUTIVO/` — piano extra di diversificazione agrituristica con budget/fondi propri; E1 spuntini non cucinati, poi esperienze, cucina e ospitalità solo per gate successivi. Non modifica la baseline agricola né la sequenza BOM.
 
 ## 3. Stato punto 00 — Visione e principi
 
@@ -596,3 +597,32 @@ Documenti:
 - `RND_CORRELATO_EU/FUNDING_AND_COST_BOUNDARY.md`.
 
 Canali UE candidati da verificare topic per topic: Horizon Europe Cluster 4/6; EIC Accelerator solo in una fase successiva se tecnologia, TRL e scalabilità lo giustificano.
+
+## 19. Piano extra agriturismo evolutivo — NON CORE
+
+Directory: `EXTRA_AGRITURISMO_EVOLUTIVO/`.
+
+**Stato:** `EXTRA / FONDI DEDICATI / NON BLOCCANTE`.
+
+Sequenza:
+- E0 predisposizioni minime di layout/utilities;
+- E1 ristoro light a spuntini non cucinati;
+- E2 esperienze/degustazioni/visite;
+- E3 cucina agrituristica solo dopo business case;
+- E4 ospitalità solo dopo business case.
+
+Regole:
+- budget e contributi separati dal core;
+- nessun costo spostato artificialmente fra core ed extra;
+- nessun doppio finanziamento;
+- BOM-026/027/028 restano autonome e possono solo fornire interfacce condivise quando autorizzate;
+- se il piano extra non parte, Carnia TerraTech resta invariata.
+
+Fondo primario da monitorare: SRD03 FVG agriturismo. Altri canali: finanza regionale per multifunzionalità/diversificazione e GAL Open Leader per turismo esperienziale/ospitalità; misure ricettive solo nelle fasi future e se il beneficiario è ammissibile.
+
+Documenti:
+- `EXTRA_AGRITURISMO_EVOLUTIVO/README.md`;
+- `EXTRA_AGRITURISMO_EVOLUTIVO/PHASED_ARCHITECTURE.md`;
+- `EXTRA_AGRITURISMO_EVOLUTIVO/FUNDING_PLAN.md`;
+- `EXTRA_AGRITURISMO_EVOLUTIVO/CAPEX_AND_BOUNDARIES.md`;
+- `EXTRA_AGRITURISMO_EVOLUTIVO/LEGAL_FOOD_GATES.md`.
