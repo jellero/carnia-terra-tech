@@ -440,7 +440,7 @@ Requisiti architetturali:
 
 La compatibilità esatta tra modalità offline, server-driven e configurazione italiana deve essere verificata nel pilot e nella documentazione Stripe corrente.
 
-Nayax e SumUp non fanno parte della baseline.
+Stripe è il payment stack unico della baseline.
 
 ## 14. Integrazione vending
 
