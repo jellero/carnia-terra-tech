@@ -29,7 +29,7 @@ PLC, circuiti di sicurezza, protezioni macchina, interblocchi, limiti hardware e
 
 ### L1 — elaborazione periferica e autonomia locale
 
-Gateway, memoria locale, acquisizione sensori, inferenza locale, adattatori di protocollo, coda comandi e buffer eventi.
+Verificaway, memoria locale, acquisizione sensori, inferenza locale, adattatori di protocollo, coda comandi e buffer eventi.
 
 ### L2 — orchestrazione e governo centrale
 
@@ -81,7 +81,7 @@ Interfaccia con il progetto principale: `07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTR
 
 ### PL2 — Interoperabilità edge/PLC e funzionamento degradato controllato
 
-- adattatori e gateway di protocollo;
+- adattatori e verificaway di protocollo;
 - conferma ricezione comandi;
 - memorizzazione e inoltro;
 - funzionamento senza rete;
