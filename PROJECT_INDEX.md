@@ -19,7 +19,7 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 - `07_AUTOMAZIONE_DATI_AI/` — server centrale di orchestrazione, pianificatore, dati/AI, PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&S robotica/laser;
 - `08_MACCHINE_E_LOGISTICA/` — AMR, sollevatore, piattaforme, raccolta, carrelli e robot verde;
 - `09_TECH_BARN_E_POST_RACCOLTA/` — celle, confezionamento, officina, magazzini e centro trasformazione conto terzi;
-- `10_BENESSERE_FATTORIA_E_SERVIZI/` — pergolato, verde, fattoria didattica, robot di servizio, spaccio 24/7;
+- `10_BENESSERE_FATTORIA_E_SERVIZI/` — pergolato, verde, fattoria didattica, servizi futuri, spaccio 24/7;
 - `11_VERMICOMPOST_E_CICLI_MATERIA/`;
 - `12_SICUREZZA_E_CONTINUITA/`;
 - `13_MANUTENZIONE_E_RICAMBI/`;
@@ -237,210 +237,67 @@ Documenti:
 
 ## 10. Stato punto 08 — Macchine e logistica
 
-**ARCHITETTURA IN SVILUPPO / BOM-020 AMR + BOM-021 SOLLEVAMENTO + BOM-022 TAGLIAERBA SVILUPPATE / MASTERPLAN, PILOT E RFQ BLOCCANTI.**
+**RISK-FIRST / BOM-021 MEZZO CORE / AMR SECONDARIO / ACCESSO IN QUOTA CORE.**
 
-Documenti: `08_MACCHINE_E_LOGISTICA/README.md` più package dedicati AMR, lifting e lawn mower; BOM-020…022 in `19_BOM_PRODOTTI_FORNITORI/`; fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
+Ordine di priorità:
+1. telescopico elettrico compatto con forche + benna;
+2. accesso sicuro alle parti alte tramite piattaforma OEM o PLE cingolata "ragno";
+3. stoccatore Tech Barn;
+4. AMR solo dopo pilot e dati ore/uomo;
+5. tagliaerba solo dopo masterplan.
 
-### BOM-020 — AMR serra
+BOM-021 serve a:
+- pallet e big bag;
+- humus/compost/substrati;
+- materiali sfusi;
+- cantiere;
+- manutenzione;
+- logistica esterna.
 
-Missioni: trasporto, traino, ritorno vuoti, scouting/imaging, inventario e docking.
-
-- Burro Verde prioritario da pilot: 68,5 cm, payload 227 kg, towing 908 kg, IP65, prezzo UE/Italia da preventivo;
-- MiR250 riferimento di confronto industriale ma non configurazione base serra finché resta per uso solo interno/IP21/non condensante;
-- AgileX Bunker per R&S/scouting, non AMR collaborativo configurazione base;
-- scouting vendor-independent OAK-D + Jetson opzionale.
-
-Verifica bloccante: demo realistica, CE/DoC, IP/condensa, offline/API, dock, canoni/TCO, ricambi Italia e acceptance >=100 missioni.
-
-### BOM-021 — sollevatore / mezzo multifunzione
-
-Architettura a due livelli:
-
-- L1 telescopico elettrico: **Merlo EW25.5-90** candidato prioritario; 2.500 kg, ~4,8–5 m, ~1,54 m larghezza; riferimento di confronto demo ~€69k + IVA con forche / ~€75k + IVA con navicella e radiocomando; nuovo `DA PREVENTIVO`;
-- alternative Manitou MLT 625 e e JCB 525-60E;
-- L2 stoccatore: EP EST122 riferimento di confronto 1.200 kg, 792 mm, ~3 m, da ~€2.900.
-
-Nessun telescopico entra nelle corsie coltura ~1,20 m. Piattaforma persone solo OEM e abbinamento autorizzato.
-
-### BOM-022 — robot tagliaerba
-
-La taglia dipende dalla **superficie netta di prato robotizzabile**, da derivare dal masterplan.
-
-Scenari:
-
-- <=1.500 m²: Kress KR171E, €1.699 IVA incl.;
-- 1.500–5.000 m² regolare: **Kress KR174E**, €2.999 IVA incl., candidato di lavoro;
-- <=5.000 m² difficile/pendente: Mammotion LUBA 2 AWD 5000X €2.499 promo / €2.999 listino, oppure Kress 4×4 KR285E €4.499;
-- >5.000 fino a ~12.000 m²/professionale: Husqvarna 560 EPOS €6.994 + RS5 €1.019 = **€8.013 IVA incl.** hardware base.
-
-Guardrail:
-
-- no mowing at night;
-- area didattica/relax occupata = stop/no-go;
-- prato condiviso con galline = lockout dinamico; rasaerba solo con hens-clear/verifica bloccante chiuso;
-- buffer da vasche, fossi, viabilità e drop-off;
-- obstacle detection non sostituisce segregazione;
-- perdita cloud/RTK -> safe stop/park.
-
-Ricambi riferimento di confronto: Kress KA0002 6 lame €22,90; Husqvarna Endurance HSS 6 pz €31; Mammotion lame €55.
-
-Verifica bloccante: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior, assistenza/ricambi, TCO 5–8 anni e commissioning zone/no-go.
+Documenti:
+- `08_MACCHINE_E_LOGISTICA/LIFTING_MULTIFUNCTION_ARCHITECTURE.md`;
+- `08_MACCHINE_E_LOGISTICA/ACCESSO_IN_QUOTA_RAGNO_ARCHITETTURA.md`;
+- `08_MACCHINE_E_LOGISTICA/RFQ_ACCESSO_IN_QUOTA_RAGNO.md`;
+- `19_BOM_PRODOTTI_FORNITORI/MACCHINE_SOLLEVATORE_MULTIFUNZIONE.md`.
 
 ## 11. Stato punto 10 — Benessere, fattoria e servizi
 
-**BOM-023 PULIZIA GALLINE FREE-RANGE + BOM-026 PERGOLATO/VITE/AREA RELAX + BOM-027 FATTORIA DIDATTICA + BOM-028 SPACCIO AUTOMATICO 24/7 SVILUPPATE / LAYOUT, SITO, ERSA, SUAP, PILOT/RFQ BLOCCANTI.**
+**MODULI FUTURI / ROBOTICA GALLINE RIMOSSA DAL CORE.**
 
-Vincolo consolidato: galline libere nel dominio dedicato composto da ricovero, portico, parcheggi/superfici dure e prato.
+- BOM-023 rover pulizia galline: **ARCHIVIATA / NON ORDINABILE**;
+- eventuale modulo galline futuro: layout semplice, superfici pulibili, nastro/raschiatore se utile;
+- BOM-026 pergolato/vite/relax: futuro;
+- BOM-027 fattoria didattica: futuro;
+- BOM-028 spaccio: parte commerciale rilevante, prima versione semplice/semi-automatica.
 
-BOM-023:
-- manure belt/scraper sotto posatoi;
-- rover sanitario dedicato su tutto il dominio galline;
-- hard-floor spot pickup su portico/parcheggi;
-- grass spot-pickup vision R&S, senza aspirazione continua;
-- dirty dock per svuotamento, ricarica e wash;
-- verifica bloccante automatici per separazione temporale galline/veicoli;
-- nessun ingresso del rover sanitario in aree food.
+Principio: nessun robot dedicato marginale precede acqua, manutenzione, mezzi, humus o produzione.
 
-Candidati/riferimento di confronto: Burro Verde base agricola all-area; AgileX Bunker Pro 2.0 ~€22,1k ex VAT R&S; Gausium Beetle 2.0 ~€20k + IVA hard-floor; Big Dutchman SIMBA manure-belt; ChickenGuard/Omlet porte automatiche piccole.
+## 12. Stato punto 11 — Humus, vermicompost e cicli materia
 
-La letteratura dimostra fattibilità su superfici avicole progettate, ma non esiste ancora un COTS provato per gallina + prato + parcheggio: pilot superfici miste obbligatorio.
+**CORE STRUTTURATO / QUANTITÀ DA DATI REALI.**
 
-Documenti:
-- 10_BENESSERE_FATTORIA_E_SERVIZI/CHICKEN_FREE_RANGE_CLEANING_ARCHITECTURE.md;
-- 10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_CHICKEN_FREE_RANGE_CLEANING.md;
-- 19_BOM_PRODOTTI_FORNITORI/BENESSERE_GALLINE_PULIZIA_AUTONOMA.md;
-- 22_FONTI_NORME_PREVENTIVI/BENESSERE_GALLINE_PULIZIA_SOURCES.md.
-
-Correzione BOM-022: il prato condiviso con le galline è lockout dinamico, non no-go permanente; rasaerba solo con hens-clear/verifica bloccante chiuso.
-
-
-### BOM-026 — pergolato, vite e area relax
-
-Architettura:
-- pergolato aperto; legno lamellare candidato di lavoro, acciaio zincato alternativa;
-- sezioni, controventi, fondazioni e ancoraggi `DA CALCOLO`;
-- neve/vento da sito reale e NTC; nessun carico catalogo assunto come progetto;
-- telo ombreggiante removibile opzionale, non caricato da neve salvo verifica esplicita;
-- vite/rampicanti su griglia indipendente e manutenibile;
-- varietà vite da microclima/uso frutto; barbatelle resistenti solo riferimento di confronto di acquisto;
-- zona irrigua dedicata, svuotabile in inverno;
-- superficie permeabile + drenaggio;
-- arredi modulari;
-- illuminazione/prese/rete esterno con manual override;
-- manutenzione strutturale, agronomica, drenaggi, irrigazione ed elettrico.
-
-Riferimento di confronto unitari già tracciati:
-- GL24h retail €39,90–118,50/cad secondo formato osservato;
-- calcestruzzo fondazioni FVG 2026 €237,52/m³ nella voce consultata, escluso plinto completo;
-- vite resistente da tavola €5,95/cad;
-- kit goccia 100 m² €54,90;
-- griglia permeabile €17,71/m²;
-- tavolo esterno ~8 posti €310;
-- LED IP65 10 W €62,66 IVA incl.;
-- FG16OR16 3×2,5 €3,10/m;
-- cavidotto Ø40 FVG 2026 €1,83/m;
-- Ubiquiti U7 Outdoor €185 + Ethernet surge protector €12.
-
-Regola: nessun CAPEX totale prima di layout, carichi, geotecnica e RFQ; distinta a quantità `DA LAYOUT / DA CALCOLO` con costo pezzo per pezzo.
+Obiettivo:
+- produrre humus/vermicompost internamente;
+- valorizzare residui propri;
+- acquistare e rilavorare materie con stato giuridico chiaro quando conveniente;
+- ridurre dipendenza da prodotti finiti;
+- usare il telescopico come mezzo centrale di movimentazione.
 
 Documenti:
-- `10_BENESSERE_FATTORIA_E_SERVIZI/PERGOLATO_VITE_AREA_RELAX_ARCHITECTURE.md`;
-- `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_PERGOLATO_VITE_AREA_RELAX.md`;
-- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_PERGOLATO_VITE_AREA_RELAX.md`;
-- `22_FONTI_NORME_PREVENTIVI/BENESSERE_PERGOLATO_VITE_AREA_RELAX_SOURCES.md`.
+- `11_VERMICOMPOST_E_CICLI_MATERIA/README.md`;
+- `11_VERMICOMPOST_E_CICLI_MATERIA/HUMUS_E_CICLI_MATERIA_ARCHITETTURA.md`.
 
+Guardrail:
+- nessun rifiuto di terzi senza corretta classificazione/autorizzazione;
+- biosecurity;
+- tracciabilità lotti;
+- area separata dal food.
 
-### BOM-027 — fattoria didattica
-
-Configurazione base:
-- zoning visitatori Z0–Z3 con separazione fisica da produzione e aree tecniche;
-- planimetria ERSA integrata nel masterplan;
-- referente formato + RC visite;
-- primo soccorso vicino ad acqua potabile;
-- parcheggio/drop-off mezzo accompagnatore;
-- servizi igienici adeguati/accessibili;
-- percorso accessibile a primo soccorso, WC, spazio coperto e parte del percorso;
-- spazio coperto con BOM-026 come candidato da verificare;
-- observation point per serra/acqua/energia/automazione/animali;
-- modulo galline integrato con BOM-023, macchine in lockout/segregazione durante la visita;
-- safety signage separata dalla didattica;
-- pannelli/QR e dashboard read-only su guest network separata dall'OT;
-- food tasting/somministrazione non configurazione base;
-- registro visite, meteo/emergenza e visita pilota.
-
-Riferimento di confronto:
-- percorso drenante FVG 2026 €37,05–39,76/m² nella voce consultata;
-- fondazione granulare €44,80/m³;
-- safety signage PVC ~€34,63–43,46/cad;
-- lavamani autonomo backup €242,10;
-- first aid Allegato 1 €75,90 + IVA valigetta / €117,90 + IVA armadietto maggiorato;
-- reintegro €65,25 + IVA;
-- Dibond didattico 70×100 €90/cad;
-- tavolo picnic accessibile €439,79;
-- lavagna 120×90 €85,73.
-
-Formazione:
-- corso base 2026 osservato 12 h e gratuito per categorie ammesse, indicato come parte 1 di 2;
-- catalogo include specialistico fattoria didattica 24 h;
-- requisito e sequenza correnti da confermare con ERSA.
-
-Documenti:
-- `10_BENESSERE_FATTORIA_E_SERVIZI/FATTORIA_DIDATTICA_ARCHITECTURE.md`;
-- `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_FATTORIA_DIDATTICA.md`;
-- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_FATTORIA_DIDATTICA.md`;
-- `22_FONTI_NORME_PREVENTIVI/BENESSERE_FATTORIA_DIDATTICA_SOURCES.md`.
-
-
-### BOM-028 — spaccio automatico self-service 24/7
-
-Configurazione base:
-- doppio verifica bloccante normativo: vendita diretta agricola ex D.Lgs. 228/2001 vs vending retail generico;
-- preferenza a R1 agricolo se prodotti propri/prevalenza restano nel perimetro;
-- kiosk/locale protetto configurazione base; esterno solo con macchina specificamente progettata/garantita;
-- matrice SKU/temperatura collegata a BOM-024;
-- nessun 0–4 °C automatico per pomodoro/peperone/basilico;
-- Gusto 8 multi-temperature candidato;
-- Gusto 8 Lift prioritario per prodotti fragili;
-- Drum/FAS Easy Food alternative;
-- Stripe payment stack;
-- Verifone UX700 candidato Stripe Terminal unattended;
-- server centrale come sistema autorevole dei dati/pianificatore per inventory, personale, logistica, pagamenti e previsione domanda/offerta;
-- **R&S prioritaria senza scansione:** cassetta intelligente + carrello intelligente + fusione sensoriale;
-- cassetta intelligente identifica SKU/lotto e rileva -Δmassa; carrello verifica +Δmassa e sessione; camera/localizzazione risolvono ambiguità;
-- e-paper/ESL per posizione SKU/cassetta, LCD dinamico sul cart;
-- cheap load cells solo sensing/cross-check; peso commerciale da catena metrologica legal-for-trade;
-- Stripe UX700 fisso al paid-exit verifica bloccante come configurazione base; reader-on-cart future;
-- nested charging configurazione base; recovery rover/tug solo se giustificato;
-- fiscalizzazione da validare su Stripe/RT/configurazione reale;
-- logger indipendente, temp alarm e stop-vend;
-- CCTV privacy-aware, no audio/face recognition;
-- rete vending/CCTV separata dall'OT;
-- nessuna UPS locale: backup da BESS aziendale 30 kW, kWh/autonomia da chiudere;
-- 100 cicli/SKU critico + 500 vendite miste con reconciliation end-to-end.
-
-Riferimento di confronto:
-- Necta Gusto 8 ~€5.900 EU seller riferimento di confronto;
-- Gusto 8 Lift ~€7.200;
-- Gusto Drum ~€10.600–13.199;
-- FAS Pro 900 €8.840 net riferimento di confronto listing; payment incluso non configurazione base;
-- UX700 Stripe Terminal unattended: RFQ;
-- Stripe Terminal Italia: 1,4% + €0,10 carte SEE / 2,9% + €0,10 non-SEE riferimento di confronto;
-- Testo 160 T €124 net / €151,28 IVA incl.;
-- Ubiquiti G5 Turret Ultra €80/cad;
-- NIA/VIA sanitaria €20 reference.
-
-Documenti:
-- `10_BENESSERE_FATTORIA_E_SERVIZI/SPACCIO_AUTOMATICO_24_7_ARCHITECTURE.md`;
-- `10_BENESSERE_FATTORIA_E_SERVIZI/SMART_CRATE_SMART_CART_ARCHITECTURE.md`;
-- `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_SPACCIO_AUTOMATICO_24_7.md`;
-- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_SPACCIO_AUTOMATICO_24_7.md`;
-- `22_FONTI_NORME_PREVENTIVI/BENESSERE_SPACCIO_AUTOMATICO_24_7_SOURCES.md`.
-
-## 12. R&S trasversale — laser, vision e manutenzione robotica
+## 13. R&S trasversale — laser, vision e manutenzione robotica
 
 Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&S CANDIDATO / NON INCLUSO NEL CAPEX BASE`.
 
-## 13. Stato punto 09 — Tech Barn e post-raccolta
+## 14. Stato punto 09 — Tech Barn e post-raccolta
 
 **BOM-024 CELLE FRIGORIFERE + BOM-025 RACCOLTA/PACKAGING + BOM-029 CENTRO TRASFORMAZIONE CONTO TERZI SVILUPPATE / DOMANDA LOCALE, CARICHI, SKU, LAYOUT FOOD E RFQ BLOCCANTI.**
 
@@ -497,7 +354,7 @@ Documenti:
 - 19_BOM_PRODOTTI_FORNITORI/TECH_BARN_RACCOLTA_PACKAGING.md;
 - fonti dedicate in 22_FONTI_NORME_PREVENTIVI/.
 
-## 14. BOM-029 — centro trasformazione conto terzi
+## 15. BOM-029 — centro trasformazione conto terzi
 
 **SVILUPPATO COME UNITÀ OPERATIVA FUTURA / NON ANCORA NEL CAPEX DEL PROGETTO PRINCIPALE.**
 
@@ -544,7 +401,7 @@ Documenti:
 - `22_FONTI_NORME_PREVENTIVI/TECH_BARN_TRASFORMAZIONE_CONTO_TERZI_SOURCES.md`;
 - `15_MERCATO_E_VENDITE/DOMANDA_LOCALE_CENTRO_TRASFORMAZIONE.md`.
 
-## 15. BOM-031 — sostenibilità personale e lancio operativo
+## 16. BOM-031 — sostenibilità personale e lancio operativo
 
 **SVILUPPATA / ORGANICO E COSTO DA VALIDARE CON CPL UDINE, VOLUMI REALI E 90 GIORNI DI DATI.**
 
@@ -584,7 +441,7 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/ORGANIZZAZIONE_PERSONALE_LANCIO.md`;
 - `22_FONTI_NORME_PREVENTIVI/ORGANIZZAZIONE_PERSONALE_LANCIO_SOURCES.md`.
 
-## 16. Rischi, validazione e collaudo master — STRUTTURATO
+## 17. Rischi, validazione e collaudo master — STRUTTURATO
 
 Directory: `21_RISCHI_DECISIONI_OPEN_POINTS/`.
 
@@ -598,7 +455,7 @@ Punto unico di controllo:
 Regola:
 `ipotesi -> dato reale -> RFQ -> contratto -> installazione -> prova -> PASS`.
 
-## 17. Società, business plan e governance — STRUTTURATO
+## 18. Società, business plan e governance — STRUTTURATO
 
 Directory: `16_SOCIETA_FINANZA_E_CONTRIBUTI/`.
 
@@ -623,7 +480,7 @@ Principio:
 Fonti:
 `22_FONTI_NORME_PREVENTIVI/SOCIETA_IAP_COSTITUZIONE_SOURCES.md`.
 
-## 18. Avvio economico e messa a reddito — PRIORITÀ MASSIMA
+## 19. Avvio economico e messa a reddito — PRIORITÀ MASSIMA
 
 L'avvio è ora trattato come sottoprogetto trasversale fra finanza, cantiere, persone, agronomia e mercato.
 
@@ -661,20 +518,20 @@ Documenti:
 - `16_SOCIETA_FINANZA_E_CONTRIBUTI/MAPPA_CONTRIBUTI_E_CASSA_INIZIALE.md`;
 - `18_CAPEX_OPEX_CASHFLOW/AVVIO_CASSA_E_RAMPA_PRODUTTIVA.md`;
 - `18_CAPEX_OPEX_CASHFLOW/MATRICE_INVESTIRE_ORA_O_DOPO.md`;
-- `18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md` — target €850k CAPEX netto + €120k riserva operativa + linea IVA;
+- `18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md` — target €950k CAPEX netto + €120k riserva operativa + linea IVA;
 - `20_CANTIERE_E_CRONOPROGRAMMA/SEQUENZA_AVVIO_E_MESSA_A_REDDITO.md`;
-- `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md` — piano master per settore, €850k CAPEX, P1 su 3 comparti, cronoprogramma 0–15 mesi e verifiche di uscita;
+- `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md` — piano master per settore, €950k CAPEX, P1 su 3 comparti, cronoprogramma 0–15 mesi e verifiche di uscita;
 - `15_MERCATO_E_VENDITE/VENDITA_DIRETTA_E_CONSEGNE_PROGRAMMATE.md`.
 
-## 19. Metodo BOM obbligatorio
+## 20. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, modalità di guasto, ripiego, contributi, dipendenze, espansione e stato decisionale.
 
-## 20. Stato attuale dei grandi blocchi
+## 21. Stato attuale dei grandi blocchi
 
 La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser separata e soprattutto le validazioni reali: lotto, crop card, profili di carico, DSO/RFQ, pilot e commissioning.
 
-## 21. Sequenza BOM
+## 22. Sequenza BOM
 
 ### Già strutturate
 
@@ -693,7 +550,7 @@ La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser se
 - BOM-020 AMR serra;
 - BOM-021 sollevatore / mezzo multifunzione;
 - BOM-022 robot tagliaerba;
-- BOM-023 pulizia galline free-range;
+- BOM-023 rover galline ARCHIVIATO;
 - BOM-024 celle frigorifere;
 - BOM-025 raccolta e packaging;
 - BOM-026 pergolato, vite e area relax;
@@ -747,7 +604,7 @@ Priorità di chiusura:
 
 La numerazione riprende solo se la closure matrix evidenzia un nuovo package fisico/operativo non coperto.
 
-## 22. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
+## 23. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `RND_CORRELATO_EU/`.
 
@@ -774,7 +631,7 @@ Documenti:
 
 Canali UE candidati da verificare topic per topic: Horizon Europe Cluster 4/6; EIC Accelerator solo in una fase successiva se tecnologia, TRL e scalabilità lo giustificano.
 
-## 23. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
+## 24. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `EXTRA_AGRITURISMO_EVOLUTIVO/`.
 
