@@ -196,7 +196,7 @@ producono reale vantaggio.
 Benchmark corrente listing 2026 FAS Pro 900:
 
 - acquisto **€8.840 net**;
-- listing comprende Nayax VPOS Touch;
+- il modulo payment incluso nel listing non è baseline e va escluso/sostituito con Stripe;
 - Wi-Fi/BLE;
 - FAS Cloud+/IoT Vend;
 - configurazione/options da verificare.
