@@ -149,7 +149,7 @@ Gate: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior,
 
 ## 11. Stato punto 10 — Benessere, fattoria e servizi
 
-**BOM-023 PULIZIA GALLINE FREE-RANGE + BOM-026 PERGOLATO/VITE/AREA RELAX SVILUPPATE / LAYOUT, SITO, PILOT/RFQ BLOCCANTI.**
+**BOM-023 PULIZIA GALLINE FREE-RANGE + BOM-026 PERGOLATO/VITE/AREA RELAX + BOM-027 FATTORIA DIDATTICA SVILUPPATE / LAYOUT, SITO, ERSA, PILOT/RFQ BLOCCANTI.**
 
 Vincolo consolidato: galline libere nel dominio dedicato composto da ricovero, portico, parcheggi/superfici dure e prato.
 
@@ -209,6 +209,47 @@ Documenti:
 - `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_PERGOLATO_VITE_AREA_RELAX.md`;
 - `19_BOM_PRODOTTI_FORNITORI/BENESSERE_PERGOLATO_VITE_AREA_RELAX.md`;
 - `22_FONTI_NORME_PREVENTIVI/BENESSERE_PERGOLATO_VITE_AREA_RELAX_SOURCES.md`.
+
+
+### BOM-027 — fattoria didattica
+
+Baseline:
+- zoning visitatori Z0–Z3 con separazione fisica da produzione e aree tecniche;
+- planimetria ERSA integrata nel masterplan;
+- referente formato + RC visite;
+- primo soccorso vicino ad acqua potabile;
+- parcheggio/drop-off mezzo accompagnatore;
+- servizi igienici adeguati/accessibili;
+- percorso accessibile a primo soccorso, WC, spazio coperto e parte del percorso;
+- spazio coperto con BOM-026 come candidato da verificare;
+- observation point per serra/acqua/energia/automazione/animali;
+- modulo galline integrato con BOM-023, macchine in lockout/segregazione durante la visita;
+- safety signage separata dalla didattica;
+- pannelli/QR e dashboard read-only su guest network separata dall'OT;
+- food tasting/somministrazione non baseline;
+- registro visite, meteo/emergenza e visita pilota.
+
+Benchmark:
+- percorso drenante FVG 2026 €37,05–39,76/m² nella voce consultata;
+- fondazione granulare €44,80/m³;
+- safety signage PVC ~€34,63–43,46/cad;
+- lavamani autonomo backup €242,10;
+- first aid Allegato 1 €75,90 + IVA valigetta / €117,90 + IVA armadietto maggiorato;
+- reintegro €65,25 + IVA;
+- Dibond didattico 70×100 €90/cad;
+- tavolo picnic accessibile €439,79;
+- lavagna 120×90 €85,73.
+
+Formazione:
+- corso base 2026 osservato 12 h e gratuito per categorie ammesse, indicato come parte 1 di 2;
+- catalogo include specialistico fattoria didattica 24 h;
+- requisito e sequenza correnti da confermare con ERSA.
+
+Documenti:
+- `10_BENESSERE_FATTORIA_E_SERVIZI/FATTORIA_DIDATTICA_ARCHITECTURE.md`;
+- `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_FATTORIA_DIDATTICA.md`;
+- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_FATTORIA_DIDATTICA.md`;
+- `22_FONTI_NORME_PREVENTIVI/BENESSERE_FATTORIA_DIDATTICA_SOURCES.md`.
 
 ## 12. R&D trasversale — laser, vision e manutenzione robotica
 
@@ -281,7 +322,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 16. Stato attuale dei grandi blocchi
 
-Restano nel perimetro fattoria didattica, spaccio 24/7, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
+Restano nel perimetro spaccio 24/7, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
 ## 17. Sequenza BOM
 
@@ -305,16 +346,16 @@ Restano nel perimetro fattoria didattica, spaccio 24/7, sostenibilità personale
 - BOM-023 pulizia galline free-range;
 - BOM-024 celle frigorifere;
 - BOM-025 raccolta e packaging;
-- **BOM-026 pergolato, vite e area relax**.
+- BOM-026 pergolato, vite e area relax;
+- **BOM-027 fattoria didattica**.
 
 ### Prossimo package
 
-**BOM-027 — fattoria didattica:** percorsi visitatori, separazioni e recinzioni, punti di osservazione, area gruppi, servizi/lavaggio mani, accessibilità, parcheggio/punto raccolta, cartellonistica e didattica digitale, emergenze, manutenzione e costo.
+**BOM-028 — spaccio automatico self-service 24/7:** locale/kiosk, refrigerazione e temperatura, vending/locker/scaffali, POS/contactless, accesso, inventario, videosorveglianza, backup elettrico, rete/cybersecurity, fiscalità, igiene, manutenzione, ricambi, consumabili e costo.
 
 ### Coda successiva
 
-1. fattoria didattica;
-2. spaccio automatico 24/7;
-3. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. spaccio automatico 24/7;
+2. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
