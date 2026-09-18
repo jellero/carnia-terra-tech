@@ -22,12 +22,28 @@ Un lotto viene normalmente escluso se emerge una condizione non ragionevolmente 
 - servitù, proprietà, confini o diritti di terzi incompatibili con le opere;
 - prezzo di acquisto superiore al tetto obiettivo di **€50.000**, salvo futura deliberazione esplicita che modifichi il vincolo.
 
+## 2A. Evidenza fisica del lotto
+
+Un lotto non viene giudicato solo da mappe e sopralluogo.
+
+Prima dell'acquisto:
+- campionamento distribuito;
+- quote;
+- drenaggio/infiltrazione;
+- zone anomale;
+- geotecnica preliminare;
+- masterplan di prova.
+
+Riferimento:
+`PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md`.
+
 ## 3. Superficie e forma
 
 Working envelope già definito:
 
-- 8.500–10.000 m² come intervallo di lavoro;
-- preferenza per >9.000 m² per ridurre congestione;
+- **10.000–12.000 m² realmente utilizzabili** come fascia preferita;
+- 9.000–10.000 m² solo se forma, accessi, drenaggio e vincoli risultano particolarmente favorevoli;
+- <9.000 m² normalmente non preferito: richiede dimostrazione esplicita del masterplan completo;
 - non conta solo la superficie catastale: va misurata la superficie realmente utilizzabile dopo fasce di rispetto, accessi, vincoli, pendenze, alberature da conservare, corsi d'acqua e altre limitazioni;
 - forma regolare preferibile a lotti stretti, frastagliati o spezzati.
 
@@ -136,7 +152,7 @@ Il terreno deve poter ospitare senza conflitti:
 - pergolato/vite;
 - spazi di pausa;
 - percorso fattoria didattica futuro;
-- area galline;
+- eventuale area galline futura solo se non sacrifica core/manutenzione;
 - robot tagliaerba e manutenzione automatizzata del verde;
 - futuro spaccio self-service 24/7;
 - separazione ragionevole tra zona di lavoro tecnico e zona di fruizione.
