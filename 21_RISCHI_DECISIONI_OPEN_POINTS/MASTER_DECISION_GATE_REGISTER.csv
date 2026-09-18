@@ -1,6 +1,6 @@
 gate_id,gate,status,owner,required_evidence,decision,decision_date,conditions,residual_risk,next_review,evidence_ref
 DG0,Financial close,OPEN,,grant+advance+guarantee+loan+VAT line+bridge+120k reserve,,,,,,
-DG1,Lot approval,OPEN,,legal+planning+access+water+grid+drainage+geotech+masterplan,,,,,,
+DG1,Lot approval,OPEN,,legal+planning+access+water+grid+sampling+infiltration+drainage+geotech+masterplan,,,,,,
 DG2,P1 design freeze,OPEN,,3 compartments+crop card+layout+water+thermal+electric+cold+packaging+safety,,,,,,
 DG3,Procurement release,OPEN,,E3/E4 quote+pilot pass if Q3+spec+service+funding,,,,,,
 DG4,Construction start,OPEN,,permits+IFC+contracts+cash schedule+safety+long lead,,,,,,
