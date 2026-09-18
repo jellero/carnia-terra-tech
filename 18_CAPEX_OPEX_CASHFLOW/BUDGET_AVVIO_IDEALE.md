@@ -3,6 +3,8 @@
 **Aggiornato:** 18 settembre 2026  
 **Stato:** `BUDGET DI PIANIFICAZIONE / TARGET RFQ ±15–20%`
 
+> Piano operativo esecutivo collegato: `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md`.
+
 ## 1. Risultato
 
 Il progetto principale viene dimensionato, per la prima candidatura/investimento, su un **target netto ammissibile di circa €850.000**.
