@@ -42,13 +42,15 @@ Obiettivi permanenti:
 
 **Inizia da [`PROJECT_INDEX.md`](PROJECT_INDEX.md).** È l'indice di controllo del progetto e indica cosa è consolidato, cosa è in analisi e quale BOM viene chiusa pezzo per pezzo.
 
-Documenti fondativi nuovi:
+Documenti fondativi e trasversali:
 
 - `00_VISIONE_E_PRINCIPI/PROJECT_CHARTER.md` — missione, requisiti non negoziabili e metodo;
 - `10_BENESSERE_FATTORIA_E_SERVIZI/FUTURE_MODULES.md` — benessere, fattoria didattica e spaccio; rover galline rimosso dal core;
-- `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md` — prima BOM tecnica analizzata nel nuovo metodo.
+- `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md` — esempio di BOM tecnica strutturata;
+- `12_SICUREZZA_E_CONTINUITA/README.md` — continuità, failure e recovery;
+- `13_MANUTENZIONE_E_RICAMBI/README.md` — asset register, ricambi e manutenzione.
 
-I file in `docs/` contengono il lavoro tecnico precedente e restano validi come base durante la riorganizzazione. Verranno migrati progressivamente senza perdere informazioni.
+I file in `docs/` sono ora **sintesi derivate o archivi di benchmark**. La fonte autorevole resta nelle directory numerate 00–22; in caso di conflitto prevale il documento di dominio più recente.
 
 ## Progetto R&S correlato — fuori dal progetto principale
 
