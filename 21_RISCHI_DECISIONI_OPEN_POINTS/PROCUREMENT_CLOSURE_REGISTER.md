@@ -105,22 +105,21 @@ Un prezzo senza questi input resta solo benchmark.
 
 ## 6. Priorità RFQ immediata
 
-Ordine operativo:
-1. BOM-034 BESS/PCS + grid engineering;
-2. BOM-019 inverter/FV;
-3. BOM-011 PDC;
-4. BOM-030 server;
-5. BOM-015 pompe/VFD;
-6. BOM-024 frigorista — budgetary con load sheet aperto;
-7. BOM-025 packaging;
-4. BOM-021 telescopico/benna;
-5. accesso in quota H1 — RFQ piattaforma/PLE;
-6. BOM-030 server;
-7. BOM-015 pompe/VFD;
-8. BOM-024 frigorista — budgetary con load sheet aperto;
-9. BOM-025 packaging;
-10. BOM-012 DryGair/boost;
-11. servizi professionali BOM-031.
+Ordine operativo risk-first:
+
+1. **BOM-021 telescopico + forche + benna** — capacità fisica core per materiali, humus, cantiere e manutenzione;
+2. **H1 accesso in quota** — RFQ/TCO piattaforma OEM vs PLE ragno vs noleggio;
+3. **BOM-034 BESS/PCS + grid engineering**;
+4. **BOM-019 FV/inverter**;
+5. **BOM-011 PDC**;
+6. **BOM-015 pompe/VFD**;
+7. **BOM-024 celle** — budgetary con load sheet aperto;
+8. **BOM-025 packaging**;
+9. **BOM-030 server centrale minimo**;
+10. **BOM-012 boost/deumidificazione**;
+11. **BOM-031 servizi professionali/personale**.
+
+L'ordine non autorizza l'acquisto: indica quali RFQ servono prima per chiudere rischio, CAPEX e layout.
 
 ## 7. Campi obbligatori per ogni offerta
 
