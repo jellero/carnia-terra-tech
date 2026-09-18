@@ -585,10 +585,14 @@ L'avvio è ora trattato come sottoprogetto trasversale fra finanza, cantiere, pe
 
 Assunzione di lavoro:
 - il progetto parte solo dopo approvazione formale del pacchetto finanziario;
-- circa 30% contributo + 40% finanziamento = circa 70% di copertura iniziale secondo lo schema indicato dal promotore, da verificare sui provvedimenti reali;
+- SRD01 giovane: 60% di sostegno; anticipo massimo pari al 50% del sostegno = fino al 30% della spesa ammessa, soggetto a garanzia;
+- quota di finanziamento di lavoro: circa 40% della spesa, da deliberare con Fondo/banca;
+- obiettivo: circa 70% di liquidità iniziale sull'investimento quando entrambi gli strumenti sono perfezionati;
+- SRE01 €70.000 separato: €49.000 acconto + €21.000 saldo se concesso e coerente con il PA di produzione primaria;
 - il finanziamento fornisce liquidità ma resta debito;
 - quota residua, IVA, costi non ammissibili e circolante vengono coperti separatamente;
-- prima del CAPEX viene isolato un fondo operativo non utilizzabile dal cantiere.
+- prima del CAPEX viene isolato un fondo operativo non utilizzabile dal cantiere;
+- il 60% oggi può giustificare l'anticipo di infrastrutture certe e durevoli, non l'acquisto indiscriminato di tecnologia futura.
 
 Sequenza:
 `chiusura finanziaria -> terreno -> struttura serra -> primi comparti allestiti -> coltivazione -> commerciale -> primo raccolto/incasso -> spaccio -> comparti restanti -> regime`.
@@ -609,7 +613,10 @@ Quattro date obbligatorie:
 
 Documenti:
 - `16_SOCIETA_FINANZA_E_CONTRIBUTI/REGOLA_FINANZIARIA_AVVIO.md`;
+- `16_SOCIETA_FINANZA_E_CONTRIBUTI/PIANO_AVVIO_SICURO_CONTRIBUTI.md`;
+- `16_SOCIETA_FINANZA_E_CONTRIBUTI/MAPPA_CONTRIBUTI_E_CASSA_INIZIALE.md`;
 - `18_CAPEX_OPEX_CASHFLOW/AVVIO_CASSA_E_RAMPA_PRODUTTIVA.md`;
+- `18_CAPEX_OPEX_CASHFLOW/MATRICE_INVESTIRE_ORA_O_DOPO.md`;
 - `20_CANTIERE_E_CRONOPROGRAMMA/SEQUENZA_AVVIO_E_MESSA_A_REDDITO.md`;
 - `15_MERCATO_E_VENDITE/VENDITA_DIRETTA_E_CONSEGNE_PROGRAMMATE.md`.
 
