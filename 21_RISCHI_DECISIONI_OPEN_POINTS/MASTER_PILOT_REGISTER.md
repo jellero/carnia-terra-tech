@@ -46,13 +46,14 @@ Ogni pilot deve produrre:
 |---|---|---|---|---|---|---|
 | PIL-AMR | BOM-020 AMR serra | P1/P2 | corsia ~1,20 m, porte, persone, carrello, area umida, dock, offline | almeno 8 h demo + 100 missioni acceptance | mission success, docking, no-contact, recovery, API, log | >=100 missioni consecutive secondo KPI concordati; docking >=99%; nessun contatto non previsto |
 | PIL-MOW | BOM-022 robot tagliaerba | P0/P2 | prato reale, pendenze, ombra GNSS, no-go, dock | >=20 cicli dock-return + fault tests | dock success, area completion, RTK loss, obstacle/fail-safe, hens lockout | nessun ingresso aree interdette; recovery documentata; log disponibili |
-| PIL-HEN | BOM-023 rover pulizia galline | P1/P2 | prato + hard floor + ricovero + galline + gate + dirty dock | >=100 missioni | pickup, area/h, fauna/welfare, collision/contact, hopper, wash, offline recovery | 100 missioni senza safety failure; qualità pulizia e danno prato entro soglia concordata |
 | PIL-RETAIL | BOM-028 spaccio 24/7 | P1/P2 | macchina candidata + pack/SKU reali + pagamento/fiscalità test | >=100 erogazioni per SKU critico | jam, pack damage, product damage, temp, vend/payment reconciliation | zero jam/pack break nel test target; danno entro soglia; inventario/pagamento riconciliati |
 | PIL-REUSE | BOM-033 drenaggio/riuso | P0/P2 | 1 comparto C1 o C2, drain segregato, HOLD, lab | 30–60 giorni | m³ drain, reuse ratio, EC/pH, Na/Cl, patogeni, €/m³, fertilizzante recuperato | trattamento validato + crop sign-off + legal discharge route + mass balance chiuso |
 | PIL-DID | BOM-027 fattoria didattica | P0/P2 | visitor route reale, barriere, WC, lavamani, emergency, visit mode | almeno 1 visita pilota + emergenza + wet-weather | percorso, accessibilità, headcount, segregazione mezzi/AMR, WC/lavamani, emergency time | nessun critical finding; route/accessibility/ERSA pre-check chiusi |
 | PIL-BESS | BOM-034 BESS / critical bus | P0/P2 | sistema installato, P0 production-like load | blackout SAT + black-start + 72 h log | no reboot, V/f waveform, shed/restart, black-start, grid return | P0 no-reboot + tutti i safety/protection test PASS |
 | PIL-COLD | BOM-024 celle / post-harvest | P0/P2 | cella installata, prodotto reale, batch rappresentativo | pull-down + door cycles + mapping | pull-down time, product core T, RH, kWh/kg, door recovery | tempi/temperature/qualità conformi alla crop card |
 | PIL-PACK | BOM-025 packaging | P1/P2 | SKU/pack reali, etichetta/lotto | >=100 pack per SKU critico o lotto concordato | jam, seal, damage, throughput, labour, label read | zero critical defect e throughput/labour entro target |
+| PIL-LIFT | BOM-021 mezzo multifunzione | P1/P2 | pallet, big bag, materiale sfuso, area humus, pendenza reale | >=4 h duty + missioni rappresentative | stabilità, manovra, benna, ricarica, ergonomia | tutte le missioni core completate senza workaround insicuri |
+| PIL-HGT | accesso in quota H1 | P1/P2 | punti alti reali/rappresentativi, piattaforma OEM o PLE | prova punti critici + emergency recovery | reach, setup, stabilità, emergenza | 100% punti manutentivi critici raggiungibili in sicurezza |
 
 ## 4. PIL-AMR — BOM-020
 
@@ -106,41 +107,40 @@ Acceptance minima:
 4. Internet/4G/Wi-Fi loss;
 5. ostacoli rappresentativi;
 6. lift/tilt/manual stop;
-7. hens-clear lockout;
+7. animal/visitor no-go e lockout se applicabili;
 8. modifica no-go;
 9. log;
 10. recovery/operator training.
 
 Non comprare prima di conoscere superficie netta, pendenza e aree condivise.
 
-## 6. PIL-HEN — BOM-023
+## 6. PIL-LIFT / PIL-HGT — mezzo e manutenzione in quota
 
-Fonte:
-- `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_CHICKEN_FREE_RANGE_CLEANING.md`
+Fonti:
+- `08_MACCHINE_E_LOGISTICA/RFQ_LIFTING_MULTIFUNCTION.md`;
+- `08_MACCHINE_E_LOGISTICA/RFQ_ACCESSO_IN_QUOTA_RAGNO.md`.
 
-Pilot minimo:
-- 100 missioni;
-- prato vero;
-- hard floor;
-- ricovero/lettiera;
-- manure fresco/semi-secco/secco;
-- galline presenti;
-- persone;
-- gate;
-- dock/wash;
-- perdita rete;
-- hopper full;
-- blocked pickup.
+### PIL-LIFT
+Testare:
+- pallet;
+- big bag;
+- benna con materiale rappresentativo;
+- area humus;
+- pendenza;
+- frenata;
+- ricarica;
+- 4 h duty.
 
-KPI da fissare prima:
-- % area pulita;
-- manure pickup efficiency;
-- m²/h;
-- Wh/m²;
-- L acqua/m²;
-- tempo lavaggio macchina;
-- interventi/100 missioni;
-- eventi welfare/safety = 0 critical.
+### PIL-HGT
+Testare tutti i punti manutentivi critici:
+- gronde;
+- aperture;
+- colmo/falde accessibili;
+- sensori/ventilatori;
+- emergenza/discesa;
+- stabilizzazione.
+
+Il test può usare piattaforma OEM, PLE ragno o soluzione noleggiata.
 
 ## 7. PIL-RETAIL — BOM-028
 
@@ -343,18 +343,20 @@ Prima del lotto:
 4. BESS/PCS factory/demo evidence richiesta via RFQ.
 
 Dopo lotto/layout:
-5. mower;
-6. didattica route;
-7. AMR site pilot.
+5. mezzo multifunzione su layout reale;
+6. accesso in quota;
+7. mower se realmente previsto;
+8. didattica route;
+9. AMR site pilot.
 
 Dopo primo ciclo produttivo:
-8. drainage/reuse 30–60 giorni;
-9. cold-room pull-down;
-10. packaging production pilot;
-11. retail SKU pilot.
+10. drainage/reuse 30–60 giorni;
+11. cold-room pull-down;
+12. packaging production pilot;
+13. retail SKU pilot.
 
 Dopo installazione elettrica:
-12. BESS blackout SAT.
+14. BESS blackout SAT.
 
 ## 17. Gate closure punto 6
 
