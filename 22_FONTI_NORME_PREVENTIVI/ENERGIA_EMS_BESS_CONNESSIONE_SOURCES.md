@@ -311,3 +311,30 @@ At final RFQ/commissioning record:
 17. annual OPEX;
 18. degradation;
 19. blackout SAT.
+
+## 20. DSO connection guide benchmark — e-distribuzione Ed. 8.0, May 2026
+
+Rules/download page:
+https://www.e-distribuzione.it/connessione-alla-rete/Regole_tecniche.html
+
+Producer connection overview:
+https://www.e-distribuzione.it/supporto/guide-ai-produttori-di-energia/connessione-di-un-impianto-di-produzione.html
+
+Current May 2026 Section B observations:
+- quote-request fee: €200 + VAT for requested export >50 and <=100 kW;
+- €500 + VAT for >100 and <=500 kW;
+- quote availability time for BT/MT: 20 working days up to 100 kW; 45 working days from 100 to 1,000 kW; 60 working days above 1,000 kW;
+- for upgrade of an existing connection, current POD/connection data and existing import/export capacity are required.
+
+Use:
+- process/cost benchmark only until the actual DSO for the Carnia site is known;
+- do not assume e-distribuzione is the competent DSO before the real lot is identified.
+
+## 21. DSO critical-area/public capacity information
+
+e-distribuzione current public page:
+https://www.e-distribuzione.it/a-chi-ci-rivolgiamo/produttori/aree-critiche.html
+
+Use only if e-distribuzione is the actual DSO:
+- inspect current primary-substation criticality/inversion data for the real municipality before filing;
+- public area information is not a connection quote or capacity reservation.
