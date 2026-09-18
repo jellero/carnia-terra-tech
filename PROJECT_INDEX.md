@@ -44,7 +44,24 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 
 ## 4. Stato punto 01 — Terreno e masterplan
 
-**RAFFINATO / IN ATTESA DI LOTTO REALE.**
+**RISK-FIRST / IN ATTESA DI LOTTO REALE.**
+
+Target:
+- acquisto terreno <= €50.000;
+- superficie preferita **10.000–12.000 m² realmente utilizzabili**;
+- 9.000–10.000 m² solo se forma/accessi/drenaggio sono particolarmente favorevoli;
+- <9.000 m² eccezione da dimostrare.
+
+Prima dell'acquisto:
+- griglia campioni su tutta la superficie utile;
+- prove drenaggio/infiltrazione;
+- rilievo quote/ristagni;
+- anomalie;
+- geotecnica;
+- masterplan di prova.
+
+Documento:
+`01_MASTERPLAN_E_TERRENO/PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md`.
 
 ## 5. Stato punto 02 — Agronomia
 
