@@ -249,43 +249,56 @@ Test richiesti:
 - lettura lotto;
 - recupero prodotto in fault.
 
-## 8. Pagamenti
+## 8. Pagamenti — Stripe nativo
 
-Baseline:
+Stripe è il payment stack di progetto. Nayax e SumUp non fanno parte della baseline.
 
-- cashless;
-- carte;
-- contactless;
-- wallet NFC;
-- nessun obbligo di smartphone del cliente;
-- modalità offline/fault definita.
+Il server centrale Carnia TerraTech è il proprietario del flusso ordine/pagamento/vendita e usa Stripe come payment processor.
 
-Cash:
-- non baseline;
-- aumenta rischio furto;
-- richiede monete/banconote;
-- aumenta manutenzione e riconciliazione.
+### Terminal unattended
 
-Working candidate vending:
-- Nayax VPOS Touch / equivalente MDB;
-- pagamento + telemetria;
-- 4G/SIM;
-- inventory/operations opzionali;
-- canone e fee da TCO.
+Per un ambiente realmente unattended/vending, il candidato Stripe Terminal è **Verifone UX700**.
 
-Alternative:
-- terminale POS retail separato solo se l'architettura dello spaccio lo richiede;
-- self-checkout/micro-market solo come scenario futuro.
+La documentazione Stripe corrente lo identifica come dispositivo self-service/unattended e ne indica, tra le caratteristiche:
 
-Il sistema di pagamento deve essere verificato per:
-- Italia;
-- acquirer;
-- fee;
-- chargeback;
-- rimborsi;
-- compliance PCI gestita dal provider;
-- integrazione fiscale;
-- API/export dati.
+- EMV chip;
+- contactless/wallet;
+- Ethernet/Wi-Fi;
+- IP65;
+- IK08;
+- integrazione server-driven;
+- disponibilità Italia nella matrice corrente;
+- modalità offline come capability del dispositivo.
+
+La combinazione esatta offline + server-driven + configurazione italiana va verificata nel pilot e nella documentazione Stripe vigente.
+
+### Flusso transazionale working
+
+`selection -> inventory reservation -> order -> PaymentIntent -> Stripe Terminal -> payment confirmed -> authorize vend -> vend_ack -> close order`
+
+Il pagamento riuscito **non equivale** a vendita completata finché il sistema non riceve conferma dell'erogazione.
+
+Se l'erogazione fallisce:
+
+- ordine resta in stato recovery;
+- slot/machine può essere disabilitato;
+- il server esegue retry soltanto se sicuro;
+- altrimenti avvia refund/cancel coerente con lo stato Stripe.
+
+### Requisiti software
+
+- PaymentIntent;
+- webhook;
+- idempotency key;
+- correlation id;
+- state machine esplicita;
+- reconciliation;
+- refund API;
+- audit;
+- gestione delayed webhook;
+- protezione da double-vend/double-refund.
+
+Le credenziali Stripe restano server-side; nessuna secret key nel controller vending.
 
 ## 9. Corrispettivi e fiscalità
 
@@ -365,9 +378,12 @@ Working candidate:
 
 Per impiego alimentare definitivo, preferire logger/sistema specificamente adatto al contesto HACCP e alla validazione richiesta.
 
-## 13. Inventario
+## 13. Inventario, logistica e scheduler centrale
 
-Inventario minimo per slot:
+Il vendor vending non è il system of record.
+
+Il **server centrale Carnia TerraTech** mantiene per ogni slot:
+
 - SKU;
 - lotto;
 - quantità;
@@ -376,12 +392,18 @@ Inventario minimo per slot:
 - temperatura target;
 - prezzo;
 - vendite;
-- scarti.
+- scarti;
+- stato macchina;
+- ultima riconciliazione.
 
 Eventi:
+
 - load;
 - sale;
+- payment;
 - refund;
+- vend_command;
+- vend_ack;
 - jam;
 - temperature fault;
 - manual removal;
@@ -389,8 +411,30 @@ Eventi:
 - waste;
 - reconciliation.
 
-Non basare inventario solo sul decremento teorico:
-- prevedere audit fisico.
+Il server incrocia questi dati con:
+
+- celle BOM-024;
+- packaging BOM-025;
+- raccolta prevista;
+- ordini;
+- personale disponibile;
+- logistica/AMR;
+- storico vendite;
+- meteo/stagionalità;
+- forecast domanda/offerta.
+
+Output operativo:
+
+- refill target;
+- task al personale;
+- missioni logistiche;
+- quantità da trasferire da cella a spaccio;
+- reorder/stock target;
+- markdown/promotion candidate;
+- rischio stockout;
+- rischio waste.
+
+L'inventario teorico viene sempre riconciliato con audit fisico e feedback macchina.
 
 ## 14. Prezzi e master data
 
@@ -487,34 +531,67 @@ Richiedere:
 - energy meter per vending;
 - as-built.
 
-## 19. Continuità elettrica
+## 19. Continuità elettrica — BESS aziendale
 
-Non dimensionare una piccola UPS per tenere acceso il compressore per ore.
+**Nessuna UPS locale nella baseline BOM-028.**
 
-Architettura:
+Il progetto dispone di backup a batterie con **30 kW di potenza** e lo spaccio viene integrato in quel sistema di continuità.
 
-### Tier 1 — electronics UPS
-Mantiene:
-- router;
-- switch;
-- controller;
-- NVR;
-- telemetria;
-- eventualmente payment terminal.
+Da verificare nel package energia:
 
-### Tier 2 — refrigeration continuity
-Da BOM-006/continuità aziendale:
+- capacità utile in kWh;
+- potenza continua;
+- picco;
+- tempo di trasferimento;
+- autonomia al SOC di riserva;
+- funzionamento in isola;
+- black-start se previsto.
+
+Carichi BOM-028 da includere nel load shedding:
+
+### P0 — controllo/transazioni
+- server/control plane minimo;
 - rete;
-- generatore/backup generale se previsto;
-- priorità carico;
-- allarme power fail.
+- Stripe/reader connectivity;
+- controller vending;
+- logger critici.
 
-### Tier 3 — fail-safe food
-Se il freddo non è garantito:
-- vendita bloccata;
-- valutazione prodotto.
+### P1 — cold-chain
+- vending refrigerato;
+- eventuale HVAC tecnico necessario.
 
-## 20. Cybersecurity
+### P2 — security/operations
+- CCTV/NVR;
+- illuminazione minima;
+- servizi non critici.
+
+In stato BESS limitato il server centrale deve poter disattivare o rinviare carichi non essenziali prima di perdere controllo o catena del freddo.
+
+Se la temperatura non è più garantita:
+- stop-vend;
+- alarm;
+- classificazione lotto secondo HACCP.
+
+## 20. Server centrale, orchestrazione e cybersecurity
+
+BOM-028 usa `07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTRATION_SERVER.md` come architettura di riferimento.
+
+Il server centrale gestisce:
+
+- catalogo;
+- ordini;
+- Stripe;
+- inventory;
+- lot tracking;
+- refill;
+- task personale;
+- logistica;
+- vending state;
+- temperature;
+- scadenze;
+- refund;
+- manutenzione;
+- forecasting domanda/offerta.
 
 Segmenti distinti:
 
@@ -524,24 +601,22 @@ Segmenti distinti:
 - OT aziendale separato.
 
 Principi:
-- deny by default verso PLC/OT;
-- accesso remoto vendor limitato;
-- MFA;
-- account nominativi;
-- credenziali non condivise;
-- aggiornamenti;
-- inventario firmware;
-- export dati;
-- log;
-- backup configurazione.
 
-Cloud vending accettabile solo dopo verifica:
-- disponibilità;
-- SLA;
-- data export;
-- lock-in;
-- costo annuo;
-- comportamento offline.
+- server come system of record;
+- vendor cloud solo come integrazione opzionale, non master;
+- deny by default verso PLC/OT;
+- MFA;
+- service account separate;
+- secrets server-side;
+- idempotency;
+- audit log;
+- backup/restore;
+- monitoring;
+- firmware inventory.
+
+Se una vending espone soltanto MDB o telemetria proprietaria insufficiente, prevedere gateway locale/protocol adapter per produrre eventi e comandi integrabili nel server centrale.
+
+Il server pianifica e coordina; safety locale e interblocchi macchina restano indipendenti.
 
 ## 21. Privacy pagamenti e clienti
 
@@ -639,21 +714,26 @@ Non aprire un vano resi food self-service senza progetto igienico specifico.
 | Failure mode | Conseguenza | Fallback |
 |---|---|---|
 | frigo guasto | rischio prodotto | blocco selezioni + allarme + HACCP |
-| power fail | perdita freddo/pagamento | alert + backup generale + stop vendita |
-| rete assente | telemetria offline | macchina secondo policy offline; OT isolato |
-| payment offline | no vendite / doppio addebito | stato chiaro + retry/refund |
+| power fail | perdita freddo/pagamento | BESS 30 kW + load shedding + stop-vend se cold-chain non garantita |
+| BESS low SOC | autonomia insufficiente | priorità P0/P1, riduzione carichi P2/P3 |
+| server centrale down | scheduler/payment workflow indisponibile | local safe mode; niente nuove vendite se stato non riconciliabile |
+| database/event bus down | perdita consistenza | queue/buffer dove sicuro, stop nuove transazioni critiche |
+| Internet assente | Stripe/cloud non disponibili | policy offline validata; nessun double-vend |
+| Stripe/API down | no nuove autorizzazioni | machine unavailable per nuovi acquisti, recovery pagamenti pending |
+| webhook ritardato | ordine ambiguo | state machine pending + reconciliation, mai doppia erogazione |
+| payment confirmed ma vend fallisce | cliente addebitato senza prodotto | automatic recovery/refund |
 | jam spirale | cliente non riceve prodotto | refund + slot disable |
 | prodotto fragile cade | danno/reso | Lift/locker + test pack |
 | logger guasto | perdita verifica indipendente | sostituzione + sensore macchina |
 | camera guasta | security ridotta | alert e ripristino |
 | NVR pieno | perdita registrazioni | retention/capacity management |
-| porta kiosk bloccata | cliente intrappolato/accesso negato | uscita sempre sicura + apertura manuale |
-| vandalismo | fermo/vetro rotto | antiscasso + CCTV + parti di ricambio |
-| stockout | vendite perse | min stock + refill alert |
+| porta kiosk bloccata | accesso/uscita compromessi | uscita sempre sicura + apertura manuale |
+| vandalismo | fermo | antiscasso + CCTV + ricambi |
+| stockout | vendite perse | forecast + refill scheduler |
 | scadenza | vendita non conforme | expiry lockout |
-| prezzo errato | contestazione | master data single source |
-| fiscale offline | non conformità | procedura vendor/commercialista |
-| cloud vendor down | gestione remota assente | vendita/fallback definito offline |
+| prezzo errato | contestazione | master data unico sul server |
+| fiscale offline | non conformità | procedura validata con fornitore/commercialista |
+| cloud vendor vending down | feature vendor assente | server centrale continua sulle interfacce locali disponibili |
 
 ## 27. Manutenzione e ricambi
 
@@ -689,7 +769,7 @@ Separare:
 `CAPEX`
 - kiosk/shell;
 - vending;
-- payment;
+- Stripe Terminal / UX700 o hardware Stripe unattended compatibile;
 - fiscal interface;
 - electrical;
 - network;
@@ -701,8 +781,8 @@ Separare:
 - install/commissioning.
 
 `OPEX`
-- fee payment;
-- SIM/cloud;
+- fee Stripe;
+- connettività/compute/storage server;
 - fiscal service;
 - energia;
 - refrigerazione;
@@ -732,15 +812,15 @@ Separare:
 8. capienza giornaliera;
 9. macchina shortlist;
 10. pilot erogazione;
-11. payment provider;
+11. Stripe Terminal unattended / UX700 e integrazione server;
 12. fiscalizzazione;
 13. rete/4G;
-14. power/backup;
+14. integrazione BESS 30 kW / autonomia in kWh;
 15. videosorveglianza/privacy;
 16. accessibilità;
 17. layout rifornimento;
 18. HACCP;
 19. RFQ installato;
 20. TCO 5 anni;
-21. test 500 vendite;
+21. test 500 vendite + reconciliation server/Stripe/vend;
 22. commissioning e go-live controllato.
