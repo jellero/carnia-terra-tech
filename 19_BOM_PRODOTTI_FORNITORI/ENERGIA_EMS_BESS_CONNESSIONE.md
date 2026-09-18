@@ -254,3 +254,33 @@ KPI:
 13. island PV decision;
 14. 3 comparable RFQs;
 15. blackout SAT.
+
+## 16. DSO/TICA pre-application cost scenarios
+
+Working connection variants:
+
+| Scenario | FV AC | Requested export | Quote-request fee benchmark | Additional gate |
+|---|---:|---:|---:|---|
+| G100 | 100 kW | 100 kW | €200 + IVA | BT/MT from DSO |
+| G120 | 120 kW | 120 kW | €500 + IVA | BT/MT from DSO |
+| G120-CAP100 | 120 kW | 100 kW | €200 + IVA | compliant SLI + curtailment study |
+
+Fee source benchmark:
+- e-distribuzione Guide Section B Ed. 8.0 May 2026 / current TICA structure.
+
+**Decision rule:** the €300 + IVA difference between the quote-request fee for 100 and 120 kW is not a valid reason by itself to cap export.
+
+Compare total installed economics:
+`DSO works + BT/MT + transformer/cabin + protections + CCI/PF2 + SLI + meters + engineering + commissioning + curtailed energy + future expansion cost`.
+
+Project documents:
+- `06_ENERGIA_ELETTRICA_FV/DSO_TICA_CONNECTION_READINESS.md`;
+- `06_ENERGIA_ELETTRICA_FV/DSO_TICA_DATA_REQUEST.csv`;
+- `06_ENERGIA_ELETTRICA_FV/BT_MT_PROTECTION_DECISION_MATRIX.md`;
+- `06_ENERGIA_ELETTRICA_FV/RFQ_DSO_GRID_CONNECTION_ENGINEERING.md`;
+- `06_ENERGIA_ELETTRICA_FV/GRID_CONNECTION_COST_COMPARISON.csv`.
+
+Current status:
+- pre-application engineering package = structured;
+- actual DSO request = blocked by real lot/DSO/POD and final import/export powers;
+- connection CAPEX = RFQ/DSO, not estimated.
