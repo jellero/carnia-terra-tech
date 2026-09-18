@@ -188,8 +188,10 @@ Predisporre:
 - attrezzature humus industriali;
 - AMR.
 
+Fuori dal core:
+- rover galline.
+
 Rinviare:
-- rover galline;
 - smart cart/crate;
 - robotica marginale;
 - centro trasformazione non validato;
