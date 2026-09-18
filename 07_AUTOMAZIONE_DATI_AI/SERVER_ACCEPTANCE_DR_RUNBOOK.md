@@ -359,7 +359,7 @@ Application must:
 
 ## 24. BESS transfer test
 
-**No UPS local.**
+**No UPS local. BOM-034 defines the electrical architecture and P0 critical bus.**
 
 Test with electrician/energy engineer:
 
@@ -371,12 +371,14 @@ Test with electrician/energy engineer:
 6. verify BESS telemetry;
 7. run 30+ min;
 8. restore grid;
-9. verify transition.
+9. verify transition;
+10. verify P0 compute/network/PLC have no reboot or brownout-induced fault.
 
 If reboot occurs:
+- test fails;
 - measure interruption;
-- investigate inverter/distribution/PSU ride-through;
-- update architecture.
+- investigate PCS/grid-forming/transfer/distribution/PSU ride-through;
+- redesign BOM-034 transfer path before production acceptance.
 
 Do not hide issue by adding random desktop UPS units.
 
