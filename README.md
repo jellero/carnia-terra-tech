@@ -55,6 +55,19 @@ La directory [`EXTRA_AGRITURISMO_EVOLUTIVO/`](EXTRA_AGRITURISMO_EVOLUTIVO/) cont
 
 Parte dalla soluzione minima **ristoro light a spuntini non cucinati**, con predisposizioni per esperienze, cucina e ospitalità future. Non entra nella sequenza BOM del progetto principale e non è necessario per l'avvio dell'azienda.
 
+## Piano operativo di avvio
+
+Il riferimento per l'esecuzione della Fase P1 è [`20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/`](20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/).
+
+Numeri di governo:
+- CAPEX netto di lavoro: **€850.000**;
+- riserva operativa protetta: **€120.000**;
+- linea IVA/ponte: **€120.000–150.000**;
+- serra finale: ~4.200 m² / 6 comparti;
+- prima messa a reddito: **3 comparti / ~2.100 m²**;
+- target commerciale P1 da validare: ~**€250.000/anno**;
+- espansione agli altri 3 comparti solo dopo dati reali tecnici, commerciali e di cassa.
+
 ## Regola di progettazione
 
 Ogni componente fisico deve arrivare almeno a: funzione, requisiti, marca/modello o specifica, quantità, prezzo, fonte, IVA, installazione, consumi, manutenzione, ricambi, sicurezza, modalità di guasto, ripiego, durata, dipendenze, contributi e stato della decisione.
