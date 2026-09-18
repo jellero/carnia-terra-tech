@@ -149,7 +149,7 @@ Gate: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior,
 
 ## 11. Stato punto 10 — Benessere, fattoria e servizi
 
-**BOM-023 PULIZIA GALLINE FREE-RANGE + BOM-026 PERGOLATO/VITE/AREA RELAX + BOM-027 FATTORIA DIDATTICA SVILUPPATE / LAYOUT, SITO, ERSA, PILOT/RFQ BLOCCANTI.**
+**BOM-023 PULIZIA GALLINE FREE-RANGE + BOM-026 PERGOLATO/VITE/AREA RELAX + BOM-027 FATTORIA DIDATTICA + BOM-028 SPACCIO AUTOMATICO 24/7 SVILUPPATE / LAYOUT, SITO, ERSA, SUAP, PILOT/RFQ BLOCCANTI.**
 
 Vincolo consolidato: galline libere nel dominio dedicato composto da ricovero, portico, parcheggi/superfici dure e prato.
 
@@ -251,6 +251,43 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/BENESSERE_FATTORIA_DIDATTICA.md`;
 - `22_FONTI_NORME_PREVENTIVI/BENESSERE_FATTORIA_DIDATTICA_SOURCES.md`.
 
+
+### BOM-028 — spaccio automatico self-service 24/7
+
+Baseline:
+- doppio gate normativo: vendita diretta agricola ex D.Lgs. 228/2001 vs vending retail generico;
+- preferenza a R1 agricolo se prodotti propri/prevalenza restano nel perimetro;
+- kiosk/locale protetto baseline; outdoor solo con macchina specificamente progettata/garantita;
+- matrice SKU/temperatura collegata a BOM-024;
+- nessun 0–4 °C automatico per pomodoro/peperone/basilico;
+- Gusto 8 multi-temperature candidato;
+- Gusto 8 Lift prioritario per prodotti fragili;
+- Drum/FAS Easy Food alternative;
+- cashless baseline con telemetria;
+- fiscalizzazione da validare su macchina/payment reali;
+- logger indipendente, temp alarm e stop-vend;
+- CCTV privacy-aware, no audio/face recognition;
+- rete vending/CCTV separata dall'OT;
+- UPS solo IT/elettronica, refrigerazione su continuità generale;
+- 100 cicli/SKU critico + 500 vendite miste prima del go-live.
+
+Benchmark:
+- Necta Gusto 8 ~€5.900 EU seller benchmark;
+- Gusto 8 Lift ~€7.200;
+- Gusto Drum ~€10.600–13.199;
+- FAS Pro 900 €8.840 net benchmark listing incl. Nayax;
+- Nayax VPOS Touch €430;
+- Nayax service €15,75/mese + fee 1,45–3,5% benchmark;
+- Testo 160 T €124 net / €151,28 IVA incl.;
+- Ubiquiti G5 Turret Ultra €80/cad;
+- NIA/VIA sanitaria €20 reference.
+
+Documenti:
+- `10_BENESSERE_FATTORIA_E_SERVIZI/SPACCIO_AUTOMATICO_24_7_ARCHITECTURE.md`;
+- `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_SPACCIO_AUTOMATICO_24_7.md`;
+- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_SPACCIO_AUTOMATICO_24_7.md`;
+- `22_FONTI_NORME_PREVENTIVI/BENESSERE_SPACCIO_AUTOMATICO_24_7_SOURCES.md`.
+
 ## 12. R&D trasversale — laser, vision e manutenzione robotica
 
 Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
@@ -322,7 +359,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 16. Stato attuale dei grandi blocchi
 
-Restano nel perimetro spaccio 24/7, sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
+Restano nel perimetro sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
 
 ## 17. Sequenza BOM
 
@@ -347,15 +384,15 @@ Restano nel perimetro spaccio 24/7, sostenibilità personale, R&D robotica/laser
 - BOM-024 celle frigorifere;
 - BOM-025 raccolta e packaging;
 - BOM-026 pergolato, vite e area relax;
-- **BOM-027 fattoria didattica**.
+- BOM-027 fattoria didattica;
+- **BOM-028 spaccio automatico self-service 24/7**.
 
 ### Prossimo package
 
-**BOM-028 — spaccio automatico self-service 24/7:** locale/kiosk, refrigerazione e temperatura, vending/locker/scaffali, POS/contactless, accesso, inventario, videosorveglianza, backup elettrico, rete/cybersecurity, fiscalità, igiene, manutenzione, ricambi, consumabili e costo.
+**BOM-029 — centro trasformazione conto terzi:** capacity model, famiglie processo succo/confetture/trasformati, zoning food, lavaggio/preparazione, cottura/pastorizzazione, riempimento, CIP/pulizia, utilities, laboratorio/QC, packaging, HACCP, CAPEX/OPEX e domanda locale.
 
 ### Coda successiva
 
-1. spaccio automatico 24/7;
-2. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
