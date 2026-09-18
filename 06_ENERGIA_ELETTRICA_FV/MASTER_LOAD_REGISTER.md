@@ -30,6 +30,53 @@ Queste decisioni restano bloccate finché P0/P1 e i transitori non sono misurati
 
 Un valore `KNOWN-REF` non è automaticamente un valore di progetto finale.
 
+
+## 2A. Struttura costi, fonti e link
+
+Il master load register **non duplica i prezzi** già governati dalle BOM di dominio. Ogni costo deve avere un solo source-of-truth; qui viene mantenuto il collegamento tecnico/economico.
+
+Regola:
+
+- `power/load data` -> questo registro;
+- `quantità + prezzo + IVA + installazione + ricambi + vita utile` -> BOM di dominio;
+- `norme + datasheet + pagine OEM + benchmark prezzo` -> file fonti;
+- `prezzo finale installato` -> RFQ comparabile e poi CAPEX consolidato;
+- nessun prezzo osservato online viene promosso a budget senza RFQ/validazione.
+
+Link principali:
+
+- [BOM-034 — EMS, BESS e connessione](../19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md)
+- [Fonti BOM-034 — norme, OEM, benchmark e link esterni](../22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md)
+- [Architettura EMS/BESS/grid](EMS_BESS_GRID_ARCHITECTURE.md)
+- [Load priority matrix](LOAD_PRIORITY_MATRIX.md)
+- [Server centrale P0](../07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTRATION_SERVER.md)
+- [Acqua e fertirrigazione](../04_ACQUA_E_FERTIRRIGAZIONE/README.md)
+- [Termico e clima](../05_TERMICO_E_CLIMA/README.md)
+- [Celle frigorifere](../09_TECH_BARN_E_POST_RACCOLTA/COLD_ROOMS_ARCHITECTURE.md)
+- [Spaccio automatico 24/7](../10_BENESSERE_FATTORIA_E_SERVIZI/SPACCIO_AUTOMATICO_24_7_ARCHITECTURE.md)
+
+Benchmark economici già presenti nel package BOM-034:
+
+| Voce | Benchmark già tracciato | Stato |
+|---|---:|---|
+| Schneider PM5110 | €700 listino osservato | riferimento, non installato |
+| Schneider PM5340 | €1.469 listino osservato | riferimento, non installato |
+| Schneider PM5341 MID | €1.694 listino osservato | riferimento, non installato |
+| BESS/PCS 30 kW | RFQ | costo finale aperto |
+| 60/90/120 kWh useful | RFQ | costo finale aperto |
+| critical bus / switchgear | RFQ | costo finale aperto |
+| fire package / fire engineering | RFQ | costo finale aperto |
+| DSO / CCI / SLI / eventuale MT | DSO/RFQ | dipende dal punto di connessione |
+| commissioning + blackout SAT | RFQ | obbligatorio |
+
+La struttura economica di BOM-034 resta:
+
+`CAPEX034 = BESS + PCS + fire + civil + critical bus + switchgear + meters + protection + DSO/CCI-SLI + engineering + commissioning`
+
+`OPEX034 = aux_energy + losses + service + inspections + software_if_any + degradation + meter/calibration + fire maintenance`
+
+Nel CSV sono aggiunti i campi `capex_status`, `cost_source` e `technical_source` per mantenere la tracciabilità macchina-per-macchina.
+
 ## 3. Registro carichi v0.1
 
 | ID | Funzione | Classe | Potenza working | Stato | Island baseline | Dato da chiudere |
