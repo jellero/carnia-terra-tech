@@ -173,6 +173,7 @@ Documents:
 - `LOAD_PRIORITY_MATRIX.md`;
 - `MASTER_LOAD_REGISTER.md` + `MASTER_LOAD_REGISTER.csv` — registro closure 1–15 min, P0/P1, spunti e restart;
 - `LOAD_MEASUREMENT_AND_RFQ_PLAN.md` + `LOAD_DATA_CAPTURE_TEMPLATE.csv` — piano operativo per misure, dati OEM, costi e RFQ;
+- `LOAD_VENDOR_DATA_SNAPSHOT_2026-09-18.md` — snapshot verificato di dati fornitore/prezzi/link e gap residui;
 - `RFQ_EMS_BESS_GRID.md`;
 - `19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md`;
 - `22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md`.
