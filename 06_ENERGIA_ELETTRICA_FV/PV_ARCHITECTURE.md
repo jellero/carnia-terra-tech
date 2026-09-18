@@ -7,7 +7,9 @@
 
 Il FV deve ridurre il costo elettrico e alimentare carichi flessibili senza diventare un vincolo per la coltivazione. La priorità energetica resta:
 
-`carichi vitali -> PDC/accumulo termico -> pompe/fertirrigazione -> celle e processi -> carichi differibili -> eventuale batteria critica -> rete`.
+`carichi vitali/control plane -> celle e cold-chain -> pompe/fertirrigazione -> processi -> carichi differibili -> BESS 30 kW / EMS -> rete`.
+
+Il BESS è il backup condiviso del sito, non una UPS locale. La potenza nota è **30 kW**; energia utile in kWh, autonomia, picco, transfer time, islanding e SOC reserve restano `DA CHIUDERE`. Il server centrale usa questi stati per load shedding e scheduling dei carichi differibili.
 
 L'EMS sposta carichi quando conviene, ma PLC e protezioni restano autonomi.
 
