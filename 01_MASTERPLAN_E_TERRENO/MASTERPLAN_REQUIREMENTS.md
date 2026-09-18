@@ -1,6 +1,6 @@
 # Carnia TerraTech — Masterplan Requirements
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Stato:** `REQUISITI FUNZIONALI DEFINITI / LAYOUT REALE DA FARE SUL LOTTO`
 
 ## 1. Principio
@@ -9,14 +9,14 @@ Il masterplan deve evitare conflitti tra produzione, logistica, visitatori, manu
 
 ## 2. Envelope di fase 1 già definito
 
-Working allocation su lotto ideale 8.500–10.000 m²:
+Allocazione preliminare da ricomporre solo dopo rilievo e campagna terreno:
 
 | Funzione | Superficie preliminare |
 |---|---:|
 | Serra produttiva | 4.200 m² |
 | Corridoi e servizi serra | 200–300 m² |
 | Tech Barn / post-raccolta / celle / officina | 400–500 m² |
-| Vermicompost | 180–250 m² |
+| Humus/vermicompost + cicli materia | 180–250 m² iniziali, espandibili |
 | Acqua / centrale termica / serbatoi | 150–250 m² |
 | Carport FV | 300–400 m² |
 | Piazzale, carico, viabilità | 700–1.000 m² |
@@ -90,6 +90,26 @@ Evitare FV opaco sulla serra produttiva principale se riduce PAR alle colture.
 
 Il masterplan deve riservare passaggi cavi, locali tecnici, inverter e possibilità di espansione.
 
+## 6A. Manutenzione in quota
+
+Il masterplan deve dimostrare come raggiungere in sicurezza:
+- colmo e falde;
+- aperture;
+- gronde;
+- attuatori;
+- schermi;
+- sensori/ventilatori alti;
+- parti alte del Tech Barn.
+
+Prevedere corridoi, portanza e piazzole per:
+- piattaforma OEM del telescopico quando sufficiente;
+- PLE cingolata compatta "ragno" quando richiesta dalla geometria.
+
+Un punto manutentivo non raggiungibile in sicurezza è un difetto del layout.
+
+Riferimento:
+`../08_MACCHINE_E_LOGISTICA/ACCESSO_IN_QUOTA_RAGNO_ARCHITETTURA.md`.
+
 ## 7. Logistica pesante
 
 Creare un percorso chiaro per:
@@ -118,23 +138,26 @@ Requisiti:
 - docking/ricarica robot;
 - separazione da percorsi pubblici dove necessario.
 
-## 9. Vermicompost e cicli materia
+## 9. Humus, vermicompost e cicli materia
 
 Posizionare in area:
 
 - raggiungibile da serra e logistica residui;
+- accessibile al telescopico con benna/forche;
+- adatta a ricezione di materie acquistate con stato giuridico chiaro;
+- con aree separate per ingresso, miscelazione, processo, vaglio, prodotto finito e quarantena;
 - non penalizzante per zone relax/spaccio/visitatori;
 - con drenaggio e pulizia gestibili;
 - espandibile;
 - con possibilità di separare materiali in ingresso, precompostaggio, letti, vaglio e prodotto finito.
 
-## 10. Galline e area animale futura
+## 10. Galline e area animale futura — opzionale
 
 Prevedere una zona che consenta:
 
 - benessere animale;
 - accesso di servizio;
-- pulizia automatizzata/semi-automatizzata;
+- pulizia semplice/meccanizzata dove utile; nessun rover dedicato richiesto;
 - gestione deiezioni;
 - separazione da packaging/celle e flussi igienicamente sensibili;
 - eventuale integrazione didattica controllata;
@@ -247,6 +270,9 @@ Quando il lotto sarà individuato, produrre almeno:
 - layout fase 1 quotato;
 - layout fase 2/espansioni;
 - percorsi mezzi/AMR/pedoni/visitatori;
+- rete di campionamento e mappe drenaggio/quote come layer di base;
+- raggiungibilità manutentiva delle parti alte;
+- flussi humus/materie e manovra telescopico;
 - reti acqua/elettrico/dati schematiche;
 - drenaggi;
 - aree verdi;
