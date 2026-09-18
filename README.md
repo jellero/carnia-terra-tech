@@ -55,6 +55,21 @@ La directory [`EXTRA_AGRITURISMO_EVOLUTIVO/`](EXTRA_AGRITURISMO_EVOLUTIVO/) cont
 
 Parte dalla soluzione minima **ristoro light a spuntini non cucinati**, con predisposizioni per esperienze, cucina e ospitalità future. Non entra nella sequenza BOM del progetto principale e non è necessario per l'avvio dell'azienda.
 
+## Business plan e struttura societaria
+
+La directory [`16_SOCIETA_FINANZA_E_CONTRIBUTI/`](16_SOCIETA_FINANZA_E_CONTRIBUTI/) contiene il pacchetto societario-finanziario di lavoro:
+
+- business plan master;
+- Piano Aziendale per bandi;
+- scelta forma societaria;
+- statuto tipo S.r.l. società agricola da validare col notaio;
+- patti tra soci;
+- governance e deleghe;
+- checklist costituzione e data room;
+- contributi e cassa iniziale.
+
+Il principio è mantenere **un'unica base numerica** fra progetto tecnico, banca, soci e bandi.
+
 ## Piano operativo di avvio
 
 Il riferimento per l'esecuzione della Fase P1 è [`20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/`](20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/).
