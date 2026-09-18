@@ -12,15 +12,15 @@ Richiesta di offerta separata e comparabile per:
 - vending/locker per prodotti fragili;
 - eventuale modulo ambient/cool;
 - kiosk/shell o protezione outdoor;
-- sistema pagamento cashless;
-- telemetria;
+- integrazione Stripe Terminal unattended;
+- telemetria macchina verso server centrale;
 - fiscalizzazione/corrispettivi;
 - logging temperature;
 - quadro/linee elettriche;
 - rete;
 - videosorveglianza;
 - illuminazione;
-- software inventario;
+- API/protocol adapter verso server centrale;
 - installazione;
 - training;
 - SLA e ricambi.
@@ -43,10 +43,10 @@ Prima dell'offerta definitiva:
 - alimentazione disponibile;
 - rete Ethernet/Wi-Fi/4G;
 - regime fiscale/commerciale;
-- desiderata cashless;
+- account/architettura Stripe già scelta;
 - esigenze accessibilità;
 - CCTV/NVR disponibile;
-- backup elettrico disponibile.
+- backup elettrico BESS aziendale 30 kW; capacità/autonomia in kWh da confermare.
 
 ## 3. Lotto A — vending machine
 
@@ -147,38 +147,48 @@ Dichiarare:
 - passaggi cavi;
 - accessibilità.
 
-## 6. Lotto C — payment
+## 6. Lotto C — Stripe Terminal unattended
 
-Quotare cashless all-in-one.
+Nayax e SumUp sono esclusi dalla baseline.
+
+Quotare/validare una soluzione Stripe Terminal per ambiente realmente unattended.
 
 Working candidate:
-- Nayax VPOS Touch / VPOS Media 4 / equivalente.
+- **Verifone UX700** tramite Stripe Terminal, o successivo dispositivo unattended ufficialmente supportato in Italia.
 
-Dichiarare:
+Richiedere:
 
-- acquisto hardware;
-- setup;
-- SIM;
-- canone mensile;
-- fee transazione per fascia importo;
-- minimum fee;
-- carte supportate;
-- Apple Pay/Google Pay;
-- protocollo MDB;
-- telemetry;
-- inventory;
+- disponibilità Italia;
+- hardware e accessori;
+- montaggio;
+- alimentazione;
+- Ethernet/Wi-Fi;
+- IP/IK;
+- temperatura ambiente;
+- integrazione server-driven/API;
+- PaymentIntent;
+- webhook;
 - refund;
-- remote management;
-- offline mode;
-- settlement;
-- API/export;
-- contratto minimo;
+- reconciliation;
+- device management;
+- modalità offline supportata nella configurazione proposta;
+- behavior in perdita Internet;
+- behavior in perdita server;
+- PCI/EMV;
 - SLA.
 
-Cash module:
-- OPTIONAL;
-- prezzo separato;
-- manutenzione e rischio separati.
+Il server Carnia TerraTech gestisce ordine, stato vendita e riconciliazione. Il terminale non deve diventare il database commerciale.
+
+Flusso da supportare:
+
+`reserve_stock -> create PaymentIntent -> collect payment -> webhook/confirm -> vend command -> vend_ack -> close order`
+
+Requisito bloccante:
+- nessuna doppia erogazione in caso di retry;
+- nessun ordine chiuso prima del `vend_ack`;
+- refund automatico/assistito quando pagamento e vend divergeno.
+
+Le fee Stripe vengono modellate separatamente dal costo hardware.
 
 ## 7. Lotto D — fiscalizzazione
 
@@ -242,26 +252,40 @@ Quotare:
 
 Separare alimentazione compressore da elettronica critica.
 
-## 10. Lotto G — continuity
+## 10. Lotto G — continuity / BESS
 
-Quotare:
+**Non quotare UPS locali.**
 
-### G1 electronics UPS
-Per:
-- router;
-- switch;
-- NVR;
-- controller;
-- payment/telemetry.
+Il sito dispone di backup a batterie con **30 kW di potenza**.
 
-Dichiarare runtime a carico reale.
+Richiedere soltanto:
 
-### G2 integration backup generale
-- interface con generatore/EMS aziendale;
-- priority load;
-- power fail signal.
+- potenza nominale vending;
+- spunto;
+- duty cycle;
+- energia giornaliera;
+- power-fail output;
+- restart behavior;
+- recovery dopo ritorno rete;
+- compatibilità con alimentazione da BESS/inverter;
+- priorità carico;
+- eventuali requisiti di tempo di trasferimento.
 
-Non proporre UPS piccola come backup prolungato del compressore senza calcolo.
+Il package energia deve chiudere:
+
+- capacità BESS utile in kWh;
+- autonomia;
+- islanding;
+- SOC reserve;
+- load shedding.
+
+Lo spaccio deve poter ricevere dal server uno stato energia:
+- NORMAL;
+- BACKUP;
+- LOW_SOC;
+- SHED_NONCRITICAL.
+
+Nessuna UPS desktop o dedicata entra nel CAPEX BOM-028.
 
 ## 11. Lotto H — network
 
@@ -287,7 +311,7 @@ Working:
 - 1–2 camera PoE classe Ubiquiti G5 Turret Ultra o equivalente;
 - NVR locale;
 - storage;
-- UPS;
+- alimentazione sul BESS aziendale;
 - cartello;
 - configurazione privacy.
 
@@ -302,31 +326,59 @@ Dichiarare:
 - access control;
 - no audio baseline.
 
-## 13. Lotto J — software inventory
+## 13. Lotto J — integrazione macchina con server centrale
 
-Richiedere:
+Non quotare un software vendor come system of record.
+
+Il server Carnia TerraTech gestisce direttamente:
 
 - SKU master;
 - slot map;
 - stock;
+- lotto;
 - expiry;
 - price;
-- lot;
 - sales;
-- refill list;
+- Stripe payment state;
+- vend state;
+- refill;
 - waste;
-- telemetry;
-- alarm;
-- CSV/API;
-- user roles;
-- audit log.
+- temperature;
+- alarms;
+- maintenance;
+- task personale;
+- logistica;
+- forecasting domanda/offerta.
 
-Dichiarare:
-- cloud/on-prem;
-- cost/month;
-- API;
-- backup;
-- export on termination.
+Il vendor deve quindi dichiarare e quotare:
+
+- API/SDK/protocollo;
+- documentazione;
+- event feed;
+- vend command;
+- vend result/ack;
+- slot state;
+- door/service events;
+- faults;
+- temperature readout;
+- remote disable;
+- simulator/test mode;
+- rate limits;
+- licensing API;
+- support versioning.
+
+Preferiti:
+- REST/HTTP;
+- MQTT;
+- WebSocket;
+- protocollo documentato.
+
+Se disponibile solo MDB/protocollo proprietario:
+- quotare gateway/adattatore;
+- fornire protocol documentation sufficiente;
+- nessun lock-in sul dato operativo.
+
+Il cloud vendor può restare opzionale per diagnostica, ma il server aziendale deve poter funzionare come master operativo.
 
 ## 14. Lotto K — signage/customer support
 
@@ -385,20 +437,20 @@ Prima del saldo:
 1. installazione meccanica;
 2. electrical test;
 3. network segmentation;
-4. payment 50 test transactions;
+4. Stripe Terminal 50 test transactions;
 5. refund test;
 6. fiscal flow test;
 7. temperature pull-down;
 8. high-temp alarm;
 9. simulated power fail;
-10. simulated network fail;
+10. simulated network fail + delayed webhook;
 11. expiry lockout;
 12. 500 vending cycles mixed SKU;
 13. jam handling;
 14. camera field/privacy check;
 15. NVR retention check;
-16. inventory reconciliation;
-17. 24 h unattended soak test;
+16. inventory reconciliation server/vending;
+17. 24 h unattended soak test con scheduler centrale;
 18. cleaning procedure;
 19. as-built;
 20. training.
@@ -434,9 +486,10 @@ Per ogni riga:
 - spirale vs drum/locker;
 - single temperature vs stratified;
 - kiosk protetto vs true outdoor certified;
-- Nayax vs secondo provider cashless;
-- cloud vendor vs export/API integration;
+- Stripe UX700 unattended vs successivo device unattended ufficialmente supportato;
+- API nativa vending vs gateway/protocol adapter;
+- vendor cloud diagnostics only vs no vendor cloud;
 - 1 camera vs 2;
-- electronics UPS vs no UPS + generator interface.
+- priorità BESS/load shedding diverse, senza UPS locale.
 
 Ogni variante deve avere TCO a 5 anni.
