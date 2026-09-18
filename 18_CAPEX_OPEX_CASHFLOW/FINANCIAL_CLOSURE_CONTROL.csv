@@ -1,0 +1,11 @@
+block_id,block,budget_net_eur,current_maturity,current_cost_eur,quote_cost_eur,committed_eur,paid_eur,eligible_eur,grant_base_eur,vat_eur,opex_annual_eur,hard_blocker,next_evidence,status,notes
+CAP-01,Land and due diligence,50000,E0,,,,,,,,,real lot/price/legal checks,lot offer and due diligence,OPEN,
+CAP-02,Greenhouse 4200m2,350000,E1,,,,,,,,,lot snow wind geotech layout,3 installed comparable RFQs,OPEN,
+CAP-03,Water fertigation drainage,55000,E1,,,,,,,,,crop card water source analysis layout,installed domain RFQs,OPEN,
+CAP-04,Thermal climate,65000,E1/E2,,,,,,,,,real thermal load weather PID,installed PDC-hydronic RFQs,OPEN,
+CAP-05,Energy PV grid EMS BESS,130000,E1/E2,,,,,,,,,lot DSO POD load profile fire design,installed PV-BESS-grid RFQs,OPEN,
+CAP-06,Tech Barn cold packaging,95000,E1,,,,,,,,,layout kg-day pull-down SKU,installed cold-packaging RFQs,OPEN,
+CAP-07,Automation PLC edge network server,30000,E1/E2,,,,,,,,,final config and vendor quotes,3 comparable installed/support RFQs,OPEN,
+CAP-08,Simple retail pickup,20000,E1,,,,,,,,,SKU temp SUAP fiscal pilot,retail pilot plus installed RFQ,OPEN,
+CAP-09,Engineering commissioning contingency,55000,E0/E1,,,,,,,,,final scope and professional fees,discipline RFQs plus contingency model,OPEN,
+TOTAL,Project CAPEX control budget,850000,PLANNING,,,,,,,,,,,OPEN,target range 750k-950k before installed RFQs
