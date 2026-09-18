@@ -1,7 +1,22 @@
 # Carnia TerraTech — Project Charter
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Stato:** principi consolidati; soglie numeriche non ancora deliberate sono tracciate in `KPI_GUARDRAILS.md`.
+
+## 0. Criterio guida — mitigazione del rischio
+
+Carnia TerraTech viene progettata **risk-first**.
+
+L'ordine logico è:
+1. eliminare o ridurre i rischi che possono compromettere terreno, cassa, persone, produzione o continuità;
+2. rendere manutenzione e ripristino semplici;
+3. creare capacità produttiva e commerciale;
+4. automatizzare solo dove il beneficio è reale;
+5. aggiungere funzioni future dopo evidenze operative.
+
+Un investimento che riduce un rischio materiale può avere priorità anche se non aumenta direttamente la resa.
+
+Una funzione tecnologicamente interessante ma non necessaria resta fuori dal core finché non dimostra utilità.
 
 ## 1. Missione
 
@@ -17,14 +32,15 @@ Il progetto deve perseguire contemporaneamente:
 
 1. sostenibilità economica dell'azienda;
 2. sostenibilità personale dei soci durante costruzione, lancio e regime;
-3. riduzione del lavoro manuale evitabile;
-4. sicurezza di persone, animali, colture e beni;
-5. resilienza a guasti, blackout, assenza Internet e indisponibilità temporanea di una persona;
-6. manutenzione semplice e pianificabile;
-7. crescita modulare senza rifacimenti inutili;
-8. uso efficiente di acqua, energia, materiali e spazio;
-9. integrazione fra produzione, natura, paesaggio e benessere;
-10. capacità di misurare costi, rese, consumi, ore uomo e prestazioni reali.
+3. mitigazione preventiva dei rischi di sito, cassa, sicurezza, manutenzione e continuità;
+4. riduzione del lavoro manuale evitabile;
+5. sicurezza di persone, animali, colture e beni;
+6. resilienza a guasti, blackout, assenza Internet e indisponibilità temporanea di una persona;
+7. manutenzione semplice e pianificabile;
+8. crescita modulare senza rifacimenti inutili;
+9. uso efficiente di acqua, energia, materiali e spazio;
+10. integrazione fra produzione, natura, paesaggio e benessere;
+11. capacità di misurare costi, rese, consumi, ore uomo e prestazioni reali.
 
 Nessuno di questi obiettivi deve essere considerato automaticamente secondario rispetto alla sola resa agricola.
 
@@ -76,6 +92,10 @@ Nessuno di questi obiettivi deve essere considerato automaticamente secondario r
 
 ### 3.6 Automazione utile
 
+- la priorità non è il numero di robot, ma la quantità di rischio, fatica e ore indesiderate realmente eliminate;
+- robot dedicati a funzioni marginali non entrano automaticamente nel progetto;
+- accesso sicuro in quota, movimentazione materiali e manutenzione hanno priorità rispetto a robot di servizio non essenziali;
+
 - automatizzare dove si riducono ore, errori, esposizione a lavoro sgradevole o rischio;
 - non automatizzare una funzione solo perché tecnicamente possibile;
 - l'automazione deve sempre avere diagnostica, stato osservato e possibilità di intervento manuale sicuro;
@@ -98,9 +118,11 @@ Il progetto comprende, in fasi differenti:
 - automazione, dati, sensoristica, visione artificiale, AI e robotica;
 - logistica interna, AMR, sollevatore e mezzi di servizio;
 - Tech Barn, post-raccolta, celle e confezionamento;
-- vermicompost e recupero di materia;
+- produzione interna di humus/vermicompost e recupero/rilavorazione controllata di materia;
+- mezzo multifunzione per movimentazione di materiali, humus, pallet, substrati e attività di manutenzione;
+- accesso sicuro alle parti alte della serra mediante piattaforma OEM/PLE ragno o servizio equivalente;
 - manutenzione automatizzata del prato e del verde;
-- gestione dell'area galline con forte riduzione del lavoro manuale sporco;
+- eventuale area galline futura con soluzioni semplici e affidabili; robot dedicati alla pulizia non sono requisito del core;
 - fattoria didattica;
 - futuro spaccio aziendale automatizzato self-service 24/7;
 - pergolati, vite, alberature, aree relax e spazi sociali;
