@@ -54,6 +54,7 @@ Link principali:
 - [Termico e clima](../05_TERMICO_E_CLIMA/README.md)
 - [Celle frigorifere](../09_TECH_BARN_E_POST_RACCOLTA/COLD_ROOMS_ARCHITECTURE.md)
 - [Spaccio automatico 24/7](../10_BENESSERE_FATTORIA_E_SERVIZI/SPACCIO_AUTOMATICO_24_7_ARCHITECTURE.md)
+- [Vendor data snapshot 18/09/2026](LOAD_VENDOR_DATA_SNAPSHOT_2026-09-18.md) — dati OEM/retailer verificati, prezzi benchmark e open RFQ
 
 Benchmark economici già presenti nel package BOM-034:
 
