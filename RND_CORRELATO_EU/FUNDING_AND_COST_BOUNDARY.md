@@ -3,6 +3,8 @@
 **Stato:** `PRE-SCREENING / NESSUN CONTRIBUTO ASSUNTO COME CERTO`  
 **Aggiornato:** 18 settembre 2026.
 
+Link operativi e fonti ufficiali: [`LINKS_UE_RND.md`](LINKS_UE_RND.md).
+
 ## 1. Regola principale
 
 Il progetto R&S correlato ha contabilità e perimetro separati dal progetto agricolo.
