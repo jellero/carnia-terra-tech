@@ -83,7 +83,8 @@ La presenza di un oggetto nel progetto R&S NON implica automaticamente che il su
 ## 6. Documenti
 
 - [AUTONOMOUS_FARM_PLATFORM.md](AUTONOMOUS_FARM_PLATFORM.md) — concept tecnico, work package e demonstrator;
-- [FUNDING_AND_COST_BOUNDARY.md](FUNDING_AND_COST_BOUNDARY.md) — separazione costi e canali UE candidati.
+- [FUNDING_AND_COST_BOUNDARY.md](FUNDING_AND_COST_BOUNDARY.md) — separazione costi e canali UE candidati;
+- [LINKS_UE_RND.md](LINKS_UE_RND.md) — portali ufficiali, call search, Work Programme, CORDIS, NCP, IP Helpdesk ed EIC.
 
 ## 7. Gate prima di una candidatura
 
