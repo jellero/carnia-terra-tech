@@ -7,6 +7,10 @@ Repository tecnico e gestionale per progettare una azienda agricola ad alta auto
 
 ## Visione
 
+**Principio guida: mitigazione del rischio prima dell'ottimizzazione.**
+
+Il progetto parte dalla riduzione delle incertezze che possono compromettere sito, cassa, sicurezza, manutenzione e continuità. Solo dopo si ottimizzano resa e automazione.
+
 Carnia TerraTech non è soltanto una serra: deve essere un sistema agricolo capace di produrre reddito e sicurezza economica senza trasformare il lavoro in un peso continuo. Tecnologia, automazione, ergonomia, natura, ordine, estetica, manutenzione e qualità della vita sono requisiti di progetto.
 
 Obiettivi permanenti:
@@ -27,7 +31,10 @@ Obiettivi permanenti:
 - FV: **120 kWp iniziali**, predisposizione 150–180 kWp;
 - accumulo termico: **30 m³ iniziali**, predisposizione 40–50 m³;
 - accumulo acqua: obiettivo di lavoro **300 m³**;
-- automazione locale a sicurezza intrinseca con PLC, rete dati, visione artificiale e AMR.
+- automazione locale a sicurezza intrinseca con PLC e rete dati; AMR solo dopo pilot;
+- mezzo multifunzione core per materiali, humus, cantiere e manutenzione;
+- capacità certificata di accesso in quota con piattaforma OEM/PLE ragno/noleggio;
+- humus/vermicompost prodotto internamente quando sicuro, legale ed economicamente sensato.
 
 ## Come leggere il repository
 
@@ -36,7 +43,7 @@ Obiettivi permanenti:
 Documenti fondativi nuovi:
 
 - `00_VISIONE_E_PRINCIPI/PROJECT_CHARTER.md` — missione, requisiti non negoziabili e metodo;
-- `10_BENESSERE_FATTORIA_E_SERVIZI/FUTURE_MODULES.md` — benessere, fattoria didattica, robot di servizio e spaccio 24/7;
+- `10_BENESSERE_FATTORIA_E_SERVIZI/FUTURE_MODULES.md` — benessere, fattoria didattica e spaccio; rover galline rimosso dal core;
 - `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md` — prima BOM tecnica analizzata nel nuovo metodo.
 
 I file in `docs/` contengono il lavoro tecnico precedente e restano validi come base durante la riorganizzazione. Verranno migrati progressivamente senza perdere informazioni.
@@ -54,6 +61,18 @@ Concetto attuale: **CTT-PAA — Piattaforma di Automazione Agricola Carnia Terra
 La directory [`EXTRA_AGRITURISMO_EVOLUTIVO/`](EXTRA_AGRITURISMO_EVOLUTIVO/) contiene un piano autonomo di diversificazione agrituristica finanziato e valutato separatamente.
 
 Parte dalla soluzione minima **ristoro light a spuntini non cucinati**, con predisposizioni per esperienze, cucina e ospitalità future. Non entra nella sequenza BOM del progetto principale e non è necessario per l'avvio dell'azienda.
+
+## Terreno: prima misurare, poi progettare
+
+Quando viene individuato un lotto serio:
+- griglia di campionamento su tutta la superficie utile;
+- prove di infiltrazione/drenaggio;
+- rilievo quote e ristagni;
+- anomalie e riporti;
+- geotecnica professionale per le opere;
+- masterplan di prova prima del rogito.
+
+Riferimento: [`01_MASTERPLAN_E_TERRENO/PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md`](01_MASTERPLAN_E_TERRENO/PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md).
 
 ## Business plan e struttura societaria
 
@@ -75,12 +94,12 @@ Il principio è mantenere **un'unica base numerica** fra progetto tecnico, banca
 Il riferimento per l'esecuzione della Fase P1 è [`20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/`](20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/).
 
 Numeri di governo:
-- CAPEX netto di lavoro: **€850.000**;
+- CAPEX netto di lavoro: **€950.000**;
 - riserva operativa protetta: **€120.000**;
-- linea IVA/ponte: **€120.000–150.000**;
+- linea IVA/ponte: **€140.000–170.000**;
 - serra finale: ~4.200 m² / 6 comparti;
 - prima messa a reddito: **3 comparti / ~2.100 m²**;
-- target commerciale P1 da validare: ~**€250.000/anno**;
+- target commerciale P1 da validare: ~**€280.000/anno**;
 - espansione agli altri 3 comparti solo dopo dati reali tecnici, commerciali e di cassa.
 
 ## Regola di progettazione
