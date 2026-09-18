@@ -43,9 +43,11 @@ Il registro non sostituisce le BOM di dominio. Serve a evitare:
 | Acqua | 018 | accumulo 300 m³ | Q2 | RFQ | geotecnica, fonte, bilancio | RFQ 2×150 m³ / alternative |
 | Energia | 019 | FV + inverter | Q1/Q2 | moduli/inverter benchmark + RFQ | layout, strutture, DSO | RFQ 100 vs 120 kW AC installato |
 | Logistica | 020 | AMR serra | Q3 | RFQ | pilot serra, IP/condensa, offline/API, dock | demo + 100 missioni acceptance |
-| Logistica | 021 | telescopico/mezzo multifunzione | Q1/Q2 | benchmark + RFQ | accessi, piazzali, compiti reali | demo/RFQ macchina + accessori |
+| Logistica | 021 | telescopico/mezzo multifunzione CORE | Q1/Q2/Q3 | benchmark + RFQ | accessi, portanza, area humus, duty | demo/RFQ macchina + forche + benna |
 | Verde | 022 | robot tagliaerba | Q3 | prezzi benchmark | superficie netta, pendenze, GNSS/RTK | pilot zona reale |
-| Benessere | 023 | pulizia galline free-range | Q3 | benchmark + RFQ | superfici miste, hens-clear, dirty dock | pilot obbligatorio |
+| Benessere | 023 | rover pulizia galline | Q4 / ARCHIVIATO | storico | rimosso dal core | nessuna RFQ |
+| Manutenzione | 021-H1 | PLE/piattaforma accesso in quota | Q2/Q3 | RFQ | layout, punti alti, portanza | demo punti critici + TCO acquisto/noleggio |
+| Materia | 011-MAT | humus/vermicompost base | Q2 | budget | flussi t/anno, layout, stato materiali | RFQ baie/strumenti solo dopo layout |
 | Post-raccolta | 024 | celle frigorifere | Q2 | benchmark hardware + RFQ | kg/day, batch, T ingresso, pull-down, layout | RFQ frigorista installato |
 | Post-raccolta | 025 | raccolta/packaging | Q1/Q2 | molti benchmark unitari | volumi, SKU, packaging | RFQ lotto equipment + consumabili |
 | Servizi | 026 | pergolato/vite/relax | Q2 | benchmark unitari + RFQ | layout, neve/vento, geotecnica | calcolo strutturale + RFQ installato |
@@ -94,7 +96,9 @@ Non chiedere un "prezzo finale installato" senza:
 - crop card per acqua/fertirrigazione;
 - carico termico per distribuzione/accumulo;
 - kg prodotto/pull-down per celle;
-- superficie/pilot per robotica;
+- superficie/pilot per robotica non core;
+- layout/punti alti per accesso in quota;
+- flussi reali per attrezzature humus;
 - domanda per BOM-029.
 
 Un prezzo senza questi input resta solo benchmark.
@@ -109,9 +113,14 @@ Ordine operativo:
 5. BOM-015 pompe/VFD;
 6. BOM-024 frigorista — budgetary con load sheet aperto;
 7. BOM-025 packaging;
-8. BOM-021 telescopico;
-9. BOM-012 DryGair/boost;
-10. servizi professionali BOM-031.
+4. BOM-021 telescopico/benna;
+5. accesso in quota H1 — RFQ piattaforma/PLE;
+6. BOM-030 server;
+7. BOM-015 pompe/VFD;
+8. BOM-024 frigorista — budgetary con load sheet aperto;
+9. BOM-025 packaging;
+10. BOM-012 DryGair/boost;
+11. servizi professionali BOM-031.
 
 ## 7. Campi obbligatori per ogni offerta
 
@@ -192,10 +201,11 @@ Regola di transizione:
 Pilot principali attivi nel registro:
 - PIL-AMR;
 - PIL-MOW;
-- PIL-HEN;
 - PIL-RETAIL;
 - PIL-REUSE;
 - PIL-DID;
 - PIL-BESS;
 - PIL-COLD;
-- PIL-PACK.
+- PIL-PACK;
+- PIL-LIFT;
+- PIL-HGT.
