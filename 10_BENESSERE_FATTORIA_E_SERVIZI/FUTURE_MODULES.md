@@ -1,7 +1,7 @@
 # Carnia TerraTech — Benessere, fattoria e servizi futuri
 
 **Aggiornato:** 18 settembre 2026.  
-**Stato:** BOM-023 pulizia galline, BOM-026 pergolato/vite/relax e BOM-027 fattoria didattica sviluppate; spaccio 24/7 da sviluppare.
+**Stato:** BOM-023 pulizia galline, BOM-026 pergolato/vite/relax, BOM-027 fattoria didattica e BOM-028 spaccio automatico 24/7 sviluppate.
 
 ## 1. Obiettivo del blocco
 
@@ -111,31 +111,48 @@ Documenti:
 
 ## 5. Spaccio automatizzato self-service 24/7
 
-### Obiettivo
+**BOM-028 SVILUPPATA / REGIME SUAP, SKU, TEMPERATURE, FISCALITÀ E RFQ BLOCCANTI.**
 
-Vendita diretta con minima necessità di presidio continuo, mantenendo sicurezza, tracciabilità, catena del freddo e semplicità per il cliente.
+Baseline:
 
-### Architettura da valutare
+- distinguere vendita diretta agricola ex D.Lgs. 228/2001 da vending retail generico;
+- per Carnia TerraTech, preferenza al canale di vendita diretta agricola se prodotti propri e prevalenza rispettano il perimetro normativo;
+- kiosk/locale protetto come default; outdoor puro soltanto con macchina esplicitamente progettata e garantita per outdoor;
+- nessuna unica temperatura per tutti gli SKU;
+- T-A leafy/fresco freddo interfaccia BOM-024 CR-A;
+- T-B pomodoro/peperone/basilico interfaccia CR-B e validazione specifica del setpoint;
+- Gusto 8 interessante per layout multi-temperature;
+- Gusto 8 Lift candidato prioritario per packaging/prodotti fragili grazie a SoftVend;
+- Gusto Drum / FAS Easy Food alternative per drum/locker;
+- FAS Skudo 2026 come categoria outdoor da RFQ;
+- cashless baseline, cash optional;
+- Nayax VPOS Touch working candidate con telemetria;
+- fiscalizzazione da validare sulla configurazione effettiva con vendor/commercialista;
+- logger temperatura indipendente dal controller vending;
+- CCTV limitata alla pertinenza necessaria, no audio/face recognition, privacy by design;
+- electronics UPS solo per IT/payment/NVR, mentre refrigerazione usa continuità generale e fail-safe food;
+- guest/vending/CCTV separati dall'OT;
+- 100 erogazioni per SKU critico + 500 vendite miste prima del go-live.
 
-- locale o kiosk separato dal flusso produttivo;
-- accesso controllato o area vending;
-- frigoriferi/vending refrigerati;
-- scaffali intelligenti o locker;
-- POS/contactless;
-- videosorveglianza;
-- gestione inventario;
-- etichette e tracciabilità;
-- controllo temperature con allarmi;
-- backup elettrico per i carichi critici;
-- illuminazione e accessibilità notturna;
-- gestione resi/scarti;
-- protezione vandalismo/furto;
-- procedure di pulizia;
-- normativa fiscale, sanitaria e commerciale da verificare prima dell'apertura.
+Benchmark:
 
-### Integrazione col progetto
+- Necta Gusto 8 ~€5.900 benchmark EU seller;
+- Gusto 8 Lift ~€7.200 benchmark EU seller;
+- Gusto Drum ~€10.600–13.199 benchmark EU;
+- FAS Pro 900 €8.840 net benchmark listing con Nayax incluso, configurazione da verificare;
+- Nayax VPOS Touch €430;
+- servizio cashless/operations/inventory €15,75/mese benchmark;
+- processing benchmark 1,45–3,5% in funzione del ticket;
+- Testo 160 T €124 net / €151,28 IVA incl.;
+- Ubiquiti G5 Turret Ultra €80/cad;
+- notifica sanitaria FVG/NIA-VIA €20 reference.
 
-Lo spaccio deve poter vendere prodotti freschi aziendali e, se compatibile con la normativa e la strategia commerciale, prodotti trasformati o complementari. La predisposizione di parcheggio, passaggi, fibra/rete, alimentazione e videosorveglianza va considerata nel masterplan anche se l'apertura è futura.
+Documenti:
+
+- `SPACCIO_AUTOMATICO_24_7_ARCHITECTURE.md`;
+- `RFQ_SPACCIO_AUTOMATICO_24_7.md`;
+- `19_BOM_PRODOTTI_FORNITORI/BENESSERE_SPACCIO_AUTOMATICO_24_7.md`;
+- `22_FONTI_NORME_PREVENTIVI/BENESSERE_SPACCIO_AUTOMATICO_24_7_SOURCES.md`.
 
 ## 6. Pergolato, vite, verde e aree di sosta
 
