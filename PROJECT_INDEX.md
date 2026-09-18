@@ -624,6 +624,7 @@ Documenti:
 - `18_CAPEX_OPEX_CASHFLOW/MATRICE_INVESTIRE_ORA_O_DOPO.md`;
 - `18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md` — target €850k CAPEX netto + €120k riserva operativa + linea IVA;
 - `20_CANTIERE_E_CRONOPROGRAMMA/SEQUENZA_AVVIO_E_MESSA_A_REDDITO.md`;
+- `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md` — piano master per settore, €850k CAPEX, P1 su 3 comparti, cronoprogramma 0–15 mesi e verifiche di uscita;
 - `15_MERCATO_E_VENDITE/VENDITA_DIRETTA_E_CONSEGNE_PROGRAMMATE.md`.
 
 ## 17. Metodo BOM obbligatorio
