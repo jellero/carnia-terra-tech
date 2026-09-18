@@ -109,29 +109,31 @@ Questi documenti rendono eseguibili F0/F1 e preparano P1, ma non sostituiscono c
 ## 6. Prossime azioni possibili prima del lotto
 
 ### A. RFQ preliminari
-Aprire:
-1. BOM-034 BESS/PCS + commutazione rapida / alternative accoppiate in AC;
-2. RFQ preliminare per progettazione connessione elettrica;
-3. BOM-019 inverter/FV;
-4. BOM-011 PDC;
-5. BOM-030 server;
+
+Aprire in ordine risk-first:
+1. BOM-021 telescopico + forche + benna;
+2. H1 accesso in quota — piattaforma OEM vs PLE ragno vs noleggio;
+3. BOM-034 BESS/PCS + progettazione connessione;
+4. BOM-019 inverter/FV;
+5. BOM-011 PDC;
 6. BOM-015 pompe/VFD;
-7. BOM-025 prova banco/RFQ confezionamento;
-8. BOM-024 dimensionamento preliminare celle frigorifere;
-9. BOM-012 DryGair/sistema di supporto;
-10. BOM-021 telescopico/benna + PIL-LIFT;
-11. accesso in quota H1 + PIL-HGT;
-12. area humus/cicli materia.
+7. BOM-024 celle — budgetary;
+8. BOM-025 packaging;
+9. BOM-030 server minimo;
+10. BOM-012 deumidificazione/boost;
+11. area humus: solo attrezzatura base dopo flussi/layout.
 
 Stato offerta:
 `PRELIMINARE / NON VALIDO PER ORDINE`.
 
 ### B. Dimostrazioni fornitori
-Possibili senza sito definitivo o con ambiente equivalente:
-- PIL-AMR;
-- PIL-PACK;
-- PIL-RETAIL;
-- evidenze/dimostrazione dell'architettura di commutazione BESS.
+
+Prima del sito definitivo sono utili solo se non distraggono dalle chiusure core:
+- PIL-PACK su confezioni rappresentative;
+- evidenze/dimostrazione architettura BESS;
+- demo telescopico preliminare se disponibile.
+
+AMR e retail avanzato restano in HOLD fino a dati P1 o necessità commerciale reale.
 
 ### C. Finanza
 Chiudere evidenze di:
@@ -174,8 +176,9 @@ Attivare in parallelo:
 - drenaggi.
 
 ### Visitatori/logistica
-- percorso AMR;
-- area robot tagliaerba;
+- percorso mezzi e area humus;
+- raggiungibilità manutenzione in quota;
+- predisposizione AMR/tagliaerba solo se non penalizza il core;
 - zonizzazione didattica;
 - parcheggio/punto di discesa;
 - accesso tecnico.
@@ -232,12 +235,10 @@ Questi dati sostituiscono le classi di riferimento con dimensionamenti reali.
 - autorizzazione all'ordine.
 
 ### Prova pilota superata sblocca
-- AMR;
-- automazione vendita;
-- espansione riuso drenaggi;
-- robot tagliaerba;
-- accesso in quota;
-- automazione confezionamento.
+- mezzo multifunzione e accesso in quota per P1;
+- automazione confezionamento se acquistata;
+- espansione riuso drenaggi se attivata;
+- AMR/tagliaerba/retail avanzato soltanto nelle rispettive fasi future.
 
 ### SAT superato sblocca
 - avvio operativo;
