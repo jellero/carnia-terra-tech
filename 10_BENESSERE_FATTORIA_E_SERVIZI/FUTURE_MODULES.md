@@ -128,6 +128,12 @@ Baseline:
 - cashless baseline, cash optional;
 - Stripe come payment stack unico, con UX700 candidato unattended da RFQ/pilot;
 - server centrale come system of record per ordini, inventario, lotti, refill, personale, logistica e forecasting;
+- frictionless R&D prioritario: smart crate + smart cart + sensor fusion;
+- smart crate identifica SKU/lotto e rileva -Δmassa; cart verifica +Δmassa/sessione; camera/localizzazione risolvono ambiguità;
+- e-paper/ESL per posizione SKU/cassetta; LCD sul carrello;
+- cheap load cells solo sensing/cross-check; misura che determina il prezzo da catena metrologica legal-for-trade;
+- Stripe UX700 fisso al paid-exit gate come baseline frictionless; reader-on-cart future;
+- nested return/charging baseline; recovery rover/tug solo se volume/parcheggio lo giustificano;
 - fiscalizzazione da validare sulla configurazione Stripe/RT effettiva;
 - logger temperatura indipendente dal controller vending;
 - CCTV limitata alla pertinenza necessaria, no audio/face recognition, privacy by design;
@@ -150,6 +156,7 @@ Benchmark:
 Documenti:
 
 - `SPACCIO_AUTOMATICO_24_7_ARCHITECTURE.md`;
+- `SMART_CRATE_SMART_CART_ARCHITECTURE.md`;
 - `RFQ_SPACCIO_AUTOMATICO_24_7.md`;
 - `19_BOM_PRODOTTI_FORNITORI/BENESSERE_SPACCIO_AUTOMATICO_24_7.md`;
 - `22_FONTI_NORME_PREVENTIVI/BENESSERE_SPACCIO_AUTOMATICO_24_7_SOURCES.md`.
