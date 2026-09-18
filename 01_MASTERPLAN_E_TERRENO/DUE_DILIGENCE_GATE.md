@@ -1,6 +1,6 @@
 # Carnia TerraTech — Due Diligence Terreno
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Stato:** `CHECKLIST OBBLIGATORIA`
 
 ## 1. Regola
@@ -117,6 +117,28 @@ Fonte:
 https://irdat.regione.fvg.it/CTRN/ricerca-cartografia/
 
 Prima del progetto esecutivo serve comunque rilievo reale adeguato alla precisione richiesta.
+
+## 7A. Campagna fisica obbligatoria sul lotto
+
+Quando un lotto supera il pre-screening, prima dell'acquisto definitivo viene eseguita una campagna reale sull'intera superficie utile.
+
+Riferimento:
+`PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md`.
+
+Minimo:
+- griglia georeferenziata;
+- campioni distribuiti;
+- intensificazione nelle anomalie;
+- rilievo quote;
+- prove infiltrazione/drenaggio;
+- osservazione ristagni;
+- zone di riporto;
+- storico/contaminazione se sospetta;
+- geotecnica professionale coerente con le opere.
+
+La campagna diretta del promotore è parte della due diligence, ma i dati destinati al calcolo strutturale o a classificazioni ufficiali vengono confermati da soggetti competenti.
+
+**Blocco:** nessun masterplan esecutivo viene congelato prima di questa campagna.
 
 ## 8. Geologia e geotecnica di sito
 
@@ -238,3 +260,5 @@ Ogni stato deve avere:
 - azione successiva.
 
 Il lotto non supera il gate di acquisto con `FAIL` irrisolti o `UNKNOWN` su punti bloccanti.
+
+In particolare, drenaggio/infiltrazione, quote, geotecnica preliminare e anomalie del suolo devono essere basati su dati reali del lotto.
