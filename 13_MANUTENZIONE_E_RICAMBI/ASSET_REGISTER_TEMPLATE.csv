@@ -1,0 +1,2 @@
+asset_id,system,function,priority,manufacturer,model,serial,location,vendor,install_date,warranty_end,firmware_config,manual_ref,pm_interval,critical_spare,spare_class,spare_qty,lead_time_days,fallback,recovery_procedure,owner,status,notes
+CTT-EXAMPLE-001,example,REMOVE THIS ROW,P3,,,,,,,,,,,,,,,,,,,TEMPLATE,
