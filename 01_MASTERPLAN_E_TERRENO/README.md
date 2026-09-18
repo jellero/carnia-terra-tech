@@ -1,6 +1,6 @@
 # Carnia TerraTech — Punto 01: Terreno e Masterplan
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Stato:** `RAFFINATO / IN ATTESA DI LOTTO REALE`
 
 ## Scopo
@@ -13,7 +13,9 @@ Il punto 01 definisce il metodo con cui un lotto passa da annuncio a possibile a
 
 - area prioritaria: corridoio **Venzone / Gemona**;
 - tetto obiettivo acquisto terreno: **€50.000**;
-- dimensione di lavoro: **8.500–10.000 m²**, con preferenza per qualcosa oltre 9.000 m² se il lotto è regolare e realmente utilizzabile;
+- superficie preferita: **10.000–12.000 m² realmente utilizzabili**;
+- 9.000–10.000 m²: valutabili solo con forma molto efficiente e pochi vincoli;
+- <9.000 m²: eccezione da dimostrare con masterplan completo, manutenzione, drenaggi e crescita;
 - serra produttiva target: **4.200 m²**;
 - nessun acquisto senza verifica urbanistica, idraulica/geologica, paesaggistica, accessi, acqua, elettricità e fattibilità del masterplan;
 - nessun annuncio o informazione del venditore sostituisce documentazione ufficiale o verifica tecnica.
@@ -26,6 +28,7 @@ Un candidato discusso in passato era circa 8.500 m² a €32.000, ma non è mai 
 - `DUE_DILIGENCE_GATE.md` — controlli obbligatori prima di proposta/acquisto;
 - `MASTERPLAN_REQUIREMENTS.md` — funzioni che il lotto deve riuscire a ospitare;
 - `SITE_EVALUATION_TEMPLATE.md` — scheda standard per confrontare terreni reali;
+- `PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md` — campagna fisica obbligatoria sul lotto serio;
 - `LAND_COST_MODEL.md` — tutti i costi da considerare oltre al prezzo di acquisto;
 - `OFFICIAL_SOURCES.md` — fonti territoriali e amministrative da usare.
 
@@ -37,7 +40,8 @@ Ogni lotto candidato assume uno stato:
 2. `PRE-SCREENING` — prezzo, superficie, posizione e forma compatibili in prima battuta;
 3. `DOCUMENTI_RICHIESTI` — mappali, titoli e documentazione richiesti;
 4. `DUE_DILIGENCE` — verifiche ufficiali e tecniche in corso;
-5. `MASTERPLAN_TEST` — layout Carnia TerraTech provato sul lotto reale;
+5. `FIELD_TESTED` — campioni, drenaggio/infiltrazione, quote e anomalie misurate;
+6. `MASTERPLAN_TEST` — layout Carnia TerraTech provato sul lotto reale;
 6. `COSTO_TOTALE_STIMATO` — prezzo + imposte/oneri + abilitazioni + opere necessarie;
 7. `VALIDATO` — nessuna criticità bloccante nota;
 8. `NEGOZIABILE` — condizioni economiche e sospensive definite;
@@ -46,7 +50,7 @@ Ogni lotto candidato assume uno stato:
 
 ## Regola di blocco
 
-Un lotto non può diventare `ACQUISTABILE` se resta `UNKNOWN` su una questione che può impedire o alterare sostanzialmente:
+Un lotto non può diventare `ACQUISTABILE` senza stato `FIELD_TESTED` e non può diventarlo se resta `UNKNOWN` su una questione che può impedire o alterare sostanzialmente:
 
 - realizzazione della serra;
 - accesso mezzi;
