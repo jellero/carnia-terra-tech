@@ -52,7 +52,39 @@ Il problema è sostituire progressivamente:
 - pilot plan -> pilot evidence;
 - SAT plan -> SAT PASS.
 
-## 4. Piano operativo P1 già collegato
+## 4. Analisi problematiche e rischi
+
+Riferimenti:
+- `ANALISI_PROBLEMATICHE_RISCHI.md`;
+- `ANALISI_PROBLEMATICHE_RISCHI.csv`.
+
+La lettura trasversale distingue **problematiche già presenti** da **rischi futuri**. Le problematiche oggi più bloccanti sono: chiusura finanziaria non ancora actual, lotto non validato, crop card P1 non congelate, major CAPEX ancora prevalentemente E0/E1, profilo P0/P1 non misurato, DSO/POD/BT-MT non determinati, pilot e SAT non eseguiti, OPEX non misurato e domanda P1 ancora da validare.
+
+Le concentrazioni di rischio principali sono:
+- finanza -> lotto -> RFQ;
+- lotto -> geotecnica/DSO/layout;
+- crop card -> acqua/termico/freddo/packaging;
+- load register -> BESS/DSO;
+- mercato -> P2;
+- integrazione -> go-live.
+
+Trigger di escalation immediata:
+- major package >20% sopra envelope;
+- installed forecast >€950k;
+- uso della riserva operativa per CAPEX;
+- criticità urbanistica/geotecnica/idraulica del lotto;
+- DSO con MT/opere inattese;
+- carico P0/P1 oltre envelope BESS;
+- pilot critical FAIL;
+- reboot P0 in blackout;
+- failure food/cold/water safety;
+- scarico/riuso non autorizzato;
+- cambio materiale della configurazione vendor;
+- skill P0 dipendente da una sola persona.
+
+La severità indica la **conseguenza potenziale**; la probabilità resta `TBD` finché non esistono dati sito, misure, vendor evidence o actuals.
+
+## 5. Piano operativo P1 già collegato
 
 Il master operativo corrente è:
 - `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md`;
@@ -62,7 +94,7 @@ Il master operativo corrente è:
 
 Questi documenti rendono eseguibili F0/F1 e preparano P1, ma non sostituiscono concessioni, lotto o crop card finali.
 
-## 5. Prossime azioni che si possono fare prima del lotto
+## 6. Prossime azioni che si possono fare prima del lotto
 
 ### A. Budgetary RFQ
 Aprire:
@@ -97,7 +129,7 @@ Chiudere evidenze di:
 - bridge;
 - riserva operativa.
 
-## 6. Azioni immediatamente dopo identificazione lotto
+## 7. Azioni immediatamente dopo identificazione lotto
 
 Attivare in parallelo:
 
@@ -134,7 +166,7 @@ Attivare in parallelo:
 - parking/drop-off;
 - service access.
 
-## 7. Azioni dopo crop card / processo reale
+## 8. Azioni dopo crop card / processo reale
 
 - Q irrigazione;
 - fertigation recipes;
@@ -150,7 +182,7 @@ Attivare in parallelo:
 
 Questi dati sostituiscono le classi di benchmark con dimensionamenti reali.
 
-## 8. Dipendenze critiche
+## 9. Dipendenze critiche
 
 ### Lotto sblocca
 - geotecnica;
@@ -199,7 +231,7 @@ Questi dati sostituiscono le classi di benchmark con dimensionamenti reali.
 - warranty baseline;
 - operations handover.
 
-## 9. Hard stop conditions
+## 10. Hard stop conditions
 
 Non procedere a ordine irreversibile se:
 - DG0 financial close non PASS;
@@ -211,7 +243,7 @@ Non procedere a ordine irreversibile se:
 - operational reserve viene usata per coprire CAPEX;
 - configurazione offerta differisce materialmente dal design approvato.
 
-## 10. Maturity ladder
+## 11. Maturity ladder
 
 Per ogni major package:
 
@@ -226,7 +258,7 @@ Per ogni major package:
 9. `ACTUAL COST/OPEX`
 10. `90-DAY REVIEW`
 
-## 11. Core documents
+## 12. Core documents
 
 Energy:
 - `06_ENERGIA_ELETTRICA_FV/MASTER_LOAD_REGISTER.md`
@@ -238,13 +270,14 @@ Closure:
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_PILOT_REGISTER.md`
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_COMMISSIONING_ACCEPTANCE.md`
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_DECISION_GATE_REGISTER.md`
+- `21_RISCHI_DECISIONI_OPEN_POINTS/ANALISI_PROBLEMATICHE_RISCHI.md`
 
 Finance:
 - `18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md`
 - `18_CAPEX_OPEX_CASHFLOW/FINANCIAL_CLOSURE_CONTROL.md`
 - `18_CAPEX_OPEX_CASHFLOW/AVVIO_CASSA_E_RAMPA_PRODUTTIVA.md`
 
-## 12. Stato corrente sintetico
+## 13. Stato corrente sintetico
 
 La progettazione documentale non è più il collo di bottiglia principale.
 
