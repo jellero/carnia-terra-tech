@@ -1,8 +1,8 @@
 # BOM-021 — Sollevatore / mezzo multifunzione
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Ambito:** movimentazione pesante, forche, accessori e lavoro in quota certificato.  
-**Stato:** `CANDIDATI REALI / MERLO PRIORITARIO DA DEMO-RFQ / STOCCATORE COMPLEMENTARE RACCOMANDATO`.
+**Stato:** `FUNZIONE CORE / TELESCOPICO DA DEMO-RFQ / BENNA OBBLIGATORIA / ACCESSO IN QUOTA DA CHIUDERE`.
 
 ## 1. Distinta principale
 
@@ -13,9 +13,9 @@
 | LFT-ALT-002 | JCB 525-60E | benchmark | DA RFQ | 2,5 t / 6 m / 1,84 m |
 | LFT-FORK-001 | portaforche + forche 1.2 m | 1 | BASELINE | OEM |
 | LFT-SHIFT-001 | traslatore/posizionatore forche | 0–1 | DA TCO | riduce manovre |
-| LFT-BKT-001 | benna general purpose | 0–1 | CANDIDATO | terriccio/compost/materiali |
+| LFT-BKT-001 | benna general purpose | 1 | REQUISITO CORE | humus/compost/substrati/materiali |
 | LFT-JIB-001 | gancio/jib carichi sospesi | 0–1 | CONDIZIONALE | solo OEM e formazione specifica |
-| LFT-AWP-001 | piattaforma persone OEM | 0–1 | CANDIDATO FORTE | nessuna cesta generica |
+| LFT-AWP-001 | piattaforma persone OEM | 0–1 | DA CONFRONTO H1 | se copre realmente i punti manutentivi |
 | LFT-AWP-PREP | predisposizione macchina navicella | 0–1 | OBBLIGATORIA SE AWP | OEM |
 | LFT-REMOTE | radiocomando OEM | 0–1 | CONDIZIONALE | solo configurazione autorizzata |
 | LFT-TIRE-001 | pneumatici set | 1 | DA SCELTA | agricolo/industriale |
@@ -27,6 +27,7 @@
 | LFT-REC | kit recovery/traino | 1 | OBBLIGATORIO | secondo manuale |
 | LFT-TELEM | telematica | 0–1 | CONDIZIONALE | cloud non vitale |
 | LFT-L2-001 | stoccatore elettrico compatto | 1 | CANDIDATO | EP EST122 o classe equivalente |
+| LFT-H1-001 | PLE cingolata compatta tipo ragno | 0–1 | FUNZIONE CORE / ACQUISTO CONDIZIONALE | confronto con piattaforma OEM/noleggio |
 | LFT-L2-BAT | batteria stoccatore | 1 | inclusa/ricambio | AGM/Li-ion da TCO |
 | LFT-L2-CHG | caricatore stoccatore | 1 | incluso | 230 V preferito |
 | LFT-SP-001 | filtri/olio/guarnizioni | 1 lotto | RICAMBIO | primo anno |
@@ -194,13 +195,26 @@ Registrare:
 - verifiche periodiche annuali del telescopico secondo regime vigente;
 - nessuna modifica a radiocomando/interlock fuori OEM.
 
+## 9A. Ruolo nei cicli materia
+
+Il mezzo L1 serve a:
+- alimentare baie e letti humus;
+- movimentare big bag;
+- muovere substrati;
+- caricare vaglio/miscelatore futuri;
+- movimentare prodotto finito;
+- gestire materiali di cantiere e manutenzione.
+
+Questo utilizzo rende il mezzo core anche senza AMR.
+
 ## 10. Decisione working
 
 **Direzione preferita da validare:**
 
 1. Merlo EW25.5-90 nuovo con forche come L1;
 2. predisposizione + piattaforma OEM da quotare contestualmente, se il TCO sostituisce realmente PLE/noleggi;
-3. benna solo se le ore/anno la giustificano;
+3. benna general purpose inclusa nel pacchetto iniziale;
 4. stoccatore elettrico L2 da ~1,2 t per Tech Barn;
 5. AMR BOM-020 per trasporto ripetitivo delle cassette;
-6. noleggio per attrezzature eccezionali che non meritano CAPEX.
+6. capacità accesso in quota obbligatoria: piattaforma OEM se sufficiente, altrimenti PLE ragno o noleggio con SLA;
+7. noleggio per attrezzature eccezionali che non meritano CAPEX.
