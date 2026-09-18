@@ -281,41 +281,79 @@ Elementi:
 
 Richiedere scheda tecnica/RFQ prima di usarla nel progetto.
 
-## 16. Nayax VPOS Touch
+## 16. Stripe Terminal
 
-Store ufficiale:
+Panoramica Italia:
 
-https://shop.nayax.com/nl_nl/vpos-touch.html
+https://stripe.com/it/terminal
 
-Benchmark:
-- hardware **€430**;
-- cashless/operations/inventory **€15,75/mese**;
-- fee visualizzate:
-  - <=€1,99: 3,5%;
-  - €2–4,99: 3%;
-  - €5–10: 1,8%;
-  - >€10: 1,45%.
+Elementi usati:
 
-Altro store ufficiale AT:
-https://shop.nayax.com/at_de/vpos-touch-1.html
-- €430.
+- pagamenti online e di persona unificati;
+- API/SDK Terminal;
+- integrazione POS custom;
+- gestione lettori;
+- Payment/Terminal nello stesso ecosistema.
 
-Le condizioni Italia vanno ottenute da contratto/offerta.
+### Prezzi Terminal Italia
 
-## 17. SumUp Terminal
+https://stripe.com/it/pricing
 
-Italia:
+Benchmark osservato 18/09/2026:
 
-https://www.sumup.com/it-it/terminal-pos/
+- carte SEE: **1,4% + €0,10** per pagamento riuscito;
+- carte non SEE: **2,9% + €0,10**;
+- S700: €259 + IVA;
+- WisePOS E: €199 + IVA.
 
-Prezzo osservato:
-- €139 promo;
-- €169 indicato come prezzo pieno;
-- €169,58 IVA incl. nella pagina;
-- Wi-Fi/4G;
-- stampante.
+S700/WisePOS E non vengono assunti come dispositivi unattended per il vending.
 
-Benchmark POS manuale/fallback, non soluzione vending MDB baseline.
+## 17. Stripe Terminal — unattended / Verifone UX700
+
+Pagina device:
+
+https://stripe.com/terminal/ux700
+
+Pagina dispositivi Italia:
+
+https://stripe.com/it/terminal/devices
+
+Support unattended:
+
+https://support.stripe.com/questions/using-terminal-in-attended-and-semi-attended-retail-environments?locale=it-IT
+
+Elementi usati:
+
+- Stripe identifica UX700 come device per ambienti retail unattended;
+- esempi includono distributori automatici;
+- matrice corrente UX700 include Italia;
+- Ethernet/Wi-Fi;
+- server-driven integration;
+- offline mode indicato come capability;
+- IP65;
+- IK08;
+- range temperatura pubblicato -30 °C…70 °C;
+- alimentazione cablata.
+
+Prezzo:
+- non pubblicato nella pagina consultata;
+- **RFQ / Stripe Sales**.
+
+### Server-driven integration
+
+https://support.stripe.com/questions/terminal-server-driven-integration?locale=it-IT
+
+La server-driven integration permette di pilotare Terminal tramite Stripe API e propria infrastruttura/middleware.
+
+La documentazione di supporto generale segnala limitazioni della modalità server-driven su specifici reader e offline collection. Per UX700, che pubblica sia server-driven sia offline mode tra le capability, la combinazione concreta va validata nel pilot/configurazione corrente invece di assumerla.
+
+### Italia — collegamento POS/registratore telematico
+
+https://support.stripe.com/questions/requirement-to-link-point-of-sale-terminals-with-cash-registers-in-italy?locale=it-IT
+
+Stripe segnala il requisito italiano dal 1 gennaio 2026 di collegamento tramite registrazione digitale tra terminali POS e Registratore Telematico per le attività a cui l'obbligo si applica.
+
+**Gate:** verificare configurazione effettiva con commercialista/fornitore fiscale prima del go-live.
 
 ## 18. Testo 160 T
 
@@ -407,9 +445,9 @@ Alla ricezione RFQ:
 3. netto/IVA;
 4. delivery;
 5. install;
-6. payment fees;
+6. Stripe fees;
 7. fiscal fees;
-8. SaaS;
+8. server/compute/storage/connectivity;
 9. energy;
 10. SLA;
 11. spare lead time;
