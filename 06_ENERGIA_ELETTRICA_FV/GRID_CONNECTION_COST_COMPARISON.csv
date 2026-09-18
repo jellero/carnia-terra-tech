@@ -1,0 +1,4 @@
+scenario,voltage,requested_export_kw,pv_ac_kw,bess_kw,quote_request_fee_eur,dso_connection_eur,engineering_eur,grid_studies_eur,bt_switchgear_eur,mt_switchgear_eur,transformer_eur,civil_cabin_eur,cables_trenches_eur,spi_ddi_eur,cci_pf2_eur,sli_eur,meter_ct_vt_eur,telecom_eur,gaudi_gse_eur,authorization_support_eur,commissioning_eur,annual_maintenance_eur,annual_subscription_eur,vat_eur,lead_time_weeks,total_installed_capex_eur,notes
+S1_G100,OPEN,100,100,30,200,,,,,,,,,,,,,,,,,,,,,,reference fee + VAT if current DSO structure applies
+S2_G120,OPEN,120,120,30,500,,,,,,,,,,,,,,,,,,,,,,reference fee + VAT if current DSO structure applies
+S3_G120_CAP100,OPEN,100,120,30,200,,,,,,,,,,,,,,,,,,,,,,must include SLI/export-control and curtailment assessment

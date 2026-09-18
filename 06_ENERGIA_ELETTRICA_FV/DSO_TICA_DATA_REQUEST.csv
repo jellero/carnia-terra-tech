@@ -1,0 +1,31 @@
+field_id,category,field,unit,status,current_value,source,required_for_submission,notes
+GRID-001,site,site_address,,OPEN,,,YES,lotto reale
+GRID-002,site,cadastral_refs,,OPEN,,,YES,
+GRID-003,site,coordinates,,OPEN,,,YES,
+GRID-004,grid,DSO,,OPEN,,,YES,non assumere e-distribuzione
+GRID-005,grid,request_type,,OPEN,,,YES,new connection or existing connection upgrade
+GRID-006,grid,POD,,OPEN,,,CONDITIONAL,required if existing point
+GRID-007,grid,existing_voltage,V,OPEN,,,CONDITIONAL,
+GRID-008,grid,existing_import_power,kW,OPEN,,,CONDITIONAL,
+GRID-009,grid,existing_export_power,kW,OPEN,,,CONDITIONAL,
+GRID-010,grid,requested_import_power,kW,OPEN,,,YES,from master load profile
+GRID-011,pv,dc_power,kWp,KNOWN,120.32,PROJECT,YES,
+GRID-012,pv,ac_power_option,kW,OPEN,100 or 120,PROJECT,YES,I1 vs I2
+GRID-013,pv,requested_export_power,kW,OPEN,100 or 120,DESIGN,YES,can be lower than plant power only with validated limitation strategy
+GRID-014,pv,future_dc_envelope,kWp,WORKING,150-180,PROJECT,NO,design-for-expansion gate
+GRID-015,bess,pcs_continuous,kW,WORKING,30,PROJECT,YES,not final until load closure
+GRID-016,bess,useful_energy,kWh,OPEN,60/90/120,PROJECT,NO,
+GRID-017,bess,max_charge,kW,OPEN,,,YES,exact vendor config
+GRID-018,bess,max_discharge,kW,OPEN,,,YES,exact vendor config
+GRID-019,bess,islanding,,REQUIRED,YES,PROJECT,YES,only after DSO separation
+GRID-020,bess,black_start,,REQUIRED,YES,PROJECT,NO,RFQ acceptance
+GRID-021,protection,Ik_max,kA,OPEN,DSO,DSO,YES,
+GRID-022,protection,Ik_min,kA,OPEN,DSO,DSO,YES,
+GRID-023,protection,earthing_system,,OPEN,DSO/DESIGN,,YES,
+GRID-024,protection,SPI,,OPEN,DSO/DESIGN,,YES,
+GRID-025,protection,DDI,,OPEN,DSO/DESIGN,,YES,
+GRID-026,control,CCI_PF2,,GATE,MT >=100kW if applicable,ARERA/CEI,CONDITIONAL,
+GRID-027,control,SLI_export_limit,,GATE,DSO/strategy,CEI/DSO,CONDITIONAL,
+GRID-028,application,quote_fee_eur,,SCENARIO,200 if >50<=100; 500 if >100<=500,e-distribution 2026/TICA,YES,plus VAT where applied
+GRID-029,application,target_COD,,OPEN,,,YES,
+GRID-030,application,authorization_status,,OPEN,,,YES,

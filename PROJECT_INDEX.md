@@ -135,7 +135,7 @@ Quindi 30 kW non è "whole farm full-power backup".
 
 Candidate/benchmark:
 - TESLA Group STILLA 30 kW / 61 kWh LFP class: RFQ, Italy/island/transfer/fire/service gates open;
-- Fronius Verto Plus 30 kW class: technology comparison; standard Full Backup published configuration ~11 s, quindi exact rapid-transfer solution da validare;
+- Fronius Verto Plus 30 kW class: manuale OEM corrente con Rapid switch <20 ms + Backup Controller 63A; candidato RFQ prioritario, topology Italia/CEI-DSO e blackout SAT da validare;
 - Schneider PM5110 €700 list; PM5340 €1.469; PM5341 MID €1.694.
 
 Grid:
@@ -155,6 +155,11 @@ Documenti:
 - `06_ENERGIA_ELETTRICA_FV/EMS_BESS_GRID_ARCHITECTURE.md`;
 - `06_ENERGIA_ELETTRICA_FV/LOAD_PRIORITY_MATRIX.md`;
 - `06_ENERGIA_ELETTRICA_FV/RFQ_EMS_BESS_GRID.md`;
+- `06_ENERGIA_ELETTRICA_FV/DSO_TICA_CONNECTION_READINESS.md`;
+- `06_ENERGIA_ELETTRICA_FV/DSO_TICA_DATA_REQUEST.csv`;
+- `06_ENERGIA_ELETTRICA_FV/BT_MT_PROTECTION_DECISION_MATRIX.md`;
+- `06_ENERGIA_ELETTRICA_FV/RFQ_DSO_GRID_CONNECTION_ENGINEERING.md`;
+- `06_ENERGIA_ELETTRICA_FV/GRID_CONNECTION_COST_COMPARISON.csv`;
 - `19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md`;
 - `22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md`.
 
@@ -675,7 +680,7 @@ Priorità di chiusura:
 1. lotto/masterplan/geotecnica e layout definitivo;
 2. crop card e carichi termici/idrici/elettrici reali;
 3. master load register + profilo 1–15 min e P0/P1 — **v0.1 strutturato + piano misure/RFQ e template dati pronti il 18/09/2026; resta raccolta dati reali**;
-4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni;
+4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni — **pre-application package strutturato il 18/09/2026; pratica reale bloccata da lotto/DSO/POD e potenze finali**;
 5. RFQ installati per i package ancora a prezzo `RFQ`;
 6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT;
 7. commissioning e acceptance end-to-end;

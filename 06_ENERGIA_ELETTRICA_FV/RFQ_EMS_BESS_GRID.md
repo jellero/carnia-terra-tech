@@ -344,6 +344,17 @@ Quote:
 
 Final BT/MT remains DSO-dependent.
 
+Operational connection package:
+- `DSO_TICA_CONNECTION_READINESS.md`;
+- `DSO_TICA_DATA_REQUEST.csv`;
+- `BT_MT_PROTECTION_DECISION_MATRIX.md`.
+
+Vendor shall price separately scenarios:
+- 100 kW AC / 100 kW requested export;
+- 120 kW AC / 120 kW requested export;
+- 120 kW AC with 100 kW export cap only if compliant SLI is technically/economically justified;
+- BT and MT variants only where technically admissible.
+
 ## 17. CEI 0-21 / 0-16
 
 Vendor shall confirm design against current editions in force at commissioning.
