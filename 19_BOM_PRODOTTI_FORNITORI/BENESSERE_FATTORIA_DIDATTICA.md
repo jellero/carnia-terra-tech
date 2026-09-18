@@ -47,7 +47,7 @@ Prezzi osservati il 18 settembre 2026 salvo diversa indicazione.
 | FD-SOAP | dispenser sapone | DA LAYOUT | cad | BASELINE | RFQ |
 | FD-TOWEL | dispenser asciugatura | DA LAYOUT | cad | BASELINE | RFQ |
 | FD-BIN | cestino lavamani/WC | DA LAYOUT | cad | BASELINE | RFQ |
-| FD-FIRSTAID | cassetta primo soccorso | 1 + DA RISCHIO | cad | OBBLIGATORIO | ~€99,62 benchmark Allegato 1 DM 388 |
+| FD-FIRSTAID | cassetta/valigetta primo soccorso | 1 + DA RISCHIO | cad | OBBLIGATORIO | €75,90 + IVA valigetta All.1 / €117,90 + IVA armadietto maggiorato benchmark |
 | FD-FIRST-REFILL | reintegro primo soccorso | OPEX | kit | BASELINE | ~€65,25 benchmark reintegro |
 | FD-FIRST-SIGN | cartello primo soccorso | 1 | cad | BASELINE | FVG signage reference |
 | FD-WATER-POT | punto acqua potabile vicino primo soccorso | 1 | set | OBBLIGATORIO | RFQ / existing interface |
@@ -171,10 +171,11 @@ Per apertura stabile, preferenza a stazione permanente con acqua/scarico dove te
 
 ## 8. Primo soccorso
 
-Benchmark di mercato:
+Benchmark CFS osservati:
 
-- cassetta completa Allegato 1 DM 388: **~€99,62**;
-- reintegro Allegato 1: **~€65,25**.
+- valigetta MEDIC 4 Allegato 1 DM 388: **€75,90 + IVA**;
+- armadietto metallico Allegato 1 maggiorato: **€117,90 + IVA**;
+- reintegro Allegato 1 maggiorato con sfigmomanometro: **€65,25 + IVA**.
 
 Il contenuto effettivo deve essere coerente con la classificazione/primo soccorso aziendale applicabile.
 
