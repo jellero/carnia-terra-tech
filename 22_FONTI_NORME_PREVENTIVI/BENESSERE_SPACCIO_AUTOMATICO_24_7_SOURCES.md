@@ -240,7 +240,7 @@ https://www.willhaben.at/iad/kaufen-und-verkaufen/d/fas-pro-900-snack-getraenkea
 
 Listing osservato:
 - acquisto **€8.840 net**;
-- include Nayax VPOS Touch;
+- il payment bundle del listing non è baseline e va escluso/sostituito con Stripe;
 - Wi-Fi/Bluetooth;
 - FAS Cloud+;
 - IoT Vend telemetry.
