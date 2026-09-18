@@ -5,7 +5,7 @@
 
 ## 1. Scopo
 
-Trasformare il budget di avvio da circa **€850.000 netti** in una sequenza eseguibile che porti Carnia TerraTech da:
+Trasformare il budget di avvio da circa **€950.000 netti** in una sequenza eseguibile che porti Carnia TerraTech da:
 
 `finanziamento concesso -> terreno -> cantiere -> 3 comparti produttivi -> primi ricavi -> pareggio operativo -> espansione`
 
@@ -17,20 +17,21 @@ Questo piano governa la **Fase P1**. La visione finale resta 6 comparti / ~4.200
 
 | Settore | CAPEX netto di lavoro |
 |---|---:|
-| Terreno e verifiche | €50.000 |
+| Terreno, atti e campagna sito | €60.000 |
 | Serra | €350.000 |
 | Acqua e fertirrigazione | €55.000 |
 | Termico e clima | €65.000 |
 | Energia, FV, EMS, BESS | €130.000 |
 | Tech Barn, freddo, raccolta e confezionamento | €95.000 |
-| Automazione, rete, PLC/edge/server essenziali | €30.000 |
+| Automazione, rete, PLC/edge/server essenziali | €25.000 |
 | Spaccio semplice/semi-automatico | €20.000 |
-| Progettazione, direzione, collaudi e contingenza tecnica | €55.000 |
-| **Totale CAPEX** | **€850.000** |
+| Macchine, humus/cicli materia e accesso in quota | €90.000 |
+| Progettazione, direzione, collaudi e contingenza tecnica | €60.000 |
+| **Totale CAPEX** | **€950.000** |
 
 Fuori CAPEX:
 - **riserva operativa protetta: €120.000**;
-- **linea IVA/ponte: target €120.000–150.000**;
+- **linea IVA/ponte: target €140.000–170.000**;
 - ponte contributo/saldo da dimensionare sul calendario reale.
 
 ## 3. Ordine di esecuzione
@@ -47,7 +48,7 @@ Output:
 - riserva operativa segregata.
 
 ### F1 — terreno
-Acquisto soltanto dopo due diligence e compatibilità masterplan.
+Acquisto soltanto dopo due diligence, campagna campioni/drenaggio, geotecnica preliminare e masterplan di prova.
 
 ### F2 — progetto esecutivo e RFQ
 Chiudere contemporaneamente serra, acqua, termico, elettrico, drenaggi, Tech Barn e connessioni.
@@ -88,7 +89,7 @@ Infrastruttura certa, lunga vita, retrofit costoso.
 Probabile, ma quantità/tecnologia finale può cambiare.
 
 ### C — attendere
-Robotica, elettronica ad alta obsolescenza, R&S o capacità commerciale non validata.
+Robotica marginale, elettronica ad alta obsolescenza, R&S o capacità commerciale non validata.
 
 La matrice di riferimento è:
 `18_CAPEX_OPEX_CASHFLOW/MATRICE_INVESTIRE_ORA_O_DOPO.md`.
@@ -127,7 +128,8 @@ KPI principale di progetto: **ridurre D1→D3 senza compromettere D4**.
 11. [10_PERSONALE_COMMISSIONING_E_GO_LIVE.md](10_PERSONALE_COMMISSIONING_E_GO_LIVE.md)
 12. [11_PROGETTAZIONE_DIREZIONE_E_COLLAUDI.md](11_PROGETTAZIONE_DIREZIONE_E_COLLAUDI.md) — governa l'envelope CAPEX da €55.000;
 13. [CRONOPROGRAMMA_0_15_MESI.md](CRONOPROGRAMMA_0_15_MESI.md) — sequenza relativa mese per mese;
-14. [MATRICE_CONTROLLO_SETTORI.md](MATRICE_CONTROLLO_SETTORI.md) — envelope, dipendenze, verifica di uscita e stato.
+14. [12_CICLI_MATERIA_MEZZI_E_QUOTA.md](12_CICLI_MATERIA_MEZZI_E_QUOTA.md) — mezzo core, humus e manutenzione in quota;
+15. [MATRICE_CONTROLLO_SETTORI.md](MATRICE_CONTROLLO_SETTORI.md) — envelope, dipendenze, verifica di uscita e stato.
 
 ## 8. Regola di avanzamento
 
