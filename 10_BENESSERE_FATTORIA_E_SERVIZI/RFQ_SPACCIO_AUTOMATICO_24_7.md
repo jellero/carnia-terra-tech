@@ -149,7 +149,7 @@ Dichiarare:
 
 ## 6. Lotto C — Stripe Terminal unattended
 
-Nayax e SumUp sono esclusi dalla baseline.
+Stripe è il payment stack richiesto; non quotare payment stack alternativi.
 
 Quotare/validare una soluzione Stripe Terminal per ambiente realmente unattended.
 
