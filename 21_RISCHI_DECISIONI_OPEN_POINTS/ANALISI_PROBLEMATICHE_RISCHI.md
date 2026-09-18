@@ -47,15 +47,15 @@ finché esistono evidenze sufficienti.
 | ID | Problematica attuale | Impatto | Perché è reale | Azione di chiusura |
 |---|---|---|---|---|
 | P-01 | pacchetto finanziario non ancora perfezionato | I4 | contributi, anticipo, garanzia, finanziamento, linea IVA e finanziamento ponte non sono ancora effettivi/concessi nel registro | chiudere DG0/F0 con atti reali |
-| P-02 | lotto reale non ancora acquisito/validato | I4 | blocca geotecnica, layout, DSO, neve/vento, drenaggi, accessi e RFQ installati | verifica preliminare + DG1 |
+| P-02 | lotto reale non ancora acquisito/validato | I4 | blocca campionamento, drenaggio, geotecnica, layout, DSO, neve/vento, accessi e RFQ installati | campagna sito + due diligence + DG1 |
 | P-03 | schede colturali P1 non finalizzate | I3 | blocca carichi idrici/termici, resa, raccolta, freddo e confezionamento | completare le schede colturali per i 3 comparti P1 |
-| P-04 | CAPEX principale ancora prevalentemente E0/E1 | I4 | €850k è budget di controllo, non costo contrattuale | preventivi installati comparabili E3/E4 |
+| P-04 | CAPEX principale ancora prevalentemente E0/E1 | I4 | €950k è budget di controllo, non costo contrattuale | preventivi installati comparabili E3/E4 |
 | P-05 | profilo elettrico P0/P1 reale non disponibile | I4 | BESS 30 kW e 60/90/120 kWh non possono essere chiusi | misure 1–15 min + transitori |
 | P-06 | DSO/POD/BT-MT non determinati | I4 | non è noto il costo/assetto reale della connessione | lotto + DSO/TICA reale |
-| P-07 | prove pilota Q3 non ancora eseguite | I3 | AMR, vendita automatizzata, robot tagliaerba, rover galline e riuso non hanno evidenze specifiche del sito | eseguire registro generale delle prove pilota |
+| P-07 | prove pilota Q3 non ancora eseguite | I3 | AMR, vendita automatizzata, tagliaerba, riuso, mezzo e accesso in quota richiedono evidenze reali dove previsto | eseguire registro generale delle prove pilota |
 | P-08 | SAT/messa in servizio ancora solo pianificati | I4 | continuità, commutazione di emergenza e prestazioni non sono ancora provate | eseguire piano generale SAT |
 | P-09 | OPEX reale non misurato | I3 | energia, lavoro, manutenzione, confezionamento e logistica sono ancora di pianificazione | revisione dei dati effettivi a 30/90 giorni |
-| P-10 | domanda P1 da validare commercialmente | I4 | €250k/y è obiettivo da validare, non vendite acquisite | pre-vendita, clienti, ordini e validazione dei canali di vendita |
+| P-10 | domanda P1 da validare commercialmente | I4 | €280k/y è obiettivo da validare, non vendite acquisite | pre-vendita, clienti, ordini e validazione dei canali di vendita |
 
 ## 4. Rischi finanziari e di cassa
 
@@ -499,15 +499,23 @@ Mitigazione:
 - GNSS e prove fuori rete;
 - area fisica interdetta.
 
-### R-ROB-03 — rover galline non raggiunge obiettivo di pulizia/benessere animale
-**Impatto:** I3/I4.
+### R-MNT-04 — accesso in quota insufficiente
+**Impatto:** I4.
+
+Problema:
+una parte alta non raggiungibile in sicurezza trasforma manutenzione ordinaria in rischio, fermo o dipendenza esterna.
 
 Mitigazione:
-- prova pilota su superfici miste;
-- 100 missioni;
-- eventi critici di benessere/sicurezza = zero.
+- mappa punti alti;
+- piattaforma OEM/PLE ragno;
+- demo sui punti reali;
+- emergency recovery;
+- corridoi e piazzole nel masterplan.
 
-### R-ROB-04 — telescopico scelto senza uso reale sufficiente
+Chiusura:
+PIL-HGT PASS e 100% punti critici raggiungibili.
+
+### R-ROB-04 — mezzo multifunzione non compatibile con flussi reali
 **Impatto:** I2/I3.
 
 Mitigazione:
@@ -657,7 +665,6 @@ Aree:
 - AMR;
 - telescopico;
 - robot tagliaerba;
-- rover galline;
 - percorso visitatori.
 
 Mitigazione:
@@ -788,7 +795,7 @@ Ogni singolo sottosistema può funzionare e l'impianto integrato può comunque f
 Aprire/reaprire un passaggio decisionale se si verifica uno dei seguenti:
 
 - CAPEX major pacchetti >20% sopra il budget di riferimento;
-- previsione CAPEX installato >€950k;
+- previsione CAPEX installato >€1,05M;
 - richiesta di usare riserva operativa per CAPEX;
 - contributo/finanziamento ridotto o ritardato materialmente;
 - lotto con criticità geotecnica/idraulica/urbanistica;
