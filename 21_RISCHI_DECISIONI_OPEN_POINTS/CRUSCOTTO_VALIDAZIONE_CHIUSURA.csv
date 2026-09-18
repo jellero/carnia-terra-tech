@@ -1,0 +1,9 @@
+closure_id,block,status,ready_artifacts,real_blocker,next_trigger
+CL-01,Lot masterplan geotech layout,BLOCKED,criteria and dependencies documented,real lot/title/survey/geotech/utilities,identify and validate site
+CL-02,Crop cards and real loads,BLOCKED,domain methods and BOM structured,crop cards/weather/water analysis/layout/measurements,collect real process inputs
+CL-03,Master load register,STRUTTURATO,register+measurement plan+vendor snapshot,real P0/P1 measurements and transients,measure and close OEM fields
+CL-04,DSO TICA BT-MT protections,STRUTTURATO,readiness+data request+matrix+RFQ,lot DSO POD final powers,submit real connection request
+CL-05,Installed RFQ procurement,STRUTTURATO,procurement register Q1-Q5,comparable installed quotes,run procurement waves
+CL-06,Pilots,STRUTTURATO,master pilot+result+decision templates,vendor/site/SKU/crop evidence,execute planned pilots
+CL-07,Commissioning SAT,STRUTTURATO,master SAT+checklist,installed plant and seasonal conditions,execute subsystem and integrated SAT
+CL-08,Financial closure and gates,STRUTTURATO,financial control+DG0-DG8,quotes contracts actuals finance acts,populate actual cost and gate evidence
