@@ -1,7 +1,7 @@
 # Central orchestration server — architettura di governo aziendale
 
 **Aggiornato:** 18 settembre 2026  
-**Stato:** `ARCHITETTURA BASE / SERVER CENTRALE COME SYSTEM OF RECORD E SCHEDULER / DETTAGLI DEPLOYMENT E BOM HARDWARE DA SVILUPPARE`.
+**Stato:** `BOM-030 ARCHITETTURA DEPLOYMENT STRUTTURATA / 2 COMPUTE + WITNESS/EDGE + BACKUP SEPARATO / SOFTWARE STACK E ACCEPTANCE DEFINITI / HARDWARE TARGET DA RFQ`.
 
 ## 1. Principio
 
@@ -788,24 +788,877 @@ Alert con severity e owner.
 - maintenance MTBF/MTTR;
 - payment-vend reconciliation.
 
-## 27. Gate successivo
+## 27. BOM-030 — deployment target
 
-Da sviluppare come package dedicato:
+La baseline non è un singolo PC e non è un cluster Kubernetes.
 
-1. deployment target;
-2. server hardware/VM/container strategy;
-3. DB/event stack;
-4. identity;
-5. network topology;
-6. edge gateways;
-7. device registry;
-8. API contracts;
-9. data model;
-10. scheduler MVP;
-11. forecasting MVP;
-12. Stripe integration;
-13. digital traceability;
-14. backup/restore;
-15. observability;
-16. cybersecurity;
-17. acceptance test end-to-end.
+Architettura working:
+
+`NODE-A + NODE-B + QNODE/EDGE + BACKUP TARGET + BESS 30 kW`
+
+### NODE-A / NODE-B — compute
+
+Due server x86_64 near-edge/server-grade con:
+
+- CPU Xeon E-2400 / Xeon 6300 class o equivalente;
+- ECC RAM;
+- **64 GB ECC minimo, 128 GB target**;
+- 2× NVMe enterprise 1,92 TB o superiori in mirror per workload;
+- storage OS separabile se conveniente;
+- almeno 2 interfacce di rete, con 10 GbE per interconnect/storage preferito;
+- TPM 2.0;
+- BMC/iDRAC/iLO;
+- ventole/alimentazione monitorabili;
+- supporto 3–5 anni.
+
+Reference hardware:
+- Dell PowerEdge T160;
+- HPE ProLiant MicroServer Gen11 / server equivalente.
+
+Il prezzo catalogo di una configurazione base non è il prezzo del nodo target: RAM ECC, NVMe enterprise, NIC e supporto vanno quotati nella configurazione effettiva.
+
+### QNODE / EDGE
+
+Terzo nodo leggero indipendente per:
+
+- quorum/qdevice;
+- etcd/coordination dove richiesto;
+- terza replica NATS JetStream per stream critici;
+- NTP/chrony reference locale;
+- bridge MQTT/field;
+- health watchdog.
+
+Non esegue il database primario né workload AI pesanti.
+
+Target:
+- x86_64 fanless/mini-server;
+- 16–32 GB RAM;
+- storage SSD mirrored preferito;
+- 2 NIC;
+- TPM;
+- alimentazione da BESS.
+
+### BACKUP
+
+Backup fisicamente distinto dal mirror locale:
+
+- NAS/server 8-bay class;
+- ZFS/Btrfs/RAID appropriato;
+- snapshot;
+- Proxmox Backup Server o repository backup dedicato;
+- copia DB con WAL;
+- copia off-site cifrata.
+
+Synology DS1825+ è un benchmark di classe:
+- 8 bay SATA;
+- 2× M.2 NVMe;
+- 2×2,5 GbE;
+- Ryzen V1500B.
+
+Non viene usato come primary database storage.
+
+## 28. Virtualization e OS
+
+Working baseline:
+- **Proxmox VE 9.2** sui due compute node;
+- QNODE su Debian 13 stabile;
+- guest Debian 13;
+- container OCI/system containers solo dove utili.
+
+Proxmox VE 9.2, rilasciato nel maggio 2026, è basato su Debian 13.5 e include HA, KVM/LXC, ZFS e networking/SDN.
+
+Debian stable al 18/09/2026 è la serie **13 Trixie**, point release corrente 13.7.
+
+### Perché virtualizzazione, ma non Kubernetes baseline
+
+VM/LXC separano:
+
+- database;
+- app;
+- identity;
+- observability;
+- integration gateways.
+
+Vantaggi:
+- snapshot;
+- migrazione;
+- restore;
+- resource limits;
+- isolamento aggiornamenti.
+
+Kubernetes resta `OPTIONAL / FUTURE`.
+
+Per il numero di servizi previsto:
+- systemd;
+- Docker/Podman Compose;
+- LXC/VM;
+
+sono sufficienti e riducono failure modes operativi.
+
+## 29. Workload placement
+
+### VM/guest DB
+- PostgreSQL primary/replica;
+- risorse riservate;
+- niente noisy-neighbor.
+
+### APP
+- API;
+- scheduler;
+- workers;
+- Stripe integration;
+- retail correlation;
+- traceability;
+- maintenance.
+
+Eseguire almeno due istanze stateless quando il servizio è P0/P1.
+
+### EVENT
+- NATS;
+- bridge MQTT;
+- command/event workers.
+
+### IDENTITY
+- Keycloak/OIDC;
+- reverse proxy;
+- internal CA/secrets integration.
+
+### OBS
+- Prometheus;
+- Grafana;
+- Loki;
+- Grafana Alloy / OpenTelemetry collectors.
+
+### FORECAST
+- training/inference;
+- batch jobs;
+- isolabile dalle transazioni.
+
+Il forecast può essere spento senza compromettere produzione/safety.
+
+## 30. Database baseline
+
+**PostgreSQL è il database transazionale centrale.**
+
+Versione working:
+- PostgreSQL 18 current supported series;
+- al 13/08/2026 la release pubblicata è 18.6.
+
+PostgreSQL contiene:
+
+- master data;
+- inventory;
+- lots;
+- orders;
+- tasks;
+- schedules;
+- maintenance;
+- payment state;
+- recipes;
+- asset registry;
+- digital twin state;
+- append-only business events.
+
+### Telemetry
+
+Baseline iniziale:
+- PostgreSQL partitioned tables;
+- retention policy;
+- downsampling/materialized aggregates;
+- cold archive su file Parquet/object storage.
+
+TimescaleDB è opzionale dopo benchmark e verifica compatibilità.
+
+Non introdurre un secondo database time-series obbligatorio se PostgreSQL sostiene il carico reale.
+
+### Event IDs
+
+Preferenza:
+- UUIDv7 per eventi/entità temporali dove utile;
+- monotonic/source sequence sui dispositivi;
+- correlation_id;
+- causation_id.
+
+## 31. PostgreSQL HA
+
+Working target:
+
+- primary su NODE-A;
+- synchronous/near-synchronous replica su NODE-B per transazioni critiche;
+- WAL archive sul backup target;
+- automatic failover solo dopo test.
+
+Candidate:
+- Patroni + 3-node DCS/quorum;
+- oppure failover orchestrato internamente con runbook se la complessità Patroni non è giustificata.
+
+RPO target:
+- ordini/pagamenti/lotti: ~0 o pochi secondi;
+- task/stato operativo: <30 s;
+- telemetry non critica: <1–5 min accettabile grazie a edge buffering.
+
+RTO target:
+- checkout/ordini: <2–5 min;
+- scheduler: <5 min;
+- dashboard: <15 min;
+- analytics storiche: <4 h.
+
+## 32. Event bus
+
+Working:
+- **NATS + JetStream**.
+
+Perché:
+- pub/sub;
+- request/reply;
+- durable streams;
+- consumer state;
+- replay;
+- at-least-once;
+- client multipiattaforma.
+
+NATS documenta JetStream come persistence layer con replay e delivery at-least-once.
+
+### HA
+
+Stream business-critical:
+- R3 su NODE-A, NODE-B e QNODE.
+
+NATS raccomanda un numero dispari di server per il quorum JetStream; tre nodi consentono la perdita di un nodo mantenendo la maggioranza.
+
+Non tutti gli stream devono essere R3.
+
+Esempi R3:
+- orders;
+- payment;
+- inventory;
+- lot movement;
+- task command;
+- machine command ack;
+- audit security.
+
+Telemetry ad alta frequenza può essere:
+- non persistente;
+- R1;
+- buffer edge + batch DB;
+
+a seconda del valore.
+
+## 33. MQTT e OT ingress
+
+Molti sensori/controller parlano MQTT, Modbus o OPC UA.
+
+Pattern:
+
+`field -> edge gateway -> normalized event -> NATS/PostgreSQL`
+
+MQTT broker edge:
+- Eclipse Mosquitto o equivalente.
+
+Regola:
+- il field device non deve conoscere schema interno del database;
+- gateway valida unità, timestamp, asset ID e qualità.
+
+OT ingress:
+- OPC UA;
+- Modbus TCP/RTU;
+- vendor REST;
+- serial gateway.
+
+Ogni adapter ha:
+- health;
+- retry;
+- dead-letter/error stream;
+- last-seen;
+- firmware/config version.
+
+## 34. Digital twin / state model
+
+Ogni asset ha:
+
+- static identity;
+- capabilities;
+- observed state;
+- desired state;
+- health;
+- location;
+- owner subsystem;
+- maintenance state;
+- command eligibility.
+
+Pattern:
+
+`desired_state != command != observed_state`
+
+Il server non dichiara successo perché ha inviato il comando.
+
+Serve:
+- command_id;
+- accepted;
+- started;
+- completed;
+- failed;
+- observed confirmation.
+
+Per macchine safety-critical, il controller locale può rifiutare un comando centrale.
+
+## 35. API contracts
+
+### Synchronous
+- REST/HTTP;
+- OpenAPI 3.1;
+- JSON;
+- explicit versioning.
+
+### Asynchronous
+- NATS subjects;
+- AsyncAPI/schema registry in repository;
+- JSON Schema o Protobuf per eventi stabili.
+
+Naming working:
+
+`domain.entity.event.v1`
+
+Esempi:
+- `inventory.lot.moved.v1`;
+- `retail.cart.item_added.v1`;
+- `energy.bess.mode_changed.v1`;
+- `irrigation.zone.completed.v1`.
+
+### Commands
+
+Separare semanticamente:
+- event = fatto accaduto;
+- command = richiesta;
+- query = lettura.
+
+Mai usare un event name come comando.
+
+## 36. Device registry
+
+Tabella/servizio centrale:
+
+- device_id;
+- asset_id;
+- vendor;
+- model;
+- serial;
+- protocol;
+- IP/MAC;
+- certificate;
+- firmware;
+- location;
+- owner;
+- last seen;
+- maintenance;
+- config hash.
+
+Onboarding:
+1. inventory;
+2. identity;
+3. network segment;
+4. certificate/credential;
+5. protocol profile;
+6. simulator test;
+7. production enable.
+
+## 37. Scheduler architecture
+
+Scheduler custom, non ERP esterno.
+
+Componenti:
+
+### Planner
+Costruisce piano ottimizzato a orizzonte:
+- ore;
+- giorno;
+- settimana.
+
+### Dispatcher
+Trasforma piano in:
+- worker task;
+- AMR mission;
+- process job;
+- irrigation job;
+- refill.
+
+### Reconciler
+Confronta:
+- planned;
+- accepted;
+- started;
+- actual;
+- failed.
+
+### Replanner
+Ricalcola solo quando trigger significativo cambia:
+- stockout;
+- fault;
+- forecast;
+- weather;
+- worker absence;
+- batch delay;
+- BESS state.
+
+Non ricalcolare l'intera azienda a ogni sensor sample.
+
+## 38. Forecasting stack
+
+Baseline:
+- Python service o libreria equivalente;
+- feature pipeline versionata;
+- model registry semplice nel repository/DB;
+- metrics per SKU/crop.
+
+Prima modelli:
+- seasonal baseline;
+- moving/exp smoothing;
+- gradient boosting/regression dove migliora;
+- quantile intervals.
+
+Non partire da deep learning se non supera baseline.
+
+Demand metrics:
+- WAPE;
+- MAE;
+- bias;
+- stockout-adjusted error.
+
+Supply:
+- kg/day error;
+- harvest-window error;
+- quality-class error.
+
+Automatic execution consentita solo entro guardrail deterministici.
+
+## 39. Identity e RBAC
+
+Working:
+- Keycloak/OIDC class per persone;
+- service accounts separate per macchine;
+- MFA admin;
+- short-lived tokens;
+- mTLS/certificates per servizi/edge dove utile.
+
+Ruoli:
+- admin;
+- operations;
+- agronomy;
+- maintenance;
+- logistics;
+- sales;
+- food/QC;
+- visitor;
+- read-only.
+
+Non condividere account tra operatori.
+
+## 40. Secrets
+
+Baseline:
+- niente secret in Git;
+- SOPS/age o secret manager equivalente;
+- rotation;
+- separate prod/dev;
+- device credentials individuali.
+
+Stripe secret:
+- solo server;
+- restricted keys dove possibile;
+- webhook secrets separati.
+
+## 41. Network
+
+Segmenti minimi:
+
+- MGMT;
+- SERVER;
+- OT;
+- EDGE;
+- CCTV;
+- VENDING;
+- GUEST;
+- BACKUP.
+
+Inter-VLAN:
+- default deny;
+- allowlist.
+
+Server interconnect:
+- 10 GbE preferito tra compute/backup.
+
+Benchmark networking:
+- UniFi Pro Max 24: €405 EU Store;
+- Pro XG 10 PoE: €629 EU Store, 10×10GbE + 2×SFP+;
+- DAC 10G da €12;
+- SFP+ multimode da €18.
+
+La scelta switch finale dipende dalla topologia totale, non dalla sola BOM-030.
+
+## 42. Remote access
+
+Baseline:
+- VPN WireGuard/site VPN;
+- MFA;
+- bastion/admin path;
+- no exposed Proxmox/Postgres/PLC admin UI on public Internet.
+
+Vendor access:
+- disabled by default;
+- time-limited;
+- logged;
+- scoped to asset/VLAN.
+
+## 43. Observability
+
+Working stack:
+- Prometheus;
+- Grafana;
+- Loki;
+- Grafana Alloy/OpenTelemetry.
+
+Prometheus:
+- usare release supportata; Prometheus 3.13 è LTS fino al 31/07/2027, mentre 3.14.0 è current release 17/08/2026.
+
+Alloy:
+- collector unico per metrics/logs/traces dove utile.
+
+Dashboard principali:
+- platform;
+- DB;
+- queue;
+- device health;
+- integration;
+- scheduler;
+- payments;
+- cold chain;
+- BESS.
+
+Alert severity:
+- INFO;
+- WARNING;
+- P2;
+- P1.
+
+Ogni alert P1/P2 deve avere owner e runbook.
+
+## 44. Logs e audit
+
+Separare:
+
+### application logs
+Debug/operations.
+
+### audit events
+Immutabili logicamente:
+- login;
+- permission change;
+- manual override;
+- price change;
+- payment action;
+- command;
+- recipe change;
+- QC release.
+
+Audit non deve essere cancellato dal normale log rotation.
+
+Retention da politica aziendale/privacy e requisiti applicabili.
+
+## 45. Backup strategy
+
+Regola **3-2-1** working:
+
+1. dato primario;
+2. backup locale separato;
+3. copia off-site cifrata.
+
+### PostgreSQL
+- streaming replica;
+- base backup;
+- continuous WAL archive;
+- restore test.
+
+### VM/LXC
+- Proxmox Backup Server class;
+- deduplication/incremental;
+- retention.
+
+### Object/files
+- snapshots;
+- checksum;
+- offsite copy.
+
+### Config
+- Git;
+- encrypted secrets backup;
+- device config export.
+
+Un backup non testato non è un backup.
+
+## 46. Backup software
+
+Candidate:
+- Proxmox Backup Server 4.2;
+- pgBackRest for PostgreSQL;
+- restic/rclone class for encrypted offsite files.
+
+Proxmox Backup Server subscription è opzionale:
+- Community benchmark €560/year per server;
+- Basic €1.120/year;
+- software resta open source.
+
+## 47. Proxmox support
+
+PVE può funzionare senza subscription.
+
+Per produzione working:
+- Basic o Standard da valutare.
+
+Prezzi ufficiali correnti:
+- Community €120/year per occupied CPU socket;
+- Basic €370/year/socket;
+- Standard €550/year/socket;
+- Premium €1.100/year/socket.
+
+Con 2 compute single-socket:
+- Basic = €740/year;
+- Standard = €1.100/year.
+
+Non contabilizzare automaticamente Premium.
+
+## 48. BESS integration
+
+**Nessuna UPS locale baseline.**
+
+Rack/server/network sono P0/P1 sul BESS da 30 kW.
+
+Il server legge:
+- grid status;
+- inverter status;
+- SOC;
+- available power;
+- estimated autonomy;
+- island mode.
+
+Il server non controlla le protezioni BESS.
+
+In LOW_SOC:
+1. stop training/forecast heavy;
+2. reduce historical analytics;
+3. defer charging/optional jobs;
+4. keep DB/event/network/edge;
+5. preserve cold-chain control connectivity.
+
+Dimensionare backup sull'energia utile in kWh, ancora da chiudere.
+
+## 49. Capacity sizing
+
+La farm automation non richiede hyperscale.
+
+Initial target per compute node:
+- 8–16 physical cores class;
+- 64–128 GB ECC;
+- 2×1,92 TB enterprise NVMe mirror;
+- 10 GbE;
+- remote management.
+
+Budget RAM indicative:
+- DB: 16–32 GB;
+- app/workers: 8–16 GB;
+- observability: 8–16 GB;
+- identity/infra: 4–8 GB;
+- forecast burst: 8–32 GB.
+
+Non overcommit DB RAM.
+
+Vision training pesante:
+- workstation/GPU dedicata o cloud;
+- non sul control-plane primary.
+
+Inference edge:
+- Jetson/OAK/edge node già previsti per i domini specifici.
+
+## 50. Environments
+
+Separare:
+- DEV;
+- STAGING/SIM;
+- PROD.
+
+Staging deve includere simulatori:
+- PLC;
+- AMR;
+- vending;
+- Stripe test mode;
+- BESS;
+- temperature sensor.
+
+Nessun test distruttivo direttamente su produzione.
+
+## 51. Deployment pipeline
+
+Working:
+- Git;
+- CI tests;
+- image build;
+- signed/tagged release;
+- staging;
+- migration check;
+- manual production approval;
+- rollback.
+
+Database:
+- forward-compatible migrations;
+- backup before risky migration;
+- no automatic destructive schema migration.
+
+## 52. Cybersecurity baseline
+
+- inventory;
+- patch cadence;
+- CVE review;
+- MFA;
+- RBAC;
+- least privilege;
+- VLAN/firewall;
+- TLS;
+- certificate rotation;
+- host firewall;
+- disk encryption where appropriate;
+- secure boot/TPM where supported;
+- immutable/offsite backup;
+- restore drill;
+- incident log.
+
+No direct inbound Internet to OT.
+
+## 53. SLO / RPO / RTO
+
+Working SLO:
+
+| Servizio | Availability target | RPO | RTO |
+|---|---:|---:|---:|
+| payment/order | 99,9% | ~0–5 s | <2–5 min |
+| core inventory/lot | 99,9% | <30 s | <5 min |
+| scheduler | 99,5% | <1 min | <5 min |
+| OT event ingress | 99,5% | edge-buffered | <10 min |
+| dashboards | 99% | n/a | <15 min |
+| analytics/forecast | 95% | <24 h | <4 h |
+
+Questi sono target di progetto, non SLA vendor.
+
+## 54. Disaster scenarios
+
+### NODE-A dies
+- NODE-B takes core workloads;
+- QNODE keeps quorum;
+- alert;
+- no safety impact.
+
+### NODE-A + NODE-B unavailable
+- edge local safe mode;
+- PLC continue;
+- store/payment unavailable;
+- restore from backup/replacement hardware.
+
+### Internet dies
+- local production continues;
+- Stripe transactions follow tested offline policy;
+- vendor clouds unavailable;
+- events buffered.
+
+### NAS/backup dies
+- production continues;
+- repair backup before maintenance risk increases.
+
+### Database corruption
+- stop destructive writes;
+- promote clean replica only after checks;
+- PITR from WAL if required.
+
+### Ransomware/admin compromise
+- isolate;
+- preserve audit;
+- revoke credentials;
+- restore from offsite/immutable backup.
+
+## 55. Acceptance test BOM-030
+
+1. NODE-A power-off during production simulation;
+2. NODE-B failover;
+3. QNODE loss;
+4. switch/link failure;
+5. Internet loss;
+6. BESS mode;
+7. low SOC;
+8. PostgreSQL primary failure;
+9. NATS node failure;
+10. event replay;
+11. duplicate event/idempotency;
+12. delayed Stripe webhook;
+13. MQTT edge buffer/replay;
+14. backup full;
+15. point-in-time DB restore;
+16. VM restore;
+17. offsite restore;
+18. Keycloak/identity outage;
+19. expired certificate;
+20. scheduler worker failure;
+21. forecasting unavailable;
+22. clock drift;
+23. RBAC unauthorized action;
+24. device credential revoke;
+25. simulated incident/runbook.
+
+## 56. BOM-030 decision
+
+**Working baseline:**
+- 2 server-grade compute nodes;
+- 1 lightweight witness/edge node;
+- 1 physically separate backup target;
+- 10 GbE server interconnect;
+- Proxmox VE;
+- Debian;
+- PostgreSQL;
+- NATS JetStream;
+- MQTT edge ingress;
+- Keycloak/OIDC;
+- Prometheus/Grafana/Loki/Alloy;
+- Git/CI;
+- BESS 30 kW as shared backup.
+
+**Explicitly not baseline:**
+- Kubernetes;
+- Ceph;
+- SAN;
+- GPU in control-plane;
+- local UPS;
+- cloud-only database;
+- proprietary ERP as system of record.
+
+## 57. Gate di acquisto
+
+Prima dell'ordine:
+
+1. rack/location;
+2. heat/dust/environment;
+3. BESS kWh/autonomy;
+4. compute sizing;
+5. ECC RAM target;
+6. storage endurance;
+7. 10GbE topology;
+8. QNODE;
+9. backup capacity/retention;
+10. offsite target;
+11. Proxmox support level;
+12. three hardware quotes where practical;
+13. restore test design;
+14. commissioning plan.
+
+Documenti BOM-030:
+- `CENTRAL_ORCHESTRATION_SERVER.md`;
+- `RFQ_CENTRAL_ORCHESTRATION_SERVER.md`;
+- `SERVER_ACCEPTANCE_DR_RUNBOOK.md`;
+- `EVENT_API_CONTRACTS.md`;
+- `19_BOM_PRODOTTI_FORNITORI/AUTOMAZIONE_SERVER_CENTRALE.md`;
+- `22_FONTI_NORME_PREVENTIVI/AUTOMAZIONE_SERVER_CENTRALE_SOURCES.md`.
