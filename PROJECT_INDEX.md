@@ -9,7 +9,7 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 
 ## 2. Struttura target
 
-- `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e decision verifica bloccantes;
+- `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e verifiche decisionali;
 - `01_MASTERPLAN_E_TERRENO/` — lotto, vincoli, accessi, drenaggi, espansioni;
 - `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, esterno;
 - `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura, drenaggi, porte, recupero pioggia e cantiere;
@@ -584,7 +584,32 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/ORGANIZZAZIONE_PERSONALE_LANCIO.md`;
 - `22_FONTI_NORME_PREVENTIVI/ORGANIZZAZIONE_PERSONALE_LANCIO_SOURCES.md`.
 
-## 16. Avvio economico e messa a reddito — PRIORITÀ MASSIMA
+## 16. Società, business plan e governance — STRUTTURATO
+
+Directory: `16_SOCIETA_FINANZA_E_CONTRIBUTI/`.
+
+Pacchetto:
+- `BUSINESS_PLAN_MASTER.md` — business plan unico banca/bandi;
+- `PIANO_AZIENDALE_BANDI.md` — base SRE01/SRD01;
+- `SCELTA_FORMA_SOCIETARIA.md`;
+- `STATUTO_TIPO_SOCIETA_AGRICOLA_SRL.md` — specifica da validare col notaio;
+- `PATTI_SOCI_BOZZA.md`;
+- `GOVERNANCE_E_DELEGHE.md`;
+- `CHECKLIST_COSTITUZIONE_E_DATA_ROOM.md`;
+- piano contributi/cassa iniziale.
+
+Preferenza societaria di lavoro: **S.r.l. società agricola**, non ancora decisione notarile/fiscale definitiva.
+
+Principio:
+- un solo set di numeri per business plan, banca e bandi;
+- lavoro dei soci valorizzato;
+- oggetto societario agricolo da mantenere coerente;
+- IAP, fiscalità, previdenza, quote e garanzie da chiudere prima dell'atto.
+
+Fonti:
+`22_FONTI_NORME_PREVENTIVI/SOCIETA_IAP_COSTITUZIONE_SOURCES.md`.
+
+## 17. Avvio economico e messa a reddito — PRIORITÀ MASSIMA
 
 L'avvio è ora trattato come sottoprogetto trasversale fra finanza, cantiere, persone, agronomia e mercato.
 
@@ -627,15 +652,15 @@ Documenti:
 - `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md` — piano master per settore, €850k CAPEX, P1 su 3 comparti, cronoprogramma 0–15 mesi e verifiche di uscita;
 - `15_MERCATO_E_VENDITE/VENDITA_DIRETTA_E_CONSEGNE_PROGRAMMATE.md`.
 
-## 17. Metodo BOM obbligatorio
+## 18. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, modalità di guasto, ripiego, contributi, dipendenze, espansione e stato decisionale.
 
-## 18. Stato attuale dei grandi blocchi
+## 19. Stato attuale dei grandi blocchi
 
 La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser separata e soprattutto le validazioni reali: lotto, crop card, profili di carico, DSO/RFQ, pilot e commissioning.
 
-## 19. Sequenza BOM
+## 20. Sequenza BOM
 
 ### Già strutturate
 
@@ -708,7 +733,7 @@ Priorità di chiusura:
 
 La numerazione riprende solo se la closure matrix evidenzia un nuovo package fisico/operativo non coperto.
 
-## 20. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
+## 21. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `RND_CORRELATO_EU/`.
 
@@ -735,7 +760,7 @@ Documenti:
 
 Canali UE candidati da verificare topic per topic: Horizon Europe Cluster 4/6; EIC Accelerator solo in una fase successiva se tecnologia, TRL e scalabilità lo giustificano.
 
-## 21. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
+## 22. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `EXTRA_AGRITURISMO_EVOLUTIVO/`.
 
