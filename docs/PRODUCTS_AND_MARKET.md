@@ -1,8 +1,40 @@
 # Carnia TerraTech — Products & Market Benchmarks
 
-**Data raccolta:** 17 settembre 2026  
-**Uso:** benchmark di acquisto e base per preventivi.  
-**Regola:** ricontrollare prezzo, disponibilità, IVA, spedizione e scheda tecnica al momento dell'ordine.
+**Data raccolta originaria:** 17 settembre 2026  
+**Revisionato:** 18 settembre 2026  
+**Stato:** `ARCHIVIO BENCHMARK / NON SPECIFICA DI PROGETTO / NON BUDGET CORRENTE`
+
+## Avvertenza
+
+Questo file conserva prezzi, prodotti e benchmark raccolti durante la prefattibilità.
+
+Non determina più:
+- priorità;
+- quantità finali;
+- architetture;
+- CAPEX;
+- scelta fornitori.
+
+Per lo stato corrente usare:
+- `../PROJECT_INDEX.md`;
+- `../19_BOM_PRODOTTI_FORNITORI/`;
+- `../22_FONTI_NORME_PREVENTIVI/`;
+- `../21_RISCHI_DECISIONI_OPEN_POINTS/PROCUREMENT_CLOSURE_REGISTER.md`.
+
+Ogni prezzo qui riportato deve essere **ricontrollato** prima di RFQ o decisione.
+
+---
+
+## Aggiornamento strategico 18/09/2026
+
+- telescopico/mezzo multifunzione: **CORE P1**;
+- forche + benna: baseline;
+- AMR: **P2 / HOLD**, non requisito P1;
+- rover galline: **ARCHIVIATO**;
+- accesso umano in quota: funzione core;
+- robot ragno manutenzione: R&S prioritaria separata;
+- humus/vermicompost: core operativo;
+- budget complessivo: fare riferimento al control budget €950k, non sommare automaticamente i benchmark di questo file.
 
 ---
 
