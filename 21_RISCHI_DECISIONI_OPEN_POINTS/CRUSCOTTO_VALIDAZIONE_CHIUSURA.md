@@ -17,7 +17,7 @@ Non sostituisce i documenti tecnici: li coordina.
 
 | # | Blocco | Stato | Evidenza già pronta | Blocco reale |
 |---:|---|---|---|---|
-| 1 | lotto/piano generale/geotecnica/disposizione | STRUTTURATO / ESECUZIONE BLOCCATA | `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/01_TERRENO_E_MASTERPLAN.md` + criteri punti 01/03 | lotto reale, titolo, rilievo, geotecnica, accessi, utenze |
+| 1 | lotto/piano generale/geotecnica/disposizione | STRUTTURATO / ESECUZIONE BLOCCATA | `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/01_TERRENO_E_MASTERPLAN.md` + `01_MASTERPLAN_E_TERRENO/PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md` | lotto reale, campionamento, drenaggio, titolo, rilievo, geotecnica, accessi, utenze |
 | 2 | schede colturali + carichi reali acqua/termico/elettrico | STRUTTURATO / ESECUZIONE BLOCCATA | `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/02_AGRONOMIA_P1.md` + metodi/BOM di dominio | schede colturali finali, stagione, meteo sito, analisi acqua, disposizione, misure reali |
 | 3 | registro generale dei carichi 1–15 min + P0/P1 | STRUTTURATO | `MASTER_LOAD_REGISTER`, piano di misura, quadro dati fornitori, CSV di raccolta dati | misure P0/P1 e transitori + dati costruttore/RFQ mancanti |
 | 4 | DSO/TICA BT/MT prelievo/immissione/protezioni | STRUTTURATO | preparazione DSO, richiesta dati, matrice BT/MT, RFQ connessione rete, scenari di costo | lotto, DSO, POD, potenze finali, preventivo reale |
@@ -79,7 +79,7 @@ Le concentrazioni di rischio principali sono:
 
 Condizioni di escalation immediata:
 - pacchetto principale >20% sopra il budget di riferimento;
-- previsione di CAPEX installato >€950k;
+- previsione di CAPEX installato >€1,05M;
 - uso della riserva operativa per CAPEX;
 - criticità urbanistica/geotecnica/idraulica del lotto;
 - DSO con MT/opere inattese;
@@ -99,7 +99,10 @@ Il piano operativo generale corrente è:
 - `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md`;
 - `00_FINANZA_E_CASSA.md`;
 - `01_TERRENO_E_MASTERPLAN.md`;
-- `02_AGRONOMIA_P1.md`.
+- `02_AGRONOMIA_P1.md`;
+- `12_CICLI_MATERIA_MEZZI_E_QUOTA.md`.
+
+Cicli materia: `11_VERMICOMPOST_E_CICLI_MATERIA/README.md`.
 
 Questi documenti rendono eseguibili F0/F1 e preparano P1, ma non sostituiscono concessioni, lotto o schede colturali finali.
 
@@ -116,7 +119,9 @@ Aprire:
 7. BOM-025 prova banco/RFQ confezionamento;
 8. BOM-024 dimensionamento preliminare celle frigorifere;
 9. BOM-012 DryGair/sistema di supporto;
-10. BOM-021 telescopico/dimostrazione.
+10. BOM-021 telescopico/benna + PIL-LIFT;
+11. accesso in quota H1 + PIL-HGT;
+12. area humus/cicli materia.
 
 Stato offerta:
 `PRELIMINARE / NON VALIDO PER ORDINE`.
@@ -231,7 +236,7 @@ Questi dati sostituiscono le classi di riferimento con dimensionamenti reali.
 - automazione vendita;
 - espansione riuso drenaggi;
 - robot tagliaerba;
-- pulizia area galline;
+- accesso in quota;
 - automazione confezionamento.
 
 ### SAT superato sblocca
