@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 04: Acqua e fertirrigazione
 
 **Aggiornato:** 18 settembre 2026  
-**Stato:** `ARCHITETTURA STRUTTURATA / BOM-013…018 + BOM-032 SVILUPPATE / DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA, UVT, MICROBIOLOGIA E CROP CARD`.
+**Stato:** `ARCHITETTURA STRUTTURATA / BOM-013…018 + BOM-032 + BOM-033 SVILUPPATE / RIUSO R1 BLOCCATO DA PILOT, Na-Cl, FITOPATOGENI E CLASSIFICAZIONE SCARICHI`.
 
 ## 1. Obiettivo
 
@@ -196,7 +196,67 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/ACQUA_TRATTAMENTO_DISINFEZIONE.md`;
 - `22_FONTI_NORME_PREVENTIVI/ACQUA_TRATTAMENTO_DISINFEZIONE_SOURCES.md`.
 
-## 10. Misure/KPI
+## 10. BOM-033 — drenaggio, raccolta e riuso
+
+Decisione working:
+
+- **R0 obbligatoria:** raccogliere, segregare, misurare e mettere in HOLD;
+- **R1 successiva:** trattamento + clean tank + partial reuse dopo pilot 30–60 giorni;
+- **R2:** reuse ratio dinamico solo dopo dati reali.
+
+Flussi separati:
+
+- D0 roof rainwater -> BOM-018;
+- D1 crop drainage C1/C2 -> candidato riuso;
+- D2 abnormal/flush -> HOLD;
+- D3 floor/wash -> rete separata;
+- D4 stormwater -> masterplan/PRTA;
+- D5 BOM-029 process wastewater -> separata;
+- D6 domestic -> separata.
+
+C1 e C2 restano misurabili separatamente fino alla classificazione.
+
+KPI:
+
+`drain_fraction = V_drain / V_irrigated`
+
+`gross_reuse = V_reuse / V_drain`
+
+`fresh_water_reduction = V_reuse / V_total_irrigation`
+
+Guardrail:
+- EC non basta: monitorare Na e Cl;
+- no untreated common drain return;
+- positive pathogen -> HOLD/isolation;
+- bleed sempre misurato e con destinazione autorizzata;
+- no discharge to soil by default;
+- stormwater e nutrient drain mai miscelati.
+
+Tank:
+- 5/10 m³ sono solo scenari RFQ;
+- size finale da peak drain tra treatment windows + reserve + freeboard.
+
+Benchmark:
+- PE external 5.000 L ~€1.159 shell-only lower bound;
+- FVG 2026 drainage gravel €38,50/m³;
+- category 50 Prezzario FVG 2026 per pipes/manholes/drains;
+- EC/pH instrumentation class già benchmarked in BOM-016 ~€615 + IVA excluding probes.
+
+Regulatory gate:
+- D.Lgs. 152/2006 classification;
+- SUAP/AUA where applicable;
+- FVG PRTA;
+- exact recipient/sewer manager/body;
+- sample point + flow meter on final discharge if required.
+
+Documenti:
+
+- `DRAINAGE_REUSE_ARCHITECTURE.md`;
+- `RFQ_DRAINAGE_REUSE.md`;
+- `19_BOM_PRODOTTI_FORNITORI/ACQUA_DRENAGGIO_RIUSO.md`;
+- `22_FONTI_NORME_PREVENTIVI/ACQUA_DRENAGGIO_RIUSO_SOURCES.md`.
+
+## 11. Misure/KPI
 
 - m³ disponibili e autonomia residua;
 - m³ captati da pioggia / da fonte;
@@ -210,7 +270,7 @@ Documenti:
 - drift/calibrazioni;
 - allarmi e ore manutenzione.
 
-## 11. Failure modes principali
+## 12. Failure modes principali
 
 - liner/tank perde;
 - overflow ostruito/insufficiente;
@@ -227,7 +287,7 @@ Documenti:
 
 Fallback: isolamento tank/ramo, esercizio su unità superstite, failover P1/P2, stop dosaggio, fonte esterna autorizzata e modalità irrigazione prioritaria/degradata.
 
-## 12. Package sviluppati
+## 13. Package sviluppati
 
 - `IRRIGATION_DISTRIBUTION.md` + RFQ;
 - `FILTRATION_ARCHITECTURE.md` + RFQ;
@@ -236,10 +296,11 @@ Fallback: isolamento tank/ramo, esercizio su unità superstite, failover P1/P2, 
 - `TANKS_CONTAINMENT_ARCHITECTURE.md` + RFQ;
 - `WATER_STORAGE_ARCHITECTURE.md` + `RFQ_WATER_STORAGE.md`;
 - `WATER_TREATMENT_DISINFECTION_ARCHITECTURE.md` + `RFQ_WATER_TREATMENT_DISINFECTION.md`;
-- BOM-013…018 + BOM-032 in `19_BOM_PRODOTTI_FORNITORI/`;
+- `DRAINAGE_REUSE_ARCHITECTURE.md` + `RFQ_DRAINAGE_REUSE.md`;
+- BOM-013…018 + BOM-032 + BOM-033 in `19_BOM_PRODOTTI_FORNITORI/`;
 - fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
-## 13. Gate punto 04
+## 14. Gate punto 04
 
 Restano necessari:
 
@@ -253,6 +314,8 @@ Restano necessari:
 - filtrazione/controlavaggio finali;
 - ricette/concentrazioni/SDS;
 - validazione BOM-032: UVT/microbiologia/Q/UV redundancy e sampling plan;
-- drenaggio e decisione su eventuale riuso BOM-033;
+- pilot BOM-033 30–60 giorni con volume/EC/Na/Cl e pathogen strategy;
+- classification/discharge route SUAP/AUA/PRTA;
+- dirty/clean tank sizing e treatment proof;
 - BESS/backup elettrico;
 - commissioning completo.
