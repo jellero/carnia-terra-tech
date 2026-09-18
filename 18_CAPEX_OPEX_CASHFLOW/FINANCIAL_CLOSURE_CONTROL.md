@@ -59,16 +59,16 @@ Ogni passaggio E0→E5 aggiorna:
 
 ## 5. Waterfall finanziario
 
-Su €950.000:
+Su €950.000 integralmente ammissibili:
 - 60% sostegno = **€570.000**;
-- anticipo max = **€285.000**;
-- finanziamento 40% = **€380.000**;
-- liquidità iniziale = **€665.000**.
+- anticipo SRD01 max 30% del sostegno = **€171.000**;
+- linea finanziamento di lavoro ipotizzata = **€380.000**, da deliberare e verificare per compatibilità;
+- liquidità iniziale = **€551.000** se entrambe le fonti sono perfezionate.
 
-Dopo avanzamento:
+Dopo almeno il 50% della spesa:
 - 80% del sostegno = **€456.000**;
-- ulteriore acconto teorico = **€171.000**;
-- liquidità cumulata investimento = **€836.000**;
+- ulteriore acconto teorico massimo = **€285.000**;
+- liquidità cumulata investimento = **€836.000** includendo la linea €380k;
 - saldo residuo = **€114.000**.
 
 ## 6. Cassa separata
