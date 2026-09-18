@@ -43,8 +43,8 @@ Nessuno di questi obiettivi deve essere considerato automaticamente secondario r
 ### 3.2 Sicurezza tecnica
 
 - nessun servizio vitale deve dipendere esclusivamente da cloud o Internet;
-- irrigazione, acqua, clima minimo, allarmi critici e funzioni essenziali devono avere fallback locale coerente;
-- ogni sistema critico deve documentare failure mode, rilevazione guasto, conseguenza, fallback, ricambio e tempo di ripristino;
+- irrigazione, acqua, clima minimo, allarmi critici e funzioni essenziali devono avere ripiego locale coerente;
+- ogni sistema critico deve documentare modalità di guasto, rilevazione del guasto, conseguenza, ripiego, ricambio e tempo di ripristino;
 - macchine, piattaforme e sistemi di sollevamento persone devono essere usati nelle configurazioni previste e certificate;
 - ogni asset deve poter essere isolato e manutenuto in sicurezza;
 - la sicurezza non può dipendere da procedure che richiedono presenza continua dell'operatore.
@@ -87,15 +87,15 @@ Nessuno di questi obiettivi deve essere considerato automaticamente secondario r
 - serra, acqua, termico, elettrico, rete dati, viabilità e spazi devono considerare ampliamenti futuri;
 - predisporre dove economicamente razionale tubazioni, passaggi, canalizzazioni, quadri, fibra e spazi tecnici;
 - evitare opere che obblighino a demolire infrastrutture sane per la prima espansione prevedibile;
-- ogni nuova attività deve poter essere introdotta senza mettere in crisi il core agricolo.
+- ogni nuova attività deve poter essere introdotta senza mettere in crisi il progetto agricolo principale.
 
 ## 4. Perimetro funzionale
 
 Il progetto comprende, in fasi differenti:
 
-- coltivazione in serra e outdoor;
+- coltivazione in serra e all'aperto;
 - acqua, fertirrigazione, clima, energia e accumuli;
-- automazione, dati, sensoristica, computer vision, AI e robotica;
+- automazione, dati, sensoristica, visione artificiale, AI e robotica;
 - logistica interna, AMR, sollevatore e mezzi di servizio;
 - Tech Barn, post-raccolta, celle e confezionamento;
 - vermicompost e recupero di materia;
@@ -126,7 +126,7 @@ Deve avere almeno:
 - ricambi;
 - vita utile;
 - sicurezza e certificazioni;
-- failure mode e fallback;
+- modalità di guasto e ripiego;
 - impatto sul lavoro umano;
 - possibilità di espansione;
 - trattamento economico: costo reale / ammissibile / contributo;
