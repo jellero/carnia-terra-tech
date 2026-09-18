@@ -150,13 +150,17 @@ Carnia TerraTech fornisce ambiente reale di prova. I dimostratori sono indipende
 - conferma umana;
 - interfaccia pagamento separata dalla misura metrologica legale.
 
-**D3 — Ispezione e manutenzione assistita delle parti alte**
+**D3 — Robot ragno per ispezione e manutenzione assistita delle parti alte**
 - ispezione di copertura, gronde, aperture e attuatori;
 - visione per anomalie/manutenzione;
 - assistenza operatore da PLE/piattaforma;
 - localizzazione del punto di guasto;
 - raccolta dati manutentivi;
-- eventuali utensili robotici solo dopo analisi rischio.
+- eventuali utensili robotici solo dopo analisi rischio;
+- recovery tramite accesso umano certificato;
+- predisposizioni strutturali solo se validate dal costruttore serra.
+
+Riferimento tecnico: `../07_AUTOMAZIONE_DATI_AI/ROBOT_RAGNO_MANUTENZIONE_RND.md`.
 
 La capacità di accesso in quota appartiene al core agricolo; l'autonomia robotica della manutenzione resta R&S opzionale.
 
