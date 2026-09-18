@@ -584,7 +584,21 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/ORGANIZZAZIONE_PERSONALE_LANCIO.md`;
 - `22_FONTI_NORME_PREVENTIVI/ORGANIZZAZIONE_PERSONALE_LANCIO_SOURCES.md`.
 
-## 16. Società, business plan e governance — STRUTTURATO
+## 16. Rischi, validazione e collaudo master — STRUTTURATO
+
+Directory: `21_RISCHI_DECISIONI_OPEN_POINTS/`.
+
+Punto unico di controllo:
+- `README.md` — indice closure;
+- `ANALISI_PROBLEMATICHE_RISCHI.md/.csv` — registro rischi e problematiche;
+- `CRUSCOTTO_VALIDAZIONE_CHIUSURA.md/.csv` — stato delle chiusure;
+- `COLLAUDO_MASTER_ACCETTAZIONE.md/.csv` — SAT integrato e messa in servizio;
+- registri pilot, procurement e verifiche decisionali già presenti nella directory.
+
+Regola:
+`ipotesi -> dato reale -> RFQ -> contratto -> installazione -> prova -> PASS`.
+
+## 17. Società, business plan e governance — STRUTTURATO
 
 Directory: `16_SOCIETA_FINANZA_E_CONTRIBUTI/`.
 
@@ -609,7 +623,7 @@ Principio:
 Fonti:
 `22_FONTI_NORME_PREVENTIVI/SOCIETA_IAP_COSTITUZIONE_SOURCES.md`.
 
-## 17. Avvio economico e messa a reddito — PRIORITÀ MASSIMA
+## 18. Avvio economico e messa a reddito — PRIORITÀ MASSIMA
 
 L'avvio è ora trattato come sottoprogetto trasversale fra finanza, cantiere, persone, agronomia e mercato.
 
@@ -652,15 +666,15 @@ Documenti:
 - `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md` — piano master per settore, €850k CAPEX, P1 su 3 comparti, cronoprogramma 0–15 mesi e verifiche di uscita;
 - `15_MERCATO_E_VENDITE/VENDITA_DIRETTA_E_CONSEGNE_PROGRAMMATE.md`.
 
-## 18. Metodo BOM obbligatorio
+## 19. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, modalità di guasto, ripiego, contributi, dipendenze, espansione e stato decisionale.
 
-## 19. Stato attuale dei grandi blocchi
+## 20. Stato attuale dei grandi blocchi
 
 La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser separata e soprattutto le validazioni reali: lotto, crop card, profili di carico, DSO/RFQ, pilot e commissioning.
 
-## 20. Sequenza BOM
+## 21. Sequenza BOM
 
 ### Già strutturate
 
@@ -733,7 +747,7 @@ Priorità di chiusura:
 
 La numerazione riprende solo se la closure matrix evidenzia un nuovo package fisico/operativo non coperto.
 
-## 21. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
+## 22. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `RND_CORRELATO_EU/`.
 
@@ -760,7 +774,7 @@ Documenti:
 
 Canali UE candidati da verificare topic per topic: Horizon Europe Cluster 4/6; EIC Accelerator solo in una fase successiva se tecnologia, TRL e scalabilità lo giustificano.
 
-## 22. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
+## 23. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `EXTRA_AGRITURISMO_EVOLUTIVO/`.
 
