@@ -9,13 +9,13 @@ Questo è un **piano extra autonomo** rispetto a Carnia TerraTech.
 
 Non fa parte:
 - della baseline agricola;
-- della sequenza BOM core;
+- della sequenza BOM progetto principale;
 - del CAPEX necessario per avviare serra, acqua, energia, automazione, Tech Barn o vendita automatica;
-- delle fonti finanziarie usate per il lancio del core.
+- delle fonti finanziarie usate per il lancio del progetto principale.
 
 Il piano viene sviluppato solo se:
 1. esiste un canale di finanziamento dedicato o una copertura finanziaria separata;
-2. il core agricolo è protetto;
+2. il progetto principale agricolo è protetto;
 3. la domanda potenziale è verificata;
 4. il carico di lavoro rimane compatibile con gli obiettivi personali del progetto.
 
@@ -78,12 +78,12 @@ Ogni fase richiede un nuovo gate. Il passaggio alla fase successiva non è autom
 
 ## 5. Documenti
 
-- [PHASED_ARCHITECTURE.md](PHASED_ARCHITECTURE.md) — architettura tecnica e predisposizioni evolutive;
-- [FUNDING_PLAN.md](FUNDING_PLAN.md) — fondi dedicati, stato e compatibilità;
-- [CAPEX_AND_BOUNDARIES.md](CAPEX_AND_BOUNDARIES.md) — separazione economica dal core;
-- [LEGAL_FOOD_GATES.md](LEGAL_FOOD_GATES.md) — gate agrituristici, sanitari e menu.
+- [ARCHITETTURA_EVOLUTIVA.md](ARCHITETTURA_EVOLUTIVA.md) — architettura tecnica e predisposizioni evolutive;
+- [PIANO_FINANZIAMENTI.md](PIANO_FINANZIAMENTI.md) — fondi dedicati, stato e compatibilità;
+- [CAPEX_E_CONFINI.md](CAPEX_E_CONFINI.md) — separazione economica dal progetto principale;
+- [VINCOLI_LEGALI_E_ALIMENTARI.md](VINCOLI_LEGALI_E_ALIMENTARI.md) — verifiche agrituristiche, sanitarie e menu.
 
-## 6. Interfacce con il core
+## 6. Interfacce con il progetto principale
 
 Le interfacce ammesse sono limitate a:
 
@@ -91,9 +91,9 @@ Le interfacce ammesse sono limitate a:
 - BOM-027 fattoria didattica;
 - BOM-028 spaccio automatico;
 - Tech Barn solo tramite flusso di trasferimento controllato;
-- rete/energia/acqua solo come utilities contabilizzate e progettate senza rendere il core dipendente dall'extra.
+- rete/energia/acqua solo come utilities contabilizzate e progettate senza rendere il progetto principale dipendente dall'extra.
 
-Il piano extra non deve entrare nelle aree operative del core né modificare i requisiti vitali.
+Il piano extra non deve entrare nelle aree operative del progetto principale né modificare i requisiti vitali.
 
 ## 7. Regola finanziaria
 
@@ -101,9 +101,9 @@ Ogni spesa del piano usa stato:
 
 - `EXTRA-AGRITURISMO`;
 - `EXTRA-PREDISPOSIZIONE`;
-- `EXTRA-SHARED-ASSET`;
-- `EXTRA-NOT-ELIGIBLE`;
-- `EXTRA-FUNDING-TO-VERIFY`.
+- `EXTRA-BENE-CONDIVISO`;
+- `EXTRA-NON-AMMISSIBILE`;
+- `EXTRA-FINANZIAMENTO-DA-VERIFICARE`.
 
 Nessun contributo viene considerato certo finché non esiste una call aperta, un beneficiario ammissibile e una domanda approvata.
 
