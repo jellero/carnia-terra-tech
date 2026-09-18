@@ -886,23 +886,23 @@ Vantaggi:
 - resource limits;
 - isolamento aggiornamenti.
 
-Kubernetes resta `OPTIONAL / FUTURE`.
+Kubernetes resta `OPZIONALE / FUTURO`.
 
 Per il numero di servizi previsto:
 - systemd;
 - Docker/Podman Compose;
 - LXC/VM;
 
-sono sufficienti e riducono failure modes operativi.
+sono sufficienti e riducono modalità di guasto operative.
 
 ## 29. Distribuzione dei carichi applicativi
 
-### VM/guest DB
-- PostgreSQL primary/replica;
+### VM/istanza DB
+- PostgreSQL primario/replica;
 - risorse riservate;
 - niente noisy-neighbor.
 
-### APP
+### APPLICAZIONI
 - API;
 - pianificatore;
 - workers;
@@ -1631,21 +1631,21 @@ Questi sono target di progetto, non SLA fornitore.
 - Kubernetes;
 - Ceph;
 - SAN;
-- GPU in control-plane;
-- local UPS;
-- cloud-only database;
-- proprietary ERP as system of record.
+- GPU nel piano di controllo;
+- UPS locale;
+- database solo cloud;
+- ERP proprietario come sistema autorevole dei dati.
 
 ## 57. Verifica prima dell'acquisto
 
 Prima dell'ordine:
 
-1. rack/location;
-2. heat/dust/environment;
+1. rack/posizione;
+2. calore/polvere/ambiente;
 3. BESS kWh/autonomy;
-4. compute sizing;
-5. ECC RAM target;
-6. storage endurance;
+4. dimensionamento calcolo;
+5. obiettivo RAM ECC;
+6. durata storage;
 7. 10GbE topology;
 8. QNODE;
 9. backup capacity/retention;
