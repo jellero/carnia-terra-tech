@@ -3,6 +3,8 @@
 **Aggiornato:** 18 settembre 2026  
 **Stato:** `WORKING LAUNCH PLAN / DATE REALI DA MASTER CRONOPROGRAMMA`.
 
+> La rampa 30/60/90/180 giorni descrive il periodo **dopo l'avvio produttivo**. La fase precedente, dalla disponibilità dei fondi al primo incasso, è governata da `18_CAPEX_OPEX_CASHFLOW/AVVIO_CASSA_E_RAMPA_PRODUTTIVA.md` e `20_CANTIERE_E_CRONOPROGRAMMA/SEQUENZA_AVVIO_E_MESSA_A_REDDITO.md`.
+
 ## 1. Regola
 
 Il go-live non è un interruttore.
