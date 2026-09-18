@@ -44,7 +44,7 @@ Ogni pilot deve produrre:
 
 | ID | Package | Stato | Ambiente minimo | Durata / campione | KPI principali | Exit gate |
 |---|---|---|---|---|---|---|
-| PIL-AMR | BOM-020 AMR serra | P1/P2 | corsia ~1,20 m, porte, persone, carrello, area umida, dock, offline | almeno 8 h demo + 100 missioni acceptance | mission success, docking, no-contact, recovery, API, log | >=100 missioni consecutive secondo KPI concordati; docking >=99%; nessun contatto non previsto |
+| PIL-AMR | BOM-020 AMR serra | P2 / NON BLOCCA P1 | corsia ~1,20 m, porte, persone, carrello, area umida, dock, offline | almeno 8 h demo + 100 missioni acceptance | mission success, docking, no-contact, recovery, API, log | >=100 missioni consecutive secondo KPI concordati; docking >=99%; nessun contatto non previsto |
 | PIL-MOW | BOM-022 robot tagliaerba | P0/P2 | prato reale, pendenze, ombra GNSS, no-go, dock | >=20 cicli dock-return + fault tests | dock success, area completion, RTK loss, obstacle/fail-safe, hens lockout | nessun ingresso aree interdette; recovery documentata; log disponibili |
 | PIL-RETAIL | BOM-028 spaccio 24/7 | P1/P2 | macchina candidata + pack/SKU reali + pagamento/fiscalità test | >=100 erogazioni per SKU critico | jam, pack damage, product damage, temp, vend/payment reconciliation | zero jam/pack break nel test target; danno entro soglia; inventario/pagamento riconciliati |
 | PIL-REUSE | BOM-033 drenaggio/riuso | P0/P2 | 1 comparto C1 o C2, drain segregato, HOLD, lab | 30–60 giorni | m³ drain, reuse ratio, EC/pH, Na/Cl, patogeni, €/m³, fertilizzante recuperato | trattamento validato + crop sign-off + legal discharge route + mass balance chiuso |
@@ -55,10 +55,20 @@ Ogni pilot deve produrre:
 | PIL-LIFT | BOM-021 mezzo multifunzione | P1/P2 | pallet, big bag, materiale sfuso, area humus, pendenza reale | >=4 h duty + missioni rappresentative | stabilità, manovra, benna, ricarica, ergonomia | tutte le missioni core completate senza workaround insicuri |
 | PIL-HGT | accesso in quota H1 | P1/P2 | punti alti reali/rappresentativi, piattaforma OEM o PLE | prova punti critici + emergency recovery | reach, setup, stabilità, emergenza | 100% punti manutentivi critici raggiungibili in sicurezza |
 
-## 4. PIL-AMR — BOM-020
+## 4. PIL-AMR — BOM-020 — solo dopo dati P1
 
 Fonte:
 - `08_MACCHINE_E_LOGISTICA/RFQ_AMR.md`
+
+### Condizione di apertura
+Il pilot AMR si apre solo dopo aver misurato su P1:
+- ore di trasporto manuale;
+- kg/cassette movimentate;
+- distanze;
+- colli di bottiglia;
+- costo del lavoro evitabile.
+
+Non è un gate per il primo raccolto o la messa in servizio P1.
 
 ### Setup minimo
 - corsia ~1,20 m;
@@ -337,17 +347,17 @@ Nessun risultato viene riassunto solo in una frase senza raw evidence.
 ## 16. Sequenza consigliata
 
 Prima del lotto:
-1. AMR vendor demo in ambiente equivalente;
-2. packaging/vendor bench test con sample pack;
-3. smart-retail vend test su campioni se vendor accetta;
-4. BESS/PCS factory/demo evidence richiesta via RFQ.
+1. packaging/vendor bench test con sample pack;
+2. BESS/PCS factory/demo evidence richiesta via RFQ.
+
+AMR: nessuna priorità prima dei dati operativi P1.
 
 Dopo lotto/layout:
 5. mezzo multifunzione su layout reale;
 6. accesso in quota;
 7. mower se realmente previsto;
 8. didattica route;
-9. AMR site pilot.
+9. AMR site pilot solo se i dati P1 dimostrano un business case.
 
 Dopo primo ciclo produttivo:
 10. drainage/reuse 30–60 giorni;
