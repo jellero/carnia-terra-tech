@@ -11,7 +11,7 @@ Acqua,BOM-016,fertigation,Q2,benchmark+RFQ,crop card/flows/recipes,installed AB-
 Acqua,BOM-017,fertilizer tanks,Q1/Q2,benchmark+RFQ,layout/containment,containment/accessories RFQ,2
 Acqua,BOM-018,water storage,Q2,RFQ,geotech/source/water balance,2x150m3 alternatives RFQ,2
 Energia,BOM-019,PV inverter,Q1/Q2,benchmark+RFQ,layout/structure/DSO,100vs120kW installed RFQ,1
-Logistica,BOM-020,greenhouse AMR,Q3,RFQ,pilot/IP-condensation/offline/dock,demo+100 missions acceptance,3
+Logistica,BOM-020,greenhouse AMR,Q4/Q3-P2,HOLD,measured P1 labour-flow business case,open pilot/RFQ only if justified,4
 Verde,BOM-022,mower robot,Q3,benchmark,net lawn/slope/RTK,pilot real zone,3
 Post-raccolta,BOM-024,cold rooms,Q2,hardware benchmark+RFQ,kg-day/batch/Tin/pulldown/layout,installed refrigeration RFQ,1
 Post-raccolta,BOM-025,harvest packaging,Q1/Q2,unit benchmarks,volumes/SKU/packaging,equipment+consumables RFQ,1
