@@ -18,10 +18,12 @@ Il cronoprogramma non impone un trapianto fuori stagione: le colture reali posso
 
 ### Terreno
 - due diligence finale;
-- rogito;
+- griglia campioni e prove drenaggio/infiltrazione;
+- analisi laboratorio;
 - rilievo;
 - geotecnica;
-- masterplan reale.
+- masterplan di prova;
+- rogito solo dopo esito compatibile;
 
 ### Mercato
 - iniziare raccolta contatti;
@@ -42,6 +44,9 @@ In parallelo:
 - Tech Barn;
 - piano sicurezza;
 - RFQ principali;
+- RFQ telescopico/benna;
+- analisi accesso in quota e RFQ PLE se necessaria;
+- layout humus/cicli materia;
 - crop card P1;
 - catalogo commerciale preliminare.
 
@@ -84,7 +89,9 @@ Commerciale:
 - packaging;
 - rete/PLC/edge;
 - server minimo;
-- spaccio base in installazione o soluzione ritiro temporanea.
+- spaccio base in installazione o soluzione ritiro temporanea;
+- mezzo/logistica core in commissioning;
+- area humus base predisposta.
 
 Personale:
 - responsabile colture attivo;
