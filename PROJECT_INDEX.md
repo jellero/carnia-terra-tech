@@ -60,7 +60,7 @@ Matrice: `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 
 ## 7. Stato punto 04 — Acqua e fertirrigazione
 
-**ARCHITETTURA STRUTTURATA / BOM-013…018 + BOM-032 TRATTAMENTO-DISINFEZIONE SVILUPPATE / DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA, UVT, MICROBIOLOGIA E CROP CARD.**
+**ARCHITETTURA STRUTTURATA / BOM-013…018 + BOM-032 TRATTAMENTO-DISINFEZIONE + BOM-033 DRENAGGIO-RIUSO SVILUPPATE / RIUSO R1 BLOCCATO DA PILOT, Na-Cl, FITOPATOGENI E CLASSIFICAZIONE SCARICHI.**
 
 Documenti principali: `04_ACQUA_E_FERTIRRIGAZIONE/README.md`, package distribuzione/filtrazione/pompe/fertirrigazione/tank chimici/accumulo e relativi RFQ; BOM-013…018 e fonti dedicate.
 
@@ -72,9 +72,10 @@ Dati guida:
 - BOM-016: A/B/acido; sole pompe scenario ~€1.744–1.894 + IVA;
 - BOM-017: scenario tank A/B/acido 500/500/200 L; soli contenitori ~€509,40 + IVA;
 - BOM-018: 2×150 m³ di lavoro, espansione 400–500 m³; 300 m³ = 8,6–10 giorni teorici a 30–35 m³/giorno;
-- BOM-032: W0/W1/W2/W3/W4 water classees; UV after filtration as di lavoro microbial barrier when required; UV sizing from Q + worst-case UVT + validated dose; no blind bypass; chemical sanitation conditional; W3 potable/food kept separate; future W4 reuse deferred to BOM-033.
+- BOM-032: W0/W1/W2/W3/W4 water classes; UV after filtration as working microbial barrier when required; UV sizing from Q + worst-case UVT + validated dose; no blind bypass; chemical sanitation conditional; W3 potable/food kept separate;
+- BOM-033: D0–D6 separated water streams; R0 collect/measure/HOLD baseline; C1/C2 measured separately; R1 treatment + clean tank + partial reuse only after 30–60 day pilot; Na/Cl + pathogen guardrails; bleed metered with lawful destination; no default discharge to soil.
 
-Verifica bloccante: lotto, source/seasonal water analyses, UVT254, microbiology, crop card, bilancio idrico, geotecnica/RainMap, RFQ, BOM-032 validation, drenaggio/riuso BOM-033 e commissioning.
+Verifica bloccante: lotto, source/seasonal water analyses, UVT254, microbiology, crop card, bilancio idrico, geotecnica/RainMap, RFQ, BOM-032 validation, BOM-033 pilot/mass balance + discharge classification, commissioning.
 
 ## 8. Stato punto 05 — Termico e clima
 
@@ -529,7 +530,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 17. Stato attuale dei grandi blocchi
 
-Restano nel perimetro R&S robotica/laser e i package tecnici trasversali ancora aperti: drenaggio/riuso, EMS e connessione elettrica.
+Restano nel perimetro R&S robotica/laser e il package tecnico trasversale ancora aperto: EMS, BESS sizing/autonomia/islanding e connessione elettrica.
 
 ## 18. Sequenza BOM
 
@@ -559,16 +560,16 @@ Restano nel perimetro R&S robotica/laser e i package tecnici trasversali ancora 
 - BOM-029 centro trasformazione conto terzi;
 - BOM-030 server centrale di orchestrazione;
 - BOM-031 sostenibilità personale e lancio operativo;
-- **BOM-032 trattamento e disinfezione acqua**.
+- BOM-032 trattamento e disinfezione acqua;
+- **BOM-033 drenaggio, raccolta e riuso acqua**.
 
 ### Prossimo package
 
-**BOM-033 — drenaggio, raccolta e riuso acqua:** drenaggi serra per comparto, raccolta e misura drenato, separazione first-flush/contaminato, tank dirty/clean, nutrient mass balance, EC/Na/Cl, fitopatogeni, disinfezione reuse, blending, bleed/discharge, stormwater separation, overflow, autorizzazioni, monitoraggio, OPEX e costo.
+**BOM-034 — EMS, BESS e connessione elettrica:** load inventory e simultaneità, profilo 15-min/peak, kWh BESS reali, C-rate, SOC reserve, islanding/black-start, ATS/STS se necessario, load shedding P0–P3, FV curtailment, inverter/BMS/EMS, metering per sottosistema, qualità rete, SPD/protezioni, CEI 0-21/0-16 2026, TICA/DSO, schema unifilare, continuità server/celle/pompe, degrado batterie, OPEX/TCO e costo.
 
 ### Coda successiva
 
-1. drenaggio/riuso;
-2. EMS e connessione elettrica.
+1. EMS, BESS sizing/autonomia/islanding e connessione elettrica.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
 
