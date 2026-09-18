@@ -50,12 +50,15 @@ Classi:
 | due celle frigo | A se portafoglio confermato | richieste da due classi temperatura |
 | linea packaging minima | A | necessaria alla vendita diretta |
 | AMR | C/B | pilot prima dell'acquisto; predisporre percorsi/dock |
-| telescopico | A/B | solo se cantiere e operatività dimostrano uso reale |
+| telescopico + forche + benna | A | mezzo core per materiali, humus, cantiere e manutenzione |
+| accesso in quota PLE/piattaforma | A/B | funzione core; acquistare ragno se layout/TCO lo giustificano, altrimenti piattaforma OEM/noleggio |
+| area humus/vermicompost base | A/B | infrastruttura semplice e durevole; attrezzature industriali dopo dati reali |
 | robot tagliaerba | C | basso impatto sull'avvio |
 | spaccio semplice | A/B | anticipare se diventa canale ricavo iniziale ed è eleggibile |
 | smart retail R&S | C | non necessario al primo ricavo |
 | fattoria didattica | B/C | extra rispetto al core iniziale |
-| galline/rover | C | non necessarie al primo cashflow |
+| galline | C | modulo futuro opzionale |
+| rover pulizia galline | FUORI CORE | architettura archiviata; non riaprire senza ore reali e business case |
 | centro trasformazione | C | domanda non ancora validata |
 | agriturismo E1 | extra | fondi separati |
 | cucina/alloggio | extra | non core |
@@ -83,4 +86,4 @@ Se per prendere un bene futuro oggi bisogna rinunciare a:
 
 il bene futuro non viene anticipato.
 
-La priorità è generare cassa.
+La priorità è generare cassa **senza lasciare scoperti rischi di sito, movimentazione e manutenzione**.
