@@ -1,6 +1,6 @@
 # Piano extra — Agriturismo evolutivo
 
-**Stato:** `EXTRA / NON CORE / FONDI DEDICATI / DA ATTIVARE PER FASI`  
+**Stato:** `EXTRA / SEPARATO DAL PROGETTO PRINCIPALE / FONDI DEDICATI / DA ATTIVARE PER FASI`  
 **Aggiornato:** 18 settembre 2026.
 
 ## 1. Ruolo nel progetto
@@ -8,7 +8,7 @@
 Questo è un **piano extra autonomo** rispetto a Carnia TerraTech.
 
 Non fa parte:
-- della baseline agricola;
+- della configurazione base agricola;
 - della sequenza BOM progetto principale;
 - del CAPEX necessario per avviare serra, acqua, energia, automazione, Tech Barn o vendita automatica;
 - delle fonti finanziarie usate per il lancio del progetto principale.
@@ -29,7 +29,7 @@ e predisporre l'architettura affinché possa evolvere, senza demolizioni inutili
 
 - degustazioni ed esperienze;
 - picnic/box;
-- eventi e attività collegate alla fattoria didattica;
+- eventi e attività colleverifica alla fattoria didattica;
 - cucina agrituristica completa;
 - eventuale ospitalità agrituristica;
 - servizi turistici complementari.
@@ -66,15 +66,15 @@ Nessuna attività agrituristica attiva. Si riserva soltanto compatibilità futur
 Micro-zona di preparazione fredda, frigorifero dedicato, banco servizio, area consumo e servizi igienici compatibili.
 
 ### E2 — agriturismo esperienziale
-Degustazioni, visite, workshop, picnic box e attività collegate a fattoria didattica/territorio.
+Degustazioni, visite, workshop, picnic box e attività colleverifica a fattoria didattica/territorio.
 
 ### E3 — cucina agrituristica
-Solo dopo business case: vera cucina, piatti cucinati, impianti e personale dedicati.
+Solo dopo analisi economica: vera cucina, piatti cucinati, impianti e personale dedicati.
 
 ### E4 — ospitalità
-Solo dopo business case separato: strutture ricettive agrituristiche, preferibilmente modulari/ecocompatibili se compatibili con sito e bandi.
+Solo dopo analisi economica separato: strutture ricettive agrituristiche, preferibilmente modulari/ecocompatibili se compatibili con sito e bandi.
 
-Ogni fase richiede un nuovo gate. Il passaggio alla fase successiva non è automatico.
+Ogni fase richiede un nuovo verifica. Il passaggio alla fase successiva non è automatico.
 
 ## 5. Documenti
 
@@ -107,7 +107,7 @@ Ogni spesa del piano usa stato:
 
 Nessun contributo viene considerato certo finché non esiste una call aperta, un beneficiario ammissibile e una domanda approvata.
 
-## 8. Decisione working
+## 8. Decisione di lavoro
 
 **E1 — ristoro light a spuntini non cucinati** è il primo scenario da progettare.
 
