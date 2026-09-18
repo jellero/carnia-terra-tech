@@ -271,3 +271,13 @@ Before purchase:
 8. RFQ;
 9. restore test;
 10. acceptance plan.
+
+## R&S manutenzione in quota
+
+La robotica prioritaria non è quella di servizio marginale, ma quella che riduce rischio e lavoro in quota.
+
+Documento:
+- `ROBOT_RAGNO_MANUTENZIONE_RND.md` — robot leggero/ispezione/manutenzione delle parti alte, con fallback PLE e recovery obbligatorio.
+
+La funzione di accesso umano resta nel core:
+`../08_MACCHINE_E_LOGISTICA/ACCESSO_IN_QUOTA_RAGNO_ARCHITETTURA.md`.
