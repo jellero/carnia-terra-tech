@@ -39,7 +39,7 @@ Prezzi osservati il 18 settembre 2026 salvo diversa indicazione.
 | FD-OBS-GH | observation point serra | 1 o più DA MASTERPLAN | set | CANDIDATO | RFQ |
 | FD-OBS-WATER | observation point acqua | DA PROGETTO | set | CANDIDATO | RFQ |
 | FD-OBS-ENERGY | observation point energia/FV | DA PROGETTO | set | CANDIDATO | RFQ |
-| FD-OBS-ANIMAL | observation point galline | 1 | set | BASELINE IF ANIMALS | costo marginale BOM-023 + RFQ |
+| FD-OBS-ANIMAL | punto osservazione area animali | 1 | set | SOLO SE ANIMALI | costo marginale + RFQ |
 | FD-WC-ACC | servizio igienico accessibile completo | 1 o DA CAPIENZA | set | OBBLIGATORIO | RFQ, classe prezzario FVG 74.3 |
 | FD-WC-SIGN | segnaletica WC/accessibilità | DA LAYOUT | cad | BASELINE | FVG safety signage class ~€34,63–43,46/cad per pannelli PVC benchmark |
 | FD-HAND-PERM | lavamani permanente | DA LAYOUT | set | BASELINE | RFQ impiantistico |
@@ -72,7 +72,7 @@ Prezzi osservati il 18 settembre 2026 salvo diversa indicazione.
 | FD-DISPLAY | display dashboard | 0–1 | cad | OPTIONAL | RFQ |
 | FD-WIFI | copertura guest Wi-Fi | 1 | area | BASELINE | INTERFACE BOM-026 U7 Outdoor €185 if not already counted |
 | FD-NET-SEG | guest VLAN/firewall policy | 1 | config | BASELINE | interno/IT |
-| FD-ANIMAL-BARR | barriera modulo animali | 1 | set | BASELINE IF ANIMALS | interface BOM-023 + RFQ |
+| FD-ANIMAL-BARR | barriera area animali | 1 | set | SOLO SE ANIMALI | interfaccia area animali + RFQ |
 | FD-ANIMAL-SIGN | igiene/comportamento animali | 1+ | cad | BASELINE IF ANIMALS | pannello/RFQ |
 | FD-VIS-VEST | gilet hi-vis per visite tecniche fuori percorso | DA RISCHIO | cad | OPTIONAL | ~€4,13/cad benchmark set 4 / €10,41 pro benchmark |
 | FD-CLEAN | kit pulizia area visitatori | 1 | set | BASELINE | RFQ |
@@ -289,14 +289,13 @@ Possibili extra BOM-027:
 - kit;
 - eventuale protezione meteo laterale solo se strutturalmente ammessa.
 
-## 16. Galline BOM-023
+## 16. Area animali futura
 
 Non duplicare:
 
 - recinto animali;
 - dirty dock;
 - gate logistici;
-- rover.
 
 Aggiungere solo:
 
@@ -313,7 +312,7 @@ Aggiungere solo:
 
 Sottrarre/deduplicare:
 
-`existing/shared assets = BOM-026 + BOM-023 + masterplan roads/parking + existing IT/electrical`.
+`asset condivisi = BOM-026 + eventuale area animali + viabilità/parcheggi masterplan + IT/elettrico esistente`.
 
 Non viene calcolato un totale finché mancano:
 
