@@ -57,6 +57,23 @@ Prezzi osservati il 18 settembre 2026, salvo indicazione.
 | SH-VEND-API | API/protocol adapter vending -> server centrale | 1 per modello | BASELINE | RFQ/in-house adapter |
 | SH-SERVER | central orchestration server integration | 1 | BASELINE | INTERNAL / shared platform |
 | SH-FORECAST | demand/supply forecast + refill scheduler | 1 | BASELINE | INTERNAL DEVELOPMENT |
+| SH-SMART-CRATE | smart crate sensing base | 3 pilot -> DA SKU | R&D PRIORITARIO | RFQ / in-house |
+| SH-CRATE-LC | load cells + ADC per crate, solo sensing/cross-check | 1 set/crate | R&D | commodity, NON misura legale by default |
+| SH-CRATE-MET | modulo di pesatura legal-for-trade per SKU/cluster | DA METROLOGIA | OPTION M1 | RFQ metrologico |
+| SH-CART | smart cart/cestino base | 1 pilot -> 2+ | R&D PRIORITARIO | in-house/RFQ |
+| SH-CART-DISPLAY | display cart 7–10\" | 1/cart | BASELINE SMART CART | RFQ |
+| SH-CART-EDGE | SBC/edge computer | 1/cart | BASELINE SMART CART | RFQ/in-house |
+| SH-CART-CAM | camera wide-angle cart | 1–2/cart | CANDIDATO | RFQ |
+| SH-CART-WEIGHT | cart load platform, cross-check | 1/cart | R&D | non usare per prezzo senza validazione metrologica |
+| SH-CART-LOC | BLE/UWB cart localization | 1/cart + anchors | CANDIDATO | RFQ |
+| SH-CART-LOCK | wheel lock/geofence antifurto | 0–1/cart | OPTIONAL | RFQ |
+| SH-ESL | e-paper/ESL per posizione SKU | 1/SKU | CANDIDATO | benchmark settore ~US$6–25/cad; RFQ Italia |
+| SH-ESL-FRESH | ESL waterproof fresh area | DA SKU | CANDIDATO | RFQ |
+| SH-CV-OVER | camera overhead/event confirmation | DA LAYOUT | R&D | RFQ/in-house CV |
+| SH-AISCALE | AI produce recognition scale fallback | 0–1 | FALLBACK | DIGI/Tiliter class, RFQ |
+| SH-EXIT-GATE | paid-cart exit gate + safety release | 1 | CANDIDATO | RFQ |
+| SH-CART-DOCK | nested return/charging dock | 1 | BASELINE SMART CART | RFQ |
+| SH-CART-ROVER | autonomous cart recovery tug | 0–1 | FUTURE | interface AMR/rover, only if justified |
 | SH-TLOG | Testo 160 T temperature logger | 1 per zona critica | CANDIDATO | €124 net / €151,28 incl. IVA |
 | SH-TLOG-FOOD | Testo 162 food-capable class | 0–1+ | HIGHER-GRADE | RFQ |
 | SH-TLOG-SP | spare independent logger | 1 | SPARE | RFQ |
@@ -441,7 +458,78 @@ Per ogni SKU registrare:
 | shelf life | sì |
 | vending temp | sì |
 
-## 17. Pilot minimo
+## 17. Smart crate + smart cart frictionless
+
+Documento di riferimento:
+`10_BENESSERE_FATTORIA_E_SERVIZI/SMART_CRATE_SMART_CART_ARCHITECTURE.md`.
+
+### Working architecture
+
+`smart crate -Δm + cart +Δm + proximity + camera -> correlated ITEM_ADDED`
+
+La posizione smart crate identifica lo SKU; il carrello identifica la sessione cliente e verifica il delta massa; la camera risolve ambiguità.
+
+Il sistema deve gestire simmetricamente `ITEM_REMOVED` quando il cliente rimette il prodotto.
+
+### Metrologia
+
+Le load cell economiche sono accettate per:
+- inventory;
+- event detection;
+- anomaly;
+- cross-check.
+
+Se la massa determina il prezzo, usare una catena di misura legalmente idonea.
+
+Opzioni:
+- M1: weighing module certificato sulla smart crate;
+- M2: cart scale certificata, solo se tecnicamente/metrologicamente validabile;
+- M3: stazione legal-for-trade di conferma/fallback.
+
+Working preference:
+- prototipare M1 + M3;
+- non assumere M2 come conforme.
+
+### Display
+
+- ESL/e-paper per **posizione SKU/cassetta**, non per singolo prodotto;
+- LCD/OLED dinamico sul carrello;
+- prezzo, kg, importo e totale visibili sul cart;
+- ESL aggiornata dal server centrale;
+- nessun prezzo personalizzato individualmente baseline.
+
+Le ESL commerciali correnti sono disponibili anche in versioni waterproof per fresh areas. Benchmark di settore pubblicato: ~US$6–25/unità secondo formato/funzioni; prezzo FVG/Italia da RFQ.
+
+### Payment
+
+Baseline frictionless:
+- totale pronto sul cart;
+- **Stripe UX700 fisso al gate di uscita**;
+- nessuna scansione;
+- gate apre solo con `PAID && CART_RECONCILED`.
+
+Reader sul singolo cart resta fase successiva.
+
+### Cart return
+
+Baseline:
+- nested return/charging.
+
+Future:
+- un singolo recovery rover/tug per recuperare carrelli;
+- non motorizzare ogni carrello salvo business case.
+
+### Benchmark di fattibilità
+
+Tecnologie commerciali esistenti dimostrano i blocchi funzionali:
+- Caper: CV + weight + add/remove recognition + cart display + pay-and-go + nested charging + wheel lock/geofence;
+- Cust2Mate: display retrofit + CV/AI + weight/RFID + on-cart scale;
+- Shekel Smart Bay: weight-sensing smart shelves per grab-and-go;
+- DIGI SM-6000 AI / Tiliter AI Scale: riconoscimento automatico ortofrutta con camera+bilancia.
+
+Questi prodotti sono benchmark di architettura, non baseline vendor.
+
+## 18. Pilot minimo
 
 ### Phase P1 — lab
 - 100 erogazioni/SKU critico.
@@ -449,6 +537,7 @@ Per ogni SKU registrare:
 ### Phase P2 — unattended
 - 500 vendite miste;
 - almeno 7 giorni;
+- smart crate/cart pilot su 10–30 SKU se frictionless attivo;
 - power/network fault simulation;
 - refund;
 - temp alarms;
@@ -460,12 +549,14 @@ Per ogni SKU registrare:
 - refund workflow 100% tested;
 - no unhandled temperature fault;
 - inventory variance target <2% after reconciliation;
+- smart-cart product association target >=99.5% dopo eventuale customer confirmation;
+- nessun addebito da evento a bassa confidenza;
 - zero access OT from guest/vending networks;
 - no privacy blind spot/overreach found in field review.
 
 I target sono acceptance criteria di progetto, non dati di vendor.
 
-## 18. OPEX 5 anni
+## 19. OPEX 5 anni
 
 Obbligatorio calcolare:
 
@@ -489,7 +580,7 @@ Formula:
 
 `TCO_5y = CAPEX + 5×fixed_opex + Stripe_transaction_fees + energy + maintenance + waste + software_operations`.
 
-## 19. Gate di acquisto
+## 20. Gate di acquisto
 
 Nessun ordine vending prima di:
 
@@ -507,4 +598,7 @@ Nessun ordine vending prima di:
 12. electrical + BESS 30 kW / autonomia;
 13. network/security;
 14. CCTV/privacy;
-15. 5-year TCO.
+15. 5-year TCO;
+16. metrologia legale prodotti a peso;
+17. smart-crate/cart pilot;
+18. exit safety e paid-cart reconciliation.
