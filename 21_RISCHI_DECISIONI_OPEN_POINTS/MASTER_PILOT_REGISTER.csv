@@ -1,5 +1,5 @@
 pilot_id,bom,package,status,site_required,min_sample_or_duration,primary_kpi,pass_gate,cost_status,next_action
-PIL-AMR,BOM-020,greenhouse AMR,P1/P2,PARTIAL,8h demo + 100 missions,mission success/docking/safety,100 consecutive missions and docking>=99% with zero critical contact,RFQ,book vendor-equivalent demo then site pilot
+PIL-AMR,BOM-020,greenhouse AMR,P2-NONBLOCKING-P1,HOLD,8h demo + 100 missions,mission success/docking/safety,100 consecutive missions and docking>=99% with zero critical contact,RFQ,book vendor-equivalent demo then site pilot
 PIL-MOW,BOM-022,lawn mower,P0/P2,YES,20 dock-return cycles,dock/no-go/failsafe,no forbidden-area entry and documented recovery,OPEN,wait for real lawn geometry then pilot
 PIL-RETAIL,BOM-028,24-7 retail,P1/P2,PARTIAL,100 vends per critical SKU,jam/damage/temp/reconciliation,zero target jam/pack break and reconciled sale/refund,RFQ,bench-test actual package samples
 PIL-REUSE,BOM-033,drain reuse,P0/P2,YES,30-60 days,mass balance/NaCl/pathogens/TCO,treatment+crop signoff+legal discharge route,RFQ,run one-compartment pilot after first production
