@@ -1,0 +1,2 @@
+pm_id,asset_id,task,trigger_type,interval,estimated_minutes,skill,parts_consumables,safety_lockout,last_done,next_due,evidence,status,notes
+PM-EXAMPLE-001,CTT-EXAMPLE-001,REMOVE THIS ROW,TIME,DA DEFINIRE,,,,,,,,TEMPLATE,
