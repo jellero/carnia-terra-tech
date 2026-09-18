@@ -1,6 +1,6 @@
 # Carnia TerraTech — Scheda Valutazione Terreno Candidato
 
-**Uso:** duplicare questo file per ogni terreno reale.  
+**Uso:** duplicare questo file per ogni terreno reale. Nessun candidato passa ad ACQUISTABILE senza campagna fisica.  
 **Regola:** non sostituire `UNKNOWN` con supposizioni.
 
 ## 1. Identificazione
@@ -43,6 +43,10 @@
 | Tech Barn collocabile | UNKNOWN | |
 | Accumuli collocabili/manutenibili | UNKNOWN | |
 | Drenaggio gestibile | UNKNOWN | |
+| Campionamento superficie utile completato | UNKNOWN | |
+| Prove infiltrazione completate | UNKNOWN | |
+| Mappa quote/ristagni completata | UNKNOWN | |
+| Anomalie investigate | UNKNOWN | |
 | Costi abilitanti non bloccanti | UNKNOWN | |
 
 Stati ammessi: `PASS / PASS CON CONDIZIONI / RISK / FAIL / UNKNOWN`.
@@ -151,6 +155,21 @@ Stati ammessi: `PASS / PASS CON CONDIZIONI / RISK / FAIL / UNKNOWN`.
 
 ## 9. Suolo / geotecnica / ambiente
 
+Protocollo:
+`PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md`.
+
+Registrare:
+- numero punti;
+- passo griglia;
+- zone intensificate;
+- laboratorio;
+- risultati;
+- mappa;
+- prove drenaggio;
+- trincee/pozzetti;
+- geotecnica professionale;
+- costo mitigazioni.
+
 - uso storico noto:
 - terreno agricolo precedente:
 - riporti:
@@ -170,14 +189,14 @@ Compilare dopo un layout quotato.
 | Serra 4.200 m² | UNKNOWN | |
 | Corridoi/servizi serra | UNKNOWN | |
 | Tech Barn ~450 m² | UNKNOWN | |
-| Vermicompost 180–250 m² | UNKNOWN | |
+| Humus/vermicompost 180–250 m² + manovra mezzo | UNKNOWN | |
 | Acqua/termico | UNKNOWN | |
 | Carport/FV | UNKNOWN | |
 | Piazzale/logistica | UNKNOWN | |
 | Outdoor | UNKNOWN | |
 | Fasce verdi | UNKNOWN | |
 | Pergolato/relax | UNKNOWN | |
-| Galline | UNKNOWN | |
+| Galline future opzionali | UNKNOWN | non possono ridurre la funzionalità core |
 | Fattoria didattica futura | UNKNOWN | |
 | Spaccio 24/7 futuro | UNKNOWN | |
 | Area espansione | UNKNOWN | |
