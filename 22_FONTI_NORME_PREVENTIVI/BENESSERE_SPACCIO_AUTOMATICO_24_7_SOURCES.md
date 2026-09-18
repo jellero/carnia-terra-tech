@@ -455,3 +455,171 @@ Alla ricezione RFQ:
 13. outdoor/indoor;
 14. test SKU;
 15. TCO 5 anni.
+
+## 22. Frictionless retail — smart cart
+
+Caper Cart:
+
+https://www.caper.ai/it/caper-smart-cart
+
+Elementi osservati:
+- computer vision per riconoscimento;
+- weight scale;
+- aggiunta/rimozione articoli riconosciuta in tempo reale;
+- display sul carrello;
+- pay-and-go;
+- nested charging;
+- GPS/geofencing;
+- wheel lock;
+- IP-X5 dichiarato;
+- 12–14 h autonomia dichiarata.
+
+Pagina tecnica/retail:
+
+https://www.caper.ai/
+
+Usare come benchmark di architettura, non come vendor baseline.
+
+## 23. Smart cart retrofit
+
+Cust2Mate:
+
+https://cust2mate.com/
+
+Pagina sensor fusion:
+
+https://cust2mate.com/article/smart-shopping-cart-automates-payments-in-grocery-stores/
+
+Elementi:
+- display 13,3";
+- scanner;
+- computer vision / AI;
+- weight;
+- RFID;
+- on-cart scale;
+- integrazione payment/POS;
+- retrofit cart.
+
+Benchmark di fattibilità per cart display + sensor fusion.
+
+## 24. Smart shelf / weight sensing
+
+Shekel Smart Bay:
+
+https://www.shekel.ai/product/smart-bay/
+
+Elementi:
+- load sensors sotto shelf;
+- grab-and-go;
+- inventory/event detection da peso;
+- multi-shopper richiede ulteriore tracking camera/LiDAR.
+
+Usato per confermare la fattibilità del paradigma smart-shelf basato su massa.
+
+## 25. Bilance AI ortofrutta
+
+DIGI Italia SM-6000 AI:
+
+https://www.digisystem.com/it/products/PRD00377/
+
+Elementi:
+- camera integrata;
+- AI edge;
+- riconoscimento automatico prodotto sfuso o insacchettato;
+- shortlist PLU;
+- self-service fresh produce.
+
+Tiliter:
+
+https://www.tiliter.com/retail
+
+Elementi:
+- AI Scale;
+- riconoscimento fresh/unpackaged;
+- scale + camera;
+- integrazione checkout/self-service.
+
+Usate come benchmark per fallback `AI scale` e training data, non come sostituto automatico della metrologia legalmente applicabile.
+
+## 26. Electronic Shelf Labels / e-paper
+
+Vusion ESL:
+
+https://www.vusion.com/it/technologie/etichette-elettroniche
+
+Elementi:
+- aggiornamento prezzo centralizzato;
+- BLE;
+- API/integrazione retail;
+- formati piccoli;
+- waterproof/IP68 nella gamma fresh-area;
+- durata batteria pluriennale;
+- benchmark pubblico di settore riportato nella FAQ: circa **US$6–25/unità** secondo formato/funzioni.
+
+Uso BOM:
+- una ESL per posizione SKU/cassetta;
+- no display per singolo prodotto;
+- price master nel server Carnia TerraTech.
+
+Hanshow ESL:
+
+https://www.hanshow.com/en/solutions/category/electronic-shelf-labels
+
+Ulteriore benchmark di mercato per ESL e retail connesso.
+
+## 27. Metrologia legale — vendita a peso
+
+Direttiva 2014/31/UE:
+
+https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX:32014L0031
+
+Punti usati:
+- determinazione massa per transazioni commerciali;
+- determinazione prezzo in funzione della massa per vendita diretta al pubblico;
+- requisiti supplementari per strumenti di vendita diretta;
+- visualizzazione chiara delle informazioni di pesatura/prezzo.
+
+Commissione UE — legal metrology:
+
+https://single-market-economy.ec.europa.eu/single-market/goods/building-blocks/legal-metrology/measuring-weighing-instruments-eu_en
+
+Camera di Commercio — vendita a peso netto:
+
+https://www.dl.camcom.it/FocusOn/focus-metrologia-legale/ufficio-metrico/Strumenti-per-pesare
+
+Elementi:
+- vendita al minuto di merci sfuse a peso con bilance omologate/idonee;
+- visualizzazione diretta del peso netto;
+- obblighi metrologici.
+
+DM 93/2017 / obblighi strumenti:
+
+https://www.bo.camcom.gov.it/it/ufficio-metrico/gli-obblighi-dei-titolari-degli-strumenti-di-misura
+
+Usato per:
+- funzioni di misura legale;
+- verifiche periodiche.
+
+**Regola BOM:** load cell commodity = sensing/cross-check; se il peso determina il prezzo serve una catena di misura legalmente idonea.
+
+## 28. Stripe — capture/reconciliation e saved payment
+
+Manual capture:
+
+https://docs.stripe.com/terminal/payments/collect-card-payment
+
+Stripe documenta `capture_method=manual` per card-present quando serve una fase di riconciliazione prima della cattura.
+
+Saving payment details:
+
+https://docs.stripe.com/terminal/features/saving-payment-details/overview
+
+Stripe Terminal può raccogliere e salvare dettagli di pagamento per uso futuro tramite il flusso previsto; per card-present Stripe può creare un `generated_card` riutilizzabile secondo regole/consenso applicabili.
+
+Queste capability rendono tecnicamente possibili:
+- pagamento fisso al gate;
+- payment-on-cart;
+- sessioni future con metodo associato.
+
+La baseline resta UX700 fisso al gate finché UX, SCA, privacy e costo non giustificano P1/P3.
+
