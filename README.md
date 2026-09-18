@@ -17,7 +17,7 @@ Obiettivi permanenti:
 - sfruttare in modo corretto contributi, strumenti regionali e opportunità locali senza costruire il progetto su incentivi non verificati;
 - coprire nel piano finanziario sia il lancio aziendale sia il fabbisogno di vita nella fase iniziale;
 - progettare ogni impianto per manutenzione, ricambi, guasti e crescita futura;
-- sviluppare nel tempo fattoria didattica, aree di benessere, servizi e vendita automatizzata 24/7, senza compromettere il core agricolo.
+- sviluppare nel tempo fattoria didattica, aree di benessere, servizi e vendita automatizzata 24/7, senza compromettere il progetto principale agricolo.
 
 ## Numeri guida attuali
 
@@ -27,7 +27,7 @@ Obiettivi permanenti:
 - FV: **120 kWp iniziali**, predisposizione 150–180 kWp;
 - accumulo termico: **30 m³ iniziali**, predisposizione 40–50 m³;
 - accumulo acqua: working target **300 m³**;
-- automazione locale fail-safe con PLC, rete dati, computer vision e AMR.
+- automazione locale a sicurezza intrinseca con PLC, rete dati, visione artificiale e AMR.
 
 ## Come leggere il repository
 
@@ -41,19 +41,19 @@ Documenti fondativi nuovi:
 
 I file in `docs/` contengono il lavoro tecnico precedente e restano validi come base durante la riorganizzazione. Verranno migrati progressivamente senza perdere informazioni.
 
-## Progetto R&S correlato — fuori dal core
+## Progetto R&S correlato — fuori dal progetto principale
 
 La directory [`RND_CORRELATO_EU/`](RND_CORRELATO_EU/) contiene un progetto di ricerca e sviluppo tecnologico correlato a Carnia TerraTech.
 
-**Non fa parte della numerazione 00–22, non modifica la baseline agricola e non entra automaticamente nel CAPEX/OPEX core.** Carnia TerraTech può fungere da living lab e primo demonstrator, ma il progetto agricolo deve poter funzionare anche senza la riuscita o il finanziamento della R&S.
+**Non fa parte della numerazione 00–22, non modifica la configurazione base agricola e non entra automaticamente nel CAPEX/OPEX progetto principale.** Carnia TerraTech può fungere da living lab e primo demonstrator, ma il progetto agricolo deve poter funzionare anche senza la riuscita o il finanziamento della R&S.
 
-Concept attuale: **CTT-AFP — Carnia TerraTech Autonomous Farm Platform**, con focus su orchestrazione, edge/PLC, robotica, computer vision, sensor fusion, scheduler e sistemi autonomi replicabili.
+Concetto attuale: **CTT-PAA — Piattaforma di Automazione Agricola Carnia TerraTech**, con focus su orchestrazione, edge/PLC, robotica, visione artificiale, fusione sensoriale, pianificatore e sistemi autonomi replicabili.
 
-## Piano extra agriturismo — fuori dal core
+## Piano extra agriturismo — fuori dal progetto principale
 
 La directory [`EXTRA_AGRITURISMO_EVOLUTIVO/`](EXTRA_AGRITURISMO_EVOLUTIVO/) contiene un piano autonomo di diversificazione agrituristica finanziato e valutato separatamente.
 
-Parte dalla soluzione minima **ristoro light a spuntini non cucinati**, con predisposizioni per esperienze, cucina e ospitalità future. Non entra nella sequenza BOM del core e non è necessario per l'avvio dell'azienda.
+Parte dalla soluzione minima **ristoro light a spuntini non cucinati**, con predisposizioni per esperienze, cucina e ospitalità future. Non entra nella sequenza BOM del progetto principale e non è necessario per l'avvio dell'azienda.
 
 ## Regola di progettazione
 
