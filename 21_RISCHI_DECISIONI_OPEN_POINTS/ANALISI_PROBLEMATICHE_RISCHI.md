@@ -1,7 +1,7 @@
 # Analisi problematiche, rischi e vulnerabilità trasversali — Carnia TerraTech
 
 **Aggiornato:** 18 settembre 2026  
-**Stato:** `ANALISI RISCHI MASTER / PROBABILITÀ DA POPOLARE CON DATI REALI`
+**Stato:** `ANALISI GENERALE DEI RISCHI / PROBABILITÀ DA POPOLARE CON DATI REALI`
 
 ## 1. Scopo
 
@@ -10,7 +10,7 @@ Questo documento raccoglie in un solo punto:
 - problematiche già presenti;
 - rischi futuri;
 - vulnerabilità di progetto;
-- segnale di attivazione di escalation;
+- condizioni di escalation;
 - mitigazioni;
 - responsabile;
 - condizione di chiusura.
@@ -29,16 +29,16 @@ La severità qui indica **conseguenza potenziale**, non probabilità.
 
 | Classe | Significato |
 |---|---|
-| I4 — CRITICAL | può bloccare finanziamento, acquisto, costruzione, messa in servizio, safety, conformità o continuità P0 |
-| I3 — HIGH | può modificare materialmente CAPEX, tempi, resa, OPEX o operatività |
-| I2 — MEDIUM | può degradare performance o creare costi/ritardi recuperabili |
-| I1 — LOCAL | impatto circoscritto, recuperabile senza revisione del progetto |
+| I4 — CRITICO | può bloccare finanziamento, acquisto, costruzione, avvio operativo, sicurezza, conformità o continuità P0 |
+| I3 — ALTO | può modificare materialmente CAPEX, tempi, resa, OPEX o operatività |
+| I2 — MEDIO | può degradare prestazioni o creare costi/ritardi recuperabili |
+| I1 — LOCALE | impatto circoscritto, recuperabile senza revisione del progetto |
 
 La probabilità resta:
-- `TBD`;
-- `MEASURED`;
-- `VENDOR EVIDENCE`;
-- `SITE EVIDENCE`;
+- `DA DETERMINARE`;
+- `MISURATA`;
+- `EVIDENZA FORNITORE`;
+- `EVIDENZA SITO`;
 
 finché esistono evidenze sufficienti.
 
@@ -46,16 +46,16 @@ finché esistono evidenze sufficienti.
 
 | ID | Problematica attuale | Impatto | Perché è reale | Azione di chiusura |
 |---|---|---|---|---|
-| P-01 | pacchetto finanziario non ancora perfezionato | I4 | contributi, anticipo, garanzia, finanziamento, linea IVA e ponte non sono ancora reale/concessi nel register | chiudere DG0/F0 con atti reali |
-| P-02 | lotto reale non ancora acquisito/validato | I4 | blocca geotecnica, layout, DSO, neve/vento, drenaggi, accessi e RFQ installati | due diligence + DG1 |
-| P-03 | crop card P1 non finali | I3 | blocca carichi idrici/termici, resa, raccolta, freddo e packaging | completare crop card per i 3 comparti P1 |
-| P-04 | major CAPEX ancora prevalentemente E0/E1 | I4 | €850k è control budget, non costo contrattuale | RFQ installati comparabili E3/E4 |
+| P-01 | pacchetto finanziario non ancora perfezionato | I4 | contributi, anticipo, garanzia, finanziamento, linea IVA e finanziamento ponte non sono ancora effettivi/concessi nel registro | chiudere DG0/F0 con atti reali |
+| P-02 | lotto reale non ancora acquisito/validato | I4 | blocca geotecnica, layout, DSO, neve/vento, drenaggi, accessi e RFQ installati | verifica preliminare + DG1 |
+| P-03 | schede colturali P1 non finalizzate | I3 | blocca carichi idrici/termici, resa, raccolta, freddo e confezionamento | completare le schede colturali per i 3 comparti P1 |
+| P-04 | CAPEX principale ancora prevalentemente E0/E1 | I4 | €850k è budget di controllo, non costo contrattuale | preventivi installati comparabili E3/E4 |
 | P-05 | profilo elettrico P0/P1 reale non disponibile | I4 | BESS 30 kW e 60/90/120 kWh non possono essere chiusi | misure 1–15 min + transitori |
 | P-06 | DSO/POD/BT-MT non determinati | I4 | non è noto il costo/assetto reale della connessione | lotto + DSO/TICA reale |
-| P-07 | pilot Q3 non ancora eseguiti | I3 | AMR, retail, mower, rover galline e riuso non hanno evidence site-specific | eseguire master pilot register |
-| P-08 | SAT/commissioning ancora solo pianificato | I4 | continuità, failover e performance non sono ancora provate | eseguire master SAT |
-| P-09 | OPEX reale non misurato | I3 | energia, lavoro, manutenzione, packaging e logistica sono ancora di pianificazione | 30/90-day reale review |
-| P-10 | domanda P1 da validare commercialmente | I4 | €250k/y è target di validazione, non vendite acquisite | pre-vendita, clienti, ordini e channel validation |
+| P-07 | prove pilota Q3 non ancora eseguite | I3 | AMR, vendita automatizzata, robot tagliaerba, rover galline e riuso non hanno evidenze specifiche del sito | eseguire registro generale delle prove pilota |
+| P-08 | SAT/messa in servizio ancora solo pianificati | I4 | continuità, commutazione di emergenza e prestazioni non sono ancora provate | eseguire piano generale SAT |
+| P-09 | OPEX reale non misurato | I3 | energia, lavoro, manutenzione, confezionamento e logistica sono ancora di pianificazione | revisione dei dati effettivi a 30/90 giorni |
+| P-10 | domanda P1 da validare commercialmente | I4 | €250k/y è obiettivo da validare, non vendite acquisite | pre-vendita, clienti, ordini e validazione dei canali di vendita |
 
 ## 4. Rischi finanziari e di cassa
 
@@ -70,18 +70,18 @@ Evento:
 
 Conseguenza:
 - cantiere avviato senza copertura;
-- necessità di ponte più elevato;
+- necessità di finanziamento ponte più elevato;
 - erosione della riserva operativa;
 - stop lavori.
 
 Mitigazione:
 - DG0 prima di ogni spesa irreversibile;
-- cashflow mensile;
-- payment schedule fornitori;
-- ponte dedicato;
+- flusso di cassa mensile;
+- calendario pagamenti fornitori;
+- finanziamento ponte dedicato;
 - nessuna contabilizzazione di contributi come incassati prima dell'accredito.
 
-Segnale di attivazione:
+Condizioni di escalation:
 - finanziamento o contributo inferiore al modello;
 - slittamento >1 ciclo di pagamento;
 - richiesta di anticipare CAPEX con C4.
@@ -89,39 +89,39 @@ Segnale di attivazione:
 ### R-FIN-02 — uso della riserva operativa per coprire CAPEX
 **Impatto:** I4.
 
-È uno dei principali guasto mode economici del progetto.
+È uno dei principali modalità di guasto economiche del progetto.
 
 Conseguenza:
-- impianto costruito ma mancanza di liquidità per personale, input, raccolta, packaging e vendita.
+- impianto costruito ma mancanza di liquidità per personale, input, raccolta, confezionamento e vendita.
 
 Mitigazione:
 - €120k segregati;
 - contenitori di cassa;
 - stop automatico nuovi ordini se C4 scende sotto soglia approvata.
 
-### R-FIN-03 — CAPEX reale sopra envelope
+### R-FIN-03 — CAPEX reale sopra il budget di riferimento
 **Impatto:** I4.
 
-Driver:
+Fattori principali:
 - neve/vento;
 - fondazioni;
 - opere DSO;
 - cabina MT;
 - BESS;
-- Tech Barn;
+- area tecnica/post-raccolta;
 - opere civili;
-- commissioning;
+- messa in servizio;
 - trasporti;
 - esclusioni non viste.
 
 Mitigazione:
-- E3 RFQ installati;
-- design-to-value;
-- contingency separata;
+- E3 preventivi installati;
+- ottimizzazione tecnica rispetto al costo;
+- contingenza separata;
 - revisione perimetro P1;
-- nessun taglio a safety, freddo, acqua, commissioning o di lavoro capital.
+- nessun taglio a sicurezza, freddo, acqua, messa in servizio o capitale circolante.
 
-### R-FIN-04 — IVA e timing fiscale
+### R-FIN-04 — IVA e tempistica fiscale
 **Impatto:** I3/I4.
 
 Mitigazione:
@@ -146,16 +146,16 @@ Possibili cause:
 - geologia sfavorevole.
 
 Mitigazione:
-- due diligence pre-acquisto;
-- masterplan P1 + finale;
+- verifica preliminare pre-acquisto;
+- piano generale P1 + finale;
 - stima allacci;
 - geotecnica preliminare;
-- reject del lotto se incompatibile.
+- scartare il lotto se incompatibile.
 
 ### R-SITE-02 — fondazioni/struttura più onerose del previsto
 **Impatto:** I3/I4.
 
-Segnale di attivazione:
+Condizioni di escalation:
 - carichi neve/vento;
 - terreno debole;
 - falda;
@@ -169,7 +169,7 @@ Mitigazione:
 - computo quantità;
 - controllo €/m² e peso acciaio.
 
-### R-SITE-03 — masterplan troppo denso
+### R-SITE-03 — piano generale troppo denso
 **Impatto:** I3.
 
 Conseguenza:
@@ -181,7 +181,7 @@ Conseguenza:
 
 Mitigazione:
 - acquistare un lotto che ospita il progetto finale, non solo P1;
-- maintenance/access envelope obbligatorio.
+- spazi minimi per manutenzione e accessi obbligatori.
 
 ## 6. Rischi acqua, fertirrigazione e ambiente
 
@@ -200,9 +200,9 @@ Variabili:
 
 Mitigazione:
 - analisi stagionali;
-- water balance;
+- bilancio idrico;
 - trattamento dimensionato su dati reali;
-- storage e fonte di fallback legale.
+- accumulo e fonte alternativa legale.
 
 ### R-WAT-02 — dimensionamento errato pompe/filtri/fertirrigazione
 **Impatto:** I3.
@@ -211,46 +211,46 @@ Mitigazione:
 - Q/H/NPSH reali;
 - curve pompe;
 - simultaneità settori;
-- backwash;
-- wet commissioning.
+- controlavaggio;
+- messa in servizio idraulica.
 
 ### R-WAT-03 — riuso drenaggi diffonde fitopatogeni
 **Impatto:** I4.
 
 Mitigazione:
-- R0 collect/measure/HOLD;
+- R0 raccolta/misura/BLOCCO;
 - segregazione C1/C2;
 - trattamento validato;
-- pathogen monitoring;
-- pilot 30–60 giorni;
-- no automatic reuse prima del PASS.
+- monitoraggio dei patogeni;
+- prova pilota di 30–60 giorni;
+- nessun riuso automatico prima dell'esito positivo.
 
-### R-WAT-04 — accumulo Na/Cl nel closed loop
+### R-WAT-04 — accumulo Na/Cl nel circuito chiuso
 **Impatto:** I3/I4.
 
 Mitigazione:
-- lab ion panel;
-- reuse ratio dinamico;
-- bleed controllato;
-- crop-specific thresholds.
+- pannello analitico ionico di laboratorio;
+- rapporto di riuso dinamico;
+- spurgo controllato;
+- soglie specifiche per coltura.
 
 ### R-WAT-05 — scarico non autorizzato o classificazione errata
 **Impatto:** I4.
 
 Mitigazione:
 - classificazione reale;
-- route legale;
+- percorso autorizzativo;
 - AUA/SUAP dove applicabile;
-- flow meter e sample point;
-- nessun discharge to soil configurazione base.
+- misuratore di portata e punto di campionamento;
+- nessuno scarico al suolo come configurazione di base.
 
 ## 7. Rischi agronomici e produttivi
 
-### R-AGR-01 — resa inferiore alla crop card
+### R-AGR-01 — resa inferiore alla scheda colturale
 **Impatto:** I4.
 
 Conseguenza:
-- mancato raggiungimento del target commerciale;
+- mancato raggiungimento del obiettivo commerciale;
 - costo unitario maggiore;
 - sovradimensionamento infrastrutture rispetto ai ricavi.
 
@@ -264,24 +264,24 @@ Mitigazione:
 **Impatto:** I3/I4.
 
 Mitigazione:
-- crop card prima degli ordini interni;
+- scheda colturale prima degli ordini interni;
 - pre-validazione commerciale;
 - flessibilità C3–C6;
-- almeno una coltura rapida e una premium.
+- almeno una coltura rapida e una ad alto valore.
 
-### R-AGR-03 — pressione fitosanitaria / disease event
+### R-AGR-03 — pressione fitosanitaria / evento fitosanitario
 **Impatto:** I4.
 
 Vulnerabilità:
-- sistemi soilless e riuso possono amplificare eventi se non segregati.
+- sistemi fuori suolo e riuso possono amplificare eventi se non segregati.
 
 Mitigazione:
 - compartimentazione;
-- genealogy;
+- tracciabilità genealogica;
 - isolamento;
-- clean/dirty flows;
-- SOP fitosanitari;
-- no common untreated return.
+- flussi pulito/sporco;
+- procedure operative fitosanitarie;
+- nessun ritorno comune non trattato.
 
 ## 8. Rischi termici e climatici
 
@@ -294,10 +294,10 @@ Problema:
 Mitigazione:
 - A-7/A-10/A-15;
 - W45;
-- defrost netto;
+- sbrinamento netto;
 - meteo sito;
-- thermal storage;
-- seasonal SAT.
+- accumulo termico;
+- SAT stagionale.
 
 ### R-TH-02 — deumidificazione sottostimata
 **Impatto:** I3/I4.
@@ -310,8 +310,8 @@ Conseguenza:
 
 Mitigazione:
 - kg/h vapore;
-- humidity ratio;
-- D1/D2/D3 comparative model;
+- rapporto di umidità;
+- D1/D2/D3 modello comparativo;
 - misura reale.
 
 ### R-TH-03 — strategia di emergenza termica dipendente troppo dall'elettrico
@@ -319,8 +319,8 @@ Mitigazione:
 
 Mitigazione:
 - accumulo termico;
-- load shedding;
-- survival temperature strategy;
+- distacco selettivo dei carichi;
+- strategia di temperatura di sopravvivenza;
 - BESS solo per carichi essenziali.
 
 ## 9. Rischi elettrici, rete e BESS
@@ -332,102 +332,102 @@ Possibili cause:
 - MT;
 - cabina;
 - opere di rete;
-- export cap;
+- limite di immissione;
 - CCI/PF2;
 - SLI.
 
 Mitigazione:
 - scenari G100/G120/G120-CAP100;
-- pre-application package;
-- non scegliere cap export solo sul fee domanda.
+- pacchetto preliminare alla domanda;
+- non scegliere limite di immissione solo sul corrispettivo della domanda.
 
 ### R-EL-02 — BESS 30 kW non sostiene i carichi reali
 **Impatto:** I4.
 
 Mitigazione:
-- load register misurato;
+- registro dei carichi misurato;
 - P0/P1;
-- restart groups;
-- thermal resilience;
-- no "whole farm backup" assumption.
+- gruppi di riavvio;
+- resilienza termica;
+- nessuna assunzione di backup a piena potenza dell'intera azienda.
 
-### R-EL-03 — transfer non realmente no-break
+### R-EL-03 — commutazione non realmente senza interruzione
 **Impatto:** I4.
 
 Mitigazione:
-- blackout SAT;
-- criterio finale = no reboot P0;
-- no affidamento sul solo marketing <20 ms.
+- SAT in blackout;
+- criterio finale = nessun riavvio P0;
+- non fare affidamento sul solo dato commerciale <20 ms.
 
-### R-EL-04 — black-start / grid-return non affidabili
+### R-EL-04 — avviamento da rete assente / ritorno rete non affidabili
 **Impatto:** I4.
 
 Mitigazione:
 - sequenza testata;
-- protezioni grid/island;
-- delayed restart;
-- motor pickup;
-- physical DSO separation.
+- protezioni rete/isola;
+- riavvio ritardato;
+- avvio dei motori;
+- separazione fisica dalla rete DSO.
 
 ### R-EL-05 — incendio/esplosione BESS
 **Impatto:** I4.
 
 Mitigazione:
 - installazione esterna dedicata preferita;
-- fire risk assessment;
-- OEM protections;
-- emergency access/isolation;
-- no acquisto prima del fire design.
+- valutazione del rischio incendio;
+- protezioni del costruttore;
+- accesso e isolamento di emergenza;
+- no acquisto prima del progetto antincendio.
 
-## 10. Rischi cold-chain, packaging e food
+## 10. Rischi catena del freddo, confezionamento e sicurezza alimentare
 
-### R-FOOD-01 — celle sottodimensionate sul pull-down
+### R-FOOD-01 — celle sottodimensionate sul raffreddamento rapido
 **Impatto:** I4.
 
 Mitigazione:
-- kg/batch;
+- kg/lotto;
 - Tin;
-- target core T;
-- door cycles;
-- loaded commissioning.
+- target temperatura al cuore;
+- cicli di apertura porta;
+- messa in servizio a carico.
 
-### R-FOOD-02 — setpoint non coerente fra SKU
+### R-FOOD-02 — temperatura impostata non coerente fra SKU
 **Impatto:** I3/I4.
 
 Mitigazione:
 - CR-A/CR-B;
-- crop-card postharvest;
-- niente 0–4 °C automatico per SKU chilling-sensitive.
+- scheda colturale post-raccolta;
+- niente 0–4 °C automatico per SKU sensibili al freddo.
 
-### R-FOOD-03 — packaging danneggia prodotto o rallenta troppo
+### R-FOOD-03 — confezionamento danneggia prodotto o rallenta troppo
 **Impatto:** I3.
 
 Mitigazione:
 - PIL-PACK;
-- 100 pack/SKU critico;
-- throughput, damage, reject, labour.
+- 100 confezioni per prodotto critico;
+- produttività, danni, scarti, lavoro.
 
-### R-FOOD-04 — smart retail vende prodotto fuori specifica
+### R-FOOD-04 — vendita automatizzata vende prodotto fuori specifica
 **Impatto:** I4.
 
 Mitigazione:
-- logger indipendente;
-- block-sale;
-- inventory genealogy;
-- vend/payment reconciliation;
-- HACCP/fiscal/SUAP closure.
+- registratore indipendente;
+- blocco della vendita;
+- tracciabilità dell'inventario;
+- riconciliazione vendita/pagamento;
+- chiusura HACCP/fiscale/SUAP.
 
-## 11. Rischi automazione, dati e cybersecurity
+## 11. Rischi automazione, dati e sicurezza informatica
 
-### R-IT-01 — server centrale diventa single point of guasto operativo
+### R-IT-01 — server centrale diventa punto singolo di guasto operativo
 **Impatto:** I4.
 
 Mitigazione:
 - PLC/edge locali;
-- no cloud dependency safety;
-- failover;
-- DR;
-- server loss SAT.
+- nessuna dipendenza dal cloud per la sicurezza;
+- commutazione di emergenza;
+- ripristino di emergenza;
+- SAT di perdita server.
 
 ### R-IT-02 — perdita/corruzione dati
 **Impatto:** I3/I4.
@@ -435,41 +435,41 @@ Mitigazione:
 Mitigazione:
 - PostgreSQL replica;
 - WAL/PITR;
-- PBS/offsite;
-- restore test;
-- event replay.
+- PBS/copia fuori sede;
+- prova di ripristino;
+- riproduzione degli eventi.
 
-### R-IT-03 — cybersecurity / compromissione accessi
+### R-IT-03 — sicurezza informatica / compromissione accessi
 **Impatto:** I4.
 
 Mitigazione:
 - VLAN;
 - RBAC;
-- MFA/identity;
-- remote vendor time-limited;
-- logs;
+- MFA/gestione identità;
+- accesso remoto fornitore limitato nel tempo;
+- registri;
 - backup;
-- incident runbook.
+- procedura di gestione incidente.
 
 ### R-IT-04 — automazione ottimizza su dati errati
 **Impatto:** I3/I4.
 
 Mitigazione:
-- plausibility checks;
-- sensor calibration;
-- local hard limits;
-- model cannot override safety/HACCP;
-- anomaly flags.
+- controlli di plausibilità;
+- taratura sensori;
+- limiti rigidi locali;
+- il modello non può superare i limiti di sicurezza/HACCP;
+- segnalazioni di anomalia.
 
-### R-IT-05 — integrazioni vendor/API instabili
+### R-IT-05 — integrazioni fornitore/API instabili
 **Impatto:** I3.
 
 Mitigazione:
-- local API preferred;
-- protocol documentation;
-- offline mode;
-- version inventory;
-- integration acceptance test.
+- API locale preferita;
+- documentazione dei protocolli;
+- modalità fuori rete;
+- inventario versioni;
+- test di accettazione dell'integrazione.
 
 ## 12. Rischi robotica e mezzi
 
@@ -483,77 +483,77 @@ Possibili cause:
 - vegetazione;
 - riflessi;
 - rete;
-- docking.
+- aggancio alla stazione.
 
 Mitigazione:
-- pilot 8 h + 100 missioni;
-- nessun ordine full-scale prima del PASS.
+- prova pilota di 8 h + 100 missioni;
+- nessun ordine su scala completa prima del SUPERATO.
 
-### R-ROB-02 — mower non sicuro nelle aree condivise
+### R-ROB-02 — robot tagliaerba non sicuro nelle aree condivise
 **Impatto:** I4.
 
 Mitigazione:
-- hens-clear;
-- visitor lockout;
-- no night operation;
-- GNSS/offline tests;
-- physical no-go.
+- area libera da galline;
+- blocco durante presenza visitatori;
+- nessuna operatività notturna;
+- GNSS e prove fuori rete;
+- area fisica interdetta.
 
-### R-ROB-03 — rover galline non raggiunge cleaning/welfare target
+### R-ROB-03 — rover galline non raggiunge obiettivo di pulizia/benessere animale
 **Impatto:** I3/I4.
 
 Mitigazione:
-- mixed-surface pilot;
+- prova pilota su superfici miste;
 - 100 missioni;
-- welfare/safety critical = zero.
+- eventi critici di benessere/sicurezza = zero.
 
 ### R-ROB-04 — telescopico scelto senza uso reale sufficiente
 **Impatto:** I2/I3.
 
 Mitigazione:
-- demo;
-- task analysis;
-- buy-vs-rent;
+- dimostrazione;
+- analisi dei compiti;
+- acquisto rispetto a noleggio;
 - stoccatore L2 per evitare uso improprio.
 
-## 13. Rischi procurement e supply chain
+## 13. Rischi approvvigionamenti e catena di fornitura
 
 ### R-SUP-01 — preventivi non comparabili
 **Impatto:** I3.
 
 Mitigazione:
-- separare hardware, posa, commissioning, service, IVA, freight;
+- separare hardware, posa, messa in servizio, assistenza, IVA, trasporto;
 - PROCUREMENT_CLOSURE_REGISTER.
 
-### R-SUP-02 — dipendenza dal fornitore
+### R-SUP-02 — dipendenza vincolante da un fornitore
 **Impatto:** I3.
 
 Mitigazione:
 - protocolli aperti;
-- source/config export;
+- esportazione sorgenti/configurazioni;
 - ricambi;
-- second source dove possibile;
-- separare supervisory custom da safety OEM.
+- seconda fonte di fornitura dove possibile;
+- separare supervisione personalizzata separata dalle funzioni di sicurezza del costruttore.
 
-### R-SUP-03 — lead time e ricambi Italia
+### R-SUP-03 — tempo di consegna e ricambi Italia
 **Impatto:** I3/I4.
 
 Mitigazione:
-- lead time in RFQ;
-- critical spare list;
-- service SLA;
-- local support;
-- long-lead procurement dopo verifica.
+- tempo di consegna in RFQ;
+- elenco ricambi critici;
+- assistenza SLA;
+- assistenza locale;
+- approvvigionamento dei componenti a lunga consegna dopo passaggio decisionale.
 
 ### R-SUP-04 — revisione/modello diverso tra benchmark e offerta
 **Impatto:** I3.
 
 Mitigazione:
-- exact model/revision;
-- datasheet;
+- modello/revisione esatti;
+- scheda tecnica;
 - firmware;
-- conformity;
-- change-control prima dell'ordine.
+- conformità;
+- controllo delle modifiche prima dell'ordine.
 
 ## 14. Rischi personale e organizzazione
 
@@ -561,34 +561,34 @@ Mitigazione:
 **Impatto:** I3/I4.
 
 Mitigazione:
-- hiring anticipato;
-- skill matrix;
-- seasonal pool;
-- external escalation.
+- assunzione anticipata;
+- matrice delle competenze;
+- bacino di lavoratori stagionali;
+- supporto esterno.
 
 ### R-HR-02 — dipendenza eccessiva dal promotore
 **Impatto:** I4.
 
 Mitigazione:
-- primary + backup;
-- runbook;
-- responsabile-absence drill;
+- responsabile primario + sostituto;
+- procedura operativa;
+- prova di assenza del responsabile;
 - ferie testate;
-- no founder-as-free-labour assumption.
+- nessuna assunzione del promotore come manodopera gratuita.
 
 ### R-HR-03 — carico operativo superiore alle stime
 **Impatto:** I3/I4.
 
 Mitigazione:
 - ore/kg;
-- task logs;
-- overtime;
-- backlog PM;
-- add-headcount segnale di attivaziones.
+- registri delle attività;
+- straordinari;
+- arretrato della manutenzione preventiva;
+- condizioni per aumento dell'organico.
 
 ## 15. Rischi mercato e ricavi
 
-### R-MKT-01 — domanda inferiore al target P1
+### R-MKT-01 — domanda inferiore al obiettivo P1
 **Impatto:** I4.
 
 Mitigazione:
@@ -602,7 +602,7 @@ Mitigazione:
 **Impatto:** I3.
 
 Mitigazione:
-- channel mix;
+- mix dei canali;
 - limite concentrazione da definire sui dati;
 - spaccio/ritiro/consegna/B2B.
 
@@ -610,7 +610,7 @@ Mitigazione:
 **Impatto:** I4.
 
 Mitigazione:
-- test prezzo prima del pieno scaling;
+- test prezzo prima del piena espansione;
 - margine per coltura/canale;
 - non inseguire volume negativo.
 
@@ -635,18 +635,18 @@ Mitigazione:
 
 Mitigazione:
 - SUAP/commercialista;
-- distinzione vendita agricola vs vending retail;
-- fiscalità prima del messa in servizio.
+- distinzione vendita agricola vs distributore automatico;
+- fiscalità prima dell'avvio operativo.
 
 ### R-REG-04 — fattoria didattica non conforme ai requisiti reali
 **Impatto:** I3/I4.
 
 Mitigazione:
 - ERSA;
-- visitor zoning;
-- accessibility;
+- zonizzazione visitatori;
+- accessibilità;
 - RC;
-- pilot visita.
+- visita pilota.
 
 ## 17. Rischi sicurezza e continuità
 
@@ -656,54 +656,54 @@ Mitigazione:
 Aree:
 - AMR;
 - telescopico;
-- mower;
+- robot tagliaerba;
 - rover galline;
-- visitor route.
+- percorso visitatori.
 
 Mitigazione:
-- zoning;
-- interlock;
+- zonizzazione;
+- interblocco;
 - procedure;
-- no reliance esclusivo su vision/AI.
+- nessun affidamento esclusivo su visione/IA.
 
-### R-SAFE-02 — guasto simultanei o cascading
+### R-SAFE-02 — guasti simultanei o a cascata
 **Impatto:** I4.
 
 Esempi:
 - blackout + freddo;
 - server + rete;
 - pompa + livello basso;
-- treatment + tank high-high.
+- trattamento + livello serbatoio altissimo.
 
 Mitigazione:
-- master SAT;
-- guasto-mode testing;
-- 72 h endurance;
+- piano generale SAT;
+- prove delle modalità di guasto;
+- prova di durata di 72 h;
 - escalation.
 
-### R-SAFE-03 — allarme eccessivo / alarm fatigue
+### R-SAFE-03 — allarme eccessivo / affaticamento da allarmi
 **Impatto:** I3.
 
 Mitigazione:
-- alarm rationalization;
+- razionalizzazione degli allarmi;
 - P0/P1/P2/P3;
-- no P3 wake-up;
-- responsabile e recovery per ogni allarme.
+- nessuna chiamata notturna per allarmi P3;
+- responsabile e ripristino per ogni allarme.
 
-## 18. Rischi programma e change control
+## 18. Rischi programma e controllo delle modifiche
 
 ### R-PM-01 — troppe attività parallele prima dei dati reali
 **Impatto:** I3/I4.
 
 Conseguenza:
-- rework;
+- rilavorazioni;
 - RFQ scaduti;
-- incompatibilità tra package.
+- incompatibilità tra pacchetti.
 
 Mitigazione:
 - DG0–DG8;
-- freeze P1;
-- dependency-based schedule.
+- congelamento P1;
+- programma basato sulle dipendenze.
 
 ### R-PM-02 — espansione incontrollata del perimetro
 **Impatto:** I4.
@@ -711,15 +711,15 @@ Mitigazione:
 Aree più esposte:
 - robotica;
 - visitor;
-- retail;
+- vendita automatizzata;
 - agriturismo;
 - R&S;
 - trasformazione.
 
 Mitigazione:
-- core vs extra separati;
-- BOM-029/extra fuori dal CAPEX core;
-- change request con costo/cassa.
+- progetto principale ed extra separati;
+- BOM-029/extra fuori dal CAPEX principale;
+- richiesta di modifica con costo/cassa.
 
 ### R-PM-03 — espansione P2 compromessa da scelte P1
 **Impatto:** I3/I4.
@@ -734,21 +734,21 @@ Mitigazione:
 **Impatto:** I3/I4.
 
 Mitigazione:
-- spare list;
-- manuals;
-- PM plan;
-- service;
-- training;
-- source/config backup.
+- elenco ricambi;
+- manuali;
+- piano di manutenzione preventiva;
+- assistenza;
+- formazione;
+- backup sorgenti/configurazioni.
 
-### R-MNT-02 — ricambi critici con lead time lungo
+### R-MNT-02 — ricambi critici con tempo di consegna lungo
 **Impatto:** I3.
 
 Mitigazione:
-- stock onsite;
-- second source;
+- scorta in sito;
+- seconda fonte di fornitura;
 - SLA;
-- spare strategy.
+- strategia ricambi.
 
 ### R-MNT-03 — costo ciclo di vita sottostimato
 **Impatto:** I3/I4.
@@ -757,11 +757,11 @@ Mitigazione:
 - TCO 5/8/10 anni;
 - consumabili;
 - batterie;
-- service;
-- replacement;
-- downtime.
+- assistenza;
+- sostituzioni;
+- fermo impianto.
 
-## 20. Top risk concentration
+## 20. Concentrazioni principali di rischio
 
 Le concentrazioni di rischio più rilevanti non sono singoli componenti, ma dipendenze:
 
@@ -771,70 +771,70 @@ Se DG0/F0 non è chiuso, tutto il percorso resta teorico.
 ### B. Lotto -> DSO/geotecnica/layout
 Un lotto errato può rendere inutili molte ottimizzazioni già fatte.
 
-### C. Crop card -> acqua/termico/freddo/packaging
-Specifiche premature su questi package aumentano il rischio di sovra/sottodimensionamento.
+### C. Scheda colturale -> acqua/termico/freddo/confezionamento
+Specifiche premature su questi pacchetti aumentano il rischio di sovra/sottodimensionamento.
 
-### D. Load register -> BESS/DSO
-Il 30 kW power configurazione base non chiude i kWh né l'import/export.
+### D. Registro dei carichi -> BESS/DSO
+Il 30 kW potenza di riferimento non chiude i kWh né l'import/export.
 
 ### E. Mercato -> P2
 L'espansione dei 6 comparti non deve precedere dati P1 sufficienti.
 
-### F. Integrazione -> messa in servizio
-Ogni singolo sottosistema può funzionare e l'impianto integrato può comunque fallire: per questo SAT end-to-end è verifica obbligatorio.
+### F. Integrazione -> avvio operativo
+Ogni singolo sottosistema può funzionare e l'impianto integrato può comunque fallire: per questo SAT integrato è passaggio decisionale obbligatorio.
 
-## 21. Segnale di attivazione di escalation immediata
+## 21. Trigger di escalation immediata
 
-Aprire/reaprire un decision verifica se si verifica uno dei seguenti:
+Aprire/reaprire un passaggio decisionale se si verifica uno dei seguenti:
 
-- CAPEX major package >20% sopra envelope;
-- previsione installed CAPEX >€950k;
+- CAPEX major pacchetti >20% sopra il budget di riferimento;
+- previsione CAPEX installato >€950k;
 - richiesta di usare riserva operativa per CAPEX;
 - contributo/finanziamento ridotto o ritardato materialmente;
 - lotto con criticità geotecnica/idraulica/urbanistica;
 - DSO impone MT/opere inattese;
 - carico P0/P1 > envelope BESS;
-- crop yield/price significativamente sotto target P1;
-- pilot critical FAIL;
-- P0 reboot in blackout;
-- guasto food/cold/water safety;
+- resa/prezzo delle colture significativamente sotto obiettivo P1;
+- prova pilota critica FALLITA;
+- riavvio P0 durante blackout;
+- failure food/cold/water sicurezza;
 - scarico/riuso non autorizzato;
-- vendor cambia modello/configurazione;
-- critical spare/service non disponibile;
-- dipendenza da una sola persona per skill P0.
+- il fornitore cambia modello/configurazione;
+- ricambio critico/assistenza non disponibile;
+- dipendenza da una sola persona per competenza P0.
 
 ## 22. Chiusura di un rischio
 
-Un rischio non viene marcato `CLOSED` perché esiste una mitigazione scritta.
+Un rischio non viene marcato `CHIUSO` perché esiste una mitigazione scritta.
 
 Stati:
-- `OPEN`;
-- `MITIGATION DESIGNED`;
-- `EVIDENCE PENDING`;
-- `CONTROLLED`;
-- `ACCEPTED`;
-- `CLOSED`;
-- `MATERIALIZED`.
+- `APERTO`;
+- `MITIGAZIONE PROGETTATA`;
+- `EVIDENZA IN ATTESA`;
+- `SOTTO CONTROLLO`;
+- `ACCETTATO`;
+- `CHIUSO`;
+- `MATERIALIZZATO`.
 
-Per passare a `CONTROLLED` servono:
+Per passare a `SOTTO CONTROLLO` servono:
 - responsabile;
 - controllo implementato;
 - evidenza;
 - test quando applicabile;
-- residual risk registrato.
+- rischio residuo registrato.
 
 ## 23. Governance
 
-Il risk register va rivisto obbligatoriamente:
+Il registro rischi va rivisto obbligatoriamente:
 
 - prima di DG0;
 - prima di acquisto lotto;
-- al design freeze P1;
-- prima degli ordini major;
-- dopo ogni pilot FAIL;
-- prima del commissioning;
-- prima del messa in servizio;
-- a 30 e 90 giorni dal messa in servizio;
+- al congelamento del progetto P1;
+- prima degli ordini principali;
+- dopo ogni prova pilota FALLITA;
+- prima della messa in servizio;
+- prima dell'avvio operativo;
+- a 30 e 90 giorni dall'avvio operativo;
 - prima di P2.
 
 ## 24. Collegamenti
