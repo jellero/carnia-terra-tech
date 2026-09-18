@@ -1,9 +1,9 @@
 # 00 — Finanza e cassa di avvio
 
 **Responsabilità:** promotore + commercialista/CAA + banca/Fondo  
-**Budget CAPEX governato:** €850.000  
+**Budget CAPEX governato:** €950.000  
 **Riserva operativa:** €120.000 separata  
-**Linea IVA:** €120.000–150.000 target
+**Linea IVA:** €140.000–170.000 target
 
 ## Obiettivo
 
@@ -11,11 +11,11 @@ Chiudere il pacchetto finanziario prima di creare obblighi irreversibili.
 
 ## Fonti di lavoro
 
-Su €850.000 ammissibili:
-- contributo 60%: €510.000;
-- anticipo massimo teorico del sostegno: €255.000;
-- finanziamento di lavoro 40%: €340.000;
-- liquidità iniziale investimento: €595.000;
+Su €950.000 ammissibili:
+- contributo 60%: €570.000;
+- anticipo massimo teorico del sostegno: €285.000;
+- finanziamento di lavoro 40%: €380.000;
+- liquidità iniziale investimento: €665.000;
 - premio giovane SRE01: €70.000 separato, se concesso.
 
 ## Attività
@@ -29,7 +29,9 @@ Su €850.000 ammissibili:
 7. definire ponte fino al saldo;
 8. aprire contabilità analitica per settore;
 9. definire calendario fatture/SAL;
-10. definire fondo operativo segregato.
+10. definire fondo operativo segregato;
+11. includere mezzi/cicli materia nel CAPEX;
+12. impedire che la PLE optional assorba la riserva.
 
 ## Regole
 
