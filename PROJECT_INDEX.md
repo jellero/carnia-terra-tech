@@ -672,6 +672,10 @@ Artefatti closure avviati:
 - `06_ENERGIA_ELETTRICA_FV/LOAD_DATA_CAPTURE_TEMPLATE.csv`.
 - `21_RISCHI_DECISIONI_OPEN_POINTS/PROCUREMENT_CLOSURE_REGISTER.md`;
 - `21_RISCHI_DECISIONI_OPEN_POINTS/PROCUREMENT_CLOSURE_REGISTER.csv`.
+- `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_PILOT_REGISTER.md`;
+- `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_PILOT_REGISTER.csv`;
+- `21_RISCHI_DECISIONI_OPEN_POINTS/PILOT_RESULT_CAPTURE_TEMPLATE.csv`;
+- `21_RISCHI_DECISIONI_OPEN_POINTS/PILOT_DECISION_RECORD_TEMPLATE.md`.
 
 ### Prossima fase — validation / closure sprint
 
@@ -684,7 +688,7 @@ Priorità di chiusura:
 3. master load register + profilo 1–15 min e P0/P1 — **v0.1 strutturato + piano misure/RFQ e template dati pronti il 18/09/2026; resta raccolta dati reali**;
 4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni — **pre-application package strutturato il 18/09/2026; pratica reale bloccata da lotto/DSO/POD e potenze finali**;
 5. RFQ installati per i package ancora a prezzo `RFQ` — **registro procurement/closure strutturato il 18/09/2026; separati Q1–Q5, priorità e blocker per dominio**;
-6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT;
+6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT — **master pilot register + result/cost template + decision record strutturati il 18/09/2026; esecuzione fisica ancora da sito/vendor/produzione reale**;
 7. commissioning e acceptance end-to-end;
 8. consolidamento CAPEX/OPEX/cashflow, rischi e decision gate.
 

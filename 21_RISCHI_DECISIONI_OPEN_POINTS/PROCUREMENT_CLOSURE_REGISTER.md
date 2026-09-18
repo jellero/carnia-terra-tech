@@ -171,3 +171,31 @@ L'ordine avviene soltanto quando:
 - copertura finanziaria chiusa;
 - fondo operativo protetto;
 - eleggibilità/cumulo confermati dove rilevante.
+
+
+## 10. Pilot interface
+
+Per tutte le righe `Q3` e per i package che richiedono acceptance fisica prima dell'ordine, il riferimento unico è:
+
+- `MASTER_PILOT_REGISTER.md`;
+- `MASTER_PILOT_REGISTER.csv`;
+- `PILOT_RESULT_CAPTURE_TEMPLATE.csv`;
+- `PILOT_DECISION_RECORD_TEMPLATE.md`.
+
+Regola di transizione:
+
+- `Q3 -> Q1/Q2` solo dopo pilot PASS / PASS WITH ACTIONS e corrective actions compatibili;
+- `Q3 -> PX` se il pilot fallisce o il TCO non giustifica scaling;
+- `Q3 -> Q3` se serve retest;
+- nessun ordine full-scale prima del decision record.
+
+Pilot principali attivi nel registro:
+- PIL-AMR;
+- PIL-MOW;
+- PIL-HEN;
+- PIL-RETAIL;
+- PIL-REUSE;
+- PIL-DID;
+- PIL-BESS;
+- PIL-COLD;
+- PIL-PACK.
