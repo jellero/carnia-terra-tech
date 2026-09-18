@@ -1,6 +1,6 @@
 # Carnia TerraTech — KPI & Guardrails
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Scopo:** tradurre la visione del progetto in indicatori osservabili. Dove la soglia non è ancora stata deliberata, il KPI resta obbligatorio ma la soglia è `DA DEFINIRE` nel blocco competente.
 
 ## 1. Qualità della vita e lavoro
@@ -27,9 +27,26 @@
 | Ritardo contributi/SAL sostenibile | DA CALCOLARE |
 | Debito massimo sostenibile | DA CALCOLARE |
 | DSCR minimo accettabile | DA DEFINIRE nel modello finanziario |
-| Scenario senza contributo o con contributo ritardato | OBBLIGATORIO | deve esistere un piano B credibile |
+| Scenario con contributo/finanziamento approvato ma erogazione ritardata | OBBLIGATORIO | il progetto non parte senza concessione; deve però sopportare ritardi di cassa |
 
 Regola: nessun investimento irreversibile importante deve essere approvato senza conoscere l'effetto sulla cassa personale e aziendale.
+
+## 2A. Mitigazione del rischio di sito
+
+KPI obbligatori prima dell'acquisto:
+- % superficie utile coperta da campionamento;
+- numero punti/griglia;
+- zone anomale non risolte;
+- prove infiltrazione/drenaggio eseguite;
+- rilievo quote completato;
+- parametri geotecnici necessari disponibili;
+- costo mitigazioni sito;
+- aree non utilizzabili;
+- criticità ambientali aperte.
+
+Guardrail:
+- **0 UNKNOWN bloccanti** prima dell'acquisto;
+- **0 fondazioni/drenaggi progettati su assunzioni non verificate**.
 
 ## 3. Continuità operativa
 
@@ -163,6 +180,18 @@ Da controllare nel masterplan:
 
 La valutazione estetica non avrà un punteggio unico: verrà verificata attraverso requisiti di masterplan e manutenzione.
 
+## 8A. Cicli di materia
+
+KPI:
+- % residui organici aziendali valorizzati;
+- kg humus/vermicompost prodotto;
+- kg input esterni con provenienza tracciata;
+- €/kg prodotto interno;
+- ore uomo/t;
+- ore mezzo/t;
+- ammendante acquistato evitato;
+- non conformità/biosecurity.
+
 ## 11. Automazione
 
 Per ogni automazione devono essere registrati:
@@ -178,6 +207,8 @@ Per ogni automazione devono essere registrati:
 - vita utile prevista.
 
 Una automazione viene mantenuta se il beneficio complessivo resta positivo nel ciclo di vita.
+
+Guardrail aggiuntivo: un robot dedicato a una funzione marginale non ha priorità su mezzi di movimentazione, accesso sicuro in quota, manutenzione, acqua, energia o continuità.
 
 ## 12. Dashboard futura di progetto
 
