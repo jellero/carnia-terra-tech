@@ -1,7 +1,7 @@
 # Mezzo multifunzione e sollevamento — architettura
 
-**Aggiornato:** 17 settembre 2026  
-**Stato:** `WORKING ARCHITECTURE / TELESCOPICO ELETTRICO + LOGISTICA COMPATTA DA PILOT/RFQ`.
+**Aggiornato:** 18 settembre 2026  
+**Stato:** `FUNZIONE CORE / TELESCOPICO MULTIFUNZIONE + STOCCATORE / PLE IN QUOTA DA TCO-RFQ`.
 
 ## 1. Obiettivo
 
@@ -10,12 +10,17 @@ Carnia TerraTech necessita di capacità di sollevamento e movimentazione per:
 - pallet, cassette, fertilizzanti, ricambi, film, profili e materiali di cantiere;
 - manutenzione in quota e montaggio serra;
 - movimentazione fra piazzale, Tech Barn e corridoio tecnico;
+- movimentazione di humus, compost, substrati e materie sfuse;
+- carico/scarico dell'area cicli materia;
+- movimentazione di materiali acquistati da rilavorare internamente;
 - uso di forche, benna e altri accessori OEM dove utili;
 - eventuale piattaforma persone esclusivamente nella configurazione prevista e autorizzata dal costruttore.
 
 Non è realistico imporre a una sola macchina di entrare nelle corsie coltura da ~1,20 m e contemporaneamente sollevare 2,5 t a 5–6 m. L'architettura separa quindi due livelli.
 
 ## 2. Livello L1 — telescopico multifunzione
+
+**Decisione di progetto:** la funzione è core. Il mezzo serve anche se AMR e robotica vengono rinviati.
 
 Missioni:
 
@@ -24,7 +29,7 @@ Missioni:
 - carico/scarico bins;
 - montaggio e manutenzione struttura;
 - accesso in quota con navicella OEM quando autorizzato;
-- benna/materiali sfusi se realmente utile;
+- benna/materiali sfusi come requisito per humus/cicli materia;
 - lavoro esterno e nel corridoio tecnico principale.
 
 ### Candidato prioritario: Merlo EW25.5-90 / eWorker
@@ -98,6 +103,21 @@ Per Tech Barn e movimentazioni leggere si mantiene una macchina separata economi
 
 Questa macchina può gestire pallet nei locali tecnici e riduce l'uso del telescopico da ~5 t per missioni banali. Il corridoio minimo di stivaggio con pallet resta >2,2 m: la larghezza macchina da sola non rende automaticamente compatibile una corsia coltura da 1,20 m.
 
+## 4A. Livello H1 — accesso in quota
+
+La manutenzione delle parti alte è funzione core.
+
+Tre soluzioni:
+1. piattaforma persone OEM sul telescopico, se quota/sbraccio e geometria sono sufficienti;
+2. PLE cingolata compatta "ragno" dedicata;
+3. noleggio/servizio con SLA compatibile.
+
+Riferimenti:
+- `ACCESSO_IN_QUOTA_RAGNO_ARCHITETTURA.md`;
+- `RFQ_ACCESSO_IN_QUOTA_RAGNO.md`.
+
+La capacità di raggiungere ogni punto manutentivo critico deve essere dimostrata sul masterplan prima di chiudere il layout.
+
 ## 5. Geometria e masterplan
 
 Requisiti da inserire nel masterplan:
@@ -109,7 +129,9 @@ Requisiti da inserire nel masterplan:
 - altezza porte Tech Barn/serra da macchina reale + margine;
 - area di ricarica ventilata/protetta e fuori dalle vie di fuga;
 - separazione pedoni/mezzi nei punti ciechi;
-- parcheggio accessori con appoggi che evitino instabilità.
+- parcheggio accessori con appoggi che evitino instabilità;
+- accesso e raggio di lavoro area humus/cicli materia;
+- piazzole/stabilizzazione PLE per copertura, gronde e parti alte.
 
 ## 6. Energia e ricarica
 
@@ -179,6 +201,16 @@ Fallback:
 - AMR/carrelli manuali per cassette;
 - noleggio telescopico/PLE per guasti lunghi o picchi;
 - manutenzione in quota sospesa se la configurazione certificata non è disponibile.
+
+## 9A. Priorità economica
+
+Ordine:
+1. mezzo L1 con forche + benna;
+2. stoccatore L2 se Tech Barn lo richiede;
+3. capacità certificata di accesso in quota;
+4. altri accessori solo da ore/anno reali.
+
+AMR e robot di servizio non devono sottrarre CAPEX a queste funzioni.
 
 ## 10. Decision gate
 
