@@ -219,14 +219,17 @@ Current C&I hybrid family:
 - battery ecosystem;
 - up to 63.2 kWh with Reserva in public C&I page, with other compatible battery variants documented separately.
 
-Important:
-- published datasheet for standard Full Backup reports ~11 s switching time in the cited configuration;
-- this is **not acceptable as the sole continuity mechanism for the no-UPS P0 IT bus** if it causes a reboot;
-- different rapid-switch/backup-controller configurations must be validated on the exact Italy-supported product combination.
+Important update 18/09/2026:
+- standard public documentation is configuration/revision dependent: older datasheet ~11 s; current manual standard table <35 s;
+- **current OEM manual separately documents Rapid switch mode <20 ms**;
+- Rapid switch requires **Fronius Backup Controller 63A**;
+- Verto Plus 30.0 is documented at 29.99 kW Full Backup and up to 50 kVA Backup Power Boost for 5–10 s subject to source/battery/environment conditions;
+- this makes the Verto 30.0 Plus architecture a credible P0 continuity candidate, but no-reboot is still closed only by exact Italy-supported topology + measured blackout SAT.
 
 Use:
-- technology comparison;
-- not baseline until transfer test and PV architecture fit.
+- priority technology/RFQ comparison alongside an AC-coupled C&I BESS;
+- request exact battery + Backup Controller 63A + meter/switchgear BOM, CEI/DSO evidence and installed price;
+- do not treat the standard seconds-level backup mode as P0-compatible.
 
 ## 11. Transfer-time hard requirement
 

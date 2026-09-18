@@ -65,6 +65,13 @@ Deliverable:
 - transient profile;
 - island scenario matrix.
 
+Operational templates:
+- `MASTER_LOAD_REGISTER.md` / `MASTER_LOAD_REGISTER.csv`;
+- `LOAD_MEASUREMENT_AND_RFQ_PLAN.md`;
+- `LOAD_DATA_CAPTURE_TEMPLATE.csv`.
+
+Vendor shall return machine-readable data using the capture fields or an equivalent export containing all mandatory fields.
+
 ## 4. Lotto B — BESS/PCS
 
 Quote minimum scenarios:

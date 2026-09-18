@@ -90,7 +90,9 @@ Working examples:
 A 30 kW PCS should have power margin for startup/transients.
 
 Final P1 sum:
-- `DA LOAD REGISTER`.
+- registro operativo: `MASTER_LOAD_REGISTER.md` / `MASTER_LOAD_REGISTER.csv`;
+- v0.1: riferimenti numerici P1 noti **6,03–7,00 kW** prima di ausiliari e prima del P0;
+- totale finale resta `DA MISURA/RFQ`.
 
 ## 6. Thermal strategy
 
@@ -261,3 +263,14 @@ Test real combined loads:
 7. restart after grid return.
 
 No nuisance trip and no hidden unmanaged load.
+
+## 16. Closure register
+
+La chiusura quantitativa di questa matrice è governata da `MASTER_LOAD_REGISTER.md`.
+
+Gate minimo:
+- nessun P0 senza potenza misurata/garantita;
+- tutti i carichi >1 kW con kW, kVA/PF e startup;
+- RG0–RG5 con limiti numerici;
+- profili 1 min e 15 min;
+- blackout SAT reale senza reboot P0.
