@@ -63,7 +63,7 @@ Baseline:
 - spazio coperto, con BOM-026 pergolato come primo candidato da verificare;
 - visitor route separata da mezzi, AMR, locali tecnici, chimici, packing/celle e dock;
 - observation point per serra, acqua, energia, automazione e galline;
-- modulo galline compatibile con BOM-023 e lavaggio mani obbligatorio a valle del contatto/area animale;
+- eventuale area animali futura con barriera, pulizia semplice e lavaggio mani obbligatorio a valle del contatto;
 - accessibilità dal drop-off a primo soccorso, WC, spazio coperto e parte significativa del percorso;
 - pannelli safety distinti dai pannelli didattici;
 - didattica digitale read-only su guest network separata dall'OT;
