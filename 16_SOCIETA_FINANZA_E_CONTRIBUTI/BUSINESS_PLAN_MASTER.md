@@ -58,11 +58,11 @@ Riferimento operativo:
 
 ## 3. Struttura finanziaria di lavoro
 
-Su €950.000 integralmente ammissibili, nello schema SRD01 verificato:
+Su €950.000 integralmente ammissibili, nello schema SRD01 2026 verificato:
 - sostegno giovane 60%: €570.000;
-- anticipo massimo SRD01: 30% del sostegno = €171.000;
-- linea finanziamento di lavoro ipotizzata: €380.000, soggetta a delibera e verifica di compatibilità/cumulo;
-- liquidità iniziale investimento: €551.000 se entrambe le fonti sono perfezionate;
+- anticipo massimo SRD01: 50% del sostegno = €285.000;
+- linea finanziamento di lavoro ipotizzata: €380.000, soggetta a delibera;
+- liquidità iniziale investimento: €665.000 (= 70% del CAPEX) se entrambe le fonti sono perfezionate;
 - dopo almeno il 50% di spesa, anticipo + acconto possono arrivare fino all'80% del sostegno secondo il bando;
 - saldo/acconti secondo avanzamento e regole effettive della concessione.
 
