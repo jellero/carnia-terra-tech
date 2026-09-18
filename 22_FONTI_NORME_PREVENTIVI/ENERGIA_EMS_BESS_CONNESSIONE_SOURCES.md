@@ -162,14 +162,24 @@ https://www.fronius.com/~/downloads/Solar%20Energy/Datasheets/SE_DS_Fronius_Vert
 
 Current public points:
 - hybrid C&I inverter up to 33.3 kW;
-- full three-phase backup;
+- Verto 30.0 Plus nominal output 29.99 kW;
+- Full Backup nominal 29.99 kW;
+- Backup Power Boost up to 50 kVA for 5–10 s when source/battery/environment allow;
 - battery operation;
-- Reserva configurations up to 63.2 kWh on public C&I page;
-- standard Full Backup datasheet shows ~11 s switching time for published configuration.
+- current manual documents **Rapid switch mode <20 ms**;
+- Rapid switch requires a **Fronius Backup Controller 63A**;
+- Verto Plus 25–33.3 kW is listed as eligible Parallel Backup coordinator;
+- standard public documents are not uniform: older datasheet ~11 s, current manual standard table <35 s, while Rapid switch is a separate <20 ms mode.
+
+Price benchmarks observed 18/09/2026:
+- Fronius Austria shop Verto 30.0 Plus: €7,182;
+- Italy retailer GreenEconomy: €4,647.61;
+- neither is installed-system CAPEX.
 
 Use:
-- comparison only;
-- standard seconds-level transition is incompatible with Carnia P0 no-reboot unless exact rapid-transfer architecture is separately validated.
+- promote to **technical RFQ candidate** for Carnia P0 because current OEM Rapid switch mode is potentially compatible with no-reboot intent;
+- exact 30 kW + Backup Controller 63A availability/topology, Italy support, compatible battery, CEI/DSO and blackout SAT remain mandatory;
+- do not use standard ~11 s/<35 s mode for P0 no-reboot.
 
 ## 12. EcoFlow PowerOcean Plus — transfer benchmark
 
