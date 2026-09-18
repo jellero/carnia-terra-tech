@@ -279,6 +279,12 @@ Baseline:
 - Stripe payment stack;
 - Verifone UX700 candidato Stripe Terminal unattended;
 - server centrale come system of record/scheduler per inventory, personale, logistica, pagamenti e forecast domanda/offerta;
+- **frictionless R&D prioritario:** smart crate + smart cart + sensor fusion;
+- smart crate identifica SKU/lotto e rileva -Δmassa; cart verifica +Δmassa e sessione; camera/localizzazione risolvono ambiguità;
+- e-paper/ESL per posizione SKU/cassetta, LCD dinamico sul cart;
+- cheap load cells solo sensing/cross-check; peso commerciale da catena metrologica legal-for-trade;
+- Stripe UX700 fisso al paid-exit gate come baseline; reader-on-cart future;
+- nested charging baseline; recovery rover/tug solo se giustificato;
 - fiscalizzazione da validare su Stripe/RT/configurazione reale;
 - logger indipendente, temp alarm e stop-vend;
 - CCTV privacy-aware, no audio/face recognition;
@@ -299,6 +305,7 @@ Benchmark:
 
 Documenti:
 - `10_BENESSERE_FATTORIA_E_SERVIZI/SPACCIO_AUTOMATICO_24_7_ARCHITECTURE.md`;
+- `10_BENESSERE_FATTORIA_E_SERVIZI/SMART_CRATE_SMART_CART_ARCHITECTURE.md`;
 - `10_BENESSERE_FATTORIA_E_SERVIZI/RFQ_SPACCIO_AUTOMATICO_24_7.md`;
 - `19_BOM_PRODOTTI_FORNITORI/BENESSERE_SPACCIO_AUTOMATICO_24_7.md`;
 - `22_FONTI_NORME_PREVENTIVI/BENESSERE_SPACCIO_AUTOMATICO_24_7_SOURCES.md`.
