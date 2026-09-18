@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 06: Energia elettrica e fotovoltaico
 
 **Aggiornato:** 17 settembre 2026  
-**Stato:** `ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / CONNESSIONE, UPS, GENERATORE ED EMS DA SVILUPPARE`.
+**Stato:** `ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / BESS BACKUP 30 kW CONSOLIDATO / kWh, AUTONOMIA, ISLANDING, CONNESSIONE ED EMS DA SVILUPPARE / NESSUNA UPS LOCALE BASELINE`.
 
 ## 1. Obiettivo
 
@@ -13,7 +13,7 @@ Baseline working:
 - predisposizione **150–180 kWp**;
 - niente moduli opachi sopra le aree produttive principali della serra come baseline;
 - integrazione con PDC/accumulo termico, pompe, celle fredde, automazione e futuri carichi flessibili;
-- piccola batteria elettrica futura solo per carichi critici/UPS, non come batteria energetica principale;
+- backup elettrico centralizzato tramite BESS da **30 kW di potenza**; capacità utile in kWh, autonomia, potenza di picco, tempo di trasferimento e islanding da chiudere; nessuna UPS locale baseline;
 - EMS locale, cloud non vitale.
 
 ## 2. Candidato moduli 2026
