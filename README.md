@@ -26,7 +26,7 @@ Obiettivi permanenti:
 - comparti: **6 × ~700 m²**;
 - FV: **120 kWp iniziali**, predisposizione 150–180 kWp;
 - accumulo termico: **30 m³ iniziali**, predisposizione 40–50 m³;
-- accumulo acqua: working target **300 m³**;
+- accumulo acqua: obiettivo di lavoro **300 m³**;
 - automazione locale a sicurezza intrinseca con PLC, rete dati, visione artificiale e AMR.
 
 ## Come leggere il repository
@@ -45,7 +45,7 @@ I file in `docs/` contengono il lavoro tecnico precedente e restano validi come 
 
 La directory [`RND_CORRELATO_EU/`](RND_CORRELATO_EU/) contiene un progetto di ricerca e sviluppo tecnologico correlato a Carnia TerraTech.
 
-**Non fa parte della numerazione 00–22, non modifica la configurazione base agricola e non entra automaticamente nel CAPEX/OPEX progetto principale.** Carnia TerraTech può fungere da living lab e primo demonstrator, ma il progetto agricolo deve poter funzionare anche senza la riuscita o il finanziamento della R&S.
+**Non fa parte della numerazione 00–22, non modifica la configurazione base agricola e non entra automaticamente nel CAPEX/OPEX progetto principale.** Carnia TerraTech può fungere da laboratorio operativo reale e primo dimostratore, ma il progetto agricolo deve poter funzionare anche senza la riuscita o il finanziamento della R&S.
 
 Concetto attuale: **CTT-PAA — Piattaforma di Automazione Agricola Carnia TerraTech**, con focus su orchestrazione, edge/PLC, robotica, visione artificiale, fusione sensoriale, pianificatore e sistemi autonomi replicabili.
 
@@ -57,6 +57,6 @@ Parte dalla soluzione minima **ristoro light a spuntini non cucinati**, con pred
 
 ## Regola di progettazione
 
-Ogni componente fisico deve arrivare almeno a: funzione, requisiti, marca/modello o specifica, quantità, prezzo, fonte, IVA, installazione, consumi, manutenzione, ricambi, sicurezza, failure mode, fallback, durata, dipendenze, contributi e stato della decisione.
+Ogni componente fisico deve arrivare almeno a: funzione, requisiti, marca/modello o specifica, quantità, prezzo, fonte, IVA, installazione, consumi, manutenzione, ricambi, sicurezza, modalità di guasto, ripiego, durata, dipendenze, contributi e stato della decisione.
 
 Un elemento non è considerato progettato finché questi punti essenziali non sono coperti o marcati esplicitamente come `DA VERIFICARE`.
