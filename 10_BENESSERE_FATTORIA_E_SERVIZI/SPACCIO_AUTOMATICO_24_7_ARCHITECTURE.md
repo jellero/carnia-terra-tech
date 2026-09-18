@@ -762,7 +762,81 @@ Richiedere:
 - fine vita;
 - disponibilità 7–10 anni.
 
-## 28. Regola economica
+## 28. Frictionless smart crate + smart cart
+
+Documento dedicato:
+`SMART_CRATE_SMART_CART_ARCHITECTURE.md`.
+
+### Decisione working
+
+Il rullo con camera+pesa viene mantenuto come fallback/diagnostica, non come checkout principale.
+
+La direzione R&D prioritaria è:
+
+`smart crate + smart cart + sensor fusion + server centrale`
+
+Ogni prelievo produce segnali correlabili:
+
+- `crate -Δm`;
+- `cart +Δm`;
+- prossimità/localizzazione;
+- evento camera;
+- SKU noto dalla posizione crate;
+- cart/session ID.
+
+Il server genera un evento `ITEM_ADDED` soltanto quando il confidence score supera la soglia; altrimenti chiede conferma al cliente sul display.
+
+Il ritorno prodotto è simmetrico con `ITEM_REMOVED`.
+
+### Display
+
+- ESL/e-paper su ogni posizione SKU/cassetta;
+- LCD/OLED 7–10" sul cart;
+- niente display per singolo pezzo;
+- prezzo e informazioni sempre derivati dallo stesso master server.
+
+### Metrologia
+
+Le cheap load cell sono sensing.
+
+La misura che determina un prezzo a peso deve essere legalmente idonea.
+
+Pilot:
+- M1 modulo legal-for-trade sulla smart crate/cluster;
+- M3 stazione certificata di conferma/fallback;
+- M2 cart-scale soltanto se validata dal punto di vista metrologico.
+
+### Payment
+
+Baseline:
+- basket già completo sul cart;
+- Stripe UX700 fisso al gate;
+- solo tap/pay all'uscita;
+- nessuna scansione.
+
+Future:
+- payment sul cart;
+- sessione con metodo di pagamento associato all'ingresso.
+
+### Exit
+
+Gate state:
+
+`PAID && CART_RECONCILED && !BLOCKING_ANOMALY`
+
+Il gate non deve mai impedire l'esodo delle persone e deve avere emergency/manual release.
+
+### Return
+
+Baseline:
+- nested return/charging.
+
+Future:
+- un rover/tug recupera una fila di cart se parcheggio e volumi lo giustificano.
+
+Non motorizzare ogni cart baseline.
+
+## 29. Regola economica
 
 Separare:
 
@@ -778,7 +852,12 @@ Separare:
 - lighting;
 - signage;
 - civil works;
-- install/commissioning.
+- install/commissioning;
+- smart crate pilot;
+- smart carts;
+- ESL/e-paper;
+- legal metrology hardware;
+- exit gate/dock.
 
 `OPEX`
 - fee Stripe;
@@ -800,7 +879,7 @@ Separare:
 - IVA/fiscalità;
 - scarti.
 
-## 29. Gate BOM-028
+## 30. Gate BOM-028
 
 1. regime R1 vendita diretta agricola vs R2 vending retail;
 2. verifica SUAP;
@@ -823,4 +902,7 @@ Separare:
 19. RFQ installato;
 20. TCO 5 anni;
 21. test 500 vendite + reconciliation server/Stripe/vend;
-22. commissioning e go-live controllato.
+22. smart crate/cart sensor-fusion pilot;
+23. metrologia legale su SKU venduti a peso;
+24. paid-exit gate safety validation;
+25. commissioning e go-live controllato.
