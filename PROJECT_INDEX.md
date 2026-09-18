@@ -15,8 +15,8 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 - `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura, drenaggi, porte, recupero pioggia e cantiere;
 - `04_ACQUA_E_FERTIRRIGAZIONE/` — fonte, accumulo, filtri, pompe, dosaggio, distribuzione, drenaggio;
 - `05_TERMICO_E_CLIMA/` — carico termico, PDC, accumulo, distribuzione, boost, deumidificazione, emergenza;
-- `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, UPS, generatore, EMS;
-- `07_AUTOMAZIONE_DATI_AI/` — PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&D robotica/laser;
+- `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, BESS/backup, EMS;
+- `07_AUTOMAZIONE_DATI_AI/` — server centrale di orchestrazione, scheduler, dati/AI, PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&D robotica/laser;
 - `08_MACCHINE_E_LOGISTICA/` — AMR, sollevatore, piattaforme, raccolta, carrelli e robot verde;
 - `09_TECH_BARN_E_POST_RACCOLTA/` — celle, confezionamento, officina, magazzini e centro trasformazione conto terzi;
 - `10_BENESSERE_FATTORIA_E_SERVIZI/` — pergolato, verde, fattoria didattica, robot di servizio, spaccio 24/7;
@@ -78,7 +78,7 @@ Matrice: `05_TERMICO_E_CLIMA/POINT_05_CLOSURE_MATRIX.md`.
 
 ## 9. Stato punto 06 — Energia elettrica e FV
 
-**ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / CONNESSIONE, UPS, GENERATORE ED EMS DA SVILUPPARE.**
+**ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / BACKUP BESS 30 kW DICHIARATO / kWh, AUTONOMIA, ISLANDING, CONNESSIONE ED EMS DA SVILUPPARE / NESSUNA UPS LOCALE BASELINE.**
 
 Documenti: `06_ENERGIA_ELETTRICA_FV/README.md`, `PV_ARCHITECTURE.md`, `RFQ_PV_INVERTERS.md`, BOM-019 e fonti.
 
@@ -95,6 +95,19 @@ Working candidate Trina Vertex S+ TSM-470NEG9R.28:
 - CEI 0-21:2026 / CEI 0-16:2026;
 - BT/MT e protezioni da preventivo DSO/TICA;
 - predisposizione 150–180 kWp.
+
+### Automazione trasversale — server centrale
+
+Documento: `07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTRATION_SERVER.md`.
+
+Principio consolidato:
+- server centrale = system of record + scheduler aziendale;
+- pianifica produzione, personale, logistica, manutenzione, energia, vendita e pagamenti;
+- traccia eventi e lotti end-to-end;
+- forecast domanda/offerta;
+- Stripe integrato server-side;
+- PLC/edge mantengono safety e loop real-time locali;
+- server down non deve rendere unsafe gli impianti.
 
 ## 10. Stato punto 08 — Macchine e logistica
 
@@ -263,21 +276,23 @@ Baseline:
 - Gusto 8 multi-temperature candidato;
 - Gusto 8 Lift prioritario per prodotti fragili;
 - Drum/FAS Easy Food alternative;
-- cashless baseline con telemetria;
-- fiscalizzazione da validare su macchina/payment reali;
+- Stripe payment stack;
+- Verifone UX700 candidato Stripe Terminal unattended;
+- server centrale come system of record/scheduler per inventory, personale, logistica, pagamenti e forecast domanda/offerta;
+- fiscalizzazione da validare su Stripe/RT/configurazione reale;
 - logger indipendente, temp alarm e stop-vend;
 - CCTV privacy-aware, no audio/face recognition;
 - rete vending/CCTV separata dall'OT;
-- UPS solo IT/elettronica, refrigerazione su continuità generale;
-- 100 cicli/SKU critico + 500 vendite miste prima del go-live.
+- nessuna UPS locale: backup da BESS aziendale 30 kW, kWh/autonomia da chiudere;
+- 100 cicli/SKU critico + 500 vendite miste con reconciliation end-to-end.
 
 Benchmark:
 - Necta Gusto 8 ~€5.900 EU seller benchmark;
 - Gusto 8 Lift ~€7.200;
 - Gusto Drum ~€10.600–13.199;
-- FAS Pro 900 €8.840 net benchmark listing incl. Nayax;
-- Nayax VPOS Touch €430;
-- Nayax service €15,75/mese + fee 1,45–3,5% benchmark;
+- FAS Pro 900 €8.840 net benchmark listing; payment incluso non baseline;
+- UX700 Stripe Terminal unattended: RFQ;
+- Stripe Terminal Italia: 1,4% + €0,10 carte SEE / 2,9% + €0,10 non-SEE benchmark;
 - Testo 160 T €124 net / €151,28 IVA incl.;
 - Ubiquiti G5 Turret Ultra €80/cad;
 - NIA/VIA sanitaria €20 reference.
