@@ -310,9 +310,13 @@ Guardrail:
 - tracciabilità lotti;
 - area separata dal food.
 
-## 13. R&S trasversale — laser, vision e manutenzione robotica
+## 13. R&S trasversale — robot ragno, laser, vision e manutenzione
 
-Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&S CANDIDATO / NON INCLUSO NEL CAPEX BASE`.
+Documenti:
+- `07_AUTOMAZIONE_DATI_AI/ROBOT_RAGNO_MANUTENZIONE_RND.md` — **R&S prioritaria** per ispezione/manutenzione parti alte;
+- `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md` — potatura/laser/IPM, R&S separata.
+
+Il robot ragno ha priorità R&S superiore ai robot di servizio marginali perché riduce lavoro in quota e rischio manutentivo. Stato: `R&S CANDIDATO / NON INCLUSO NEL CAPEX BASE`.
 
 ## 14. Stato punto 09 — Tech Barn e post-raccolta
 
