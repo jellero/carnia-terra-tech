@@ -26,6 +26,7 @@ Obiettivi permanenti:
 ## Numeri guida attuali
 
 - terreno: target acquisto ≤ **€50.000**;
+- superficie lotto preferita: **10.000–12.000 m² realmente utilizzabili**; 9.000–10.000 m² solo se molto efficienti;
 - serra produttiva: circa **4.200 m²**;
 - comparti: **6 × ~700 m²**;
 - FV: **120 kWp iniziali**, predisposizione 150–180 kWp;
