@@ -251,7 +251,7 @@ Test richiesti:
 
 ## 8. Pagamenti — Stripe nativo
 
-Stripe è il payment stack di progetto. Nayax e SumUp non fanno parte della baseline.
+Stripe è il payment stack unico di progetto; payment stack alternativi non fanno parte della baseline.
 
 Il server centrale Carnia TerraTech è il proprietario del flusso ordine/pagamento/vendita e usa Stripe come payment processor.
 
