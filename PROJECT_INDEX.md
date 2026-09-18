@@ -100,18 +100,77 @@ Working candidate Trina Vertex S+ TSM-470NEG9R.28:
 - BT/MT e protezioni da preventivo DSO/TICA;
 - predisposizione 150–180 kWp.
 
-### Automazione trasversale — server centrale
+### BOM-030 — server centrale di orchestrazione
 
-Documento: `07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTRATION_SERVER.md`.
+**SVILUPPATA / HARDWARE DA RFQ / ACCEPTANCE, BESS E DR BLOCCANTI.**
 
-Principio consolidato:
-- server centrale = system of record + scheduler aziendale;
-- pianifica produzione, personale, logistica, manutenzione, energia, vendita e pagamenti;
-- traccia eventi e lotti end-to-end;
+Working architecture:
+- 2 compute node server-grade;
+- 1 QNODE/edge witness;
+- 1 backup target separato;
+- 10GbE server interconnect;
+- BESS 30 kW shared backup;
+- nessuna UPS locale.
+
+Compute target:
+- 64 GB ECC minimo;
+- 128 GB ECC working;
+- 2×1,92 TB enterprise NVMe mirror/node;
+- TPM;
+- BMC;
+- 10GbE.
+
+Software baseline:
+- Proxmox VE 9.2;
+- Debian 13;
+- PostgreSQL 18;
+- NATS JetStream R3 sui critical stream;
+- MQTT edge ingress;
+- Keycloak/OIDC;
+- Prometheus/Grafana/Loki/Alloy;
+- custom scheduler + dispatcher + reconciler;
 - forecast domanda/offerta;
-- Stripe integrato server-side;
-- PLC/edge mantengono safety e loop real-time locali;
-- server down non deve rendere unsafe gli impianti.
+- digital twin/state model;
+- Stripe server-side.
+
+Explicitly non-baseline:
+- Kubernetes;
+- Ceph/SAN;
+- GPU nel control plane;
+- cloud-only database;
+- proprietary ERP master;
+- UPS locale.
+
+Current public benchmarks:
+- Dell T160 Smart Selection base ~€4.793,77 + IVA; target config RFQ;
+- UniFi Pro Max 24 €405;
+- Pro XG 10 PoE €629;
+- Proxmox Basic su 2 single-socket compute = €740/year;
+- PBS Community optional €560/year.
+
+Resilience:
+- PostgreSQL primary/replica + WAL/PITR;
+- NATS R3 A/B/QNODE;
+- edge buffering;
+- 3-2-1 backup;
+- offsite encrypted copy;
+- NODE-A/B/QNODE failure drills;
+- actual BESS transfer test;
+- Stripe delayed-webhook/reconciliation test.
+
+Principio invariato:
+- server centrale = system of record + scheduler;
+- PLC/edge mantengono safety e loop real-time;
+- `server down != impianto unsafe`.
+
+Documenti:
+- `07_AUTOMAZIONE_DATI_AI/README.md`;
+- `07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTRATION_SERVER.md`;
+- `07_AUTOMAZIONE_DATI_AI/RFQ_CENTRAL_ORCHESTRATION_SERVER.md`;
+- `07_AUTOMAZIONE_DATI_AI/EVENT_API_CONTRACTS.md`;
+- `07_AUTOMAZIONE_DATI_AI/SERVER_ACCEPTANCE_DR_RUNBOOK.md`;
+- `19_BOM_PRODOTTI_FORNITORI/AUTOMAZIONE_SERVER_CENTRALE.md`;
+- `22_FONTI_NORME_PREVENTIVI/AUTOMAZIONE_SERVER_CENTRALE_SOURCES.md`.
 
 ## 10. Stato punto 08 — Macchine e logistica
 
@@ -428,7 +487,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 16. Stato attuale dei grandi blocchi
 
-Restano nel perimetro sostenibilità personale, R&D robotica/laser e industrializzazione del server centrale di orchestrazione.
+Restano nel perimetro sostenibilità personale/lancio operativo, R&D robotica/laser e i package tecnici trasversali ancora aperti già indicati nei rispettivi punti.
 
 ## 17. Sequenza BOM
 
@@ -455,16 +514,17 @@ Restano nel perimetro sostenibilità personale, R&D robotica/laser e industriali
 - BOM-026 pergolato, vite e area relax;
 - BOM-027 fattoria didattica;
 - BOM-028 spaccio automatico self-service 24/7;
-- **BOM-029 centro trasformazione conto terzi**.
+- BOM-029 centro trasformazione conto terzi;
+- **BOM-030 server centrale di orchestrazione**.
 
 ### Prossimo package
 
-**BOM-030 — server centrale di orchestrazione:** compute/storage, database/event log/time-series, message bus, edge gateway, identity/RBAC, backup/restore, observability, HA/failover, network segmentation, API contracts, scheduler operativo, forecasting, digital twin/state model, Stripe/events, cybersecurity, deployment e costo.
+**BOM-031 — sostenibilità personale e lancio operativo:** organico minimo, skill matrix, turni, reperibilità, ferie/copertura, manutenzione interna vs esterna, escalation fornitori, SOP operative, carico umano, automazione utile, ramp-up 30/60/90/180 giorni, formazione, KPI di lavoro, costo del personale e guardrail di sostenibilità.
 
 ### Coda successiva
 
-1. server centrale di orchestrazione: BOM hardware/software/deployment + edge + HA + observability + cybersecurity;
-2. sostenibilità personale e lancio operativo: carico umano, turni, reperibilità, ferie, supporto esterno e ramp-up.
+1. sostenibilità personale e lancio operativo: carico umano, turni, reperibilità, ferie, supporto esterno, SOP e ramp-up;
+2. chiusura dei package tecnici trasversali ancora aperti: trattamento/disinfezione acqua, drenaggio/riuso, EMS e connessione elettrica.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
 
