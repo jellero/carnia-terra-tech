@@ -134,7 +134,7 @@ Stato al 18/09/2026:
 - territorio comprende Gemona e Venzone.
 
 ### Coerenza con questo piano
-**NON BASELINE.**
+**NON È LA CONFIGURAZIONE BASE.**
 
 L'agriturismo è attività connessa all'impresa agricola; questa misura riguarda nuove attività **extra-agricole**. Può diventare interessante solo se viene deliberatamente progettata una diversa attività/imprenditorialità separata e se commercialista, GAL e consulenza legale confermano la compatibilità.
 
@@ -152,7 +152,7 @@ La misura 2026 finanzia strutture ricettive turistiche e pubblici esercizi annes
 ### Coerenza
 Non viene inserita come configurazione base del piano agrituristico perché l'agriturismo ha disciplina e canali dedicati e il bando elenca tipologie ricettive/codici specifici.
 
-Stato: `NO FIT BASELINE / VERIFICARE SOLO PER EVENTUALE STRUTTURA TURISTICA DISTINTA`.
+Stato: `NON COERENTE CON LA CONFIGURAZIONE BASE / VERIFICARE SOLO PER EVENTUALE STRUTTURA TURISTICA DISTINTA`.
 
 ## 8. Matrice sintetica
 
