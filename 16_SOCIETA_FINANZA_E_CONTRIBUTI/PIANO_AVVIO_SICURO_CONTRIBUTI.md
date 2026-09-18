@@ -36,7 +36,7 @@ Bando 2025 verificato:
 - Piano aziendale da avviare entro 3 mesi dalla concessione;
 - conclusione/saldo entro 24 mesi, salvo proroghe ammesse.
 
-Il bando 2025 si è chiuso il 2 marzo 2026. Il premio viene quindi inserito nel piano di cassa solo se esiste una domanda valida/concessione oppure quando una futura call equivalente viene effettivamente aperta e approvata.
+Il bando 2025 si è chiuso il 16 marzo 2026. Il premio viene quindi inserito nel piano di cassa solo se esiste una domanda valida/concessione oppure quando una futura call equivalente viene effettivamente aperta e approvata.
 
 **Non assumere che i €49.000 possano essere usati liberamente come cassa generale.** Le spese devono essere coerenti con il Piano aziendale e con la produzione primaria.
 
