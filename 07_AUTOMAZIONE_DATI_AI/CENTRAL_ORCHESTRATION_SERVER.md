@@ -22,9 +22,9 @@ Il server non è un semplice dashboard. È il sistema che:
 - propone o esegue il piano operativo;
 - misura deviazioni tra piano e realtà.
 
-Il server è il **system of record** per le operazioni aziendali.
+Il server è il **sistema autorevole dei dati** per le operazioni aziendali.
 
-## 2. Separazione fondamentale: planning vs safety/control
+## 2. Separazione fondamentale: pianificazione vs sicurezza/controllo
 
 Il server centrale può decidere **cosa** fare e **quando** farlo.
 
@@ -47,7 +47,7 @@ Restano locali:
 
 Regola:
 
-`server down != impianto unsafe`
+`server non disponibile != impianto unsafe`
 
 In caso di perdita server, ogni sottosistema deve:
 
@@ -112,18 +112,18 @@ Il control plane comprende almeno:
 - prezzi;
 - slot;
 - stock;
-- smart crate;
-- smart cart;
+- cassetta intelligente;
+- carrello intelligente;
 - ESL/e-paper;
 - Stripe;
-- paid-exit gate;
+- cancello di uscita dopo pagamento;
 - pick/return event;
 - vend;
 - refund;
 - temperatura;
 - scadenze;
-- customer confirmation;
-- reconciliation sensor fusion.
+- conferma cliente;
+- reconciliation fusione sensoriale.
 
 ### Personale
 - calendario;
@@ -139,19 +139,19 @@ Il control plane comprende almeno:
 - asset registry;
 - ore/cicli;
 - PM;
-- condition-based maintenance;
+- manutenzione su condizione;
 - ricambi;
-- work order;
-- failure history.
+- ordine di manutenzione;
+- storico guasti.
 
 ### Visitatori
 - calendario visite;
-- VISIT MODE;
+- MODALITÀ VISITA;
 - zone interdette;
 - lockout dinamici;
-- staffing.
+- personale.
 
-## 4. Event ledger
+## 4. Registro eventi
 
 Ogni evento rilevante deve produrre una registrazione timestamped.
 
@@ -206,9 +206,9 @@ Preferenza architetturale:
 - viste/materializzazioni per stato corrente;
 - idempotency sulle azioni esterne.
 
-## 5. System of record
+## 5. Sistema autorevole dei dati
 
-Il server centrale mantiene master data per:
+Il server centrale mantiene dati anagrafici principali per:
 
 - asset;
 - persone/ruoli;
@@ -231,15 +231,15 @@ Il server centrale mantiene master data per:
 
 I controller macchina non diventano database paralleli dell'azienda.
 
-Quando un vendor mantiene il proprio cloud:
+Quando un fornitore mantiene il proprio cloud:
 - il server importa gli eventi necessari;
-- non delega al cloud vendor il master aziendale;
+- non delega al cloud fornitore il master aziendale;
 - deve poter esportare tutti i dati;
-- il sistema deve sopravvivere alla sostituzione del vendor.
+- il sistema deve sopravvivere alla sostituzione del fornitore.
 
-## 6. Scheduler operativo
+## 6. Pianificatore operativo
 
-Il scheduler genera un piano temporale unico combinando:
+Il pianificatore genera un piano temporale unico combinando:
 
 - domanda;
 - disponibilità prodotto;
@@ -383,7 +383,7 @@ Ogni persona ha:
 - restrizioni;
 - storico lavoro.
 
-Lo scheduler deve:
+Lo pianificatore deve:
 - minimizzare cambi attività inutili;
 - evitare sovraccarico;
 - rispettare pause/orari/vincoli applicabili;
@@ -406,7 +406,7 @@ Esempi:
 - reso -> quarantine;
 - waste -> compost/scarto.
 
-AMR e operatori ricevono missioni dallo stesso scheduler.
+AMR e operatori ricevono missioni dallo stesso pianificatore.
 
 ## 12. Spaccio e Stripe
 
@@ -426,7 +426,7 @@ Il server centrale gestisce:
 - fiscal event;
 - audit.
 
-Flusso working:
+Flusso di lavoro:
 
 `selection -> reserve stock -> create PaymentIntent -> collect/confirm -> payment webhook -> authorize vend -> vend -> vend_ack -> close order`
 
@@ -497,7 +497,7 @@ Se il prodotto è venduto a peso e non esiste una misura legalmente valida, la s
 
 ### Refill prediction
 
-Gli eventi di smart crate aggiungono dati ad alta frequenza:
+Gli eventi di cassetta intelligente aggiungono dati ad alta frequenza:
 
 - pick rate;
 - return rate;
@@ -529,7 +529,7 @@ Requisiti architetturali:
 
 La compatibilità esatta tra modalità offline, server-driven e configurazione italiana deve essere verificata nel pilot e nella documentazione Stripe corrente.
 
-Stripe è il payment stack unico della baseline.
+Stripe è il payment stack unico della configurazione base.
 
 ## 15. Integrazione vending
 
@@ -544,7 +544,7 @@ Preferenza:
 
 MDB da solo può essere insufficiente per l'orchestrazione completa.
 
-Se il vendor non espone API adeguate:
+Se il fornitore non espone API adeguate:
 - gateway locale;
 - controller I/O/protocol adapter;
 - event bridge verso server.
@@ -595,13 +595,13 @@ Il server deve classificare i carichi:
 - charging non urgente;
 - comfort/non-critical.
 
-Con BESS attivo, lo scheduler può ridurre o rimandare P3 prima di sacrificare P0/P1.
+Con BESS attivo, lo pianificatore può ridurre o rimandare P3 prima di sacrificare P0/P1.
 
 ## 17. Database
 
 Architettura logica consigliata:
 
-- relational DB per master data/transazioni;
+- relational DB per dati anagrafici principali/transazioni;
 - time-series storage per telemetry;
 - object storage per immagini/documenti;
 - event queue/bus;
@@ -636,9 +636,9 @@ Classi:
 - MQTT;
 - OPC UA;
 - Modbus gateway;
-- vendor API;
+- fornitore API;
 - Stripe webhooks;
-- file/CSV solo come fallback.
+- file/CSV solo come ripiego.
 
 ## 19. Offline/edge
 
@@ -714,14 +714,14 @@ Ogni modello deve avere:
 - dataset window;
 - metriche;
 - drift monitoring;
-- fallback;
+- ripiego;
 - limiti operativi.
 
 Azioni ad alto impatto richiedono regole deterministicamente verificabili anche se suggerite da AI.
 
-## 23. Security
+## 23. Cybersicurezza
 
-Baseline:
+Configurazione base:
 
 - RBAC;
 - MFA per utenti privilegiati;
@@ -738,7 +738,7 @@ Baseline:
 
 Il server non espone direttamente PLC/OT su Internet.
 
-## 24. Observability
+## 24. Osservabilità
 
 Metriche:
 - uptime;
@@ -749,24 +749,24 @@ Metriche:
 - webhook failures;
 - DB health;
 - forecast error;
-- scheduler replan rate;
+- pianificatore replan rate;
 - payment reconciliation mismatch;
 - inventory variance.
 
 Alert con severity e owner.
 
-## 25. Failure modes
+## 25. Modalità di guasto
 
-| Failure | Comportamento |
+| Guasto | Comportamento |
 |---|---|
-| server down | local safe mode + no nuove missioni non sicure |
-| DB down | stop nuove transazioni critiche, queue dove sicuro |
+| server non disponibile | local safe mode + no nuove missioni non sicure |
+| DB non disponibile | stop nuove transazioni critiche, queue dove sicuro |
 | event bus down | local buffer + backpressure |
 | Internet down | operazioni locali consentite secondo policy; cloud integrations degradate |
 | Stripe down | niente nuove vendite che richiedono pagamento |
 | webhook delayed | state machine resta pending, no double-vend |
-| vending controller down | slot/machine disabled |
-| forecast service down | scheduler usa baseline/rules |
+| vending controller non disponibile | slot/machine disabled |
+| forecast servizio non disponibile | pianificatore usa configurazione base/rules |
 | BESS low SOC | load shedding P3/P2 secondo policy |
 | clock drift | alert + reject critical ordering if timestamp integrity lost |
 
@@ -788,11 +788,11 @@ Alert con severity e owner.
 - maintenance MTBF/MTTR;
 - payment-vend reconciliation.
 
-## 27. BOM-030 — deployment target
+## 27. BOM-030 — obiettivo di implementazione
 
-La baseline non è un singolo PC e non è un cluster Kubernetes.
+La configurazione base non è un singolo PC e non è un cluster Kubernetes.
 
-Architettura working:
+Architettura di lavoro:
 
 `NODE-A + NODE-B + QNODE/EDGE + BACKUP TARGET + BESS 30 kW`
 
@@ -849,7 +849,7 @@ Backup fisicamente distinto dal mirror locale:
 - copia DB con WAL;
 - copia off-site cifrata.
 
-Synology DS1825+ è un benchmark di classe:
+Synology DS1825+ è un riferimento di confronto di classe:
 - 8 bay SATA;
 - 2× M.2 NVMe;
 - 2×2,5 GbE;
@@ -857,19 +857,19 @@ Synology DS1825+ è un benchmark di classe:
 
 Non viene usato come primary database storage.
 
-## 28. Virtualization e OS
+## 28. Virtualizzazione e sistema operativo
 
-Working baseline:
+Di lavoro configurazione base:
 - **Proxmox VE 9.2** sui due compute node;
 - QNODE su Debian 13 stabile;
 - guest Debian 13;
 - container OCI/system containers solo dove utili.
 
-Proxmox VE 9.2, rilasciato nel maggio 2026, è basato su Debian 13.5 e include HA, KVM/LXC, ZFS e networking/SDN.
+Proxmox VE 9.2, rilasciato nel maggio 2026, è basato su Debian 13.5 e include HA, KVM/LXC, ZFS e netdi lavoro/SDN.
 
 Debian stable al 18/09/2026 è la serie **13 Trixie**, point release corrente 13.7.
 
-### Perché virtualizzazione, ma non Kubernetes baseline
+### Perché virtualizzazione, ma non Kubernetes configurazione base
 
 VM/LXC separano:
 
@@ -895,7 +895,7 @@ Per il numero di servizi previsto:
 
 sono sufficienti e riducono failure modes operativi.
 
-## 29. Workload placement
+## 29. Distribuzione dei carichi applicativi
 
 ### VM/guest DB
 - PostgreSQL primary/replica;
@@ -904,7 +904,7 @@ sono sufficienti e riducono failure modes operativi.
 
 ### APP
 - API;
-- scheduler;
+- pianificatore;
 - workers;
 - Stripe integration;
 - retail correlation;
@@ -936,17 +936,17 @@ Eseguire almeno due istanze stateless quando il servizio è P0/P1.
 
 Il forecast può essere spento senza compromettere produzione/safety.
 
-## 30. Database baseline
+## 30. Database della configurazione base
 
 **PostgreSQL è il database transazionale centrale.**
 
-Versione working:
+Versione di lavoro:
 - PostgreSQL 18 current supported series;
 - al 13/08/2026 la release pubblicata è 18.6.
 
 PostgreSQL contiene:
 
-- master data;
+- dati anagrafici principali;
 - inventory;
 - lots;
 - orders;
@@ -961,13 +961,13 @@ PostgreSQL contiene:
 
 ### Telemetry
 
-Baseline iniziale:
+Configurazione base iniziale:
 - PostgreSQL partitioned tables;
 - retention policy;
 - downsampling/materialized aggregates;
 - cold archive su file Parquet/object storage.
 
-TimescaleDB è opzionale dopo benchmark e verifica compatibilità.
+TimescaleDB è opzionale dopo riferimento di confronto e verifica compatibilità.
 
 Non introdurre un secondo database time-series obbligatorio se PostgreSQL sostiene il carico reale.
 
@@ -981,7 +981,7 @@ Preferenza:
 
 ## 31. PostgreSQL HA
 
-Working target:
+Di lavoro target:
 
 - primary su NODE-A;
 - synchronous/near-synchronous replica su NODE-B per transazioni critiche;
@@ -999,13 +999,13 @@ RPO target:
 
 RTO target:
 - checkout/ordini: <2–5 min;
-- scheduler: <5 min;
+- pianificatore: <5 min;
 - dashboard: <15 min;
 - analytics storiche: <4 h.
 
-## 32. Event bus
+## 32. Bus eventi
 
-Working:
+Di lavoro:
 - **NATS + JetStream**.
 
 Perché:
@@ -1062,7 +1062,7 @@ Regola:
 OT ingress:
 - OPC UA;
 - Modbus TCP/RTU;
-- vendor REST;
+- fornitore REST;
 - serial gateway.
 
 Ogni adapter ha:
@@ -1115,7 +1115,7 @@ Per macchine safety-critical, il controller locale può rifiutare un comando cen
 - AsyncAPI/schema registry in repository;
 - JSON Schema o Protobuf per eventi stabili.
 
-Naming working:
+Naming di lavoro:
 
 `domain.entity.event.v1`
 
@@ -1140,7 +1140,7 @@ Tabella/servizio centrale:
 
 - device_id;
 - asset_id;
-- vendor;
+- fornitore;
 - model;
 - serial;
 - protocol;
@@ -1162,9 +1162,9 @@ Onboarding:
 6. simulator test;
 7. production enable.
 
-## 37. Scheduler architecture
+## 37. Pianificatore architecture
 
-Scheduler custom, non ERP esterno.
+Pianificatore custom, non ERP esterno.
 
 Componenti:
 
@@ -1204,19 +1204,19 @@ Non ricalcolare l'intera azienda a ogni sensor sample.
 
 ## 38. Forecasting stack
 
-Baseline:
+Configurazione base:
 - Python service o libreria equivalente;
 - feature pipeline versionata;
 - model registry semplice nel repository/DB;
 - metrics per SKU/crop.
 
 Prima modelli:
-- seasonal baseline;
+- seasonal configurazione base;
 - moving/exp smoothing;
 - gradient boosting/regression dove migliora;
 - quantile intervals.
 
-Non partire da deep learning se non supera baseline.
+Non partire da deep learning se non supera configurazione base.
 
 Demand metrics:
 - WAPE;
@@ -1233,7 +1233,7 @@ Automatic execution consentita solo entro guardrail deterministici.
 
 ## 39. Identity e RBAC
 
-Working:
+Di lavoro:
 - Keycloak/OIDC class per persone;
 - service accounts separate per macchine;
 - MFA admin;
@@ -1255,7 +1255,7 @@ Non condividere account tra operatori.
 
 ## 40. Secrets
 
-Baseline:
+Configurazione base:
 - niente secret in Git;
 - SOPS/age o secret manager equivalente;
 - rotation;
@@ -1287,7 +1287,7 @@ Inter-VLAN:
 Server interconnect:
 - 10 GbE preferito tra compute/backup.
 
-Benchmark networking:
+Riferimento di confronto netdi lavoro:
 - UniFi Pro Max 24: €405 EU Store;
 - Pro XG 10 PoE: €629 EU Store, 10×10GbE + 2×SFP+;
 - DAC 10G da €12;
@@ -1297,13 +1297,13 @@ La scelta switch finale dipende dalla topologia totale, non dalla sola BOM-030.
 
 ## 42. Remote access
 
-Baseline:
+Configurazione base:
 - VPN WireGuard/site VPN;
 - MFA;
 - bastion/admin path;
 - no exposed Proxmox/Postgres/PLC admin UI on public Internet.
 
-Vendor access:
+Fornitore access:
 - disabled by default;
 - time-limited;
 - logged;
@@ -1311,7 +1311,7 @@ Vendor access:
 
 ## 43. Observability
 
-Working stack:
+Di lavoro stack:
 - Prometheus;
 - Grafana;
 - Loki;
@@ -1329,7 +1329,7 @@ Dashboard principali:
 - queue;
 - device health;
 - integration;
-- scheduler;
+- pianificatore;
 - payments;
 - cold chain;
 - BESS.
@@ -1366,7 +1366,7 @@ Retention da politica aziendale/privacy e requisiti applicabili.
 
 ## 45. Backup strategy
 
-Regola **3-2-1** working:
+Regola **3-2-1** di lavoro:
 
 1. dato primario;
 2. backup locale separato;
@@ -1403,7 +1403,7 @@ Candidate:
 - restic/rclone class for encrypted offsite files.
 
 Proxmox Backup Server subscription è opzionale:
-- Community benchmark €560/year per server;
+- Community riferimento di confronto €560/year per server;
 - Basic €1.120/year;
 - software resta open source.
 
@@ -1411,7 +1411,7 @@ Proxmox Backup Server subscription è opzionale:
 
 PVE può funzionare senza subscription.
 
-Per produzione working:
+Per produzione di lavoro:
 - Basic o Standard da valutare.
 
 Prezzi ufficiali correnti:
@@ -1428,7 +1428,7 @@ Non contabilizzare automaticamente Premium.
 
 ## 48. BESS integration
 
-**Nessuna UPS locale baseline.**
+**Nessuna UPS locale configurazione base.**
 
 Rack/server/network sono P0/P1 sul BESS da 30 kW.
 
@@ -1497,7 +1497,7 @@ Nessun test distruttivo direttamente su produzione.
 
 ## 51. Deployment pipeline
 
-Working:
+Di lavoro:
 - Git;
 - CI tests;
 - image build;
@@ -1512,7 +1512,7 @@ Database:
 - backup before risky migration;
 - no automatic destructive schema migration.
 
-## 52. Cybersecurity baseline
+## 52. Cybersecurity configurazione base
 
 - inventory;
 - patch cadence;
@@ -1534,20 +1534,20 @@ No direct inbound Internet to OT.
 
 ## 53. SLO / RPO / RTO
 
-Working SLO:
+Di lavoro SLO:
 
 | Servizio | Availability target | RPO | RTO |
 |---|---:|---:|---:|
 | payment/order | 99,9% | ~0–5 s | <2–5 min |
 | core inventory/lot | 99,9% | <30 s | <5 min |
-| scheduler | 99,5% | <1 min | <5 min |
+| pianificatore | 99,5% | <1 min | <5 min |
 | OT event ingress | 99,5% | edge-buffered | <10 min |
 | dashboards | 99% | n/a | <15 min |
 | analytics/forecast | 95% | <24 h | <4 h |
 
-Questi sono target di progetto, non SLA vendor.
+Questi sono target di progetto, non SLA fornitore.
 
-## 54. Disaster scenarios
+## 54. Scenari di disastro
 
 ### NODE-A dies
 - NODE-B takes core workloads;
@@ -1564,7 +1564,7 @@ Questi sono target di progetto, non SLA vendor.
 ### Internet dies
 - local production continues;
 - Stripe transactions follow tested offline policy;
-- vendor clouds unavailable;
+- fornitore clouds unavailable;
 - events buffered.
 
 ### NAS/backup dies
@@ -1603,7 +1603,7 @@ Questi sono target di progetto, non SLA vendor.
 17. offsite restore;
 18. Keycloak/identity outage;
 19. expired certificate;
-20. scheduler worker failure;
+20. pianificatore worker failure;
 21. forecasting unavailable;
 22. clock drift;
 23. RBAC unauthorized action;
@@ -1612,7 +1612,7 @@ Questi sono target di progetto, non SLA vendor.
 
 ## 56. BOM-030 decision
 
-**Working baseline:**
+**Di lavoro configurazione base:**
 - 2 server-grade compute nodes;
 - 1 lightweight witness/edge node;
 - 1 physically separate backup target;
@@ -1627,7 +1627,7 @@ Questi sono target di progetto, non SLA vendor.
 - Git/CI;
 - BESS 30 kW as shared backup.
 
-**Explicitly not baseline:**
+**Explicitly not configurazione base:**
 - Kubernetes;
 - Ceph;
 - SAN;
@@ -1636,7 +1636,7 @@ Questi sono target di progetto, non SLA vendor.
 - cloud-only database;
 - proprietary ERP as system of record.
 
-## 57. Gate di acquisto
+## 57. Verifica prima dell'acquisto
 
 Prima dell'ordine:
 
