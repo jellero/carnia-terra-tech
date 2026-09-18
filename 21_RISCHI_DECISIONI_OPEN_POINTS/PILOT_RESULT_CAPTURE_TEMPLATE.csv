@@ -1,0 +1,2 @@
+pilot_id,test_date,test_location,vendor,manufacturer,model,configuration,software_firmware,operator,test_case_id,test_case,planned_sample,actual_sample,ambient_conditions,load_or_sku,kpi_name,kpi_target,kpi_actual,kpi_unit,result,critical_event,interventions,downtime_min,energy_kwh,water_l,consumables_eur,vendor_demo_eur,rental_eur,freight_eur,temp_install_eur,integration_eur,lab_eur,internal_labour_eur,safety_eur,travel_eur,restoration_eur,total_pilot_cost_eur,raw_data_ref,evidence_ref,corrective_action,owner,due_date,notes
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
