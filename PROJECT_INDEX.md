@@ -481,15 +481,55 @@ Documenti:
 - `22_FONTI_NORME_PREVENTIVI/TECH_BARN_TRASFORMAZIONE_CONTO_TERZI_SOURCES.md`;
 - `15_MERCATO_E_VENDITE/DOMANDA_LOCALE_CENTRO_TRASFORMAZIONE.md`.
 
-## 15. Metodo BOM obbligatorio
+## 15. BOM-031 — sostenibilità personale e lancio operativo
+
+**SVILUPPATA / ORGANICO E COSTO DA VALIDARE CON CPL UDINE, VOLUMI REALI E 90 GIORNI DI DATI.**
+
+Working operating model:
+- impianto 24/7 senza presenza umana 24/7;
+- owner/operations-tech non come manodopera gratuita né reperibile permanente;
+- 1 crop & production lead;
+- 2 farm operations polyvalent come target L1;
+- 0–3 OTD equivalenti per picchi;
+- BOM-029 separa 2–3 operatori/process day quando attiva;
+- ogni skill critica ha primary + backup + escalation esterna;
+- ferie testate con almeno 10 giorni lavorativi consecutivi di assenza del primary;
+- sick-day drill e owner-absence drill;
+- P1/P2/P3 alerting per evitare rumore notturno;
+- manutenzione L1 interna, L2 ibrida, L3 esterna;
+- server centrale pianifica workload e non consente double-booking delle persone;
+- ramp-up D-90 / 0–30 / 31–60 / 61–90 / 91–180 giorni;
+- add-headcount trigger da workload, overtime, PM backlog, ferie e qualità, non da impressione.
+
+Costo lavoro:
+- minimi nazionali dal 01/06/2026: Area 1 €1.532,999/mese; Area 2 €1.398,093; Area 3 €1.042,434;
+- aumento rinnovo: +3,4% dal 01/06/2026 e +1,7% dal 01/01/2027;
+- INPS OTI generalità aziende agricole 2026: contributi a carico azienda 33,953% nella tabella ufficiale;
+- floor illustrativo con 14 mensilità + contributi + TFR semplice: ~€30,3k Area 1, ~€27,7k Area 2, ~€20,6k Area 3;
+- questi valori NON sono budget: il costo reale richiede CPL Udine/provincia, inquadramento, bilateralità, overtime/festivi, DPI, formazione, medical, payroll e altri elementi.
+
+Labour-market guardrail:
+- Excelsior FVG 2026 mostra difficoltà di reperimento elevate in diversi profili;
+- hiring core anticipato e seasonal pool prequalificato;
+- nessuna dipendenza da assunzioni last-minute.
+
+Documenti:
+- `17_SOSTENIBILITA_PERSONALE_E_LANCIO/README.md`;
+- `14_ORGANIZZAZIONE_DEL_LAVORO/WORKFORCE_SKILL_MATRIX.md`;
+- `17_SOSTENIBILITA_PERSONALE_E_LANCIO/LAUNCH_RAMP_UP_30_60_90_180.md`;
+- `17_SOSTENIBILITA_PERSONALE_E_LANCIO/RFQ_SERVIZI_OPERATIVI_MANUTENZIONE.md`;
+- `19_BOM_PRODOTTI_FORNITORI/ORGANIZZAZIONE_PERSONALE_LANCIO.md`;
+- `22_FONTI_NORME_PREVENTIVI/ORGANIZZAZIONE_PERSONALE_LANCIO_SOURCES.md`.
+
+## 16. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
 
-## 16. Stato attuale dei grandi blocchi
+## 17. Stato attuale dei grandi blocchi
 
-Restano nel perimetro sostenibilità personale/lancio operativo, R&D robotica/laser e i package tecnici trasversali ancora aperti già indicati nei rispettivi punti.
+Restano nel perimetro R&D robotica/laser e i package tecnici trasversali ancora aperti: trattamento/disinfezione acqua, drenaggio/riuso, EMS e connessione elettrica.
 
-## 17. Sequenza BOM
+## 18. Sequenza BOM
 
 ### Già strutturate
 
@@ -515,20 +555,22 @@ Restano nel perimetro sostenibilità personale/lancio operativo, R&D robotica/la
 - BOM-027 fattoria didattica;
 - BOM-028 spaccio automatico self-service 24/7;
 - BOM-029 centro trasformazione conto terzi;
-- **BOM-030 server centrale di orchestrazione**.
+- BOM-030 server centrale di orchestrazione;
+- **BOM-031 sostenibilità personale e lancio operativo**.
 
 ### Prossimo package
 
-**BOM-031 — sostenibilità personale e lancio operativo:** organico minimo, skill matrix, turni, reperibilità, ferie/copertura, manutenzione interna vs esterna, escalation fornitori, SOP operative, carico umano, automazione utile, ramp-up 30/60/90/180 giorni, formazione, KPI di lavoro, costo del personale e guardrail di sostenibilità.
+**BOM-032 — trattamento e disinfezione acqua:** qualità acqua sorgente, pretrattamento, filtrazione fine, UV/ozono/cloro/perossido secondo rischio, ricircolo, biofilm, sensori ORP/UVT/conducibilità, dosing, bypass, CIP/sanificazione, sicurezza chimica, monitoraggio microbiologico, ridondanza, OPEX e costo.
 
 ### Coda successiva
 
-1. sostenibilità personale e lancio operativo: carico umano, turni, reperibilità, ferie, supporto esterno, SOP e ramp-up;
-2. chiusura dei package tecnici trasversali ancora aperti: trattamento/disinfezione acqua, drenaggio/riuso, EMS e connessione elettrica.
+1. trattamento/disinfezione acqua;
+2. drenaggio/riuso;
+3. EMS e connessione elettrica.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
 
-## 18. Progetto R&S correlato UE — NON CORE
+## 19. Progetto R&S correlato UE — NON CORE
 
 Directory: `RND_CORRELATO_EU/`.
 
