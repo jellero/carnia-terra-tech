@@ -619,6 +619,10 @@ La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser se
 - BOM-033 drenaggio, raccolta e riuso acqua;
 - **BOM-034 EMS, BESS e connessione elettrica**.
 
+Artefatti closure avviati:
+- `06_ENERGIA_ELETTRICA_FV/MASTER_LOAD_REGISTER.md`;
+- `06_ENERGIA_ELETTRICA_FV/MASTER_LOAD_REGISTER.csv`.
+
 ### Prossima fase — validation / closure sprint
 
 Non viene aperta una BOM-035 finché non emerge un sottosistema fisico realmente scoperto.
@@ -627,7 +631,7 @@ Priorità di chiusura:
 
 1. lotto/masterplan/geotecnica e layout definitivo;
 2. crop card e carichi termici/idrici/elettrici reali;
-3. master load register + profilo 1–15 min e P0/P1;
+3. master load register + profilo 1–15 min e P0/P1 — **v0.1 strutturato il 18/09/2026; P0/P1 reali e transitori da misura/RFQ**;
 4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni;
 5. RFQ installati per i package ancora a prezzo `RFQ`;
 6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT;
