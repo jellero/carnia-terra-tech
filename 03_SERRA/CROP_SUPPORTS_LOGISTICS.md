@@ -1,6 +1,6 @@
 # Carnia TerraTech — Crop Supports & Internal Logistics
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Stato:** `REQUISITI DEFINITI / BOM-006 SVILUPPATA / QUANTITÀ DA CROP CARD E LAYOUT`.
 
 ## 1. Obiettivo
@@ -64,7 +64,14 @@ La canalina deve:
 
 Confrontare almeno gutter metallico continuo e sistema plastico/modulare tecnicamente idoneo. La scelta dipende da carico, durata, numero giunti, pulizia, pendenza, costo installato e TCO.
 
-Il drenaggio si collega al punto 04 per volume, EC, pH, temperatura, eventuale trattamento e possibile futuro recupero. Nessun riuso automatico viene previsto prima di validazione agronomica e fitosanitaria.
+Il drenaggio si collega a **BOM-033**. C1 e C2 devono restare misurabili separatamente almeno fino al punto di classificazione: volume, EC, pH e temperatura per comparto prima del common return. Nessun riuso automatico è previsto prima del pilot 30–60 giorni, della verifica Na/Cl e della validazione fitosanitaria.
+
+Regola layout BOM-033:
+- no scarico sul pavimento;
+- no common header prima della misura C1/C2 se evitabile;
+- clean-out e punti di campionamento accessibili;
+- D1 crop drain separato da D3 floor wash e D4 stormwater;
+- route HOLD per flush/fine ciclo/anomalie.
 
 ## 5. Leafy e baby leaf
 
@@ -140,5 +147,7 @@ Supporti e drenaggio passano a `VALIDATO` solo con:
 - scelta slab/substrato;
 - shop drawing gutter/supporti;
 - pendenze e collettore drenaggio;
+- interfaccia BOM-033 con misura separata C1/C2, HOLD e sample point;
+- verifica assenza cross-connect con floor wash/stormwater;
 - preventivo completo;
 - piano manutenzione, ricambi e fine ciclo.
