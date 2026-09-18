@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 09: Tech Barn e post-raccolta
 
-**Aggiornato:** 17 settembre 2026  
-**Stato:** ARCHITETTURA CELLE + PACKAGING STRUTTURATA / BOM-024…025 SVILUPPATE / CARICHI REALI, SKU E RFQ BLOCCANTI.
+**Aggiornato:** 18 settembre 2026  
+**Stato:** ARCHITETTURA CELLE + PACKAGING + BOM-029 TRASFORMAZIONE CONTO TERZI STRUTTURATE / BOM-024…025 + BOM-029 SVILUPPATE / DOMANDA LOCALE, CARICHI, SKU E RFQ BLOCCANTI.
 
 ## 1. Ruolo del blocco
 
@@ -119,13 +119,13 @@ Per ogni cella:
 - fault compressore/fan/defrost;
 - energy meter;
 - storico locale + supervisione edge;
-- UPS per controller/logger/rete, non per il compressore.
+- continuità controller/logger/rete dal BESS aziendale 30 kW; nessuna UPS locale baseline.
 
 Il frigorifero continua a funzionare senza cloud.
 
 ## 10. Emergenza
 
-Il backup elettrico dei compressori è a carico di BOM energia/continuità, non dell'UPS IT.
+Il backup elettrico dei compressori e dei controlli è a carico del BESS/EMS aziendale; nessuna UPS locale baseline.
 
 Procedure:
 
@@ -157,11 +157,50 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/TECH_BARN_RACCOLTA_PACKAGING.md` — BOM-025;
 - `22_FONTI_NORME_PREVENTIVI/TECH_BARN_RACCOLTA_PACKAGING_SOURCES.md`.
 
-## 12. Package
+## 12. Centro trasformazione conto terzi — BOM-029
+
+**Sviluppato come business unit futura, non ancora CAPEX core.**
+
+Working candidate:
+- S2: 600–700 kg/h raw fruit;
+- juice ~420–525 L/h teorici secondo resa;
+- press 100P2/EBP500 class;
+- thermal 500–750 L/h;
+- bag-in-box baseline;
+- jam/compote 100–200 L/batch class;
+- semi-CIP minimo;
+- tracciabilità sul server centrale;
+- building/utility layout dirty -> process -> high-hygiene fill -> finished goods.
+
+Demand gate:
+- 30–50 interviste;
+- >=3 anchor customers;
+- >=150 t/year credible aggregate volume per S2;
+- willingness-to-pay validata;
+- 3 RFQ comparabili.
+
+Benchmark:
+- FVG apples 2024 ~68.735 t regional proxy, non domanda Carnia;
+- BIB 3 L 100 pcs ~€114,75;
+- BIB 5 L 100 pcs ~€127,05;
+- ETI 10H labeler ~€3.754,10;
+- high-Brix refractometer ~€21,31;
+- main process equipment = RFQ OEM.
+
+Documenti:
+- `CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`;
+- `RFQ_CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`;
+- `19_BOM_PRODOTTI_FORNITORI/TECH_BARN_TRASFORMAZIONE_CONTO_TERZI.md`;
+- `22_FONTI_NORME_PREVENTIVI/TECH_BARN_TRASFORMAZIONE_CONTO_TERZI_SOURCES.md`;
+- `15_MERCATO_E_VENDITE/DOMANDA_LOCALE_CENTRO_TRASFORMAZIONE.md`.
+
+## 13. Package
 
 - COLD_ROOMS_ARCHITECTURE.md;
 - RFQ_COLD_ROOMS.md;
-- 19_BOM_PRODOTTI_FORNITORI/TECH_BARN_CELLE_FRIGORIFERE.md — BOM-024;
-- 22_FONTI_NORME_PREVENTIVI/TECH_BARN_CELLE_FRIGORIFERE_SOURCES.md.
-
-Modulo futuro separato: CENTRO_TRASFORMAZIONE_CONTO_TERZI.md.
+- HARVEST_PACKAGING_ARCHITECTURE.md;
+- RFQ_HARVEST_PACKAGING.md;
+- CENTRO_TRASFORMAZIONE_CONTO_TERZI.md;
+- RFQ_CENTRO_TRASFORMAZIONE_CONTO_TERZI.md;
+- BOM-024, BOM-025 e BOM-029 in `19_BOM_PRODOTTI_FORNITORI/`;
+- fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
