@@ -138,9 +138,27 @@ Do not size battery for:
 - full workshop;
 unless business case explicitly pays for it.
 
-## 8. No local UPS
+## 8. Ride-through P0
 
-`EN-UPS = 0` baseline.
+Non sono ammesse UPS consumer distribuite senza governance.
+
+La baseline di confronto contiene tre architetture:
+
+- **A — BESS no-break:** P0 direttamente sul critical bus se il trasferimento misurato non causa reboot;
+- **B — BESS + ride-through P0 dedicato:** UPS online industriale/DC buffer professionale per PLC, rete, server e controlli realmente P0;
+- **C — equivalente professionale:** altra soluzione con failure mode, manutenzione e SAT espliciti.
+
+Voce:
+`EN-P0-RIDE = 0–1 package / CONDITIONAL / RFQ`.
+
+La decisione deriva da:
+- transfer reale;
+- affidabilità;
+- autonomia necessaria;
+- manutenzione;
+- batterie/ricambi;
+- efficienza;
+- TCO 8–10 anni.
 
 Acceptance gate:
 - measured grid-loss event;
@@ -148,7 +166,7 @@ Acceptance gate:
 
 If a proposed BESS cannot meet this:
 - reject or redesign transfer;
-- do not quietly add distributed UPS units.
+- non aggiungere UPS distribuite in modo implicito; se serve ride-through, inserirlo esplicitamente nel BOM e nel SAT.
 
 ## 9. Battery reserve
 
