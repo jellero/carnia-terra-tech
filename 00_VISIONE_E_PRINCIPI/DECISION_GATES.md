@@ -1,6 +1,6 @@
 # Carnia TerraTech — Decision Gates
 
-**Aggiornato:** 17 settembre 2026  
+**Aggiornato:** 18 settembre 2026  
 **Scopo:** impedire che idee interessanti diventino acquisti o lavori prima di essere tecnicamente, economicamente e operativamente mature.
 
 ## Stato standard di ogni elemento
@@ -19,6 +19,8 @@ Ogni oggetto, impianto o modulo deve avere uno dei seguenti stati:
 - `OPERATIVO` — inserito nella normale gestione e manutenzione.
 
 ## Gate G0 — ammissione nel progetto
+
+Principio prioritario: una voce entra nel core se riduce un rischio materiale o abilita una funzione necessaria.
 
 Per entrare nel perimetro deve essere chiaro almeno uno dei benefici:
 
@@ -48,6 +50,21 @@ Per passare da `IDEA` a `REQUISITO` servono:
 - fase temporale prevista.
 
 Non serve ancora scegliere una marca.
+
+## Gate G1A — evidenza di sito
+
+Per terreno, fondazioni, drenaggi, viabilità, acqua e layout non basta una compatibilità teorica.
+
+Prima della progettazione esecutiva devono esistere, secondo il livello necessario:
+- rilievo reale;
+- campionamento distribuito del terreno;
+- prove di drenaggio/infiltrazione;
+- anomalie mappate;
+- indagini geotecniche professionali per i parametri strutturali;
+- analisi acqua;
+- masterplan di prova sul lotto.
+
+Riferimento: `../01_MASTERPLAN_E_TERRENO/PIANO_CAMPIONAMENTO_TERRENO_E_DRENAGGIO.md`.
 
 ## Gate G2 — candidato reale
 
@@ -172,7 +189,9 @@ Prima dello stato `OPERATIVO` devono essere completati:
 
 ## Regola di blocco
 
-Se emerge un rischio che può cambiare in modo sostanziale sicurezza, fattibilità, costo o compatibilità con contributi, lo stato non avanza finché il rischio non è chiuso o formalmente accettato.
+Se emerge un rischio che può cambiare in modo sostanziale sicurezza, fattibilità, costo, manutenzione, continuità o compatibilità con contributi, lo stato non avanza finché il rischio non è chiuso o formalmente accettato.
+
+Per il lotto, nessun rischio materiale di drenaggio/geotecnica/contaminazione viene accettato per sola convenienza di prezzo.
 
 ## Eccezioni
 
