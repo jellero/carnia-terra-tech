@@ -112,11 +112,18 @@ Il control plane comprende almeno:
 - prezzi;
 - slot;
 - stock;
+- smart crate;
+- smart cart;
+- ESL/e-paper;
 - Stripe;
+- paid-exit gate;
+- pick/return event;
 - vend;
 - refund;
 - temperatura;
-- scadenze.
+- scadenze;
+- customer confirmation;
+- reconciliation sensor fusion.
 
 ### Personale
 - calendario;
@@ -161,8 +168,17 @@ Esempi:
 - lot_moved;
 - cold_room_alarm;
 - stock_loaded;
+- smart_crate_mass_changed;
+- smart_cart_mass_changed;
+- retail_pick_detected;
+- retail_return_detected;
+- retail_event_confirmed;
+- customer_confirmation_requested;
+- esl_price_updated;
 - vending_sale_created;
 - stripe_payment_authorized;
+- cart_reconciled;
+- exit_gate_authorized;
 - vend_confirmed;
 - refund_created;
 - worker_task_assigned;
@@ -424,7 +440,80 @@ Tutte le operazioni esterne devono usare:
 - retry controllato;
 - state machine esplicita.
 
-## 13. Stripe Terminal unattended
+## 13. Frictionless retail event correlation
+
+Per `SMART_CRATE_SMART_CART_ARCHITECTURE.md` il server centrale è il motore di correlazione degli eventi retail.
+
+Input tipici:
+
+- crate_id;
+- SKU/lot della crate;
+- `Δmass_crate`;
+- cart_id/session_id;
+- `Δmass_cart`;
+- cart/crate proximity;
+- camera event;
+- timestamp;
+- confidence dei singoli sensori;
+- price snapshot.
+
+Il motore produce:
+
+- `ITEM_ADDED`;
+- `ITEM_REMOVED`;
+- `AMBIGUOUS_EVENT`;
+- `CUSTOMER_CONFIRMATION_REQUIRED`;
+- `SHRINK_ANOMALY`.
+
+Regole:
+
+- nessun addebito da un singolo sensore debole;
+- delta peso negativo/positivo devono essere correlati quando disponibili;
+- price snapshot immutabile nell'evento acquisto;
+- ritorni devono invertire correttamente quantità/prezzo;
+- eventi duplicati devono essere idempotenti;
+- l'inventario si aggiorna da eventi confermati, non dal solo video.
+
+State machine cart:
+
+`OPEN -> SHOPPING -> RECONCILING -> READY_TO_PAY -> PAYMENT_PENDING -> PAID -> EXIT_AUTHORIZED -> CLOSED`
+
+Il gate riceve soltanto uno stato autorizzativo, non logica commerciale completa.
+
+### Metrology boundary
+
+Il server può leggere sensori commodity, ma deve sapere quale sorgente è legalmente valida per il peso commerciale.
+
+Ogni measurement event deve avere:
+
+- `measurement_source`;
+- `legal_for_trade=true/false`;
+- `instrument_id`;
+- `verification/calibration state`;
+- `gross/tare/net`;
+- `unit`.
+
+Se il prodotto è venduto a peso e non esiste una misura legalmente valida, la sessione non può passare a `READY_TO_PAY` per quella riga.
+
+### Refill prediction
+
+Gli eventi di smart crate aggiungono dati ad alta frequenza:
+
+- pick rate;
+- return rate;
+- depletion rate;
+- near-stockout;
+- dwell/interest proxy;
+- stock discrepancy.
+
+Il server usa questi segnali per anticipare:
+- refill;
+- trasferimento da cella;
+- raccolta/pack;
+- markdown;
+- staff task.
+
+## 14. Stripe Terminal unattended
 
 Per lo spaccio 24/7 realmente non presidiato, il candidato Stripe Terminal è **Verifone UX700**.
 
@@ -442,7 +531,7 @@ La compatibilità esatta tra modalità offline, server-driven e configurazione i
 
 Stripe è il payment stack unico della baseline.
 
-## 14. Integrazione vending
+## 15. Integrazione vending
 
 Preferenza:
 - macchina con API/SDK/protocollo documentato;
@@ -465,7 +554,7 @@ Il server deve sapere la differenza tra:
 - comando erogazione inviato;
 - erogazione fisicamente confermata.
 
-## 15. BESS e continuità
+## 16. BESS e continuità
 
 Il progetto dispone di backup a batterie con **30 kW di potenza**.
 
@@ -508,7 +597,7 @@ Il server deve classificare i carichi:
 
 Con BESS attivo, lo scheduler può ridurre o rimandare P3 prima di sacrificare P0/P1.
 
-## 16. Database
+## 17. Database
 
 Architettura logica consigliata:
 
@@ -526,7 +615,7 @@ Preferenza:
 - contratti API chiari;
 - event-driven solo dove produce valore.
 
-## 17. API e integrazioni
+## 18. API e integrazioni
 
 Ogni integrazione deve avere:
 
@@ -551,7 +640,7 @@ Classi:
 - Stripe webhooks;
 - file/CSV solo come fallback.
 
-## 18. Offline/edge
+## 19. Offline/edge
 
 Ogni sottosistema critico deve poter degradare con ordine.
 
@@ -569,7 +658,7 @@ Non consentire:
 - doppio task;
 - replay non idempotente.
 
-## 19. Human interface
+## 20. Human interface
 
 Dashboard unica con viste per ruolo:
 
@@ -593,7 +682,7 @@ La UI mostra:
 Principio:
 - mostrare eccezioni prima dei grafici decorativi.
 
-## 20. Audit e tracciabilità
+## 21. Audit e tracciabilità
 
 Ogni cambio manuale rilevante deve avere:
 
@@ -612,7 +701,7 @@ Per task automatici:
 
 Forecast e AI non devono modificare silenziosamente vincoli safety/HACCP.
 
-## 21. AI/forecast governance
+## 22. AI/forecast governance
 
 Distinguere:
 
@@ -630,7 +719,7 @@ Ogni modello deve avere:
 
 Azioni ad alto impatto richiedono regole deterministicamente verificabili anche se suggerite da AI.
 
-## 22. Security
+## 23. Security
 
 Baseline:
 
@@ -649,7 +738,7 @@ Baseline:
 
 Il server non espone direttamente PLC/OT su Internet.
 
-## 23. Observability
+## 24. Observability
 
 Metriche:
 - uptime;
@@ -666,7 +755,7 @@ Metriche:
 
 Alert con severity e owner.
 
-## 24. Failure modes
+## 25. Failure modes
 
 | Failure | Comportamento |
 |---|---|
@@ -681,7 +770,7 @@ Alert con severity e owner.
 | BESS low SOC | load shedding P3/P2 secondo policy |
 | clock drift | alert + reject critical ordering if timestamp integrity lost |
 
-## 25. KPI
+## 26. KPI
 
 - forecast WAPE/MAE per SKU;
 - stockout rate;
@@ -699,7 +788,7 @@ Alert con severity e owner.
 - maintenance MTBF/MTTR;
 - payment-vend reconciliation.
 
-## 26. Gate successivo
+## 27. Gate successivo
 
 Da sviluppare come package dedicato:
 
