@@ -64,7 +64,7 @@ Se il layout introduce tavoli/attrezzature finalizzati al consumo sul posto, ver
 
 ### Evoluzione agrituristica opzionale
 
-È stato separato un percorso futuro di **ristoro agrituristico light a spuntini non cucinati**, documentato in `AGRITURISMO_SPUNTINI_EVOLUTION.md`.
+È stato separato un **piano extra autonomo** di ristoro agrituristico evolutivo, documentato in `../EXTRA_AGRITURISMO_EVOLUTIVO/README.md`.
 
 Questo percorso:
 - non modifica la baseline unattended BOM-028;
