@@ -1,7 +1,7 @@
-# Validation / closure dashboard — Carnia TerraTech
+# Cruscotto di validazione e chiusura — Carnia TerraTech
 
 **Aggiornato:** 18 settembre 2026  
-**Stato:** `MASTER STATUS / DOCUMENTAZIONE STRUTTURATA / ESECUZIONE REALE ANCORA DA DATI-SITO-RFQ-PILOT-SAT`
+**Stato:** `STATO GENERALE / DOCUMENTAZIONE STRUTTURATA / ESECUZIONE REALE ANCORA DA DATI-SITO-RFQ-PROVE-SAT`
 
 ## 1. Scopo
 
@@ -11,46 +11,46 @@ Questo file è il punto unico per capire:
 - cosa resta bloccato;
 - quale evidenza sblocca il passo successivo.
 
-Non sostituisce i documenti tecnici: li orchestra.
+Non sostituisce i documenti tecnici: li coordina.
 
-## 2. Stato closure 1–8
+## 2. Stato della chiusura 1–8
 
 | # | Blocco | Stato | Evidenza già pronta | Blocco reale |
 |---:|---|---|---|---|
-| 1 | lotto/masterplan/geotecnica/layout | STRUCTURED / EXECUTION BLOCKED | `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/01_TERRENO_E_MASTERPLAN.md` + criteri punti 01/03 | lotto reale, titolo, rilievo, geotecnica, accessi, utilities |
-| 2 | crop card + carichi reali acqua/termico/elettrico | STRUCTURED / EXECUTION BLOCKED | `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/02_AGRONOMIA_P1.md` + metodi/BOM di dominio | crop card finali, stagione, meteo sito, analisi acqua, layout, misure reali |
-| 3 | master load register 1–15 min + P0/P1 | STRUCTURED | MASTER_LOAD_REGISTER, measurement plan, vendor snapshot, capture CSV | misure P0/P1 e transitori + OEM/RFQ mancanti |
-| 4 | DSO/TICA BT/MT import/export/protezioni | STRUCTURED | DSO readiness, data request, BT/MT matrix, grid RFQ, cost scenarios | lotto, DSO, POD, potenze finali, preventivo reale |
-| 5 | installed RFQ / procurement | STRUCTURED | PROCUREMENT_CLOSURE_REGISTER + classi Q1–Q5 | RFQ reali comparabili, layout/carichi dove necessari |
-| 6 | pilot obbligatori | STRUCTURED | MASTER_PILOT_REGISTER, result/cost template, decision record | vendor demo, sito reale, SKU/crop/impianto reale |
-| 7 | commissioning / end-to-end SAT | STRUCTURED | MASTER_COMMISSIONING_ACCEPTANCE + checklist | impianto installato e condizioni stagionali |
-| 8 | CAPEX/OPEX/cashflow/risk/decision gates | STRUCTURED | FINANCIAL_CLOSURE_CONTROL + DG0–DG8 | installed RFQ, contratti, actuals, concessioni/finanziamenti reali |
+| 1 | lotto/piano generale/geotecnica/disposizione | STRUTTURATO / ESECUZIONE BLOCCATA | `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/01_TERRENO_E_MASTERPLAN.md` + criteri punti 01/03 | lotto reale, titolo, rilievo, geotecnica, accessi, utenze |
+| 2 | schede colturali + carichi reali acqua/termico/elettrico | STRUTTURATO / ESECUZIONE BLOCCATA | `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/02_AGRONOMIA_P1.md` + metodi/BOM di dominio | schede colturali finali, stagione, meteo sito, analisi acqua, disposizione, misure reali |
+| 3 | registro generale dei carichi 1–15 min + P0/P1 | STRUTTURATO | `MASTER_LOAD_REGISTER`, piano di misura, quadro dati fornitori, CSV di raccolta dati | misure P0/P1 e transitori + dati costruttore/RFQ mancanti |
+| 4 | DSO/TICA BT/MT prelievo/immissione/protezioni | STRUTTURATO | preparazione DSO, richiesta dati, matrice BT/MT, RFQ connessione rete, scenari di costo | lotto, DSO, POD, potenze finali, preventivo reale |
+| 5 | preventivi installati / approvvigionamenti | STRUTTURATO | `PROCUREMENT_CLOSURE_REGISTER` + classi Q1–Q5 | RFQ reali comparabili, disposizione/carichi dove necessari |
+| 6 | prove pilota obbligatorie | STRUTTURATO | `MASTER_PILOT_REGISTER`, modello risultati/costi, verbale decisionale | dimostrazione fornitore, sito reale, prodotti/colture/impianto reale |
+| 7 | messa in servizio / SAT integrato | STRUTTURATO | `MASTER_COMMISSIONING_ACCEPTANCE` + lista di controllo | impianto installato e condizioni stagionali |
+| 8 | CAPEX/OPEX/flusso di cassa/rischi/passaggi decisionali | STRUTTURATO | `FINANCIAL_CLOSURE_CONTROL` + DG0–DG8 | preventivi installati, contratti, dati effettivi, concessioni/finanziamenti reali |
 
 ## 3. Ciò che è chiuso documentalmente
 
 Sono già disponibili:
-- BOM core 001–034;
-- fonti e benchmark per i principali package;
-- RFQ template per i package tecnici;
-- master load register;
-- load measurement plan;
-- vendor data snapshot;
-- DSO/TICA pre-application package;
-- procurement register;
-- pilot governance;
-- commissioning/SAT;
-- financial closure control;
-- master decision gates.
+- BOM principali 001–034;
+- fonti e riferimenti di confronto per i principali pacchetti;
+- modelli RFQ per i pacchetti tecnici;
+- registro generale dei carichi;
+- piano di misura dei carichi;
+- quadro dati fornitori;
+- pacchetto preliminare DSO/TICA;
+- registro approvvigionamenti;
+- governo delle prove pilota;
+- messa in servizio/SAT;
+- controllo di chiusura finanziaria;
+- passaggi decisionali generali.
 
-Quindi il problema non è più "manca un documento".
+Quindi il problema non è più “manca un documento”.
 
 Il problema è sostituire progressivamente:
 - `E0/E1` -> `E2/E3/E4/E5`;
-- benchmark -> RFQ;
+- riferimento di confronto -> RFQ;
 - RFQ -> contratto;
 - ipotesi -> misura;
-- pilot plan -> pilot evidence;
-- SAT plan -> SAT PASS.
+- piano prova pilota -> evidenza prova pilota;
+- piano SAT -> SAT superato.
 
 ## 4. Analisi problematiche e rischi
 
@@ -58,66 +58,75 @@ Riferimenti:
 - `ANALISI_PROBLEMATICHE_RISCHI.md`;
 - `ANALISI_PROBLEMATICHE_RISCHI.csv`.
 
-La lettura trasversale distingue **problematiche già presenti** da **rischi futuri**. Le problematiche oggi più bloccanti sono: chiusura finanziaria non ancora actual, lotto non validato, crop card P1 non congelate, major CAPEX ancora prevalentemente E0/E1, profilo P0/P1 non misurato, DSO/POD/BT-MT non determinati, pilot e SAT non eseguiti, OPEX non misurato e domanda P1 ancora da validare.
+La lettura trasversale distingue **problematiche già presenti** da **rischi futuri**. Le problematiche oggi più bloccanti sono:
+- chiusura finanziaria non ancora perfezionata;
+- lotto non validato;
+- schede colturali P1 non finalizzate;
+- CAPEX principale ancora prevalentemente E0/E1;
+- profilo P0/P1 non misurato;
+- DSO/POD/BT-MT non determinati;
+- prove pilota e SAT non eseguiti;
+- OPEX non misurato;
+- domanda P1 ancora da validare.
 
 Le concentrazioni di rischio principali sono:
 - finanza -> lotto -> RFQ;
-- lotto -> geotecnica/DSO/layout;
-- crop card -> acqua/termico/freddo/packaging;
-- load register -> BESS/DSO;
+- lotto -> geotecnica/DSO/disposizione;
+- schede colturali -> acqua/termico/freddo/confezionamento;
+- registro dei carichi -> BESS/DSO;
 - mercato -> P2;
-- integrazione -> go-live.
+- integrazione -> avvio operativo.
 
-Trigger di escalation immediata:
-- major package >20% sopra envelope;
-- installed forecast >€950k;
+Condizioni di escalation immediata:
+- pacchetto principale >20% sopra il budget di riferimento;
+- previsione di CAPEX installato >€950k;
 - uso della riserva operativa per CAPEX;
 - criticità urbanistica/geotecnica/idraulica del lotto;
 - DSO con MT/opere inattese;
-- carico P0/P1 oltre envelope BESS;
-- pilot critical FAIL;
-- reboot P0 in blackout;
-- failure food/cold/water safety;
+- carico P0/P1 oltre il dimensionamento di riferimento BESS;
+- prova pilota critica FALLITA;
+- riavvio P0 durante blackout;
+- guasto critico su sicurezza alimentare/catena del freddo/acqua;
 - scarico/riuso non autorizzato;
-- cambio materiale della configurazione vendor;
-- skill P0 dipendente da una sola persona.
+- modifica sostanziale della configurazione proposta dal fornitore;
+- competenza P0 dipendente da una sola persona.
 
-La severità indica la **conseguenza potenziale**; la probabilità resta `TBD` finché non esistono dati sito, misure, vendor evidence o actuals.
+La severità indica la **conseguenza potenziale**; la probabilità resta `DA DETERMINARE` finché non esistono dati di sito, misure, evidenze dei fornitori o dati effettivi.
 
 ## 5. Piano operativo P1 già collegato
 
-Il master operativo corrente è:
+Il piano operativo generale corrente è:
 - `20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/README.md`;
 - `00_FINANZA_E_CASSA.md`;
 - `01_TERRENO_E_MASTERPLAN.md`;
 - `02_AGRONOMIA_P1.md`.
 
-Questi documenti rendono eseguibili F0/F1 e preparano P1, ma non sostituiscono concessioni, lotto o crop card finali.
+Questi documenti rendono eseguibili F0/F1 e preparano P1, ma non sostituiscono concessioni, lotto o schede colturali finali.
 
-## 6. Prossime azioni che si possono fare prima del lotto
+## 6. Prossime azioni possibili prima del lotto
 
-### A. Budgetary RFQ
+### A. RFQ preliminari
 Aprire:
-1. BOM-034 BESS/PCS + rapid-switch / AC-coupled alternative;
-2. grid engineering budgetary RFQ;
+1. BOM-034 BESS/PCS + commutazione rapida / alternative accoppiate in AC;
+2. RFQ preliminare per progettazione connessione elettrica;
 3. BOM-019 inverter/FV;
 4. BOM-011 PDC;
 5. BOM-030 server;
 6. BOM-015 pompe/VFD;
-7. BOM-025 packaging bench/RFQ;
-8. BOM-024 cold room budgetary sizing;
-9. BOM-012 DryGair/boost;
-10. BOM-021 telescopico/demo.
+7. BOM-025 prova banco/RFQ confezionamento;
+8. BOM-024 dimensionamento preliminare celle frigorifere;
+9. BOM-012 DryGair/sistema di supporto;
+10. BOM-021 telescopico/dimostrazione.
 
 Stato offerta:
-`BUDGETARY / NOT FOR ORDER`.
+`PRELIMINARE / NON VALIDO PER ORDINE`.
 
-### B. Vendor demo
+### B. Dimostrazioni fornitori
 Possibili senza sito definitivo o con ambiente equivalente:
 - PIL-AMR;
 - PIL-PACK;
 - PIL-RETAIL;
-- evidence/demo BESS transfer architecture.
+- evidenze/dimostrazione dell'architettura di commutazione BESS.
 
 ### C. Finanza
 Chiudere evidenze di:
@@ -126,22 +135,22 @@ Chiudere evidenze di:
 - garanzia;
 - finanziamento;
 - linea IVA;
-- bridge;
+- finanziamento ponte;
 - riserva operativa.
 
-## 7. Azioni immediatamente dopo identificazione lotto
+## 7. Azioni immediatamente dopo l'identificazione del lotto
 
 Attivare in parallelo:
 
 ### Lotto
-- due diligence;
+- verifica preliminare;
 - rilievo;
 - geotecnica;
-- masterplan;
+- piano generale;
 - accessi;
 - drenaggi;
 - acqua;
-- utilities;
+- utenze;
 - neve/vento/meteo.
 
 ### Energia
@@ -149,38 +158,38 @@ Attivare in parallelo:
 - TICA;
 - BT/MT;
 - Ik;
-- import/export;
-- layout FV/BESS.
+- prelievo/immissione;
+- disposizione FV/BESS.
 
 ### Serra
 - struttura/fondazioni;
-- layout comparti;
+- disposizione comparti;
 - porte/corridoi;
 - HAF/fogging;
 - drenaggi.
 
-### Visitor/logistics
-- AMR path;
-- mower area;
-- didactic zoning;
-- parking/drop-off;
-- service access.
+### Visitatori/logistica
+- percorso AMR;
+- area robot tagliaerba;
+- zonizzazione didattica;
+- parcheggio/punto di discesa;
+- accesso tecnico.
 
-## 8. Azioni dopo crop card / processo reale
+## 8. Azioni dopo schede colturali / processo reale
 
-- Q irrigazione;
-- fertigation recipes;
-- drainage target;
-- thermal load;
-- climate/VPD;
-- humidity balance;
-- peak harvest kg/day;
-- cold-room pull-down;
-- packaging SKU;
-- retail SKU/temp;
-- labour/task model.
+- portate irrigazione;
+- ricette fertirrigazione;
+- obiettivo drenaggi;
+- carico termico;
+- clima/VPD;
+- bilancio umidità;
+- picco raccolta kg/giorno;
+- raffreddamento rapido celle;
+- prodotti/confezioni;
+- prodotti/temperature vendita;
+- modello lavoro/attività.
 
-Questi dati sostituiscono le classi di benchmark con dimensionamenti reali.
+Questi dati sostituiscono le classi di riferimento con dimensionamenti reali.
 
 ## 9. Dipendenze critiche
 
@@ -190,104 +199,104 @@ Questi dati sostituiscono le classi di benchmark con dimensionamenti reali.
 - drenaggi;
 - DSO;
 - FV;
-- BESS location;
-- visitor layout;
-- machine paths.
+- posizione BESS;
+- disposizione visitatori;
+- percorsi macchine.
 
-### Crop card sblocca
+### Schede colturali sbloccano
 - acqua;
 - fertirrigazione;
 - termico;
 - deumidificazione;
-- post-harvest;
-- packaging;
+- post-raccolta;
+- confezionamento;
 - OPEX.
 
-### Load register reale sblocca
+### Registro reale dei carichi sblocca
 - PCS;
-- BESS kWh;
-- critical bus;
-- DSO import power;
-- restart groups;
-- electrical CAPEX.
+- kWh BESS;
+- bus dei carichi critici;
+- potenza di prelievo DSO;
+- gruppi di riavvio;
+- CAPEX elettrico.
 
-### RFQ installed sblocca
+### Preventivi installati sbloccano
 - CAPEX validato;
-- funding schedule;
-- contract award;
-- procurement release.
+- calendario finanziario;
+- assegnazione contratto;
+- autorizzazione all'ordine.
 
-### Pilot PASS sblocca
+### Prova pilota superata sblocca
 - AMR;
-- retail automation;
-- drain reuse scaling;
-- mower;
-- chicken cleaning;
-- packaging automation.
+- automazione vendita;
+- espansione riuso drenaggi;
+- robot tagliaerba;
+- pulizia area galline;
+- automazione confezionamento.
 
-### SAT PASS sblocca
-- go-live;
-- acceptance payment;
-- warranty baseline;
-- operations handover.
+### SAT superato sblocca
+- avvio operativo;
+- pagamento di accettazione;
+- decorrenza garanzia;
+- passaggio alle operazioni.
 
-## 10. Hard stop conditions
+## 10. Condizioni di blocco
 
-Non procedere a ordine irreversibile se:
-- DG0 financial close non PASS;
+Non procedere a un ordine irreversibile se:
+- DG0 chiusura finanziaria non SUPERATO;
 - specifica tecnica non chiusa;
-- Q3 senza pilot PASS;
-- prezzo ancora solo benchmark su major package;
-- installed scope non separa posa/commissioning;
-- safety/regulatory blocker aperto;
-- operational reserve viene usata per coprire CAPEX;
-- configurazione offerta differisce materialmente dal design approvato.
+- Q3 senza prova pilota SUPERATA;
+- prezzo ancora solo di riferimento su un pacchetto principale;
+- perimetro installato non separa posa/messa in servizio;
+- blocco di sicurezza o normativo aperto;
+- riserva operativa usata per coprire CAPEX;
+- configurazione offerta materialmente diversa dal progetto approvato.
 
-## 11. Maturity ladder
+## 11. Scala di maturità
 
-Per ogni major package:
+Per ogni pacchetto principale:
 
-1. `DESIGN`
-2. `BENCHMARK`
-3. `BUDGETARY RFQ`
-4. `INSTALLED RFQ`
-5. `PILOT PASS` se richiesto
-6. `ORDER RELEASED`
-7. `INSTALLED`
-8. `SAT PASS`
-9. `ACTUAL COST/OPEX`
-10. `90-DAY REVIEW`
+1. `PROGETTO`
+2. `RIFERIMENTO`
+3. `RFQ PRELIMINARE`
+4. `RFQ INSTALLATO`
+5. `PROVA PILOTA SUPERATA` se richiesta
+6. `ORDINE AUTORIZZATO`
+7. `INSTALLATO`
+8. `SAT SUPERATO`
+9. `COSTO/OPEX EFFETTIVO`
+10. `REVISIONE A 90 GIORNI`
 
-## 12. Core documents
+## 12. Documenti principali
 
-Energy:
+Energia:
 - `06_ENERGIA_ELETTRICA_FV/MASTER_LOAD_REGISTER.md`
 - `06_ENERGIA_ELETTRICA_FV/LOAD_MEASUREMENT_AND_RFQ_PLAN.md`
 - `06_ENERGIA_ELETTRICA_FV/DSO_TICA_CONNECTION_READINESS.md`
 
-Closure:
+Chiusura:
 - `21_RISCHI_DECISIONI_OPEN_POINTS/PROCUREMENT_CLOSURE_REGISTER.md`
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_PILOT_REGISTER.md`
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_COMMISSIONING_ACCEPTANCE.md`
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_DECISION_GATE_REGISTER.md`
 - `21_RISCHI_DECISIONI_OPEN_POINTS/ANALISI_PROBLEMATICHE_RISCHI.md`
 
-Finance:
+Finanza:
 - `18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md`
 - `18_CAPEX_OPEX_CASHFLOW/FINANCIAL_CLOSURE_CONTROL.md`
 - `18_CAPEX_OPEX_CASHFLOW/AVVIO_CASSA_E_RAMPA_PRODUTTIVA.md`
 
-## 13. Stato corrente sintetico
+## 13. Stato sintetico corrente
 
 La progettazione documentale non è più il collo di bottiglia principale.
 
-I blocker reali sono ora:
+I blocchi reali sono ora:
 1. esecuzione F0 finanza reale;
 2. lotto reale;
-3. crop/process data;
+3. dati colturali e di processo;
 4. misure;
-5. installed RFQ;
-6. pilot;
-7. commissioning.
+5. preventivi installati;
+6. prove pilota;
+7. messa in servizio.
 
 Nessuno di questi deve essere sostituito con numeri inventati.
