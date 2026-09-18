@@ -126,13 +126,14 @@ Baseline:
 - Gusto Drum / FAS Easy Food alternative per drum/locker;
 - FAS Skudo 2026 come categoria outdoor da RFQ;
 - cashless baseline, cash optional;
-- Nayax VPOS Touch working candidate con telemetria;
-- fiscalizzazione da validare sulla configurazione effettiva con vendor/commercialista;
+- Stripe come payment stack unico, con UX700 candidato unattended da RFQ/pilot;
+- server centrale come system of record per ordini, inventario, lotti, refill, personale, logistica e forecasting;
+- fiscalizzazione da validare sulla configurazione Stripe/RT effettiva;
 - logger temperatura indipendente dal controller vending;
 - CCTV limitata alla pertinenza necessaria, no audio/face recognition, privacy by design;
-- electronics UPS solo per IT/payment/NVR, mentre refrigerazione usa continuità generale e fail-safe food;
+- nessuna UPS locale: continuità dal BESS aziendale 30 kW, con capacità/autonomia in kWh da chiudere;
 - guest/vending/CCTV separati dall'OT;
-- 100 erogazioni per SKU critico + 500 vendite miste prima del go-live.
+- 100 erogazioni per SKU critico + 500 vendite miste con reconciliation server/Stripe/vend prima del go-live.
 
 Benchmark:
 
