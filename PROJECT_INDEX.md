@@ -33,6 +33,10 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 - `21_RISCHI_DECISIONI_OPEN_POINTS/`;
 - `22_FONTI_NORME_PREVENTIVI/`.
 
+**Fuori dalla numerazione e dal core agricolo:**
+
+- `RND_CORRELATO_EU/` — progetto R&S tecnologico correlato; usa Carnia TerraTech come living lab/demonstrator ma mantiene budget, TRL, deliverable, rischi e finanziamenti separati dal core. Non entra nella sequenza BOM 001… e non è requisito per l'operatività agricola.
+
 ## 3. Stato punto 00 — Visione e principi
 
 **RAFFINATO / BASE DI GOVERNO DEL PROGETTO.**
@@ -463,3 +467,30 @@ Restano nel perimetro sostenibilità personale, R&D robotica/laser e industriali
 2. sostenibilità personale e lancio operativo: carico umano, turni, reperibilità, ferie, supporto esterno e ramp-up.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
+
+## 18. Progetto R&S correlato UE — NON CORE
+
+Directory: `RND_CORRELATO_EU/`.
+
+**Stato:** `CORRELATO / NON CORE / PRE-CANDIDATURA R&S`.
+
+Il progetto di lavoro **CTT-AFP — Carnia TerraTech Autonomous Farm Platform** sviluppa tecnologie potenzialmente replicabili per orchestrazione agricola, edge/PLC, robotica, vision, sensor fusion e scheduling.
+
+Regole di separazione:
+
+- non sostituisce nessun blocco 00–22;
+- non modifica la baseline CAPEX/OPEX agricola;
+- nessun contributo R&S viene contato come fonte certa del core;
+- Carnia TerraTech è living lab, non il prodotto R&S;
+- i sistemi vitali del core mantengono controllo locale e fallback indipendenti;
+- fallimento o ritardo di un demonstrator non deve bloccare produzione o safety;
+- costi condivisi devono essere allocati e verificati sulla call specifica;
+- IP, partner, TRL, deliverable e budget R&S vengono governati separatamente.
+
+Documenti:
+
+- `RND_CORRELATO_EU/README.md`;
+- `RND_CORRELATO_EU/AUTONOMOUS_FARM_PLATFORM.md`;
+- `RND_CORRELATO_EU/FUNDING_AND_COST_BOUNDARY.md`.
+
+Canali UE candidati da verificare topic per topic: Horizon Europe Cluster 4/6; EIC Accelerator solo in una fase successiva se tecnologia, TRL e scalabilità lo giustificano.
