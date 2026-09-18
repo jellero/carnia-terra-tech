@@ -294,7 +294,7 @@ Riutilizzare BOM-026 AP outdoor se sufficiente.
 
 ## 13. Lotto K — modulo animali
 
-Quotare costo marginale rispetto a BOM-023:
+Se prevista un'area animali, quotare soltanto il costo marginale didattico rispetto alla sua infrastruttura base:
 
 - barriera visitatori;
 - gate;
@@ -306,7 +306,7 @@ Quotare costo marginale rispetto a BOM-023:
 - materiali didattici;
 - sistema di lockout/indicatore `VISIT IN PROGRESS` se necessario.
 
-Nessuna parte mobile del rover o del rasaerba accessibile al pubblico.
+Nessuna parte mobile di macchine o rasaerba deve essere accessibile al pubblico.
 
 ## 14. Lotto L — kit didattici
 
@@ -377,7 +377,7 @@ Prima dell'apertura:
 14. test `VISIT MODE` e lockout macchine previsto;
 15. test pannelli/QR offline;
 16. test rete guest senza reachability OT;
-17. verifica modulo galline;
+17. verifica eventuale area animali;
 18. prova variante wet-weather;
 19. verifica pulizia finale;
 20. consegna as-built e manuali.
