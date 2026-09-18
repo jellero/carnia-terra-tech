@@ -234,7 +234,8 @@ Use:
 ## 11. Transfer-time hard requirement
 
 User constraint:
-- **no local UPS baseline**.
+- **nessuna costellazione di UPS consumer/distribuiti come baseline**;
+- è invece ammesso e deve essere confrontato un **ride-through P0 professionale dedicato** (UPS online industriale, DC buffer o soluzione equivalente) se riduce rischio/TCO rispetto a imporre al BESS dell'intero sito il trasferimento senza riavvio.
 
 Therefore:
 
@@ -257,7 +258,14 @@ Possible architectures:
 - STS only when two valid live sources exist;
 - dedicated DC ride-through for specific control equipment only if later justified.
 
-No random desktop UPS.
+No UPS desktop casuali o non governati.
+
+Decisione da chiudere con RFQ/SAT:
+- **A — BESS/PCS + critical bus con trasferimento no-break misurato**;
+- **B — BESS + ride-through P0 professionale dedicato**;
+- **C — altra architettura equivalente certificabile/manutenibile**.
+
+La scelta deve minimizzare single point of failure, manutenzione e TCO, non rispettare un divieto ideologico di UPS.
 
 ## 12. Black-start
 
@@ -859,7 +867,7 @@ Loss of cloud:
 - external dedicated installation preferred;
 - local grid-forming/islanding controller;
 - P0/P1 critical bus;
-- no local UPS;
+- no distributed consumer UPS; professional P0 ride-through remains an allowed design option;
 - submetering;
 - local load shed;
 - central EMS/server optimization;
