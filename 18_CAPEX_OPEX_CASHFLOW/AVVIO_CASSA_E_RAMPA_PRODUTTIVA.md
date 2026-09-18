@@ -63,6 +63,21 @@ Completare quando P1 è stabile e la cassa operativa resta sopra soglia.
 ### Onda P3 — automazioni avanzate
 AMR, AI e ottimizzazioni entrano dopo stabilizzazione dei processi fisici, salvo componenti indispensabili o già vincolati dal finanziamento.
 
+### Eccezione contributiva
+Se una finestra di sostegno al 60% è disponibile oggi e non è ragionevole assumerla disponibile domani, il progetto può anticipare investimenti successivi **solo** secondo la matrice `MATRICE_INVESTIRE_ORA_O_DOPO.md`.
+
+Priorità all'anticipo di:
+- opere strutturali;
+- dorsali;
+- infrastrutture definitive;
+- componenti a lunga vita e basso rischio di obsolescenza.
+
+Non anticipare automaticamente:
+- robotica;
+- elettronica ad alta obsolescenza;
+- sistemi R&S;
+- capacità commerciale non validata.
+
 ## 7. Sequenza colturale di avvio
 
 La fase iniziale può privilegiare colture/cicli con tempo al ricavo relativamente breve e processo semplice, avviando in parallelo colture a ciclo più lungo. La scelta effettiva dipende da stagione, crop card e mercato.
