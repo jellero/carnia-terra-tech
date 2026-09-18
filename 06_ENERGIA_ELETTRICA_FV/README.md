@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 06: Energia elettrica e fotovoltaico
 
-**Aggiornato:** 17 settembre 2026  
-**Stato:** `ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / BESS BACKUP 30 kW CONSOLIDATO / kWh, AUTONOMIA, ISLANDING, CONNESSIONE ED EMS DA SVILUPPARE / NESSUNA UPS LOCALE BASELINE`.
+**Aggiornato:** 18 settembre 2026  
+**Stato:** `BOM-019 FV + BOM-034 EMS/BESS/CONNESSIONE SVILUPPATE / BESS 30 kW POWER BASELINE / kWh, BT-MT, FIRE DESIGN, ISLANDING E RFQ BLOCCANTI / NESSUNA UPS LOCALE BASELINE`.
 
 ## 1. Obiettivo
 
@@ -101,14 +101,92 @@ Per impianti FV/eolici >=100 kW connessi in MT verificare anche gli obblighi cor
 - Modbus/Ethernet o altro protocollo documentato verso EMS locale;
 - fail-safe: perdita cloud non deve fermare la produzione locale.
 
-## 7. Package sviluppati
+## 7. BOM-034 — EMS, BESS e connessione
+
+Working architecture:
+
+- AC-coupled C&I BESS;
+- 30 kW continuous island class;
+- LFP candidate chemistry;
+- useful-energy scenarios 60 / 90 / 120 kWh;
+- P0/P1 critical bus;
+- P2 conditional;
+- P3 shed;
+- local grid-forming/islanding controller;
+- no local UPS;
+- central server as economic scheduler, not safety/protection controller.
+
+Autonomy arithmetic from useful energy:
+
+| E useful | 10 kW | 15 kW | 20 kW | 30 kW |
+|---|---:|---:|---:|---:|
+| 60 kWh | 6 h | 4 h | 3 h | 2 h |
+| 90 kWh | 9 h | 6 h | 4.5 h | 3 h |
+| 120 kWh | 12 h | 8 h | 6 h | 4 h |
+
+Actual autonomy must include reserve, losses, auxiliaries, temperature and EOL SoH.
+
+Known load anchors prove 30 kW is not whole-site full-power backup:
+
+- irrigation pump 2.2 kW;
+- each PDC up to 9 kW declared max;
+- 3 PDC up to 27 kW;
+- cold-room compressor references ~1.48–2.25 kW plus aux;
+- dehumidification 2.3 / 9.55 kW.
+
+Hard requirement:
+- grid loss must not reboot P0 server/network/PLC;
+- final acceptance is measured blackout, not catalogue language;
+- seconds-level backup transfer is not sufficient for P0 without another no-break architecture.
+
+Candidate technical references:
+- TESLA Group STILLA: 30 kW / 61 kWh LFP class, RFQ, Italy/island/transfer gates open;
+- Fronius Verto Plus 30 kW class: hybrid/full-backup technology comparison; standard published backup transfer ~11 s in cited configuration, so not P0 baseline unless exact rapid-transfer solution is validated.
+
+Metering:
+- PCC;
+- PV;
+- BESS;
+- PDC;
+- cold rooms;
+- water;
+- Tech Barn;
+- retail;
+- IT;
+- mobile charging.
+
+Grid:
+- CEI 0-21:2026-07 if BT;
+- CEI 0-16:2026-07 if MT;
+- TICA/DSO quote decides final voltage level;
+- new MT PV >=100 kW class: CCI/PF2 gate under current framework;
+- SLI/export limitation where connection requires it.
+
+Fire:
+- external dedicated BESS location preferred;
+- specific fire/explosion risk assessment;
+- VVF current BESS/FV guidance;
+- final measures by selected system and fire engineer.
+
+Documents:
+- `EMS_BESS_GRID_ARCHITECTURE.md`;
+- `LOAD_PRIORITY_MATRIX.md`;
+- `RFQ_EMS_BESS_GRID.md`;
+- `19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md`;
+- `22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md`.
+## 8. Package sviluppati
 
 - `PV_ARCHITECTURE.md`;
 - `RFQ_PV_INVERTERS.md`;
 - `19_BOM_PRODOTTI_FORNITORI/ENERGIA_FV_MODULI_INVERTER.md` — BOM-019;
-- `22_FONTI_NORME_PREVENTIVI/ENERGIA_FV_SOURCES.md`.
+- `22_FONTI_NORME_PREVENTIVI/ENERGIA_FV_SOURCES.md`;
+- `EMS_BESS_GRID_ARCHITECTURE.md`;
+- `LOAD_PRIORITY_MATRIX.md`;
+- `RFQ_EMS_BESS_GRID.md`;
+- `19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md`;
+- `22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md`.
 
-## 8. Gate BOM-019
+## 9. Gate punto 06
 
 1. lotto e masterplan reale;
 2. superfici disponibili e ombre;
@@ -121,4 +199,11 @@ Per impianti FV/eolici >=100 kW connessi in MT verificare anche gli obblighi cor
 9. protezioni/quadri e selettività;
 10. verifica antincendio dove applicabile;
 11. RFQ moduli/strutture/inverter/BOSe;
-12. CAPEX installato e commissioning.
+12. CAPEX installato e commissioning;
+13. master load register e profilo P0/P1;
+14. scelta 60/90/120 kWh useful/EOL;
+15. no-reboot island transfer test;
+16. BESS fire-risk assessment/location;
+17. short-circuit/selectivity grid+island;
+18. CCI/SLI exact requirement;
+19. blackout SAT.
