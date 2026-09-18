@@ -579,15 +579,49 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/ORGANIZZAZIONE_PERSONALE_LANCIO.md`;
 - `22_FONTI_NORME_PREVENTIVI/ORGANIZZAZIONE_PERSONALE_LANCIO_SOURCES.md`.
 
-## 16. Metodo BOM obbligatorio
+## 16. Avvio economico e messa a reddito — PRIORITÀ MASSIMA
+
+L'avvio è ora trattato come sottoprogetto trasversale fra finanza, cantiere, persone, agronomia e mercato.
+
+Assunzione di lavoro:
+- il progetto parte solo dopo approvazione formale del pacchetto finanziario;
+- circa 30% contributo + 40% finanziamento = circa 70% di copertura iniziale secondo lo schema indicato dal promotore, da verificare sui provvedimenti reali;
+- il finanziamento fornisce liquidità ma resta debito;
+- quota residua, IVA, costi non ammissibili e circolante vengono coperti separatamente;
+- prima del CAPEX viene isolato un fondo operativo non utilizzabile dal cantiere.
+
+Sequenza:
+`chiusura finanziaria -> terreno -> struttura serra -> primi comparti allestiti -> coltivazione -> commerciale -> primo raccolto/incasso -> spaccio -> comparti restanti -> regime`.
+
+Strategia di accelerazione:
+- struttura/involucro completi quando economicamente conveniente;
+- allestimento produttivo per ondate;
+- primi 2–3 comparti messi a reddito prima del completamento di tutto il progetto;
+- commerciale pronto prima del primo raccolto;
+- spaccio inizialmente semplice/semi-automatico se accelera i ricavi;
+- automazioni non indispensabili non ritardano il primo incasso.
+
+Quattro date obbligatorie:
+- D1 prima spesa irreversibile;
+- D2 primo comparto in produzione;
+- D3 primo incasso;
+- D4 pareggio di cassa operativo mensile.
+
+Documenti:
+- `16_SOCIETA_FINANZA_E_CONTRIBUTI/REGOLA_FINANZIARIA_AVVIO.md`;
+- `18_CAPEX_OPEX_CASHFLOW/AVVIO_CASSA_E_RAMPA_PRODUTTIVA.md`;
+- `20_CANTIERE_E_CRONOPROGRAMMA/SEQUENZA_AVVIO_E_MESSA_A_REDDITO.md`;
+- `15_MERCATO_E_VENDITE/VENDITA_DIRETTA_E_CONSEGNE_PROGRAMMATE.md`.
+
+## 17. Metodo BOM obbligatorio
 
 Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, modalità di guasto, ripiego, contributi, dipendenze, espansione e stato decisionale.
 
-## 17. Stato attuale dei grandi blocchi
+## 18. Stato attuale dei grandi blocchi
 
 La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser separata e soprattutto le validazioni reali: lotto, crop card, profili di carico, DSO/RFQ, pilot e commissioning.
 
-## 18. Sequenza BOM
+## 19. Sequenza BOM
 
 ### Già strutturate
 
@@ -636,7 +670,7 @@ Priorità di chiusura:
 
 La numerazione riprende solo se la closure matrix evidenzia un nuovo package fisico/operativo non coperto.
 
-## 19. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
+## 20. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `RND_CORRELATO_EU/`.
 
@@ -663,7 +697,7 @@ Documenti:
 
 Canali UE candidati da verificare topic per topic: Horizon Europe Cluster 4/6; EIC Accelerator solo in una fase successiva se tecnologia, TRL e scalabilità lo giustificano.
 
-## 20. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
+## 21. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `EXTRA_AGRITURISMO_EVOLUTIVO/`.
 
