@@ -171,6 +171,8 @@ Fire:
 Documents:
 - `EMS_BESS_GRID_ARCHITECTURE.md`;
 - `LOAD_PRIORITY_MATRIX.md`;
+- `MASTER_LOAD_REGISTER.md` + `MASTER_LOAD_REGISTER.csv` — registro closure 1–15 min, P0/P1, spunti e restart;
+- `LOAD_MEASUREMENT_AND_RFQ_PLAN.md` + `LOAD_DATA_CAPTURE_TEMPLATE.csv` — piano operativo per misure, dati OEM, costi e RFQ;
 - `RFQ_EMS_BESS_GRID.md`;
 - `19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md`;
 - `22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md`.
@@ -200,7 +202,7 @@ Documents:
 10. verifica antincendio dove applicabile;
 11. RFQ moduli/strutture/inverter/BOSe;
 12. CAPEX installato e commissioning;
-13. master load register e profilo P0/P1;
+13. master load register e profilo P0/P1 — **v0.1 strutturato; valori reali P0/P1 e transitori ancora da misura/RFQ**;
 14. scelta 60/90/120 kWh useful/EOL;
 15. no-reboot island transfer test;
 16. BESS fire-risk assessment/location;
