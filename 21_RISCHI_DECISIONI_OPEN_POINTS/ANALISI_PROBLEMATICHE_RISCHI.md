@@ -1,7 +1,7 @@
 # Analisi problematiche, rischi e vulnerabilità trasversali — Carnia TerraTech
 
 **Aggiornato:** 18 settembre 2026  
-**Stato:** `MASTER RISK ANALYSIS / PROBABILITÀ DA POPOLARE CON DATI REALI`
+**Stato:** `ANALISI RISCHI MASTER / PROBABILITÀ DA POPOLARE CON DATI REALI`
 
 ## 1. Scopo
 
@@ -10,9 +10,9 @@ Questo documento raccoglie in un solo punto:
 - problematiche già presenti;
 - rischi futuri;
 - vulnerabilità di progetto;
-- trigger di escalation;
+- segnale di attivazione di escalation;
 - mitigazioni;
-- owner;
+- responsabile;
 - condizione di chiusura.
 
 Distinzione fondamentale:
@@ -29,7 +29,7 @@ La severità qui indica **conseguenza potenziale**, non probabilità.
 
 | Classe | Significato |
 |---|---|
-| I4 — CRITICAL | può bloccare finanziamento, acquisto, costruzione, go-live, safety, conformità o continuità P0 |
+| I4 — CRITICAL | può bloccare finanziamento, acquisto, costruzione, messa in servizio, safety, conformità o continuità P0 |
 | I3 — HIGH | può modificare materialmente CAPEX, tempi, resa, OPEX o operatività |
 | I2 — MEDIUM | può degradare performance o creare costi/ritardi recuperabili |
 | I1 — LOCAL | impatto circoscritto, recuperabile senza revisione del progetto |
@@ -46,15 +46,15 @@ finché esistono evidenze sufficienti.
 
 | ID | Problematica attuale | Impatto | Perché è reale | Azione di chiusura |
 |---|---|---|---|---|
-| P-01 | pacchetto finanziario non ancora perfezionato | I4 | contributi, anticipo, garanzia, finanziamento, linea IVA e bridge non sono ancora actual/concessi nel register | chiudere DG0/F0 con atti reali |
+| P-01 | pacchetto finanziario non ancora perfezionato | I4 | contributi, anticipo, garanzia, finanziamento, linea IVA e ponte non sono ancora reale/concessi nel register | chiudere DG0/F0 con atti reali |
 | P-02 | lotto reale non ancora acquisito/validato | I4 | blocca geotecnica, layout, DSO, neve/vento, drenaggi, accessi e RFQ installati | due diligence + DG1 |
 | P-03 | crop card P1 non finali | I3 | blocca carichi idrici/termici, resa, raccolta, freddo e packaging | completare crop card per i 3 comparti P1 |
-| P-04 | major CAPEX ancora prevalentemente E0/E1 | I4 | €850k è control budget, non costo contrattuale | installed RFQ comparabili E3/E4 |
+| P-04 | major CAPEX ancora prevalentemente E0/E1 | I4 | €850k è control budget, non costo contrattuale | RFQ installati comparabili E3/E4 |
 | P-05 | profilo elettrico P0/P1 reale non disponibile | I4 | BESS 30 kW e 60/90/120 kWh non possono essere chiusi | misure 1–15 min + transitori |
 | P-06 | DSO/POD/BT-MT non determinati | I4 | non è noto il costo/assetto reale della connessione | lotto + DSO/TICA reale |
 | P-07 | pilot Q3 non ancora eseguiti | I3 | AMR, retail, mower, rover galline e riuso non hanno evidence site-specific | eseguire master pilot register |
 | P-08 | SAT/commissioning ancora solo pianificato | I4 | continuità, failover e performance non sono ancora provate | eseguire master SAT |
-| P-09 | OPEX reale non misurato | I3 | energia, lavoro, manutenzione, packaging e logistica sono ancora di pianificazione | 30/90-day actual review |
+| P-09 | OPEX reale non misurato | I3 | energia, lavoro, manutenzione, packaging e logistica sono ancora di pianificazione | 30/90-day reale review |
 | P-10 | domanda P1 da validare commercialmente | I4 | €250k/y è target di validazione, non vendite acquisite | pre-vendita, clienti, ordini e channel validation |
 
 ## 4. Rischi finanziari e di cassa
@@ -70,7 +70,7 @@ Evento:
 
 Conseguenza:
 - cantiere avviato senza copertura;
-- necessità di bridge più elevato;
+- necessità di ponte più elevato;
 - erosione della riserva operativa;
 - stop lavori.
 
@@ -78,10 +78,10 @@ Mitigazione:
 - DG0 prima di ogni spesa irreversibile;
 - cashflow mensile;
 - payment schedule fornitori;
-- bridge dedicato;
+- ponte dedicato;
 - nessuna contabilizzazione di contributi come incassati prima dell'accredito.
 
-Trigger:
+Segnale di attivazione:
 - finanziamento o contributo inferiore al modello;
 - slittamento >1 ciclo di pagamento;
 - richiesta di anticipare CAPEX con C4.
@@ -89,7 +89,7 @@ Trigger:
 ### R-FIN-02 — uso della riserva operativa per coprire CAPEX
 **Impatto:** I4.
 
-È uno dei principali failure mode economici del progetto.
+È uno dei principali guasto mode economici del progetto.
 
 Conseguenza:
 - impianto costruito ma mancanza di liquidità per personale, input, raccolta, packaging e vendita.
@@ -115,11 +115,11 @@ Driver:
 - esclusioni non viste.
 
 Mitigazione:
-- E3 installed RFQ;
+- E3 RFQ installati;
 - design-to-value;
 - contingency separata;
 - revisione perimetro P1;
-- nessun taglio a safety, freddo, acqua, commissioning o working capital.
+- nessun taglio a safety, freddo, acqua, commissioning o di lavoro capital.
 
 ### R-FIN-04 — IVA e timing fiscale
 **Impatto:** I3/I4.
@@ -155,7 +155,7 @@ Mitigazione:
 ### R-SITE-02 — fondazioni/struttura più onerose del previsto
 **Impatto:** I3/I4.
 
-Trigger:
+Segnale di attivazione:
 - carichi neve/vento;
 - terreno debole;
 - falda;
@@ -242,7 +242,7 @@ Mitigazione:
 - route legale;
 - AUA/SUAP dove applicabile;
 - flow meter e sample point;
-- nessun discharge to soil baseline.
+- nessun discharge to soil configurazione base.
 
 ## 7. Rischi agronomici e produttivi
 
@@ -419,7 +419,7 @@ Mitigazione:
 
 ## 11. Rischi automazione, dati e cybersecurity
 
-### R-IT-01 — server centrale diventa single point of failure operativo
+### R-IT-01 — server centrale diventa single point of guasto operativo
 **Impatto:** I4.
 
 Mitigazione:
@@ -525,7 +525,7 @@ Mitigazione:
 - separare hardware, posa, commissioning, service, IVA, freight;
 - PROCUREMENT_CLOSURE_REGISTER.
 
-### R-SUP-02 — vendor lock-in
+### R-SUP-02 — dipendenza dal fornitore
 **Impatto:** I3.
 
 Mitigazione:
@@ -543,7 +543,7 @@ Mitigazione:
 - critical spare list;
 - service SLA;
 - local support;
-- long-lead procurement dopo gate.
+- long-lead procurement dopo verifica.
 
 ### R-SUP-04 — revisione/modello diverso tra benchmark e offerta
 **Impatto:** I3.
@@ -572,7 +572,7 @@ Mitigazione:
 Mitigazione:
 - primary + backup;
 - runbook;
-- owner-absence drill;
+- responsabile-absence drill;
 - ferie testate;
 - no founder-as-free-labour assumption.
 
@@ -584,7 +584,7 @@ Mitigazione:
 - task logs;
 - overtime;
 - backlog PM;
-- add-headcount triggers.
+- add-headcount segnale di attivaziones.
 
 ## 15. Rischi mercato e ricavi
 
@@ -636,7 +636,7 @@ Mitigazione:
 Mitigazione:
 - SUAP/commercialista;
 - distinzione vendita agricola vs vending retail;
-- fiscalità prima del go-live.
+- fiscalità prima del messa in servizio.
 
 ### R-REG-04 — fattoria didattica non conforme ai requisiti reali
 **Impatto:** I3/I4.
@@ -666,7 +666,7 @@ Mitigazione:
 - procedure;
 - no reliance esclusivo su vision/AI.
 
-### R-SAFE-02 — failure simultanei o cascading
+### R-SAFE-02 — guasto simultanei o cascading
 **Impatto:** I4.
 
 Esempi:
@@ -677,7 +677,7 @@ Esempi:
 
 Mitigazione:
 - master SAT;
-- failure-mode testing;
+- guasto-mode testing;
 - 72 h endurance;
 - escalation.
 
@@ -688,7 +688,7 @@ Mitigazione:
 - alarm rationalization;
 - P0/P1/P2/P3;
 - no P3 wake-up;
-- owner e recovery per ogni allarme.
+- responsabile e recovery per ogni allarme.
 
 ## 18. Rischi programma e change control
 
@@ -705,7 +705,7 @@ Mitigazione:
 - freeze P1;
 - dependency-based schedule.
 
-### R-PM-02 — scope creep
+### R-PM-02 — espansione incontrollata del perimetro
 **Impatto:** I4.
 
 Aree più esposte:
@@ -728,7 +728,7 @@ Mitigazione:
 - dimensionare dorsali e spazi permanenti sul progetto finale quando conveniente;
 - non sovradimensionare elettronica obsolescente.
 
-## 19. Rischi manutenzione e lifecycle
+## 19. Rischi manutenzione e ciclo di vita
 
 ### R-MNT-01 — progetto acquistabile ma non manutenibile
 **Impatto:** I3/I4.
@@ -750,7 +750,7 @@ Mitigazione:
 - SLA;
 - spare strategy.
 
-### R-MNT-03 — costo lifecycle sottostimato
+### R-MNT-03 — costo ciclo di vita sottostimato
 **Impatto:** I3/I4.
 
 Mitigazione:
@@ -775,17 +775,17 @@ Un lotto errato può rendere inutili molte ottimizzazioni già fatte.
 Specifiche premature su questi package aumentano il rischio di sovra/sottodimensionamento.
 
 ### D. Load register -> BESS/DSO
-Il 30 kW power baseline non chiude i kWh né l'import/export.
+Il 30 kW power configurazione base non chiude i kWh né l'import/export.
 
 ### E. Mercato -> P2
 L'espansione dei 6 comparti non deve precedere dati P1 sufficienti.
 
-### F. Integrazione -> go-live
-Ogni singolo sottosistema può funzionare e l'impianto integrato può comunque fallire: per questo SAT end-to-end è gate obbligatorio.
+### F. Integrazione -> messa in servizio
+Ogni singolo sottosistema può funzionare e l'impianto integrato può comunque fallire: per questo SAT end-to-end è verifica obbligatorio.
 
-## 21. Trigger di escalation immediata
+## 21. Segnale di attivazione di escalation immediata
 
-Aprire/reaprire un decision gate se si verifica uno dei seguenti:
+Aprire/reaprire un decision verifica se si verifica uno dei seguenti:
 
 - CAPEX major package >20% sopra envelope;
 - previsione installed CAPEX >€950k;
@@ -797,7 +797,7 @@ Aprire/reaprire un decision gate se si verifica uno dei seguenti:
 - crop yield/price significativamente sotto target P1;
 - pilot critical FAIL;
 - P0 reboot in blackout;
-- failure food/cold/water safety;
+- guasto food/cold/water safety;
 - scarico/riuso non autorizzato;
 - vendor cambia modello/configurazione;
 - critical spare/service non disponibile;
@@ -817,7 +817,7 @@ Stati:
 - `MATERIALIZED`.
 
 Per passare a `CONTROLLED` servono:
-- owner;
+- responsabile;
 - controllo implementato;
 - evidenza;
 - test quando applicabile;
@@ -833,8 +833,8 @@ Il risk register va rivisto obbligatoriamente:
 - prima degli ordini major;
 - dopo ogni pilot FAIL;
 - prima del commissioning;
-- prima del go-live;
-- a 30 e 90 giorni dal go-live;
+- prima del messa in servizio;
+- a 30 e 90 giorni dal messa in servizio;
 - prima di P2.
 
 ## 24. Collegamenti
