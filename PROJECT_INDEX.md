@@ -60,7 +60,7 @@ Matrice: `03_SERRA/POINT_03_CLOSURE_MATRIX.md`.
 
 ## 7. Stato punto 04 — Acqua e fertirrigazione
 
-**ARCHITETTURA STRUTTURATA / BOM-013…018 SVILUPPATE / TRATTAMENTO-DISINFEZIONE E DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA E CROP CARD.**
+**ARCHITETTURA STRUTTURATA / BOM-013…018 + BOM-032 TRATTAMENTO-DISINFEZIONE SVILUPPATE / DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA, UVT, MICROBIOLOGIA E CROP CARD.**
 
 Documenti principali: `04_ACQUA_E_FERTIRRIGAZIONE/README.md`, package distribuzione/filtrazione/pompe/fertirrigazione/tank chimici/accumulo e relativi RFQ; BOM-013…018 e fonti dedicate.
 
@@ -71,9 +71,10 @@ Dati guida:
 - BOM-015: pompe 1+1, Grundfos CR10-6 benchmark €1.946,78 IVA incl./cad;
 - BOM-016: A/B/acido; sole pompe scenario ~€1.744–1.894 + IVA;
 - BOM-017: scenario tank A/B/acido 500/500/200 L; soli contenitori ~€509,40 + IVA;
-- BOM-018: 2×150 m³ working, espansione 400–500 m³; 300 m³ = 8,6–10 giorni teorici a 30–35 m³/giorno.
+- BOM-018: 2×150 m³ working, espansione 400–500 m³; 300 m³ = 8,6–10 giorni teorici a 30–35 m³/giorno;
+- BOM-032: W0/W1/W2/W3/W4 water classes; UV after filtration as working microbial barrier when required; UV sizing from Q + worst-case UVT + validated dose; no blind bypass; chemical sanitation conditional; W3 potable/food kept separate; future W4 reuse deferred to BOM-033.
 
-Gate: lotto, analisi acqua, crop card, bilancio idrico, geotecnica/RainMap, RFQ, trattamento/disinfezione, drenaggio/riuso e commissioning.
+Gate: lotto, source/seasonal water analyses, UVT254, microbiology, crop card, bilancio idrico, geotecnica/RainMap, RFQ, BOM-032 validation, drenaggio/riuso BOM-033 e commissioning.
 
 ## 8. Stato punto 05 — Termico e clima
 
@@ -528,7 +529,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 17. Stato attuale dei grandi blocchi
 
-Restano nel perimetro R&D robotica/laser e i package tecnici trasversali ancora aperti: trattamento/disinfezione acqua, drenaggio/riuso, EMS e connessione elettrica.
+Restano nel perimetro R&D robotica/laser e i package tecnici trasversali ancora aperti: drenaggio/riuso, EMS e connessione elettrica.
 
 ## 18. Sequenza BOM
 
@@ -557,17 +558,17 @@ Restano nel perimetro R&D robotica/laser e i package tecnici trasversali ancora 
 - BOM-028 spaccio automatico self-service 24/7;
 - BOM-029 centro trasformazione conto terzi;
 - BOM-030 server centrale di orchestrazione;
-- **BOM-031 sostenibilità personale e lancio operativo**.
+- BOM-031 sostenibilità personale e lancio operativo;
+- **BOM-032 trattamento e disinfezione acqua**.
 
 ### Prossimo package
 
-**BOM-032 — trattamento e disinfezione acqua:** qualità acqua sorgente, pretrattamento, filtrazione fine, UV/ozono/cloro/perossido secondo rischio, ricircolo, biofilm, sensori ORP/UVT/conducibilità, dosing, bypass, CIP/sanificazione, sicurezza chimica, monitoraggio microbiologico, ridondanza, OPEX e costo.
+**BOM-033 — drenaggio, raccolta e riuso acqua:** drenaggi serra per comparto, raccolta e misura drenato, separazione first-flush/contaminato, tank dirty/clean, nutrient mass balance, EC/Na/Cl, fitopatogeni, disinfezione reuse, blending, bleed/discharge, stormwater separation, overflow, autorizzazioni, monitoraggio, OPEX e costo.
 
 ### Coda successiva
 
-1. trattamento/disinfezione acqua;
-2. drenaggio/riuso;
-3. EMS e connessione elettrica.
+1. drenaggio/riuso;
+2. EMS e connessione elettrica.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
 
