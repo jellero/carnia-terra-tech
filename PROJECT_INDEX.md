@@ -85,9 +85,9 @@ Matrice: `05_TERMICO_E_CLIMA/POINT_05_CLOSURE_MATRIX.md`.
 
 ## 9. Stato punto 06 — Energia elettrica e FV
 
-**ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / BACKUP BESS 30 kW DICHIARATO / kWh, AUTONOMIA, ISLANDING, CONNESSIONE ED EMS DA SVILUPPARE / NESSUNA UPS LOCALE NELLA CONFIGURAZIONE BASE.**
+**BOM-019 FV + BOM-034 EMS/BESS/CONNESSIONE SVILUPPATE / BESS 30 kW POWER BASELINE / kWh, BT-MT, FIRE DESIGN, LOAD PROFILE E RFQ BLOCCANTI / NESSUNA UPS LOCALE.**
 
-Documenti: `06_ENERGIA_ELETTRICA_FV/README.md`, `PV_ARCHITECTURE.md`, `RFQ_PV_INVERTERS.md`, BOM-019 e fonti.
+Documenti: `06_ENERGIA_ELETTRICA_FV/README.md`, `PV_ARCHITECTURE.md`, `RFQ_PV_INVERTERS.md`, `EMS_BESS_GRID_ARCHITECTURE.md`, `LOAD_PRIORITY_MATRIX.md`, `RFQ_EMS_BESS_GRID.md`, BOM-019, BOM-034 e fonti dedicate.
 
 ### BOM-019 — FV e inverter
 
@@ -102,6 +102,61 @@ Di lavoro candidate Trina Vertex S+ TSM-470NEG9R.28:
 - CEI 0-21:2026 / CEI 0-16:2026;
 - BT/MT e protezioni da preventivo DSO/TICA;
 - predisposizione 150–180 kWp.
+
+### BOM-034 — EMS, BESS e connessione elettrica
+
+**SVILUPPATA / 30 kW POWER BASELINE / ENERGIA UTILE, DSO, FIRE DESIGN E RFQ BLOCCANTI.**
+
+Working architecture:
+- BESS C&I AC-coupled, LFP candidate chemistry;
+- PCS 30 kW continuous island class;
+- scenari **60 / 90 / 120 kWh utili**;
+- P0/P1 critical bus, P2 condizionale, P3 shed;
+- nessuna UPS locale;
+- controller locale grid-forming/load-shed; server centrale solo supervisory/economic layer;
+- black-start richiesto e PV-in-island separato come opzione da validare.
+
+Autonomia aritmetica, prima di reserve/losses/auxiliaries/EOL:
+- 60 kWh: 2 h @30 kW / 3 h @20 / 4 h @15 / 6 h @10;
+- 90 kWh: 3 h @30 / 4,5 h @20 / 6 h @15 / 9 h @10;
+- 120 kWh: 4 h @30 / 6 h @20 / 8 h @15 / 12 h @10.
+
+Hard continuity:
+- grid loss must not reboot server/network/PLC P0;
+- acceptance = blackout reale, non transfer-time marketing;
+- soluzione con commutazione nell'ordine dei secondi non è sufficiente da sola per P0 senza ulteriore architettura no-break.
+
+Load anchors già noti:
+- irrigazione ~2,2 kW duty pump candidate;
+- PDC fino a 9 kW/cad dichiarati; 3 unità fino a 27 kW;
+- cold-room compressor references ~1,48–2,25 kW + auxiliaries;
+- dehumidification 2,3 / 9,55 kW.
+Quindi 30 kW non è "whole farm full-power backup".
+
+Candidate/benchmark:
+- TESLA Group STILLA 30 kW / 61 kWh LFP class: RFQ, Italy/island/transfer/fire/service gates open;
+- Fronius Verto Plus 30 kW class: technology comparison; standard Full Backup published configuration ~11 s, quindi exact rapid-transfer solution da validare;
+- Schneider PM5110 €700 list; PM5340 €1.469; PM5341 MID €1.694.
+
+Grid:
+- CEI 0-21:2026-07 se BT;
+- CEI 0-16:2026-07 se MT;
+- TICA/DSO decide BT/MT e limiti import/export;
+- se MT e classe applicabile >=100 kW: CCI/PF2 gate;
+- SLI/export limitation dove richiesta;
+- custom farm server non assunto come dispositivo CEI/DSO compliant.
+
+Fire:
+- BESS esterno dedicato preferito;
+- specifica valutazione incendio/esplosione;
+- misure finali da sistema selezionato + professionista antincendio.
+
+Documenti:
+- `06_ENERGIA_ELETTRICA_FV/EMS_BESS_GRID_ARCHITECTURE.md`;
+- `06_ENERGIA_ELETTRICA_FV/LOAD_PRIORITY_MATRIX.md`;
+- `06_ENERGIA_ELETTRICA_FV/RFQ_EMS_BESS_GRID.md`;
+- `19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md`;
+- `22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md`.
 
 ### BOM-030 — server centrale di orchestrazione
 
@@ -530,7 +585,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 17. Stato attuale dei grandi blocchi
 
-Restano nel perimetro R&S robotica/laser e il package tecnico trasversale ancora aperto: EMS, BESS sizing/autonomia/islanding e connessione elettrica.
+La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser separata e soprattutto le validazioni reali: lotto, crop card, profili di carico, DSO/RFQ, pilot e commissioning.
 
 ## 18. Sequenza BOM
 
@@ -561,17 +616,25 @@ Restano nel perimetro R&S robotica/laser e il package tecnico trasversale ancora
 - BOM-030 server centrale di orchestrazione;
 - BOM-031 sostenibilità personale e lancio operativo;
 - BOM-032 trattamento e disinfezione acqua;
-- **BOM-033 drenaggio, raccolta e riuso acqua**.
+- BOM-033 drenaggio, raccolta e riuso acqua;
+- **BOM-034 EMS, BESS e connessione elettrica**.
 
-### Prossimo package
+### Prossima fase — validation / closure sprint
 
-**BOM-034 — EMS, BESS e connessione elettrica:** load inventory e simultaneità, profilo 15-min/peak, kWh BESS reali, C-rate, SOC reserve, islanding/black-start, ATS/STS se necessario, load shedding P0–P3, FV curtailment, inverter/BMS/EMS, metering per sottosistema, qualità rete, SPD/protezioni, CEI 0-21/0-16 2026, TICA/DSO, schema unifilare, continuità server/celle/pompe, degrado batterie, OPEX/TCO e costo.
+Non viene aperta una BOM-035 finché non emerge un sottosistema fisico realmente scoperto.
 
-### Coda successiva
+Priorità di chiusura:
 
-1. EMS, BESS sizing/autonomia/islanding e connessione elettrica.
+1. lotto/masterplan/geotecnica e layout definitivo;
+2. crop card e carichi termici/idrici/elettrici reali;
+3. master load register + profilo 1–15 min e P0/P1;
+4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni;
+5. RFQ installati per i package ancora a prezzo `RFQ`;
+6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT;
+7. commissioning e acceptance end-to-end;
+8. consolidamento CAPEX/OPEX/cashflow, rischi e decision gate.
 
-La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
+La numerazione riprende solo se la closure matrix evidenzia un nuovo package fisico/operativo non coperto.
 
 ## 19. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
 
