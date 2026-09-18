@@ -3,7 +3,7 @@
 Repository tecnico e gestionale per progettare una azienda agricola ad alta automazione in Friuli-Venezia Giulia, con area di interesse prioritaria nel corridoio Venzone/Gemona.
 
 **Stato:** pre-fattibilità avanzata / progettazione bottom-up.  
-**Aggiornato:** 17 settembre 2026.
+**Aggiornato:** 18 settembre 2026.
 
 ## Visione
 
@@ -40,6 +40,14 @@ Documenti fondativi nuovi:
 - `19_BOM_PRODOTTI_FORNITORI/SERRA_HAF_VENTILATION.md` — prima BOM tecnica analizzata nel nuovo metodo.
 
 I file in `docs/` contengono il lavoro tecnico precedente e restano validi come base durante la riorganizzazione. Verranno migrati progressivamente senza perdere informazioni.
+
+## Progetto R&S correlato — fuori dal core
+
+La directory [`RND_CORRELATO_EU/`](RND_CORRELATO_EU/) contiene un progetto di ricerca e sviluppo tecnologico correlato a Carnia TerraTech.
+
+**Non fa parte della numerazione 00–22, non modifica la baseline agricola e non entra automaticamente nel CAPEX/OPEX core.** Carnia TerraTech può fungere da living lab e primo demonstrator, ma il progetto agricolo deve poter funzionare anche senza la riuscita o il finanziamento della R&S.
+
+Concept attuale: **CTT-AFP — Carnia TerraTech Autonomous Farm Platform**, con focus su orchestrazione, edge/PLC, robotica, computer vision, sensor fusion, scheduler e sistemi autonomi replicabili.
 
 ## Regola di progettazione
 
