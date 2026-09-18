@@ -141,7 +141,7 @@ Hard requirement:
 
 Candidate technical references:
 - TESLA Group STILLA: 30 kW / 61 kWh LFP class, RFQ, Italy/island/transfer gates open;
-- Fronius Verto Plus 30 kW class: hybrid/full-backup technology comparison; standard published backup transfer ~11 s in cited configuration, so not P0 baseline unless exact rapid-transfer solution is validated.
+- Fronius Verto Plus 30 kW class: current OEM manual documents Rapid switch <20 ms with Backup Controller 63A; priority RFQ candidate, exact Italy topology/CEI-DSO compatibility and blackout SAT still mandatory.
 
 Metering:
 - PCC;
@@ -174,6 +174,9 @@ Documents:
 - `MASTER_LOAD_REGISTER.md` + `MASTER_LOAD_REGISTER.csv` — registro closure 1–15 min, P0/P1, spunti e restart;
 - `LOAD_MEASUREMENT_AND_RFQ_PLAN.md` + `LOAD_DATA_CAPTURE_TEMPLATE.csv` — piano operativo per misure, dati OEM, costi e RFQ;
 - `LOAD_VENDOR_DATA_SNAPSHOT_2026-09-18.md` — snapshot verificato di dati fornitore/prezzi/link e gap residui;
+- `DSO_TICA_CONNECTION_READINESS.md` + `DSO_TICA_DATA_REQUEST.csv` — dossier pre-domanda e dati mancanti;
+- `BT_MT_PROTECTION_DECISION_MATRIX.md` — decision matrix BT/MT, protezioni, CCI/PF2 e SLI;
+- `RFQ_DSO_GRID_CONNECTION_ENGINEERING.md` + `GRID_CONNECTION_COST_COMPARISON.csv` — RFQ comparabile e modello costi G100/G120/G120-CAP100;
 - `RFQ_EMS_BESS_GRID.md`;
 - `19_BOM_PRODOTTI_FORNITORI/ENERGIA_EMS_BESS_CONNESSIONE.md`;
 - `22_FONTI_NORME_PREVENTIVI/ENERGIA_EMS_BESS_CONNESSIONE_SOURCES.md`.
@@ -196,7 +199,7 @@ Documents:
 3. geotecnica/strutture se ground/carport;
 4. carichi elettrici annuali e profilo 15 min;
 5. producibilità PVGIS;
-6. preventivo connessione DSO e BT/MT;
+6. preventivo connessione DSO e BT/MT — **dossier TICA/DSO e matrice BT/MT pronti; invio reale bloccato da lotto/DSO/POD/potenze finali**;
 7. scelta 100 vs 120 kW AC e strategia espansione;
 8. string design completo;
 9. protezioni/quadri e selettività;
