@@ -615,7 +615,7 @@ Priorità di chiusura:
 3. master load register + profilo 1–15 min e P0/P1 — **v0.1 strutturato + piano misure/RFQ e template dati pronti il 18/09/2026; resta raccolta dati reali**;
 4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni — **pre-application package strutturato il 18/09/2026; pratica reale bloccata da lotto/DSO/POD e potenze finali**;
 5. RFQ installati per i package ancora a prezzo `RFQ` — **registro procurement/closure strutturato il 18/09/2026; separati Q1–Q5, priorità e blocker per dominio**;
-6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT — **master pilot register + result/cost template + decision record strutturati il 18/09/2026; esecuzione fisica ancora da sito/vendor/produzione reale**;
+6. pilot necessari per P1: mezzo multifunzione/accesso in quota, packaging, freddo, BESS e gli altri package effettivamente usati in P1; drenaggio-riuso solo se attivato; **AMR, tagliaerba, smart retail avanzato e moduli didattici non bloccano P1 e vengono pilotati solo prima del loro eventuale acquisto/attivazione**;
 7. commissioning e acceptance end-to-end — **master SAT, failure/degraded tests, 72 h endurance, punch-list e seasonal acceptance strutturati il 18/09/2026; esecuzione fisica da impianto reale**;
 8. consolidamento CAPEX/OPEX/cashflow, rischi e decision gate — **financial closure control E0–E5 + master decision gates DG0–DG8 + analisi trasversale problematiche/rischi strutturati il 18/09/2026; actuals/RFQ/contratti/evidenze ancora da popolare**.
 
