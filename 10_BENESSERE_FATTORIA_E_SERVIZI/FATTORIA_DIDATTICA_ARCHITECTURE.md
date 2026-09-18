@@ -132,7 +132,7 @@ Baseline:
 - accumuli acqua;
 - zone di carico/scarico;
 - R&D laser;
-- dirty dock galline;
+- area di servizio animali;
 - aree in manutenzione.
 
 Il confine Z1/Z3 deve essere evidente fisicamente, non soltanto descritto verbalmente.
@@ -198,7 +198,7 @@ Nessun controllo operativo deve essere esposto alla rete guest o al dispositivo 
 
 ## 8. Area galline
 
-La didattica animale deve essere compatibile con BOM-023.
+La didattica animale deve essere compatibile con l'eventuale area animali futura, senza dipendere da robotica dedicata.
 
 Baseline:
 
@@ -206,7 +206,6 @@ Baseline:
 - barriera fisica;
 - gate non accessibile ai bambini;
 - nessun contatto non supervisionato;
-- rover sanitario fermo o segregato durante l'attività didattica nelle aree condivise;
 - rasaerba in lockout;
 - lavaggio mani dopo la visita;
 - niente cibo consumato nella zona animali;
@@ -351,7 +350,7 @@ Dove il rischio è macchina/AMR/mezzo, la barriera deve derivare dalla valutazio
 
 ### B3 — animal barrier
 
-Separazione specifica, compatibile con welfare, pulizia e operazioni BOM-023.
+Separazione specifica, compatibile con welfare, pulizia e operazioni ordinarie dell'area animali.
 
 ## 16. Segnaletica
 
@@ -624,7 +623,7 @@ Separare:
 - ore referente;
 - eventuali verifiche.
 
-Non conteggiare nuovamente ciò che è già incluso in BOM-026, BOM-023, rete o infrastrutture generali: riportare una dipendenza con costo marginale.
+Non conteggiare nuovamente ciò che è già incluso in BOM-026, nell'eventuale area animali, nella rete o nelle infrastrutture generali: riportare una dipendenza con costo marginale.
 
 ## 27. Gate BOM-027
 
