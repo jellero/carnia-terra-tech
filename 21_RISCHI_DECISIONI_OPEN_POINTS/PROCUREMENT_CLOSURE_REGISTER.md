@@ -42,7 +42,7 @@ Il registro non sostituisce le BOM di dominio. Serve a evitare:
 | Acqua | 017 | tank fertilizzanti | Q1/Q2 | benchmark + RFQ | layout/containment | RFQ contenimento + accessori |
 | Acqua | 018 | accumulo 300 m³ | Q2 | RFQ | geotecnica, fonte, bilancio | RFQ 2×150 m³ / alternative |
 | Energia | 019 | FV + inverter | Q1/Q2 | moduli/inverter benchmark + RFQ | layout, strutture, DSO | RFQ 100 vs 120 kW AC installato |
-| Logistica | 020 | AMR serra | Q3 | RFQ | pilot serra, IP/condensa, offline/API, dock | demo + 100 missioni acceptance |
+| Logistica | 020 | AMR serra | Q4/Q3 P2 | HOLD | ore/flussi P1 reali + pilot serra | aprire RFQ solo se business case positivo |
 | Logistica | 021 | telescopico/mezzo multifunzione CORE | Q1/Q2/Q3 | benchmark + RFQ | accessi, portanza, area humus, duty | demo/RFQ macchina + forche + benna |
 | Verde | 022 | robot tagliaerba | Q3 | prezzi benchmark | superficie netta, pendenze, GNSS/RTK | pilot zona reale |
 | Benessere | 023 | rover pulizia galline | Q4 / ARCHIVIATO | storico | rimosso dal core | nessuna RFQ |
@@ -198,7 +198,7 @@ Regola di transizione:
 - nessun ordine full-scale prima del decision record.
 
 Pilot principali attivi nel registro:
-- PIL-AMR;
+- PIL-AMR — solo P2 se giustificato dai dati;
 - PIL-MOW;
 - PIL-RETAIL;
 - PIL-REUSE;
