@@ -18,7 +18,7 @@ Realizzare un punto vendita automatico self-service 24/7 che consenta di vendere
 - accessibilità;
 - facilità di rifornimento e pulizia;
 - separazione netta dal core produttivo;
-- fallback manuale quando il sistema automatico non è disponibile.
+- ripiego manuale quando il sistema automatico non è disponibile.
 
 Lo spaccio non deve diventare un secondo negozio tradizionale da presidiare.
 
@@ -26,7 +26,7 @@ Lo spaccio non deve diventare un secondo negozio tradizionale da presidiare.
 
 ### R1 — vendita diretta agricola
 
-Baseline preferita per Carnia TerraTech se ricorrono i requisiti:
+Configurazione base preferita per Carnia TerraTech se ricorrono i requisiti:
 
 - imprenditore agricolo iscritto nella sezione speciale del Registro Imprese;
 - prodotti provenienti in misura prevalente dall'azienda;
@@ -46,11 +46,11 @@ Da applicare/verificare se:
 
 La pagina SUAP FVG per vendita mediante apparecchi automatici prevede SCIA e, per alimenti, requisiti e comunicazioni sanitarie specifiche.
 
-**Gate:** prima dell'ordine macchine, definire con SUAP/commercialista il regime effettivo del punto vendita.
+**Verifica bloccante:** prima dell'ordine macchine, definire con SUAP/commercialista il regime effettivo del punto vendita.
 
 ## 3. Non confondere vendita con somministrazione
 
-Baseline BOM-028:
+Configurazione base BOM-028:
 
 - prodotto confezionato o comunque venduto;
 - nessun servizio assistito;
@@ -58,7 +58,7 @@ Baseline BOM-028:
 - nessuna cucina;
 - nessuna area attrezzata specificamente per somministrazione.
 
-Il consumo immediato di prodotti agricoli venduti può avere una disciplina propria, ma non viene assunto automaticamente come baseline.
+Il consumo immediato di prodotti agricoli venduti può avere una disciplina propria, ma non viene assunto automaticamente come configurazione base.
 
 Se il layout introduce tavoli/attrezzature finalizzati al consumo sul posto, verificare se si ricade nella disciplina della somministrazione.
 
@@ -67,15 +67,15 @@ Se il layout introduce tavoli/attrezzature finalizzati al consumo sul posto, ver
 È stato separato un **piano extra autonomo** di ristoro agrituristico evolutivo, documentato in `../EXTRA_AGRITURISMO_EVOLUTIVO/README.md`.
 
 Questo percorso:
-- non modifica la baseline unattended BOM-028;
+- non modifica la configurazione base non presidiato BOM-028;
 - opera solo in finestre presidiate;
 - mantiene vendita automatica e somministrazione come funzioni distinte;
 - privilegia la variante senza cottura per ridurre CAPEX, impianti e carico di lavoro;
-- richiede gate SUAP/sanitario e menu verificato prima di qualsiasi acquisto.
+- richiede verifica bloccante SUAP/sanitario e menu verificato prima di qualsiasi acquisto.
 
 ## 4. Modello fisico
 
-Working architecture:
+Architettura di lavoro:
 
 `accesso cliente -> area vendita automatica -> selezione/pagamento -> ritiro -> uscita`
 
@@ -83,15 +83,15 @@ Con retro-servizio separato:
 
 `Tech Barn / stock -> controllo lotto -> rifornimento -> inventario -> vendita`
 
-### Baseline preferita
+### Configurazione base preferita
 
-- piccolo locale/kiosk protetto;
+- piccolo locale/chiosco protetto;
 - distributore refrigerato principale;
-- eventuale modulo ambient/cool separato;
+- eventuale modulo temperatura ambiente/cool separato;
 - nessun accesso cliente allo stock posteriore;
 - quadro elettrico e rete non accessibili;
 - macchina ancorata/protetta;
-- telecamera su ingresso e area vending;
+- telecamera su ingresso e area distribuzione automatica;
 - illuminazione;
 - cestino;
 - eventuale display/wayfinding;
@@ -99,9 +99,9 @@ Con retro-servizio separato:
 
 ### Outdoor puro
 
-Non è baseline salvo macchina esplicitamente progettata/certificata dal costruttore per installazione outdoor nella configurazione proposta.
+Non è configurazione base salvo macchina esplicitamente progettata/certificata dal costruttore per installazione esterno nella configurazione proposta.
 
-Le macchine indoor non vengono esposte direttamente a:
+Le macchine interno non vengono esposte direttamente a:
 
 - pioggia;
 - neve;
@@ -111,13 +111,13 @@ Le macchine indoor non vengono esposte direttamente a:
 - vandalismo non previsto;
 - polvere/acqua di lavaggio.
 
-La FAS Skudo presentata nel 2026 come soluzione riprogettata per outdoor è un benchmark di categoria da RFQ, non un acquisto già deciso.
+La FAS Skudo presentata nel 2026 come soluzione riprogettata per esterno è un benchmark di categoria da RFQ, non un acquisto già deciso.
 
 ## 5. Matrice SKU/temperatura
 
 Non esiste una sola temperatura valida per tutti i prodotti.
 
-### Classe T-A — cold leafy
+### Classe T-A — ortaggi a foglia refrigerati
 
 Esempi:
 - lattuga;
@@ -133,7 +133,7 @@ Richiede:
 - logger indipendente;
 - blocco vendita in caso di escursione fuori soglia quando necessario.
 
-### Classe T-B — cool-sensitive produce
+### Classe T-B — ortofrutta sensibile al freddo
 
 Esempi:
 - pomodoro;
@@ -147,12 +147,12 @@ Questi SKU non vengono messi automaticamente in una macchina a 0–4 °C.
 Servono:
 - setpoint idoneo;
 - durata permanenza;
-- packaging;
+- confezionamento;
 - verifica chilling injury/shelf-life.
 
 Necta Gusto 8 dichiara layout stratificati con zone 0–3 °C, 5–7 °C e 8–12 °C. Questo rende la piattaforma interessante da testare, ma **non prova da solo** che ogni SKU aziendale sia idoneo a ciascuna zona.
 
-### Classe T-C — ambient
+### Classe T-C — temperatura ambiente
 
 Prodotti che non richiedono refrigerazione nella finestra di vendita prevista.
 
@@ -176,7 +176,7 @@ Limiti:
 - erogazione a spirale;
 - rischio urto/caduta su ortofrutta delicata;
 - prezzo Italia da RFQ;
-- outdoor non assunto.
+- esterno non assunto.
 
 ### Candidato 2 — Necta Gusto 8 Lift
 
@@ -231,30 +231,30 @@ Nessuna macchina viene scelta solo da:
 - prezzo;
 - estetica.
 
-Serve pilot con packaging reale.
+Serve pilot con confezionamento reale.
 
 ## 7. Packaging e interfaccia BOM-025
 
 Lo spaccio eredita da BOM-025:
 
-- label/lotto;
-- barcode/QR;
-- packaging retail;
-- traceability.
+- etichetta/lotto;
+- codice a barre/QR;
+- confezionamento retail;
+- tracciabilità.
 
-Vincoli vending:
+Vincoli distribuzione automatica:
 - dimensione pack compatibile;
 - peso;
 - scorrevolezza;
 - rigidità;
 - assenza di apertura accidentale;
-- resistenza a drop/spirale/ascensore;
+- resistenza a caduta/spirale/ascensore;
 - leggibilità etichetta;
 - condensa.
 
 Test richiesti:
 - 100 erogazioni per SKU critico;
-- zero jam;
+- zero inceppamento;
 - zero rottura pack;
 - danno prodotto entro soglia accettata;
 - lettura lotto;
@@ -262,15 +262,15 @@ Test richiesti:
 
 ## 8. Pagamenti — Stripe nativo
 
-Stripe è il payment stack unico di progetto; payment stack alternativi non fanno parte della baseline.
+Stripe è il infrastruttura di pagamento unico di progetto; infrastruttura di pagamento alternativi non fanno parte della configurazione base.
 
-Il server centrale Carnia TerraTech è il proprietario del flusso ordine/pagamento/vendita e usa Stripe come payment processor.
+Il server centrale Carnia TerraTech è il proprietario del flusso ordine/pagamento/vendita e usa Stripe come gestore dei pagamenti.
 
-### Terminal unattended
+### Terminal non presidiato
 
-Per un ambiente realmente unattended/vending, il candidato Stripe Terminal è **Verifone UX700**.
+Per un temperatura ambientee realmente non presidiato/distribuzione automatica, il candidato Stripe Terminal è **Verifone UX700**.
 
-La documentazione Stripe corrente lo identifica come dispositivo self-service/unattended e ne indica, tra le caratteristiche:
+La documentazione Stripe corrente lo identifica come dispositivo self-service/non presidiato e ne indica, tra le caratteristiche:
 
 - EMV chip;
 - contactless/wallet;
@@ -283,33 +283,33 @@ La documentazione Stripe corrente lo identifica come dispositivo self-service/un
 
 La combinazione esatta offline + server-driven + configurazione italiana va verificata nel pilot e nella documentazione Stripe vigente.
 
-### Flusso transazionale working
+### Flusso transazionale di lavoro
 
-`selection -> inventory reservation -> order -> PaymentIntent -> Stripe Terminal -> payment confirmed -> authorize vend -> vend_ack -> close order`
+`selezione -> prenotazione inventario -> order -> PagamentoIntent -> Stripe Terminal -> pagamento confermato -> autorizza erogazione -> vend_ack -> chiudi ordine`
 
 Il pagamento riuscito **non equivale** a vendita completata finché il sistema non riceve conferma dell'erogazione.
 
 Se l'erogazione fallisce:
 
-- ordine resta in stato recovery;
+- ordine resta in stato recupero;
 - slot/machine può essere disabilitato;
 - il server esegue retry soltanto se sicuro;
-- altrimenti avvia refund/cancel coerente con lo stato Stripe.
+- altrimenti avvia rimborso/cancel coerente con lo stato Stripe.
 
 ### Requisiti software
 
-- PaymentIntent;
+- PagamentoIntent;
 - webhook;
 - idempotency key;
 - correlation id;
 - state machine esplicita;
 - reconciliation;
-- refund API;
-- audit;
+- rimborso API;
+- registro di controllo;
 - gestione delayed webhook;
-- protezione da double-vend/double-refund.
+- protezione da doppia erogazione/double-rimborso.
 
-Le credenziali Stripe restano server-side; nessuna secret key nel controller vending.
+Le credenziali Stripe restano lato server; nessuna secret key nel controller distribuzione automatica.
 
 ## 9. Corrispettivi e fiscalità
 
@@ -359,12 +359,12 @@ Ogni zona refrigerata deve avere:
 
 1. sensore macchina;
 2. logger indipendente;
-3. soglia warning;
-4. soglia stop vendita;
+3. soglia preallarme;
+4. soglia blocco vendita;
 5. timestamp;
 6. allarme remoto;
 7. procedura verifica prodotto;
-8. restart controllato.
+8. riavvio controllato.
 
 Non basta vedere "compressore ON".
 
@@ -379,19 +379,19 @@ Se temperatura esce dalla finestra accettata:
 
 ## 12. Logger indipendente
 
-Working candidate:
+Di lavoro candidate:
 - Testo 160 T o classe equivalente;
 - Wi-Fi;
 - memoria locale;
 - allarmi;
 - alimentazione a batteria;
-- monitoraggio indipendente dal controller della vending.
+- monitoraggio indipendente dal controller della distribuzione automatica.
 
 Per impiego alimentare definitivo, preferire logger/sistema specificamente adatto al contesto HACCP e alla validazione richiesta.
 
-## 13. Inventario, logistica e scheduler centrale
+## 13. Inventario, logistica e pianificatore centrale
 
-Il vendor vending non è il system of record.
+Il fornitore distribuzione automatica non è il sistema autorevole dei dati.
 
 Il **server centrale Carnia TerraTech** mantiene per ogni slot:
 
@@ -412,27 +412,27 @@ Eventi:
 - load;
 - sale;
 - payment;
-- refund;
+- rimborso;
 - vend_command;
 - vend_ack;
-- jam;
+- inceppamento;
 - temperature fault;
 - manual removal;
 - expiry;
-- waste;
+- scarto;
 - reconciliation.
 
 Il server incrocia questi dati con:
 
 - celle BOM-024;
-- packaging BOM-025;
+- confezionamento BOM-025;
 - raccolta prevista;
 - ordini;
 - personale disponibile;
 - logistica/AMR;
 - storico vendite;
 - meteo/stagionalità;
-- forecast domanda/offerta.
+- previsione domanda/offerta.
 
 Output operativo:
 
@@ -441,13 +441,13 @@ Output operativo:
 - missioni logistiche;
 - quantità da trasferire da cella a spaccio;
 - reorder/stock target;
-- markdown/promotion candidate;
-- rischio stockout;
-- rischio waste.
+- candidato a sconto/promozione;
+- rischio esaurimento scorte;
+- rischio scarto.
 
-L'inventario teorico viene sempre riconciliato con audit fisico e feedback macchina.
+L'inventario teorico viene sempre riconciliato con registro di controllo fisico e feedback macchina.
 
-## 14. Prezzi e master data
+## 14. Prezzi e dati anagrafici principali
 
 Ogni SKU deve avere:
 - prezzo;
@@ -468,11 +468,11 @@ Scopo:
 - deterrenza;
 - ricostruzione eventi.
 
-Baseline:
+Configurazione base:
 - 1 camera ingresso;
-- 1 camera area vending, se il layout lo richiede;
+- 1 camera area distribuzione automatica, se il layout lo richiede;
 - niente audio;
-- niente facial recognition;
+- niente riconoscimento facciale;
 - niente analytics biometrici;
 - campo limitato alla pertinenza necessaria;
 - cartello prima dell'ingresso nella zona ripresa;
@@ -483,28 +483,28 @@ Baseline:
 Se le telecamere possono riprendere lavoratori:
 - verificare preventivamente gli adempimenti dell'art. 4 Statuto dei lavoratori e relative autorizzazioni/accordi.
 
-Working candidate hardware:
-- Ubiquiti G5 Turret Ultra o equivalente PoE outdoor/tamper-resistant;
+Di lavoro candidate hardware:
+- Ubiquiti G5 Turret Ultra o equivalente PoE esterno/tamper-resistant;
 - storage locale;
 - nessun cloud obbligatorio per registrazione base, se architettura scelta lo consente.
 
-## 16. Accesso e security fisica
+## 16. Accesso e sicurezza fisica
 
 Possibili livelli:
 
 ### S0 — macchina accessibile dall'esterno
-Solo se macchina e installazione sono espressamente outdoor.
+Solo se macchina e installazione sono espressamente esterno.
 
-### S1 — kiosk sempre aperto
+### S1 — chiosco sempre aperto
 Accesso cliente a piccola area coperta, macchine protette.
 
 ### S2 — locale con porta
 Ingresso sempre libero o controllato.
 
-Baseline working:
+Configurazione base di lavoro:
 - S1/S2;
 - nessun badge cliente obbligatorio;
-- porta/gate solo se necessario per meteo/sicurezza.
+- porta/verifica bloccante solo se necessario per meteo/sicurezza.
 
 Non introdurre registrazione identità del cliente senza un bisogno reale.
 
@@ -517,20 +517,20 @@ Requisiti:
 - niente zone d'ombra critiche;
 - consumo contenuto;
 - comando crepuscolare/astronomico;
-- manual override;
-- apparecchi outdoor/IP adeguati.
+- comando manuale;
+- apparecchi esterno/IP adeguati.
 
 Interfaccia con BOM-026/impianto elettrico generale se fisicamente vicino.
 
 ## 18. Elettrico
 
 Carichi separati:
-- vending/refrigerazione;
+- distribuzione automatica/refrigerazione;
 - POS/payment;
 - network;
 - camera/NVR;
 - lighting;
-- eventuale HVAC kiosk.
+- eventuale HVAC chiosco.
 
 Richiedere:
 - linea dedicata;
@@ -539,12 +539,12 @@ Richiedere:
 - messa a terra;
 - sezionamento;
 - presa/manutenzione;
-- energy meter per vending;
+- energy meter per distribuzione automatica;
 - as-built.
 
 ## 19. Continuità elettrica — BESS aziendale
 
-**Nessuna UPS locale nella baseline BOM-028.**
+**Nessuna UPS locale nella configurazione base BOM-028.**
 
 Il progetto dispone di backup a batterie con **30 kW di potenza** e lo spaccio viene integrato in quel sistema di continuità.
 
@@ -556,19 +556,19 @@ Da verificare nel package energia:
 - tempo di trasferimento;
 - autonomia al SOC di riserva;
 - funzionamento in isola;
-- black-start se previsto.
+- riavvio da rete assente se previsto.
 
-Carichi BOM-028 da includere nel load shedding:
+Carichi BOM-028 da includere nel distacco selettivo dei carichi:
 
 ### P0 — controllo/transazioni
 - server/control plane minimo;
 - rete;
 - Stripe/reader connectivity;
-- controller vending;
+- controller distribuzione automatica;
 - logger critici.
 
-### P1 — cold-chain
-- vending refrigerato;
+### P1 — catena del freddo
+- distribuzione automatica refrigerato;
 - eventuale HVAC tecnico necessario.
 
 ### P2 — security/operations
@@ -583,7 +583,7 @@ Se la temperatura non è più garantita:
 - alarm;
 - classificazione lotto secondo HACCP.
 
-## 20. Server centrale, orchestrazione e cybersecurity
+## 20. Server centrale, orchestrazione e cybersicurezza
 
 BOM-028 usa `07_AUTOMAZIONE_DATI_AI/CENTRAL_ORCHESTRATION_SERVER.md` come architettura di riferimento.
 
@@ -597,12 +597,12 @@ Il server centrale gestisce:
 - refill;
 - task personale;
 - logistica;
-- vending state;
+- distribuzione automatica state;
 - temperature;
 - scadenze;
-- refund;
+- rimborso;
 - manutenzione;
-- forecasting domanda/offerta.
+- previsioneing domanda/offerta.
 
 Segmenti distinti:
 
@@ -613,25 +613,25 @@ Segmenti distinti:
 
 Principi:
 
-- server come system of record;
-- vendor cloud solo come integrazione opzionale, non master;
-- deny by default verso PLC/OT;
+- server come sistema autorevole dei dati;
+- fornitore cloud solo come integrazione opzionale, non master;
+- negazione predefinita verso PLC/OT;
 - MFA;
-- service account separate;
-- secrets server-side;
+- account di servizio separate;
+- segreti lato server;
 - idempotency;
-- audit log;
+- registro di controllo log;
 - backup/restore;
 - monitoring;
-- firmware inventory.
+- inventario firmware.
 
-Se una vending espone soltanto MDB o telemetria proprietaria insufficiente, prevedere gateway locale/protocol adapter per produrre eventi e comandi integrabili nel server centrale.
+Se una distribuzione automatica espone soltanto MDB o telemetria proprietaria insufficiente, prevedere verifica bloccanteway locale/protocol adapter per produrre eventi e comandi integrabili nel server centrale.
 
 Il server pianifica e coordina; safety locale e interblocchi macchina restano indipendenti.
 
 ## 21. Privacy pagamenti e clienti
 
-Baseline:
+Configurazione base:
 - nessun account cliente necessario;
 - nessun loyalty obbligatorio;
 - no riconoscimento facciale;
@@ -650,7 +650,7 @@ creare valutazione privacy separata.
 
 Rifornimento preferito:
 - durante finestra poco frequentata;
-- vending temporaneamente in service mode;
+- distribuzione automatica temporaneamente in modalità manutenzione;
 - sportello area cliente segregato;
 - carrello standard;
 - scanner;
@@ -661,9 +661,9 @@ Rifornimento preferito:
 KPI:
 - minuti/rifornimento;
 - errori slot;
-- stockout;
+- esaurimento scorte;
 - invenduto;
-- waste;
+- scarto;
 - vendite/SKU/giorno.
 
 ## 23. Pulizia
@@ -679,7 +679,7 @@ KPI:
 ### Settimanale
 - ripiani;
 - guarnizioni accessibili;
-- filtri/condensatore secondo vendor;
+- filtri/condensatore secondo fornitore;
 - camera/lenti;
 - signage;
 - touch.
@@ -706,45 +706,45 @@ Regole:
 
 ## 25. Resi/rimborsi
 
-Un unattended store senza procedura rimborso è incompleto.
+Un non presidiato store senza procedura rimborso è incompleto.
 
 Prevedere:
 - numero/QR assistenza;
 - ID macchina;
 - timestamp transazione;
 - selezione;
-- procedura jam;
-- refund cashless;
+- procedura inceppamento;
+- rimborso cashless;
 - SLA;
 - registro reclami.
 
 Non aprire un vano resi food self-service senza progetto igienico specifico.
 
-## 26. Failure modes
+## 26. Modalità di guasto
 
-| Failure mode | Conseguenza | Fallback |
+| Modalità di guasto | Conseguenza | Ripiego |
 |---|---|---|
 | frigo guasto | rischio prodotto | blocco selezioni + allarme + HACCP |
-| power fail | perdita freddo/pagamento | BESS 30 kW + load shedding + stop-vend se cold-chain non garantita |
+| mancanza alimentazione | perdita freddo/pagamento | BESS 30 kW + distacco selettivo dei carichi + stop-vend se catena del freddo non garantita |
 | BESS low SOC | autonomia insufficiente | priorità P0/P1, riduzione carichi P2/P3 |
-| server centrale down | scheduler/payment workflow indisponibile | local safe mode; niente nuove vendite se stato non riconciliabile |
-| database/event bus down | perdita consistenza | queue/buffer dove sicuro, stop nuove transazioni critiche |
-| Internet assente | Stripe/cloud non disponibili | policy offline validata; nessun double-vend |
-| Stripe/API down | no nuove autorizzazioni | machine unavailable per nuovi acquisti, recovery pagamenti pending |
+| server centrale non disponibile | pianificatore/payment workflow indisponibile | local safe mode; niente nuove vendite se stato non riconciliabile |
+| database/bus eventi non disponibile | perdita consistenza | queue/buffer dove sicuro, stop nuove transazioni critiche |
+| Internet assente | Stripe/cloud non disponibili | policy offline validata; nessun doppia erogazione |
+| Stripe/API non disponibile | no nuove autorizzazioni | machine unavailable per nuovi acquisti, recupero pagamenti pending |
 | webhook ritardato | ordine ambiguo | state machine pending + reconciliation, mai doppia erogazione |
-| payment confirmed ma vend fallisce | cliente addebitato senza prodotto | automatic recovery/refund |
-| jam spirale | cliente non riceve prodotto | refund + slot disable |
+| pagamento confermato ma vend fallisce | cliente addebitato senza prodotto | automatic recupero/rimborso |
+| inceppamento spirale | cliente non riceve prodotto | rimborso + disabilitazione vano |
 | prodotto fragile cade | danno/reso | Lift/locker + test pack |
 | logger guasto | perdita verifica indipendente | sostituzione + sensore macchina |
-| camera guasta | security ridotta | alert e ripristino |
+| camera guasta | sicurezza ridotta | alert e ripristino |
 | NVR pieno | perdita registrazioni | retention/capacity management |
-| porta kiosk bloccata | accesso/uscita compromessi | uscita sempre sicura + apertura manuale |
+| porta chiosco bloccata | accesso/uscita compromessi | uscita sempre sicura + apertura manuale |
 | vandalismo | fermo | antiscasso + CCTV + ricambi |
-| stockout | vendite perse | forecast + refill scheduler |
+| esaurimento scorte | vendite perse | previsione + refill pianificatore |
 | scadenza | vendita non conforme | expiry lockout |
-| prezzo errato | contestazione | master data unico sul server |
+| prezzo errato | contestazione | dati anagrafici principali unico sul server |
 | fiscale offline | non conformità | procedura validata con fornitore/commercialista |
-| cloud vendor vending down | feature vendor assente | server centrale continua sulle interfacce locali disponibili |
+| cloud fornitore distribuzione automatica down | feature fornitore assente | server centrale continua sulle interfacce locali disponibili |
 
 ## 27. Manutenzione e ricambi
 
@@ -768,23 +768,23 @@ Ricambi minimi da RFQ:
 Richiedere:
 - SLA Italia;
 - tecnico FVG/NE Italia;
-- lead time ricambi;
+- tempo di consegna ricambi;
 - canoni;
 - fine vita;
 - disponibilità 7–10 anni.
 
-## 28. Frictionless smart crate + smart cart
+## 28. Cassetta intelligente + carrello intelligente senza scansione
 
 Documento dedicato:
 `SMART_CRATE_SMART_CART_ARCHITECTURE.md`.
 
-### Decisione working
+### Decisione di lavoro
 
-Il rullo con camera+pesa viene mantenuto come fallback/diagnostica, non come checkout principale.
+Il rullo con camera+pesa viene mantenuto come ripiego/diagnostica, non come checkout principale.
 
 La direzione R&D prioritaria è:
 
-`smart crate + smart cart + sensor fusion + server centrale`
+`cassetta intelligente + carrello intelligente + fusione sensoriale + server centrale`
 
 Ogni prelievo produce segnali correlabili:
 
@@ -795,11 +795,11 @@ Ogni prelievo produce segnali correlabili:
 - SKU noto dalla posizione crate;
 - cart/session ID.
 
-Il server genera un evento `ITEM_ADDED` soltanto quando il confidence score supera la soglia; altrimenti chiede conferma al cliente sul display.
+Il server genera un evento `ITEM_ADDED` soltanto quando il indice di confidenza supera la soglia; altrimenti chiede conferma al cliente sul display.
 
 Il ritorno prodotto è simmetrico con `ITEM_REMOVED`.
 
-### Display
+### Schermo
 
 - ESL/e-paper su ogni posizione SKU/cassetta;
 - LCD/OLED 7–10" sul cart;
@@ -808,53 +808,53 @@ Il ritorno prodotto è simmetrico con `ITEM_REMOVED`.
 
 ### Metrologia
 
-Le cheap load cell sono sensing.
+Le celle di carico economiche sono rilevazione.
 
 La misura che determina un prezzo a peso deve essere legalmente idonea.
 
 Pilot:
-- M1 modulo legal-for-trade sulla smart crate/cluster;
-- M3 stazione certificata di conferma/fallback;
+- M1 modulo idoneo alla vendita a peso sulla cassetta intelligente/cluster;
+- M3 stazione certificata di conferma/ripiego;
 - M2 cart-scale soltanto se validata dal punto di vista metrologico.
 
-### Payment
+### Pagamento
 
-Baseline:
+Configurazione base:
 - basket già completo sul cart;
-- Stripe UX700 fisso al gate;
+- Stripe UX700 fisso al verifica bloccante;
 - solo tap/pay all'uscita;
 - nessuna scansione.
 
-Future:
+Futuro:
 - payment sul cart;
 - sessione con metodo di pagamento associato all'ingresso.
 
-### Exit
+### Uscita
 
-Gate state:
+Verifica bloccante state:
 
 `PAID && CART_RECONCILED && !BLOCKING_ANOMALY`
 
-Il gate non deve mai impedire l'esodo delle persone e deve avere emergency/manual release.
+Il verifica bloccante non deve mai impedire l'esodo delle persone e deve avere emergency/manual release.
 
-### Return
+### Rientro
 
-Baseline:
-- nested return/charging.
+Configurazione base:
+- rientro e ricarica annidati.
 
-Future:
+Futuro:
 - un rover/tug recupera una fila di cart se parcheggio e volumi lo giustificano.
 
-Non motorizzare ogni cart baseline.
+Non motorizzare ogni cart configurazione base.
 
 ## 29. Regola economica
 
 Separare:
 
 `CAPEX`
-- kiosk/shell;
-- vending;
-- Stripe Terminal / UX700 o hardware Stripe unattended compatibile;
+- chiosco/shell;
+- distribuzione automatica;
+- Stripe Terminal / UX700 o hardware Stripe non presidiato compatibile;
 - fiscal interface;
 - electrical;
 - network;
@@ -864,11 +864,11 @@ Separare:
 - signage;
 - civil works;
 - install/commissioning;
-- smart crate pilot;
-- smart carts;
+- cassetta intelligente pilot;
+- carrello intelligentes;
 - ESL/e-paper;
 - legal metrology hardware;
-- exit gate/dock.
+- exit verifica bloccante/dock.
 
 `OPEX`
 - fee Stripe;
@@ -880,29 +880,29 @@ Separare:
 - pulizia;
 - assicurazione;
 - consumabili;
-- waste;
+- scarto;
 - connectivity.
 
 `COGS/retail`
-- packaging;
-- labels;
+- confezionamento;
+- etichettas;
 - commissioni;
 - IVA/fiscalità;
 - scarti.
 
-## 30. Gate BOM-028
+## 30. Verifica bloccante BOM-028
 
-1. regime R1 vendita diretta agricola vs R2 vending retail;
+1. regime R1 vendita diretta agricola vs R2 distribuzione automatica retail;
 2. verifica SUAP;
 3. notifica/comunicazione alimentare;
 4. mix SKU;
 5. temperatura per SKU;
-6. packaging;
+6. confezionamento;
 7. shelf-life;
 8. capienza giornaliera;
 9. macchina shortlist;
 10. pilot erogazione;
-11. Stripe Terminal unattended / UX700 e integrazione server;
+11. Stripe Terminal non presidiato / UX700 e integrazione server;
 12. fiscalizzazione;
 13. rete/4G;
 14. integrazione BESS 30 kW / autonomia in kWh;
@@ -913,7 +913,7 @@ Separare:
 19. RFQ installato;
 20. TCO 5 anni;
 21. test 500 vendite + reconciliation server/Stripe/vend;
-22. smart crate/cart sensor-fusion pilot;
+22. cassetta intelligente/cart sensor-fusion pilot;
 23. metrologia legale su SKU venduti a peso;
-24. paid-exit gate safety validation;
+24. paid-exit verifica bloccante safety validation;
 25. commissioning e go-live controllato.
