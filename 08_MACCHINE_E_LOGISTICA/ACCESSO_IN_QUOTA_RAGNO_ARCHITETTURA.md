@@ -1,4 +1,4 @@
-# Accesso in quota e PLE "ragno" — architettura di manutenzione
+# Accesso umano in quota — piattaforma / PLE "ragno"
 
 **Aggiornato:** 18 settembre 2026  
 **Stato:** `FUNZIONE ESSENZIALE / ACQUISTO VS NOLEGGIO DA LAYOUT E TCO`
@@ -11,7 +11,10 @@ Le parti alte della serra devono essere ispezionabili e manutenibili senza:
 - piattaforme non certificate;
 - dipendenza da un fornitore per ogni piccolo intervento.
 
-La **capacità di accesso in quota è core di mitigazione rischio**.
+La **capacità di accesso umano in quota è core di mitigazione rischio**.
+
+Questo documento usa "ragno" nel senso commerciale di **PLE cingolata compatta**. Il robot autonomo "ragno" per ispezione/manutenzione è un progetto distinto:
+`../07_AUTOMAZIONE_DATI_AI/ROBOT_RAGNO_MANUTENZIONE_RND.md`.
 
 ## 2. Attività previste
 
@@ -148,6 +151,16 @@ Prima dell'accettazione:
 - documentazione;
 - formazione;
 - piano verifiche.
+
+## 9A. Interfaccia col robot ragno R&S
+
+La PLE/piattaforma resta il mezzo di:
+- accesso umano;
+- recovery del robot;
+- intervento su attività non robotizzate;
+- fallback.
+
+Il masterplan può predisporre interfacce passive per il robot autonomo solo dopo approvazione del costruttore strutturale.
 
 ## 10. Decisione
 
