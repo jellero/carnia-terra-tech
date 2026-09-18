@@ -8,12 +8,19 @@
 Carnia TerraTech non parte senza approvazione formale del pacchetto di finanziamento.
 
 Assunzione di lavoro indicata dal promotore:
-- circa 30% del fabbisogno coperto da contributi;
-- circa 40% coperto da finanziamento;
-- circa 70% della copertura iniziale disponibile/garantita prima dell'avvio;
+- giovane agricoltore con aliquota SRD01 del 60%;
+- anticipo SRD01 massimo pari al 50% del sostegno concesso, cioè fino al 30% della spesa ammessa;
+- circa 40% della spesa coperto da finanziamento agevolato/finanziamento deliberato;
+- obiettivo quindi: circa 70% della spesa di investimento coperta da liquidità iniziale, **solo dopo concessione, garanzia dell'anticipo e delibera del finanziamento**;
+- premio SRE01 da €70.000 trattato separatamente: €49.000 di acconto e €21.000 a saldo se effettivamente concesso;
 - quota residua, IVA, costi non ammissibili e capitale circolante da coprire separatamente.
 
-Per ogni strumento vanno comunque verificati importo concesso, anticipo realmente erogabile, garanzie, tempi di accredito, spese ammissibili, SAL, saldo, IVA, cumulo e ammortamento.
+Il 70% non viene chiamato "garantito" finché i singoli atti non sono perfezionati. Per ogni strumento vanno verificati importo concesso, anticipo realmente erogabile, garanzie, tempi di accredito, spese ammissibili, SAL, saldo, IVA, cumulo e ammortamento.
+
+Documenti di riferimento:
+- `PIANO_AVVIO_SICURO_CONTRIBUTI.md`;
+- `MAPPA_CONTRIBUTI_E_CASSA_INIZIALE.md`;
+- `../18_CAPEX_OPEX_CASHFLOW/MATRICE_INVESTIRE_ORA_O_DOPO.md`.
 
 ## 2. Distinzione fondamentale
 
@@ -70,3 +77,5 @@ Tutto il lavoro necessario all'avvio viene valorizzato e remunerato. Il business
 ## 7. Regola decisionale
 
 L'obiettivo non è spendere il 70% iniziale rapidamente. È trasformare progressivamente la liquidità finanziata in capacità produttiva e poi in flusso di cassa, mantenendo sempre la capacità di pagare persone e fornitori.
+
+Quando esiste una finestra al 60%, si anticipano gli investimenti futuri **solo** se sono durevoli, quasi certi, correttamente dimensionati e costosi da aggiungere dopo. Tecnologia incerta o rapidamente obsolescente viene invece predisposta e acquistata al momento utile.
