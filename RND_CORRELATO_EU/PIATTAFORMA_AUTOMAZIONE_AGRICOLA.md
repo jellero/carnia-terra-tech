@@ -150,14 +150,15 @@ Carnia TerraTech fornisce ambiente reale di prova. I dimostratori sono indipende
 - conferma umana;
 - interfaccia pagamento separata dalla misura metrologica legale.
 
-**D3 — Robotica di servizio su superfici miste**
-- rover su superfici dure/prato/ricovero;
-- percezione;
-- pianificazione percorso;
-- interazione sicura;
-- ciclo di aggancio/pulizia.
+**D3 — Ispezione e manutenzione assistita delle parti alte**
+- ispezione di copertura, gronde, aperture e attuatori;
+- visione per anomalie/manutenzione;
+- assistenza operatore da PLE/piattaforma;
+- localizzazione del punto di guasto;
+- raccolta dati manutentivi;
+- eventuali utensili robotici solo dopo analisi rischio.
 
-D3 resta opzionale finché novità e fattibilità non sono validate.
+La capacità di accesso in quota appartiene al core agricolo; l'autonomia robotica della manutenzione resta R&S opzionale.
 
 ### PL7 — Affidabilità, cybersicurezza e osservabilità
 
@@ -224,7 +225,7 @@ Ruoli da cercare, non partner già selezionati:
 - università/centro di ricerca robotica;
 - gruppo AI/visione artificiale;
 - integratore OT/PLC;
-- produttore AMR/robot;
+- produttore AMR/robot o sistemi di ispezione/manutenzione;
 - specialista cybersicurezza/edge;
 - partner agricoli aggiuntivi per validazione multi-sito;
 - eventuale partner economico/gestione innovazione.
