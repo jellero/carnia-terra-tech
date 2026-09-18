@@ -558,7 +558,7 @@ Il server deve sapere la differenza tra:
 
 Il progetto dispone di backup a batterie con **30 kW di potenza**.
 
-BOM/server devono quindi evitare UPS locali ridondanti salvo requisito tecnico futuro specifico.
+BOM/server devono evitare UPS consumer sparsi e ridondanti; un ride-through P0 professionale dedicato resta invece una soluzione ammessa da confrontare con il trasferimento BESS no-break.
 
 Da chiudere nel package energia:
 
@@ -1632,7 +1632,7 @@ Questi sono target di progetto, non SLA fornitore.
 - Ceph;
 - SAN;
 - GPU nel piano di controllo;
-- UPS locale;
+- UPS consumer/distribuite; eventuale ride-through P0 professionale è decisione del BOM-034;
 - database solo cloud;
 - ERP proprietario come sistema autorevole dei dati.
 
