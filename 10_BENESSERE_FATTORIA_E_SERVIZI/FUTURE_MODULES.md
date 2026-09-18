@@ -139,10 +139,9 @@ Benchmark:
 - Necta Gusto 8 ~€5.900 benchmark EU seller;
 - Gusto 8 Lift ~€7.200 benchmark EU seller;
 - Gusto Drum ~€10.600–13.199 benchmark EU;
-- FAS Pro 900 €8.840 net benchmark listing con Nayax incluso, configurazione da verificare;
-- Nayax VPOS Touch €430;
-- servizio cashless/operations/inventory €15,75/mese benchmark;
-- processing benchmark 1,45–3,5% in funzione del ticket;
+- FAS Pro 900 €8.840 net benchmark listing; il payment incluso nel listing non è baseline;
+- Verifone UX700 Stripe Terminal unattended: RFQ;
+- Stripe Terminal Italia: 1,4% + €0,10 carte SEE / 2,9% + €0,10 non-SEE benchmark corrente;
 - Testo 160 T €124 net / €151,28 IVA incl.;
 - Ubiquiti G5 Turret Ultra €80/cad;
 - notifica sanitaria FVG/NIA-VIA €20 reference.
