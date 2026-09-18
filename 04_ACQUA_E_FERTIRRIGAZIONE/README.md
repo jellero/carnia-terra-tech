@@ -1,7 +1,7 @@
 # Carnia TerraTech — Punto 04: Acqua e fertirrigazione
 
-**Aggiornato:** 17 settembre 2026  
-**Stato:** `ARCHITETTURA STRUTTURATA / BOM-013…018 SVILUPPATE / TRATTAMENTO-DISINFEZIONE E DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA E CROP CARD`.
+**Aggiornato:** 18 settembre 2026  
+**Stato:** `ARCHITETTURA STRUTTURATA / BOM-013…018 + BOM-032 SVILUPPATE / DRENAGGIO-RIUSO DA SVILUPPARE / VALIDAZIONE BLOCCATA DA LOTTO, ACQUA, UVT, MICROBIOLOGIA E CROP CARD`.
 
 ## 1. Obiettivo
 
@@ -24,7 +24,7 @@ Principi:
 
 Con accumulo atmosferico:
 
-`captazione/fonte -> 2×150 m³ working -> presa/griglia grossolana -> pompe principali 1+1 -> idrociclone/filtrazione fine pressurizzata -> misura portata -> dosaggio A/B/acido -> miscelazione -> pH/EC/T -> collettore principale -> 6 comparti -> working 24 settori -> emettitori`
+`captazione/fonte -> 2×150 m³ working -> presa/griglia grossolana -> pompe principali 1+1 -> idrociclone/filtrazione fine pressurizzata -> UV validated barrier BOM-032 -> misura portata -> dosaggio A/B/acido -> miscelazione -> pH/EC/T -> collettore principale -> 6 comparti -> working 24 settori -> emettitori`
 
 Stock chimici:
 
@@ -146,7 +146,57 @@ Fondazioni da geotecnica + manuale OEM. Un cilindro Ø9,14 m con 150 m³ esercit
 
 UNI EN 16941-1:2024 è riferimento corrente per sistemi di uso acqua piovana non potabile, oltre agli obblighi locali/nazionali.
 
-## 9. Misure/KPI
+## 9. BOM-032 — trattamento e disinfezione
+
+Architettura multi-classe:
+
+- **W0** raw/source;
+- **W1** irrigazione root-zone;
+- **W2** fogging/aerosol;
+- **W3** potable/food-process/handwash;
+- **W4** future reclaimed drainage.
+
+Baseline W1:
+
+`tank -> pompe -> BOM-014 filtrazione -> UV -> fertirrigazione`.
+
+Working decision:
+
+- UV come barriera microbiologica primaria **se il risk assessment richiede disinfezione**;
+- UV dopo filtrazione e prima dei fertilizzanti;
+- sizing da Q + worst-case UVT254 + dose validata, non da portata catalogo;
+- due-train architecture U1/U2 preferita rispetto a blind bypass;
+- bypass manutenzione normalmente chiuso e monitorato;
+- stessa linea trattamento predisposta per recirculation selettiva tank A/tank B;
+- nessuna equalizzazione automatica di un tank in HOLD;
+- UV non rimuove biofilm esistente: servono design flushable, cleaning e sanitation SOP;
+- cloro/H2O2/PAA **non** continuous baseline: soltanto se dati/biofilm/processo lo giustificano;
+- acid e hypochlorite fisicamente segregati;
+- W2 fogging trattata come classe separata;
+- W3 separata e conforme alla disciplina potabile quando applicabile;
+- W4 rimandata a BOM-033.
+
+Benchmark tecnici:
+
+- ProMinent DULCODES LP 1×80: 8,8 m³/h general / 6,4 m³/h nella tabella certified a UVT 98%/cm;
+- DULCODES LP 1×230: 35 m³/h general / 20,7 m³/h certified reference;
+- connected load 110 W / 310 W rispettivamente;
+- sistemi retail/pool 10 m³/h osservati ~€1,8–3,6k: **solo lower-bound non comparabile**, non candidati process;
+- process UV installato = RFQ;
+- ARPA FVG sampling reference: €26 per campione acque superficiali/sotterranee, analisi escluse.
+
+Hard safety:
+- acid + hypochlorite can release chlorine gas;
+- no common concentrated-chemical suction/storage/drain path.
+
+Documenti:
+
+- `WATER_TREATMENT_DISINFECTION_ARCHITECTURE.md`;
+- `RFQ_WATER_TREATMENT_DISINFECTION.md`;
+- `19_BOM_PRODOTTI_FORNITORI/ACQUA_TRATTAMENTO_DISINFEZIONE.md`;
+- `22_FONTI_NORME_PREVENTIVI/ACQUA_TRATTAMENTO_DISINFEZIONE_SOURCES.md`.
+
+## 10. Misure/KPI
 
 - m³ disponibili e autonomia residua;
 - m³ captati da pioggia / da fonte;
@@ -160,7 +210,7 @@ UNI EN 16941-1:2024 è riferimento corrente per sistemi di uso acqua piovana non
 - drift/calibrazioni;
 - allarmi e ore manutenzione.
 
-## 10. Failure modes principali
+## 11. Failure modes principali
 
 - liner/tank perde;
 - overflow ostruito/insufficiente;
@@ -177,7 +227,7 @@ UNI EN 16941-1:2024 è riferimento corrente per sistemi di uso acqua piovana non
 
 Fallback: isolamento tank/ramo, esercizio su unità superstite, failover P1/P2, stop dosaggio, fonte esterna autorizzata e modalità irrigazione prioritaria/degradata.
 
-## 11. Package sviluppati
+## 12. Package sviluppati
 
 - `IRRIGATION_DISTRIBUTION.md` + RFQ;
 - `FILTRATION_ARCHITECTURE.md` + RFQ;
@@ -185,10 +235,11 @@ Fallback: isolamento tank/ramo, esercizio su unità superstite, failover P1/P2, 
 - `FERTIGATION_DOSING.md` + RFQ;
 - `TANKS_CONTAINMENT_ARCHITECTURE.md` + RFQ;
 - `WATER_STORAGE_ARCHITECTURE.md` + `RFQ_WATER_STORAGE.md`;
-- BOM-013…018 in `19_BOM_PRODOTTI_FORNITORI/`;
+- `WATER_TREATMENT_DISINFECTION_ARCHITECTURE.md` + `RFQ_WATER_TREATMENT_DISINFECTION.md`;
+- BOM-013…018 + BOM-032 in `19_BOM_PRODOTTI_FORNITORI/`;
 - fonti dedicate in `22_FONTI_NORME_PREVENTIVI/`.
 
-## 12. Gate punto 04
+## 13. Gate punto 04
 
 Restano necessari:
 
@@ -201,7 +252,7 @@ Restano necessari:
 - Q/H/NPSH pompe;
 - filtrazione/controlavaggio finali;
 - ricette/concentrazioni/SDS;
-- trattamento/disinfezione se necessario;
-- drenaggio e decisione su eventuale riuso;
-- backup elettrico;
+- validazione BOM-032: UVT/microbiologia/Q/UV redundancy e sampling plan;
+- drenaggio e decisione su eventuale riuso BOM-033;
+- BESS/backup elettrico;
 - commissioning completo.
