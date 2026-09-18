@@ -1,7 +1,7 @@
 # Carnia TerraTech — Benessere, fattoria e servizi futuri
 
 **Aggiornato:** 18 settembre 2026.  
-**Stato:** BOM-023 pulizia galline, BOM-026 pergolato/vite/relax, BOM-027 fattoria didattica e BOM-028 spaccio automatico 24/7 sviluppate.
+**Stato:** BOM-023 robotica galline archiviata; BOM-026 pergolato/vite/relax, BOM-027 fattoria didattica e BOM-028 spaccio sviluppate.
 
 ## 1. Obiettivo del blocco
 
@@ -31,34 +31,20 @@ Ridurre quasi a zero il taglio manuale ordinario delle aree a prato e mantenere 
 
 **Stato:** `DA ANALIZZARE` — prevista comparazione di prodotti reali e TCO.
 
-## 3. Pulizia automatizzata area galline
+## 3. Area galline futura
 
-### Funzione
+Il modulo galline resta possibile, ma **non giustifica robot dedicati nell'avvio**.
 
-Le galline sono free-range nel dominio aziendale dedicato: ricovero, portico, prato e parcheggi/aree esterne rese accessibili. Il sistema di pulizia deve quindi coprire l'intero dominio accessibile agli animali, non soltanto il ricovero.
+Principi:
+- ricovero progettato per pulizia semplice;
+- eventuale nastro/raschiatore;
+- superfici lavabili;
+- deiezioni gestite verso i cicli materia quando compatibile;
+- sicurezza e benessere animale;
+- nessun rover all-area come baseline.
 
-### Architettura working
-
-La soluzione viene divisa in quattro livelli coordinati:
-
-1. raccolta concentrata nel ricovero, soprattutto sotto posatoi/zone di riposo, con piano fessurato + nastro/raschiatore o soluzione equivalente;
-2. rover sanitario dedicato, che percorre ricovero, portico, parcheggi e prato ma non entra mai nelle aree pulite di serra/Tech Barn;
-3. testate/strategie diverse per superficie: raccolta spot e aspirazione/raschiamento sui pavimenti duri; spot-pickup vision a basso impatto sul prato; modalità specifica per ricovero/lettiera;
-4. dirty dock per ricarica, svuotamento, lavaggio sottoscocca/ruote e gestione del materiale raccolto.
-
-Non si assume che una spazzatrice commerciale standard raccolga correttamente deiezioni fresche di gallina sul prato. La funzione grass-pickup resta R&D da pilot, con benchmark da robot outdoor e letteratura scientifica avicola.
-
-### Free-range e sicurezza
-
-Le galline restano libere per impostazione normale. Parcheggio e aree veicolari diventano però zone a accesso temporale controllato: durante carico/scarico, arrivo visitatori o manovre mezzi, porte/gate automatici devono poter trattenere temporaneamente gli animali in una zona sicura. Terminata la finestra di rischio, l'accesso viene riaperto.
-
-Il rover può operare a bassa velocità fra gli animali soltanto dopo validazione welfare/safety. Testata di raccolta, ruote, catene, rulli e punti di schiacciamento devono essere completamente carterizzati: nessuna parte mobile scoperta accessibile alle galline.
-
-### Stato
-
-BOM-023 SVILUPPATA / ROVER ALL-AREA + RACCOLTA RICOVERO / TESTATA PRATO R&D / PILOT E LAYOUT BLOCCANTI.
-
-Documento: CHICKEN_FREE_RANGE_CLEANING_ARCHITECTURE.md.
+Documento:
+`CHICKEN_FREE_RANGE_CLEANING_ARCHITECTURE.md` — ora archivio/linea semplice.
 
 ## 4. Fattoria didattica
 
