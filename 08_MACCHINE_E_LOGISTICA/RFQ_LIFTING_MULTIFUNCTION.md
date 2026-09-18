@@ -1,7 +1,7 @@
 # RFQ — Sollevatore telescopico elettrico + mezzo logistico compatto
 
 **Progetto:** Carnia TerraTech  
-**Aggiornato:** 17 settembre 2026
+**Aggiornato:** 18 settembre 2026
 
 ## 1. Oggetto
 
@@ -27,6 +27,8 @@ Uso agricolo con:
 - pavimenti bagnabili e ambiente umido;
 - passaggi con persone;
 - attività di manutenzione e cantiere;
+- movimentazione humus/compost/substrati e materie sfuse;
+- carico/scarico area cicli materia;
 - nessuna aspettativa di ingresso del telescopico nelle corsie coltura da ~1,20 m.
 
 Il fornitore deve dichiarare limiti di pendenza, portanza terreno, acqua/umidità, temperatura e uso indoor.
@@ -76,7 +78,7 @@ Quotare e documentare:
 
 1. portaforche e forche 1.2 m;
 2. traslatore/posizionatore forche;
-3. benna standard;
+3. benna standard — requisito base per cicli materia;
 4. benna materiali leggeri se utile;
 5. gancio/jib, solo se supportato;
 6. piattaforma persone;
@@ -86,6 +88,8 @@ Quotare e documentare:
 10. luci, beacon, telecamera;
 11. kit recovery/traino;
 12. eventuali accessori agricoli compatibili.
+
+Quotare inoltre, separatamente, eventuale benna per materiali leggeri/voluminosi e dichiarare densità/materiali compatibili.
 
 Per ogni accessorio fornire massa, baricentro, diagramma di carico, limitazioni e documentazione.
 
@@ -148,6 +152,16 @@ Opzione separata:
 - uso Tech Barn;
 - prezzo, batteria, manutenzione e ricambi;
 - corridoio minimo con europallet.
+
+## 9A. Test area humus/materiali
+
+Prima dell'accettazione:
+- presa big bag;
+- benna materiale sfuso rappresentativo;
+- scarico in baia/vasca;
+- manovra nell'area cicli materia;
+- pulizia accessorio;
+- verifica portanza e raggi reali.
 
 ## 10. Acceptance test
 
