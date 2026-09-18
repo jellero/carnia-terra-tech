@@ -4,16 +4,17 @@
 
 | Settore | Envelope | Fase iniziale | Dipendenza primaria | Verifica di uscita | Stato iniziale |
 |---|---:|---|---|---|---|
-| Finanza/cassa | governa €850k | F0 | concessioni/banca | 70% liquidità strutturata + riserve/ponte | DA CHIUDERE |
-| Terreno | €50k | F1 | finanza | due diligence + masterplan | LOTTO DA TROVARE |
+| Finanza/cassa | governa €950k | F0 | concessioni/banca | 70% liquidità strutturata + riserve/ponte | DA CHIUDERE |
+| Terreno | €60k | F1 | finanza | due diligence + masterplan | LOTTO DA TROVARE |
 | Agronomia P1 | OPEX | F1–F5 | lotto/stagione/mercato | crop card + calendario | DA VALIDARE |
 | Serra | €350k | F2–F4 | lotto/geotecnica | involucro + 3 comparti operativi | RFQ BLOCCATO DA LOTTO |
 | Acqua | €55k | F2–F4 | fonte/crop card | portata/pressione/qualità testate | DATI REALI MANCANTI |
 | Termico | €65k | F2–F4 | meteo/carichi | P1 in sicurezza + fallback | CARICO DA CHIUDERE |
 | Energia | €130k | F2–F4 | load register/DSO | blackout/EMS/BESS SAT | DSO/RFQ DA CHIUDERE |
 | Tech Barn | €95k | F2–F4 | kg/day/SKU | freddo + lotto + pack | DIMENSIONAMENTO DA P1 |
-| Automazione | €30k | F3–F4 | impianti | locale/offline/restore | ARCHITETTURA PRONTA |
+| Automazione | €25k | F3–F4 | impianti | locale/offline/restore | ARCHITETTURA PRONTA |
 | Spaccio | €20k | F4–F6 | SKU/SUAP | ordine→ritiro/vendita completo | RFQ/SUAP |
+| Macchine/cicli materia/quota | €90k | F1–F4 | layout/flussi/TCO | mezzo + humus + accesso sicuro | RFQ BLOCCATO DA LOTTO |
 | Personale | €120k riserva condivisa | F0–F7 | cronoprogramma | team formato senza burn eccessivo | COSTI REALI DA PAGHE |
 
 ## Regole colore
@@ -34,8 +35,8 @@ Revisione budget e compensazione esplicita con altra voce CAPEX non critica.
 ### Scostamento >10%
 Stop ordine e revisione del piano master.
 
-### Totale >€950k
-Revisione completa della Fase P1.
+### Totale >€1,05M
+Revisione completa della Fase P1 e della copertura finanziaria.
 
 ## Verifica mensile
 
