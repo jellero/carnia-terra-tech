@@ -72,7 +72,7 @@ Dati guida:
 - BOM-016: A/B/acido; sole pompe scenario ~€1.744–1.894 + IVA;
 - BOM-017: scenario tank A/B/acido 500/500/200 L; soli contenitori ~€509,40 + IVA;
 - BOM-018: 2×150 m³ di lavoro, espansione 400–500 m³; 300 m³ = 8,6–10 giorni teorici a 30–35 m³/giorno;
-- BOM-032: W0/W1/W2/W3/W4 water classes; UV after filtration as di lavoro microbial barrier when required; UV sizing from Q + worst-case UVT + validated dose; no blind bypass; chemical sanitation conditional; W3 potable/food kept separate; future W4 reuse deferred to BOM-033.
+- BOM-032: W0/W1/W2/W3/W4 water classees; UV after filtration as di lavoro microbial barrier when required; UV sizing from Q + worst-case UVT + validated dose; no blind bypass; chemical sanitation conditional; W3 potable/food kept separate; future W4 reuse deferred to BOM-033.
 
 Verifica bloccante: lotto, source/seasonal water analyses, UVT254, microbiology, crop card, bilancio idrico, geotecnica/RainMap, RFQ, BOM-032 validation, drenaggio/riuso BOM-033 e commissioning.
 
@@ -84,7 +84,7 @@ Matrice: `05_TERMICO_E_CLIMA/POINT_05_CLOSURE_MATRIX.md`.
 
 ## 9. Stato punto 06 — Energia elettrica e FV
 
-**ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / BACKUP BESS 30 kW DICHIARATO / kWh, AUTONOMIA, ISLANDING, CONNESSIONE ED EMS DA SVILUPPARE / NESSUNA UPS LOCALE BASELINE.**
+**ARCHITETTURA FV IN SVILUPPO / BOM-019 MODULI+INVERTER SVILUPPATA / BACKUP BESS 30 kW DICHIARATO / kWh, AUTONOMIA, ISLANDING, CONNESSIONE ED EMS DA SVILUPPARE / NESSUNA UPS LOCALE NELLA CONFIGURAZIONE BASE.**
 
 Documenti: `06_ENERGIA_ELETTRICA_FV/README.md`, `PV_ARCHITECTURE.md`, `RFQ_PV_INVERTERS.md`, BOM-019 e fonti.
 
@@ -156,14 +156,14 @@ Resilience:
 - edge buffering;
 - 3-2-1 backup;
 - offsite encrypted copy;
-- NODE-A/B/QNODE failure drills;
-- actual BESS transfer test;
-- Stripe delayed-webhook/reconciliation test.
+- prove di guasto NODE-A/B/QNODE;
+- prova reale del trasferimento BESS;
+- prova webhook Stripe ritardato/riconciliazione.
 
 Principio invariato:
-- server centrale = system of record + pianificatore;
-- PLC/edge mantengono safety e loop real-time;
-- `server down != impianto unsafe`.
+- server centrale = sistema autorevole dei dati + pianificatore;
+- PLC/edge mantengono sicurezza e cicli di controllo in tempo reale;
+- `server non disponibile != impianto non sicuro`.
 
 Documenti:
 - `07_AUTOMAZIONE_DATI_AI/README.md`;
@@ -185,7 +185,7 @@ Documenti: `08_MACCHINE_E_LOGISTICA/README.md` più package dedicati AMR, liftin
 Missioni: trasporto, traino, ritorno vuoti, scouting/imaging, inventario e docking.
 
 - Burro Verde prioritario da pilot: 68,5 cm, payload 227 kg, towing 908 kg, IP65, prezzo UE/Italia da preventivo;
-- MiR250 riferimento di confronto industriale ma non configurazione base serra finché resta indoor-only/IP21/non-condensing;
+- MiR250 riferimento di confronto industriale ma non configurazione base serra finché resta per uso solo interno/IP21/non condensante;
 - AgileX Bunker per R&S/scouting, non AMR collaborativo configurazione base;
 - scouting vendor-independent OAK-D + Jetson opzionale.
 
@@ -343,9 +343,9 @@ Configurazione base:
 - Drum/FAS Easy Food alternative;
 - Stripe payment stack;
 - Verifone UX700 candidato Stripe Terminal unattended;
-- server centrale come system of record/pianificatore per inventory, personale, logistica, pagamenti e previsione domanda/offerta;
-- **frictionless R&S prioritario:** smart crate + smart cart + sensor fusion;
-- smart crate identifica SKU/lotto e rileva -Δmassa; cart verifica +Δmassa e sessione; camera/localizzazione risolvono ambiguità;
+- server centrale come sistema autorevole dei dati/pianificatore per inventory, personale, logistica, pagamenti e previsione domanda/offerta;
+- **R&S prioritaria senza scansione:** cassetta intelligente + carrello intelligente + fusione sensoriale;
+- cassetta intelligente identifica SKU/lotto e rileva -Δmassa; carrello verifica +Δmassa e sessione; camera/localizzazione risolvono ambiguità;
 - e-paper/ESL per posizione SKU/cassetta, LCD dinamico sul cart;
 - cheap load cells solo sensing/cross-check; peso commerciale da catena metrologica legal-for-trade;
 - Stripe UX700 fisso al paid-exit verifica bloccante come configurazione base; reader-on-cart future;
@@ -377,7 +377,7 @@ Documenti:
 
 ## 12. R&S trasversale — laser, vision e manutenzione robotica
 
-Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&S CANDIDATO / NON BASELINE CAPEX`.
+Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&S CANDIDATO / NON INCLUSO NEL CAPEX BASE`.
 
 ## 13. Stato punto 09 — Tech Barn e post-raccolta
 
@@ -438,15 +438,15 @@ Documenti:
 
 ## 14. BOM-029 — centro trasformazione conto terzi
 
-**SVILUPPATO COME BUSINESS UNIT FUTURA / NON ANCORA CAPEX CORE.**
+**SVILUPPATO COME UNITÀ OPERATIVA FUTURA / NON ANCORA NEL CAPEX DEL PROGETTO PRINCIPALE.**
 
-Di lavoro candidate:
-- scenario S2: 600–700 kg/h raw fruit;
-- juice ~420–525 L/h teorici secondo resa;
-- 100P2/EBP500 class;
-- thermal 500–750 L/h;
+Candidato di lavoro:
+- scenario S2: 600–700 kg/h frutta in ingresso;
+- succo ~420–525 L/h teorici secondo resa;
+- 100P2/EBP500 classe;
+- trattamento termico 500–750 L/h;
 - bag-in-box configurazione base;
-- jam/compote 100–200 L/batch class;
+- jam/compote 100–200 L/batch classe;
 - semi-CIP minimo;
 - dirty -> process -> high-hygiene fill -> finished-goods zoning;
 - batch genealogy e cost accounting sul server centrale.
@@ -525,7 +525,7 @@ Documenti:
 
 ## 16. Metodo BOM obbligatorio
 
-Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, ripiego, contributi, dipendenze, espansione e stato decisionale.
+Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, modalità di guasto, ripiego, contributi, dipendenze, espansione e stato decisionale.
 
 ## 17. Stato attuale dei grandi blocchi
 
@@ -572,13 +572,13 @@ Restano nel perimetro R&S robotica/laser e i package tecnici trasversali ancora 
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
 
-## 19. Progetto R&S correlato UE — NON CORE
+## 19. Progetto R&S correlato UE — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `RND_CORRELATO_EU/`.
 
-**Stato:** `CORRELATO / NON CORE / PRE-CANDIDATURA R&S`.
+**Stato:** `CORRELATO / SEPARATO DAL PROGETTO PRINCIPALE / PRE-CANDIDATURA R&S`.
 
-Il progetto di lavoro **CTT-PAA — Piattaforma di Automazione Agricola Carnia TerraTech** sviluppa tecnologie potenzialmente replicabili per orchestrazione agricola, edge/PLC, robotica, vision, sensor fusion e scheduling.
+Il progetto di lavoro **CTT-PAA — Piattaforma di Automazione Agricola Carnia TerraTech** sviluppa tecnologie potenzialmente replicabili per orchestrazione agricola, edge/PLC, robotica, visione artificiale, fusione sensoriale e pianificazione.
 
 Regole di separazione:
 
@@ -599,7 +599,7 @@ Documenti:
 
 Canali UE candidati da verificare topic per topic: Horizon Europe Cluster 4/6; EIC Accelerator solo in una fase successiva se tecnologia, TRL e scalabilità lo giustificano.
 
-## 19. Piano extra agriturismo evolutivo — NON CORE
+## 20. Piano extra agriturismo evolutivo — SEPARATO DAL PROGETTO PRINCIPALE
 
 Directory: `EXTRA_AGRITURISMO_EVOLUTIVO/`.
 
