@@ -155,8 +155,8 @@ Tutto il lavoro viene valorizzato.
 
 Schema di lavoro:
 - SRD01 60% se concesso;
-- anticipo max teorico 30% spesa ammessa;
-- finanziamento di lavoro 40%;
+- anticipo SRD01 max teorico 30% del sostegno concesso (18% della spesa se aliquota 60%);
+- linea finanziamento di lavoro 40% come ipotesi separata, da deliberare e verificare per compatibilità/cumulo;
 - SRE01 €70k se concesso;
 - equity per residui/costi esclusi;
 - linea IVA;
