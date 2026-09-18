@@ -125,8 +125,9 @@ KPI principale di progetto: **ridurre D1→D3 senza compromettere D4**.
 9. [08_AUTOMAZIONE_E_DATI.md](08_AUTOMAZIONE_E_DATI.md)
 10. [09_MERCATO_SPACCIO_E_LOGISTICA.md](09_MERCATO_SPACCIO_E_LOGISTICA.md)
 11. [10_PERSONALE_COMMISSIONING_E_GO_LIVE.md](10_PERSONALE_COMMISSIONING_E_GO_LIVE.md)
-12. [CRONOPROGRAMMA_0_15_MESI.md](CRONOPROGRAMMA_0_15_MESI.md) — sequenza relativa mese per mese;
-13. [MATRICE_CONTROLLO_SETTORI.md](MATRICE_CONTROLLO_SETTORI.md) — envelope, dipendenze, verifica di uscita e stato.
+12. [11_PROGETTAZIONE_DIREZIONE_E_COLLAUDI.md](11_PROGETTAZIONE_DIREZIONE_E_COLLAUDI.md) — governa l'envelope CAPEX da €55.000;
+13. [CRONOPROGRAMMA_0_15_MESI.md](CRONOPROGRAMMA_0_15_MESI.md) — sequenza relativa mese per mese;
+14. [MATRICE_CONTROLLO_SETTORI.md](MATRICE_CONTROLLO_SETTORI.md) — envelope, dipendenze, verifica di uscita e stato.
 
 ## 8. Regola di avanzamento
 
