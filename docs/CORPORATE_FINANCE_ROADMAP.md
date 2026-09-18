@@ -1,411 +1,168 @@
-# Carnia TerraTech — Corporate, Finance & Launch Roadmap
+# Carnia TerraTech — Società, finanza e roadmap di avvio
 
-**Aggiornato:** 17 settembre 2026  
-**Nota:** questa pagina conserva il quadro di lavoro emerso finora. Qualunque riferimento a contributi deve essere verificato nuovamente su fonte ufficiale prima di decisioni societarie, domande, ordini o avvio lavori.
+**Aggiornato:** 18 settembre 2026  
+**Stato:** `SINTESI DERIVATA / DATI FINALI DA ATTI, BANDO, BANCA E PROFESSIONISTI`
 
----
+## 1. Principio
 
-## 1. Persone e governance
+Nessun investimento irreversibile parte perché:
+- "il contributo dovrebbe arrivare";
+- "la banca dovrebbe finanziare";
+- "l'IVA poi torna".
 
-### Socio A
+Prima di D1 devono esistere coperture formalizzate.
 
-Responsabilità prevalenti:
+## 2. Control budget corrente
 
-- promotore tecnico;
-- automazione;
-- software;
-- energia;
-- integrazione impianti;
-- progettazione interna;
-- supervisione cantiere;
-- coordinamento installazioni;
-- commissioning tecnico.
+- CAPEX netto: **€950.000**;
+- riserva operativa: **€120.000 separata**;
+- linea IVA/ponte target: **€140.000–170.000**;
+- P1: ~2.100 m²;
+- target commerciale P1: **~€280.000/anno da validare**.
 
-### Socio B — under 40
+Riferimenti:
+- `../18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md`;
+- `../18_CAPEX_OPEX_CASHFLOW/FINANCIAL_CLOSURE_CONTROL.md`.
 
-Responsabilità prevalenti:
+## 3. Waterfall illustrativo
 
-- **Project Manager**;
-- commerciale;
-- clienti;
-- fornitori;
-- pianificazione operativa;
-- sviluppo vendite e canali.
+Se lo strumento applicabile conferma un'intensità del 60%:
 
-### Collaboratore/trice
+su €950.000:
+- aiuto 60% = €570.000;
+- anticipo massimo teorico 50% dell'aiuto = €285.000;
+- quota finanziamento di lavoro 40% = €380.000;
+- liquidità iniziale investimento = €665.000;
+- saldo teorico residuo aiuto = €114.000.
 
-Supporto operativo secondo necessità. Non socio/a.
+Questi valori non sostituiscono:
+- concessione;
+- regole SAL;
+- garanzia;
+- delibera;
+- limiti di spesa;
+- cumulo.
 
-### Ripartizione lavoro soci
+## 4. Premio giovane
 
-- obiettivo 50/50;
-- working target di regime: ~20 h/settimana medie per socio;
-- personale retribuito nei picchi e nelle attività ripetitive.
+SRE01:
+- riferimento €70.000;
+- trattato separatamente;
+- non usato automaticamente sulle stesse fatture SRD01.
 
----
+Usare solo secondo Piano Aziendale e concessione effettiva.
 
-## 2. Forma societaria
+## 5. Forma societaria
 
-Working hypothesis:
-
+Working candidate:
 **Società Agricola S.r.l. ordinaria**.
 
-Motivi discussi:
-
-- CAPEX rilevante;
-- possibile debito;
-- necessità di statuto e governance personalizzati;
-- ruolo reale del socio giovane;
-- maggiore robustezza rispetto a una SRLS standardizzata.
-
-Da validare con commercialista e notaio:
-
-- oggetto sociale agricolo;
-- requisiti per usare la denominazione/qualifica agricola;
-- IAP/CD e requisiti personali se necessari;
-- poteri gestori;
+Da chiudere con commercialista/notaio:
+- oggetto;
+- qualifica agricola;
+- IAP/CD;
+- governance;
 - quote;
-- trattamento fiscale;
-- remunerazione soci/amministratori;
-- lavoro dei soci;
-- eventuale ingresso futuro di investitori.
-
----
-
-## 3. Quote
-
-Non fissate definitivamente.
-
-Working scenario discusso se solo Socio B soddisfa requisito giovane:
-
-- Socio A ~70%;
-- Socio B ≥30%;
-- poteri reali e ruolo effettivo al socio giovane.
-
-Se anche Socio A risultasse eleggibile come giovane, quote diverse potrebbero essere migliori.
-
-**Non bloccare lo statuto prima di verificare il bando effettivo.**
-
----
-
-## 4. Sequenza temporale corretta
-
-La regola è evitare sia di costituire troppo presto senza motivo, sia di arrivare troppo tardi rispetto ai requisiti del bando.
-
-Sequenza di lavoro:
-
-1. ricerca terreno;
-2. due diligence preliminare;
-3. concept e layout;
-4. confronto preventivo con Comune/SUAP;
-5. verifica bandi/strumenti finanziari realmente applicabili;
-6. definizione forma societaria e quote compatibili;
-7. costituzione società quando richiesta per presentare domanda o assumere titolo sull'investimento;
-8. presentazione domande;
-9. attendere eventuale autorizzazione all'avvio / data di ammissibilità;
-10. ordini e lavori;
-11. SAL, rendicontazioni, collaudi;
-12. avvio operativo.
-
----
-
-## 5. Contributi — stato di lavoro
-
-### Regola assoluta
-
-Non contare nel piano finanziario un contributo fino a quando non sono noti e verificati:
-
-- bando ufficiale;
-- finestra temporale;
-- beneficiario ammesso;
-- requisito societario;
-- requisito giovane;
-- spesa ammissibile;
-- percentuale di aiuto;
-- massimali;
-- data da cui le spese sono ammissibili;
-- obblighi di mantenimento;
-- modalità SAL/anticipo/saldo.
-
-### Strumenti già discussi come candidati
-
-#### SRE01 — giovane agricoltore
-
-Working benchmark storico discusso: **~€70.000**.
-
-Non trattarlo come disponibilità corrente. Serve verifica su prossima finestra applicabile e su:
-
-- età;
-- primo insediamento;
-- titolarità/poteri del giovane;
-- quota minima;
-- formazione/competenze;
-- piano aziendale;
-- tempistiche di costituzione.
-
-#### SRD01 — investimenti produttivi
-
-Da considerare solo se esiste finestra applicabile. Nel lavoro precedente era emerso che una versione 2026 escludeva macchinari usati; per prudenza il progetto considera **nuovi** i beni da portare a contributo.
-
-#### Strumenti regionali / fondi di rotazione
-
-Potenziale backbone per la parte debito, da verificare con fonti ufficiali vigenti al momento della domanda.
-
-#### Acquisto terreno
-
-Non assumere automaticamente che sia finanziabile/contribuibile. Verificare strumenti specifici e quota eventualmente ammissibile.
-
----
-
-## 6. Regola sugli acquisti
-
-Per ogni bene classificare:
-
-- **costo reale**;
-- **costo eleggibile**;
-- **quota contributo**;
-- **quota IVA**;
-- **quota finanziata**;
-- **quota equity/cassa**.
-
-Non confondere costo progetto con costo rendicontabile.
-
-### Beni nuovi
-
-Default del progetto:
-
-- serra nuova;
-- PDC nuove;
-- pompe nuove;
-- macchina multifunzione nuova;
-- AMR nuovo;
-- attrezzatura di cantiere nuova se portata a contributo;
-- elettronica nuova.
-
-Usato solo fuori dal contributo e solo se economicamente molto conveniente.
-
----
-
-## 7. Lavori in economia
-
-Il lavoro diretto del promotore ha un costo economico reale anche quando non è pagato come fattura esterna.
-
-Nei conti mantenere due viste:
-
-1. **cash cost**;
-2. **full economic cost**.
-
-Se un bando non riconosce lavoro in economia, non significa che il lavoro valga zero: significa solo che non è rendicontabile.
-
----
-
-## 8. Cantiere serra
-
-Working organization:
-
-- promotore tecnico presente e responsabile operativo;
-- 4 installatori esperti retribuiti;
-- utensili acquistati;
-- struttura e componenti certificati/verificati;
-- professionisti abilitati per firme/asseverazioni richieste.
-
-Working duration:
-
-- target ~30 giorni;
-- programma ~32;
-- contingency 35.
-
-Working labor benchmark:
-
-- 4 × 8 h × 30 giorni = 960 h-persona;
-- a €35/h all-in → ~€33.600;
-- 35 giorni → ~€39.200.
-
-Da sostituire con costo reale della squadra scelta.
-
----
-
-## 9. Struttura finanziaria da costruire
-
-Il business plan deve includere esplicitamente:
-
-### Fonti
-
-- equity soci;
-- contributi effettivamente assegnabili;
-- finanziamento bancario;
-- fondo rotativo/agevolato se applicabile;
-- eventuale Confidi;
-- leasing solo dove conveniente;
-- credito fornitori solo se sano.
-
-### Impieghi
-
-- terreno;
-- progettazione/pratiche;
-- serra;
-- Tech Barn;
-- acqua;
-- energia;
-- automazione;
-- attrezzatura;
-- mezzi;
-- robot;
-- post-raccolta;
-- capitale circolante;
-- scorte;
-- imprevisti;
-- IVA ponte.
-
----
-
-## 10. Capitale circolante
-
-Da non sottostimare.
-
-Servirà cassa per:
-
-- sementi/piantine;
-- substrati;
-- fertilizzanti;
-- imballaggi;
-- stipendi/collaborazioni;
-- energia;
+- poteri;
+- lavoro soci;
+- fiscalità;
+- bandi.
+
+Nessuna quota viene congelata per "inseguire" un incentivo senza leggere la regola applicabile.
+
+## 6. Gate DG0
+
+GO solo con:
+1. sostegno formalmente concesso;
+2. anticipo realmente ottenibile;
+3. garanzia;
+4. finanziamento deliberato;
+5. quota propria/non ammissibile disponibile;
+6. linea IVA;
+7. ponte fino al saldo;
+8. riserva operativa €120k protetta;
+9. calendario fornitori compatibile.
+
+## 7. Allocazione CAPEX di lavoro
+
+| Blocco | Envelope |
+|---|---:|
+| terreno + campagna sito | €60k |
+| serra | €350k |
+| acqua | €55k |
+| termico/clima | €65k |
+| energia | €130k |
+| Tech Barn | €95k |
+| automazione essenziale | €25k |
+| spaccio semplice | €20k |
+| macchine/cicli materia | €90k |
+| progettazione/collaudi/contingenza | €60k |
+| **totale** | **€950k** |
+
+## 8. Cosa non tagliare per rientrare
+
+- campagna terreno;
+- drenaggi;
+- sicurezza;
+- acqua essenziale;
+- freddo;
 - manutenzione;
-- trasporti;
-- assicurazioni;
-- ritardi clienti;
-- periodo tra spesa, SAL e rimborso contributi.
-
-Prevedere una linea o riserva dedicata per **IVA e SAL**.
-
----
-
-## 11. CAPEX
-
-Vecchie ipotesi di progetto non sono più affidabili e non vanno usate come vincoli.
-
-In particolare:
-
-- la serra potrebbe costare molto meno delle vecchie stime;
-- automazione/sensoristica sembra poter stare attorno a ~€40k anziché €55–70k;
-- PDC modulari 3 × 22 kW hanno costo macchine relativamente basso;
-- FV beneficia del costo pannelli fornito dal promotore (~€200/kWp moduli+fissaggi).
-
-Serve quindi un nuovo CAPEX **bottom-up** con prodotti e preventivi reali.
-
----
-
-## 12. OPEX
-
-Il modello economico deve avere almeno queste voci:
-
-- personale;
-- energia acquistata;
-- manutenzione;
-- acqua;
-- fertilizzanti;
-- sementi/piantine;
-- substrati;
-- imballaggi;
-- logistica;
-- assicurazioni;
-- certificazioni;
-- consulenze;
-- software/licenze residue;
-- ricambi;
-- smaltimenti;
-- analisi;
-- commercializzazione;
-- interessi;
-- imposte e contributi.
-
----
-
-## 13. Ricavi
-
-Non fissare ricavi generici per m² senza:
-
-- calendario colturale;
-- resa per ciclo;
-- cicli/anno;
-- scarto;
-- prezzo medio realistico;
-- mix canali;
-- stagionalità;
-- capacità di raccolta/post-raccolta;
-- domanda reale.
-
-Vecchi target tipo €260k o €300k annui sono **solo precedenti ipotesi** e devono essere ricostruiti.
-
----
-
-## 14. Canali commerciali da testare
-
-- ristorazione;
-- negozi locali;
-- distributori;
-- GDO locale solo se margini e volumi lo permettono;
-- vendita diretta;
-- spaccio aziendale in fase 2;
-- e-commerce locale/abbonamenti solo se logistica sostenibile;
-- birrifici per eventuale luppolo;
-- trasformatori per frutti/siepi e humus.
-
-Per ogni coltura ad alto valore cercare prima lettere di interesse o clienti pilota.
-
----
-
-## 15. Fasi di avvio
-
-### Year 0 — autorizzazioni e costruzione
-
-- terreno;
-- società;
-- pratiche;
-- contributi;
-- opere;
+- mezzo core;
 - commissioning;
-- prove impianti.
+- formazione;
+- working capital.
 
-### Year 1 — stabilizzazione
+Se gli RFQ superano il budget:
+- si riduce/perfasa P1;
+- si rinegozia finanza;
+- si rinviano optional.
 
-- non massimizzare subito tutte le colture;
-- misurare resa, ore uomo, acqua, energia, scarti;
-- correggere ricette e layout;
-- costruire clienti.
+## 9. Contributo al 60% — logica corretta
 
-### Year 2 — ottimizzazione
+Il contributo può rendere razionale anticipare:
+- infrastruttura permanente;
+- mezzo core;
+- predisposizioni costose da retrofittare;
+- PLE se uso reale/TCO la giustificano.
 
-- aumentare saturazione serra;
-- espandere automazione utile;
-- valutare quarta PDC;
-- espandere FV se profilo carichi lo giustifica;
-- ampliare accumulo termico se necessario.
+Non rende razionale comprare:
+- AMR senza business case;
+- robot galline;
+- GPU/server sovradimensionati;
+- smart retail sperimentale;
+- R&S non necessaria alla produzione.
 
-### Year 3 — espansioni
+## 10. Sequenza
 
-- nuovi comparti/produzioni se il terreno lo consente;
-- area vendita/sociale;
-- trasformazione;
-- eventuale IV gamma solo se economicamente supportata.
+1. verifica strumento e soggetto;
+2. chiusura società/governance;
+3. concessione;
+4. finanza;
+5. lotto;
+6. campagna sito;
+7. RFQ E3/E4;
+8. contratto;
+9. SAL/cashflow;
+10. P1;
+11. actual;
+12. P2.
 
----
+## 11. Stress test obbligatori
 
-## 16. Decision gate prima dell'avvio
+- ricavi -20%;
+- prezzo -15%;
+- resa -20%;
+- energia +20%;
+- ritardo 3 mesi;
+- saldo contributo ritardato;
+- guasto principale;
+- assenza risorsa chiave.
 
-Il progetto passa da concept a investimento solo quando sono disponibili:
+Il progetto deve sopravvivere senza consumare arbitrariamente la riserva o aprire debito non pianificato.
 
-- terreno tecnicamente idoneo;
-- Comune/SUAP senza criticità bloccanti;
-- acqua sufficiente;
-- rete elettrica sufficiente;
-- preventivo serra;
-- preventivo Tech Barn;
-- preventivo energia/acqua;
-- CAPEX ±10–15%;
-- piano finanziario completo;
-- domanda commerciale verificata;
-- cashflow mensile almeno 36 mesi;
-- capitale circolante sufficiente;
-- piano B se contributo o ricavo tarda.
+## 12. Documenti canonici
+
+- `../16_SOCIETA_FINANZA_E_CONTRIBUTI/BUSINESS_PLAN_MASTER.md`;
+- `../16_SOCIETA_FINANZA_E_CONTRIBUTI/PIANO_AZIENDALE_BANDI.md`;
+- `../18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md`;
+- `../20_CANTIERE_E_CRONOPROGRAMMA/PIANO_OPERATIVO_AVVIO/00_FINANZA_E_CASSA.md`.
