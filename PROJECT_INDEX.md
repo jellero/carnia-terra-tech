@@ -622,6 +622,8 @@ La sequenza BOM core 001–034 è ora strutturata. Restano R&S robotica/laser se
 Artefatti closure avviati:
 - `06_ENERGIA_ELETTRICA_FV/MASTER_LOAD_REGISTER.md`;
 - `06_ENERGIA_ELETTRICA_FV/MASTER_LOAD_REGISTER.csv`.
+- `06_ENERGIA_ELETTRICA_FV/LOAD_MEASUREMENT_AND_RFQ_PLAN.md`;
+- `06_ENERGIA_ELETTRICA_FV/LOAD_DATA_CAPTURE_TEMPLATE.csv`.
 
 ### Prossima fase — validation / closure sprint
 
@@ -631,7 +633,7 @@ Priorità di chiusura:
 
 1. lotto/masterplan/geotecnica e layout definitivo;
 2. crop card e carichi termici/idrici/elettrici reali;
-3. master load register + profilo 1–15 min e P0/P1 — **v0.1 strutturato il 18/09/2026; P0/P1 reali e transitori da misura/RFQ**;
+3. master load register + profilo 1–15 min e P0/P1 — **v0.1 strutturato + piano misure/RFQ e template dati pronti il 18/09/2026; resta raccolta dati reali**;
 4. preventivo DSO/TICA, BT/MT, limiti import/export e protezioni;
 5. RFQ installati per i package ancora a prezzo `RFQ`;
 6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT;
