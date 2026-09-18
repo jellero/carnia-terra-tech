@@ -102,6 +102,7 @@ Si anticipa solo se il risultato è chiaramente favorevole.
 Solo dopo dimensionamento e autorizzazioni.
 
 Candidati forti:
+- campagna sito e opere di mitigazione ammissibili, se previste dal bando;
 - struttura e fondazioni della serra definitiva;
 - copertura, compartimentazioni e opere strutturali certe;
 - dorsali idriche principali;
@@ -113,6 +114,9 @@ Candidati forti:
 - pavimenti/fondazioni che sarebbe costoso rifare;
 - celle frigorifere necessarie al portafoglio iniziale;
 - infrastrutture di raccolta, confezionamento e tracciabilità indispensabili;
+- telescopico/mezzo multifunzione e accessori se ammissibili;
+- infrastruttura base humus/cicli materia;
+- PLE/accesso in quota se il layout dimostra uso strutturale;
 - opere che diventerebbero molto più costose da aggiungere dopo.
 
 Motivo:
@@ -154,7 +158,7 @@ Salvo obbligo specifico del progetto finanziato e chiara utilità immediata:
 - hardware AI ad alte prestazioni non necessario al primo avvio;
 - server sovradimensionato;
 - telecamere/sensori di generazione facilmente superabile;
-- robot pulizia galline sperimentale;
+- rover pulizia galline: rimosso dal core;
 - laser/robotica R&S;
 - centro trasformazione conto terzi senza domanda validata;
 - attrezzatura agrituristica non necessaria alla prima fase;
