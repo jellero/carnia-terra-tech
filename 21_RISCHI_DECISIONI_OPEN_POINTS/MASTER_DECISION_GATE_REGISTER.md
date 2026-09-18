@@ -33,12 +33,18 @@ Decisione:
 - GO FINANCE / HOLD.
 
 ### DG1 — lotto
+
+**Principio:** prezzo e urbanistica non bastano. Il lotto deve essere fisicamente caratterizzato prima dell'acquisto.
 PASS solo se:
 - titolo/acquisto;
 - urbanistica;
 - accessi;
 - acqua;
 - energia;
+- griglia campionamento su superficie utile;
+- prove infiltrazione/drenaggio;
+- mappa quote/ristagni;
+- anomalie;
 - drenaggi;
 - geotecnica;
 - vincoli;
@@ -82,7 +88,8 @@ PASS solo se:
 - IFC drawings;
 - contracts;
 - cash schedule;
-- site safety;
+- sicurezza sito;
+- masterplan con accesso telescopico e manutenzione in quota;
 - long-lead secured;
 - change-control attivo.
 
