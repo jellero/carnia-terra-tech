@@ -62,6 +62,17 @@ Il consumo immediato di prodotti agricoli venduti può avere una disciplina prop
 
 Se il layout introduce tavoli/attrezzature finalizzati al consumo sul posto, verificare se si ricade nella disciplina della somministrazione.
 
+### Evoluzione agrituristica opzionale
+
+È stato separato un percorso futuro di **ristoro agrituristico light a spuntini non cucinati**, documentato in `AGRITURISMO_SPUNTINI_EVOLUTION.md`.
+
+Questo percorso:
+- non modifica la baseline unattended BOM-028;
+- opera solo in finestre presidiate;
+- mantiene vendita automatica e somministrazione come funzioni distinte;
+- privilegia la variante senza cottura per ridurre CAPEX, impianti e carico di lavoro;
+- richiede gate SUAP/sanitario e menu verificato prima di qualsiasi acquisto.
+
 ## 4. Modello fisico
 
 Working architecture:
