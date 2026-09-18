@@ -1,0 +1,28 @@
+area,bom,package,procurement_class,cost_state,hard_blocker,next_procurement_evidence,priority
+Serra,BOM-001..008,greenhouse core,Q2,benchmark+RFQ,lot/masterplan/geotech/layout,3 installed RFQs after final site,2
+Termico,BOM-009,hydronic distribution,Q2,RFQ,thermal load/PID/layout,installed hydronic RFQ,2
+Termico,BOM-010,storage primary HX,Q2,benchmark+RFQ,thermal load/PDC/glycol/HX,scenario installed RFQs,2
+Termico,BOM-011,heat pumps 3+1,Q1/Q2,hardware benchmark+RFQ,cold-weather map/defrost/load,OEM confirmation + installed RFQ,1
+Termico,BOM-012,boost dehumidification,Q1/Q2,benchmark+RFQ,vapor balance/climate recipe,DryGair/Reventon installed RFQ,2
+Acqua,BOM-013,irrigation distribution,Q2,benchmark+RFQ,crop card/layout/Q,installed lines-valves RFQ,2
+Acqua,BOM-014,filtration,Q2,benchmark+RFQ,water analysis/Q/backwash,installed skid RFQ,2
+Acqua,BOM-015,pumps 1+1,Q1/Q2,verified hardware benchmark,QH/NPSH,pumps+VFD+panel+skid installed RFQ,1
+Acqua,BOM-016,fertigation,Q2,benchmark+RFQ,crop card/flows/recipes,installed AB-acid RFQ,2
+Acqua,BOM-017,fertilizer tanks,Q1/Q2,benchmark+RFQ,layout/containment,containment/accessories RFQ,2
+Acqua,BOM-018,water storage,Q2,RFQ,geotech/source/water balance,2x150m3 alternatives RFQ,2
+Energia,BOM-019,PV inverter,Q1/Q2,benchmark+RFQ,layout/structure/DSO,100vs120kW installed RFQ,1
+Logistica,BOM-020,greenhouse AMR,Q3,RFQ,pilot/IP-condensation/offline/dock,demo+100 missions acceptance,3
+Logistica,BOM-021,telehandler,Q1/Q2,benchmark+RFQ,access/tasks,live demo+RFQ,2
+Verde,BOM-022,mower robot,Q3,benchmark,net lawn/slope/RTK,pilot real zone,3
+Benessere,BOM-023,chicken cleaning,Q3,benchmark+RFQ,mixed-surface pilot/hens-clear,mandatory pilot,3
+Post-raccolta,BOM-024,cold rooms,Q2,hardware benchmark+RFQ,kg-day/batch/Tin/pulldown/layout,installed refrigeration RFQ,1
+Post-raccolta,BOM-025,harvest packaging,Q1/Q2,unit benchmarks,volumes/SKU/packaging,equipment+consumables RFQ,1
+Servizi,BOM-026,pergola relax,Q2,unit benchmarks+RFQ,layout/snow-wind/geotech,structural calc+RFQ,3
+Servizi,BOM-027,educational farm,Q2/Q3,benchmark+RFQ,ERSA/layout/accessibility/pilot,works/services RFQ,3
+Retail,BOM-028,24-7 retail,Q3,vending benchmark+RFQ,SUAP/SKU/temp/pilot/fiscal,demo SKU+installed RFQ,3
+Trasformazione,BOM-029,third-party processing,Q4,OEM RFQ,demand/anchors/volume,keep outside core CAPEX,4
+Automazione,BOM-030,central server,Q1,benchmark+RFQ,target config defined/acceptance,3 hardware-support RFQs,1
+Personale,BOM-031,workforce services,Q5,cost floor not budget,CPL/inquadramento/volumes,labour-consulting RFQ,2
+Acqua,BOM-032,water treatment,Q2,RFQ,UVT/microbiology/Q/water class,treatment RFQ,2
+Acqua,BOM-033,drain reuse,Q3,RFQ,30-60d pilot/NaCl/pathogens/discharge,pilot+reuse RFQ,3
+Energia,BOM-034,EMS BESS grid,Q1/Q2/Q5,vendor data+RFQ,load register/DSO/fire/site,BESS+grid engineering installed RFQ,1
