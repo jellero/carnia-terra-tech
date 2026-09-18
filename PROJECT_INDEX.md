@@ -9,14 +9,14 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 
 ## 2. Struttura target
 
-- `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e decision gates;
+- `00_VISIONE_E_PRINCIPI/` — missione, KPI, guardrail e decision verifica bloccantes;
 - `01_MASTERPLAN_E_TERRENO/` — lotto, vincoli, accessi, drenaggi, espansioni;
-- `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, outdoor;
+- `02_AGRONOMIA/` — colture, calendari, rese, vite, luppolo, siepi, esterno;
 - `03_SERRA/` — struttura, comparti, coperture, aperture, schermi, HAF, fogging, supporti coltura, drenaggi, porte, recupero pioggia e cantiere;
 - `04_ACQUA_E_FERTIRRIGAZIONE/` — fonte, accumulo, filtri, pompe, dosaggio, distribuzione, drenaggio;
 - `05_TERMICO_E_CLIMA/` — carico termico, PDC, accumulo, distribuzione, boost, deumidificazione, emergenza;
 - `06_ENERGIA_ELETTRICA_FV/` — FV, inverter, rete, BESS/backup, EMS;
-- `07_AUTOMAZIONE_DATI_AI/` — server centrale di orchestrazione, scheduler, dati/AI, PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&D robotica/laser;
+- `07_AUTOMAZIONE_DATI_AI/` — server centrale di orchestrazione, pianificatore, dati/AI, PLC, I/O, sensori, rete, edge, vision, cybersecurity e R&S robotica/laser;
 - `08_MACCHINE_E_LOGISTICA/` — AMR, sollevatore, piattaforme, raccolta, carrelli e robot verde;
 - `09_TECH_BARN_E_POST_RACCOLTA/` — celle, confezionamento, officina, magazzini e centro trasformazione conto terzi;
 - `10_BENESSERE_FATTORIA_E_SERVIZI/` — pergolato, verde, fattoria didattica, robot di servizio, spaccio 24/7;
@@ -33,10 +33,10 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 - `21_RISCHI_DECISIONI_OPEN_POINTS/`;
 - `22_FONTI_NORME_PREVENTIVI/`.
 
-**Fuori dalla numerazione e dal core agricolo:**
+**Fuori dalla numerazione e dal progetto agricolo principale:**
 
-- `RND_CORRELATO_EU/` — progetto R&S tecnologico correlato; usa Carnia TerraTech come living lab/demonstrator ma mantiene budget, TRL, deliverable, rischi e finanziamenti separati dal core. Non entra nella sequenza BOM 001… e non è requisito per l'operatività agricola.
-- `EXTRA_AGRITURISMO_EVOLUTIVO/` — piano extra di diversificazione agrituristica con budget/fondi propri; E1 spuntini non cucinati, poi esperienze, cucina e ospitalità solo per gate successivi. Non modifica la baseline agricola né la sequenza BOM.
+- `RND_CORRELATO_EU/` — progetto R&S tecnologico correlato; usa Carnia TerraTech come laboratorio operativo reale/dimostratore ma mantiene budget, TRL, deliverable, rischi e finanziamenti separati dal progetto principale. Non entra nella sequenza BOM 001… e non è requisito per l'operatività agricola.
+- `EXTRA_AGRITURISMO_EVOLUTIVO/` — piano extra di diversificazione agrituristica con budget e fondi propri; E1 spuntini non cucinati, poi esperienze, cucina e ospitalità solo per verifica bloccante successivi. Non modifica la configurazione base agricola né la sequenza BOM.
 
 ## 3. Stato punto 00 — Visione e principi
 
@@ -50,7 +50,7 @@ Il repository deve permettere di progettare l'azienda senza lasciare aree scoper
 
 **RAFFINATO / PORTAFOGLIO E METODO DEFINITI / DATI COLTURALI DA VALIDARE.**
 
-Working portfolio: C1 pomodoro premium; C2 peperone; C3 lattuga; C4 lattuga/leaf flessibile; C5 baby leaf/rucola/spinacio; C6 basilico + vivaio + prove.
+Di lavoro portfolio: C1 pomodoro premium; C2 peperone; C3 lattuga; C4 lattuga/leaf flessibile; C5 baby leaf/rucola/spinacio; C6 basilico + vivaio + prove.
 
 ## 6. Stato punto 03 — Serra
 
@@ -66,15 +66,15 @@ Documenti principali: `04_ACQUA_E_FERTIRRIGAZIONE/README.md`, package distribuzi
 
 Dati guida:
 
-- BOM-013: 24 settori working; 1.000 punti goccia ~€470–515 + IVA prima di dorsali/valvole/posa;
-- BOM-014: filtrazione working 120 mesh/~130 µm;
-- BOM-015: pompe 1+1, Grundfos CR10-6 benchmark €1.946,78 IVA incl./cad;
+- BOM-013: 24 settori di lavoro; 1.000 punti goccia ~€470–515 + IVA prima di dorsali/valvole/posa;
+- BOM-014: filtrazione di lavoro 120 mesh/~130 µm;
+- BOM-015: pompe 1+1, Grundfos CR10-6 riferimento di confronto €1.946,78 IVA incl./cad;
 - BOM-016: A/B/acido; sole pompe scenario ~€1.744–1.894 + IVA;
 - BOM-017: scenario tank A/B/acido 500/500/200 L; soli contenitori ~€509,40 + IVA;
-- BOM-018: 2×150 m³ working, espansione 400–500 m³; 300 m³ = 8,6–10 giorni teorici a 30–35 m³/giorno;
-- BOM-032: W0/W1/W2/W3/W4 water classes; UV after filtration as working microbial barrier when required; UV sizing from Q + worst-case UVT + validated dose; no blind bypass; chemical sanitation conditional; W3 potable/food kept separate; future W4 reuse deferred to BOM-033.
+- BOM-018: 2×150 m³ di lavoro, espansione 400–500 m³; 300 m³ = 8,6–10 giorni teorici a 30–35 m³/giorno;
+- BOM-032: W0/W1/W2/W3/W4 water classes; UV after filtration as di lavoro microbial barrier when required; UV sizing from Q + worst-case UVT + validated dose; no blind bypass; chemical sanitation conditional; W3 potable/food kept separate; future W4 reuse deferred to BOM-033.
 
-Gate: lotto, source/seasonal water analyses, UVT254, microbiology, crop card, bilancio idrico, geotecnica/RainMap, RFQ, BOM-032 validation, drenaggio/riuso BOM-033 e commissioning.
+Verifica bloccante: lotto, source/seasonal water analyses, UVT254, microbiology, crop card, bilancio idrico, geotecnica/RainMap, RFQ, BOM-032 validation, drenaggio/riuso BOM-033 e commissioning.
 
 ## 8. Stato punto 05 — Termico e clima
 
@@ -90,12 +90,12 @@ Documenti: `06_ENERGIA_ELETTRICA_FV/README.md`, `PV_ARCHITECTURE.md`, `RFQ_PV_IN
 
 ### BOM-019 — FV e inverter
 
-Working candidate Trina Vertex S+ TSM-470NEG9R.28:
+Di lavoro candidate Trina Vertex S+ TSM-470NEG9R.28:
 
 - 256×470 W = **120,32 kWp**;
 - ~511,5 m² di sola superficie moduli;
 - ~5,38 t;
-- soli moduli ~€17,6–25,3k benchmark UE;
+- soli moduli ~€17,6–25,3k riferimento di confronto UE;
 - inverter 2×50 kW o 2×60 kW da confrontare;
 - niente FV opaco sopra colture principali;
 - CEI 0-21:2026 / CEI 0-16:2026;
@@ -106,7 +106,7 @@ Working candidate Trina Vertex S+ TSM-470NEG9R.28:
 
 **SVILUPPATA / HARDWARE DA RFQ / ACCEPTANCE, BESS E DR BLOCCANTI.**
 
-Working architecture:
+Di lavoro architecture:
 - 2 compute node server-grade;
 - 1 QNODE/edge witness;
 - 1 backup target separato;
@@ -116,13 +116,13 @@ Working architecture:
 
 Compute target:
 - 64 GB ECC minimo;
-- 128 GB ECC working;
+- 128 GB ECC di lavoro;
 - 2×1,92 TB enterprise NVMe mirror/node;
 - TPM;
 - BMC;
 - 10GbE.
 
-Software baseline:
+Software configurazione base:
 - Proxmox VE 9.2;
 - Debian 13;
 - PostgreSQL 18;
@@ -130,12 +130,12 @@ Software baseline:
 - MQTT edge ingress;
 - Keycloak/OIDC;
 - Prometheus/Grafana/Loki/Alloy;
-- custom scheduler + dispatcher + reconciler;
-- forecast domanda/offerta;
+- custom pianificatore + dispatcher + reconciler;
+- previsione domanda/offerta;
 - digital twin/state model;
 - Stripe server-side.
 
-Explicitly non-baseline:
+Explicitly non-configurazione base:
 - Kubernetes;
 - Ceph/SAN;
 - GPU nel control plane;
@@ -143,7 +143,7 @@ Explicitly non-baseline:
 - proprietary ERP master;
 - UPS locale.
 
-Current public benchmarks:
+Current public riferimento di confrontos:
 - Dell T160 Smart Selection base ~€4.793,77 + IVA; target config RFQ;
 - UniFi Pro Max 24 €405;
 - Pro XG 10 PoE €629;
@@ -161,7 +161,7 @@ Resilience:
 - Stripe delayed-webhook/reconciliation test.
 
 Principio invariato:
-- server centrale = system of record + scheduler;
+- server centrale = system of record + pianificatore;
 - PLC/edge mantengono safety e loop real-time;
 - `server down != impianto unsafe`.
 
@@ -185,19 +185,19 @@ Documenti: `08_MACCHINE_E_LOGISTICA/README.md` più package dedicati AMR, liftin
 Missioni: trasporto, traino, ritorno vuoti, scouting/imaging, inventario e docking.
 
 - Burro Verde prioritario da pilot: 68,5 cm, payload 227 kg, towing 908 kg, IP65, prezzo UE/Italia da preventivo;
-- MiR250 benchmark industriale ma non baseline serra finché resta indoor-only/IP21/non-condensing;
-- AgileX Bunker per R&D/scouting, non AMR collaborativo baseline;
+- MiR250 riferimento di confronto industriale ma non configurazione base serra finché resta indoor-only/IP21/non-condensing;
+- AgileX Bunker per R&S/scouting, non AMR collaborativo configurazione base;
 - scouting vendor-independent OAK-D + Jetson opzionale.
 
-Gate: demo realistica, CE/DoC, IP/condensa, offline/API, dock, canoni/TCO, ricambi Italia e acceptance >=100 missioni.
+Verifica bloccante: demo realistica, CE/DoC, IP/condensa, offline/API, dock, canoni/TCO, ricambi Italia e acceptance >=100 missioni.
 
 ### BOM-021 — sollevatore / mezzo multifunzione
 
 Architettura a due livelli:
 
-- L1 telescopico elettrico: **Merlo EW25.5-90** candidato prioritario; 2.500 kg, ~4,8–5 m, ~1,54 m larghezza; benchmark demo ~€69k + IVA con forche / ~€75k + IVA con navicella e radiocomando; nuovo `DA PREVENTIVO`;
+- L1 telescopico elettrico: **Merlo EW25.5-90** candidato prioritario; 2.500 kg, ~4,8–5 m, ~1,54 m larghezza; riferimento di confronto demo ~€69k + IVA con forche / ~€75k + IVA con navicella e radiocomando; nuovo `DA PREVENTIVO`;
 - alternative Manitou MLT 625 e e JCB 525-60E;
-- L2 stoccatore: EP EST122 benchmark 1.200 kg, 792 mm, ~3 m, da ~€2.900.
+- L2 stoccatore: EP EST122 riferimento di confronto 1.200 kg, 792 mm, ~3 m, da ~€2.900.
 
 Nessun telescopico entra nelle corsie coltura ~1,20 m. Piattaforma persone solo OEM e abbinamento autorizzato.
 
@@ -208,7 +208,7 @@ La taglia dipende dalla **superficie netta di prato robotizzabile**, da derivare
 Scenari:
 
 - <=1.500 m²: Kress KR171E, €1.699 IVA incl.;
-- 1.500–5.000 m² regolare: **Kress KR174E**, €2.999 IVA incl., candidato working;
+- 1.500–5.000 m² regolare: **Kress KR174E**, €2.999 IVA incl., candidato di lavoro;
 - <=5.000 m² difficile/pendente: Mammotion LUBA 2 AWD 5000X €2.499 promo / €2.999 listino, oppure Kress 4×4 KR285E €4.499;
 - >5.000 fino a ~12.000 m²/professionale: Husqvarna 560 EPOS €6.994 + RS5 €1.019 = **€8.013 IVA incl.** hardware base.
 
@@ -216,14 +216,14 @@ Guardrail:
 
 - no mowing at night;
 - area didattica/relax occupata = stop/no-go;
-- prato condiviso con galline = lockout dinamico; rasaerba solo con hens-clear/gate chiuso;
+- prato condiviso con galline = lockout dinamico; rasaerba solo con hens-clear/verifica bloccante chiuso;
 - buffer da vasche, fossi, viabilità e drop-off;
 - obstacle detection non sostituisce segregazione;
 - perdita cloud/RTK -> safe stop/park.
 
-Ricambi benchmark: Kress KA0002 6 lame €22,90; Husqvarna Endurance HSS 6 pz €31; Mammotion lame €55.
+Ricambi riferimento di confronto: Kress KA0002 6 lame €22,90; Husqvarna Endurance HSS 6 pz €31; Mammotion lame €55.
 
-Gate: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior, assistenza/ricambi, TCO 5–8 anni e commissioning zone/no-go.
+Verifica bloccante: mappa prato, pendenze, GNSS/RTK/network coverage, pilot, offline behavior, assistenza/ricambi, TCO 5–8 anni e commissioning zone/no-go.
 
 ## 11. Stato punto 10 — Benessere, fattoria e servizi
 
@@ -235,14 +235,14 @@ BOM-023:
 - manure belt/scraper sotto posatoi;
 - rover sanitario dedicato su tutto il dominio galline;
 - hard-floor spot pickup su portico/parcheggi;
-- grass spot-pickup vision R&D, senza aspirazione continua;
+- grass spot-pickup vision R&S, senza aspirazione continua;
 - dirty dock per svuotamento, ricarica e wash;
-- gate automatici per separazione temporale galline/veicoli;
+- verifica bloccante automatici per separazione temporale galline/veicoli;
 - nessun ingresso del rover sanitario in aree food.
 
-Candidati/benchmark: Burro Verde base agricola all-area; AgileX Bunker Pro 2.0 ~€22,1k ex VAT R&D; Gausium Beetle 2.0 ~€20k + IVA hard-floor; Big Dutchman SIMBA manure-belt; ChickenGuard/Omlet porte automatiche piccole.
+Candidati/riferimento di confronto: Burro Verde base agricola all-area; AgileX Bunker Pro 2.0 ~€22,1k ex VAT R&S; Gausium Beetle 2.0 ~€20k + IVA hard-floor; Big Dutchman SIMBA manure-belt; ChickenGuard/Omlet porte automatiche piccole.
 
-La letteratura dimostra fattibilità su superfici avicole progettate, ma non esiste ancora un COTS provato per gallina + prato + parcheggio: pilot mixed-surface obbligatorio.
+La letteratura dimostra fattibilità su superfici avicole progettate, ma non esiste ancora un COTS provato per gallina + prato + parcheggio: pilot superfici miste obbligatorio.
 
 Documenti:
 - 10_BENESSERE_FATTORIA_E_SERVIZI/CHICKEN_FREE_RANGE_CLEANING_ARCHITECTURE.md;
@@ -250,31 +250,31 @@ Documenti:
 - 19_BOM_PRODOTTI_FORNITORI/BENESSERE_GALLINE_PULIZIA_AUTONOMA.md;
 - 22_FONTI_NORME_PREVENTIVI/BENESSERE_GALLINE_PULIZIA_SOURCES.md.
 
-Correzione BOM-022: il prato condiviso con le galline è lockout dinamico, non no-go permanente; rasaerba solo con hens-clear/gate chiuso.
+Correzione BOM-022: il prato condiviso con le galline è lockout dinamico, non no-go permanente; rasaerba solo con hens-clear/verifica bloccante chiuso.
 
 
 ### BOM-026 — pergolato, vite e area relax
 
 Architettura:
-- pergolato aperto; legno lamellare candidato working, acciaio zincato alternativa;
+- pergolato aperto; legno lamellare candidato di lavoro, acciaio zincato alternativa;
 - sezioni, controventi, fondazioni e ancoraggi `DA CALCOLO`;
 - neve/vento da sito reale e NTC; nessun carico catalogo assunto come progetto;
 - telo ombreggiante removibile opzionale, non caricato da neve salvo verifica esplicita;
 - vite/rampicanti su griglia indipendente e manutenibile;
-- varietà vite da microclima/uso frutto; barbatelle resistenti solo benchmark di acquisto;
+- varietà vite da microclima/uso frutto; barbatelle resistenti solo riferimento di confronto di acquisto;
 - zona irrigua dedicata, svuotabile in inverno;
 - superficie permeabile + drenaggio;
 - arredi modulari;
-- illuminazione/prese/rete outdoor con manual override;
+- illuminazione/prese/rete esterno con manual override;
 - manutenzione strutturale, agronomica, drenaggi, irrigazione ed elettrico.
 
-Benchmark unitari già tracciati:
+Riferimento di confronto unitari già tracciati:
 - GL24h retail €39,90–118,50/cad secondo formato osservato;
 - calcestruzzo fondazioni FVG 2026 €237,52/m³ nella voce consultata, escluso plinto completo;
 - vite resistente da tavola €5,95/cad;
 - kit goccia 100 m² €54,90;
 - griglia permeabile €17,71/m²;
-- tavolo outdoor ~8 posti €310;
+- tavolo esterno ~8 posti €310;
 - LED IP65 10 W €62,66 IVA incl.;
 - FG16OR16 3×2,5 €3,10/m;
 - cavidotto Ø40 FVG 2026 €1,83/m;
@@ -291,7 +291,7 @@ Documenti:
 
 ### BOM-027 — fattoria didattica
 
-Baseline:
+Configurazione base:
 - zoning visitatori Z0–Z3 con separazione fisica da produzione e aree tecniche;
 - planimetria ERSA integrata nel masterplan;
 - referente formato + RC visite;
@@ -304,10 +304,10 @@ Baseline:
 - modulo galline integrato con BOM-023, macchine in lockout/segregazione durante la visita;
 - safety signage separata dalla didattica;
 - pannelli/QR e dashboard read-only su guest network separata dall'OT;
-- food tasting/somministrazione non baseline;
+- food tasting/somministrazione non configurazione base;
 - registro visite, meteo/emergenza e visita pilota.
 
-Benchmark:
+Riferimento di confronto:
 - percorso drenante FVG 2026 €37,05–39,76/m² nella voce consultata;
 - fondazione granulare €44,80/m³;
 - safety signage PVC ~€34,63–43,46/cad;
@@ -332,10 +332,10 @@ Documenti:
 
 ### BOM-028 — spaccio automatico self-service 24/7
 
-Baseline:
-- doppio gate normativo: vendita diretta agricola ex D.Lgs. 228/2001 vs vending retail generico;
+Configurazione base:
+- doppio verifica bloccante normativo: vendita diretta agricola ex D.Lgs. 228/2001 vs vending retail generico;
 - preferenza a R1 agricolo se prodotti propri/prevalenza restano nel perimetro;
-- kiosk/locale protetto baseline; outdoor solo con macchina specificamente progettata/garantita;
+- kiosk/locale protetto configurazione base; esterno solo con macchina specificamente progettata/garantita;
 - matrice SKU/temperatura collegata a BOM-024;
 - nessun 0–4 °C automatico per pomodoro/peperone/basilico;
 - Gusto 8 multi-temperature candidato;
@@ -343,13 +343,13 @@ Baseline:
 - Drum/FAS Easy Food alternative;
 - Stripe payment stack;
 - Verifone UX700 candidato Stripe Terminal unattended;
-- server centrale come system of record/scheduler per inventory, personale, logistica, pagamenti e forecast domanda/offerta;
-- **frictionless R&D prioritario:** smart crate + smart cart + sensor fusion;
+- server centrale come system of record/pianificatore per inventory, personale, logistica, pagamenti e previsione domanda/offerta;
+- **frictionless R&S prioritario:** smart crate + smart cart + sensor fusion;
 - smart crate identifica SKU/lotto e rileva -Δmassa; cart verifica +Δmassa e sessione; camera/localizzazione risolvono ambiguità;
 - e-paper/ESL per posizione SKU/cassetta, LCD dinamico sul cart;
 - cheap load cells solo sensing/cross-check; peso commerciale da catena metrologica legal-for-trade;
-- Stripe UX700 fisso al paid-exit gate come baseline; reader-on-cart future;
-- nested charging baseline; recovery rover/tug solo se giustificato;
+- Stripe UX700 fisso al paid-exit verifica bloccante come configurazione base; reader-on-cart future;
+- nested charging configurazione base; recovery rover/tug solo se giustificato;
 - fiscalizzazione da validare su Stripe/RT/configurazione reale;
 - logger indipendente, temp alarm e stop-vend;
 - CCTV privacy-aware, no audio/face recognition;
@@ -357,13 +357,13 @@ Baseline:
 - nessuna UPS locale: backup da BESS aziendale 30 kW, kWh/autonomia da chiudere;
 - 100 cicli/SKU critico + 500 vendite miste con reconciliation end-to-end.
 
-Benchmark:
-- Necta Gusto 8 ~€5.900 EU seller benchmark;
+Riferimento di confronto:
+- Necta Gusto 8 ~€5.900 EU seller riferimento di confronto;
 - Gusto 8 Lift ~€7.200;
 - Gusto Drum ~€10.600–13.199;
-- FAS Pro 900 €8.840 net benchmark listing; payment incluso non baseline;
+- FAS Pro 900 €8.840 net riferimento di confronto listing; payment incluso non configurazione base;
 - UX700 Stripe Terminal unattended: RFQ;
-- Stripe Terminal Italia: 1,4% + €0,10 carte SEE / 2,9% + €0,10 non-SEE benchmark;
+- Stripe Terminal Italia: 1,4% + €0,10 carte SEE / 2,9% + €0,10 non-SEE riferimento di confronto;
 - Testo 160 T €124 net / €151,28 IVA incl.;
 - Ubiquiti G5 Turret Ultra €80/cad;
 - NIA/VIA sanitaria €20 reference.
@@ -375,18 +375,18 @@ Documenti:
 - `19_BOM_PRODOTTI_FORNITORI/BENESSERE_SPACCIO_AUTOMATICO_24_7.md`;
 - `22_FONTI_NORME_PREVENTIVI/BENESSERE_SPACCIO_AUTOMATICO_24_7_SOURCES.md`.
 
-## 12. R&D trasversale — laser, vision e manutenzione robotica
+## 12. R&S trasversale — laser, vision e manutenzione robotica
 
-Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO / NON BASELINE CAPEX`.
+Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&S CANDIDATO / NON BASELINE CAPEX`.
 
 ## 13. Stato punto 09 — Tech Barn e post-raccolta
 
 **BOM-024 CELLE FRIGORIFERE + BOM-025 RACCOLTA/PACKAGING + BOM-029 CENTRO TRASFORMAZIONE CONTO TERZI SVILUPPATE / DOMANDA LOCALE, CARICHI, SKU, LAYOUT FOOD E RFQ BLOCCANTI.**
 
-Baseline:
+Configurazione base:
 - CR-A COLD-LEAF ~1–3 °C, lattuga/baby leaf/spinacio;
 - CR-B COOL-SENSITIVE ~10–12 °C, pomodoro/peperone/basilico con crop-card e short dwell;
-- ~25 m²/cella working, totale freddo ~50 m² più zona servizio;
+- ~25 m²/cella di lavoro, totale freddo ~50 m² più zona servizio;
 - forced-air precooling predisposto per CR-A;
 - due sistemi frigoriferi indipendenti;
 - confronto 1×100% vs circuiti modulari sulla cella critica;
@@ -394,9 +394,9 @@ Baseline:
 - monitoraggio locale + logger indipendente;
 - pavimento strutturale verificato per BOM-021.
 
-Benchmark:
+Riferimento di confronto:
 - shell 4,74×4,74×2,54 m senza gruppo: €6.775,99 + IVA;
-- R290 KDC800N: €5.399,99 net, max 50 m³ dichiarati, solo benchmark;
+- R290 KDC800N: €5.399,99 net, max 50 m³ dichiarati, solo riferimento di confronto;
 - R290 KDC600N: €4.899,99 net, max 35,1 m³ @32 °C / 21 m³ @43 °C;
 - Testo 160 TH: €180 + IVA/cella.
 
@@ -404,17 +404,17 @@ Regola: dimensionamento da kg prodotto / temperatura ingresso / pull-down time, 
 
 ### BOM-025 — raccolta e packaging
 
-Baseline:
+Configurazione base:
 - cassette 600×400 food-contact, quantità da `peak kg in loop / kg per crate × 1,3–1,5`;
-- 6–12 low dollies + 2–4 raised come working range;
-- 3 tavoli inox 1800×700 working;
+- 6–12 low dollies + 2–4 raised come di lavoro range;
+- 3 tavoli inox 1800×700 di lavoro;
 - 2×30 kg + 1×300 kg scales;
 - Zebra ZD421 TT Ethernet;
 - tray sealer manuale opzionale;
-- wash/spin leafy non baseline finché non viene scelta una linea ready-to-eat;
+- wash/spin leafy non configurazione base finché non viene scelta una linea ready-to-eat;
 - label/traceability locale.
 
-Benchmark core:
+Riferimento di confronto progetto principale:
 - dolly 600×400 300 kg €45,50 + IVA;
 - raised trolley €223,25 + IVA;
 - inox table €217,99–228,99 net;
@@ -440,18 +440,18 @@ Documenti:
 
 **SVILUPPATO COME BUSINESS UNIT FUTURA / NON ANCORA CAPEX CORE.**
 
-Working candidate:
+Di lavoro candidate:
 - scenario S2: 600–700 kg/h raw fruit;
 - juice ~420–525 L/h teorici secondo resa;
 - 100P2/EBP500 class;
 - thermal 500–750 L/h;
-- bag-in-box baseline;
+- bag-in-box configurazione base;
 - jam/compote 100–200 L/batch class;
 - semi-CIP minimo;
 - dirty -> process -> high-hygiene fill -> finished-goods zoning;
 - batch genealogy e cost accounting sul server centrale.
 
-Demand gate:
+Demand verifica bloccante:
 - 30–50 interviste;
 - >=3 anchor customers;
 - >=150 t/year credible volume per S2 oppure right-size a S0/S1;
@@ -463,7 +463,7 @@ Scale check:
 - ERSA 2024: 68.735 t mele FVG;
 - 150–300 t/year S2 = circa 0,22–0,44% del raccolto regionale; proxy di scala, NON prova della domanda Carnia.
 
-Benchmark:
+Riferimento di confronto:
 - BIB 3 L 100 pcs ~€114,75;
 - BIB 5 L 100 pcs ~€127,05;
 - jars 212 mL ~€688,52/1.728 pcs;
@@ -487,7 +487,7 @@ Documenti:
 
 **SVILUPPATA / ORGANICO E COSTO DA VALIDARE CON CPL UDINE, VOLUMI REALI E 90 GIORNI DI DATI.**
 
-Working operating model:
+Di lavoro operating model:
 - impianto 24/7 senza presenza umana 24/7;
 - owner/operations-tech non come manodopera gratuita né reperibile permanente;
 - 1 crop & production lead;
@@ -512,7 +512,7 @@ Costo lavoro:
 
 Labour-market guardrail:
 - Excelsior FVG 2026 mostra difficoltà di reperimento elevate in diversi profili;
-- hiring core anticipato e seasonal pool prequalificato;
+- hiring progetto principale anticipato e seasonal pool prequalificato;
 - nessuna dipendenza da assunzioni last-minute.
 
 Documenti:
@@ -525,11 +525,11 @@ Documenti:
 
 ## 16. Metodo BOM obbligatorio
 
-Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, fallback, contributi, dipendenze, espansione e stato decisionale.
+Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prezzo, IVA/trasporto, installazione, consumi, manutenzione, ricambi, vita utile, sicurezza, failure mode, ripiego, contributi, dipendenze, espansione e stato decisionale.
 
 ## 17. Stato attuale dei grandi blocchi
 
-Restano nel perimetro R&D robotica/laser e i package tecnici trasversali ancora aperti: drenaggio/riuso, EMS e connessione elettrica.
+Restano nel perimetro R&S robotica/laser e i package tecnici trasversali ancora aperti: drenaggio/riuso, EMS e connessione elettrica.
 
 ## 18. Sequenza BOM
 
@@ -578,16 +578,16 @@ Directory: `RND_CORRELATO_EU/`.
 
 **Stato:** `CORRELATO / NON CORE / PRE-CANDIDATURA R&S`.
 
-Il progetto di lavoro **CTT-AFP — Carnia TerraTech Autonomous Farm Platform** sviluppa tecnologie potenzialmente replicabili per orchestrazione agricola, edge/PLC, robotica, vision, sensor fusion e scheduling.
+Il progetto di lavoro **CTT-PAA — Piattaforma di Automazione Agricola Carnia TerraTech** sviluppa tecnologie potenzialmente replicabili per orchestrazione agricola, edge/PLC, robotica, vision, sensor fusion e scheduling.
 
 Regole di separazione:
 
 - non sostituisce nessun blocco 00–22;
-- non modifica la baseline CAPEX/OPEX agricola;
-- nessun contributo R&S viene contato come fonte certa del core;
-- Carnia TerraTech è living lab, non il prodotto R&S;
-- i sistemi vitali del core mantengono controllo locale e fallback indipendenti;
-- fallimento o ritardo di un demonstrator non deve bloccare produzione o safety;
+- non modifica la configurazione base CAPEX/OPEX agricola;
+- nessun contributo R&S viene contato come fonte certa del progetto principale;
+- Carnia TerraTech è laboratorio operativo reale, non il prodotto R&S;
+- i sistemi vitali del progetto principale mantengono controllo locale e ripiego indipendenti;
+- fallimento o ritardo di un dimostratore non deve bloccare produzione o safety;
 - costi condivisi devono essere allocati e verificati sulla call specifica;
 - IP, partner, TRL, deliverable e budget R&S vengono governati separatamente.
 
@@ -609,12 +609,12 @@ Sequenza:
 - E0 predisposizioni minime di layout/utilities;
 - E1 ristoro light a spuntini non cucinati;
 - E2 esperienze/degustazioni/visite;
-- E3 cucina agrituristica solo dopo business case;
-- E4 ospitalità solo dopo business case.
+- E3 cucina agrituristica solo dopo analisi economica;
+- E4 ospitalità solo dopo analisi economica.
 
 Regole:
-- budget e contributi separati dal core;
-- nessun costo spostato artificialmente fra core ed extra;
+- budget e contributi separati dal progetto principale;
+- nessun costo spostato artificialmente fra progetto principale ed extra;
 - nessun doppio finanziamento;
 - BOM-026/027/028 restano autonome e possono solo fornire interfacce condivise quando autorizzate;
 - se il piano extra non parte, Carnia TerraTech resta invariata.
