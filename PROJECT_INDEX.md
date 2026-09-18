@@ -679,6 +679,10 @@ Artefatti closure avviati:
 - `21_RISCHI_DECISIONI_OPEN_POINTS/PILOT_DECISION_RECORD_TEMPLATE.md`.
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_COMMISSIONING_ACCEPTANCE.md`;
 - `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_COMMISSIONING_ACCEPTANCE.csv`.
+- `18_CAPEX_OPEX_CASHFLOW/FINANCIAL_CLOSURE_CONTROL.md`;
+- `18_CAPEX_OPEX_CASHFLOW/FINANCIAL_CLOSURE_CONTROL.csv`;
+- `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_DECISION_GATE_REGISTER.md`;
+- `21_RISCHI_DECISIONI_OPEN_POINTS/MASTER_DECISION_GATE_REGISTER.csv`.
 
 ### Prossima fase — validation / closure sprint
 
@@ -693,7 +697,7 @@ Priorità di chiusura:
 5. RFQ installati per i package ancora a prezzo `RFQ` — **registro procurement/closure strutturato il 18/09/2026; separati Q1–Q5, priorità e blocker per dominio**;
 6. pilot obbligatori: AMR/robotica, smart retail, fattoria didattica, drenaggio-riuso e altri package marcati PILOT — **master pilot register + result/cost template + decision record strutturati il 18/09/2026; esecuzione fisica ancora da sito/vendor/produzione reale**;
 7. commissioning e acceptance end-to-end — **master SAT, failure/degraded tests, 72 h endurance, punch-list e seasonal acceptance strutturati il 18/09/2026; esecuzione fisica da impianto reale**;
-8. consolidamento CAPEX/OPEX/cashflow, rischi e decision gate.
+8. consolidamento CAPEX/OPEX/cashflow, rischi e decision gate — **financial closure control E0–E5 + master decision gates DG0–DG8 strutturati il 18/09/2026; actuals/RFQ/contratti ancora da popolare**.
 
 La numerazione riprende solo se la closure matrix evidenzia un nuovo package fisico/operativo non coperto.
 
