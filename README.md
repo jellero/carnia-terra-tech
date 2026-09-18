@@ -34,7 +34,8 @@ Obiettivi permanenti:
 - accumulo acqua: obiettivo di lavoro **300 m³**;
 - automazione locale a sicurezza intrinseca con PLC e rete dati; AMR solo dopo pilot;
 - mezzo multifunzione core per materiali, humus, cantiere e manutenzione;
-- capacità certificata di accesso in quota con piattaforma OEM/PLE ragno/noleggio;
+- capacità certificata di accesso umano in quota con piattaforma OEM/PLE ragno/noleggio;
+- robot ragno R&S prioritario per ispezione/manutenzione delle parti alte, sempre con recovery umano;
 - humus/vermicompost prodotto internamente quando sicuro, legale ed economicamente sensato.
 
 ## Come leggere il repository
