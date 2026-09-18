@@ -8,6 +8,7 @@
 Carnia TerraTech è un'azienda agricola ad alta automazione prevista nel corridoio Venzone/Gemona, progettata per produrre ortaggi premium in serra con vendita diretta, consegne programmate, ritiro/spaccio aziendale e ristorazione selettiva.
 
 Obiettivi:
+- mitigazione preventiva dei rischi di sito, cassa, manutenzione e continuità;
 - redditività agricola;
 - riduzione del lavoro ripetitivo e pesante;
 - controllo locale dei sistemi vitali;
@@ -34,33 +35,34 @@ Avvio P1:
 
 ## 2. Investimento
 
-Target CAPEX netto di lavoro: **€850.000**.
+Target CAPEX netto di lavoro: **€950.000**.
 
 Ripartizione:
-- terreno e verifiche: €50.000;
+- terreno, atti e campagna sito: €60.000;
 - serra: €350.000;
 - acqua/fertirrigazione: €55.000;
 - termico/clima: €65.000;
 - energia/FV/BESS/EMS: €130.000;
 - Tech Barn/freddo/packaging: €95.000;
-- automazione essenziale: €30.000;
+- automazione essenziale: €25.000;
 - spaccio iniziale: €20.000;
-- progettazione/collaudi/contingenza: €55.000.
+- macchine/logistica + ciclo materia: €90.000;
+- progettazione/collaudi/contingenza: €60.000.
 
 Fuori CAPEX:
 - riserva operativa protetta: **€120.000**;
-- linea IVA/ponte: **€120.000–150.000** target.
+- linea IVA/ponte: **€140.000–170.000** target.
 
 Riferimento operativo:
 `../18_CAPEX_OPEX_CASHFLOW/BUDGET_AVVIO_IDEALE.md`.
 
 ## 3. Struttura finanziaria di lavoro
 
-Su €850.000 ammissibili, nello schema di riferimento SRD01:
-- sostegno giovane 60%: €510.000;
-- anticipo massimo teorico: €255.000;
-- finanziamento di lavoro 40%: €340.000;
-- liquidità iniziale investimento: €595.000;
+Su €950.000 ammissibili, nello schema di riferimento SRD01:
+- sostegno giovane 60%: €570.000;
+- anticipo massimo teorico: €285.000;
+- finanziamento di lavoro 40%: €380.000;
+- liquidità iniziale investimento: €665.000;
 - saldo/acconti secondo avanzamento e regole del bando.
 
 Premio SRE01:
@@ -132,6 +134,17 @@ Per il cliente:
 
 La competizione non viene impostata sul prezzo più basso della GDO.
 
+## 6A. Cicli materia e mezzi
+
+Il modello operativo include:
+- humus/vermicompost interno;
+- valorizzazione residui propri;
+- acquisto e rilavorazione di materie con stato giuridico chiaro;
+- telescopico core con forche/benna;
+- accesso sicuro in quota come capacità obbligatoria.
+
+Robot dedicati a funzioni marginali non fanno parte del CAPEX P1.
+
 ## 7. Modello operativo
 
 Flusso:
@@ -199,13 +212,13 @@ La tabella non è un forecast commerciale già dimostrato. È uno scenario di pi
 | Anno operativo | Fase | Ricavi | Costi variabili % | Personale | Altri OPEX fissi | EBITDA operativo indicativo |
 |---|---|---:|---:|---:|---:|---:|
 | A0 | cantiere | €0 | — | incluso riserva | incluso riserva | negativo / finanziato |
-| A1 | rampa P1 | €120k | 35% | €100k | €40k | ~-€62k |
-| A2 | P1 stabilizzata | €250k | 35% | €110k | €45k | ~€7,5k |
-| A3 | P1 forte / P2 parziale | €360k | 35% | €125k | €55k | ~€54k |
-| A4 | P2 avanzata | €470k | 35% | €140k | €65k | ~€100,5k |
-| A5 | vicino regime | €540k | 35% | €150k | €70k | ~€131k |
-| A6 | regime | €590k | 35% | €160k | €75k | ~€148,5k |
-| A7 | regime affinato | €620k | 35% | €165k | €80k | ~€158k |
+| A1 | rampa P1 | €130k | 35% | €100k | €45k | ~-€60,5k |
+| A2 | P1 stabilizzata | €280k | 35% | €110k | €50k | ~€22k |
+| A3 | P1 forte / P2 parziale | €390k | 35% | €125k | €60k | ~€68,5k |
+| A4 | P2 avanzata | €500k | 35% | €140k | €70k | ~€115k |
+| A5 | vicino regime | €570k | 35% | €150k | €75k | ~€145,5k |
+| A6 | regime | €620k | 35% | €160k | €80k | ~€163k |
+| A7 | regime affinato | €650k | 35% | €165k | €85k | ~€172,5k |
 
 Da EBITDA vanno ancora sottratti:
 - ammortamenti;
@@ -216,19 +229,19 @@ Da EBITDA vanno ancora sottratti:
 ## 11. Break-even P1
 
 Ordine di grandezza fissi/semifissi:
-- €150–170k/anno.
+- €160–180k/anno.
 
 Con margine di contribuzione:
-- 60% -> break-even ~€267k;
-- 65% -> ~€246k;
-- 70% -> ~€229k.
+- 60% -> break-even ~€300k;
+- 65% -> ~€277k;
+- 70% -> ~€257k.
 
-Target commerciale P1 da validare: **~€250.000/anno**.
+Target commerciale P1 da validare: **~€280.000/anno**.
 
-## 12. Esempio di composizione €250k P1
+## 12. Esempio di composizione €280k P1
 
 Solo come obiettivo di validazione:
-- 150 famiglie × €25/settimana × 40 settimane = €150k;
+- 180 famiglie × €25/settimana × 40 settimane = €180k;
 - ristorazione selettiva = €50k;
 - spaccio/ritiro/non programmato = €50k.
 
@@ -236,13 +249,13 @@ Il mix può cambiare.
 
 ## 13. Debito
 
-Finanziamento di lavoro: ~€340.000.
+Finanziamento di lavoro: ~€380.000.
 
 Ordine di grandezza servizio annuo simulato:
-- 20 anni 3%: ~€22,6k;
-- 15 anni 3%: ~€28,2k;
-- 20 anni 4%: ~€24,7k;
-- 15 anni 4%: ~€30,2k.
+- 20 anni 3%: ~€25,5k;
+- 15 anni 3%: ~€31,8k;
+- 20 anni 4%: ~€28,0k;
+- 15 anni 4%: ~€34,2k.
 
 Le condizioni effettive derivano dalla delibera bancaria/Fondo.
 
@@ -283,7 +296,7 @@ Mensili:
 
 ## 16. Rischi principali
 
-1. terreno non adatto;
+1. terreno non adatto o drenaggio/geotecnica non caratterizzati;
 2. autorizzazioni/DSO;
 3. CAPEX serra > envelope;
 4. resa inferiore;
@@ -295,6 +308,7 @@ Mensili:
 10. sovra-automazione.
 
 Mitigazioni:
+- campagna di campionamento e drenaggio prima dell'acquisto;
 - gate prima degli ordini;
 - P1 3 comparti;
 - riserva €120k;
