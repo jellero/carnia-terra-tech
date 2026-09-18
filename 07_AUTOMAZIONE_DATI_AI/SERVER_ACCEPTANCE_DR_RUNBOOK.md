@@ -359,7 +359,7 @@ Application must:
 
 ## 24. BESS transfer test
 
-**No UPS local. BOM-034 defines the electrical architecture and P0 critical bus.**
+**Nessuna UPS consumer/distribuita. BOM-034 governa BESS, critical bus e l'eventuale ride-through P0 professionale dedicato.**
 
 Test with electrician/energy engineer:
 
@@ -380,7 +380,7 @@ If reboot occurs:
 - investigate PCS/grid-forming/transfer/distribution/PSU ride-through;
 - redesign BOM-034 transfer path before production acceptance.
 
-Do not hide issue by adding random desktop UPS units.
+Non mascherare il problema con UPS desktop casuali. Se serve ride-through, deve diventare un sottosistema P0 esplicito, monitorato, manutenibile e sottoposto a SAT.
 
 ## 25. LOW_SOC
 
