@@ -316,7 +316,7 @@ Documento: `07_AUTOMAZIONE_DATI_AI/LASER_ROBOTICS_RND.md`. Stato: `R&D CANDIDATO
 
 ## 13. Stato punto 09 — Tech Barn e post-raccolta
 
-**BOM-024 CELLE FRIGORIFERE + BOM-025 RACCOLTA/PACKAGING SVILUPPATE / CARICHI, SKU E RFQ BLOCCANTI.**
+**BOM-024 CELLE FRIGORIFERE + BOM-025 RACCOLTA/PACKAGING + BOM-029 CENTRO TRASFORMAZIONE CONTO TERZI SVILUPPATE / DOMANDA LOCALE, CARICHI, SKU, LAYOUT FOOD E RFQ BLOCCANTI.**
 
 Baseline:
 - CR-A COLD-LEAF ~1–3 °C, lattuga/baby leaf/spinacio;
@@ -371,9 +371,52 @@ Documenti:
 - 19_BOM_PRODOTTI_FORNITORI/TECH_BARN_RACCOLTA_PACKAGING.md;
 - fonti dedicate in 22_FONTI_NORME_PREVENTIVI/.
 
-## 14. Modulo futuro — centro trasformazione conto terzi
+## 14. BOM-029 — centro trasformazione conto terzi
 
-Documento: `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`. Stato: `MODULO FUTURO AD ALTO POTENZIALE / DA BUSINESS CASE / NON ANCORA NEL CAPEX BASE`.
+**SVILUPPATO COME BUSINESS UNIT FUTURA / NON ANCORA CAPEX CORE.**
+
+Working candidate:
+- scenario S2: 600–700 kg/h raw fruit;
+- juice ~420–525 L/h teorici secondo resa;
+- 100P2/EBP500 class;
+- thermal 500–750 L/h;
+- bag-in-box baseline;
+- jam/compote 100–200 L/batch class;
+- semi-CIP minimo;
+- dirty -> process -> high-hygiene fill -> finished-goods zoning;
+- batch genealogy e cost accounting sul server centrale.
+
+Demand gate:
+- 30–50 interviste;
+- >=3 anchor customers;
+- >=150 t/year credible volume per S2 oppure right-size a S0/S1;
+- price acceptance;
+- minimum lot/setup fee;
+- 3 RFQ comparabili.
+
+Scale check:
+- ERSA 2024: 68.735 t mele FVG;
+- 150–300 t/year S2 = circa 0,22–0,44% del raccolto regionale; proxy di scala, NON prova della domanda Carnia.
+
+Benchmark:
+- BIB 3 L 100 pcs ~€114,75;
+- BIB 5 L 100 pcs ~€127,05;
+- jars 212 mL ~€688,52/1.728 pcs;
+- jars 314 mL ~€696,72/1.344 pcs;
+- ETI 10H ~€3.754,10;
+- main process line equipment = RFQ OEM.
+
+Contributi:
+- SRD13 è pertinente come famiglia d'intervento;
+- graduatoria FVG pubblicata 15/09/2026;
+- nessun contributo inserito come certo.
+
+Documenti:
+- `09_TECH_BARN_E_POST_RACCOLTA/CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`;
+- `09_TECH_BARN_E_POST_RACCOLTA/RFQ_CENTRO_TRASFORMAZIONE_CONTO_TERZI.md`;
+- `19_BOM_PRODOTTI_FORNITORI/TECH_BARN_TRASFORMAZIONE_CONTO_TERZI.md`;
+- `22_FONTI_NORME_PREVENTIVI/TECH_BARN_TRASFORMAZIONE_CONTO_TERZI_SOURCES.md`;
+- `15_MERCATO_E_VENDITE/DOMANDA_LOCALE_CENTRO_TRASFORMAZIONE.md`.
 
 ## 15. Metodo BOM obbligatorio
 
@@ -381,7 +424,7 @@ Per ogni oggetto/sottosistema: funzione, requisiti, quantità, alternative, prez
 
 ## 16. Stato attuale dei grandi blocchi
 
-Restano nel perimetro sostenibilità personale, R&D robotica/laser e centro trasformazione conto terzi.
+Restano nel perimetro sostenibilità personale, R&D robotica/laser e industrializzazione del server centrale di orchestrazione.
 
 ## 17. Sequenza BOM
 
@@ -407,14 +450,16 @@ Restano nel perimetro sostenibilità personale, R&D robotica/laser e centro tras
 - BOM-025 raccolta e packaging;
 - BOM-026 pergolato, vite e area relax;
 - BOM-027 fattoria didattica;
-- **BOM-028 spaccio automatico self-service 24/7**.
+- BOM-028 spaccio automatico self-service 24/7;
+- **BOM-029 centro trasformazione conto terzi**.
 
 ### Prossimo package
 
-**BOM-029 — centro trasformazione conto terzi:** capacity model, famiglie processo succo/confetture/trasformati, zoning food, lavaggio/preparazione, cottura/pastorizzazione, riempimento, CIP/pulizia, utilities, laboratorio/QC, packaging, HACCP, CAPEX/OPEX e domanda locale.
+**BOM-030 — server centrale di orchestrazione:** compute/storage, database/event log/time-series, message bus, edge gateway, identity/RBAC, backup/restore, observability, HA/failover, network segmentation, API contracts, scheduler operativo, forecasting, digital twin/state model, Stripe/events, cybersecurity, deployment e costo.
 
 ### Coda successiva
 
-1. centro trasformazione conto terzi: capacity model + BOM succo/confetture + CAPEX/OPEX + domanda locale.
+1. server centrale di orchestrazione: BOM hardware/software/deployment + edge + HA + observability + cybersecurity;
+2. sostenibilità personale e lancio operativo: carico umano, turni, reperibilità, ferie, supporto esterno e ramp-up.
 
 La sequenza può cambiare quando una dipendenza tecnica rende necessario anticipare un blocco.
